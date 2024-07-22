@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "hyliacraft:item/false_master_sword_shrine"
+    "layer0": "hyliacraft:item/goddess_sword"
   }
 }

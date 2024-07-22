@@ -18,6 +18,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** ITEMS **/
 
+        translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
+
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 
         /** BLOCKS **/
@@ -27,5 +29,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         /** Components **/
 
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
+
+        translationBuilder.add("itemGroup.hyliacraft.gear", "HC Gear");
+        translationBuilder.add("itemGroup.hyliacraft.consumables", "HC Consumables");
     }
 }

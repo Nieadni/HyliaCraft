@@ -1,4 +1,7 @@
 {
+  "item.hyliacraft.goddess_sword": "Goddess Sword",
   "item.hyliacraft.pumpkin_soup": "Pumpkin Soup",
+  "itemGroup.hyliacraft.consumables": "HC Consumables",
+  "itemGroup.hyliacraft.gear": "HC Gear",
   "tooltip.hyliacraft.pumpkin_soup": "Popular in Skyloft for its nutrient content and revitalising properties"
 }

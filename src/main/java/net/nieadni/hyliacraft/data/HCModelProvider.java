@@ -20,6 +20,9 @@ public class HCModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+
+        itemModelGenerator.register(HCItems.GODDESS_SWORD, Models.HANDHELD);
+
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
     }
 }
