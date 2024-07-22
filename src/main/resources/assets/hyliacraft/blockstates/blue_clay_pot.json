@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=west": { "model": "hyliacraft:block/natural_blue_clay_pot" },
+    "facing=south": { "model": "hyliacraft:block/natural_blue_clay_pot", "y": 90 },
+    "facing=east": { "model": "hyliacraft:block/natural_blue_clay_pot", "y": 180 },
+    "facing=north": { "model": "hyliacraft:block/natural_blue_clay_pot", "y": 270 }
+  }
+}

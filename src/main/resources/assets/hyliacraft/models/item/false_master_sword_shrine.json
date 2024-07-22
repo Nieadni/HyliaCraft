@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "hyliacraft:item/false_master_sword_shrine_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "hyliacraft:item/false_master_sword_shrine_2d"
+    },
+    "ground": {
+      "parent": "hyliacraft:item/false_master_sword_shrine_2d"
+    },
+    "fixed": {
+      "parent": "hyliacraft:item/false_master_sword_shrine_2d"
+    }
+  }
+}

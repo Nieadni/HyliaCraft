@@ -1,0 +1,18 @@
+{
+	"loader":"forge:separate-perspective",
+	"parent": "item/generated",
+	"base": {
+		"parent": "hyliacraft:item/digging_mitt_hand"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "hyliacraft:item/digging_mitt_item"
+		},
+		"ground": {
+			"parent": "hyliacraft:item/digging_mitt_item"
+		},
+		"fixed": {
+			"parent": "hyliacraft:item/digging_mitt_item"
+		}
+	}
+}

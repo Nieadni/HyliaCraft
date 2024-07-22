@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=west": { "model": "hyliacraft:block/false_master_sword_shrine" },
+    "facing=south": { "model": "hyliacraft:block/false_master_sword_shrine", "y": 90 },
+    "facing=east": { "model": "hyliacraft:block/false_master_sword_shrine", "y": 180 },
+    "facing=north": { "model": "hyliacraft:block/false_master_sword_shrine", "y": 270 }
+  }
+}
