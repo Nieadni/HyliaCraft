@@ -1,7 +1,24 @@
 {
+  "item.hyliacraft.blue_rupee": "Blue Rupee",
   "item.hyliacraft.goddess_sword": "Goddess Sword",
+  "item.hyliacraft.gold_rupee": "Gold Rupee",
+  "item.hyliacraft.green_rupee": "Green Rupee",
+  "item.hyliacraft.orange_rupee": "Orange Rupee",
   "item.hyliacraft.pumpkin_soup": "Pumpkin Soup",
+  "item.hyliacraft.purple_rupee": "Purple Rupee",
+  "item.hyliacraft.red_rupee": "Red Rupee",
+  "item.hyliacraft.silver_rupee": "Silver Rupee",
+  "item.hyliacraft.yellow_rupee": "Yellow Rupee",
   "itemGroup.hyliacraft.consumables": "HC Consumables",
   "itemGroup.hyliacraft.gear": "HC Gear",
-  "tooltip.hyliacraft.pumpkin_soup": "Popular in Skyloft for its nutrient content and revitalising properties"
+  "itemGroup.hyliacraft.misc": "HC Misc",
+  "tooltip.blue_rupee": "Worth 5 Rupees",
+  "tooltip.gold_rupee": "Worth 300 Rupees",
+  "tooltip.green_rupee": "Worth 1 Rupee",
+  "tooltip.hyliacraft.pumpkin_soup": "Popular in Skyloft for its nutrient content and revitalising properties",
+  "tooltip.orange_rupee": "Worth 100 Rupees",
+  "tooltip.purple_rupee": "Worth 50 Rupees",
+  "tooltip.red_rupee": "Worth 20 Rupees",
+  "tooltip.silver_rupee": "Worth 200 Rupees",
+  "tooltip.yellow_rupee": "Worth 10 Rupees"
 }
