@@ -10,5 +10,6 @@ public class HCDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(HCLanguageProvider::new);
 		pack.addProvider(HCModelProvider::new);
+		pack.addProvider(HCItemTagProvider::new);
 	}
 }
