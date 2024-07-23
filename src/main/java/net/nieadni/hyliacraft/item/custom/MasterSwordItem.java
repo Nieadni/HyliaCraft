@@ -12,15 +12,12 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.StringIdentifiable;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
+import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
 
-import java.util.Timer;
-import java.util.logging.Level;
-
-public class GoddessSwordItem extends SwordItem {
-    public GoddessSwordItem(GoddessSwordMaterial toolMaterial, Settings settings) {
+public class MasterSwordItem extends SwordItem {
+    public MasterSwordItem(MasterSwordMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
 
@@ -34,7 +31,7 @@ public class GoddessSwordItem extends SwordItem {
             if (selected && !isReachModified) {
                 reachAttribute.addTemporaryModifier(new EntityAttributeModifier(
                         SWORD_RANGE_MODIFIER_ID,
-                        -1,    // Sets the distance between you and the entity (base=3)
+                        +1,    // Sets the distance between you and the entity (base=3)
                         EntityAttributeModifier.Operation.ADD_VALUE)
                 );
             } else if (!selected && isReachModified) {
@@ -47,17 +44,15 @@ public class GoddessSwordItem extends SwordItem {
             if (stack.isDamaged()) {
                 stack.setDamage(stack.getDamage() - 1);    // Durability fixed
             }
-            timer = 600;    // every X ticks (1 second = 20 ticks)
+            timer = 400;    // every X ticks (1 second = 20 ticks)
         } else timer--;
         nbt.putInt(DURABILITY_KEY, timer);
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
     public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
-    public static final int DURABILITY_TIMER = 600;
+    public static final int DURABILITY_TIMER = 160;
     public static final String DURABILITY_KEY = "durabilityHealTimer";
-
-    // Somehow exclude the Sweeping Edge enchantment from being put onto the sword
 
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {

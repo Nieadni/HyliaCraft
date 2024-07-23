@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.nieadni.hyliacraft.data.HCLanguageProvider;
+import net.nieadni.hyliacraft.data.HCModelProvider;
 import net.nieadni.hyliacraft.item.HCFoodComponents;
 import net.nieadni.hyliacraft.item.HCItemGroup;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -24,7 +26,7 @@ public class HyliaCraft implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 		HCItems.initialize();
 
-		// Loggers to make sure classes are working. Make sure to add these to any sort of registry.
+		// Loggers to make sure main classes are working.
 		HCItemGroup.registerItemGroups();
 		HCItems.registerHCItems();
 		HCFoodComponents.registerFoodComponents();

@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,6 +20,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         /** ITEMS **/
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
+        translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");
+        translationBuilder.add(HCItems.GODDESS_WHITE_SWORD, "Goddess White Sword");
+        translationBuilder.add(HCItems.MASTER_SWORD, "Master Sword");
+        translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 

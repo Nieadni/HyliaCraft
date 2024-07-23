@@ -14,6 +14,11 @@ public class HCItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
                         entries.add(HCItems.GODDESS_SWORD);
+                        entries.add(HCItems.GODDESS_LONGSWORD);
+                        entries.add(HCItems.GODDESS_WHITE_SWORD);
+                        entries.add(HCItems.MASTER_SWORD);
+                        entries.add(HCItems.TRUE_MASTER_SWORD);
+
 
                     }).build());
     public static final ItemGroup CONSUMABLES_GROUP = Registry.register(Registries.ITEM_GROUP,

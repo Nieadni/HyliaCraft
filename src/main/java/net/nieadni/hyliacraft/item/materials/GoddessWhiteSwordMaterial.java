@@ -6,10 +6,10 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.TagKey;
 
-public class GoddessSwordMaterial implements ToolMaterial {
+public class GoddessWhiteSwordMaterial implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 505;
+        return 2021;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class GoddessSwordMaterial implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 1;
+        return 7;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class GoddessSwordMaterial implements ToolMaterial {
 
     @Override
     public int getEnchantability() {
-        return 20;
+        return 30;
     }
 
     @Override
@@ -42,6 +42,6 @@ public class GoddessSwordMaterial implements ToolMaterial {
         return ToolMaterial.super.createComponent(tag);
     }
 
-    public static final GoddessSwordMaterial INSTANCE = new GoddessSwordMaterial();
+    public static final GoddessWhiteSwordMaterial INSTANCE = new GoddessWhiteSwordMaterial();
 
 }
