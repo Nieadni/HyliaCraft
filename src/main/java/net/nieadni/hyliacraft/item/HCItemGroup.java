@@ -19,6 +19,7 @@ public class HCItemGroup {
                         entries.add(HCItems.MASTER_SWORD);
                         entries.add(HCItems.TRUE_MASTER_SWORD);
 
+                        entries.add(HCItems.DIGGING_MITT);
 
                     }).build());
     public static final ItemGroup CONSUMABLES_GROUP = Registry.register(Registries.ITEM_GROUP,

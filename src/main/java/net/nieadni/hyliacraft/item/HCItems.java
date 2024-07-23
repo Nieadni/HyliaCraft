@@ -35,6 +35,8 @@ public class HCItems extends Items {
     public static final Item MASTER_SWORD = register(new MasterSwordItem(MasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(MasterSwordItem.createAttributeModifiers(MasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"master_sword");
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(TrueMasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(TrueMasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"true_master_sword");
 
+    public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
+
     /** Consumables **/
 
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).maxCount(1)), "pumpkin_soup");
