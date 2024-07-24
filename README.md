@@ -12,6 +12,8 @@ Ordered A to Z to avoid bias
 
 **Coders -**
 
+* [EpicVon2468](https://github.com/AngerVon2468)
+
 * Nieadni
 
 **Asset Makers -**
@@ -24,8 +26,8 @@ Ordered A to Z to avoid bias
 
 **Testers -**
 
-* a
+* insert name here
 
 **Translators -**
 
-* a
+* insert name here
