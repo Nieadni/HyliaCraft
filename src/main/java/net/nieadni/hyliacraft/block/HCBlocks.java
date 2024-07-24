@@ -3,6 +3,8 @@ package net.nieadni.hyliacraft.block;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -28,12 +30,12 @@ public class HCBlocks extends Blocks {
         return Registry.register(Registries.BLOCK, id, block);
     }
 
-    public static final Block CLAY_POT = register(new PotBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).breakInstantly().nonOpaque()),"clay_pot",true);
-    // Natural Clay Pot
-    // Clay Pot Writing
-    // Natural Clay Pot Writing
-    // Blue Clay Pot
-    // Natural Blue Clay Pot
+    public static final Block CLAY_POT = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)),"clay_pot",true);
+    public static final Block NATURAL_CLAY_POT = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)),"natural_clay_pot",true);
+    public static final Block CLAY_POT_WRITING = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)),"clay_pot_writing",true);
+    public static final Block NATURAL_CLAY_POT_WRITING = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)),"natural_clay_pot_writing",true);
+    public static final Block BLUE_CLAY_POT = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)),"blue_clay_pot",true);
+    public static final Block NATURAL_BLUE_CLAY_POT = register(new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)),"natural_blue_clay_pot",true);
 
     public static void initialize() {}
 

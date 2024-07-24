@@ -1,6 +1,8 @@
 package net.nieadni.hyliacraft.block.custom;
 
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.*;
@@ -8,10 +10,15 @@ import net.minecraft.world.BlockView;
 
 import java.util.stream.Stream;
 
-public class PotBlock extends Block {
+public class PotBlock extends TransparentBlock {
 
     public PotBlock(Settings settings) {
-        super(settings);
+        super(settings
+                .sounds(BlockSoundGroup.GLASS)
+                .breakInstantly()
+                .nonOpaque()
+                .pistonBehavior(PistonBehavior.DESTROY)
+        );
     }
 
     @Override

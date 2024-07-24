@@ -44,6 +44,11 @@ public class HCItemGroup {
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
                         entries.add(HCBlocks.CLAY_POT.asItem());
+                        entries.add(HCBlocks.NATURAL_CLAY_POT.asItem());
+                        entries.add(HCBlocks.CLAY_POT_WRITING.asItem());
+                        entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING.asItem());
+                        entries.add(HCBlocks.BLUE_CLAY_POT.asItem());
+                        entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT.asItem());
                     }).build());
 
 
