@@ -1,7 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "clay_pot",
-	"render_type": "cutout",
+	"parent": "hyliacraft:block/clay_pot",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "hyliacraft:block/clay_pot",

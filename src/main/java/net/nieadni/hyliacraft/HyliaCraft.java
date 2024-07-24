@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.render.RenderLayer;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.data.HCLanguageProvider;
 import net.nieadni.hyliacraft.data.HCModelProvider;
@@ -32,5 +34,13 @@ public class HyliaCraft implements ModInitializer {
 		HCItemGroup.registerItemGroups();
 		HCItems.registerHCItems();
 		HCFoodComponents.registerFoodComponents();
+
+		// For adding RenderLayers to custom blocks
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.CLAY_POT, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.CLAY_POT_WRITING, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.BLUE_CLAY_POT, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT_WRITING, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_BLUE_CLAY_POT, RenderLayer.getCutout());
 	}
 }
