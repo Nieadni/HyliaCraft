@@ -8,9 +8,10 @@ public class HCDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+		pack.addProvider(HCBlockLootProvider::new);
+		pack.addProvider(HCItemTagProvider::new);
 		pack.addProvider(HCLanguageProvider::new);
 		pack.addProvider(HCModelProvider::new);
-		pack.addProvider(HCItemTagProvider::new);
-		pack.addProvider(HCBlockLootProvider::new);
+		pack.addProvider(HCRecipeProvider::new);
 	}
 }
