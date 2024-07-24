@@ -2,6 +2,7 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.data.HCLanguageProvider;
 import net.nieadni.hyliacraft.data.HCModelProvider;
 import net.nieadni.hyliacraft.item.HCFoodComponents;
@@ -25,6 +26,7 @@ public class HyliaCraft implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		HCItems.initialize();
+		HCBlocks.initialize();
 
 		// Loggers to make sure main classes are working.
 		HCItemGroup.registerItemGroups();

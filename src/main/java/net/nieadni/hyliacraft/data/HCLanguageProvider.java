@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -41,7 +42,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** BLOCKS **/
 
-        //a
+        translationBuilder.add(HCBlocks.CLAY_POT, "Clay Pot");
 
         /** Components **/
 

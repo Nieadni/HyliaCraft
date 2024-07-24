@@ -29,13 +29,21 @@ public class HCItems extends Items {
 
     /** Weapons and Tools **/
 
+    // Majoras Mask
+    // Pumpkin Mask
+
+    // Slingshot
+    // Iron Bow
+    // Boomerang
+    // Gale Boomerang
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(GoddessSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessSwordItem.createAttributeModifiers(GoddessSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_sword");
     public static final Item GODDESS_LONGSWORD = register(new GoddessLongswordItem(GoddessLongswordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessLongswordItem.createAttributeModifiers(GoddessLongswordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_longsword");
     public static final Item GODDESS_WHITE_SWORD = register(new GoddessWhiteSwordItem(GoddessWhiteSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessWhiteSwordItem.createAttributeModifiers(GoddessWhiteSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_white_sword");
     public static final Item MASTER_SWORD = register(new MasterSwordItem(MasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(MasterSwordItem.createAttributeModifiers(MasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"master_sword");
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(TrueMasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(TrueMasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"true_master_sword");
-
     public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
+
+    // Paraglider
 
     /** Consumables **/
 
@@ -43,6 +51,7 @@ public class HCItems extends Items {
 
     /** Misc Items **/
 
+    // Rupee Pouch
     public static final Item GREEN_RUPEE = register(new RupeeItem("tooltip.green_rupee"), "green_rupee");
     public static final Item BLUE_RUPEE = register(new RupeeItem("tooltip.blue_rupee"), "blue_rupee");
     public static final Item YELLOW_RUPEE = register(new RupeeItem("tooltip.yellow_rupee"), "yellow_rupee");

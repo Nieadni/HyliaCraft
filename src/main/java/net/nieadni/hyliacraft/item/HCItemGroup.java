@@ -7,6 +7,7 @@ import net.minecraft.registry.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.block.HCBlocks;
 
 public class HCItemGroup {
     public static final ItemGroup GEAR_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -42,7 +43,7 @@ public class HCItemGroup {
                         entries.add(HCItems.ORANGE_RUPEE);
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
-
+                        entries.add(HCBlocks.CLAY_POT.asItem());
                     }).build());
 
 
