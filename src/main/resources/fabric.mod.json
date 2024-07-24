@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
           "net.nieadni.hyliacraft.data.HCDataGenerator"
+		],
+		"client": [
+			"net.nieadni.hyliacraft.client.HyliaCraftClient"
 		]
 	},
 	"mixins": [

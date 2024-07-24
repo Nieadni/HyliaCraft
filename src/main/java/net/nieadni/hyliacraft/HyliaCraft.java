@@ -34,13 +34,5 @@ public class HyliaCraft implements ModInitializer {
 		HCItemGroup.registerItemGroups();
 		HCItems.registerHCItems();
 		HCFoodComponents.registerFoodComponents();
-
-		// For adding RenderLayers to custom blocks
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.CLAY_POT, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.CLAY_POT_WRITING, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.BLUE_CLAY_POT, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT_WRITING, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_BLUE_CLAY_POT, RenderLayer.getCutout());
 	}
 }
