@@ -13,7 +13,7 @@
 		"issues": "https://github.com/Nieadni/HyliaCraft/issues",
 		"sources": "https://github.com/Nieadni/HyliaCraft"
 	},
-	"license": "CC0-1.0",
+	"license": "All-Rights-Reserved",
 	"icon": "assets/hyliacraft/icon.png",
 	"environment": "*",
 	"entrypoints": {
