@@ -12,12 +12,12 @@ public class MajorasMaskModel extends GeoModel<MajorasMaskItem> {
     }
 
     @Override
-    public Identifier getTextureResource(MajorasMaskItem object) {
+    public Identifier getTextureResource(MajorasMaskItem animatable) {
         return new Identifier(HyliaCraft.MOD_ID, "textures/models/armor/majoras_mask.png");
     }
 
     @Override
-    public Identifier getAnimationResource(MajorasMaskItem mask) {
+    public Identifier getAnimationResource(MajorasMaskItem animatable) {
         return null;
     }
 }
