@@ -15,7 +15,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import net.nieadni.hyliacraft.item.materials.GoddessWhiteSwordMaterial;
 
 public class GoddessWhiteSwordItem extends SwordItem {

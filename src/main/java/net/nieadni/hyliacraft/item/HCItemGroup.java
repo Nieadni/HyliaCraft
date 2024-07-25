@@ -3,7 +3,8 @@ package net.nieadni.hyliacraft.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
@@ -14,6 +15,8 @@ public class HCItemGroup {
             Identifier.of(HyliaCraft.MOD_ID, "1-gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
+                        entries.add(HCItems.MAJORAS_MASK);
+
                         entries.add(HCItems.GODDESS_SWORD);
                         entries.add(HCItems.GODDESS_LONGSWORD);
                         entries.add(HCItems.GODDESS_WHITE_SWORD);

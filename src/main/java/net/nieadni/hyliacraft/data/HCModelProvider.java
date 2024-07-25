@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
-import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.HCItems;
 
 public class HCModelProvider extends FabricModelProvider {
@@ -21,6 +20,8 @@ public class HCModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+
+        itemModelGenerator.register(HCItems.MAJORAS_MASK, Models.GENERATED);
 
         itemModelGenerator.register(HCItems.GODDESS_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.GODDESS_LONGSWORD, Models.HANDHELD);
