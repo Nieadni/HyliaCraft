@@ -1,12 +1,8 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.render.RenderLayer;
 import net.nieadni.hyliacraft.block.HCBlocks;
-import net.nieadni.hyliacraft.data.HCLanguageProvider;
-import net.nieadni.hyliacraft.data.HCModelProvider;
+import net.nieadni.hyliacraft.item.HCArmourMaterials;
 import net.nieadni.hyliacraft.item.HCFoodComponents;
 import net.nieadni.hyliacraft.item.HCItemGroup;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -34,5 +30,6 @@ public class HyliaCraft implements ModInitializer {
 		HCFoodComponents.registerFoodComponents();
 		HCItemGroup.registerItemGroups();
 		HCItems.registerHCItems();
+		HCArmourMaterials.initialize();
 	}
 }

@@ -12,12 +12,8 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.StringIdentifiable;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
-
-import java.util.Timer;
-import java.util.logging.Level;
 
 public class GoddessSwordItem extends SwordItem {
     public GoddessSwordItem(GoddessSwordMaterial toolMaterial, Settings settings) {

@@ -1,23 +1,17 @@
 package net.nieadni.hyliacraft.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.*;
-import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.world.World;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
 import net.nieadni.hyliacraft.item.custom.*;
 import net.nieadni.hyliacraft.item.materials.*;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class HCItems extends Items {
 
@@ -29,7 +23,7 @@ public class HCItems extends Items {
 
     /** Weapons and Tools **/
 
-    // Majoras Mask
+    public static final Item MAJORAS_MASK = register(new MajorasMaskItem(HCArmourMaterials.MAJORAS_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MAJORAS_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.RARE).maxDamage(11*60)), "majoras_mask");
     // Pumpkin Mask
 
     // Slingshot

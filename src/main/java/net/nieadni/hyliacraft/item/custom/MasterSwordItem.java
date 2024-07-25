@@ -13,7 +13,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
 
 public class MasterSwordItem extends SwordItem {

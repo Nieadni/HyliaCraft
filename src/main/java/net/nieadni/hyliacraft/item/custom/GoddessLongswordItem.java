@@ -14,7 +14,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.materials.GoddessLongswordMaterial;
-import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 
 public class GoddessLongswordItem extends SwordItem {
     public GoddessLongswordItem(GoddessLongswordMaterial toolMaterial, Settings settings) {
