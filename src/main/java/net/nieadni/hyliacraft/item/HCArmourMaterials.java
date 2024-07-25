@@ -2,6 +2,7 @@ package net.nieadni.hyliacraft.item;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public enum HCArmourMaterials extends ArmorMaterial {
+public class HCArmourMaterials {
 
     public static void initialize() {};
     public static final int MAJORAS_MASK_DURABILITY_MULTIPLIER = 60;
@@ -40,8 +41,8 @@ public enum HCArmourMaterials extends ArmorMaterial {
             ),
             // Enchantability //
             35,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
-            () -> Ingredient.ofItems(Items.NETHERITE_INGOT),
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+            () -> Ingredient.ofItems(Items.AIR),
             2.0F,
             0.5F,
             false);

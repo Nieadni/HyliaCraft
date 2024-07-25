@@ -52,6 +52,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** Components **/
 
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
+
         translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
         translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");
         translationBuilder.add("tooltip.yellow_rupee", "Worth 10 Rupees");
