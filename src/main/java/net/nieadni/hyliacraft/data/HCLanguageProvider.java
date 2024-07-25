@@ -3,7 +3,6 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
-import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItems;
 
@@ -19,6 +18,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
 
         /** ITEMS **/
+        translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
         translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");
@@ -51,6 +51,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
 
         /** Components **/
+
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
 
         translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
         translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");

@@ -7,7 +7,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
-import java.util.Properties;
 
 public class RupeeItem extends Item {
     private final String tooltip;

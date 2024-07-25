@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.materials.GoddessLongswordMaterial;
-import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 
 public class GoddessLongswordItem extends SwordItem {
     public GoddessLongswordItem() {
