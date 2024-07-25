@@ -5,11 +5,13 @@
 	"name": "HyliaCraft",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Nieadni, EpicVon2468"
+		"Nieadni",
+		"EpicVon2468"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Nieadni/HyliaCraft",
+		"issues": "https://github.com/Nieadni/HyliaCraft/issues",
+		"sources": "https://github.com/Nieadni/HyliaCraft"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/hyliacraft/icon.png",
@@ -29,13 +31,10 @@
 		"hyliacraft.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
+		"fabricloader": "*",
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*",
 		"geckolib": ">=4.5.7"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
