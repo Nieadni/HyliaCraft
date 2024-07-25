@@ -8,12 +8,12 @@ import software.bernie.geckolib.model.GeoModel;
 public class MajorasMaskModel extends GeoModel<MajorasMaskItem> {
     @Override
     public Identifier getModelResource(MajorasMaskItem animatable) {
-        return new Identifier("hyliacraft", "geo/armor/majoras_mask.geo.json");
+        return new Identifier.of("hyliacraft", "geo/armor/majoras_mask.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(MajorasMaskItem animatable) {
-        return new Identifier(HyliaCraft.MOD_ID, "textures/models/armor/majoras_mask.png");
+        return new Identifier.of(HyliaCraft.MOD_ID, "textures/models/armor/majoras_mask.png");
     }
 
     @Override
