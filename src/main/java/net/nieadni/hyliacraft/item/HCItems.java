@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
@@ -36,11 +38,11 @@ public class HCItems extends Items {
     // Iron Bow
     // Boomerang
     // Gale Boomerang
-    public static final Item GODDESS_SWORD = register(new GoddessSwordItem(GoddessSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessSwordItem.createAttributeModifiers(GoddessSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_sword");
-    public static final Item GODDESS_LONGSWORD = register(new GoddessLongswordItem(GoddessLongswordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessLongswordItem.createAttributeModifiers(GoddessLongswordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_longsword");
-    public static final Item GODDESS_WHITE_SWORD = register(new GoddessWhiteSwordItem(GoddessWhiteSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessWhiteSwordItem.createAttributeModifiers(GoddessWhiteSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE)),"goddess_white_sword");
-    public static final Item MASTER_SWORD = register(new MasterSwordItem(MasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(MasterSwordItem.createAttributeModifiers(MasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"master_sword");
-    public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(TrueMasterSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(TrueMasterSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.EPIC)),"true_master_sword");
+    public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");
+    public static final Item GODDESS_LONGSWORD = register(new GoddessLongswordItem(),"goddess_longsword");
+    public static final Item GODDESS_WHITE_SWORD = register(new GoddessWhiteSwordItem(),"goddess_white_sword");
+    public static final Item MASTER_SWORD = register(new MasterSwordItem(),"master_sword");
+    public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
     public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
 
     // Paraglider

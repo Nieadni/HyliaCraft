@@ -1,43 +1,36 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
 
 public class MasterSwordItem extends SwordItem {
-    public MasterSwordItem(MasterSwordMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+    public MasterSwordItem() {
+        super(MasterSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(MasterSwordItem.createAttributeModifiers(MasterSwordMaterial.INSTANCE,1, -2.4F).with(
+                EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
+                new EntityAttributeModifier(SWORD_RANGE_MODIFIER_ID, 1, EntityAttributeModifier.Operation.ADD_VALUE),
+                AttributeModifierSlot.MAINHAND
+        )));
     }
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if (!world.isClient && entity instanceof PlayerEntity player) {
-            EntityAttributeInstance reachAttribute = player.getAttributeInstance(EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE);
-            assert reachAttribute != null;
-            boolean isReachModified = reachAttribute.hasModifier(SWORD_RANGE_MODIFIER_ID);
-            if (selected && !isReachModified) {
-                reachAttribute.addTemporaryModifier(new EntityAttributeModifier(
-                        SWORD_RANGE_MODIFIER_ID,
-                        +1,    // Sets the distance between you and the entity (base=3)
-                        EntityAttributeModifier.Operation.ADD_VALUE)
-                );
-            } else if (!selected && isReachModified) {
-                reachAttribute.removeModifier(SWORD_RANGE_MODIFIER_ID);
-            }
-        }
         NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
         int timer = nbt.contains(DURABILITY_KEY) ? nbt.getInt("durabilityHealTimer") : DURABILITY_TIMER;
         if (timer == 0) {
