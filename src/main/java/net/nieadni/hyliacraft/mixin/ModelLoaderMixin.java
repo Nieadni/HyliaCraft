@@ -25,8 +25,8 @@ public abstract class ModelLoaderMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     public void addDiggingMittModel(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<BlockStatesLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
-        this.addModelToBake(new ModelIdentifier(IdentifierAccessor.callConstructor(HyliaCraft.MOD_ID, "models/item/digging_mitt_3d"), "inventory"),
-                jsonUnbakedModels.get(IdentifierAccessor.callConstructor(HyliaCraft.MOD_ID, "models/item/digging_mitt_3d.json")));
+        this.addModelToBake(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_3d"), "inventory"),
+                jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_3d.json")));
     }
 }
 

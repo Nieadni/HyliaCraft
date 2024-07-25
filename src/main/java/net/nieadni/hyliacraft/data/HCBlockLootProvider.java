@@ -86,7 +86,7 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
                                 .conditionally(RandomChanceLootCondition.builder(25))
-                                .with(ItemEntry.builder(Items.STICK)))));
+                                .with(ItemEntry.builder(Items.ARROW)))));
     }
 
     @Override
