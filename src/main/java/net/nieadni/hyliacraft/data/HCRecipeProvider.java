@@ -8,7 +8,9 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -37,15 +39,30 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .pattern("CCC")
                 .pattern("CDC")
                 .pattern("CCC")
-                .input('C', Items.CLAY_BALL).input('D', Items.BLACK_DYE)
+                .input('C', Items.CLAY_BALL)
+                .input('D', Items.BLACK_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.BLUE_CLAY_POT,1)
                 .pattern("CCC")
                 .pattern("CDC")
                 .pattern("CCC")
-                .input('C', Items.CLAY_BALL).input('D', Items.BLUE_DYE)
+                .input('C', Items.CLAY_BALL)
+                .input('D', Items.BLUE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER,1)
+                .pattern("GWY")
+                .pattern("IRI")
+                .pattern("ISI")
+                .input('I', Items.STICK)
+                .input('S', Items.STRING)
+                .input('R', Items.RED_WOOL)
+                .input('W', Items.WHITE_DYE)
+                .input('G', Items.GREEN_DYE)
+                .input('Y', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
                 .offerTo(exporter);
     }
 }

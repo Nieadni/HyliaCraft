@@ -25,8 +25,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.GODDESS_WHITE_SWORD, "Goddess White Sword");
         translationBuilder.add(HCItems.MASTER_SWORD, "Master Sword");
         translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
-
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
+        translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 

@@ -24,20 +24,15 @@ public class HCItemGroup {
                         entries.add(HCItems.TRUE_MASTER_SWORD);
 
                         entries.add(HCItems.DIGGING_MITT);
-
-                    }).build());
-    public static final ItemGroup CONSUMABLES_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "2-consumables"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.consumables"))
-                    .icon(() -> new ItemStack(HCItems.PUMPKIN_SOUP)).entries((displayContext, entries) -> {
-                        entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.PARAGLIDER);
 
                     }).build());
 
     public static final ItemGroup MISC_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "3-misc"),
+            Identifier.of(HyliaCraft.MOD_ID, "2-misc"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.misc"))
                     .icon(() -> new ItemStack(HCItems.GREEN_RUPEE)).entries((displayContext, entries) -> {
+                        entries.add(HCItems.PUMPKIN_SOUP);
                         entries.add(HCItems.GREEN_RUPEE);
                         entries.add(HCItems.BLUE_RUPEE);
                         entries.add(HCItems.YELLOW_RUPEE);

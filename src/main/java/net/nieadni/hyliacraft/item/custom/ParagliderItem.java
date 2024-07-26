@@ -21,7 +21,7 @@ public class ParagliderItem extends Item {
             ItemStack mainHandStack = player.getMainHandStack();
             if (mainHandStack.isOf(this.asItem())) {
 
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 5, 50, false, false, false));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 5, 80, false, false, false));
 
             }
         }
