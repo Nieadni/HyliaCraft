@@ -40,6 +40,10 @@ public class HCItemGroup {
                         entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
 
                         entries.add(HCBlocks.ARMORANTH);
+                        entries.add(HCBlocks.BLUE_NIGHTSHADE);
+                        entries.add(HCBlocks.SILENT_PRINCESS);
+                        entries.add(HCBlocks.SWIFT_VIOLETS);
+
                     }).build());
 
     public static final ItemGroup MISC_GROUP = Registry.register(Registries.ITEM_GROUP,

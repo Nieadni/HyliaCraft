@@ -89,6 +89,12 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .with(ItemEntry.builder(Items.ARROW)))));
         addDrop(HCBlocks.ARMORANTH);
         addPottedPlantDrops(HCBlocks.ARMORANTH_POT);
+        addDrop(HCBlocks.BLUE_NIGHTSHADE);
+        addPottedPlantDrops(HCBlocks.BLUE_NIGHTSHADE_POT);
+        addDrop(HCBlocks.SILENT_PRINCESS);
+        addPottedPlantDrops(HCBlocks.SILENT_PRINCESS_POT);
+        addDrop(HCBlocks.SWIFT_VIOLETS);
+        addPottedPlantDrops(HCBlocks.SWIFT_VIOLETS_POT);
     }
 
     @Override

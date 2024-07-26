@@ -70,5 +70,21 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(HCBlocks.ARMORANTH)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
                 .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.BLUE_DYE, 1)
+                .input(HCBlocks.BLUE_NIGHTSHADE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.BLUE_NIGHTSHADE))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 1)
+                .input(HCBlocks.SILENT_PRINCESS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SILENT_PRINCESS))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.PURPLE_DYE, 1)
+                .input(HCBlocks.SWIFT_VIOLETS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SWIFT_VIOLETS))
+                .offerTo(exporter);
+
     }
 }

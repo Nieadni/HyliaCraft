@@ -50,6 +50,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.NATURAL_BLUE_CLAY_POT, "Natural Blue Clay Pot");
 
         translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");
+        translationBuilder.add(HCBlocks.BLUE_NIGHTSHADE, "Blue Nightshade");
+        translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
+        translationBuilder.add(HCBlocks.SWIFT_VIOLETS, "Swift Violets");
 
         /** Components **/
 
