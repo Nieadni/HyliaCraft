@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -63,6 +64,11 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('G', Items.GREEN_DYE)
                 .input('Y', Items.YELLOW_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
+                .input(HCBlocks.ARMORANTH)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
                 .offerTo(exporter);
     }
 }

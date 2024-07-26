@@ -2,6 +2,5 @@
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
     "plant": "hyliacraft:block/armoranth"
-  },
-  "render_type": "cutout"
+  }
 }

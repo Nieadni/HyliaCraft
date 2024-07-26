@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class ParagliderItem extends Item {
 
+    //TODO: Make it so you cant use items while using Paraglider / Make Paraglider not work while using an item (so you cant fire like 999999999 arrows)
+
     public ParagliderItem(Settings settings) {
         super(settings);
     }
@@ -20,9 +22,7 @@ public class ParagliderItem extends Item {
 
             ItemStack mainHandStack = player.getMainHandStack();
             if (mainHandStack.isOf(this.asItem())) {
-
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 5, 80, false, false, false));
-
             }
         }
     }

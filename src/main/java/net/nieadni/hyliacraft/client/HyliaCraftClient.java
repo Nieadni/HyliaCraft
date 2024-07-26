@@ -16,6 +16,8 @@ public class HyliaCraftClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_CLAY_POT_WRITING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(HCBlocks.NATURAL_BLUE_CLAY_POT, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), HCBlocks.ARMORANTH, HCBlocks.ARMORANTH_POT);
     }
 
 }

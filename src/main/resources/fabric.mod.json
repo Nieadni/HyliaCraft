@@ -21,7 +21,7 @@
 			"net.nieadni.hyliacraft.HyliaCraft"
 		],
 		"fabric-datagen": [
-          "net.nieadni.hyliacraft.data.HCDataGenerator"
+          "net.nieadni.hyliacraft.data.DataGenerator"
 		],
 		"client": [
 			"net.nieadni.hyliacraft.client.HyliaCraftClient"

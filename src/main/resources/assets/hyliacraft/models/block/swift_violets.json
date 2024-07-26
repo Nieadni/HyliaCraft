@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "hyliacraft:block/swift_violets"
-  },
-  "render_type": "cutout"
-}

@@ -87,6 +87,8 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
                                 .conditionally(RandomChanceLootCondition.builder(25))
                                 .with(ItemEntry.builder(Items.ARROW)))));
+        addDrop(HCBlocks.ARMORANTH);
+        addPottedPlantDrops(HCBlocks.ARMORANTH_POT);
     }
 
     @Override

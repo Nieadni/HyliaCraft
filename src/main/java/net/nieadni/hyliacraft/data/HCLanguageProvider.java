@@ -49,6 +49,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.BLUE_CLAY_POT, "Blue Clay Pot");
         translationBuilder.add(HCBlocks.NATURAL_BLUE_CLAY_POT, "Natural Blue Clay Pot");
 
+        translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");
 
         /** Components **/
 
@@ -67,7 +68,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
 
         translationBuilder.add("itemGroup.hyliacraft.gear", "HC Gear");
-        translationBuilder.add("itemGroup.hyliacraft.consumables", "HC Consumables");
+        translationBuilder.add("itemGroup.hyliacraft.blocks", "HC Blocks");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
     }
 }

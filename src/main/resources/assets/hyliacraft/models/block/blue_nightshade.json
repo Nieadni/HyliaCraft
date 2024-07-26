@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "hyliacraft:block/blue_nightshade"
-  },
-  "render_type": "cutout"
-}

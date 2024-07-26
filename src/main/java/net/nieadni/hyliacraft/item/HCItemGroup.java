@@ -28,8 +28,22 @@ public class HCItemGroup {
 
                     }).build());
 
+    public static final ItemGroup BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(HyliaCraft.MOD_ID, "2-blocks"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.blocks"))
+                    .icon(() -> new ItemStack(HCBlocks.CLAY_POT)).entries((displayContext, entries) -> {
+                        entries.add(HCBlocks.CLAY_POT.asItem());
+                        entries.add(HCBlocks.NATURAL_CLAY_POT);
+                        entries.add(HCBlocks.CLAY_POT_WRITING);
+                        entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING);
+                        entries.add(HCBlocks.BLUE_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
+
+                        entries.add(HCBlocks.ARMORANTH);
+                    }).build());
+
     public static final ItemGroup MISC_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "2-misc"),
+            Identifier.of(HyliaCraft.MOD_ID, "3-misc"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.misc"))
                     .icon(() -> new ItemStack(HCItems.GREEN_RUPEE)).entries((displayContext, entries) -> {
                         entries.add(HCItems.PUMPKIN_SOUP);
@@ -41,12 +55,6 @@ public class HCItemGroup {
                         entries.add(HCItems.ORANGE_RUPEE);
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
-                        entries.add(HCBlocks.CLAY_POT.asItem());
-                        entries.add(HCBlocks.NATURAL_CLAY_POT.asItem());
-                        entries.add(HCBlocks.CLAY_POT_WRITING.asItem());
-                        entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING.asItem());
-                        entries.add(HCBlocks.BLUE_CLAY_POT.asItem());
-                        entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT.asItem());
                     }).build());
 
 

@@ -1,4 +1,5 @@
 {
+  "block.hyliacraft.armoranth": "Armoranth",
   "block.hyliacraft.blue_clay_pot": "Blue Clay Pot",
   "block.hyliacraft.clay_pot": "Clay Pot",
   "block.hyliacraft.clay_pot_writing": "Clay Pot with Writing",
@@ -22,7 +23,7 @@
   "item.hyliacraft.silver_rupee": "Silver Rupee",
   "item.hyliacraft.true_master_sword": "True Master Sword",
   "item.hyliacraft.yellow_rupee": "Yellow Rupee",
-  "itemGroup.hyliacraft.consumables": "HC Consumables",
+  "itemGroup.hyliacraft.blocks": "HC Blocks",
   "itemGroup.hyliacraft.gear": "HC Gear",
   "itemGroup.hyliacraft.misc": "HC Misc",
   "tooltip.blue_rupee": "Worth 5 Rupees",
