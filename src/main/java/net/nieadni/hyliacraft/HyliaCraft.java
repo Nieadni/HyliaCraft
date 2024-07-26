@@ -1,6 +1,7 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCArmourMaterials;
 import net.nieadni.hyliacraft.item.HCFoodComponents;
@@ -16,7 +17,7 @@ public class HyliaCraft implements ModInitializer {
 	public static final String MOD_ID = "hyliacraft";
 	public static final Logger LOGGER = LoggerFactory.getLogger("hyliacraft");
 
-	@Override
+    @Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.

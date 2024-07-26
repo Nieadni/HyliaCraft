@@ -1,6 +1,5 @@
 # HyliaCraft
 [![Crowdin](https://badges.crowdin.net/hyliacraft/localized.svg)](https://crowdin.com/project/hyliacraft)
-^This is the old Crowdin 
 
 **License**
 
