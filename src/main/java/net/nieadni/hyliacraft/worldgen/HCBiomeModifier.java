@@ -6,6 +6,8 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class HCBiomeModifier {
 
+    /**
+
     public static void load() {
 
         BiomeModifications.addFeature(
@@ -15,4 +17,6 @@ public class HCBiomeModifier {
         );
 
     }
+
+     **/
 }

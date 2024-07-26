@@ -22,7 +22,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
-		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, HCConfiguredFeatures::bootstrap);
-		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, HCPlacedFeatures::bootstrap);
+		//registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, HCConfiguredFeatures::bootstrap);
+		//registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, HCPlacedFeatures::bootstrap);
 	}
 }

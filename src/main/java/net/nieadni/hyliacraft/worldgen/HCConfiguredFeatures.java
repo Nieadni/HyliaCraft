@@ -4,12 +4,15 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 
 public class HCConfiguredFeatures {
+
+    /**
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> ARMORANTH_KEY = registerKey("armoranth");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ARMORANTH_PATCH_KEY = registerKey("armoranth_patch");
@@ -30,13 +33,15 @@ public class HCConfiguredFeatures {
     }
 
     private static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, HyliaCraft.id(name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(HyliaCraft.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,
                                                                                    RegistryKey<ConfiguredFeature<?, ?>> key,
                                                                                    F feature,
                                                                                    FC featureConfig) {
-        context.register(key, new ConfiguredFeature<>(feature, featureConfig));
+        //context.register(key, new ConfiguredFeature<>(feature, featureConfig));
     }
+
+    **/
 }
