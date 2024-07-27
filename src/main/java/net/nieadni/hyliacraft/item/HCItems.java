@@ -34,8 +34,9 @@ public class HCItems extends Items {
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
     public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
 
-    // Paraglider
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
+
+    public static final Item HYLIAN_SHIELD = register(new HylianShieldItem(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC).maxDamage(1348)),"hylian_shield");
 
     /** Consumables **/
 

@@ -7,8 +7,8 @@
 	],
 	"client": [
 		"ItemRendererAccessor",
-		"ItemRendererMixin",
-		"ModelLoaderMixin"
+		"DiggingMittItemRendererMixin",
+      "DiggingMittModelLoaderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

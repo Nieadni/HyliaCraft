@@ -29,6 +29,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
+        translationBuilder.add(HCItems.HYLIAN_SHIELD, "Hylian Shield");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 
@@ -62,6 +63,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
 
+        translationBuilder.add("tooltip.hyliacraft.hylian_shield1", "A shield passed down through the Hyrulean royal family, along with the legend of the hero who wielded it.");
+        translationBuilder.add("tooltip.hyliacraft.hylian_shield2", "Its defensive capabilities and durability outshine all other shields.");
+
         translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
         translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");
         translationBuilder.add("tooltip.yellow_rupee", "Worth 10 Rupees");
@@ -75,5 +79,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.gear", "HC Gear");
         translationBuilder.add("itemGroup.hyliacraft.blocks", "HC Blocks");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
+
     }
 }
