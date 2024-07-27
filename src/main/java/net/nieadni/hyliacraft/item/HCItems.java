@@ -1,9 +1,6 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -27,7 +24,7 @@ public class HCItems extends Items {
     // Pumpkin Mask
 
     // Slingshot
-    // Iron Bow
+    public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");
     // Boomerang
     // Gale Boomerang
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");

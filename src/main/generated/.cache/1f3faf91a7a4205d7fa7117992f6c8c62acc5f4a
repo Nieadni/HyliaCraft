@@ -1,7 +1,8 @@
-// 1.21	2024-07-26T21:14:25.8506428	HyliaCraft/Tags for minecraft:item
+// 1.21	2024-07-27T20:11:34.0605312	HyliaCraft/Tags for minecraft:item
 713e3155eb5a585e483c02e4f74062d2102980cf data\minecraft\tags\item\enchantable\head_armor.json
 713e3155eb5a585e483c02e4f74062d2102980cf data\minecraft\tags\item\head_armor.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\enchantable\sword.json
 5fe90ba3340d954a11f45890fb9d9052bc4214c8 data\minecraft\tags\item\shovels.json
 5fe90ba3340d954a11f45890fb9d9052bc4214c8 data\minecraft\tags\item\enchantable\mining.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\swords.json
+73642de975e47da6542da0bc89d414a3c168fbe3 data\minecraft\tags\item\enchantable\bow.json
