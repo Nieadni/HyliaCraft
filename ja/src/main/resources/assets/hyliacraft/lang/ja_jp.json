@@ -33,12 +33,12 @@
   "tooltip.gold_rupee": "300ルピーの価値",
   "tooltip.green_rupee": "1ルピーの価値",
   "tooltip.hyliacraft.majoras_mask1": "古代から伝わる不気味な面。",
-  "tooltip.hyliacraft.majoras_mask2": "Wearing it makes it harder for certain enemies to spot you.",
-  "tooltip.hyliacraft.majoras_mask3": "It's a rather rare find.",
-  "tooltip.hyliacraft.pumpkin_soup": "Popular in Skyloft for its nutrient content and revitalising properties",
-  "tooltip.orange_rupee": "Worth 100 Rupees",
-  "tooltip.purple_rupee": "Worth 50 Rupees",
-  "tooltip.red_rupee": "Worth 20 Rupees",
-  "tooltip.silver_rupee": "Worth 200 Rupees",
-  "tooltip.yellow_rupee": "Worth 10 Rupees"
+  "tooltip.hyliacraft.majoras_mask2": "これを身につけると、特定の敵に見つかりにくくなる。",
+  "tooltip.hyliacraft.majoras_mask3": "レアイテム！",
+  "tooltip.hyliacraft.pumpkin_soup": "スカイロフトでは、栄養価の高さと活性化作用で人気がある。",
+  "tooltip.orange_rupee": "100ルピーの価値",
+  "tooltip.purple_rupee": "50ルピーの価値",
+  "tooltip.red_rupee": "20ルピーの価値",
+  "tooltip.silver_rupee": "200ルピーの価値",
+  "tooltip.yellow_rupee": "10ルピーの価値"
 }
