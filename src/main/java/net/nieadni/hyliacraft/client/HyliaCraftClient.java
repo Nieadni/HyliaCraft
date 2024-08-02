@@ -22,6 +22,8 @@ public class HyliaCraftClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), HCBlocks.SILENT_PRINCESS, HCBlocks.SILENT_PRINCESS_POT);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), HCBlocks.SWIFT_VIOLETS, HCBlocks.SWIFT_VIOLETS_POT);
 
+        // Other
+        HCItemProperties.addCustomItemProperties();
     }
 
 }

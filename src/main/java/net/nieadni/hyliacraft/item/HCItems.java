@@ -1,9 +1,6 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -27,7 +24,7 @@ public class HCItems extends Items {
     // Pumpkin Mask
 
     // Slingshot
-    // Iron Bow
+    public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");
     // Boomerang
     // Gale Boomerang
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");
@@ -37,8 +34,9 @@ public class HCItems extends Items {
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
     public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
 
-    // Paraglider
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
+
+    public static final Item HYLIAN_SHIELD = register(new HylianShieldItem(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC).maxDamage(1348)),"hylian_shield");
 
     /** Consumables **/
 

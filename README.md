@@ -24,7 +24,8 @@ Ordered A to Z to avoid bias:
 * [DaughterOfTheMoon](https://www.planetminecraft.com/member/daughterofthemoon/) - For the Epona, Navi, Wolf Link, Skulltula, and OoT Cow Textures.
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Ordon Cucco, Ordon Goat, Mountain Goat, Keaton, and Flower Textures.
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, and Bokoblin Textures.
-* VeganNatureQueen
+* VeganNatureQueen - For the Paraglider Model
+* [GreenPeas](https://www.planetminecraft.com/texture-pack/legend-of-zelda-hylian-shield-model/) - For the Hylian Shield Model
 
 **Testers -**
 
@@ -32,4 +33,4 @@ Ordered A to Z to avoid bias:
 
 **Translators -**
 
-* insert name here
+* justabokoblin / Boko-Bro - German [de-de]

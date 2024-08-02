@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @Mixin(ModelLoader.class)
-public abstract class ModelLoaderMixin {
+public abstract class DiggingMittModelLoaderMixin {
 
     @Shadow protected abstract void addModelToBake(ModelIdentifier id, UnbakedModel model);
 
@@ -29,5 +29,3 @@ public abstract class ModelLoaderMixin {
                 jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_3d.json")));
     }
 }
-
-// THANK YOU #Deadlydiamond98

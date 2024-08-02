@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ItemRenderer.class)
-public abstract class ItemRendererMixin {
+public abstract class DiggingMittItemRendererMixin {
     @ModifyVariable(method = "renderItem",
             at=@At("HEAD"), argsOnly = true)
     private BakedModel itemRenderer(BakedModel model, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {

@@ -1,0 +1,37 @@
+{
+	"parent": "hyliacraft:item/hylian_shield",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"anvil_base": "minecraft:block/anvil_base",
+		"base": "hyliacraft:item/hylian_shield"
+	},
+	"display": {
+        "thirdperson_righthand": {
+        "rotation": [ 32, 32, 6 ],
+        "translation": [ 6.8, 1.32, -3.4 ]
+    },
+    "thirdperson_lefthand": {
+        "rotation": [ 32, -148, -6 ],
+        "translation": [ 6.8, 1.32, -2.4 ]
+    },
+		"firstperson_righthand": {
+			"rotation": [-90, 82.25, 90],
+			"translation": [-0.2, -0.5, -2.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [90, -82.5, 90],
+			"translation": [-0.2, -0.5, -2.25]
+		},
+		"ground": {
+			"translation": [3, 0, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"gui": {
+			"rotation": [0, -90, 0]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 0, -6]
+		}
+	}
+}
