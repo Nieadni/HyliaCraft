@@ -24,6 +24,7 @@ public class HCItemGroup {
                         entries.add(HCItems.TRUE_MASTER_SWORD);
                         entries.add(HCItems.HYLIAN_SHIELD);
                         entries.add(HCItems.IRON_BOW);
+                        entries.add(HCItems.FAIRY_BOW);
 
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.PARAGLIDER);

@@ -1,0 +1,6 @@
+{
+  "parent": "hyliacraft:item/fairy_bow",
+  "textures": {
+    "layer0": "hyliacraft:item/fairy_bow_pulling_1"
+  }
+}

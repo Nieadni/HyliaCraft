@@ -25,6 +25,7 @@ public class HCItems extends Items {
 
     // Slingshot
     public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");
+    public static final Item FAIRY_BOW = register(new FairyBowItem((new Item.Settings().maxDamage(385))),"fairy_bow");
     // Boomerang
     // Gale Boomerang
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");

@@ -66,6 +66,17 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.FAIRY_BOW,1)
+                .pattern("LR")
+                .pattern("GB")
+                .pattern("LR")
+                .input('B', Items.BOW)
+                .input('L', Items.LAPIS_LAZULI)
+                .input('R', Items.REDSTONE)
+                .input('G', Items.GOLD_INGOT)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.BOW))
+                .offerTo(exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
                 .input(HCBlocks.ARMORANTH)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))

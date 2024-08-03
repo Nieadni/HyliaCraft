@@ -1,4 +1,4 @@
-// 1.21	2024-08-02T23:22:25.5571908	HyliaCraft/Recipes
+// 1.21	2024-08-03T21:08:52.6416821	HyliaCraft/Recipes
 a8aa7a4a8299f50055a0532b376ac48c2fa5a00f data\hyliacraft\recipe\purple_dye.json
 d7034d0f56281a870d900eda8c7c2e23f4933f96 data\hyliacraft\recipe\paraglider.json
 ae6f4bce4844cb3c4f883d6927dec9e750ce4b4a data\hyliacraft\advancement\recipes\decorations\clay_pot_writing.json
@@ -6,7 +6,9 @@ ae6f4bce4844cb3c4f883d6927dec9e750ce4b4a data\hyliacraft\advancement\recipes\dec
 bc45f2edcaadc6693abfb0582c44eea839c6f54e data\hyliacraft\recipe\white_dye.json
 ed8f3ebce82055075046401f66d79e17897c89f5 data\hyliacraft\advancement\recipes\decorations\blue_clay_pot.json
 6e897fe4c6c19c7bc3384c262aba949e33ff9c0c data\hyliacraft\recipe\blue_clay_pot.json
+241ef660d5e8981b8e7b8c7e6cb82c7871a95456 data\hyliacraft\advancement\recipes\tools\fairy_bow.json
 2190afbc61d34f625c5c7ff01e3aea6ec70e6b93 data\hyliacraft\advancement\recipes\misc\white_dye.json
+b66e9b4b5b56d531f9cbe2faafbf5c9edbb5a61c data\hyliacraft\recipe\fairy_bow.json
 f2685d017be1a15438becf6b269bce8914bb9152 data\hyliacraft\advancement\recipes\misc\purple_dye.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
 49a0087e271ee1d31a678c9b8c22d526fcded7f6 data\hyliacraft\advancement\recipes\misc\blue_dye.json
