@@ -1,11 +1,11 @@
-// 1.21	2024-08-03T21:08:52.639681	HyliaCraft/Model Definitions
+// 1.21	2024-08-03T21:30:00.3871241	HyliaCraft/Model Definitions
 209b898fd3de7f38de6fba4869357cfb731ea5cb assets\minecraft\models\block\armoranth_pot.json
 913c686afa436449d428e7ea3304fbe977d1f8f7 assets\hyliacraft\models\item\master_sword.json
 31aa3ee7743e2cfa555155e39608c10a7ed6362c assets\hyliacraft\models\block\blue_nightshade.json
-8db31329167a8e1213803c840a8962d3203ac2ab assets\hyliacraft\models\item\blue_rupee.json
 8c3ef7eb560ad5ba744a2b41056a8a2ce6b93259 assets\hyliacraft\models\item\pumpkin_soup.json
-ea67fc78956ca9dba7a9684714acd2b2e5241732 assets\hyliacraft\blockstates\swift_violets.json
+8db31329167a8e1213803c840a8962d3203ac2ab assets\hyliacraft\models\item\blue_rupee.json
 fb5579c9d39baf8296e83f755e49e38133d7cd43 assets\minecraft\blockstates\armoranth_pot.json
+ea67fc78956ca9dba7a9684714acd2b2e5241732 assets\hyliacraft\blockstates\swift_violets.json
 75fa42831357d4c4a4fdc098926adf9f24c9ae92 assets\hyliacraft\models\item\swift_violets.json
 4f485b25b52eaf3bb7d4522ab67b80ad463461ff assets\hyliacraft\models\item\green_rupee.json
 284bbc91553924d75c3a8a0c86c87d808886f14a assets\hyliacraft\models\item\blue_nightshade.json
@@ -17,8 +17,8 @@ d575d527634e4b4c303986fee7ab8625164bc277 assets\minecraft\blockstates\swift_viol
 e3891e3f658fb0114eb4b55f70394e18ddae4763 assets\hyliacraft\models\item\orange_rupee.json
 f1dacacd6c35625efa6fac11b060d23010bb4704 assets\minecraft\models\block\swift_violets_pot.json
 67e6252bd5cdb4818f44c8aba73fbd93d8a5a3a5 assets\hyliacraft\models\block\swift_violets.json
-c2760619d24c7ae4559a5984d532dbab440c7743 assets\hyliacraft\models\item\armoranth.json
 260cf3219a7e7e55d562b7094d16b946f6a0d88d assets\hyliacraft\models\item\silent_princess.json
+c2760619d24c7ae4559a5984d532dbab440c7743 assets\hyliacraft\models\item\armoranth.json
 b38dbe86a7c5f0b51eb20f439caa18bc1f451adf assets\hyliacraft\models\item\red_rupee.json
 b640c1bb323f01d48398d93d02e6efc953f2d3f4 assets\hyliacraft\models\item\yellow_rupee.json
 e4ccdff57e7e855e7847c441457ec8fd3a2e5a28 assets\hyliacraft\models\item\goddess_longsword.json
@@ -31,6 +31,7 @@ b8fa894d5c6c18938ecb640171e961fcf7cbd29e assets\minecraft\models\block\silent_pr
 1731d1af59bf6895fc7938f417b4c2171ca387e3 assets\hyliacraft\models\item\silver_rupee.json
 2fb4cf4cc4db3925e7c7e26193a862030408a625 assets\minecraft\blockstates\blue_nightshade_pot.json
 e9e30a648f3a8fda7aa0362358e91885a02c4f1b assets\hyliacraft\models\item\true_master_sword.json
+5f730a6050d4b832f06046d383e9a9845ce36ae2 assets\hyliacraft\models\item\pumpkin_mask.json
 a54796481aa37c891362cfe8614fd357cfe9f3b4 assets\minecraft\blockstates\silent_princess_pot.json
 1f6c2bb2c49141ae780d18653237355c5ebd2de3 assets\minecraft\models\block\blue_nightshade_pot.json
 6ec0009080ae9e4a889a594a7bdba705a6b38ee4 assets\hyliacraft\models\item\goddess_sword.json

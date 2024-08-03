@@ -3,9 +3,7 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
-import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -21,6 +19,8 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.MAJORAS_MASK);
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.MAJORAS_MASK);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.PUMPKIN_MASK);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.PUMPKIN_MASK);
 
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);

@@ -28,6 +28,7 @@ public class HCModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 
         itemModelGenerator.register(HCItems.MAJORAS_MASK, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PUMPKIN_MASK, Models.GENERATED);
 
         itemModelGenerator.register(HCItems.GODDESS_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.GODDESS_LONGSWORD, Models.HANDHELD);

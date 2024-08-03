@@ -1,14 +1,18 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
+import net.nieadni.hyliacraft.item.armour.PumpkinMaskItem;
 import net.nieadni.hyliacraft.item.custom.*;
-import net.nieadni.hyliacraft.item.materials.*;
+import net.nieadni.hyliacraft.item.materials.DiggingMittMaterial;
 
 public class HCItems extends Items {
 
@@ -21,7 +25,7 @@ public class HCItems extends Items {
     /** Weapons and Tools **/
 
     public static final Item MAJORAS_MASK = register(new MajorasMaskItem(HCArmourMaterials.MAJORAS_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MAJORAS_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "majoras_mask");
-    // Pumpkin Mask
+    public static final Item PUMPKIN_MASK = register(new PumpkinMaskItem(HCArmourMaterials.PUMPKIN_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PUMPKIN_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.UNCOMMON)), "pumpkin_mask");
 
     // Slingshot
     public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");

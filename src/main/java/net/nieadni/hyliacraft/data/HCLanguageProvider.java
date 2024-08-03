@@ -19,6 +19,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** ITEMS **/
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
+        translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
         translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");

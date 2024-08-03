@@ -5,7 +5,6 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.item.HCItems;
-import net.nieadni.hyliacraft.item.custom.HylianShieldItem;
 
 public class HCItemProperties {
 

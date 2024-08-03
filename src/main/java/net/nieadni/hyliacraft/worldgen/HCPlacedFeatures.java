@@ -1,20 +1,5 @@
 package net.nieadni.hyliacraft.worldgen;
 
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.blockpredicate.BlockPredicate;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.*;
-import net.nieadni.hyliacraft.HyliaCraft;
-
-import java.util.List;
-
 public class HCPlacedFeatures {
 
     /**
