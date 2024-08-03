@@ -1,7 +1,6 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCArmourMaterials;
 import net.nieadni.hyliacraft.item.HCFoodComponents;

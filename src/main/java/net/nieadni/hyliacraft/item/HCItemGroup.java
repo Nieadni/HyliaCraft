@@ -16,6 +16,7 @@ public class HCItemGroup {
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
                         entries.add(HCItems.MAJORAS_MASK);
+                        entries.add(HCItems.PUMPKIN_MASK);
 
                         entries.add(HCItems.GODDESS_SWORD);
                         entries.add(HCItems.GODDESS_LONGSWORD);
@@ -24,6 +25,7 @@ public class HCItemGroup {
                         entries.add(HCItems.TRUE_MASTER_SWORD);
                         entries.add(HCItems.HYLIAN_SHIELD);
                         entries.add(HCItems.IRON_BOW);
+                        entries.add(HCItems.FAIRY_BOW);
 
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.PARAGLIDER);

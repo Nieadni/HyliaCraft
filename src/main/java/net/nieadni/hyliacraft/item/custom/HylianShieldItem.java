@@ -1,12 +1,10 @@
 package net.nieadni.hyliacraft.item.custom;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Rarity;
 
 import java.util.List;
 

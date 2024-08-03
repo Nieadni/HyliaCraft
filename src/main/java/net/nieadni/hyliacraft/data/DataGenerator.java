@@ -3,9 +3,6 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
-import net.nieadni.hyliacraft.worldgen.HCConfiguredFeatures;
-import net.nieadni.hyliacraft.worldgen.HCPlacedFeatures;
 
 public class DataGenerator implements DataGeneratorEntrypoint {
 	@Override
