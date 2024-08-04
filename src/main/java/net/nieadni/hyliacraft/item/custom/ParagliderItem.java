@@ -1,18 +1,16 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.world.World;
+
 import org.jetbrains.annotations.NotNull;
 
 public class ParagliderItem extends Item {
 
     //TODO: Make it so you cant use items while using Paraglider / Make Paraglider not work while using an item (so you cant fire like 999999999 arrows)
-
     public ParagliderItem(Settings settings) {
         super(settings);
     }

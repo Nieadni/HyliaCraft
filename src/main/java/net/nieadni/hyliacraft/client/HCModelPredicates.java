@@ -1,14 +1,14 @@
 package net.nieadni.hyliacraft.client;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.item.BowItem;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+
 import net.nieadni.hyliacraft.item.HCItems;
 
-public class HCItemProperties {
+public class HCModelPredicates {
 
-    public static void addCustomItemProperties() {
+    public static void registerHCModelPredicates() {
         bowPulling(HCItems.IRON_BOW);
         bowPulling(HCItems.FAIRY_BOW);
 
@@ -31,5 +31,4 @@ public class HCItemProperties {
         ModelPredicateProviderRegistry.register(shield, Identifier.of("blocking"), (itemStack, level, livingEntity, i) ->
                 livingEntity != null && livingEntity.isUsingItem() && livingEntity.getActiveItem() == itemStack ? 1.0F : 0.0F);
     }
-
 }

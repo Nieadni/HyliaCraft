@@ -7,6 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.TagKey;
 
 public class GoddessWhiteSwordMaterial implements ToolMaterial {
+
     @Override
     public int getDurability() {
         return 2021;
@@ -34,7 +35,7 @@ public class GoddessWhiteSwordMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return Ingredient.empty();
     }
 
     @Override
@@ -43,5 +44,4 @@ public class GoddessWhiteSwordMaterial implements ToolMaterial {
     }
 
     public static final GoddessWhiteSwordMaterial INSTANCE = new GoddessWhiteSwordMaterial();
-
 }

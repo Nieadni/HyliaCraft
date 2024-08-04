@@ -4,10 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.component.type.ToolComponent;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.registry.tag.*;
 
 public class DiggingMittMaterial implements ToolMaterial {
+
     @Override
     public int getDurability() {
         return 1561;
@@ -35,7 +35,7 @@ public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return Ingredient.empty();
     }
 
     @Override
@@ -44,5 +44,4 @@ public class DiggingMittMaterial implements ToolMaterial {
     }
 
     public static final DiggingMittMaterial INSTANCE = new DiggingMittMaterial();
-
 }

@@ -1,16 +1,17 @@
 package net.nieadni.hyliacraft.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+
+import net.minecraft.item.*;
+import net.minecraft.registry.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 
 public class HCItemGroup {
+
     public static final ItemGroup GEAR_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HyliaCraft.MOD_ID, "1-gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
@@ -64,7 +65,6 @@ public class HCItemGroup {
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
                     }).build());
-
 
     public static void registerItemGroups() {
         HyliaCraft.LOGGER.info("Registering Item Groups for " + HyliaCraft.MOD_ID);

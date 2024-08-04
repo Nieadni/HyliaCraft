@@ -1,23 +1,21 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.AttributeModifierSlot;
-import net.minecraft.component.type.NbtComponent;
+import net.minecraft.component.type.*;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
+
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 
 public class GoddessSwordItem extends SwordItem {
+
     public GoddessSwordItem() {
         super(GoddessSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.RARE).attributeModifiers(createAttributeModifiers(GoddessSwordMaterial.INSTANCE, 1, -2.4F).with(
                 EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
@@ -46,7 +44,6 @@ public class GoddessSwordItem extends SwordItem {
     public static final String DURABILITY_KEY = "durabilityHealTimer";
 
     // Somehow exclude the Sweeping Edge enchantment from being put onto the sword
-
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;

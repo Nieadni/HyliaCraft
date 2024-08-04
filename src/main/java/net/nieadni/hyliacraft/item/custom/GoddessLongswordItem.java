@@ -4,17 +4,15 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
+
 import net.nieadni.hyliacraft.item.materials.GoddessLongswordMaterial;
 
 public class GoddessLongswordItem extends SwordItem {
+
     public GoddessLongswordItem() {
         super(GoddessLongswordMaterial.INSTANCE, new Item.Settings().attributeModifiers(createAttributeModifiers(GoddessLongswordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE));
     }

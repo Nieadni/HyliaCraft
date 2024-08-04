@@ -1,25 +1,19 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.item.*;
+import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+
 import net.nieadni.hyliacraft.HyliaCraft;
-import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
-import net.nieadni.hyliacraft.item.armour.PumpkinMaskItem;
+import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
 import net.nieadni.hyliacraft.item.materials.DiggingMittMaterial;
 
 public class HCItems extends Items {
 
     public static Item register(Item item, String id) {
-        Identifier itemID = Identifier.of(HyliaCraft.MOD_ID, id);
-        Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
-        return registeredItem;
+        return Registry.register(Registries.ITEM, Identifier.of(HyliaCraft.MOD_ID, id), item);
     }
 
     /** Weapons and Tools **/
@@ -62,7 +56,5 @@ public class HCItems extends Items {
 
     public static void registerHCItems() {
         HyliaCraft.LOGGER.info("Registering Mod Items for " + HyliaCraft.MOD_ID);
-    }
-    public static void initialize() {
     }
 }
