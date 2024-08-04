@@ -6,9 +6,11 @@
 		"ExampleMixin"
 	],
 	"client": [
-      "DiggingMittItemRendererMixin",
-      "DiggingMittModelLoaderMixin",
-      "ItemRendererAccessor"
+		"DiggingMittItemRendererMixin",
+		"DiggingMittModelLoaderMixin",
+		"MogmaMittItemRendererMixin",
+		"MogmaMittModelLoaderMixin",
+		"ItemRendererAccessor"
     ],
 	"injectors": {
 		"defaultRequire": 1
