@@ -30,6 +30,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.FAIRY_BOW, "Fairy Bow");
 
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
+        translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HYLIAN_SHIELD, "Hylian Shield");
 

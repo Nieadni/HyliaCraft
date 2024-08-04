@@ -29,6 +29,7 @@ public class HCItemGroups {
                         entries.add(HCItems.FAIRY_BOW);
 
                         entries.add(HCItems.DIGGING_MITT);
+                        entries.add(HCItems.MOGMA_MITT);
                         entries.add(HCItems.PARAGLIDER);
 
                     }).build());
