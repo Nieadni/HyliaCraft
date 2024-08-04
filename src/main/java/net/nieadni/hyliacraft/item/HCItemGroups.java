@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 
-public class HCItemGroup {
+public class HCItemGroups {
 
     public static final ItemGroup GEAR_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HyliaCraft.MOD_ID, "1-gear"),
@@ -66,7 +66,7 @@ public class HCItemGroup {
                         entries.add(HCItems.GOLD_RUPEE);
                     }).build());
 
-    public static void registerItemGroups() {
+    public static void registerHCItemGroups() {
         HyliaCraft.LOGGER.info("Registering Item Groups for " + HyliaCraft.MOD_ID);
     }
 }

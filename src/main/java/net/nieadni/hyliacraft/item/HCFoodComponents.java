@@ -14,7 +14,7 @@ public class HCFoodComponents {
         return (new FoodComponent.Builder()).nutrition(nutrition).saturationModifier(saturation).usingConvertsTo(Items.GLASS_BOTTLE);
     }
 
-    public static void registerFoodComponents() {
+    public static void registerHCFoodComponents() {
         HyliaCraft.LOGGER.info("Registering Food Components for " + HyliaCraft.MOD_ID);
     }
 }

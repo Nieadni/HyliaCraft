@@ -17,10 +17,10 @@ public class HyliaCraft implements ModInitializer {
 	public void onInitialize() {
 
 		HyliaCraft.LOGGER.info("HyliaCraft has been initialized!");
-		HCFoodComponents.registerFoodComponents();
-		HCItemGroup.registerItemGroups();
+		HCFoodComponents.registerHCFoodComponents();
+		HCItemGroups.registerHCItemGroups();
 		HCItems.registerHCItems();
 		HCBlocks.registerHCBlocks();
-		HCArmourMaterials.initialize();
+		HCArmourMaterials.registerHCArmourMaterials();
 	}
 }
