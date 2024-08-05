@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.*;
+import net.nieadni.hyliacraft.item.HCItemTags;
 
 import org.slf4j.*;
 
@@ -22,5 +23,6 @@ public class HyliaCraft implements ModInitializer {
 		HCItems.registerHCItems();
 		HCBlocks.registerHCBlocks();
 		HCArmourMaterials.registerHCArmourMaterials();
+		HCItemTags.registerHCItemTags();
 	}
 }

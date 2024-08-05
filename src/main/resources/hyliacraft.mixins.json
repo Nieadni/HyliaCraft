@@ -1,18 +1,19 @@
 {
-	"required": true,
-	"package": "net.nieadni.hyliacraft.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"client": [
-		"DiggingMittItemRendererMixin",
-		"DiggingMittModelLoaderMixin",
-		"MogmaMittItemRendererMixin",
-		"MogmaMittModelLoaderMixin",
-		"ItemRendererAccessor"
-    ],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "net.nieadni.hyliacraft.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EndermanEntityMixin",
+    "ExampleMixin"
+  ],
+  "client": [
+    "DiggingMittItemRendererMixin",
+    "DiggingMittModelLoaderMixin",
+    "ItemRendererAccessor",
+    "MogmaMittItemRendererMixin",
+    "MogmaMittModelLoaderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
