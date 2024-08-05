@@ -31,8 +31,8 @@ public class HCItems extends Items {
     public static final Item GODDESS_WHITE_SWORD = register(new GoddessWhiteSwordItem(),"goddess_white_sword");
     public static final Item MASTER_SWORD = register(new MasterSwordItem(),"master_sword");
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
-    public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F))),"digging_mitt");
-    public static final Item MOGMA_MITT = register(new MogmaMittItem(new Item.Settings().maxCount(1)),"mogma_mitt");
+    public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F)).rarity(Rarity.UNCOMMON)),"digging_mitt");
+    public static final Item MOGMA_MITT = register(new MogmaMittItem(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)),"mogma_mitt");
 
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
