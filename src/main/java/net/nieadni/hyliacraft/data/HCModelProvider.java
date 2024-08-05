@@ -36,8 +36,13 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.MASTER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.TRUE_MASTER_SWORD, Models.HANDHELD);
 
+        itemModelGenerator.register(HCItems.SLINGSHOT, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.BOOMERANG, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.GALE_BOOMERANG, Models.HANDHELD);
+
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
 
+        itemModelGenerator.register(HCItems.RUPEE_POUCH, Models.GENERATED);
         itemModelGenerator.register(HCItems.GREEN_RUPEE, Models.GENERATED);
         itemModelGenerator.register(HCItems.BLUE_RUPEE, Models.GENERATED);
         itemModelGenerator.register(HCItems.YELLOW_RUPEE, Models.GENERATED);

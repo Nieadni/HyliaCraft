@@ -25,8 +25,12 @@ public class HCItemGroups {
                         entries.add(HCItems.MASTER_SWORD);
                         entries.add(HCItems.TRUE_MASTER_SWORD);
                         entries.add(HCItems.HYLIAN_SHIELD);
+
+                        entries.add(HCItems.SLINGSHOT);
                         entries.add(HCItems.IRON_BOW);
                         entries.add(HCItems.FAIRY_BOW);
+                        entries.add(HCItems.BOOMERANG);
+                        entries.add(HCItems.GALE_BOOMERANG);
 
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);
@@ -56,7 +60,7 @@ public class HCItemGroups {
             Identifier.of(HyliaCraft.MOD_ID, "3-misc"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.misc"))
                     .icon(() -> new ItemStack(HCItems.GREEN_RUPEE)).entries((displayContext, entries) -> {
-                        entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.RUPEE_POUCH);
                         entries.add(HCItems.GREEN_RUPEE);
                         entries.add(HCItems.BLUE_RUPEE);
                         entries.add(HCItems.YELLOW_RUPEE);
@@ -65,6 +69,7 @@ public class HCItemGroups {
                         entries.add(HCItems.ORANGE_RUPEE);
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
+                        entries.add(HCItems.PUMPKIN_SOUP);
                     }).build());
 
     public static void registerHCItemGroups() {

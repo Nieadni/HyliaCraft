@@ -26,8 +26,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.GODDESS_WHITE_SWORD, "Goddess White Sword");
         translationBuilder.add(HCItems.MASTER_SWORD, "Master Sword");
         translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
+
         translationBuilder.add(HCItems.IRON_BOW, "Iron Bow");
         translationBuilder.add(HCItems.FAIRY_BOW, "Fairy Bow");
+        translationBuilder.add(HCItems.SLINGSHOT, "Slingshot");
+        translationBuilder.add(HCItems.BOOMERANG, "Boomerang");
+        translationBuilder.add(HCItems.GALE_BOOMERANG, "Gale Boomerang");
 
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
@@ -36,6 +40,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 
+        translationBuilder.add(HCItems.RUPEE_POUCH, "Rupee Pouch");
         translationBuilder.add(HCItems.GREEN_RUPEE, "Green Rupee");
         translationBuilder.add(HCItems.BLUE_RUPEE, "Blue Rupee");
         translationBuilder.add(HCItems.YELLOW_RUPEE, "Yellow Rupee");

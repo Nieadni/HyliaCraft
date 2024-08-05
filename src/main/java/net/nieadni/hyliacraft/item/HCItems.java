@@ -21,11 +21,11 @@ public class HCItems extends Items {
     public static final Item MAJORAS_MASK = register(new MajorasMaskItem(HCArmourMaterials.MAJORAS_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MAJORAS_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "majoras_mask");
     public static final Item PUMPKIN_MASK = register(new PumpkinMaskItem(HCArmourMaterials.PUMPKIN_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PUMPKIN_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.UNCOMMON)), "pumpkin_mask");
 
-    // Slingshot
+    public static final Item SLINGSHOT = register(new SlingshotItem(new Item.Settings().maxCount(1)),"slingshot");
     public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");
     public static final Item FAIRY_BOW = register(new FairyBowItem((new Item.Settings().maxDamage(385))),"fairy_bow");
-    // Boomerang
-    // Gale Boomerang
+    public static final Item BOOMERANG = register(new BoomerangItem(new Item.Settings().maxCount(1)),"boomerang");
+    public static final Item GALE_BOOMERANG = register(new BoomerangItem(new Item.Settings().maxCount(1)),"gale_boomerang");
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");
     public static final Item GODDESS_LONGSWORD = register(new GoddessLongswordItem(),"goddess_longsword");
     public static final Item GODDESS_WHITE_SWORD = register(new GoddessWhiteSwordItem(),"goddess_white_sword");
@@ -44,7 +44,7 @@ public class HCItems extends Items {
 
     /** Misc Items **/
 
-    // Rupee Pouch
+    public static final Item RUPEE_POUCH = register(new RupeePouchItem(new Item.Settings().maxCount(1)),"rupee_pouch");
     public static final Item GREEN_RUPEE = register(new RupeeItem("tooltip.green_rupee"), "green_rupee");
     public static final Item BLUE_RUPEE = register(new RupeeItem("tooltip.blue_rupee"), "blue_rupee");
     public static final Item YELLOW_RUPEE = register(new RupeeItem("tooltip.yellow_rupee"), "yellow_rupee");
