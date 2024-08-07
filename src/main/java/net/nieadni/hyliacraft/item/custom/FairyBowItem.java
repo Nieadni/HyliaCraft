@@ -14,9 +14,4 @@ public class FairyBowItem extends BowItem {
     public FairyBowItem(Settings settings) {
         super(settings);
     }
-
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
 }

@@ -2,11 +2,14 @@ package net.nieadni.hyliacraft.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 
@@ -33,4 +36,12 @@ public class PotBlock extends TransparentBlock {
                 Block.createCuboidShape(3.5, 0.1, 3.5, 3.5, 9.1, 12.5)
         ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
     }
+
+    protected void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
+        BlockPos blockPos = hit.getBlockPos();
+        if (!world.isClient && projectile.canModifyAt(world, blockPos) && projectile.canBreakBlocks(world)) {
+            world.breakBlock(blockPos, true, projectile);
+        }
+    }
+
 }
