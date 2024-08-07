@@ -8,11 +8,16 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class GoddessSwordItem extends SwordItem {
 
@@ -56,4 +61,9 @@ public class GoddessSwordItem extends SwordItem {
      * + 3/4's Normal Attack Damage
      * + 6 Second Cooldown
      */
+
+    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+    }
 }

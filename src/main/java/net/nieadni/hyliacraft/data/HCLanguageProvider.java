@@ -87,5 +87,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.blocks", "HC Blocks");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
 
+        translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");
     }
 }
