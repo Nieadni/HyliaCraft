@@ -48,6 +48,7 @@ public class HCItemGroups {
                         entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING);
                         entries.add(HCBlocks.BLUE_CLAY_POT);
                         entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
+                        entries.add(HCBlocks.HATENO_CLAY_POT);
 
                         entries.add(HCBlocks.ARMORANTH);
                         entries.add(HCBlocks.BLUE_NIGHTSHADE);

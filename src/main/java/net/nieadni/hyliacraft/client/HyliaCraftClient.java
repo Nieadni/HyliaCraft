@@ -20,12 +20,14 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.SILENT_PRINCESS_POT,
                 HCBlocks.SWIFT_VIOLETS,
                 HCBlocks.SWIFT_VIOLETS_POT,
+
                 HCBlocks.NATURAL_BLUE_CLAY_POT,
                 HCBlocks.NATURAL_CLAY_POT_WRITING,
                 HCBlocks.NATURAL_CLAY_POT,
                 HCBlocks.BLUE_CLAY_POT,
                 HCBlocks.CLAY_POT_WRITING,
-                HCBlocks.CLAY_POT
+                HCBlocks.CLAY_POT,
+                HCBlocks.HATENO_CLAY_POT
         );
         HCModelPredicates.registerHCModelPredicates();
     }

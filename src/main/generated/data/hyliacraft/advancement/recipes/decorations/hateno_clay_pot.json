@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hyliacraft:blue_clay_pot"
+        "recipe": "hyliacraft:hateno_clay_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hyliacraft:blue_clay_pot"
+      "hyliacraft:hateno_clay_pot"
     ]
   }
 }

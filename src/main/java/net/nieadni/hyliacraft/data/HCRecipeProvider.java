@@ -21,12 +21,6 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        /**
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT)
-                .input(Items.CLAY_BALL)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
-                .offerTo(exporter);
-         **/
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT,1)
                 .pattern("CCC")
@@ -35,21 +29,21 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('C', Items.CLAY_BALL)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT_WRITING,1)
-                .pattern("CCC")
-                .pattern("CDC")
-                .pattern("CCC")
-                .input('C', Items.CLAY_BALL)
-                .input('D', Items.BLACK_DYE)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT_WRITING, 1)
+                .input(HCBlocks.CLAY_POT)
+                .input(Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.CLAY_POT))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.BLUE_CLAY_POT,1)
-                .pattern("CCC")
-                .pattern("CDC")
-                .pattern("CCC")
-                .input('C', Items.CLAY_BALL)
-                .input('D', Items.BLUE_DYE)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY_BALL))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.BLUE_CLAY_POT, 1)
+                .input(HCBlocks.CLAY_POT)
+                .input(Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.CLAY_POT))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.HATENO_CLAY_POT, 1)
+                .input(HCBlocks.CLAY_POT)
+                .input(Items.LIGHT_BLUE_DYE)
+                .input(Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.CLAY_POT))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER,1)

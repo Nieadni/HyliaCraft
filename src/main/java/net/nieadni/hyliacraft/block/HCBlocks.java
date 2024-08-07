@@ -34,6 +34,7 @@ public class HCBlocks extends Blocks {
     public static final Block NATURAL_CLAY_POT_WRITING = registerBlock("natural_clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
     public static final Block BLUE_CLAY_POT = registerBlock("blue_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
     public static final Block NATURAL_BLUE_CLAY_POT = registerBlock("natural_blue_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block HATENO_CLAY_POT = registerBlock("hateno_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN)));
 
     public static final Block ARMORANTH = registerBlock("armoranth", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.RESISTANCE, 400)), AbstractBlock.Settings.create().mapColor(MapColor.MAGENTA).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ARMORANTH_POT = registerBlock("armoranth_pot", Blocks.createFlowerPotBlock(ARMORANTH));

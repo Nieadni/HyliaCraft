@@ -6,11 +6,14 @@
       "item": "hyliacraft:clay_pot"
     },
     {
-      "item": "minecraft:black_dye"
+      "item": "minecraft:light_blue_dye"
+    },
+    {
+      "item": "minecraft:brown_dye"
     }
   ],
   "result": {
     "count": 1,
-    "id": "hyliacraft:clay_pot_writing"
+    "id": "hyliacraft:hateno_clay_pot"
   }
 }
