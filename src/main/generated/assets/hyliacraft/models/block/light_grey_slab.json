@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "hyliacraft:block/light_grey_planks",
+    "side": "hyliacraft:block/light_grey_planks",
+    "top": "hyliacraft:block/light_grey_planks"
+  }
+}
