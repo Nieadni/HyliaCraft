@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
@@ -22,6 +23,7 @@ public class HyliaCraft implements ModInitializer {
 		HCItemGroups.registerHCItemGroups();
 		HCItems.registerHCItems();
 		HCBlocks.registerHCBlocks();
+		HCColouredBlocks.registerHCColouredBlocks();
 		HCArmourMaterials.registerHCArmourMaterials();
 		HCItemTags.registerHCItemTags();
 	}

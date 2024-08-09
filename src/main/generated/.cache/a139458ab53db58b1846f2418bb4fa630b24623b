@@ -1,3 +1,6 @@
-// 1.21	2024-08-07T22:40:52.8470577	HyliaCraft/Tags for minecraft:block
+// 1.21	2024-08-09T11:26:08.6024935	HyliaCraft/Tags for minecraft:block
 63e54d08e5d4762a2742eabe4da24a989ecd1d41 data\minecraft\tags\block\small_flowers.json
+ab299d037da63c193bd6b9788fc18e98dd6407e3 data\minecraft\tags\block\slabs.json
+cec32e3383c99c8415242b6abe037f172c0881ed data\minecraft\tags\block\walls.json
 a9a29f28935fd2149c6bbae71f957854e738de9b data\minecraft\tags\block\flower_pots.json
+db7575b93eef9f53208c3fc5884fa93dd0057f3e data\minecraft\tags\block\stairs.json

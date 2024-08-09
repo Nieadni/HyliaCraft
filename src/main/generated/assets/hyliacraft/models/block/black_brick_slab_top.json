@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "hyliacraft:block/black_bricks",
+    "side": "hyliacraft:block/black_bricks",
+    "top": "hyliacraft:block/black_bricks"
+  }
+}

@@ -14,6 +14,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -95,6 +96,74 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(HCBlocks.SILENT_PRINCESS_POT);
         addDrop(HCBlocks.SWIFT_VIOLETS);
         addPottedPlantDrops(HCBlocks.SWIFT_VIOLETS_POT);
+
+        // Coloured Blocks
+
+        addDrop(HCColouredBlocks.WHITE_BRICKS);
+        addDrop(HCColouredBlocks.WHITE_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.WHITE_BRICK_SLAB);
+        addDrop(HCColouredBlocks.WHITE_BRICK_WALL);
+        addDrop(HCColouredBlocks.LIGHT_GREY_BRICKS);
+        addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_SLAB);
+        addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_WALL);
+        addDrop(HCColouredBlocks.GREY_BRICKS);
+        addDrop(HCColouredBlocks.GREY_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.GREY_BRICK_SLAB);
+        addDrop(HCColouredBlocks.GREY_BRICK_WALL);
+        addDrop(HCColouredBlocks.BLACK_BRICKS);
+        addDrop(HCColouredBlocks.BLACK_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.BLACK_BRICK_SLAB);
+        addDrop(HCColouredBlocks.BLACK_BRICK_WALL);
+        addDrop(HCColouredBlocks.BROWN_BRICKS);
+        addDrop(HCColouredBlocks.BROWN_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.BROWN_BRICK_SLAB);
+        addDrop(HCColouredBlocks.BROWN_BRICK_WALL);
+        addDrop(HCColouredBlocks.RED_BRICKS);
+        addDrop(HCColouredBlocks.RED_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.RED_BRICK_SLAB);
+        addDrop(HCColouredBlocks.RED_BRICK_WALL);
+        addDrop(HCColouredBlocks.ORANGE_BRICKS);
+        addDrop(HCColouredBlocks.ORANGE_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.ORANGE_BRICK_SLAB);
+        addDrop(HCColouredBlocks.ORANGE_BRICK_WALL);
+        addDrop(HCColouredBlocks.YELLOW_BRICKS);
+        addDrop(HCColouredBlocks.YELLOW_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.YELLOW_BRICK_SLAB);
+        addDrop(HCColouredBlocks.YELLOW_BRICK_WALL);
+        addDrop(HCColouredBlocks.LIME_BRICKS);
+        addDrop(HCColouredBlocks.LIME_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.LIME_BRICK_SLAB);
+        addDrop(HCColouredBlocks.LIME_BRICK_WALL);
+        addDrop(HCColouredBlocks.GREEN_BRICKS);
+        addDrop(HCColouredBlocks.GREEN_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.GREEN_BRICK_SLAB);
+        addDrop(HCColouredBlocks.GREEN_BRICK_WALL);
+        addDrop(HCColouredBlocks.CYAN_BRICKS);
+        addDrop(HCColouredBlocks.CYAN_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.CYAN_BRICK_SLAB);
+        addDrop(HCColouredBlocks.CYAN_BRICK_WALL);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_BRICKS);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_SLAB);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_WALL);
+        addDrop(HCColouredBlocks.BLUE_BRICKS);
+        addDrop(HCColouredBlocks.BLUE_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.BLUE_BRICK_SLAB);
+        addDrop(HCColouredBlocks.BLUE_BRICK_WALL);
+        addDrop(HCColouredBlocks.PURPLE_BRICKS);
+        addDrop(HCColouredBlocks.PURPLE_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.PURPLE_BRICK_SLAB);
+        addDrop(HCColouredBlocks.PURPLE_BRICK_WALL);
+        addDrop(HCColouredBlocks.MAGENTA_BRICKS);
+        addDrop(HCColouredBlocks.MAGENTA_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.MAGENTA_BRICK_SLAB);
+        addDrop(HCColouredBlocks.MAGENTA_BRICK_WALL);
+        addDrop(HCColouredBlocks.PINK_BRICKS);
+        addDrop(HCColouredBlocks.PINK_BRICK_STAIRS);
+        addDrop(HCColouredBlocks.PINK_BRICK_SLAB);
+        addDrop(HCColouredBlocks.PINK_BRICK_WALL);
+
     }
 
     @Override

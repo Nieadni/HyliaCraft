@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "hyliacraft:block/magenta_bricks",
+    "side": "hyliacraft:block/magenta_bricks",
+    "top": "hyliacraft:block/magenta_bricks"
+  }
+}
