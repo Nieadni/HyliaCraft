@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hyliacraft:block/rainbow_slab"
+    },
+    "type=double": {
+      "model": "hyliacraft:block/rainbow_planks"
+    },
+    "type=top": {
+      "model": "hyliacraft:block/rainbow_slab_top"
+    }
+  }
+}

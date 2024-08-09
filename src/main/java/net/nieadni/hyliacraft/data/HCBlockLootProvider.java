@@ -88,6 +88,8 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
                                 .conditionally(RandomChanceLootCondition.builder(25))
                                 .with(ItemEntry.builder(Items.ARROW)))));
+        addDrop(HCBlocks.HATENO_CLAY_POT);
+
         addDrop(HCBlocks.ARMORANTH);
         addPottedPlantDrops(HCBlocks.ARMORANTH_POT);
         addDrop(HCBlocks.BLUE_NIGHTSHADE);
@@ -101,68 +103,72 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
 
         addDrop(HCColouredBlocks.WHITE_BRICKS);
         addDrop(HCColouredBlocks.WHITE_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.WHITE_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.WHITE_BRICK_SLAB);
         addDrop(HCColouredBlocks.WHITE_BRICK_WALL);
         addDrop(HCColouredBlocks.LIGHT_GREY_BRICKS);
         addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.LIGHT_GREY_BRICK_SLAB);
         addDrop(HCColouredBlocks.LIGHT_GREY_BRICK_WALL);
         addDrop(HCColouredBlocks.GREY_BRICKS);
         addDrop(HCColouredBlocks.GREY_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.GREY_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.GREY_BRICK_SLAB);
         addDrop(HCColouredBlocks.GREY_BRICK_WALL);
         addDrop(HCColouredBlocks.BLACK_BRICKS);
         addDrop(HCColouredBlocks.BLACK_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.BLACK_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.BLACK_BRICK_SLAB);
         addDrop(HCColouredBlocks.BLACK_BRICK_WALL);
         addDrop(HCColouredBlocks.BROWN_BRICKS);
         addDrop(HCColouredBlocks.BROWN_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.BROWN_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.BROWN_BRICK_SLAB);
         addDrop(HCColouredBlocks.BROWN_BRICK_WALL);
         addDrop(HCColouredBlocks.RED_BRICKS);
         addDrop(HCColouredBlocks.RED_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.RED_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.RED_BRICK_SLAB);
         addDrop(HCColouredBlocks.RED_BRICK_WALL);
         addDrop(HCColouredBlocks.ORANGE_BRICKS);
         addDrop(HCColouredBlocks.ORANGE_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.ORANGE_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.ORANGE_BRICK_SLAB);
         addDrop(HCColouredBlocks.ORANGE_BRICK_WALL);
         addDrop(HCColouredBlocks.YELLOW_BRICKS);
         addDrop(HCColouredBlocks.YELLOW_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.YELLOW_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.YELLOW_BRICK_SLAB);
         addDrop(HCColouredBlocks.YELLOW_BRICK_WALL);
         addDrop(HCColouredBlocks.LIME_BRICKS);
         addDrop(HCColouredBlocks.LIME_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.LIME_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.LIME_BRICK_SLAB);
         addDrop(HCColouredBlocks.LIME_BRICK_WALL);
         addDrop(HCColouredBlocks.GREEN_BRICKS);
         addDrop(HCColouredBlocks.GREEN_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.GREEN_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.GREEN_BRICK_SLAB);
         addDrop(HCColouredBlocks.GREEN_BRICK_WALL);
         addDrop(HCColouredBlocks.CYAN_BRICKS);
         addDrop(HCColouredBlocks.CYAN_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.CYAN_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.CYAN_BRICK_SLAB);
         addDrop(HCColouredBlocks.CYAN_BRICK_WALL);
         addDrop(HCColouredBlocks.LIGHT_BLUE_BRICKS);
         addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.LIGHT_BLUE_BRICK_SLAB);
         addDrop(HCColouredBlocks.LIGHT_BLUE_BRICK_WALL);
         addDrop(HCColouredBlocks.BLUE_BRICKS);
         addDrop(HCColouredBlocks.BLUE_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.BLUE_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.BLUE_BRICK_SLAB);
         addDrop(HCColouredBlocks.BLUE_BRICK_WALL);
         addDrop(HCColouredBlocks.PURPLE_BRICKS);
         addDrop(HCColouredBlocks.PURPLE_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.PURPLE_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.PURPLE_BRICK_SLAB);
         addDrop(HCColouredBlocks.PURPLE_BRICK_WALL);
         addDrop(HCColouredBlocks.MAGENTA_BRICKS);
         addDrop(HCColouredBlocks.MAGENTA_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.MAGENTA_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.MAGENTA_BRICK_SLAB);
         addDrop(HCColouredBlocks.MAGENTA_BRICK_WALL);
         addDrop(HCColouredBlocks.PINK_BRICKS);
         addDrop(HCColouredBlocks.PINK_BRICK_STAIRS);
-        addDrop(HCColouredBlocks.PINK_BRICK_SLAB);
+        slabDrops(HCColouredBlocks.PINK_BRICK_SLAB);
         addDrop(HCColouredBlocks.PINK_BRICK_WALL);
+        addDrop(HCColouredBlocks.RAINBOW_BRICKS);
+        addDrop(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
+        slabDrops(HCColouredBlocks.RAINBOW_BRICK_SLAB);
+        addDrop(HCColouredBlocks.RAINBOW_BRICK_WALL);
 
         addDrop(HCColouredBlocks.WHITE_STRIPPED_LOG);
         addDrop(HCColouredBlocks.WHITE_STRIPPED_WOOD);
@@ -260,6 +266,12 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
         addDrop(HCColouredBlocks.PINK_STAIRS);
         slabDrops(HCColouredBlocks.PINK_SLAB);
         addDrop(HCColouredBlocks.PINK_FENCE);
+        addDrop(HCColouredBlocks.RAINBOW_STRIPPED_LOG);
+        addDrop(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
+        addDrop(HCColouredBlocks.RAINBOW_PLANKS);
+        addDrop(HCColouredBlocks.RAINBOW_STAIRS);
+        slabDrops(HCColouredBlocks.RAINBOW_SLAB);
+        addDrop(HCColouredBlocks.RAINBOW_FENCE);
 
     }
 

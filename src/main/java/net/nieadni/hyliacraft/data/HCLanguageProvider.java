@@ -158,6 +158,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCColouredBlocks.PINK_BRICK_STAIRS, "Pink Brick Stairs");
         translationBuilder.add(HCColouredBlocks.PINK_BRICK_SLAB, "Pink Brick Slab");
         translationBuilder.add(HCColouredBlocks.PINK_BRICK_WALL, "Pink Brick Wall");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_BRICKS, "Rainbow Bricks");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_STAIRS, "Rainbow Brick Stairs");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_SLAB, "Rainbow Brick Slab");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_WALL, "Rainbow Brick Wall");
 
         translationBuilder.add(HCColouredBlocks.WHITE_STRIPPED_LOG, "White Stripped Log");
         translationBuilder.add(HCColouredBlocks.WHITE_STRIPPED_WOOD, "White Stripped Wood");
@@ -255,8 +259,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCColouredBlocks.PINK_STAIRS, "Pink Stairs");
         translationBuilder.add(HCColouredBlocks.PINK_SLAB, "Pink Slab");
         translationBuilder.add(HCColouredBlocks.PINK_FENCE, "Pink Fence");
-
-
-
+        translationBuilder.add(HCColouredBlocks.RAINBOW_STRIPPED_LOG, "Rainbow Stripped Log");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_STRIPPED_WOOD, "Rainbow Stripped Wood");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_PLANKS, "Rainbow Planks");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_STAIRS, "Rainbow Stairs");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_SLAB, "Rainbow Slab");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_FENCE, "Rainbow Fence");
+        
     }
 }

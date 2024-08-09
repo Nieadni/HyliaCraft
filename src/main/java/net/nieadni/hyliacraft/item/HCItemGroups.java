@@ -61,7 +61,7 @@ public class HCItemGroups {
     public static final ItemGroup COLOURED_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HyliaCraft.MOD_ID, "3-coloured_blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.coloured_blocks"))
-                    .icon(() -> new ItemStack(HCColouredBlocks.WHITE_BRICKS)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(HCColouredBlocks.RAINBOW_BRICKS)).entries((displayContext, entries) -> {
                         entries.add(HCColouredBlocks.WHITE_BRICKS);
                         entries.add(HCColouredBlocks.WHITE_BRICK_STAIRS);
                         entries.add(HCColouredBlocks.WHITE_BRICK_SLAB);
@@ -126,6 +126,10 @@ public class HCItemGroups {
                         entries.add(HCColouredBlocks.PINK_BRICK_STAIRS);
                         entries.add(HCColouredBlocks.PINK_BRICK_SLAB);
                         entries.add(HCColouredBlocks.PINK_BRICK_WALL);
+                        entries.add(HCColouredBlocks.RAINBOW_BRICKS);
+                        entries.add(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
+                        entries.add(HCColouredBlocks.RAINBOW_BRICK_SLAB);
+                        entries.add(HCColouredBlocks.RAINBOW_BRICK_WALL);
 
                         entries.add(HCColouredBlocks.WHITE_STRIPPED_LOG);
                         entries.add(HCColouredBlocks.WHITE_STRIPPED_WOOD);
@@ -223,6 +227,12 @@ public class HCItemGroups {
                         entries.add(HCColouredBlocks.PINK_STAIRS);
                         entries.add(HCColouredBlocks.PINK_SLAB);
                         entries.add(HCColouredBlocks.PINK_FENCE);
+                        entries.add(HCColouredBlocks.RAINBOW_STRIPPED_LOG);
+                        entries.add(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
+                        entries.add(HCColouredBlocks.RAINBOW_PLANKS);
+                        entries.add(HCColouredBlocks.RAINBOW_STAIRS);
+                        entries.add(HCColouredBlocks.RAINBOW_SLAB);
+                        entries.add(HCColouredBlocks.RAINBOW_FENCE);
 
                     }).build());
 

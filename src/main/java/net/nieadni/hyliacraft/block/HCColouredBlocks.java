@@ -101,6 +101,11 @@ public class HCColouredBlocks extends Blocks {
     public static final Block PINK_BRICK_SLAB = registerBlock("pink_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(PINK_BRICKS)));
     public static final Block PINK_BRICK_WALL = registerBlock("pink_brick_wall", new WallBlock(AbstractBlock.Settings.copy(PINK_BRICKS)));
 
+    public static final Block RAINBOW_BRICKS = registerBlock("rainbow_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block RAINBOW_BRICK_STAIRS = registerBlock("rainbow_brick_stairs", new StairsBlock(RAINBOW_BRICKS.getDefaultState(), Block.Settings.copy(RAINBOW_BRICKS)));
+    public static final Block RAINBOW_BRICK_SLAB = registerBlock("rainbow_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(RAINBOW_BRICKS)));
+    public static final Block RAINBOW_BRICK_WALL = registerBlock("rainbow_brick_wall", new WallBlock(AbstractBlock.Settings.copy(RAINBOW_BRICKS)));
+
     //
 
     public static final Block WHITE_STRIPPED_LOG = registerBlock("white_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.WHITE)));
@@ -214,6 +219,13 @@ public class HCColouredBlocks extends Blocks {
     public static final Block PINK_STAIRS = registerBlock("pink_stairs", new StairsBlock(PINK_PLANKS.getDefaultState(), Block.Settings.copy(PINK_BRICKS)));
     public static final Block PINK_SLAB = registerBlock("pink_slab", new SlabBlock(AbstractBlock.Settings.copy(PINK_PLANKS)));
     public static final Block PINK_FENCE = registerBlock("pink_fence", new FenceBlock(AbstractBlock.Settings.copy(PINK_PLANKS)));
+
+    public static final Block RAINBOW_STRIPPED_LOG = registerBlock("rainbow_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block RAINBOW_STRIPPED_WOOD = registerBlock("rainbow_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block RAINBOW_PLANKS = registerBlock("rainbow_planks", new Block(AbstractBlock.Settings.copy(OAK_PLANKS).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block RAINBOW_STAIRS = registerBlock("rainbow_stairs", new StairsBlock(RAINBOW_PLANKS.getDefaultState(), Block.Settings.copy(RAINBOW_BRICKS)));
+    public static final Block RAINBOW_SLAB = registerBlock("rainbow_slab", new SlabBlock(AbstractBlock.Settings.copy(RAINBOW_PLANKS)));
+    public static final Block RAINBOW_FENCE = registerBlock("rainbow_fence", new FenceBlock(AbstractBlock.Settings.copy(RAINBOW_PLANKS)));
 
     public static void registerHCColouredBlocks() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its colourful blocks!");

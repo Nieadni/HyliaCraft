@@ -76,6 +76,9 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.PINK_BRICK_STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.PINK_BRICK_SLAB);
         getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.PINK_BRICK_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.RAINBOW_BRICK_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.RAINBOW_BRICK_WALL);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.WHITE_STRIPPED_LOG);
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.WHITE_STRIPPED_WOOD);
@@ -157,9 +160,11 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(HCColouredBlocks.PINK_STAIRS);
         getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(HCColouredBlocks.PINK_SLAB);
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(HCColouredBlocks.PINK_FENCE);
-
-
-
-
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.RAINBOW_STRIPPED_LOG);
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(HCColouredBlocks.RAINBOW_STAIRS);
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(HCColouredBlocks.RAINBOW_SLAB);
+        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(HCColouredBlocks.RAINBOW_FENCE);
+        
     }
 }

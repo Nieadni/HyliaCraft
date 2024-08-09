@@ -119,6 +119,10 @@ public class HCModelProvider extends FabricModelProvider {
         pinkBrickBlockPool.stairs(HCColouredBlocks.PINK_BRICK_STAIRS);
         pinkBrickBlockPool.slab(HCColouredBlocks.PINK_BRICK_SLAB);
         pinkBrickBlockPool.wall(HCColouredBlocks.PINK_BRICK_WALL);
+        BlockStateModelGenerator.BlockTexturePool rainbowBrickBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RAINBOW_BRICKS);
+        rainbowBrickBlockPool.stairs(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
+        rainbowBrickBlockPool.slab(HCColouredBlocks.RAINBOW_BRICK_SLAB);
+        rainbowBrickBlockPool.wall(HCColouredBlocks.RAINBOW_BRICK_WALL);
 
         blockStateModelGenerator.registerLog(HCColouredBlocks.WHITE_STRIPPED_LOG).log(HCColouredBlocks.WHITE_STRIPPED_LOG).wood(HCColouredBlocks.WHITE_STRIPPED_WOOD);
         BlockStateModelGenerator.BlockTexturePool whitePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.WHITE_PLANKS);
@@ -200,6 +204,10 @@ public class HCModelProvider extends FabricModelProvider {
         pinkPlankBlockPool.stairs(HCColouredBlocks.PINK_STAIRS);
         pinkPlankBlockPool.slab(HCColouredBlocks.PINK_SLAB);
         pinkPlankBlockPool.fence(HCColouredBlocks.PINK_FENCE);
-
+        blockStateModelGenerator.registerLog(HCColouredBlocks.RAINBOW_STRIPPED_LOG).log(HCColouredBlocks.RAINBOW_STRIPPED_LOG).wood(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool rainbowPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RAINBOW_PLANKS);
+        rainbowPlankBlockPool.stairs(HCColouredBlocks.RAINBOW_STAIRS);
+        rainbowPlankBlockPool.slab(HCColouredBlocks.RAINBOW_SLAB);
+        rainbowPlankBlockPool.fence(HCColouredBlocks.RAINBOW_FENCE);
     }
 }

@@ -1,10 +1,10 @@
-// 1.21	2024-08-09T17:35:47.8653817	HyliaCraft/Tags for minecraft:block
+// 1.21	2024-08-09T19:52:15.36022	HyliaCraft/Tags for minecraft:block
 63e54d08e5d4762a2742eabe4da24a989ecd1d41 data\minecraft\tags\block\small_flowers.json
-ab299d037da63c193bd6b9788fc18e98dd6407e3 data\minecraft\tags\block\slabs.json
-cec32e3383c99c8415242b6abe037f172c0881ed data\minecraft\tags\block\walls.json
-493d1a52f2a6b719e15f05d75d8f887f68ebeb85 data\minecraft\tags\block\wooden_slabs.json
+a6156c9ea86e54b9dba4d9c046c247d8b51c7ee3 data\minecraft\tags\block\slabs.json
+ae995e8d40b60492924404a5442f8445a9c685fb data\minecraft\tags\block\walls.json
+37d80734f8ff0afd04ec4b7b45a9a6dae9eca606 data\minecraft\tags\block\wooden_slabs.json
 a9a29f28935fd2149c6bbae71f957854e738de9b data\minecraft\tags\block\flower_pots.json
-124080a251043f84de1c6ea46d42a27031dd141a data\minecraft\tags\block\wooden_stairs.json
-db7575b93eef9f53208c3fc5884fa93dd0057f3e data\minecraft\tags\block\stairs.json
-8c6a636306acbfa9776dd683885393d3f2ca7b7b data\minecraft\tags\block\wooden_fences.json
-9906917908d60016e4ade929817da064029b37b4 data\minecraft\tags\block\logs_that_burn.json
+9b30502a25fc98dc4378c145467a538c7eabfff4 data\minecraft\tags\block\wooden_stairs.json
+76f8ab8a82a24cfe92f6ae39f1390063a45a1f66 data\minecraft\tags\block\stairs.json
+4fe6041cca7b02cb6b303abd1aa3f6c125cdf644 data\minecraft\tags\block\wooden_fences.json
+f3235cd6325726b9f3cd2e33965f1af3ff91241e data\minecraft\tags\block\logs_that_burn.json
