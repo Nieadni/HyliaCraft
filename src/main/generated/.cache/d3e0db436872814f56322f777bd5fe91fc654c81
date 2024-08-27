@@ -1,4 +1,4 @@
-// 1.21	2024-08-09T19:52:15.3562186	HyliaCraft/Block Loot Tables
+// 1.21.1	2024-08-27T16:30:55.581404	HyliaCraft/Block Loot Tables
 9e367797183ee6a49b626ef24884acdfb7a022df data\hyliacraft\loot_table\blocks\magenta_brick_stairs.json
 23391d213d2cc03cda30995a79702411aaa05c0b data\hyliacraft\loot_table\blocks\cyan_stripped_log.json
 f064cd8419213f19930d166a81b8ff180e48eab4 data\hyliacraft\loot_table\blocks\silent_princess.json
@@ -41,8 +41,8 @@ ec7ef0650a723f63661cba7284479d8fcb144a0f data\hyliacraft\loot_table\blocks\green
 fba2b6ca8d17eda4c1325e78a98569b472fe31dc data\hyliacraft\loot_table\blocks\pink_stripped_wood.json
 cc1d8f2527e541f7b2816ea9defa3d305e3fb40b data\hyliacraft\loot_table\blocks\clay_pot.json
 22c3c4790b26f9b449614ec86a8eecfdef23a654 data\hyliacraft\loot_table\blocks\blue_nightshade.json
-686e91de593057fe1e8e94af831c040342a3f703 data\hyliacraft\loot_table\blocks\pink_planks.json
 9370c0f4fe0d36574487f75c8af69da0c5ff4171 data\hyliacraft\loot_table\blocks\lime_stripped_wood.json
+686e91de593057fe1e8e94af831c040342a3f703 data\hyliacraft\loot_table\blocks\pink_planks.json
 07727c2f876d15689a0a610235ff5ae806e463ed data\hyliacraft\loot_table\blocks\grey_brick_wall.json
 670fd0a709b4fe0a4d803952e6c04b3d4e30a74b data\hyliacraft\loot_table\blocks\purple_stripped_log.json
 3c992c9f35f502b562bee0923e0931c7fab0a219 data\hyliacraft\loot_table\blocks\cyan_fence.json
