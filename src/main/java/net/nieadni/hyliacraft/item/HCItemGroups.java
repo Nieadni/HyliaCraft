@@ -56,6 +56,8 @@ public class HCItemGroups {
                         entries.add(HCBlocks.SILENT_PRINCESS);
                         entries.add(HCBlocks.SWIFT_VIOLETS);
 
+                        entries.add(HCBlocks.IRON_CHEST);
+
                     }).build());
 
     public static final ItemGroup COLOURED_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,

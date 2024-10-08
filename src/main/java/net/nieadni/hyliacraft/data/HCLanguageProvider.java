@@ -66,6 +66,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
         translationBuilder.add(HCBlocks.SWIFT_VIOLETS, "Swift Violets");
 
+        translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
+
         /** Components **/
 
         translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
