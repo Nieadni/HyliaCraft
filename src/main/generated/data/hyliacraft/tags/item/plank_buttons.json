@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:oak_button",
+    "minecraft:spruce_button",
+    "minecraft:birch_button",
+    "minecraft:jungle_button",
+    "minecraft:acacia_button",
+    "minecraft:dark_oak_button",
+    "minecraft:mangrove_button",
+    "minecraft:cherry_button",
+    "minecraft:bamboo_button",
+    "hyliacraft:white_button",
+    "hyliacraft:light_grey_button",
+    "hyliacraft:grey_button",
+    "hyliacraft:black_button",
+    "hyliacraft:brown_button",
+    "hyliacraft:red_button",
+    "hyliacraft:orange_button",
+    "hyliacraft:yellow_button",
+    "hyliacraft:lime_button",
+    "hyliacraft:green_button",
+    "hyliacraft:cyan_button",
+    "hyliacraft:light_blue_button",
+    "hyliacraft:blue_button",
+    "hyliacraft:purple_button",
+    "hyliacraft:magenta_button",
+    "hyliacraft:pink_button",
+    "hyliacraft:rainbow_button"
+  ]
+}

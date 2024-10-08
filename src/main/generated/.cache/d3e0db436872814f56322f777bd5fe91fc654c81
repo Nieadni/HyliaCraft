@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-08T02:00:15.7022305	HyliaCraft/Block Loot Tables
+// 1.21.1	2024-10-08T13:16:19.3657141	HyliaCraft/Block Loot Tables
 23391d213d2cc03cda30995a79702411aaa05c0b data\hyliacraft\loot_table\blocks\cyan_stripped_log.json
 99e2c768e5a50ea5535c5405436068b216af0f65 data\hyliacraft\loot_table\blocks\grey_button.json
 f064cd8419213f19930d166a81b8ff180e48eab4 data\hyliacraft\loot_table\blocks\silent_princess.json
@@ -126,8 +126,8 @@ ba6e27803f3e80fb4b116104533537a46eaa8916 data\hyliacraft\loot_table\blocks\orang
 b259ad81454ff89dab62af0869c15969510a6856 data\hyliacraft\loot_table\blocks\green_stripped_wood.json
 2da8dd011614a913260ddfac2007677b4596642e data\hyliacraft\loot_table\blocks\white_pressure_plate.json
 22c3c4790b26f9b449614ec86a8eecfdef23a654 data\hyliacraft\loot_table\blocks\blue_nightshade.json
-9370c0f4fe0d36574487f75c8af69da0c5ff4171 data\hyliacraft\loot_table\blocks\lime_stripped_wood.json
 686e91de593057fe1e8e94af831c040342a3f703 data\hyliacraft\loot_table\blocks\pink_planks.json
+9370c0f4fe0d36574487f75c8af69da0c5ff4171 data\hyliacraft\loot_table\blocks\lime_stripped_wood.json
 3c992c9f35f502b562bee0923e0931c7fab0a219 data\hyliacraft\loot_table\blocks\cyan_fence.json
 72b329423a65e9f720db70fbca928fee99546c9a data\hyliacraft\loot_table\blocks\purple_planks.json
 b8f54156f56b49b1f3fcf8fedc11c50b84b1f4e6 data\hyliacraft\loot_table\blocks\magenta_fence.json
@@ -170,8 +170,8 @@ d71c940fc09ba9e6f73a3dc8135de3fcfc23cef1 data\hyliacraft\loot_table\blocks\yello
 bd92938eaa7e20ad8f0baaf4ebde3d910bd4e775 data\hyliacraft\loot_table\blocks\yellow_button.json
 64cd074b566fa87760bcaccc2fdf9e30fecd6f71 data\hyliacraft\loot_table\blocks\light_grey_fence_gate.json
 e18e47049350670d490f2dbe2cf951d922cbf263 data\hyliacraft\loot_table\blocks\brown_brick_stairs.json
-223438f26148e02ff1410694d339dca2625ff1a5 data\hyliacraft\loot_table\blocks\lime_brick_stairs.json
 945404fcbaf93f179b0c2946c45f708ef3ff9025 data\hyliacraft\loot_table\blocks\natural_blue_clay_pot.json
+223438f26148e02ff1410694d339dca2625ff1a5 data\hyliacraft\loot_table\blocks\lime_brick_stairs.json
 7040e04feb78d5081b9f8254438b64007d3f3418 data\hyliacraft\loot_table\blocks\yellow_brick_stairs.json
 8840cfac1a792c035f60baa919ffaa44fd958242 data\hyliacraft\loot_table\blocks\orange_brick_wall.json
 8faa097ae21af07d63b422e10afb86ba11c3deb8 data\hyliacraft\loot_table\blocks\green_button.json

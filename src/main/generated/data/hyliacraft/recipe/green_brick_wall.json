@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "hyliacraft:bricks"
+    },
+    "@": {
+      "item": "minecraft:green_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "hyliacraft:green_brick_wall"
+  }
+}

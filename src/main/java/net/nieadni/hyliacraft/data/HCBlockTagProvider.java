@@ -2,10 +2,13 @@ package net.nieadni.hyliacraft.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
+import net.nieadni.hyliacraft.item.HCItemTags;
 
 import java.util.concurrent.CompletableFuture;
 

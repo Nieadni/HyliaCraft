@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "hyliacraft:bricks"
+    },
+    "@": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "hyliacraft:red_brick_wall"
+  }
+}

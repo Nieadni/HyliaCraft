@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:oak_planks",
+    "minecraft:spruce_planks",
+    "minecraft:birch_planks",
+    "minecraft:jungle_planks",
+    "minecraft:acacia_planks",
+    "minecraft:dark_oak_planks",
+    "minecraft:mangrove_planks",
+    "minecraft:cherry_planks",
+    "minecraft:bamboo_planks",
+    "hyliacraft:white_planks",
+    "hyliacraft:light_grey_planks",
+    "hyliacraft:grey_planks",
+    "hyliacraft:black_planks",
+    "hyliacraft:brown_planks",
+    "hyliacraft:red_planks",
+    "hyliacraft:orange_planks",
+    "hyliacraft:yellow_planks",
+    "hyliacraft:lime_planks",
+    "hyliacraft:green_planks",
+    "hyliacraft:cyan_planks",
+    "hyliacraft:light_blue_planks",
+    "hyliacraft:blue_planks",
+    "hyliacraft:purple_planks",
+    "hyliacraft:magenta_planks",
+    "hyliacraft:pink_planks",
+    "hyliacraft:rainbow_planks"
+  ]
+}

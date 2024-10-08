@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:stripped_oak_log",
+    "minecraft:stripped_spruce_log",
+    "minecraft:stripped_birch_log",
+    "minecraft:stripped_jungle_log",
+    "minecraft:stripped_acacia_log",
+    "minecraft:stripped_dark_oak_log",
+    "minecraft:stripped_mangrove_log",
+    "minecraft:stripped_cherry_log",
+    "minecraft:stripped_bamboo_block",
+    "hyliacraft:white_stripped_log",
+    "hyliacraft:light_grey_stripped_log",
+    "hyliacraft:grey_stripped_log",
+    "hyliacraft:black_stripped_log",
+    "hyliacraft:brown_stripped_log",
+    "hyliacraft:red_stripped_log",
+    "hyliacraft:orange_stripped_log",
+    "hyliacraft:yellow_stripped_log",
+    "hyliacraft:lime_stripped_log",
+    "hyliacraft:green_stripped_log",
+    "hyliacraft:cyan_stripped_log",
+    "hyliacraft:light_blue_stripped_log",
+    "hyliacraft:blue_stripped_log",
+    "hyliacraft:purple_stripped_log",
+    "hyliacraft:magenta_stripped_log",
+    "hyliacraft:pink_stripped_log",
+    "hyliacraft:rainbow_stripped_log"
+  ]
+}
