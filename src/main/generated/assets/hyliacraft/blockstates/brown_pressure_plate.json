@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "hyliacraft:block/brown_pressure_plate"
+    },
+    "powered=true": {
+      "model": "hyliacraft:block/brown_pressure_plate_down"
+    }
+  }
+}

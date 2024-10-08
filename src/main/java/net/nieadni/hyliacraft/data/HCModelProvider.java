@@ -123,91 +123,210 @@ public class HCModelProvider extends FabricModelProvider {
         rainbowBrickBlockPool.stairs(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
         rainbowBrickBlockPool.slab(HCColouredBlocks.RAINBOW_BRICK_SLAB);
         rainbowBrickBlockPool.wall(HCColouredBlocks.RAINBOW_BRICK_WALL);
-
-        blockStateModelGenerator.registerLog(HCColouredBlocks.WHITE_STRIPPED_LOG).log(HCColouredBlocks.WHITE_STRIPPED_LOG).wood(HCColouredBlocks.WHITE_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool whitePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.WHITE_PLANKS);
+        blockStateModelGenerator.registerLog(HCColouredBlocks.WHITE_STRIPPED_LOG)
+                .log(HCColouredBlocks.WHITE_STRIPPED_LOG)
+                .wood(HCColouredBlocks.WHITE_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool whitePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.WHITE_PLANKS);
         whitePlankBlockPool.stairs(HCColouredBlocks.WHITE_STAIRS);
         whitePlankBlockPool.slab(HCColouredBlocks.WHITE_SLAB);
         whitePlankBlockPool.fence(HCColouredBlocks.WHITE_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG).log(HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG).wood(HCColouredBlocks.LIGHT_GREY_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool lightGreyPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_GREY_PLANKS);
+        whitePlankBlockPool.fenceGate(HCColouredBlocks.WHITE_FENCE_GATE);
+        whitePlankBlockPool.pressurePlate(HCColouredBlocks.WHITE_PRESSURE_PLATE);
+        whitePlankBlockPool.button(HCColouredBlocks.WHITE_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG)
+                .log(HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG)
+                .wood(HCColouredBlocks.LIGHT_GREY_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool lightGreyPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_GREY_PLANKS);
         lightGreyPlankBlockPool.stairs(HCColouredBlocks.LIGHT_GREY_STAIRS);
         lightGreyPlankBlockPool.slab(HCColouredBlocks.LIGHT_GREY_SLAB);
         lightGreyPlankBlockPool.fence(HCColouredBlocks.LIGHT_GREY_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.GREY_STRIPPED_LOG).log(HCColouredBlocks.GREY_STRIPPED_LOG).wood(HCColouredBlocks.GREY_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool greyPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREY_PLANKS);
+        lightGreyPlankBlockPool.fenceGate(HCColouredBlocks.LIGHT_GREY_FENCE_GATE);
+        lightGreyPlankBlockPool.pressurePlate(HCColouredBlocks.LIGHT_GREY_PRESSURE_PLATE);
+        lightGreyPlankBlockPool.button(HCColouredBlocks.LIGHT_GREY_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.GREY_STRIPPED_LOG)
+                .log(HCColouredBlocks.GREY_STRIPPED_LOG)
+                .wood(HCColouredBlocks.GREY_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool greyPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREY_PLANKS);
         greyPlankBlockPool.stairs(HCColouredBlocks.GREY_STAIRS);
         greyPlankBlockPool.slab(HCColouredBlocks.GREY_SLAB);
         greyPlankBlockPool.fence(HCColouredBlocks.GREY_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.BLACK_STRIPPED_LOG).log(HCColouredBlocks.BLACK_STRIPPED_LOG).wood(HCColouredBlocks.BLACK_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool blackPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLACK_PLANKS);
+        greyPlankBlockPool.fenceGate(HCColouredBlocks.GREY_FENCE_GATE);
+        greyPlankBlockPool.pressurePlate(HCColouredBlocks.GREY_PRESSURE_PLATE);
+        greyPlankBlockPool.button(HCColouredBlocks.GREY_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.BLACK_STRIPPED_LOG)
+                .log(HCColouredBlocks.BLACK_STRIPPED_LOG)
+                .wood(HCColouredBlocks.BLACK_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool blackPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLACK_PLANKS);
         blackPlankBlockPool.stairs(HCColouredBlocks.BLACK_STAIRS);
         blackPlankBlockPool.slab(HCColouredBlocks.BLACK_SLAB);
         blackPlankBlockPool.fence(HCColouredBlocks.BLACK_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.BROWN_STRIPPED_LOG).log(HCColouredBlocks.BROWN_STRIPPED_LOG).wood(HCColouredBlocks.BROWN_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool brownPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BROWN_PLANKS);
+        blackPlankBlockPool.fenceGate(HCColouredBlocks.BLACK_FENCE_GATE);
+        blackPlankBlockPool.pressurePlate(HCColouredBlocks.BLACK_PRESSURE_PLATE);
+        blackPlankBlockPool.button(HCColouredBlocks.BLACK_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.BROWN_STRIPPED_LOG)
+                .log(HCColouredBlocks.BROWN_STRIPPED_LOG)
+                .wood(HCColouredBlocks.BROWN_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool brownPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BROWN_PLANKS);
         brownPlankBlockPool.stairs(HCColouredBlocks.BROWN_STAIRS);
         brownPlankBlockPool.slab(HCColouredBlocks.BROWN_SLAB);
         brownPlankBlockPool.fence(HCColouredBlocks.BROWN_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.RED_STRIPPED_LOG).log(HCColouredBlocks.RED_STRIPPED_LOG).wood(HCColouredBlocks.RED_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool redPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RED_PLANKS);
+        brownPlankBlockPool.fenceGate(HCColouredBlocks.BROWN_FENCE_GATE);
+        brownPlankBlockPool.pressurePlate(HCColouredBlocks.BROWN_PRESSURE_PLATE);
+        brownPlankBlockPool.button(HCColouredBlocks.BROWN_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.RED_STRIPPED_LOG)
+                .log(HCColouredBlocks.RED_STRIPPED_LOG)
+                .wood(HCColouredBlocks.RED_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool redPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RED_PLANKS);
         redPlankBlockPool.stairs(HCColouredBlocks.RED_STAIRS);
         redPlankBlockPool.slab(HCColouredBlocks.RED_SLAB);
         redPlankBlockPool.fence(HCColouredBlocks.RED_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.ORANGE_STRIPPED_LOG).log(HCColouredBlocks.ORANGE_STRIPPED_LOG).wood(HCColouredBlocks.ORANGE_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool orangePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.ORANGE_PLANKS);
+        redPlankBlockPool.fenceGate(HCColouredBlocks.RED_FENCE_GATE);
+        redPlankBlockPool.pressurePlate(HCColouredBlocks.RED_PRESSURE_PLATE);
+        redPlankBlockPool.button(HCColouredBlocks.RED_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.ORANGE_STRIPPED_LOG)
+                .log(HCColouredBlocks.ORANGE_STRIPPED_LOG)
+                .wood(HCColouredBlocks.ORANGE_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool orangePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.ORANGE_PLANKS);
         orangePlankBlockPool.stairs(HCColouredBlocks.ORANGE_STAIRS);
         orangePlankBlockPool.slab(HCColouredBlocks.ORANGE_SLAB);
         orangePlankBlockPool.fence(HCColouredBlocks.ORANGE_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.YELLOW_STRIPPED_LOG).log(HCColouredBlocks.YELLOW_STRIPPED_LOG).wood(HCColouredBlocks.YELLOW_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool yellowPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.YELLOW_PLANKS);
+        orangePlankBlockPool.fenceGate(HCColouredBlocks.ORANGE_FENCE_GATE);
+        orangePlankBlockPool.pressurePlate(HCColouredBlocks.ORANGE_PRESSURE_PLATE);
+        orangePlankBlockPool.button(HCColouredBlocks.ORANGE_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.YELLOW_STRIPPED_LOG)
+                .log(HCColouredBlocks.YELLOW_STRIPPED_LOG)
+                .wood(HCColouredBlocks.YELLOW_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool yellowPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.YELLOW_PLANKS);
         yellowPlankBlockPool.stairs(HCColouredBlocks.YELLOW_STAIRS);
         yellowPlankBlockPool.slab(HCColouredBlocks.YELLOW_SLAB);
         yellowPlankBlockPool.fence(HCColouredBlocks.YELLOW_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.LIME_STRIPPED_LOG).log(HCColouredBlocks.LIME_STRIPPED_LOG).wood(HCColouredBlocks.LIME_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool limePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIME_PLANKS);
+        yellowPlankBlockPool.fenceGate(HCColouredBlocks.YELLOW_FENCE_GATE);
+        yellowPlankBlockPool.pressurePlate(HCColouredBlocks.YELLOW_PRESSURE_PLATE);
+        yellowPlankBlockPool.button(HCColouredBlocks.YELLOW_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.LIME_STRIPPED_LOG)
+                .log(HCColouredBlocks.LIME_STRIPPED_LOG)
+                .wood(HCColouredBlocks.LIME_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool limePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIME_PLANKS);
         limePlankBlockPool.stairs(HCColouredBlocks.LIME_STAIRS);
         limePlankBlockPool.slab(HCColouredBlocks.LIME_SLAB);
         limePlankBlockPool.fence(HCColouredBlocks.LIME_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.GREEN_STRIPPED_LOG).log(HCColouredBlocks.GREEN_STRIPPED_LOG).wood(HCColouredBlocks.GREEN_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool greenPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREEN_PLANKS);
+        limePlankBlockPool.fenceGate(HCColouredBlocks.LIME_FENCE_GATE);
+        limePlankBlockPool.pressurePlate(HCColouredBlocks.LIME_PRESSURE_PLATE);
+        limePlankBlockPool.button(HCColouredBlocks.LIME_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.GREEN_STRIPPED_LOG)
+                .log(HCColouredBlocks.GREEN_STRIPPED_LOG)
+                .wood(HCColouredBlocks.GREEN_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool greenPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREEN_PLANKS);
         greenPlankBlockPool.stairs(HCColouredBlocks.GREEN_STAIRS);
         greenPlankBlockPool.slab(HCColouredBlocks.GREEN_SLAB);
         greenPlankBlockPool.fence(HCColouredBlocks.GREEN_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.CYAN_STRIPPED_LOG).log(HCColouredBlocks.CYAN_STRIPPED_LOG).wood(HCColouredBlocks.CYAN_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool cyanPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.CYAN_PLANKS);
+        greenPlankBlockPool.fenceGate(HCColouredBlocks.GREEN_FENCE_GATE);
+        greenPlankBlockPool.pressurePlate(HCColouredBlocks.GREEN_PRESSURE_PLATE);
+        greenPlankBlockPool.button(HCColouredBlocks.GREEN_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.CYAN_STRIPPED_LOG)
+                .log(HCColouredBlocks.CYAN_STRIPPED_LOG)
+                .wood(HCColouredBlocks.CYAN_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool cyanPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.CYAN_PLANKS);
         cyanPlankBlockPool.stairs(HCColouredBlocks.CYAN_STAIRS);
         cyanPlankBlockPool.slab(HCColouredBlocks.CYAN_SLAB);
         cyanPlankBlockPool.fence(HCColouredBlocks.CYAN_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.LIGHT_BLUE_STRIPPED_LOG).log(HCColouredBlocks.LIGHT_BLUE_STRIPPED_LOG).wood(HCColouredBlocks.LIGHT_BLUE_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool lightBluePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_BLUE_PLANKS);
+        cyanPlankBlockPool.fenceGate(HCColouredBlocks.CYAN_FENCE_GATE);
+        cyanPlankBlockPool.pressurePlate(HCColouredBlocks.CYAN_PRESSURE_PLATE);
+        cyanPlankBlockPool.button(HCColouredBlocks.CYAN_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.LIGHT_BLUE_STRIPPED_LOG)
+                .log(HCColouredBlocks.LIGHT_BLUE_STRIPPED_LOG)
+                .wood(HCColouredBlocks.LIGHT_BLUE_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool lightBluePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_BLUE_PLANKS);
         lightBluePlankBlockPool.stairs(HCColouredBlocks.LIGHT_BLUE_STAIRS);
         lightBluePlankBlockPool.slab(HCColouredBlocks.LIGHT_BLUE_SLAB);
         lightBluePlankBlockPool.fence(HCColouredBlocks.LIGHT_BLUE_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.BLUE_STRIPPED_LOG).log(HCColouredBlocks.BLUE_STRIPPED_LOG).wood(HCColouredBlocks.BLUE_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool bluePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLUE_PLANKS);
+        lightBluePlankBlockPool.fenceGate(HCColouredBlocks.LIGHT_BLUE_FENCE_GATE);
+        lightBluePlankBlockPool.pressurePlate(HCColouredBlocks.LIGHT_BLUE_PRESSURE_PLATE);
+        lightBluePlankBlockPool.button(HCColouredBlocks.LIGHT_BLUE_BUTTON);
+
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.BLUE_STRIPPED_LOG)
+                .log(HCColouredBlocks.BLUE_STRIPPED_LOG)
+                .wood(HCColouredBlocks.BLUE_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool bluePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLUE_PLANKS);
         bluePlankBlockPool.stairs(HCColouredBlocks.BLUE_STAIRS);
         bluePlankBlockPool.slab(HCColouredBlocks.BLUE_SLAB);
         bluePlankBlockPool.fence(HCColouredBlocks.BLUE_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.PURPLE_STRIPPED_LOG).log(HCColouredBlocks.PURPLE_STRIPPED_LOG).wood(HCColouredBlocks.PURPLE_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool purplePlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PURPLE_PLANKS);
+        bluePlankBlockPool.fenceGate(HCColouredBlocks.BLUE_FENCE_GATE);
+        bluePlankBlockPool.pressurePlate(HCColouredBlocks.BLUE_PRESSURE_PLATE);
+        bluePlankBlockPool.button(HCColouredBlocks.BLUE_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.PURPLE_STRIPPED_LOG)
+                .log(HCColouredBlocks.PURPLE_STRIPPED_LOG)
+                .wood(HCColouredBlocks.PURPLE_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool purplePlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PURPLE_PLANKS);
         purplePlankBlockPool.stairs(HCColouredBlocks.PURPLE_STAIRS);
         purplePlankBlockPool.slab(HCColouredBlocks.PURPLE_SLAB);
         purplePlankBlockPool.fence(HCColouredBlocks.PURPLE_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.MAGENTA_STRIPPED_LOG).log(HCColouredBlocks.MAGENTA_STRIPPED_LOG).wood(HCColouredBlocks.MAGENTA_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool magentaPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.MAGENTA_PLANKS);
+        purplePlankBlockPool.fenceGate(HCColouredBlocks.PURPLE_FENCE_GATE);
+        purplePlankBlockPool.pressurePlate(HCColouredBlocks.PURPLE_PRESSURE_PLATE);
+        purplePlankBlockPool.button(HCColouredBlocks.PURPLE_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.MAGENTA_STRIPPED_LOG)
+                .log(HCColouredBlocks.MAGENTA_STRIPPED_LOG)
+                .wood(HCColouredBlocks.MAGENTA_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool magentaPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.MAGENTA_PLANKS);
         magentaPlankBlockPool.stairs(HCColouredBlocks.MAGENTA_STAIRS);
         magentaPlankBlockPool.slab(HCColouredBlocks.MAGENTA_SLAB);
         magentaPlankBlockPool.fence(HCColouredBlocks.MAGENTA_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.PINK_STRIPPED_LOG).log(HCColouredBlocks.PINK_STRIPPED_LOG).wood(HCColouredBlocks.PINK_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool pinkPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PINK_PLANKS);
+        magentaPlankBlockPool.fenceGate(HCColouredBlocks.MAGENTA_FENCE_GATE);
+        magentaPlankBlockPool.pressurePlate(HCColouredBlocks.MAGENTA_PRESSURE_PLATE);
+        magentaPlankBlockPool.button(HCColouredBlocks.MAGENTA_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.PINK_STRIPPED_LOG)
+                .log(HCColouredBlocks.PINK_STRIPPED_LOG)
+                .wood(HCColouredBlocks.PINK_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool pinkPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PINK_PLANKS);
         pinkPlankBlockPool.stairs(HCColouredBlocks.PINK_STAIRS);
         pinkPlankBlockPool.slab(HCColouredBlocks.PINK_SLAB);
         pinkPlankBlockPool.fence(HCColouredBlocks.PINK_FENCE);
-        blockStateModelGenerator.registerLog(HCColouredBlocks.RAINBOW_STRIPPED_LOG).log(HCColouredBlocks.RAINBOW_STRIPPED_LOG).wood(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
-        BlockStateModelGenerator.BlockTexturePool rainbowPlankBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RAINBOW_PLANKS);
+        pinkPlankBlockPool.fenceGate(HCColouredBlocks.PINK_FENCE_GATE);
+        pinkPlankBlockPool.pressurePlate(HCColouredBlocks.PINK_PRESSURE_PLATE);
+        pinkPlankBlockPool.button(HCColouredBlocks.PINK_BUTTON);
+
+        blockStateModelGenerator.registerLog(HCColouredBlocks.RAINBOW_STRIPPED_LOG)
+                .log(HCColouredBlocks.RAINBOW_STRIPPED_LOG)
+                .wood(HCColouredBlocks.RAINBOW_STRIPPED_WOOD);
+        BlockStateModelGenerator.BlockTexturePool rainbowPlankBlockPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RAINBOW_PLANKS);
         rainbowPlankBlockPool.stairs(HCColouredBlocks.RAINBOW_STAIRS);
         rainbowPlankBlockPool.slab(HCColouredBlocks.RAINBOW_SLAB);
         rainbowPlankBlockPool.fence(HCColouredBlocks.RAINBOW_FENCE);
+        rainbowPlankBlockPool.fenceGate(HCColouredBlocks.RAINBOW_FENCE_GATE);
+        rainbowPlankBlockPool.pressurePlate(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
+        rainbowPlankBlockPool.button(HCColouredBlocks.RAINBOW_BUTTON);
+
     }
 }
