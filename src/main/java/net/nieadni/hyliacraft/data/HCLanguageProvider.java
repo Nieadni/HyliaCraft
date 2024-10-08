@@ -87,6 +87,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.gold_rupee", "Worth 300 Rupees");
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
 
+        translationBuilder.add("container.hyliacraft.iron_chest", "Iron Chest");
+
         translationBuilder.add("itemGroup.hyliacraft.gear", "HC Gear");
         translationBuilder.add("itemGroup.hyliacraft.blocks", "HC Blocks");
         translationBuilder.add("itemGroup.hyliacraft.coloured_blocks", "HC Coloured Blocks");

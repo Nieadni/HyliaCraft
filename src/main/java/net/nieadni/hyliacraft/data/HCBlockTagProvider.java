@@ -29,6 +29,9 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(HCBlocks.SWIFT_VIOLETS);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(HCBlocks.SWIFT_VIOLETS_POT);
 
+        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_WOODEN_TOOL).add(HCBlocks.IRON_CHEST);
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(HCBlocks.IRON_CHEST);
+
         // Coloured Blocks
 
         getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.WHITE_BRICK_STAIRS);

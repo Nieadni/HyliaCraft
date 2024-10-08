@@ -14,6 +14,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.custom.IronChestBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
 
+import net.nieadni.hyliacraft.entity.block_entity.HCBlockEntityType;
 import org.jetbrains.annotations.*;
 
 import java.util.List;
@@ -48,7 +49,7 @@ public class HCBlocks extends Blocks {
     public static final Block SWIFT_VIOLETS_POT = registerBlock("swift_violets_pot", Blocks.createFlowerPotBlock(SWIFT_VIOLETS));
 
     public static final Block IRON_CHEST = registerBlock("iron_chest", new IronChestBlock(AbstractBlock.Settings.create(), () -> {
-        return BlockEntityType.CHEST;}));
+        return HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;}));
 
     @Contract("_ -> new")
     private static @NotNull SuspiciousStewEffectsComponent createStewEffects(SuspiciousStewEffectsComponent.StewEffect... effects) {
