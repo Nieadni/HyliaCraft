@@ -1,0 +1,9 @@
+{
+  "wild_texture": "minecraft:entity/wolf/wolf_maraudo",
+  "angry_texture": "minecraft:entity/wolf/wolf_maraudo_angry",
+  "tame_texture": "minecraft:entity/wolf/wolf_maraudo_tame",
+  "biomes": [
+    "minecraft:meadow",
+    "minecraft:stony_peaks"
+  ]
+}

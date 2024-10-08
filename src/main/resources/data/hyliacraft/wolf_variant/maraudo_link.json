@@ -1,0 +1,7 @@
+{
+  "wild_texture": "minecraft:entity/wolf/wolf_maraudo_link",
+  "angry_texture": "minecraft:entity/wolf/wolf_maraudo_link_angry",
+  "tame_texture": "minecraft:entity/wolf/wolf_maraudo_link_tame",
+  "biomes": [
+  ]
+}
