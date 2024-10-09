@@ -9,7 +9,7 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
-import net.nieadni.hyliacraft.entity.block_entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;

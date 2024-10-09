@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.entity.block_entity;
+package net.nieadni.hyliacraft.block.entity;
 
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;

@@ -1,7 +1,6 @@
 package net.nieadni.hyliacraft.block;
 
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffects;
@@ -14,7 +13,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.custom.IronChestBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
 
-import net.nieadni.hyliacraft.entity.block_entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import org.jetbrains.annotations.*;
 
 import java.util.List;

@@ -1,7 +1,12 @@
-package net.nieadni.hyliacraft.entity.block_entity;
+package net.nieadni.hyliacraft.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ChestBlockEntity;
+import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 
@@ -14,4 +19,14 @@ public class IronChestBlockEntity extends ChestBlockEntity {
         return Text.translatable("container.hyliacraft.iron_chest");
     }
 
+    private int numPlayersOpen;
+    public float lidAngle;
+
+    public int getNumPlayersOpen() {
+        return this.numPlayersOpen;
+    }
+
+    public SimpleInventory getInventory() {
+        return this.getInventory();
+    }
 }

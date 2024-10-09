@@ -5,7 +5,10 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 
 import net.minecraft.client.render.RenderLayer;
 
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
@@ -30,5 +33,7 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.HATENO_CLAY_POT
         );
         HCModelPredicates.registerHCModelPredicates();
+        //BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, IronChestBlockEntityRenderer::new);
+        //TODO
     }
 }
