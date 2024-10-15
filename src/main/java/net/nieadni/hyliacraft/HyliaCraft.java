@@ -6,6 +6,7 @@ import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
@@ -30,5 +31,6 @@ public class HyliaCraft implements ModInitializer {
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
 		HCBlockEntityType.registerHCBlockEntities();
+		HCEntities.registerHyliaCraftEntities();
 	}
 }

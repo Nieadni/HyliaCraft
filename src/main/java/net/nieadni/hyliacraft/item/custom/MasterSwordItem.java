@@ -10,9 +10,12 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import net.nieadni.hyliacraft.entity.*;
 import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -25,6 +28,10 @@ public class MasterSwordItem extends SwordItem {
                 new EntityAttributeModifier(SWORD_RANGE_MODIFIER_ID, 1, EntityAttributeModifier.Operation.ADD_VALUE),
                 AttributeModifierSlot.MAINHAND
         )));
+    }
+
+    protected MasterSwordItem(ToolMaterial toolMaterial, Item.Settings settings) {
+        super(toolMaterial, settings);
     }
 
     @Override
@@ -62,5 +69,24 @@ public class MasterSwordItem extends SwordItem {
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+    }
+
+    @Override
+    public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
+
+        ItemStack stack = user.getMainHandStack();
+        if (user.isSneaking()) {
+
+            MasterSwordBeamEntity masterSwordBeamEntity = HCEntities.MASTER_SWORD_BEAM.create(world);
+            masterSwordBeamEntity.setOwner(user);
+            masterSwordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d vec3d = user.getRotationVec(1.0f);
+            masterSwordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            masterSwordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(masterSwordBeamEntity);
+
+        }
+
+        return TypedActionResult.fail(stack);
     }
 }

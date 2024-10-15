@@ -4,7 +4,6 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.attribute.*;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
@@ -13,11 +12,12 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 
 import net.nieadni.hyliacraft.item.materials.TrueMasterSwordMaterial;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class TrueMasterSwordItem extends SwordItem {
+public class TrueMasterSwordItem extends MasterSwordItem {
 
     public TrueMasterSwordItem() {
         super(TrueMasterSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(TrueMasterSwordMaterial.INSTANCE,1, -2.4F).with(
@@ -45,11 +45,6 @@ public class TrueMasterSwordItem extends SwordItem {
     public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
     public static final int DURABILITY_TIMER = 40;
     public static final String DURABILITY_KEY = "durabilityHealTimer";
-
-    @Override
-    public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
-        return false;
-    }
 
     /**
      * Sword Beam Attack Needed
