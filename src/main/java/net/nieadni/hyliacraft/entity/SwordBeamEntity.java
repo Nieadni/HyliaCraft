@@ -8,21 +8,26 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-public class SwordBeamEntity extends ProjectileEntity {
+public class MasterSwordBeamEntity extends ProjectileEntity {
 
-    World world = this.getWorld();
-    private final float swordBeamDamage;
+    private final float damage;
 
-
-    public SwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world, float swordBeamDamage) {
+    public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
-        this.swordBeamDamage = swordBeamDamage;
+        this.damage = 10.0f;
+    }
+
+    private MasterSwordBeamEntity(World world, float damage) {
+        super(HCEntities.MASTER_SWORD_BEAM, world);
+        this.damage = damage;
+    }
+
+    public static MasterSwordBeamEntity create(World world, float damage) {
+        return new MasterSwordBeamEntity(world, damage);
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-
-    }
+    protected void initDataTracker(DataTracker.Builder builder) {}
 
     @Override
     public void tick() {
@@ -50,9 +55,9 @@ public class SwordBeamEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        Entity swordBeam = entityHitResult.getEntity();
+        Entity wiiu = entityHitResult.getEntity();
         if (this.getOwner() instanceof PlayerEntity player) {
-            swordBeam.damage(swordBeam.getDamageSources().playerAttack(player), swordBeamDamage);
+            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 10);
         }
     }
 
