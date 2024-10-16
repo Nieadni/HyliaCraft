@@ -1,7 +1,5 @@
 package net.nieadni.hyliacraft.entity;
 
-import net.minecraft.block.*;
-import net.minecraft.block.entity.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,16 +10,24 @@ import net.minecraft.world.World;
 
 public class MasterSwordBeamEntity extends ProjectileEntity {
 
-    World world = this.getWorld();
+    private final float damage;
 
     public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
+        this.damage = 10.0f;
+    }
+
+    private MasterSwordBeamEntity(World world, float damage) {
+        super(HCEntities.MASTER_SWORD_BEAM, world);
+        this.damage = damage;
+    }
+
+    public static MasterSwordBeamEntity create(World world, float damage) {
+        return new MasterSwordBeamEntity(world, damage);
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-
-    }
+    protected void initDataTracker(DataTracker.Builder builder) {}
 
     @Override
     public void tick() {
