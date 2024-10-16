@@ -8,22 +8,22 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-public class MasterSwordBeamEntity extends ProjectileEntity {
+public class SwordBeamEntity extends ProjectileEntity {
 
     private final float damage;
 
-    public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+    public SwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
-        this.damage = 10.0f;
+        this.damage = 10.0f;  // Somehow need to get this to be something I can reference and change in the 5 different sword classes
     }
 
-    private MasterSwordBeamEntity(World world, float damage) {
+    private SwordBeamEntity(World world, float damage) {
         super(HCEntities.MASTER_SWORD_BEAM, world);
         this.damage = damage;
     }
 
-    public static MasterSwordBeamEntity create(World world, float damage) {
-        return new MasterSwordBeamEntity(world, damage);
+    public static SwordBeamEntity create(World world, float damage) {
+        return new SwordBeamEntity(world, damage);
     }
 
     @Override
@@ -55,9 +55,9 @@ public class MasterSwordBeamEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        Entity wiiu = entityHitResult.getEntity();
+        Entity swordBeam = entityHitResult.getEntity();
         if (this.getOwner() instanceof PlayerEntity player) {
-            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 10);
+            swordBeam.damage(swordBeam.getDamageSources().playerAttack(player), damage);
         }
     }
 

@@ -95,6 +95,7 @@ public class MasterSwordItem extends SwordItem {
 
         user.getItemCooldownManager().set(this, 30);
         stack.damage(20, user, EquipmentSlot.MAINHAND);
+        SwordBeamEntity.create(world, 30f);
 
 
         return TypedActionResult.fail(stack);
