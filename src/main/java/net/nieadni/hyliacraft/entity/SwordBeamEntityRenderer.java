@@ -15,14 +15,14 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.*;
 
 @Environment(EnvType.CLIENT)
-public class MasterSwordBeamEntityRenderer extends EntityRenderer<MasterSwordBeamEntity> {
+public class SwordBeamEntityRenderer extends EntityRenderer<SwordBeamEntity> {
 
-    public MasterSwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
+    public SwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
     }
 
     @Override
-    public void render(@NotNull MasterSwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
+    public void render(@NotNull SwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
         matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(-90f));
@@ -42,7 +42,7 @@ public class MasterSwordBeamEntityRenderer extends EntityRenderer<MasterSwordBea
     }
 
     @Override
-    public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
+    public Identifier getTexture(@NotNull SwordBeamEntity beam) {
         return new Identifier(HyliaCraft.MOD_ID, "textures/entity/master_sword_beam/master_sword_beam_0.png");
     }
 }

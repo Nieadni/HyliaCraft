@@ -1,7 +1,5 @@
 package net.nieadni.hyliacraft.entity;
 
-import net.minecraft.block.*;
-import net.minecraft.block.entity.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,12 +8,15 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-public class MasterSwordBeamEntity extends ProjectileEntity {
+public class SwordBeamEntity extends ProjectileEntity {
 
     World world = this.getWorld();
+    private final float swordBeamDamage;
 
-    public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+
+    public SwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world, float swordBeamDamage) {
         super(entityType, world);
+        this.swordBeamDamage = swordBeamDamage;
     }
 
     @Override
@@ -49,9 +50,9 @@ public class MasterSwordBeamEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        Entity wiiu = entityHitResult.getEntity();
+        Entity swordBeam = entityHitResult.getEntity();
         if (this.getOwner() instanceof PlayerEntity player) {
-            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 10);
+            swordBeam.damage(swordBeam.getDamageSources().playerAttack(player), swordBeamDamage);
         }
     }
 

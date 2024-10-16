@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GoddessWhiteSwordItem extends SwordItem {
+public class GoddessWhiteSwordItem extends MasterSwordItem {
 
     public GoddessWhiteSwordItem() {
         super(GoddessWhiteSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessWhiteSwordItem.createAttributeModifiers(GoddessWhiteSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE));

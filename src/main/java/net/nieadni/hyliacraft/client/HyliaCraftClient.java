@@ -8,7 +8,7 @@ import net.minecraft.client.render.RenderLayer;
 
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.entity.HCEntities;
-import net.nieadni.hyliacraft.entity.MasterSwordBeamEntityRenderer;
+import net.nieadni.hyliacraft.entity.SwordBeamEntityRenderer;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
@@ -34,6 +34,6 @@ public class HyliaCraftClient implements ClientModInitializer {
         );
         HCModelPredicates.registerHCModelPredicates();
         // BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, IronChestBlockEntityRenderer::new);
-        EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
+        EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, SwordBeamEntityRenderer::new);
     }
 }

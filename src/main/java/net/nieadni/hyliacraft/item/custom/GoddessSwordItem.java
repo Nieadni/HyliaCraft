@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GoddessSwordItem extends SwordItem {
+public class GoddessSwordItem extends MasterSwordItem {
 
     public GoddessSwordItem() {
         super(GoddessSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.RARE).attributeModifiers(createAttributeModifiers(GoddessSwordMaterial.INSTANCE, 1, -2.4F).with(
@@ -48,7 +48,8 @@ public class GoddessSwordItem extends SwordItem {
     public static final int DURABILITY_TIMER = 600;
     public static final String DURABILITY_KEY = "durabilityHealTimer";
 
-    // Somehow exclude the Sweeping Edge enchantment from being put onto the sword
+    //TODO: Somehow exclude the Sweeping Edge enchantment from being put onto the sword
+
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;
