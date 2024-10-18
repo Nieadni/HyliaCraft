@@ -1,28 +1,30 @@
-package net.nieadni.hyliacraft.entity;
+package net.nieadni.hyliacraft.entity.sword_beam_entity_renderers;
 
-import net.fabricmc.api.*;
-
-import net.minecraft.client.render.*;
-import net.minecraft.client.render.entity.*;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
-
 import net.nieadni.hyliacraft.HyliaCraft;
-
+import net.nieadni.hyliacraft.entity.sword_beam_entities.MasterSwordBeamEntity;
 import org.jetbrains.annotations.NotNull;
-
-import org.joml.*;
+import org.joml.Matrix4f;
 
 @Environment(EnvType.CLIENT)
-public class SwordBeamEntityRenderer extends EntityRenderer<SwordBeamEntity> {
+public class MasterSwordBeamEntityRenderer extends EntityRenderer<MasterSwordBeamEntity> {
 
-    public SwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
+    public MasterSwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
     }
 
     @Override
-    public void render(@NotNull SwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
+    public void render(@NotNull MasterSwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
         matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(-90f));
@@ -42,7 +44,7 @@ public class SwordBeamEntityRenderer extends EntityRenderer<SwordBeamEntity> {
     }
 
     @Override
-    public Identifier getTexture(@NotNull SwordBeamEntity beam) {
+    public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
         return new Identifier(HyliaCraft.MOD_ID, "textures/entity/master_sword_beam/master_sword_beam_0.png");
     }
 }

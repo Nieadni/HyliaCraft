@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft.item.custom;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -12,14 +13,17 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class GoddessSwordItem extends MasterSwordItem {
+public class GoddessSwordItem extends SwordItem {
 
     public GoddessSwordItem() {
         super(GoddessSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.RARE).attributeModifiers(createAttributeModifiers(GoddessSwordMaterial.INSTANCE, 1, -2.4F).with(
@@ -66,5 +70,40 @@ public class GoddessSwordItem extends MasterSwordItem {
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+    }
+
+    @Override
+    public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
+
+        ItemStack stack = user.getMainHandStack();
+        if (user.isSneaking()) {
+
+            GoddessSwordBeamEntity swordBeamEntity = HCEntities.GODDESS_SWORD_BEAM.create(world);
+            swordBeamEntity.setOwner(user);
+            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d vec3d = user.getRotationVec(1.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(swordBeamEntity);
+
+        }
+
+        else {
+
+            GoddessSwordBeamEntity swordBeamEntity = HCEntities.GODDESS_SWORD_BEAM.create(world);
+            swordBeamEntity.setOwner(user);
+            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d vec3d = user.getRotationVec(1.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(swordBeamEntity);
+            // Need to make this else part, a vertical beam
+
+        }
+
+        user.getItemCooldownManager().set(this, 30);
+        stack.damage(20, user, EquipmentSlot.MAINHAND);
+
+        return TypedActionResult.fail(stack);
     }
 }

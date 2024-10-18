@@ -15,6 +15,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import net.nieadni.hyliacraft.entity.*;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.MasterSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
 
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +71,7 @@ public class MasterSwordItem extends SwordItem {
         ItemStack stack = user.getMainHandStack();
         if (user.isSneaking()) {
 
-            SwordBeamEntity swordBeamEntity = HCEntities.MASTER_SWORD_BEAM.create(world);
+            MasterSwordBeamEntity swordBeamEntity = HCEntities.MASTER_SWORD_BEAM.create(world);
             swordBeamEntity.setOwner(user);
             swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
@@ -82,7 +83,7 @@ public class MasterSwordItem extends SwordItem {
 
         else {
 
-            SwordBeamEntity swordBeamEntity = HCEntities.MASTER_SWORD_BEAM.create(world);
+            MasterSwordBeamEntity swordBeamEntity = HCEntities.MASTER_SWORD_BEAM.create(world);
             swordBeamEntity.setOwner(user);
             swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
@@ -95,8 +96,6 @@ public class MasterSwordItem extends SwordItem {
 
         user.getItemCooldownManager().set(this, 30);
         stack.damage(20, user, EquipmentSlot.MAINHAND);
-        SwordBeamEntity.create(world, 30f);
-
 
         return TypedActionResult.fail(stack);
     }

@@ -1,29 +1,33 @@
-package net.nieadni.hyliacraft.entity;
+package net.nieadni.hyliacraft.entity.sword_beam_entities;
 
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.*;
-import net.minecraft.util.hit.*;
-import net.minecraft.util.math.*;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.entity.HCEntities;
 
-public class SwordBeamEntity extends ProjectileEntity {
+public class GoddessLongswordBeamEntity extends ProjectileEntity {
 
     private final float damage;
 
-    public SwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+    public GoddessLongswordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
-        this.damage = 10.0f;  // Somehow need to get this to be something I can reference and change in the 5 different sword classes
+        damage = 5.5f;
     }
 
-    private SwordBeamEntity(World world, float damage) {
-        super(HCEntities.MASTER_SWORD_BEAM, world);
+    private GoddessLongswordBeamEntity(World world, float damage) {
+        super(HCEntities.GODDESS_LONGSWORD_BEAM, world);
         this.damage = damage;
     }
 
-    public static SwordBeamEntity create(World world, float damage) {
-        return new SwordBeamEntity(world, damage);
+    public static GoddessLongswordBeamEntity create(World world, float damage) {
+        return new GoddessLongswordBeamEntity(world, damage);
     }
 
     @Override

@@ -45,8 +45,8 @@ dependencies {
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
 
 	// MmmMmmMmmMmm (Target Dummy) for Attribute and DMG Tests
-	//modRuntimeOnly "maven.modrinth:${dummy_project}:${dummy_version}"
-	//modRuntimeOnly "maven.modrinth:${moonlight_project}:${moonlight_version}"
+	modRuntimeOnly "maven.modrinth:${dummy_project}:${dummy_version}"
+	modRuntimeOnly "maven.modrinth:${moonlight_project}:${moonlight_version}"
 
 	// JEI
 	modRuntimeOnly "maven.modrinth:${jei_project}:${jei_version}"
