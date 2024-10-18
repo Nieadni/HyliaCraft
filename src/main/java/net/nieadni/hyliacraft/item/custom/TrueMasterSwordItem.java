@@ -3,14 +3,19 @@ package net.nieadni.hyliacraft.item.custom;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.TrueMasterSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.TrueMasterSwordMaterial;
 
 import org.jetbrains.annotations.NotNull;
@@ -58,5 +63,40 @@ public class TrueMasterSwordItem extends MasterSwordItem {
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+    }
+
+    @Override
+    public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
+
+        ItemStack stack = user.getMainHandStack();
+        if (user.isSneaking()) {
+
+            TrueMasterSwordBeamEntity swordBeamEntity = HCEntities.TRUE_MASTER_SWORD_BEAM.create(world);
+            swordBeamEntity.setOwner(user);
+            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d vec3d = user.getRotationVec(1.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(swordBeamEntity);
+
+        }
+
+        else {
+
+            TrueMasterSwordBeamEntity swordBeamEntity = HCEntities.TRUE_MASTER_SWORD_BEAM.create(world);
+            swordBeamEntity.setOwner(user);
+            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d vec3d = user.getRotationVec(1.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(swordBeamEntity);
+            // Need to make this else part, a vertical beam
+
+        }
+
+        user.getItemCooldownManager().set(this, 30);
+        stack.damage(20, user, EquipmentSlot.MAINHAND);
+
+        return TypedActionResult.fail(stack);
     }
 }

@@ -5,13 +5,42 @@ import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
 
 public class HCEntities {
 
-    public static final EntityType<SwordBeamEntity> MASTER_SWORD_BEAM = Registry.register(
+    public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
-            EntityType.Builder.create(SwordBeamEntity::new, SpawnGroup.MISC)
+            EntityType.Builder.create(GoddessSwordBeamEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+    public static final EntityType<GoddessLongswordBeamEntity> GODDESS_LONGSWORD_BEAM = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            EntityType.Builder.create(GoddessLongswordBeamEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+    public static final EntityType<GoddessWhiteSwordBeamEntity> GODDESS_WHITE_SWORD_BEAM = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            EntityType.Builder.create(GoddessWhiteSwordBeamEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+    public static final EntityType<MasterSwordBeamEntity> MASTER_SWORD_BEAM = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            EntityType.Builder.create(MasterSwordBeamEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+    public static final EntityType<TrueMasterSwordBeamEntity> TRUE_MASTER_SWORD_BEAM = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            EntityType.Builder.create(TrueMasterSwordBeamEntity::new, SpawnGroup.MISC)
                     .dimensions(1f, 0.1f)
                     .build()
     );
