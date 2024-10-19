@@ -12,12 +12,26 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessSwordBeamEntity;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessWhiteSwordBeamEntity;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
+import java.util.Arrays;
+
 @Environment(EnvType.CLIENT)
 public class GoddessWhiteSwordBeamEntityRenderer extends EntityRenderer<GoddessWhiteSwordBeamEntity> {
+
+    protected static final Identifier[] TEXTURES = {
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_0.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_1.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_2.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_3.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_4.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_5.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_6.png"),
+            new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_7.png")
+    };
 
     public GoddessWhiteSwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
@@ -43,8 +57,8 @@ public class GoddessWhiteSwordBeamEntityRenderer extends EntityRenderer<GoddessW
         super.render(beam, yaw, tickDelta, matrices, vertexConsumers, light);
     }
 
-    @Override
-    public Identifier getTexture(@NotNull GoddessWhiteSwordBeamEntity beam) {
-        return new Identifier(HyliaCraft.MOD_ID, "textures/entity/master_sword_beam/master_sword_beam_0.png");
+    public Identifier getTexture(GoddessWhiteSwordBeamEntity instance) {
+        Identifier[] beamTextures = TEXTURES;
+        return Arrays.stream(beamTextures).toList().get((instance.age) % beamTextures.length);
     }
 }

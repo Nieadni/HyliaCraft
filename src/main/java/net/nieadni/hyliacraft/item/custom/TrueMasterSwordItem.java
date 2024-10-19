@@ -75,7 +75,7 @@ public class TrueMasterSwordItem extends MasterSwordItem {
             swordBeamEntity.setOwner(user);
             swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
-            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 1f, 0.0f);
             swordBeamEntity.setYaw(user.getHeadYaw());
             world.spawnEntity(swordBeamEntity);
 
@@ -87,7 +87,7 @@ public class TrueMasterSwordItem extends MasterSwordItem {
             swordBeamEntity.setOwner(user);
             swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
-            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 1f, 0.0f);
             swordBeamEntity.setYaw(user.getHeadYaw());
             world.spawnEntity(swordBeamEntity);
             // Need to make this else part, a vertical beam
