@@ -21,6 +21,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         /** ITEMS **/
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
+        translationBuilder.add(HCItems.FIRESHIELD_EARRING, "§cFireshield Earring");
+        translationBuilder.add(HCItems.WATER_DRAGON_SCALE, "§1Water Dragon's Scale");
+        translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
         translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");
@@ -37,6 +40,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
+        translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
         translationBuilder.add(HCItems.HYLIAN_SHIELD, "Hylian Shield");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");

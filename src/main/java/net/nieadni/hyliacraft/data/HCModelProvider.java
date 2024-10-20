@@ -21,21 +21,35 @@ public class HCModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 
+        // Equipment
         itemModelGenerator.register(HCItems.MAJORAS_MASK, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_MASK, Models.GENERATED);
+        itemModelGenerator.register(HCItems.FIRESHIELD_EARRING, Models.GENERATED);
+        itemModelGenerator.register(HCItems.WATER_DRAGON_SCALE, Models.GENERATED);
+        itemModelGenerator.register(HCItems.SHADOW_CRYSTAL, Models.GENERATED);
 
+        // Ranged Weapons
+        itemModelGenerator.register(HCItems.SLINGSHOT, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.BOOMERANG, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.GALE_BOOMERANG, Models.HANDHELD);
+
+        // Melee Weapons
         itemModelGenerator.register(HCItems.GODDESS_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.GODDESS_LONGSWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.GODDESS_WHITE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.MASTER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.TRUE_MASTER_SWORD, Models.HANDHELD);
 
-        itemModelGenerator.register(HCItems.SLINGSHOT, Models.HANDHELD);
-        itemModelGenerator.register(HCItems.BOOMERANG, Models.HANDHELD);
-        itemModelGenerator.register(HCItems.GALE_BOOMERANG, Models.HANDHELD);
+        // Tools
+        //HYAH!
 
+        // Misc Gear
+        itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
+
+        // Consumables
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
 
+        // Rupees
         itemModelGenerator.register(HCItems.RUPEE_POUCH, Models.GENERATED);
         itemModelGenerator.register(HCItems.GREEN_RUPEE, Models.GENERATED);
         itemModelGenerator.register(HCItems.BLUE_RUPEE, Models.GENERATED);

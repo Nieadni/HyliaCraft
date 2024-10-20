@@ -19,6 +19,15 @@ public class HCItemGroups {
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
                         entries.add(HCItems.MAJORAS_MASK);
                         entries.add(HCItems.PUMPKIN_MASK);
+                        entries.add(HCItems.FIRESHIELD_EARRING);
+                        entries.add(HCItems.WATER_DRAGON_SCALE);
+                        entries.add(HCItems.SHADOW_CRYSTAL);
+
+                        entries.add(HCItems.SLINGSHOT);
+                        entries.add(HCItems.IRON_BOW);
+                        entries.add(HCItems.FAIRY_BOW);
+                        entries.add(HCItems.BOOMERANG);
+                        entries.add(HCItems.GALE_BOOMERANG);
 
                         entries.add(HCItems.GODDESS_SWORD);
                         entries.add(HCItems.GODDESS_LONGSWORD);
@@ -27,14 +36,10 @@ public class HCItemGroups {
                         entries.add(HCItems.TRUE_MASTER_SWORD);
                         entries.add(HCItems.HYLIAN_SHIELD);
 
-                        entries.add(HCItems.SLINGSHOT);
-                        entries.add(HCItems.IRON_BOW);
-                        entries.add(HCItems.FAIRY_BOW);
-                        entries.add(HCItems.BOOMERANG);
-                        entries.add(HCItems.GALE_BOOMERANG);
-
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);
+
+                        entries.add(HCItems.HORSE_CALL);
                         entries.add(HCItems.PARAGLIDER);
 
                     }).build());

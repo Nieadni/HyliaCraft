@@ -10,7 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class ParagliderItem extends Item {
 
-    //TODO: Make it so you cant use items while using Paraglider / Make Paraglider not work while using an item (so you cant fire like 999999999 arrows)
+    //TODO: Make it so you cant use items while using Paraglider
+
     public ParagliderItem(Settings settings) {
         super(settings);
     }
