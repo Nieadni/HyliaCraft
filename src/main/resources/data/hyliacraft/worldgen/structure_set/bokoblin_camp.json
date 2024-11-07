@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "hyliacraft:bokoblin_camp",
+      "weight": 1
+    }
+  ],
+  //SALT MUST BE UNIQUE AND LESS THAN 2147483647
+  "placement": {
+    "salt": 2079029357,
+
+    "spacing": 30,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}

@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
@@ -17,6 +18,7 @@ import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
@@ -43,6 +45,7 @@ public class HyliaCraft implements ModInitializer {
 		HCBlockTags.registerHCBlockTags();
 		HCBlockEntityType.registerHCBlockEntities();
 		HCEntities.registerHyliaCraftEntities();
+		//BlockEntityRendererFactories.register(IRON_CHEST_ENTITY, IronChestBlockEntityRenderer::new);
 
 		// Loot Stuff
 
