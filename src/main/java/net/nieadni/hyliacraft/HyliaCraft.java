@@ -40,20 +40,10 @@ public class HyliaCraft implements ModInitializer {
 		HCBlockTags.registerHCBlockTags();
 		HCBlockEntityType.registerHCBlockEntities();
 		HCEntities.registerHyliaCraftEntities();
+		HCLootTables.registerHyliaCraftLootTables();
 		//BlockEntityRendererFactories.register(IRON_CHEST_ENTITY, IronChestBlockEntityRenderer::new);
 
 		// Loot Stuff
-
-		LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
-			if (source.isBuiltin() && HCLootTables.MORSHU_SHOP.equals(key)) {
-				LootPool.Builder poolBuilder = LootPool.builder()
-						.rolls(ConstantLootNumberProvider.create(3))
-						.with(ItemEntry.builder(HCItems.BLUE_RUPEE).weight(16).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4, 20))))
-						.with(ItemEntry.builder(HCItems.YELLOW_RUPEE).weight(12).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 10))))
-						.with(ItemEntry.builder(HCItems.RED_RUPEE).weight(8).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 5))));
-				tableBuilder.pool(poolBuilder);
-			}
-				});
 
 			LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
 			if (source.isBuiltin() && LootTables.ABANDONED_MINESHAFT_CHEST.equals(key)) {

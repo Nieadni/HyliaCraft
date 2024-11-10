@@ -15,11 +15,12 @@ public class HCLootTables extends LootTables {
         return LootTables.registerLootTable(RegistryKey.of(RegistryKeys.LOOT_TABLE, (Identifier.of(HyliaCraft.MOD_ID,(name)))));
     }
 
-    // TODO: AW the registerLootTable thing.
-    // accessible method net/minecraft/loot/LootTables registerLootTable (Lnet/minecraft/registry/RegistryKey;)Lnet/minecraft/registry/RegistryKey;
-
     static {
         MORSHU_SHOP = register("chests/morshu_shop");
+    }
+
+    public static void registerHyliaCraftLootTables() {
+        HyliaCraft.LOGGER.info(HyliaCraft.MOD_ID + " has registered its Chest Loot Tables");
     }
 
 }
