@@ -3,22 +3,17 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
-import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
+import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
@@ -50,6 +45,17 @@ public class HyliaCraft implements ModInitializer {
 		// Loot Stuff
 
 		LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
+			if (source.isBuiltin() && HCLootTables.MORSHU_SHOP.equals(key)) {
+				LootPool.Builder poolBuilder = LootPool.builder()
+						.rolls(ConstantLootNumberProvider.create(3))
+						.with(ItemEntry.builder(HCItems.BLUE_RUPEE).weight(16).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4, 20))))
+						.with(ItemEntry.builder(HCItems.YELLOW_RUPEE).weight(12).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2, 10))))
+						.with(ItemEntry.builder(HCItems.RED_RUPEE).weight(8).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 5))));
+				tableBuilder.pool(poolBuilder);
+			}
+				});
+
+			LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
 			if (source.isBuiltin() && LootTables.ABANDONED_MINESHAFT_CHEST.equals(key)) {
 				LootPool.Builder poolBuilder = LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(3))
