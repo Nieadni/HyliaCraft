@@ -20,6 +20,8 @@ import java.util.Arrays;
 @Environment(EnvType.CLIENT)
 public class GoddessSwordBeamEntityRenderer extends EntityRenderer<GoddessSwordBeamEntity> {
 
+    //TODO: Rotate the beam so its flat with where you are looking. Currently, if you are looking up or down, its just just horizontal and not angled
+
     protected static final Identifier[] TEXTURES = {
             new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_0.png"),
             new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_1.png"),

@@ -10,6 +10,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 public class HCLootTables extends LootTables {
 
     public static RegistryKey<LootTable> MORSHU_SHOP;
+    public static RegistryKey<LootTable> BOKOBLIN_CAMP;
 
     public static RegistryKey<LootTable> register(String name) {
         return LootTables.registerLootTable(RegistryKey.of(RegistryKeys.LOOT_TABLE, (Identifier.of(HyliaCraft.MOD_ID,(name)))));
@@ -17,6 +18,7 @@ public class HCLootTables extends LootTables {
 
     static {
         MORSHU_SHOP = register("chests/morshu_shop");
+        BOKOBLIN_CAMP = register("chests/bokoblin_camp");
     }
 
     public static void registerHyliaCraftLootTables() {
