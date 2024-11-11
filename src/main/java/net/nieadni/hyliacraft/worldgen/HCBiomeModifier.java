@@ -29,7 +29,6 @@ public class HCBiomeModifier {
                 HCPlacedFeatures.SWIFT_VIOLETS_PATCH_KEY
         );
 
-
     }
 
 

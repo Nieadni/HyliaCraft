@@ -43,7 +43,6 @@ public class HyliaCraft implements ModInitializer {
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		//BlockEntityRendererFactories.register(IRON_CHEST_ENTITY, IronChestBlockEntityRenderer::new);
-
 		HCBiomeModifier.load();
 
 		// Loot Stuff

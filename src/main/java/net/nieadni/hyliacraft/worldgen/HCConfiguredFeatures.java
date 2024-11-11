@@ -45,19 +45,19 @@ public class HCConfiguredFeatures {
                         48,  // Number of tries
                         10,    // X and Z Spread
                         4,     // Y Spread
-                        registryLookup.getOrThrow(HCPlacedFeatures.ARMORANTH_KEY)));
+                        registryLookup.getOrThrow(HCPlacedFeatures.BLUE_NIGHTSHADE_KEY)));
         register(context, SILENT_PRINCESS_PATCH_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(
                         32,  // Number of tries
                         4,    // X and Z Spread
                         4,     // Y Spread
-                        registryLookup.getOrThrow(HCPlacedFeatures.ARMORANTH_KEY)));
+                        registryLookup.getOrThrow(HCPlacedFeatures.SILENT_PRINCESS_KEY)));
         register(context, SWIFT_VIOLETS_PATCH_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(
                         48,  // Number of tries
                         8,    // X and Z Spread
                         4,     // Y Spread
-                        registryLookup.getOrThrow(HCPlacedFeatures.ARMORANTH_KEY)));
+                        registryLookup.getOrThrow(HCPlacedFeatures.SWIFT_VIOLETS_KEY)));
     }
 
     private static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
