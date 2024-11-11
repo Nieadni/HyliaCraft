@@ -18,6 +18,7 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
+import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.*;
 
 public class HyliaCraft implements ModInitializer {
@@ -42,6 +43,8 @@ public class HyliaCraft implements ModInitializer {
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		//BlockEntityRendererFactories.register(IRON_CHEST_ENTITY, IronChestBlockEntityRenderer::new);
+
+		HCBiomeModifier.load();
 
 		// Loot Stuff
 
