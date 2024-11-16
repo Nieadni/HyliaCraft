@@ -18,6 +18,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(HCModelProvider::new);
 		pack.addProvider(HCRecipeProvider::new);
 		pack.addProvider(HCBlockTagProvider::new);
+		pack.addProvider(HCWorldGenerator::new);
 	}
 
 	@Override

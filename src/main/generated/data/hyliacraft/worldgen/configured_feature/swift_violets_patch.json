@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": "hyliacraft:swift_violets",
+    "tries": 48,
+    "xz_spread": 8,
+    "y_spread": 4
+  }
+}

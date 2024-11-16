@@ -25,13 +25,13 @@ public class HCConfiguredFeatures {
 
         RegistryEntryLookup<PlacedFeature> registryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
 
-        register(context, ARMORANTH_PATCH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+        register(context, ARMORANTH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 BlockStateProvider.of(HCBlocks.ARMORANTH)));
-        register(context, BLUE_NIGHTSHADE_PATCH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+        register(context, BLUE_NIGHTSHADE_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 BlockStateProvider.of(HCBlocks.BLUE_NIGHTSHADE)));
-        register(context, SILENT_PRINCESS_PATCH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+        register(context, SILENT_PRINCESS_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 BlockStateProvider.of(HCBlocks.SILENT_PRINCESS)));
-        register(context, SWIFT_VIOLETS_PATCH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+        register(context, SWIFT_VIOLETS_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 BlockStateProvider.of(HCBlocks.SWIFT_VIOLETS)));
 
         register(context, ARMORANTH_PATCH_KEY, Feature.FLOWER,
