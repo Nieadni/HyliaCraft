@@ -14,6 +14,8 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 
 public class GoddessWhiteSwordBeamEntity extends ProjectileEntity {
 
+    //TODO: Make Beam destroy grass + flowers
+
     private final float damage;
 
     public GoddessWhiteSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {

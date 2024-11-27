@@ -32,5 +32,7 @@ Ordered A to Z to avoid bias:
 
 **Translators -**
 
-* justabokoblin / Boko-Bro - German [de-de]
-* R.E - Japanese [ja-jp]
+* German [de-de] - justabokoblin / Boko-Bro, xD1Fafa
+* Japanese [ja-jp] - renwillt / RE
+* Vietnamese [?-?] - sodapit
+* French [fr-fr] - MiyaPixai
