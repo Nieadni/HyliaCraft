@@ -9,6 +9,21 @@ import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
 
 public class HCEntities {
 
+    public static final EntityType<BokoblinEntity> RED_BOKOBLIN = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "red_bokoblin"),
+            EntityType.Builder.create(BokoblinEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+    public static final EntityType<BokoblinEntity> BLUE_BOKOBLIN = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            EntityType.Builder.create(BokoblinEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
+
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
