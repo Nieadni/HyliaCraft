@@ -51,6 +51,15 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         // Vanilla
 
+        getOrCreateTagBuilder(HCItemTags.BOKOBLIN_FOOD)
+                .add(Items.BEEF).add(Items.COOKED_BEEF)
+                .add(Items.CHICKEN).add(Items.COOKED_CHICKEN)
+                .add(Items.COD).add(Items.COOKED_COD)
+                .add(Items.MUTTON).add(Items.COOKED_MUTTON)
+                .add(Items.RABBIT).add(Items.COOKED_RABBIT)
+                .add(Items.PORKCHOP).add(Items.COOKED_PORKCHOP)
+                .add(Items.SALMON).add(Items.COOKED_SALMON);
+
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(Items.CARVED_PUMPKIN);
 
         getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(Blocks.BRICKS));

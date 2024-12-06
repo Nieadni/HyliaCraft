@@ -10,6 +10,8 @@ import net.nieadni.hyliacraft.HyliaCraft;
 
 public class HCItemTags {
 
+    public static final TagKey<Item> BOKOBLIN_FOOD = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "bokoblin_food"));
+
     public static final TagKey<Item> ENDERMASK = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "endermask"));
 
     public static final TagKey<Item> BRICKS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "bricks"));

@@ -25,6 +25,13 @@ repositories {
 	maven { url = "https://api.modrinth.com/maven" }
 }
 
+repositories {
+	maven {
+		name = "SmartBrainLib (SBL) Maven Repo"
+		url = "https://dl.cloudsmith.io/public/tslat/sbl/maven/"
+	}
+}
+
 fabricApi {
 	configureDataGeneration()
 }
@@ -40,6 +47,9 @@ dependencies {
 
 	// Geckolib is needed for some models
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
+
+	//SmartBrainLib for better mobs
+	modImplementation "net.tslat.smartbrainlib:SmartBrainLib-forge-${project.minecraft_version}:${project.sbl_version}"
 
 	// Worldedit for easier Building
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
