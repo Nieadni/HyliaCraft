@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
 import net.minecraft.client.render.RenderLayer;
 
+import net.minecraft.client.render.entity.PiglinEntityRenderer;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;

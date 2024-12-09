@@ -2,27 +2,20 @@ package net.nieadni.hyliacraft.entity.behaviours;
 
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleState;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.ai.pathing.Path;
-import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.nieadni.hyliacraft.entity.BokoblinEntity;
+import net.nieadni.hyliacraft.entity.bokoblins.RedBokoblinEntity;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.tslat.smartbrainlib.api.core.behaviour.ExtendedBehaviour;
 import net.tslat.smartbrainlib.util.BrainUtils;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Predicate;
 
-public class CookFoodBehaviour<E extends BokoblinEntity> extends ExtendedBehaviour<E> {
+public class CookFoodBehaviour<E extends RedBokoblinEntity> extends ExtendedBehaviour<E> {
     private static final List<Pair<MemoryModuleType<?>, MemoryModuleState>> MEMORY_REQS = ObjectArrayList.of(Pair.of(MemoryModuleType.ATTACK_TARGET, MemoryModuleState.VALUE_ABSENT), Pair.of(MemoryModuleType.WALK_TARGET, MemoryModuleState.REGISTERED));
 
     private BlockPos campfirePos;

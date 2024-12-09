@@ -1,5 +1,6 @@
 package net.nieadni.hyliacraft.item;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
@@ -63,6 +64,9 @@ public class HCItems extends Items {
     public static final Item ORANGE_RUPEE = register(new RupeeItem("tooltip.orange_rupee"), "orange_rupee");
     public static final Item SILVER_RUPEE = register(new RupeeItem("tooltip.silver_rupee"), "silver_rupee");
     public static final Item GOLD_RUPEE = register(new RupeeItem("tooltip.gold_rupee"), "gold_rupee");
+
+    // Misc
+    public static final Item RED_BOKOBLIN_SPAWN_EGG = register(new SpawnEggItem(EntityType.ARMADILLO, 11366765, 8538184, new Item.Settings()),"red_bokoblin_spawn_egg");
 
 
     public static void registerHCItems() {

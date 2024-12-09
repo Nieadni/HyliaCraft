@@ -49,7 +49,7 @@ dependencies {
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 
 	//SmartBrainLib for better mobs
-	modImplementation "net.tslat.smartbrainlib:SmartBrainLib-forge-${project.minecraft_version}:${project.sbl_version}"
+	modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-${project.minecraft_version}:${project.sbl_version}"
 
 	// Worldedit for easier Building
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
