@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-13T12:13:54.8574536	HyliaCraft/Block Loot Tables
+// 1.21.1	2025-01-07T19:44:47.773978	HyliaCraft/Block Loot Tables
 23391d213d2cc03cda30995a79702411aaa05c0b data\hyliacraft\loot_table\blocks\cyan_stripped_log.json
 99e2c768e5a50ea5535c5405436068b216af0f65 data\hyliacraft\loot_table\blocks\grey_button.json
 f064cd8419213f19930d166a81b8ff180e48eab4 data\hyliacraft\loot_table\blocks\silent_princess.json
@@ -144,8 +144,8 @@ fb7d515fb20dfe81257c1fb36becf1cb9407ea5e data\hyliacraft\loot_table\blocks\yello
 a2087ccafd733beddbcc69eec44ee905de8e0834 data\hyliacraft\loot_table\blocks\light_grey_fence.json
 97d060c1c005a44bceb1b652dd8e04fb9b361172 data\hyliacraft\loot_table\blocks\red_fence_gate.json
 12d06061cc75d8485891b43b6da182053c50d218 data\hyliacraft\loot_table\blocks\orange_stripped_log.json
-d97510b7e82e75cd2876a5a81c7901de8c6d24c3 data\hyliacraft\loot_table\blocks\purple_pressure_plate.json
 817cc872aea45a3337b2dfdfe9d01d552ccd78c8 data\hyliacraft\loot_table\blocks\orange_planks.json
+d97510b7e82e75cd2876a5a81c7901de8c6d24c3 data\hyliacraft\loot_table\blocks\purple_pressure_plate.json
 750580c71680717e3567787199c397e577aefcbe data\hyliacraft\loot_table\blocks\rainbow_fence_gate.json
 2768a617484fe96f5e167954f96a0fe12c6a4c5c data\hyliacraft\loot_table\blocks\brown_fence.json
 e1b235bcf9634d99c9f4c55c475984a9afd4667d data\hyliacraft\loot_table\blocks\rainbow_brick_stairs.json
