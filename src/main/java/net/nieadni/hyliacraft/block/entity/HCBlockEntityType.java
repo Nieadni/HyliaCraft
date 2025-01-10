@@ -9,7 +9,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 
 public class HCBlockEntityType {
-    public static final BlockEntityType<IronChestBlockEntity> IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = register("iron_chest_block_entity_block_entity_type",
+    public static final BlockEntityType<IronChestBlockEntity> IRON_CHEST = register("iron_chest",
             BlockEntityType.Builder.create(IronChestBlockEntity::new, HCBlocks.IRON_CHEST)
                     .build());
 

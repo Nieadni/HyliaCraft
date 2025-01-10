@@ -11,21 +11,21 @@ public class HCEntities {
 
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            new Identifier(HyliaCraft.MOD_ID, "goddess_sword_beam"),
             EntityType.Builder.create(GoddessSwordBeamEntity::new, SpawnGroup.MISC)
                     .dimensions(1f, 0.1f)
                     .build()
     );
     public static final EntityType<GoddessLongswordBeamEntity> GODDESS_LONGSWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            new Identifier(HyliaCraft.MOD_ID, "goddess_longsword_beam"),
             EntityType.Builder.create(GoddessLongswordBeamEntity::new, SpawnGroup.MISC)
                     .dimensions(1f, 0.1f)
                     .build()
     );
     public static final EntityType<GoddessWhiteSwordBeamEntity> GODDESS_WHITE_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            new Identifier(HyliaCraft.MOD_ID, "goddess_white_sword_beam"),
             EntityType.Builder.create(GoddessWhiteSwordBeamEntity::new, SpawnGroup.MISC)
                     .dimensions(1f, 0.1f)
                     .build()
@@ -39,7 +39,7 @@ public class HCEntities {
     );
     public static final EntityType<TrueMasterSwordBeamEntity> TRUE_MASTER_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(HyliaCraft.MOD_ID, "master_sword_beam"),
+            new Identifier(HyliaCraft.MOD_ID, "true_master_sword_beam"),
             EntityType.Builder.create(TrueMasterSwordBeamEntity::new, SpawnGroup.MISC)
                     .dimensions(1f, 0.1f)
                     .build()

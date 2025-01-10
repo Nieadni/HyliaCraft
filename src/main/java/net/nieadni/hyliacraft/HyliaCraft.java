@@ -3,16 +3,21 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
@@ -42,7 +47,6 @@ public class HyliaCraft implements ModInitializer {
 		HCBlockEntityType.registerHCBlockEntities();
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
-		//BlockEntityRendererFactories.register(IRON_CHEST_ENTITY, IronChestBlockEntityRenderer::new);
 		HCBiomeModifier.load();
 
 		// Loot Stuff

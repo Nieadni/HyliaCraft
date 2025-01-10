@@ -48,7 +48,7 @@ public class HCBlocks extends Blocks {
     public static final Block SWIFT_VIOLETS_POT = registerBlock("swift_violets_pot", Blocks.createFlowerPotBlock(SWIFT_VIOLETS));
 
     public static final Block IRON_CHEST = registerBlock("iron_chest", new IronChestBlock(AbstractBlock.Settings.create(), () -> {
-        return HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;}));
+        return HCBlockEntityType.IRON_CHEST;}));
 
     @Contract("_ -> new")
     private static @NotNull SuspiciousStewEffectsComponent createStewEffects(SuspiciousStewEffectsComponent.StewEffect... effects) {

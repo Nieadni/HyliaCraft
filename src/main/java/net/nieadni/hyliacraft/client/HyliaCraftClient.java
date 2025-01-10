@@ -6,7 +6,10 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
 import net.minecraft.client.render.RenderLayer;
 
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
+import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 
@@ -33,7 +36,7 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.HATENO_CLAY_POT
         );
         HCModelPredicates.registerHCModelPredicates();
-        // BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, IronChestBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST, IronChestBlockEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_SWORD_BEAM, GoddessSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_LONGSWORD_BEAM, GoddessLongswordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_WHITE_SWORD_BEAM, GoddessWhiteSwordBeamEntityRenderer::new);

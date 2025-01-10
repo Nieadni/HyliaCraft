@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;

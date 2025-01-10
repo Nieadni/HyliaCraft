@@ -1,8 +1,7 @@
 package net.nieadni.hyliacraft.block.custom;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ChestBlock;
-import net.minecraft.block.MapColor;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ChestBlockEntity;
@@ -19,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class IronChestBlock extends ChestBlock {
@@ -26,15 +26,15 @@ public class IronChestBlock extends ChestBlock {
         super(settings.mapColor(MapColor.IRON_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.5F).sounds(BlockSoundGroup.WOOD).burnable().requiresTool(), supplier);
     }
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
-
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return HCBlockEntityType.IRON_CHEST_BLOCK_ENTITY_BLOCK_ENTITY_TYPE.instantiate(pos, state);
+        return HCBlockEntityType.IRON_CHEST.instantiate(pos, state);
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
 }
