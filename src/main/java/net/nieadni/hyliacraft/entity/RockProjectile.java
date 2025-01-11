@@ -1,38 +1,72 @@
 package net.nieadni.hyliacraft.entity;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.particle.ItemStackParticleEffect;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.HyliaCraft;
+
+import java.util.Random;
 
 public class RockProjectile extends ProjectileEntity {
-    private final ModelPart main;
-    //TODO: 75% chance when hits block instead of mob to drop 1 cobblestone
+    private float damage;
 
-    public RockProjectile(EntityType<? extends ProjectileEntity> entityType, World world, ModelPart root) {
+    public RockProjectile(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
-        this.main = root.getChild("main");
+        this.damage = 5f; // The amount of damage the rock will deal
     }
 
-    public static TexturedModelData getTexturedModelData() {
-        ModelData modelData = new ModelData();
-        ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -3.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
-        return TexturedModelData.of(modelData, 16, 16);
+    public RockProjectile(World world, LivingEntity owner) {
+        super(HCEntities.ROCK_PROJECTILE, owner, world); // null will be changed later
     }
-    @Override
-    public void setAngles(ProjectileEntity projectileEntity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-    }
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-        main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+
+    public RockProjectile(World world, double x, double y, double z) {
+        super(HCEntities.ROCK_PROJECTILE, x, y, z, world);
     }
 
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
+    }
+
+    @Override
+    protected void onEntityHit(EntityHitResult entityHitResult) {
+        super.onEntityHit(entityHitResult);
+
+        Entity swordBeam = entityHitResult.getEntity();
+        if (this.getOwner() instanceof PlayerEntity player) {
+            swordBeam.damage(swordBeam.getDamageSources().playerAttack(player), damage);
+        }
+    }
+
+    @Override
+    protected void onBlockCollision(BlockState state) { // called on collision with a block
+        super.onBlockCollision(state);
+        if (!this.getWorld().isClient) { // checks if the world is client
+            this.getWorld().sendEntityStatus(this, (byte)3); // particle?
+            Random random = new Random();
+            if (random.nextFloat() < 0.75) { // 75% chance to drop cobblestone
+                this.dropItem(Items.COBBLESTONE);
+            }
+            this.kill(); // kills the projectile
+        }
 
     }
 }

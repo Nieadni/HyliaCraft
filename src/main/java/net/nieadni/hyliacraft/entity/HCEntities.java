@@ -10,11 +10,10 @@ import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
 
 public class HCEntities {
 
-
     public static final EntityType<RockProjectile> ROCK_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(HyliaCraft.MOD_ID, "rock"),
-            EntityType.Builder.create(RockProjectile::new, SpawnGroup.MISC)
+            EntityType.Builder.create((type, world) -> new RockProjectile(type, world), SpawnGroup.MISC)
                     .dimensions(0.2f, 0.2f)
                     .build()
     );
