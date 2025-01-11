@@ -1,13 +1,24 @@
 package net.nieadni.hyliacraft.entity;
 
-import net.minecraft.entity.*;
-import net.minecraft.registry.*;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
 
 public class HCEntities {
+
+    /**
+    public static final EntityType<RockProjectile> ROCK_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "rock"),
+            EntityType.Builder.create(RockProjectile::new, SpawnGroup.MISC)
+                    .dimensions(0.2f, 0.2f)
+                    .build()
+    );
+    **/
 
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,

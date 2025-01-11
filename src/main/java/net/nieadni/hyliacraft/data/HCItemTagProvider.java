@@ -2,7 +2,6 @@ package net.nieadni.hyliacraft.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -52,6 +51,9 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         // Vanilla
 
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(Items.CARVED_PUMPKIN);
+
+        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.COBBLESTONE);
+        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.STONE);
 
         getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(Blocks.BRICKS));
         getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(Blocks.BRICK_STAIRS));
