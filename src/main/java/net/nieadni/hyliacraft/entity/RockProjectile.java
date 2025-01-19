@@ -27,24 +27,15 @@ import net.nieadni.hyliacraft.HyliaCraft;
 import java.util.Random;
 
 public class RockProjectile extends ProjectileEntity {
-    private float damage;
+    private final float damage;
 
     public RockProjectile(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
         this.damage = 5f; // The amount of damage the rock will deal
     }
 
-    public RockProjectile(World world, LivingEntity owner) {
-        super(HCEntities.ROCK_PROJECTILE, owner, world); // null will be changed later
-    }
-
-    public RockProjectile(World world, double x, double y, double z) {
-        super(HCEntities.ROCK_PROJECTILE, x, y, z, world);
-    }
-
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-    }
+    protected void initDataTracker(DataTracker.Builder builder) {}
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
