@@ -29,6 +29,7 @@ public class RockProjectileRenderer extends ProjectileEntityRenderer {
         return Identifier.of(HyliaCraft.MOD_ID,"textures/entity/projectiles/rock.png");
     }
 
+    /**
     @Override
     public void render(@NotNull GoddessLongswordBeamEntity rockProjectile, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
@@ -46,4 +47,5 @@ public class RockProjectileRenderer extends ProjectileEntityRenderer {
         matrices.pop();
         super.render(rockProjectile, yaw, tickDelta, matrices, vertexConsumers, light);
     }
+    **/
 }

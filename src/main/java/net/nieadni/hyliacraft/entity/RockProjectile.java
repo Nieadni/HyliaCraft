@@ -26,8 +26,9 @@ import net.nieadni.hyliacraft.HyliaCraft;
 
 import java.util.Random;
 
-public class RockProjectile extends ProjectileEntity {
+public class RockProjectile {/**extends ProjectileEntity {
     private final float damage;
+
 
     public RockProjectile(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
@@ -60,4 +61,5 @@ public class RockProjectile extends ProjectileEntity {
         }
 
     }
+    **/
 }

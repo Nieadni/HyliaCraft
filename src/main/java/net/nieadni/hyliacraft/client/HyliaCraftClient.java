@@ -36,7 +36,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         );
         HCModelPredicates.registerHCModelPredicates();
         BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST, IronChestBlockEntityRenderer::new);
-        EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
+        //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_SWORD_BEAM, GoddessSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_LONGSWORD_BEAM, GoddessLongswordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_WHITE_SWORD_BEAM, GoddessWhiteSwordBeamEntityRenderer::new);
