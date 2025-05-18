@@ -27,6 +27,17 @@ public class HCRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_SS,1)
+                .pattern("FWF")
+                .pattern("LHG")
+                .input('H', Items.LEATHER_HELMET)
+                .input('G', Items.GREEN_DYE)
+                .input('L', Items.LIME_DYE)
+                .input('F', Items.FEATHER)
+                .input('W', Items.GREEN_WOOL)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT,1)
                 .pattern("CCC")
                 .pattern("C C")

@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-18T20:06:04.9918571	HyliaCraft/Recipes
+// 1.21.1	2025-05-18T20:42:59.917631	HyliaCraft/Recipes
 8f7e60b46a835b391eac46978e2a0ad9d8ec403a data\hyliacraft\advancement\recipes\building_blocks\green_bricks.json
 536aa05668bfb3e74b6f2bc42b9ed1784fd9667a data\hyliacraft\recipe\red_bricks.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
@@ -197,6 +197,7 @@ b4f088c131aeb92ec03c9e2c0e45f3fce6ecb37f data\hyliacraft\recipe\blue_stairs.json
 3b7a6002b1619a04a092f17d01f15d868f161c15 data\hyliacraft\recipe\brown_brick_slab.json
 2eb9bda10843453bc888200ddd17608853ee093b data\hyliacraft\advancement\recipes\building_blocks\lime_pressure_plate.json
 40ecef94e3e1b0cd64facca88c0a45427965104b data\hyliacraft\recipe\grey_brick_slab.json
+c9397d2477a862ebf91c1a9da731fe3917fd016e data\hyliacraft\recipe\phrygian_cap_ss.json
 151e8e27a5e935290bd04bd17cdf1232c231c5b6 data\hyliacraft\recipe\hateno_clay_pot.json
 0a35d0086de2ea7df792790c2f6a372f689821fb data\hyliacraft\recipe\brown_slab.json
 b7f7a2db968187f422284e62e52fede16bc68bfb data\hyliacraft\recipe\lime_fence_gate.json
@@ -350,6 +351,7 @@ a95ca3fc4f0aa95b82afc78a7fe5d77170b66475 data\hyliacraft\advancement\recipes\bui
 0eee63db9dfecff906d73c104cc44301c46b9b34 data\hyliacraft\advancement\recipes\building_blocks\pink_button.json
 44247ccdb917576ce717d7c4e6d2ba292fe4e680 data\hyliacraft\advancement\recipes\building_blocks\purple_fence_gate.json
 388d68418e3dd84a5270842e52d50697a2ad0c16 data\hyliacraft\advancement\recipes\building_blocks\blue_fence_gate.json
+5b1ab8ef9f3e9b5829d89b4385c12e028f6f43c1 data\hyliacraft\advancement\recipes\combat\phrygian_cap_ss.json
 40d0d960d1bea6fc570730c28356a6907efcdf6a data\hyliacraft\recipe\green_brick_stairs.json
 c4108f94a9c775914950259f6518a2c419dbac8b data\hyliacraft\advancement\recipes\building_blocks\yellow_brick_stairs.json
 0e3e6ef49d05c266f086aab3c87e1906664926a8 data\hyliacraft\recipe\cyan_fence.json
