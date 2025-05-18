@@ -38,7 +38,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP,1)
-                .pattern("FWF")
+                .pattern("BWB")
                 .pattern("GHG")
                 .input('H', Items.LEATHER_HELMET)
                 .input('G', Items.GREEN_DYE)

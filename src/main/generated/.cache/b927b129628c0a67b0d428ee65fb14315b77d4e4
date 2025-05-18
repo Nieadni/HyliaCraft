@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-18T20:42:59.917631	HyliaCraft/Recipes
+// 1.21.1	2025-05-18T22:46:28.8896278	HyliaCraft/Recipes
 8f7e60b46a835b391eac46978e2a0ad9d8ec403a data\hyliacraft\advancement\recipes\building_blocks\green_bricks.json
 536aa05668bfb3e74b6f2bc42b9ed1784fd9667a data\hyliacraft\recipe\red_bricks.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
@@ -60,6 +60,7 @@ ab0809d0d622df793e427f0ee484ddcbfe1cbf73 data\hyliacraft\advancement\recipes\bui
 786c323f8cf88c4d9e4fd7cb58aa9e582c7e7b67 data\hyliacraft\advancement\recipes\building_blocks\cyan_brick_stairs.json
 3b892b9ea7749ddc6d6e9614d47838b5f4366929 data\hyliacraft\advancement\recipes\building_blocks\yellow_fence_gate.json
 93c0b9eb1fb152315ea64b2e39d81938d44a491b data\hyliacraft\recipe\orange_stripped_log.json
+7a31e6f47449dce3373573652cae6decb1c4b370 data\hyliacraft\advancement\recipes\combat\phrygian_cap_tp.json
 54043c53d3d1185a71c56af245268c5b1cb2132b data\hyliacraft\recipe\brown_brick_stairs.json
 c0149898ade9b77442962830cd1dbe2b0ed6d342 data\hyliacraft\advancement\recipes\building_blocks\light_grey_pressure_plate.json
 5a60eaa243c853935d1fcb240130b07de40c4fa4 data\hyliacraft\advancement\recipes\building_blocks\orange_brick_wall.json
@@ -76,6 +77,7 @@ ae6cea34cd905810f85a6942518e70bceb643a9e data\hyliacraft\recipe\orange_brick_wal
 0165b5b83706fd36e21205acc7331e2dac37ef30 data\hyliacraft\recipe\blue_brick_wall.json
 e539fcf297a36520b0ba86e3f35819977b885120 data\hyliacraft\advancement\recipes\building_blocks\green_brick_slab.json
 329cd62f3c08ee4035556050b23f3f8f51b64d2d data\hyliacraft\recipe\magenta_fence.json
+3a8f665ee861102508e3c21bb5a1105686ddf655 data\hyliacraft\recipe\phrygian_cap_tp.json
 412159b35ad490cba4e96e38ac967d33539aadd1 data\hyliacraft\recipe\red_stripped_wood.json
 444949a3afa775513386d8ddad83eee59d044b25 data\hyliacraft\advancement\recipes\building_blocks\black_brick_slab.json
 57a6aec996514275b4bb4c7933855c70830ad4d0 data\hyliacraft\advancement\recipes\building_blocks\blue_fence.json
