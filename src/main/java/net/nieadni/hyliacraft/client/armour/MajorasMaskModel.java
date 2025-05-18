@@ -8,6 +8,7 @@ import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
 import software.bernie.geckolib.model.GeoModel;
 
 public class MajorasMaskModel extends GeoModel<MajorasMaskItem> {
+
     @Override
     public Identifier getModelResource(MajorasMaskItem animatable) {
         return Identifier.of(HyliaCraft.MOD_ID, "geo/armor/majoras_mask.geo.json");

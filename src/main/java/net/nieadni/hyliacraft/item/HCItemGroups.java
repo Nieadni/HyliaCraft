@@ -19,6 +19,7 @@ public class HCItemGroups {
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
                         entries.add(HCItems.MAJORAS_MASK);
                         entries.add(HCItems.PUMPKIN_MASK);
+                        entries.add(HCItems.PHRYGIAN_CAP_SS);
                         entries.add(HCItems.FIRESHIELD_EARRING);
                         entries.add(HCItems.WATER_DRAGON_SCALE);
                         entries.add(HCItems.SHADOW_CRYSTAL);

@@ -28,6 +28,8 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.PUMPKIN_MASK);
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.PUMPKIN_MASK);
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(HCItems.PUMPKIN_MASK);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.PHRYGIAN_CAP_SS);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.PHRYGIAN_CAP_SS);
 
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
