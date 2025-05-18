@@ -37,6 +37,15 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('W', Items.GREEN_WOOL)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP,1)
+                .pattern("FWF")
+                .pattern("GHG")
+                .input('H', Items.LEATHER_HELMET)
+                .input('G', Items.GREEN_DYE)
+                .input('B', Items.BONE)
+                .input('W', Items.GREEN_WOOL)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+                .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT,1)
                 .pattern("CCC")

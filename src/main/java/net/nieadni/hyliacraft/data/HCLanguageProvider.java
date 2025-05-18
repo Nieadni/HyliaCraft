@@ -22,6 +22,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_SS, "Phrygian Cap");
+        translationBuilder.add(HCItems.PHRYGIAN_CAP_TP, "Phrygian Cap");
         translationBuilder.add(HCItems.FIRESHIELD_EARRING, "§cFireshield Earring");
         translationBuilder.add(HCItems.WATER_DRAGON_SCALE, "§1Water Dragon's Scale");
         translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
@@ -80,6 +81,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
 
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_ss", "A Green Phrygian Cap worn by the Hero of the Sky");
+        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_tp", "A Green Phrygian Cap worn by the Hero of Twilight");
 
         translationBuilder.add("tooltip.hyliacraft.hylian_shield1", "A shield passed down through the Hyrulean royal family, along with the legend of the hero who wielded it.");
         translationBuilder.add("tooltip.hyliacraft.hylian_shield2", "Its defensive capabilities and durability outshine all other shields.");

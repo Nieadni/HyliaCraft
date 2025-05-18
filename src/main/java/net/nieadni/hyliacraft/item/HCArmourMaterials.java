@@ -23,6 +23,7 @@ public class HCArmourMaterials {
     public static final int MAJORAS_MASK_DURABILITY_MULTIPLIER = 60;
     public static final int PUMPKIN_MASK_DURABILITY_MULTIPLIER = 5;
     public static final int PHRYGIAN_CAP_SS_DURABILITY_MULTIPLIER = 10;
+    public static final int PHRYGIAN_CAP_TP_DURABILITY_MULTIPLIER = 10;
 
     public static @NotNull RegistryEntry<ArmorMaterial> registerMaterial(String id, Map<ArmorItem.Type, Integer> defensePoints, int enchantability, RegistryEntry<SoundEvent> equipSound, Supplier<Ingredient> repairIngredientSupplier, float toughness, float knockbackResistance, boolean dyeable) {
         List<ArmorMaterial.Layer> layers = List.of(
@@ -67,6 +68,22 @@ public class HCArmourMaterials {
     );
 
     public static final RegistryEntry<ArmorMaterial> PHRYGIAN_CAP_SS = registerMaterial("phrygian_cap_ss",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 3,
+                    ArmorItem.Type.LEGGINGS, 2,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.ofItems(Items.LEATHER),
+            0F,
+            0F,
+            false
+    );
+
+    public static final RegistryEntry<ArmorMaterial> PHRYGIAN_CAP_TP = registerMaterial("phrygian_cap_tp",
             Map.of(
                     ArmorItem.Type.HELMET, 1,
                     ArmorItem.Type.CHESTPLATE, 3,
