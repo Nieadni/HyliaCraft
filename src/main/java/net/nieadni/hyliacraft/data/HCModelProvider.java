@@ -27,6 +27,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.PUMPKIN_MASK, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_SS, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_TP, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHRYGIAN_CAP_CLASSIC, Models.GENERATED);
         itemModelGenerator.register(HCItems.FIRESHIELD_EARRING, Models.GENERATED);
         itemModelGenerator.register(HCItems.WATER_DRAGON_SCALE, Models.GENERATED);
         itemModelGenerator.register(HCItems.SHADOW_CRYSTAL, Models.GENERATED);

@@ -21,6 +21,7 @@ public class HCItemGroups {
                         entries.add(HCItems.PUMPKIN_MASK);
                         entries.add(HCItems.PHRYGIAN_CAP_SS);
                         entries.add(HCItems.PHRYGIAN_CAP_TP);
+                        entries.add(HCItems.PHRYGIAN_CAP_CLASSIC);
                         entries.add(HCItems.FIRESHIELD_EARRING);
                         entries.add(HCItems.WATER_DRAGON_SCALE);
                         entries.add(HCItems.SHADOW_CRYSTAL);

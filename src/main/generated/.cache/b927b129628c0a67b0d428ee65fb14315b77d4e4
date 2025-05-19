@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-18T22:46:28.8896278	HyliaCraft/Recipes
+// 1.21.1	2025-05-19T16:17:53.5490144	HyliaCraft/Recipes
 8f7e60b46a835b391eac46978e2a0ad9d8ec403a data\hyliacraft\advancement\recipes\building_blocks\green_bricks.json
 536aa05668bfb3e74b6f2bc42b9ed1784fd9667a data\hyliacraft\recipe\red_bricks.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
@@ -149,6 +149,7 @@ d87326753af7b6406d8bec8912aa385c9725656c data\hyliacraft\recipe\blue_brick_stair
 a95fcf01883cfe482e6230534f686a43db771c45 data\hyliacraft\advancement\recipes\building_blocks\white_brick_wall.json
 ee253b5b16b4e9dd06e93d0b92ca37678a4565a2 data\hyliacraft\recipe\light_grey_fence.json
 703c92e5f176450d44e0e27993ea6eefc4a12764 data\hyliacraft\recipe\blue_fence_gate.json
+401603fa0fc8d6964d3c005c4503ce52b4878ca0 data\hyliacraft\recipe\phrygian_cap_classic.json
 3d3dd671bc5667ff664a8b669da2f87c2fbd13e9 data\hyliacraft\advancement\recipes\building_blocks\pink_stairs.json
 aa2e617862f92e614c192618a0f0dbe1da3cf3dc data\hyliacraft\recipe\green_bricks.json
 f7512c6a2507801b98d98b9a305d09ac399f652d data\hyliacraft\recipe\blue_bricks.json
@@ -215,6 +216,7 @@ b7e27faa22d57ad8d67855f774de9f590b187b66 data\hyliacraft\advancement\recipes\dec
 020fc8e9da91134f6e385842c5a8c880979e1a87 data\hyliacraft\advancement\recipes\building_blocks\orange_pressure_plate.json
 54f894727ab051e9b6b7a120ee4e591274483283 data\hyliacraft\advancement\recipes\building_blocks\lime_slab.json
 c0239b3d16e0204274f96ec86df4be3038cc1982 data\hyliacraft\advancement\recipes\building_blocks\brown_stripped_log.json
+1ce406b86529a371986ea607d6392bf5b88256a3 data\hyliacraft\advancement\recipes\combat\phrygian_cap_classic.json
 6b511a86493fe17cf941f9c26d618ed65d0c9501 data\hyliacraft\advancement\recipes\decorations\clay_pot.json
 0d7a1ea4f11a2f3ba76224d8ce9585552666a0cd data\hyliacraft\advancement\recipes\building_blocks\red_fence.json
 5854f46631574426643b2b21841dd87678adde10 data\hyliacraft\advancement\recipes\building_blocks\white_stripped_wood.json
