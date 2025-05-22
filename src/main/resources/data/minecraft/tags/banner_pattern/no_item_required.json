@@ -1,6 +1,13 @@
 {
   "values": [
+    "hyliacraft:gerudo",
+    "hyliacraft:goron",
     "hyliacraft:hyrule",
-    "hyliacraft:triforce"
+    "hyliacraft:kokiri",
+    "hyliacraft:rito",
+    "hyliacraft:sheikah",
+    "hyliacraft:triforce",
+    "hyliacraft:yiga",
+    "hyliacraft:zora"
   ]
 }
