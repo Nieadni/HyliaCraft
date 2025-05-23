@@ -1,12 +1,16 @@
 {
   "values": [
+    "hyliacraft:din",
+    "hyliacraft:farore",
     "hyliacraft:gerudo",
     "hyliacraft:goron",
     "hyliacraft:hyrule",
     "hyliacraft:kokiri",
+    "hyliacraft:nayru",
     "hyliacraft:rito",
     "hyliacraft:sheikah",
     "hyliacraft:triforce",
+    "hyliacraft:twili",
     "hyliacraft:yiga",
     "hyliacraft:zora"
   ]

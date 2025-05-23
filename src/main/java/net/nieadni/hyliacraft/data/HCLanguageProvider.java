@@ -333,39 +333,39 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** Banner Stuff **/
 
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.black", "Hyrulian Black");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.blue", "Hyrulian Blue");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.brown", "Hyrulian Brown");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.cyan", "Hyrulian Cyan");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.gray", "Hyrulian Grey");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.green", "Hyrulian Green");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.light_blue", "Hyrulian Light Blue");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.light_gray", "Hyrulian Light Grey");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.lime", "Hyrulian Lime");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.magenta", "Hyrulian Magenta");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.orange", "Hyrulian Orange");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.pink", "Hyrulian Pink");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.purple", "Hyrulian Purple");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.red", "Hyrulian Red");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.white", "Hyrulian White");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.yellow", "Hyrulian Yellow");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.black", "Black Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.blue", "Blue Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.brown", "Brown Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.cyan", "Cyan Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.gray", "Grey Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.green", "Green Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.light_blue", "Light Blue Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.light_gray", "Light Grey Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.lime", "Lime Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.magenta", "Magenta Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.orange", "Orange Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.pink", "Pink Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.purple", "Purple Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.red", "Red Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.white", "White Din");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.din.yellow", "Yellow Din");
 
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.black", "Black Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.blue", "Blue Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.brown", "Brown Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.cyan", "Cyan Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.gray", "Grey Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.green", "Green Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.light_blue", "Light Blue Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.light_gray", "Light Grey Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.lime", "Lime Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.magenta", "Magenta Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.orange", "Orange Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.pink", "Pink Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.purple", "Purple Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.red", "Red Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.white", "White Triforce");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.yellow", "Yellow Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.black", "Black Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.blue", "Blue Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.brown", "Brown Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.cyan", "Cyan Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.gray", "Grey Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.green", "Green Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.light_blue", "Light Blue Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.light_gray", "Light Grey Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.lime", "Lime Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.magenta", "Magenta Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.orange", "Orange Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.pink", "Pink Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.purple", "Purple Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.red", "Red Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.white", "White Farore");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.farore.yellow", "Yellow Farore");
 
         translationBuilder.add("block.minecraft.banner.hyliacraft.gerudo.black", "Black Gerudo");
         translationBuilder.add("block.minecraft.banner.hyliacraft.gerudo.blue", "Blue Gerudo");
@@ -401,6 +401,23 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.goron.white", "White Goron");
         translationBuilder.add("block.minecraft.banner.hyliacraft.goron.yellow", "Yellow Goron");
 
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.black", "Hyrulian Black");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.blue", "Hyrulian Blue");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.brown", "Hyrulian Brown");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.cyan", "Hyrulian Cyan");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.gray", "Hyrulian Grey");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.green", "Hyrulian Green");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.light_blue", "Hyrulian Light Blue");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.light_gray", "Hyrulian Light Grey");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.lime", "Hyrulian Lime");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.magenta", "Hyrulian Magenta");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.orange", "Hyrulian Orange");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.pink", "Hyrulian Pink");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.purple", "Hyrulian Purple");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.red", "Hyrulian Red");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.white", "Hyrulian White");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.hyrule.yellow", "Hyrulian Yellow");
+
         translationBuilder.add("block.minecraft.banner.hyliacraft.kokiri.black", "Black Kokiri");
         translationBuilder.add("block.minecraft.banner.hyliacraft.kokiri.blue", "Blue Kokiri");
         translationBuilder.add("block.minecraft.banner.hyliacraft.kokiri.brown", "Brown Kokiri");
@@ -418,6 +435,40 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.kokiri.white", "White Kokiri");
         translationBuilder.add("block.minecraft.banner.hyliacraft.kokiri.yellow", "Yellow Kokiri");
 
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.black", "Black Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.blue", "Blue Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.brown", "Brown Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.cyan", "Cyan Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.gray", "Grey Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.green", "Green Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.light_blue", "Light Blue Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.light_gray", "Light Grey Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.lime", "Lime Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.magenta", "Magenta Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.orange", "Orange Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.pink", "Pink Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.purple", "Purple Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.red", "Red Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.white", "White Nayru");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.nayru.yellow", "Yellow Nayru");
+
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.black", "Black Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.blue", "Blue Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.brown", "Brown Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.cyan", "Cyan Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.gray", "Grey Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.green", "Green Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.light_blue", "Light Blue Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.light_gray", "Light Grey Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.lime", "Lime Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.magenta", "Magenta Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.orange", "Orange Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.pink", "Pink Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.purple", "Purple Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.red", "Red Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.white", "White Rito");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.yellow", "Yellow Rito");
+
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.black", "Black Sheikah");
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.blue", "Blue Sheikah");
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.brown", "Brown Sheikah");
@@ -434,6 +485,40 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.red", "Red Sheikah");
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.white", "White Sheikah");
         translationBuilder.add("block.minecraft.banner.hyliacraft.sheikah.yellow", "Yellow Sheikah");
+
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.black", "Black Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.blue", "Blue Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.brown", "Brown Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.cyan", "Cyan Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.gray", "Grey Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.green", "Green Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.light_blue", "Light Blue Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.light_gray", "Light Grey Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.lime", "Lime Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.magenta", "Magenta Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.orange", "Orange Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.pink", "Pink Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.purple", "Purple Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.red", "Red Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.white", "White Triforce");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.triforce.yellow", "Yellow Triforce");
+
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.black", "Black Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.blue", "Blue Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.brown", "Brown Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.cyan", "Cyan Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.gray", "Grey Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.green", "Green Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.light_blue", "Light Blue Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.light_gray", "Light Grey Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.lime", "Lime Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.magenta", "Magenta Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.orange", "Orange Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.pink", "Pink Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.purple", "Purple Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.red", "Red Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.white", "White Twili");
+        translationBuilder.add("block.minecraft.banner.hyliacraft.twili.yellow", "Yellow Twili");
 
         translationBuilder.add("block.minecraft.banner.hyliacraft.yiga.black", "Black Yiga");
         translationBuilder.add("block.minecraft.banner.hyliacraft.yiga.blue", "Blue Yiga");
@@ -468,23 +553,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.red", "Red Zora");
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.white", "White Zora");
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.yellow", "Yellow Zora");
-
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.black", "Black Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.blue", "Blue Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.brown", "Brown Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.cyan", "Cyan Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.gray", "Grey Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.green", "Green Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.light_blue", "Light Blue Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.light_gray", "Light Grey Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.lime", "Lime Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.magenta", "Magenta Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.orange", "Orange Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.pink", "Pink Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.purple", "Purple Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.red", "Red Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.white", "White Rito");
-        translationBuilder.add("block.minecraft.banner.hyliacraft.rito.yellow", "Yellow Rito");
 
     }
 }
