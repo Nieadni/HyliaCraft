@@ -1,13 +1,13 @@
 {
-  "name": "hyliacraft:bokoblin_camp/start_pool",
+  "name": "hyliacraft:isle_of_the_goddess/start_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "hyliacraft:bokoblin_camp",
+        "location": "hyliacraft:isle_of_the_goddess",
         "processors": "minecraft:empty",
-        "projection": "terrain_matching",
+        "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     }

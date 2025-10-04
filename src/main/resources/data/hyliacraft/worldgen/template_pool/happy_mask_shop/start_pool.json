@@ -1,13 +1,13 @@
 {
-  "name": "hyliacraft:bokoblin_camp/start_pool",
+  "name": "hyliacraft:happy_mask_shop/start_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "hyliacraft:bokoblin_camp",
+        "location": "hyliacraft:happy_mask_shop",
         "processors": "minecraft:empty",
-        "projection": "terrain_matching",
+        "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     }

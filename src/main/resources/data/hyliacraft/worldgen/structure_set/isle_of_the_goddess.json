@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "hyliacraft:isle_of_the_goddess",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "spread_type": "triangular",
+    "salt": 1907141823,
+    "spacing": 120,
+    "separation": 40,
+    "type": "minecraft:random_spread"
+  }
+}

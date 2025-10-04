@@ -43,8 +43,8 @@ public class HCItems extends Items {
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
 
     // Tools
-    public static final Item DIGGING_MITT = register(new ShovelItem(DiggingMittMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(DiggingMittMaterial.INSTANCE,1,-3.0F)).rarity(Rarity.UNCOMMON)),"digging_mitt");
-    public static final Item MOGMA_MITT = register(new MogmaMittItem(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)),"mogma_mitt");
+    public static final Item DIGGING_MITT = register(new DiggingMittItem(new Item.Settings()),"digging_mitt");
+    public static final Item MOGMA_MITT = register(new MogmaMittItem(new Item.Settings()),"mogma_mitt");
 
     // Misc Gear
     public static final Item HORSE_CALL = register(new HorseCallItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)),"horse_call");

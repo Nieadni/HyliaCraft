@@ -15,16 +15,16 @@ Ordered A to Z to avoid bias:
 
 **Coders -**
 
-* [EpicVon2468](https://github.com/AngerVon2468)
 * Nieadni
 
 **Asset Makers -**
 
+* [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, and Bokoblin textures.
 * DataPackGen
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
-* [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, and Bokoblin textures.
-* VeganNatureQueen - For the Paraglider Model
 * [GreenPeas](https://www.planetminecraft.com/texture-pack/legend-of-zelda-hylian-shield-model/) - For the Hylian Shield Model
+* pom_pookie - For the 'Isle of the Goddess' Build, and Digging Mitts textures.
+* VeganNatureQueen - For the Paraglider Model
 
 **Testers -**
 
@@ -36,3 +36,7 @@ Ordered A to Z to avoid bias:
 * Japanese [ja-jp] - renwillt / RE
 * Vietnamese [?-?] - sodapit
 * French [fr-fr] - MiyaPixai
+
+**Ex-Coders**
+
+* [EpicVon2468](https://github.com/AngerVon2468)

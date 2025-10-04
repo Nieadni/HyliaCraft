@@ -1,13 +1,12 @@
 {
   "structures": [
     {
-      "structure": "hyliacraft:bokoblin_camp",
+      "structure": "hyliacraft:happy_mask_shop",
       "weight": 1
     }
   ],
-  //SALT MUST BE UNIQUE AND LESS THAN 2147483647
   "placement": {
-    "salt": 1403507738,
+    "salt": 1664052074,
 
     "spacing": 30,
 

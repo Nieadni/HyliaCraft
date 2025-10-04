@@ -41,12 +41,11 @@ dependencies {
 	// Geckolib is needed for some models
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 
+	// Nie's Higher Build Limit is needed for some structure generation
+	//modImplementation "maven.modrinth:${nie_worldheight_project}:${nie_worldheight_version}"
+
 	// Worldedit for easier Building
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
-
-	// MmmMmmMmmMmm (Target Dummy) for Attribute and DMG Tests
-	//modRuntimeOnly "maven.modrinth:${dummy_project}:${dummy_version}"
-	//modRuntimeOnly "maven.modrinth:${moonlight_project}:${moonlight_version}"
 
 	// JEI
 	modRuntimeOnly "maven.modrinth:${jei_project}:${jei_version}"

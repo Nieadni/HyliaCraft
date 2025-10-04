@@ -1,19 +1,13 @@
 {
   "name": "hyliacraft:morshu_shop/start_pool",
-
   "fallback": "minecraft:empty",
-
   "elements": [
     {
       "weight": 1,
       "element": {
-
         "location": "hyliacraft:morshu_shop",
-
         "processors": "minecraft:empty",
-
         "projection": "rigid",
-
         "element_type": "minecraft:single_pool_element"
       }
     }
