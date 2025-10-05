@@ -19,7 +19,7 @@ Ordered A to Z to avoid bias:
 
 **Asset Makers -**
 
-* [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, and Bokoblin textures.
+* [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, Rupee design, and Phrygian Cap design textures.
 * DataPackGen
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
 * [GreenPeas](https://www.planetminecraft.com/texture-pack/legend-of-zelda-hylian-shield-model/) - For the Hylian Shield Model

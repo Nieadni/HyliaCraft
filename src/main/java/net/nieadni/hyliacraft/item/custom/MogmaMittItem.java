@@ -14,7 +14,7 @@ import java.util.List;
 //TODO: Short Sword Range
 public class MogmaMittItem extends Item {
     public MogmaMittItem(Settings settings) {
-        super(settings.maxCount(1).rarity(Rarity.UNCOMMON));
+        super(new Settings().maxCount(1).rarity(Rarity.UNCOMMON));
     }
 
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED

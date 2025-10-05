@@ -42,7 +42,7 @@ dependencies {
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 
 	// Nie's Higher Build Limit is needed for some structure generation
-	//modImplementation "maven.modrinth:${nie_worldheight_project}:${nie_worldheight_version}"
+	modImplementation "maven.modrinth:${nie_worldheight_project}:${nie_worldheight_version}"
 
 	// Worldedit for easier Building
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
