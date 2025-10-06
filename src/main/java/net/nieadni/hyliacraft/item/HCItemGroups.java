@@ -37,7 +37,6 @@ public class HCItemGroups {
                         entries.add(HCItems.GODDESS_WHITE_SWORD);
                         entries.add(HCItems.MASTER_SWORD);
                         entries.add(HCItems.TRUE_MASTER_SWORD);
-                        entries.add(HCItems.HYLIAN_SHIELD);
 
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);

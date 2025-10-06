@@ -50,7 +50,7 @@ public class HCItems extends Items {
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
     // Shields
-    public static final Item HYLIAN_SHIELD = register(new HylianShieldItem(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC).maxDamage(1348)),"hylian_shield");
+    //waaaaa
 
     // Consumables
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).maxCount(1)), "pumpkin_soup");

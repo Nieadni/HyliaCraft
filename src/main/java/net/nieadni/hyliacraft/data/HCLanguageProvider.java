@@ -44,7 +44,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
-        translationBuilder.add(HCItems.HYLIAN_SHIELD, "Hylian Shield");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
 
@@ -84,9 +83,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_ss", "A Green Phrygian Cap worn by the Hero of the Sky");
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_tp", "A Green Phrygian Cap worn by the Hero of Twilight");
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_classic", "A Green and Yellow Phrygian Cap worn by the Hero of Legend");
-
-        translationBuilder.add("tooltip.hyliacraft.hylian_shield1", "A shield passed down through the Hyrulean royal family, along with the legend of the hero who wielded it.");
-        translationBuilder.add("tooltip.hyliacraft.hylian_shield2", "Its defensive capabilities and durability outshine all other shields.");
 
         translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
         translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");

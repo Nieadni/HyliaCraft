@@ -11,8 +11,6 @@ public class HCModelPredicates {
     public static void registerHCModelPredicates() {
         bowPulling(HCItems.IRON_BOW);
         bowPulling(HCItems.FAIRY_BOW);
-
-        shieldBlocking(HCItems.HYLIAN_SHIELD);
     }
 
     private static void bowPulling(Item bow) {
