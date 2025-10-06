@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
@@ -26,6 +27,8 @@ import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.*;
 
+import java.util.UUID;
+
 public class HyliaCraft implements ModInitializer {
 
 	public static final String MOD_ID = "hyliacraft";
@@ -48,6 +51,21 @@ public class HyliaCraft implements ModInitializer {
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
+
+            // Check if the player already has a race
+            UUID uuid = handler.getPlayer().getUuid();
+            HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
+            if (!data.raceChosen) {
+                data.raceChosen = true;
+                state.markDirty();
+                HyliaCraft.LOGGER.info("Chose race");
+            } else {
+                HyliaCraft.LOGGER.info("Race already chosen");
+            }
+        });
 
 		// Loot Stuff
 
