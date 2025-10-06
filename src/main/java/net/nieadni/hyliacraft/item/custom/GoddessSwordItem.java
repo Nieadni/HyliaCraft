@@ -23,7 +23,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+//TODO: Somehow exclude the Sweeping Edge enchantment from being put onto the sword
+//TODO: Item Combining (main hand sword, off hand farore_flame) to make Goddess Longsword
 public class GoddessSwordItem extends SwordItem {
+
+    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
+    public static final int DURABILITY_TIMER = 600;
+    public static final String DURABILITY_KEY = "durabilityHealTimer";
 
     public GoddessSwordItem() {
         super(GoddessSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.RARE).attributeModifiers(createAttributeModifiers(GoddessSwordMaterial.INSTANCE, 1, -2.4F).with(
@@ -48,12 +54,6 @@ public class GoddessSwordItem extends SwordItem {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
-    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
-    public static final int DURABILITY_TIMER = 600;
-    public static final String DURABILITY_KEY = "durabilityHealTimer";
-
-    //TODO: Somehow exclude the Sweeping Edge enchantment from being put onto the sword
-
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;
@@ -66,11 +66,6 @@ public class GoddessSwordItem extends SwordItem {
      * + 3/4's Normal Attack Damage
      * + 6 Second Cooldown
      */
-
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
@@ -105,5 +100,10 @@ public class GoddessSwordItem extends SwordItem {
         stack.damage(20, user, EquipmentSlot.MAINHAND);
 
         return TypedActionResult.fail(stack);
+    }
+
+    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
     }
 }

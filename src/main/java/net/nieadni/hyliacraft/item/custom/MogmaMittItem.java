@@ -3,8 +3,10 @@ package net.nieadni.hyliacraft.item.custom;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.ToolComponent;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,9 +14,11 @@ import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import net.minecraft.util.*;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.MasterSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.MogmaMittMaterial;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,11 +44,26 @@ public class MogmaMittItem extends Item {
         return 10;
     }
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
+    // REMOVE WIP HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.mogma_mitt"));
     }
 
     //TODO: Use on block = path, crouch + use on block = till
+
+    /*
+    @Override
+    public ActionResult useOnBlock(idk) {
+
+        ItemStack stack = user.getMainHandStack();
+        if (user.isSneaking()) {
+            // till
+        } else {
+            // path
+        }
+        return ActionResult.PASS;
+    }
+     */
 
 }

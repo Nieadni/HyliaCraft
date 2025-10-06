@@ -24,6 +24,10 @@ import java.util.List;
 
 public class TrueMasterSwordItem extends MasterSwordItem {
 
+    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
+    public static final int DURABILITY_TIMER = 40;
+    public static final String DURABILITY_KEY = "durabilityHealTimer";
+
     public TrueMasterSwordItem() {
         super(TrueMasterSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(TrueMasterSwordMaterial.INSTANCE,1, -2.4F).with(
                 EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
@@ -48,10 +52,6 @@ public class TrueMasterSwordItem extends MasterSwordItem {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
-    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
-    public static final int DURABILITY_TIMER = 40;
-    public static final String DURABILITY_KEY = "durabilityHealTimer";
-
     /**
      * Sword Beam Attack Needed
      * + Right Click = Vertical Attack
@@ -60,11 +60,7 @@ public class TrueMasterSwordItem extends MasterSwordItem {
      * + 6 Second Cooldown
      */
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
-
+    /*
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
 
@@ -99,4 +95,12 @@ public class TrueMasterSwordItem extends MasterSwordItem {
 
         return TypedActionResult.fail(stack);
     }
+     */
+
+    // REMOVE WIP HAS BEEN FULLY ADDED
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.true_master_sword"));
+    }
+
 }

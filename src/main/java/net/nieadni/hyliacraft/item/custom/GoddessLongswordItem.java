@@ -20,7 +20,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+//TODO: Item Combining (main hand sword, off hand nayru_flame) to make Goddess White Sword
 public class GoddessLongswordItem extends MasterSwordItem {
+
+    public static final int DURABILITY_TIMER = 400;
+    public static final String DURABILITY_KEY = "durabilityHealTimer";
 
     public GoddessLongswordItem() {
         super(GoddessLongswordMaterial.INSTANCE, new Item.Settings().attributeModifiers(createAttributeModifiers(GoddessLongswordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE));
@@ -41,10 +45,6 @@ public class GoddessLongswordItem extends MasterSwordItem {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
-    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
-    public static final int DURABILITY_TIMER = 400;
-    public static final String DURABILITY_KEY = "durabilityHealTimer";
-
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;
@@ -58,11 +58,7 @@ public class GoddessLongswordItem extends MasterSwordItem {
      * + 6 Second Cooldown
      */
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
-
+    /*
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
 
@@ -97,4 +93,12 @@ public class GoddessLongswordItem extends MasterSwordItem {
 
         return TypedActionResult.fail(stack);
     }
+     */
+
+    // REMOVE WIP HAS BEEN FULLY ADDED
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_longsword"));
+    }
+
 }

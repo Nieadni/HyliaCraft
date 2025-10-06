@@ -64,6 +64,11 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.SILVER_RUPEE, Models.GENERATED);
         itemModelGenerator.register(HCItems.GOLD_RUPEE, Models.GENERATED);
 
+        // Misc
+        itemModelGenerator.register(HCItems.NAYRU_FLAME, Models.GENERATED);
+        itemModelGenerator.register(HCItems.DIN_FLAME, Models.GENERATED);
+        itemModelGenerator.register(HCItems.FARORE_FLAME, Models.GENERATED);
+
     }
 
     @Override

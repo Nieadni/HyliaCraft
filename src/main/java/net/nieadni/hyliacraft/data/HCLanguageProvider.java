@@ -20,19 +20,29 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         /** ITEMS **/
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
+        translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_SS, "Phrygian Cap");
+        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_ss", "A Green Phrygian Cap worn by the Hero of the Sky");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_TP, "Phrygian Cap");
+        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_tp", "A Green Phrygian Cap worn by the Hero of Twilight");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_CLASSIC, "Phrygian Cap");
+        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_classic", "A Green and Yellow Phrygian Cap worn by the Hero of Legend");
         translationBuilder.add(HCItems.FIRESHIELD_EARRING, "§cFireshield Earring");
         translationBuilder.add(HCItems.WATER_DRAGON_SCALE, "§1Water Dragon's Scale");
         translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
         translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");
+        translationBuilder.add("tooltip.hyliacraft.goddess_longsword", "§aThe flames of Farore have improved your sword, making it longer and sharp enough to do twice as much damage!");
         translationBuilder.add(HCItems.GODDESS_WHITE_SWORD, "Goddess White Sword");
+        translationBuilder.add("tooltip.hyliacraft.goddess_white_sword", "§9The flames of Nayru have transformed your blade!");
         translationBuilder.add(HCItems.MASTER_SWORD, "Master Sword");
+        translationBuilder.add("tooltip.hyliacraft.master_sword", "§cThe flames of Din have imbued your blade with a sacred white light that demons revile!");
         translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
+        translationBuilder.add("tooltip.hyliacraft.true_master_sword", "The goddess has blessed your blade, and the Master Sword has at last achieved its ultimate form! The sword is now imbued with the mythical power to drive back demons!");
 
         translationBuilder.add(HCItems.IRON_BOW, "Iron Bow");
         translationBuilder.add(HCItems.FAIRY_BOW, "Fairy Bow");
@@ -41,21 +51,37 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.GALE_BOOMERANG, "Gale Boomerang");
 
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
+        translationBuilder.add("tooltip.hyliacraft.digging_mitt", "§6Use these sharp claws to dig through patches of soft earth!");
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
+        translationBuilder.add("tooltip.hyliacraft.mogma_mitt", "§6Use these sharp claws to dig through patches of stone and earth!");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
+        translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
 
         translationBuilder.add(HCItems.RUPEE_POUCH, "Rupee Pouch");
         translationBuilder.add(HCItems.GREEN_RUPEE, "Green Rupee");
+        translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
         translationBuilder.add(HCItems.BLUE_RUPEE, "Blue Rupee");
+        translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");
         translationBuilder.add(HCItems.YELLOW_RUPEE, "Yellow Rupee");
+        translationBuilder.add("tooltip.yellow_rupee", "Worth 10 Rupees");
         translationBuilder.add(HCItems.RED_RUPEE, "Red Rupee");
+        translationBuilder.add("tooltip.red_rupee", "Worth 20 Rupees");
         translationBuilder.add(HCItems.PURPLE_RUPEE, "Purple Rupee");
+        translationBuilder.add("tooltip.purple_rupee", "Worth 50 Rupees");
         translationBuilder.add(HCItems.ORANGE_RUPEE, "Orange Rupee");
+        translationBuilder.add("tooltip.orange_rupee", "Worth 100 Rupees");
         translationBuilder.add(HCItems.SILVER_RUPEE, "Silver Rupee");
+        translationBuilder.add("tooltip.silver_rupee", "Worth 200 Rupees");
         translationBuilder.add(HCItems.GOLD_RUPEE, "Gold Rupee");
+        translationBuilder.add("tooltip.gold_rupee", "Worth 300 Rupees");
+
+        translationBuilder.add(HCItems.NAYRU_FLAME, "§9Nayru's Flame");
+        translationBuilder.add(HCItems.DIN_FLAME, "§cDin's Flame");
+        translationBuilder.add(HCItems.FARORE_FLAME, "§aFarore's Flame");
+
 
         /** BLOCKS **/
 
@@ -75,24 +101,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
 
         /** Components **/
-
-        translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
-        translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
-        translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
-
-        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_ss", "A Green Phrygian Cap worn by the Hero of the Sky");
-        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_tp", "A Green Phrygian Cap worn by the Hero of Twilight");
-        translationBuilder.add("tooltip.hyliacraft.phrygian_cap_classic", "A Green and Yellow Phrygian Cap worn by the Hero of Legend");
-
-        translationBuilder.add("tooltip.green_rupee", "Worth 1 Rupee");
-        translationBuilder.add("tooltip.blue_rupee", "Worth 5 Rupees");
-        translationBuilder.add("tooltip.yellow_rupee", "Worth 10 Rupees");
-        translationBuilder.add("tooltip.red_rupee", "Worth 20 Rupees");
-        translationBuilder.add("tooltip.purple_rupee", "Worth 50 Rupees");
-        translationBuilder.add("tooltip.orange_rupee", "Worth 100 Rupees");
-        translationBuilder.add("tooltip.silver_rupee", "Worth 200 Rupees");
-        translationBuilder.add("tooltip.gold_rupee", "Worth 300 Rupees");
-        translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
 
         translationBuilder.add("container.hyliacraft.iron_chest", "Iron Chest");
 

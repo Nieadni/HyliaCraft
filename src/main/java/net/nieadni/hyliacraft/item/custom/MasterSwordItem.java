@@ -24,6 +24,10 @@ import java.util.List;
 
 public class MasterSwordItem extends SwordItem {
 
+    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
+    public static final int DURABILITY_TIMER = 160;
+    public static final String DURABILITY_KEY = "durabilityHealTimer";
+
     public MasterSwordItem() {
         super(MasterSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(MasterSwordItem.createAttributeModifiers(MasterSwordMaterial.INSTANCE,1, -2.4F).with(
                 EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
@@ -51,20 +55,20 @@ public class MasterSwordItem extends SwordItem {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
-    public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
-    public static final int DURABILITY_TIMER = 160;
-    public static final String DURABILITY_KEY = "durabilityHealTimer";
-
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;
     }
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-    }
+    /**
+     * Sword Beam Attack Needed
+     * + Right Click = Vertical Attack
+     * + Crouch + Right Click = Horizontal Attack
+     * + 3/4's Normal Attack Damage
+     * + 6 Second Cooldown
+     */
 
+    /*
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
 
@@ -99,4 +103,12 @@ public class MasterSwordItem extends SwordItem {
 
         return TypedActionResult.fail(stack);
     }
+     */
+
+    // REMOVE WIP HAS BEEN FULLY ADDED
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.master_sword"));
+    }
+
 }

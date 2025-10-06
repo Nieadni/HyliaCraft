@@ -309,6 +309,10 @@ public class HCItemGroups {
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
                         entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.NAYRU_FLAME);
+                        entries.add(HCItems.DIN_FLAME);
+                        entries.add(HCItems.FARORE_FLAME);
+
                     }).build());
 
     public static void registerHCItemGroups() {

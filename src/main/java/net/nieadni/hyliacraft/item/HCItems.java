@@ -49,9 +49,6 @@ public class HCItems extends Items {
     public static final Item HORSE_CALL = register(new HorseCallItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)),"horse_call");
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
-    // Shields
-    //waaaaa
-
     // Consumables
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).maxCount(1)), "pumpkin_soup");
 
@@ -65,6 +62,11 @@ public class HCItems extends Items {
     public static final Item ORANGE_RUPEE = register(new RupeeItem("tooltip.orange_rupee"), "orange_rupee");
     public static final Item SILVER_RUPEE = register(new RupeeItem("tooltip.silver_rupee"), "silver_rupee");
     public static final Item GOLD_RUPEE = register(new RupeeItem("tooltip.gold_rupee"), "gold_rupee");
+
+    // Misc
+    public static final Item NAYRU_FLAME = register(new Item(new Item.Settings()),"nayru_flame");
+    public static final Item DIN_FLAME = register(new Item(new Item.Settings()),"din_flame");
+    public static final Item FARORE_FLAME = register(new Item(new Item.Settings()),"farore_flame");
 
 
     public static void registerHCItems() {
