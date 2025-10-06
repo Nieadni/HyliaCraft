@@ -8,7 +8,6 @@ import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
-import net.nieadni.hyliacraft.item.materials.DiggingMittMaterial;
 
 public class HCItems extends Items {
 
@@ -43,8 +42,8 @@ public class HCItems extends Items {
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
 
     // Tools
-    public static final Item DIGGING_MITT = register(new DiggingMittItem(new Item.Settings()),"digging_mitt");
-    public static final Item MOGMA_MITT = register(new MogmaMittItem(new Item.Settings()),"mogma_mitt");
+    public static final Item DIGGING_MITT = register(new DiggingMittItem(),"digging_mitt");
+    public static final Item MOGMA_MITT = register(new MogmaMittItem(),"mogma_mitt");
 
     // Misc Gear
     public static final Item HORSE_CALL = register(new HorseCallItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)),"horse_call");

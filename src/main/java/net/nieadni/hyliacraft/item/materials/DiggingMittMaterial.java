@@ -10,7 +10,7 @@ public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
-        return 1561;
+        return 250;
     }
 
     @Override
@@ -25,12 +25,12 @@ public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public TagKey<Block> getInverseTag() {
-        return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+        return BlockTags.INCORRECT_FOR_IRON_TOOL;
     }
 
     @Override
     public int getEnchantability() {
-        return 22;
+        return 14;
     }
 
     @Override

@@ -43,6 +43,10 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.DIGGING_MITT);
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.DIGGING_MITT);
 
+        getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.MOGMA_MITT);
+        getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.MOGMA_MITT);
+        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.MOGMA_MITT);
+
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.HYLIAN_SHIELD);
 
         // Vanilla
