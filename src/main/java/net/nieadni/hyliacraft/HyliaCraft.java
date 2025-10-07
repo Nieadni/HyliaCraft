@@ -3,22 +3,20 @@ package net.nieadni.hyliacraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
-import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
@@ -52,19 +50,22 @@ public class HyliaCraft implements ModInitializer {
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
 
+        // Register custom payload for prompting clients to choose a race
+        PayloadTypeRegistry.playS2C().register(ChooseRaceS2CPayload.ID, ChooseRaceS2CPayload.CODEC);
+
+        // When a player joins the server, we check whether they've already chosen a race.
+        // If they haven't, we prompt them to choose one.
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
 
             // Check if the player already has a race
-            UUID uuid = handler.getPlayer().getUuid();
+            ServerPlayerEntity player = handler.getPlayer();
+            UUID uuid = player.getUuid();
             HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
-            if (!data.raceChosen) {
-                data.raceChosen = true;
-                state.markDirty();
-                HyliaCraft.LOGGER.info("Chose race");
-            } else {
-                HyliaCraft.LOGGER.info("Race already chosen");
-            }
+//            if (data.race == null) {
+//
+//            }
+            ServerPlayNetworking.send(player, ChooseRaceS2CPayload.INSTANCE);
         });
 
 		// Loot Stuff

@@ -62,23 +62,24 @@ public class HyliaCraftPersistentState extends PersistentState {
 
     public static class PlayerData {
 
-        public boolean raceChosen;
+        public HyliaCraftRace race;
 
-        public PlayerData(boolean raceChosen) {
-            this.raceChosen = raceChosen;
+        public PlayerData(HyliaCraftRace race) {
+            this.race = race;
         }
 
         public PlayerData() {
-            this.raceChosen = false;
+            this.race = null;
         }
 
         public void writeNbt(NbtCompound nbt) {
-            nbt.putBoolean("raceChosen", raceChosen);
+            nbt.putInt("race", race.ordinal());
         }
 
         public static PlayerData readFromNbt(NbtCompound nbt) {
-            boolean raceChosen = nbt.getBoolean("raceChosen");
-            return new PlayerData(raceChosen);
+            int ordinal = nbt.getInt("race");
+            HyliaCraftRace race = HyliaCraftRace.values()[ordinal];
+            return new PlayerData(race);
         }
     }
 }

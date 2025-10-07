@@ -15,6 +15,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         super(dataOutput, registryLookup);
     }
 
+    private void generateRaceTranslations(TranslationBuilder translationBuilder, String raceId, String name, String description, String abilities) {
+        translationBuilder.add("hyliacraft.race.%s.name".formatted(raceId), name);
+        translationBuilder.add("hyliacraft.race.%s.description".formatted(raceId), description);
+        translationBuilder.add("hyliacraft.race.%s.abilities".formatted(raceId), abilities);
+    }
+
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
 
@@ -588,5 +594,16 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.white", "White Zora");
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.yellow", "Yellow Zora");
 
+        // Race names, descriptions, abilities
+        translationBuilder.add("race.selector.title", "Select race");
+        generateRaceTranslations(translationBuilder, "human", "Human", "A completely normal person. Not recommended.", "Human abilities");
+        generateRaceTranslations(translationBuilder, "hylian", "Hylian", "Descended from the people who lived among the goddess Hylia.", "Hylian abilities");
+        generateRaceTranslations(translationBuilder, "skyloftian", "Skyloftian", "Hylians who were sent to the sky by the goddess Hylia. They are paired with a Loftwing when they reach a certain age.", "Skyloftian abilities");
+        generateRaceTranslations(translationBuilder, "zora", "Zora", "The Zora are an aquatic folk who thrive underwater.", "Zora abilities");
+        generateRaceTranslations(translationBuilder, "goron", "Goron", "A race of rock people who typically live in mountains. They are natural born miners with significant strength!", "Goron abilities");
+        generateRaceTranslations(translationBuilder, "mogma", "Mogma", "A race of mole people who live in the mountains. They are natural born diggers and thrive underground.", "Mogma abilities");
+        generateRaceTranslations(translationBuilder, "sheikah", "Sheikah", "A mysterious and secretive tribe with pointed ears. They are the chosen guardians of the goddess Hylia and her mortal incarnations.", "Sheikah abilities");
+        generateRaceTranslations(translationBuilder, "rito", "Rito", "Once Zora, they took to the skies and mastered flight.", "Rito abilities");
+        generateRaceTranslations(translationBuilder, "kokiri", "Kokiri", "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.", "Kokiri abilities");
     }
 }
