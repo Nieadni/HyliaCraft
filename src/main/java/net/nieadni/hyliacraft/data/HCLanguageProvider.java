@@ -595,7 +595,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.yellow", "Yellow Zora");
 
         // Race names, descriptions, abilities
-        translationBuilder.add("race.selector.title", "Select race");
+        translationBuilder.add("hyliacraft.race.selector.title", "Select race");
+        translationBuilder.add("hyliacraft.race.selector.confirm", "Confirm");
+        translationBuilder.add("hyliacraft.race.on_select", "You selected the %s race!");
+        translationBuilder.add("hyliacraft.race.query", "%s currently has the %s race");
+        translationBuilder.add("hyliacraft.race.set", "%s now has the %s race");
+
         generateRaceTranslations(translationBuilder, "human", "Human", "A completely normal person. Not recommended.", "Unremarkable");
         generateRaceTranslations(translationBuilder, "hylian", "Hylian", "Descended from the people who lived among the goddess Hylia.", "No significant abilities");
         generateRaceTranslations(translationBuilder, "skyloftian", "Skyloftian", "Hylians who were sent to the sky by the goddess Hylia. They are paired with a Loftwing when they reach a certain age.", "Paired with a Loftwing");

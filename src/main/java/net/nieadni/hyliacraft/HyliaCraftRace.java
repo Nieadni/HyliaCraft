@@ -1,5 +1,7 @@
 package net.nieadni.hyliacraft;
 
+import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.text.Text;
 
 public enum HyliaCraftRace {
@@ -15,6 +17,22 @@ public enum HyliaCraftRace {
 
     public final String id;
     public final int maxHealth;
+
+    public static final PacketCodec<RegistryByteBuf, HyliaCraftRace> PACKET_CODEC = new PacketCodec<>() {
+        @Override
+        public HyliaCraftRace decode(RegistryByteBuf buf) {
+            return fromOrdinal(buf.readInt());
+        }
+
+        @Override
+        public void encode(RegistryByteBuf buf, HyliaCraftRace value) {
+            buf.writeInt(value.ordinal());
+        }
+    };
+
+    public static HyliaCraftRace fromOrdinal(int ordinal) {
+        return HyliaCraftRace.values()[ordinal];
+    }
 
     HyliaCraftRace(String id, int maxHealth) {
         this.id = id;

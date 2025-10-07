@@ -2,17 +2,27 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.command.EntitySelector;
+import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
@@ -50,8 +60,20 @@ public class HyliaCraft implements ModInitializer {
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
 
-        // Register custom payload for prompting clients to choose a race
+        // Register custom payloads race choosing
         PayloadTypeRegistry.playS2C().register(ChooseRaceS2CPayload.ID, ChooseRaceS2CPayload.CODEC);
+        PayloadTypeRegistry.playC2S().register(ChooseRaceC2SPayload.ID, ChooseRaceC2SPayload.CODEC);
+
+        // Register packet receiver for the choose race payload
+        ServerPlayNetworking.registerGlobalReceiver(ChooseRaceC2SPayload.ID, (payload, context) -> {
+            HyliaCraftRace race = payload.chosenRace();
+            MinecraftServer server = context.server();
+            HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
+            UUID uuid = context.player().getUuid();
+            HyliaCraftPersistentState.PlayerData playerData = state.getOrCreatePlayerData(uuid);
+            playerData.race = race;
+            state.markDirty();
+        });
 
         // When a player joins the server, we check whether they've already chosen a race.
         // If they haven't, we prompt them to choose one.
@@ -62,11 +84,72 @@ public class HyliaCraft implements ModInitializer {
             ServerPlayerEntity player = handler.getPlayer();
             UUID uuid = player.getUuid();
             HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
-//            if (data.race == null) {
-//
-//            }
-            ServerPlayNetworking.send(player, ChooseRaceS2CPayload.INSTANCE);
+            if (data.race == null) {
+                ServerPlayNetworking.send(player, ChooseRaceS2CPayload.INSTANCE);
+            }
         });
+
+        // Register race argument type
+        ArgumentTypeRegistry.registerArgumentType(
+                Identifier.of(HyliaCraft.MOD_ID, "race"),
+                RaceArgumentType.class,
+                ConstantArgumentSerializer.of(RaceArgumentType::new)
+        );
+
+        // Command to manage races
+        CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
+            dispatcher.register(
+                    CommandManager.literal("hc_race").then(
+                            CommandManager.literal("get").then(
+                                    CommandManager.argument("player", EntityArgumentType.player()).executes(
+                                            context -> {
+                                                ServerCommandSource source = context.getSource();
+                                                ServerPlayerEntity argumentPlayer = context.getArgument("player", EntitySelector.class).getPlayer(source);
+                                                UUID uuid = argumentPlayer.getUuid();
+                                                HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(source.getServer());
+                                                HyliaCraftPersistentState.PlayerData playerData = state.playerData.get(uuid);
+
+                                                // Send feedback
+                                                Text raceText = playerData != null && playerData.race != null
+                                                        ? playerData.race.getName()
+                                                        : Text.literal("null");
+                                                source.sendFeedback(() -> Text.translatable(
+                                                        "hyliacraft.race.query",
+                                                        argumentPlayer.getName(),
+                                                        raceText
+                                                ), false);
+                                                return 1;
+                                            }
+                                    )
+                            )
+                    ).then(
+                            CommandManager.literal("set").then(
+                                    CommandManager.argument("player", EntityArgumentType.player()).then(
+                                            CommandManager.argument("race", new RaceArgumentType()).executes(
+                                                    context -> {
+                                                        ServerCommandSource source = context.getSource();
+                                                        ServerPlayerEntity argumentPlayer = context.getArgument("player", EntitySelector.class).getPlayer(source);
+                                                        UUID uuid = argumentPlayer.getUuid();
+                                                        HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(source.getServer());
+                                                        HyliaCraftPersistentState.PlayerData playerData = state.getOrCreatePlayerData(uuid);
+                                                        HyliaCraftRace race = context.getArgument("race", HyliaCraftRace.class);
+                                                        playerData.race = race;
+                                                        state.markDirty();
+
+                                                        // Send feedback
+                                                        source.sendFeedback(() -> Text.translatable(
+                                                                "hyliacraft.race.set",
+                                                                argumentPlayer.getName(),
+                                                                race.getName()
+                                                        ), true);
+                                                        return 1;
+                                                    }
+                                            )
+                                    )
+                            )
+                    )
+            );
+        }));
 
 		// Loot Stuff
 

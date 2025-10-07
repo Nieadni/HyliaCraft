@@ -47,10 +47,10 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
 
-        // Register client packet receiver for the choose race payload
+        // Register packet receiver for the choose race payload
         ClientPlayNetworking.registerGlobalReceiver(ChooseRaceS2CPayload.ID, (payload, context) -> {
             // Show the race selection screen
-            context.client().setScreen(new ChooseRaceScreen(Text.translatable("race.selector.title")));
+            context.client().setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
         });
     }
 }

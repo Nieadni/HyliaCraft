@@ -21,7 +21,13 @@ public class HyliaCraftPersistentState extends PersistentState {
     );
 
     public PlayerData getOrCreatePlayerData(UUID uuid) {
-        return playerData.computeIfAbsent(uuid, (u) -> new PlayerData());
+        PlayerData value = playerData.get(uuid);
+        if (value == null) {
+            value = new PlayerData();
+            playerData.put(uuid, value);
+            markDirty();
+        }
+        return value;
     }
 
     @Override
@@ -78,7 +84,7 @@ public class HyliaCraftPersistentState extends PersistentState {
 
         public static PlayerData readFromNbt(NbtCompound nbt) {
             int ordinal = nbt.getInt("race");
-            HyliaCraftRace race = HyliaCraftRace.values()[ordinal];
+            HyliaCraftRace race = HyliaCraftRace.fromOrdinal(ordinal);
             return new PlayerData(race);
         }
     }
