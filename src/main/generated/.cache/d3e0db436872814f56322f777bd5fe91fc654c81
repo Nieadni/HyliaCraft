@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-06T23:30:32.5729899	HyliaCraft/Block Loot Tables
+// 1.21.1	2025-10-07T10:11:37.8761486	HyliaCraft/Block Loot Tables
 9ae8b3559441905179487bf2fa923370b10ec544 data\hyliacraft\loot_table\blocks\lime_bricks.json
 c8bbf91d0803170ac460f69738d3364361ba3303 data\hyliacraft\loot_table\blocks\magenta_stairs.json
 65386eeb84bd57a612e47f9b7be01e1f791177eb data\hyliacraft\loot_table\blocks\orange_fence.json
@@ -57,8 +57,8 @@ da20df3f97306e9f07f34d62affbff1e67427d97 data\hyliacraft\loot_table\blocks\blue_
 2da8dd011614a913260ddfac2007677b4596642e data\hyliacraft\loot_table\blocks\white_pressure_plate.json
 df836373c7a80962fcbf2f54c72769d8662aee6b data\hyliacraft\loot_table\blocks\orange_pressure_plate.json
 9e367797183ee6a49b626ef24884acdfb7a022df data\hyliacraft\loot_table\blocks\magenta_brick_stairs.json
-116eb41ff93da3353434db02b435a9c2407bdb3f data\hyliacraft\loot_table\blocks\green_fence_gate.json
 db331bce764ef076f4e92e3e0b9ace23c5bff222 data\hyliacraft\loot_table\blocks\cyan_stairs.json
+116eb41ff93da3353434db02b435a9c2407bdb3f data\hyliacraft\loot_table\blocks\green_fence_gate.json
 8a65a6b9a908403dc876440923931323e7b9aabd data\hyliacraft\loot_table\blocks\natural_clay_pot_writing.json
 d4a4a2e629b00c9e064651f2c8b03937400f5d46 data\hyliacraft\loot_table\blocks\pink_fence_gate.json
 7511dbd6e1011f1e452ca293d450b4fc67fb9007 data\hyliacraft\loot_table\blocks\lime_button.json
@@ -79,8 +79,8 @@ be7a61e4dc9761305b65f62e68f06eb612b3b5e1 data\hyliacraft\loot_table\blocks\light
 2fc9a46c519179423a10ec1f806c9c936e6063fe data\hyliacraft\loot_table\blocks\purple_brick_stairs.json
 2e2cb5102aa56b2d00024f35fe0766cae704cc60 data\hyliacraft\loot_table\blocks\magenta_stripped_log.json
 326afd93ef779bee44b974d944e56280cfbab81e data\hyliacraft\loot_table\blocks\cyan_button.json
-98bce2090d9118a6c80fc38069418ac30dd03d3f data\hyliacraft\loot_table\blocks\light_blue_bricks.json
 2768a617484fe96f5e167954f96a0fe12c6a4c5c data\hyliacraft\loot_table\blocks\brown_fence.json
+98bce2090d9118a6c80fc38069418ac30dd03d3f data\hyliacraft\loot_table\blocks\light_blue_bricks.json
 ba0eebc3e4feb616f11a4e06eb8d93f2cc3fae1e data\hyliacraft\loot_table\blocks\green_fence.json
 17c7cad2ae9a821eac3ae586bd766b6e015c9c0c data\hyliacraft\loot_table\blocks\light_blue_stairs.json
 5ebf307132ccb0cb4609c2b976ad1d3dbe15d68d data\hyliacraft\loot_table\blocks\yellow_fence_gate.json
