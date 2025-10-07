@@ -1,6 +1,7 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -9,6 +10,7 @@ import net.minecraft.item.*;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
@@ -16,6 +18,7 @@ import net.minecraft.world.World;
 
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessWhiteSwordBeamEntity;
+import net.nieadni.hyliacraft.item.HCItems;
 import net.nieadni.hyliacraft.item.materials.GoddessWhiteSwordMaterial;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,6 +34,7 @@ public class GoddessWhiteSwordItem extends MasterSwordItem {
         super(GoddessWhiteSwordMaterial.INSTANCE, new Item.Settings().attributeModifiers(GoddessWhiteSwordItem.createAttributeModifiers(GoddessWhiteSwordMaterial.INSTANCE,1, -2.4F)).fireproof().rarity(Rarity.RARE));
     }
 
+    // Heal Sword Over Time
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -49,6 +53,29 @@ public class GoddessWhiteSwordItem extends MasterSwordItem {
     @Override
     public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
         return false;
+    }
+
+    // Combining
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack mainHand = user.getMainHandStack();
+        ItemStack offHand = user.getOffHandStack();
+        if (mainHand.isOf(HCItems.GODDESS_WHITE_SWORD) && offHand.isOf(HCItems.DIN_FLAME)) {
+            // store components
+            Text stored_custom_name = mainHand.get(DataComponentTypes.CUSTOM_NAME);
+            ItemEnchantmentsComponent stored_enchantments = mainHand.get(DataComponentTypes.ENCHANTMENTS);
+            // apply components to new sword
+            ItemStack new_sword = HCItems.MASTER_SWORD.getDefaultStack();
+            new_sword.set(DataComponentTypes.CUSTOM_NAME, stored_custom_name);
+            new_sword.set(DataComponentTypes.ENCHANTMENTS, stored_enchantments);
+            // replace old sword + off hand item
+            user.setStackInHand(Hand.MAIN_HAND, new_sword);
+            user.setStackInHand(Hand.OFF_HAND, ItemStack.EMPTY);
+            user.playSound(SoundEvents.BLOCK_ANVIL_USE, 1, 1);
+            // nom
+            return TypedActionResult.consume(new_sword);
+        }
+        return TypedActionResult.pass(mainHand);
     }
 
     /**

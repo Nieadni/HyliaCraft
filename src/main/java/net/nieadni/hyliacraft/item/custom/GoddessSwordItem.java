@@ -1,7 +1,10 @@
 package net.nieadni.hyliacraft.item.custom;
 
+import net.minecraft.component.ComponentMap;
+import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.*;
+import net.minecraft.datafixer.fix.ItemCustomNameToComponentFix;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.*;
@@ -11,6 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
@@ -18,6 +23,7 @@ import net.minecraft.world.World;
 
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessSwordBeamEntity;
+import net.nieadni.hyliacraft.item.HCItems;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +45,7 @@ public class GoddessSwordItem extends SwordItem {
         )));
     }
 
+    // Heal Sword Over Time
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -59,6 +66,29 @@ public class GoddessSwordItem extends SwordItem {
         return false;
     }
 
+    // Combining
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack mainHand = user.getMainHandStack();
+        ItemStack offHand = user.getOffHandStack();
+        if (mainHand.isOf(HCItems.GODDESS_SWORD) && offHand.isOf(HCItems.FARORE_FLAME)) {
+            // store components
+            Text stored_custom_name = mainHand.get(DataComponentTypes.CUSTOM_NAME);
+            ItemEnchantmentsComponent stored_enchantments = mainHand.get(DataComponentTypes.ENCHANTMENTS);
+            // apply components to new sword
+            ItemStack new_sword = HCItems.GODDESS_LONGSWORD.getDefaultStack();
+            new_sword.set(DataComponentTypes.CUSTOM_NAME, stored_custom_name);
+            new_sword.set(DataComponentTypes.ENCHANTMENTS, stored_enchantments);
+            // replace old sword + off hand item
+            user.setStackInHand(Hand.MAIN_HAND, new_sword);
+            user.setStackInHand(Hand.OFF_HAND, ItemStack.EMPTY);
+            user.playSound(SoundEvents.BLOCK_ANVIL_USE, 1, 1);
+            // nom
+            return TypedActionResult.consume(new_sword);
+        }
+        return TypedActionResult.pass(mainHand);
+    }
+
     /**
      * Sword Beam Attack Needed
      * + Right Click = Vertical Attack
@@ -67,11 +97,12 @@ public class GoddessSwordItem extends SwordItem {
      * + 6 Second Cooldown
      */
 
+    /*
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
 
         ItemStack stack = user.getMainHandStack();
-        if (user.isSneaking()) {
+         if (user.isSneaking()) {
 
             GoddessSwordBeamEntity swordBeamEntity = HCEntities.GODDESS_SWORD_BEAM.create(world);
             swordBeamEntity.setOwner(user);
@@ -101,6 +132,7 @@ public class GoddessSwordItem extends SwordItem {
 
         return TypedActionResult.fail(stack);
     }
+     */
 
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {

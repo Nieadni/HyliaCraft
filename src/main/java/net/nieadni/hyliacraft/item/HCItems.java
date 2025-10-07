@@ -64,9 +64,9 @@ public class HCItems extends Items {
     public static final Item GOLD_RUPEE = register(new RupeeItem("tooltip.gold_rupee"), "gold_rupee");
 
     // Misc
-    public static final Item NAYRU_FLAME = register(new Item(new Item.Settings()),"nayru_flame");
-    public static final Item DIN_FLAME = register(new Item(new Item.Settings()),"din_flame");
-    public static final Item FARORE_FLAME = register(new Item(new Item.Settings()),"farore_flame");
+    public static final Item NAYRU_FLAME = register(new Item(new Item.Settings().maxCount(1)),"nayru_flame");
+    public static final Item DIN_FLAME = register(new Item(new Item.Settings().maxCount(1)),"din_flame");
+    public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
 
 
     public static void registerHCItems() {
