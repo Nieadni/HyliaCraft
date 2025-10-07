@@ -50,7 +50,9 @@ public class MogmaMittItem extends Item {
                 ToolComponent.Rule.ofNeverDropping(BlockTags.INCORRECT_FOR_IRON_TOOL),
                 ToolComponent.Rule.ofAlwaysDropping(BlockTags.PICKAXE_MINEABLE, 6.0f),
                 ToolComponent.Rule.ofNeverDropping(BlockTags.INCORRECT_FOR_NETHERITE_TOOL),
-                ToolComponent.Rule.ofAlwaysDropping(BlockTags.SHOVEL_MINEABLE, 9.0f)
+                ToolComponent.Rule.ofAlwaysDropping(BlockTags.SHOVEL_MINEABLE, 9.0f),
+                ToolComponent.Rule.ofNeverDropping(BlockTags.INCORRECT_FOR_NETHERITE_TOOL),
+                ToolComponent.Rule.ofAlwaysDropping(BlockTags.HOE_MINEABLE, 9.0f)
         ), 1.0f, 1)));
     }
 
@@ -58,14 +60,6 @@ public class MogmaMittItem extends Item {
     public int getEnchantability() {
         return 10;
     }
-
-    // REMOVE WIP HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-        tooltip.add(Text.translatable("tooltip.hyliacraft.mogma_mitt"));
-    }
-
-    //TODO: Use on block = path, crouch + use on block = till
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -130,6 +124,10 @@ public class MogmaMittItem extends Item {
                 }
             }
         }
+    }
+
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.hyliacraft.mogma_mitt"));
     }
 
 }
