@@ -109,6 +109,14 @@ public class ChooseRaceScreen extends Screen {
         matrices.pop();
     }
 
+    private void renderMaxHealth(DrawContext context) {
+        HyliaCraftRace race = HyliaCraftRace.values()[currentRace];
+        Text text = Text.literal(String.valueOf(race.maxHealth));
+        int x = this.width / 2 - BACKGROUND_WIDTH / 2 + 91 - textRenderer.getWidth(text) / 2;
+        int y = this.height / 2 - BACKGROUND_HEIGHT / 2 + 33;
+        context.drawText(textRenderer, text, x, y, Colors.BLACK, false);
+    }
+
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
@@ -116,6 +124,7 @@ public class ChooseRaceScreen extends Screen {
 
         renderBackground(context);
         renderRaceName(context);
+        renderMaxHealth(context);
 
         renderScaledLines(context, descriptionLines, descriptionSf, 64);
         renderScaledLines(context, abilitiesLines, abilitiesSf, 122);

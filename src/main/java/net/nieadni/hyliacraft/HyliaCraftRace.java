@@ -1,6 +1,5 @@
 package net.nieadni.hyliacraft;
 
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
 public enum HyliaCraftRace {
