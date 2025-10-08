@@ -1,14 +1,20 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.nieadni.hyliacraft.client.HyliaCraftClient;
 
 import java.util.UUID;
 
@@ -54,6 +60,8 @@ public enum HyliaCraftRace {
         }
     };
 
+    public static final ItemStack GORON_FIST_MINING_STACK = new ItemStack(Items.STONE_PICKAXE);
+
     public static HyliaCraftRace fromOrdinal(int ordinal) {
         return HyliaCraftRace.values()[ordinal];
     }
@@ -86,6 +94,23 @@ public enum HyliaCraftRace {
         HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(player.getServer());
         HyliaCraftPersistentState.PlayerData playerData = state.playerData.get(uuid);
         return playerData != null ? playerData.race : null;
+    }
+
+    public static HyliaCraftRace getRace(PlayerEntity player) {
+        switch (FabricLoader.getInstance().getEnvironmentType()) {
+            case SERVER -> {
+                if (player instanceof ServerPlayerEntity serverPlayer) {
+                    return HyliaCraftRace.getRace(serverPlayer);
+                }
+            }
+            case CLIENT -> {
+                ClientPlayerEntity myPlayer = MinecraftClient.getInstance().player;
+                if (myPlayer != null && myPlayer.getUuid().equals(player.getUuid())) {
+                    return HyliaCraftClient.race;
+                }
+            }
+        }
+        return null;
     }
 
     public static void setRace(ServerPlayerEntity player, HyliaCraftRace race, boolean notifyClient) {
