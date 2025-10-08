@@ -31,6 +31,7 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
+import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
 import net.nieadni.hyliacraft.network.RaceC2SPayload;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
@@ -63,9 +64,10 @@ public class HyliaCraft implements ModInitializer {
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
 
-        // Register custom payloads race choosing
+        // Register custom payloads
         PayloadTypeRegistry.playS2C().register(RaceS2CPayload.ID, RaceS2CPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(RaceC2SPayload.ID, RaceC2SPayload.CODEC);
+        PayloadTypeRegistry.playC2S().register(RaceAbilityC2SPayload.ID, RaceAbilityC2SPayload.CODEC);
 
         // Register packet receiver for the choose race payload
         ServerPlayNetworking.registerGlobalReceiver(RaceC2SPayload.ID, (payload, context) -> {
@@ -75,6 +77,15 @@ public class HyliaCraft implements ModInitializer {
                 HyliaCraftRace.setRace(player, race, false);
             } else {
                 HyliaCraft.LOGGER.info("Rejected packet from {}; race already set", player.getUuidAsString());
+            }
+        });
+
+        // Register packet receiver for the race ability payload
+        ServerPlayNetworking.registerGlobalReceiver(RaceAbilityC2SPayload.ID, (payload, context) -> {
+            ServerPlayerEntity player = context.player();
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race != null) {
+                race.useRaceAbility(player);
             }
         });
 

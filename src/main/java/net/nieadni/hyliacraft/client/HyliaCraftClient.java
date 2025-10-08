@@ -2,11 +2,18 @@ package net.nieadni.hyliacraft.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
+import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 import net.nieadni.hyliacraft.race.ChooseRaceScreen;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
@@ -15,10 +22,12 @@ import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
+import org.lwjgl.glfw.GLFW;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
     public static HyliaCraftRace race = null;
+    private static int ticksSinceLastRaceAbilityUse = 0;
 
     @Override
     public void onInitializeClient() {
@@ -59,5 +68,37 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HyliaCraftClient.race = race;
             }
         });
+
+        registerRaceAbilityKeybind();
+    }
+
+    private void registerRaceAbilityKeybind() {
+        KeyBinding keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.hyliacraft.race_ability",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_C,
+                "category.hyliacraft.main"
+        ));
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            ticksSinceLastRaceAbilityUse = Math.min(ticksSinceLastRaceAbilityUse + 1, getAbilityCooldown());
+            while (keyBinding.wasPressed()) {
+                useRaceAbility(client);
+            }
+        });
+    }
+
+    private static int getAbilityCooldown() {
+        return race == null ? 0 : race.abilityCooldown;
+    }
+
+    private static void useRaceAbility(MinecraftClient client) {
+        if (ticksSinceLastRaceAbilityUse >= getAbilityCooldown()) {
+            ticksSinceLastRaceAbilityUse = 0;
+            ClientPlayNetworking.send(RaceAbilityC2SPayload.INSTANCE);
+            ClientPlayerEntity player = client.player;
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race != null)
+                race.useRaceAbility(player);
+        }
     }
 }

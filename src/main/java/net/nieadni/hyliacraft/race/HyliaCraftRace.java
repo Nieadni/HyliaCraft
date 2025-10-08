@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.entity.MovementType;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,7 +14,12 @@ import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
@@ -21,10 +27,10 @@ import net.nieadni.hyliacraft.network.RaceS2CPayload;
 import java.util.UUID;
 
 public enum HyliaCraftRace {
-    HUMAN("human", 20),
-    HYLIAN("hylian", 24),
-    SKYLOFTIAN("skyloftian", 24),
-    ZORA("zora", 20) {
+    HUMAN("human", 20, 0),
+    HYLIAN("hylian", 24, 0),
+    SKYLOFTIAN("skyloftian", 24, 0),
+    ZORA("zora", 20, 60) {
         @Override
         public void applyRace(PlayerEntity player) {
             super.applyRace(player);
@@ -40,15 +46,45 @@ public enum HyliaCraftRace {
             attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(0.0);
             attributes.getCustomInstance(EntityAttributes.PLAYER_SUBMERGED_MINING_SPEED).setBaseValue(0.2);
         }
+
+        @Override
+        public void useRaceAbility(PlayerEntity player) {
+            super.useRaceAbility(player);
+            if (player.isTouchingWaterOrRain()) {
+                // Do the spin attack
+                float yaw = player.getYaw();
+                float pitch = player.getPitch();
+                float x = -MathHelper.sin(yaw * (float) (Math.PI / 180.0)) * MathHelper.cos(pitch * (float) (Math.PI / 180.0));
+                float y = -MathHelper.sin(pitch * (float) (Math.PI / 180.0));
+                float z = MathHelper.cos(yaw * (float) (Math.PI / 180.0)) * MathHelper.cos(pitch * (float) (Math.PI / 180.0));
+
+                float length = MathHelper.sqrt(x * x + y * y + z * z);
+                float strength = 3.0f;
+                x *= strength / length;
+                y *= strength / length;
+                z *= strength / length;
+                player.addVelocity(x, y, z);
+
+                player.useRiptide(20, 8.0F, player.getMainHandStack());
+
+                if (player.isOnGround()) {
+                    player.move(MovementType.SELF, new Vec3d(0.0, 1.1999999F, 0.0));
+                }
+
+                World world = player.getWorld();
+                world.playSoundFromEntity(null, player, SoundEvents.ITEM_TRIDENT_RIPTIDE_3.value(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+            }
+        }
     },
-    GORON("goron", 40),
-    MOGMA("mogma", 16),
-    SHEIKAH("sheikah", 28),
-    RITO("rito", 18),
-    KOKIRI("kokiri", 12);
+    GORON("goron", 40, 0),
+    MOGMA("mogma", 16, 0),
+    SHEIKAH("sheikah", 28, 0),
+    RITO("rito", 18, 0),
+    KOKIRI("kokiri", 12, 0);
 
     public final String id;
     public final int maxHealth;
+    public final int abilityCooldown;
 
     public static final PacketCodec<RegistryByteBuf, HyliaCraftRace> PACKET_CODEC = new PacketCodec<>() {
         @Override
@@ -68,9 +104,10 @@ public enum HyliaCraftRace {
         return HyliaCraftRace.values()[ordinal];
     }
 
-    HyliaCraftRace(String id, int maxHealth) {
+    HyliaCraftRace(String id, int maxHealth, int abilityCooldown) {
         this.id = id;
         this.maxHealth = maxHealth;
+        this.abilityCooldown = abilityCooldown;
     }
 
     public Text getName() {
@@ -90,6 +127,9 @@ public enum HyliaCraftRace {
     }
 
     public void removeRace(PlayerEntity player) {}
+
+    // Called on client and server
+    public void useRaceAbility(PlayerEntity player) {}
 
     public static HyliaCraftRace getRace(ServerPlayerEntity player) {
         UUID uuid = player.getUuid();

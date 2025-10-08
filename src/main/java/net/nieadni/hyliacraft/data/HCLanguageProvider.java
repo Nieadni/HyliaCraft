@@ -610,5 +610,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         generateRaceTranslations(translationBuilder, "sheikah", "Sheikah", "A mysterious and secretive tribe with pointed ears. They are the chosen guardians of the goddess Hylia and her mortal incarnations.", "Fairly unremarkable but very stealthy. A lot of actions do not produce sounds");
         generateRaceTranslations(translationBuilder, "rito", "Rito", "Once Zora, they took to the skies and mastered flight.", "Can take flight and soar through the skies");
         generateRaceTranslations(translationBuilder, "kokiri", "Kokiri", "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.", "Small enough to fit into small gaps, can easily hide in forest biomes, and heal double the rate of other races");
+
+        // Keybinds
+        translationBuilder.add("category.hyliacraft.main", "HyliaCraft");
+
+        translationBuilder.add("key.hyliacraft.race_ability", "Use Race Ability");
     }
 }
