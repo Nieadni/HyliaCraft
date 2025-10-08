@@ -2,7 +2,6 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.RegistryByteBuf;
@@ -10,7 +9,6 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 import java.util.UUID;
 
@@ -19,24 +17,20 @@ public enum HyliaCraftRace {
     HYLIAN("hylian", 24),
     SKYLOFTIAN("skyloftian", 24),
     ZORA("zora", 20) {
-        private static final Identifier WATER_MOVEMENT_EFFICIENCY_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "zora_water_movement_efficiency");
-
         @Override
         public void applyRace(PlayerEntity player) {
             super.applyRace(player);
             AttributeContainer attributes = player.getAttributes();
-            attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).addPersistentModifier(new EntityAttributeModifier(
-                    WATER_MOVEMENT_EFFICIENCY_MODIFIER,
-                    1.0,
-                    EntityAttributeModifier.Operation.ADD_VALUE
-            ));
+            attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(1.0);
+            attributes.getCustomInstance(EntityAttributes.PLAYER_SUBMERGED_MINING_SPEED).setBaseValue(1.0);
         }
 
         @Override
         public void removeRace(PlayerEntity player) {
             super.removeRace(player);
             AttributeContainer attributes = player.getAttributes();
-            attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).removeModifier(WATER_MOVEMENT_EFFICIENCY_MODIFIER);
+            attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(0.0);
+            attributes.getCustomInstance(EntityAttributes.PLAYER_SUBMERGED_MINING_SPEED).setBaseValue(0.2);
         }
     },
     GORON("goron", 40),
