@@ -1,5 +1,7 @@
 package net.nieadni.hyliacraft;
 
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.text.Text;
@@ -49,5 +51,9 @@ public enum HyliaCraftRace {
 
     public Text getAbilities() {
         return Text.translatable("hyliacraft.race.%s.abilities".formatted(this.id));
+    }
+
+    public void applyMaxHealth(PlayerEntity player) {
+        player.getAttributes().getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
     }
 }
