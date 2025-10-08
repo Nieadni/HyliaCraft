@@ -5,6 +5,7 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
+    "GoronLavaDamageMixin",
     "ZoraWaterBreathingMixin"
   ],
   "client": [
