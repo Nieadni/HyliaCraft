@@ -104,7 +104,7 @@ public enum HyliaCraftRace {
         if (playerData.race != race) {
             // Maybe remove the old race
             if (playerData.race != null) {
-                race.removeRace(player);
+                playerData.race.removeRace(player);
             }
 
             // Set the race
