@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "EndermanEntityMixin",
-    "ExampleMixin"
+    "ExampleMixin",
+    "ZoraWaterBreathingMixin"
   ],
   "client": [
     "DiggingMittItemRendererMixin",

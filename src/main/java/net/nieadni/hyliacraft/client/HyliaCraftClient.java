@@ -7,16 +7,18 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.text.Text;
-import net.nieadni.hyliacraft.ChooseRaceS2CPayload;
+import net.nieadni.hyliacraft.RaceS2CPayload;
 import net.nieadni.hyliacraft.ChooseRaceScreen;
+import net.nieadni.hyliacraft.HyliaCraftRace;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
-import net.nieadni.hyliacraft.entity.RockProjectileRenderer;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 
 public class HyliaCraftClient implements ClientModInitializer {
+
+    public static HyliaCraftRace race = null;
 
     @Override
     public void onInitializeClient() {
@@ -48,9 +50,14 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
 
         // Register packet receiver for the choose race payload
-        ClientPlayNetworking.registerGlobalReceiver(ChooseRaceS2CPayload.ID, (payload, context) -> {
-            // Show the race selection screen
-            context.client().setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
+        ClientPlayNetworking.registerGlobalReceiver(RaceS2CPayload.ID, (payload, context) -> {
+            HyliaCraftRace race = payload.race();
+            if (race == null) {
+                // Show the race selection screen
+                context.client().setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
+            } else {
+                HyliaCraftClient.race = race;
+            }
         });
     }
 }

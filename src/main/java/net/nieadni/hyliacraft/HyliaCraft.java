@@ -11,14 +11,12 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -62,14 +60,18 @@ public class HyliaCraft implements ModInitializer {
 		HCBiomeModifier.load();
 
         // Register custom payloads race choosing
-        PayloadTypeRegistry.playS2C().register(ChooseRaceS2CPayload.ID, ChooseRaceS2CPayload.CODEC);
-        PayloadTypeRegistry.playC2S().register(ChooseRaceC2SPayload.ID, ChooseRaceC2SPayload.CODEC);
+        PayloadTypeRegistry.playS2C().register(RaceS2CPayload.ID, RaceS2CPayload.CODEC);
+        PayloadTypeRegistry.playC2S().register(RaceC2SPayload.ID, RaceC2SPayload.CODEC);
 
         // Register packet receiver for the choose race payload
-        ServerPlayNetworking.registerGlobalReceiver(ChooseRaceC2SPayload.ID, (payload, context) -> {
+        ServerPlayNetworking.registerGlobalReceiver(RaceC2SPayload.ID, (payload, context) -> {
             HyliaCraftRace race = payload.chosenRace();
             ServerPlayerEntity player = context.player();
-            setRace(player, race);
+            if (HyliaCraftRace.getRace(player) == null) {
+                HyliaCraftRace.setRace(player, race, false);
+            } else {
+                HyliaCraft.LOGGER.info("Rejected packet from {}; race already set", player.getUuidAsString());
+            }
         });
 
         // When a player joins the server, we check whether they've already chosen a race.
@@ -81,9 +83,7 @@ public class HyliaCraft implements ModInitializer {
             ServerPlayerEntity player = handler.getPlayer();
             UUID uuid = player.getUuid();
             HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
-            if (data.race == null) {
-                ServerPlayNetworking.send(player, ChooseRaceS2CPayload.INSTANCE);
-            }
+            ServerPlayNetworking.send(player, new RaceS2CPayload(data.race));
         });
 
         // Register race argument type
@@ -101,18 +101,16 @@ public class HyliaCraft implements ModInitializer {
                                     CommandManager.argument("player", EntityArgumentType.player()).executes(
                                             context -> {
                                                 ServerCommandSource source = context.getSource();
-                                                ServerPlayerEntity argumentPlayer = context.getArgument("player", EntitySelector.class).getPlayer(source);
-                                                UUID uuid = argumentPlayer.getUuid();
-                                                HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(source.getServer());
-                                                HyliaCraftPersistentState.PlayerData playerData = state.playerData.get(uuid);
+                                                ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
+                                                HyliaCraftRace race = HyliaCraftRace.getRace(player);
 
                                                 // Send feedback
-                                                Text raceText = playerData != null && playerData.race != null
-                                                        ? playerData.race.getName()
+                                                Text raceText = race != null
+                                                        ? race.getName()
                                                         : Text.literal("null");
                                                 source.sendFeedback(() -> Text.translatable(
                                                         "hyliacraft.race.query",
-                                                        argumentPlayer.getName(),
+                                                        player.getName(),
                                                         raceText
                                                 ), false);
                                                 return 1;
@@ -127,7 +125,7 @@ public class HyliaCraft implements ModInitializer {
                                                         ServerCommandSource source = context.getSource();
                                                         ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
                                                         HyliaCraftRace race = context.getArgument("race", HyliaCraftRace.class);
-                                                        setRace(player, race);
+                                                        HyliaCraftRace.setRace(player, race, true);
 
                                                         // Send feedback
                                                         source.sendFeedback(() -> Text.translatable(
@@ -477,16 +475,4 @@ public class HyliaCraft implements ModInitializer {
 			}
 		});
 	}
-
-    private static void setRace(PlayerEntity player, HyliaCraftRace race) {
-        MinecraftServer server = player.getServer();
-        HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
-        UUID uuid = player.getUuid();
-        HyliaCraftPersistentState.PlayerData playerData = state.getOrCreatePlayerData(uuid);
-        playerData.race = race;
-        state.markDirty();
-
-        // Apply modifiers to the player based on their new race
-        race.applyMaxHealth(player);
-    }
 }

@@ -10,6 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.client.HyliaCraftClient;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -56,7 +57,10 @@ public class ChooseRaceScreen extends Screen {
             client.player.sendMessage(Text.translatable("hyliacraft.race.on_select", race.getName()));
 
             // Let the server know
-            ClientPlayNetworking.send(new ChooseRaceC2SPayload(race));
+            ClientPlayNetworking.send(new RaceC2SPayload(race));
+
+            // Update the client's saved value
+            HyliaCraftClient.race = race;
         }
         return super.mouseClicked(mouseX, mouseY, button);
     }
