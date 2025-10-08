@@ -5,7 +5,9 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
-    "GoronFistMiningMixin",
+    "GoronFistCanHarvestMixin",
+    "GoronFistMiningDropsMixin",
+    "GoronFistMiningSpeedMixin",
     "GoronLavaDamageMixin",
     "ZoraWaterBreathingMixin"
   ],
