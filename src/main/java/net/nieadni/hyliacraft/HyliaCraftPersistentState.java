@@ -79,12 +79,13 @@ public class HyliaCraftPersistentState extends PersistentState {
         }
 
         public void writeNbt(NbtCompound nbt) {
-            nbt.putInt("race", race.ordinal());
+            int encoding = race != null ? race.ordinal() : -1;
+            nbt.putInt("race", encoding);
         }
 
         public static PlayerData readFromNbt(NbtCompound nbt) {
-            int ordinal = nbt.getInt("race");
-            HyliaCraftRace race = HyliaCraftRace.fromOrdinal(ordinal);
+            int encoding = nbt.getInt("race");
+            HyliaCraftRace race = encoding == -1 ? null : HyliaCraftRace.fromOrdinal(encoding);
             return new PlayerData(race);
         }
     }
