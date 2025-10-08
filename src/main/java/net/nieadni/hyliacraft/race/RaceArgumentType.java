@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft;
+package net.nieadni.hyliacraft.race;
 
 import com.mojang.brigadier.LiteralMessage;
 import com.mojang.brigadier.Message;

@@ -31,6 +31,10 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
+import net.nieadni.hyliacraft.network.RaceC2SPayload;
+import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
+import net.nieadni.hyliacraft.race.RaceArgumentType;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.*;
 

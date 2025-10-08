@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft;
+package net.nieadni.hyliacraft.race;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -10,7 +10,9 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
+import net.nieadni.hyliacraft.network.RaceC2SPayload;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

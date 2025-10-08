@@ -2,7 +2,7 @@ package net.nieadni.hyliacraft.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.nieadni.hyliacraft.HyliaCraftRace;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;

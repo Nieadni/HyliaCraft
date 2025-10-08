@@ -3,7 +3,7 @@ package net.nieadni.hyliacraft.mixin;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
-import net.nieadni.hyliacraft.HyliaCraftRace;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

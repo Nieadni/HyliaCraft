@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft;
+package net.nieadni.hyliacraft.race;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
@@ -14,7 +14,9 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
+import net.nieadni.hyliacraft.network.RaceS2CPayload;
 
 import java.util.UUID;
 

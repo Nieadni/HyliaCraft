@@ -6,6 +6,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.PersistentState;
 import net.minecraft.world.PersistentStateManager;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 
 import java.util.HashMap;
 import java.util.UUID;
