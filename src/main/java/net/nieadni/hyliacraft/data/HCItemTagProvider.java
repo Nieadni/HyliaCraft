@@ -49,6 +49,9 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.MOGMA_MITT);
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.MOGMA_MITT);
 
+        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.BOULDER_BREAKER);
 
         // Vanilla
 

@@ -20,7 +20,7 @@ public abstract class MogmaMittItemRendererMixin {
             at=@At("HEAD"), argsOnly = true)
     private BakedModel itemRenderer(BakedModel model, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         if (stack.isOf(HCItems.MOGMA_MITT) && renderMode != ModelTransformationMode.GUI) {
-            return ((ItemRendererAccessor) this).getModels().getModelManager().getModel(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_3d"), "inventory"));
+            return ((ItemRendererAccessor) this).getModels().getModelManager().getModel(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_gui"), "inventory"));
         }
         return model;
     }

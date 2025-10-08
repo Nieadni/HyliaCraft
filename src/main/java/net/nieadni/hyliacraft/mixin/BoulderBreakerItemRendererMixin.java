@@ -15,12 +15,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ItemRenderer.class)
-public abstract class DiggingMittItemRendererMixin {
+public abstract class BoulderBreakerItemRendererMixin {
     @ModifyVariable(method = "renderItem",
             at=@At("HEAD"), argsOnly = true)
     private BakedModel itemRenderer(BakedModel model, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        if (stack.isOf(HCItems.DIGGING_MITT) && renderMode != ModelTransformationMode.GUI) {
-            return ((ItemRendererAccessor) this).getModels().getModelManager().getModel(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_gui"), "inventory"));
+        if (stack.isOf(HCItems.BOULDER_BREAKER) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).getModels().getModelManager().getModel(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/boulder_breaker_gui"), "inventory"));
         }
         return model;
     }

@@ -43,6 +43,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.master_sword", "§cThe flames of Din have imbued your blade with a sacred white light that demons revile!");
         translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
         translationBuilder.add("tooltip.hyliacraft.true_master_sword", "The goddess has blessed your blade, and the Master Sword has at last achieved its ultimate form! The sword is now imbued with the mythical power to drive back demons!");
+        translationBuilder.add(HCItems.BOULDER_BREAKER, "Boulder Breaker");
+        translationBuilder.add("tooltip.hyliacraft.boulder_breaker", "This two-handed weapon was once wielded by the Goron Champion Daruk. Daruk made swinging it around look easy, but a Hylian would need an immense amount of strength");
+
 
         translationBuilder.add(HCItems.IRON_BOW, "Iron Bow");
         translationBuilder.add(HCItems.FAIRY_BOW, "Fairy Bow");
@@ -110,6 +113,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
 
         translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");
+        translationBuilder.add("tooltip.hyliacraft.two_handed_weapon", "§9Only usable with both hands.");
 
         /** Coloured Blocks **/
 

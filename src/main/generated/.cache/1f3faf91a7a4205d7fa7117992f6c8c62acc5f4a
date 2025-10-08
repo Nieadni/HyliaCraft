@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-07T10:53:39.7572633	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2025-10-08T21:37:38.4415374	HyliaCraft/Tags for minecraft:item
 e6aeb9930e48332749602ea26f14c63a23001026 data\hyliacraft\tags\item\plank_stairs.json
 d300f0e81e2bd269c6f44f794cde7f1e7cdba8ca data\hyliacraft\tags\item\plank_slabs.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
@@ -16,10 +16,11 @@ f98f2f3327beff7a4165bbbfb6171104efbfa58d data\hyliacraft\tags\item\brick_stairs.
 15d1c8ef1c7a7bb2f79c7e091703612ad30eb825 data\hyliacraft\tags\item\planks.json
 b5276db436fdc31de8f14de085fff1a41c742d78 data\hyliacraft\tags\item\stripped_logs.json
 fb86421f348ab1db84b0ce54608e986d5c513a0e data\minecraft\tags\item\enchantable\bow.json
-352b76a949a698a29dc6b1556e52755d2af03041 data\minecraft\tags\item\enchantable\mining.json
-05fe63c945dc07ce8e457d8814693b6442fa84d3 data\minecraft\tags\item\pickaxes.json
+0f89a944a445910cbb888fbaa627bf49022a7536 data\minecraft\tags\item\enchantable\mining.json
+6ddc41eb86e9fe734495c4ca6d33fda3a44b3870 data\minecraft\tags\item\pickaxes.json
 05b474ef937ed7dfebe76f24416abc4e8815d2fc data\hyliacraft\tags\item\plank_fences.json
 2893045ba10b74312ce09d45e512ed11eabd8882 data\hyliacraft\tags\item\plank_pressure_plates.json
 99330543065e426635749a725f7059de736dcbe3 data\hyliacraft\tags\item\stripped_woods.json
 ee273909f2319e52e60cffb89d2f0f943dd2ee01 data\hyliacraft\tags\item\brick_slabs.json
 352b76a949a698a29dc6b1556e52755d2af03041 data\minecraft\tags\item\hoes.json
+06f98387d7413589f4b989320c61c43a7807c63d data\minecraft\tags\item\enchantable\mace.json

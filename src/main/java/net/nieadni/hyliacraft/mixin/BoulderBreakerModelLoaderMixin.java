@@ -19,13 +19,13 @@ import java.util.List;
 import java.util.Map;
 
 @Mixin(ModelLoader.class)
-public abstract class DiggingMittModelLoaderMixin {
+public abstract class BoulderBreakerModelLoaderMixin {
 
     @Shadow protected abstract void addModelToBake(ModelIdentifier id, UnbakedModel model);
 
     @Inject(method = "<init>", at = @At("RETURN"))
-    public void addDiggingMittModel(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<BlockStatesLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
-        this.addModelToBake(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_gui"), "inventory"),
-                jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/digging_mitt_gui.json")));
+    public void addBoulderBreakerModel(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<BlockStatesLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
+        this.addModelToBake(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/boulder_breaker_gui"), "inventory"),
+                jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/boulder_breaker_gui.json")));
     }
 }

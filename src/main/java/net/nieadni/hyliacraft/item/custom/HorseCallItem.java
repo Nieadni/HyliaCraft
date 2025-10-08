@@ -15,7 +15,7 @@ public class HorseCallItem extends Item {
         super(settings);
     }
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
+    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
     }

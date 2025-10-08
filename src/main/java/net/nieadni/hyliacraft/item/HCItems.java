@@ -41,6 +41,9 @@ public class HCItems extends Items {
     public static final Item MASTER_SWORD = register(new MasterSwordItem(),"master_sword");
     public static final Item TRUE_MASTER_SWORD = register(new TrueMasterSwordItem(),"true_master_sword");
 
+    public static final Item BOULDER_BREAKER = register(new BoulderBreakerItem(),"boulder_breaker");
+
+
     // Tools
     public static final Item DIGGING_MITT = register(new DiggingMittItem(),"digging_mitt");
     public static final Item MOGMA_MITT = register(new MogmaMittItem(),"mogma_mitt");

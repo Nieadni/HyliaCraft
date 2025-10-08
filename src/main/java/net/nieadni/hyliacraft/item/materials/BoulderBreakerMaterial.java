@@ -5,9 +5,10 @@ import net.minecraft.component.type.ToolComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.*;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 
-public class DiggingMittMaterial implements ToolMaterial {
+public class BoulderBreakerMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
@@ -26,17 +27,17 @@ public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public TagKey<Block> getInverseTag() {
-        return BlockTags.INCORRECT_FOR_IRON_TOOL;
+        return BlockTags.INCORRECT_FOR_NETHERITE_TOOL;
     }
 
     @Override
     public int getEnchantability() {
-        return 14;
+        return 15;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.LEATHER);
+        return Ingredient.ofItems(Items.NETHERITE_INGOT);
     }
 
     @Override
@@ -44,5 +45,5 @@ public class DiggingMittMaterial implements ToolMaterial {
         return ToolMaterial.super.createComponent(tag);
     }
 
-    public static final DiggingMittMaterial INSTANCE = new DiggingMittMaterial();
+    public static final BoulderBreakerMaterial INSTANCE = new BoulderBreakerMaterial();
 }

@@ -25,7 +25,7 @@ public abstract class MogmaMittModelLoaderMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     public void addMogmaMittModel(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<BlockStatesLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
-        this.addModelToBake(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_3d"), "inventory"),
-                jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_3d.json")));
+        this.addModelToBake(new ModelIdentifier(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_gui"), "inventory"),
+                jsonUnbakedModels.get(Identifier.of(HyliaCraft.MOD_ID, "models/item/mogma_mitt_gui.json")));
     }
 }
