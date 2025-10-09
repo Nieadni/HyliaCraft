@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -24,6 +25,8 @@ import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public enum HyliaCraftRace {
@@ -99,6 +102,8 @@ public enum HyliaCraftRace {
     };
 
     public static final ItemStack GORON_FIST_MINING_STACK = new ItemStack(Items.STONE_PICKAXE);
+
+    public static final FoodComponent GORON_EATING_COMPONENT = new FoodComponent(2, 0.3f, false, 1.6f, Optional.empty(), List.of());
 
     public static HyliaCraftRace fromOrdinal(int ordinal) {
         return HyliaCraftRace.values()[ordinal];

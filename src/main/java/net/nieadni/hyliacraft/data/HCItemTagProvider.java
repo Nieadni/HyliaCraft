@@ -363,5 +363,11 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_PRESSURE_PLATE));
         getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BUTTON));
 
+        getOrCreateTagBuilder(HCItemTags.GORON_EDIBLE).add(
+                Items.STONE,
+                Items.COBBLESTONE,
+                Items.GRANITE,
+                Items.DIORITE
+        );
     }
 }

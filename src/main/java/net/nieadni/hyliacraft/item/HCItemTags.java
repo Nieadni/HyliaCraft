@@ -26,6 +26,8 @@ public class HCItemTags {
     public static final TagKey<Item> PLANK_PRESSURE_PLATES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "plank_pressure_plates"));
     public static final TagKey<Item> PLANK_BUTTONS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "plank_buttons"));
 
+    public static final TagKey<Item> GORON_EDIBLE = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "goron_edible"));
+
     public static void registerHCItemTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its item tags.");
     }
