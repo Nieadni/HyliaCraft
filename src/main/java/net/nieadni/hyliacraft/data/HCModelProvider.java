@@ -6,7 +6,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
@@ -45,7 +44,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.TRUE_MASTER_SWORD, Models.HANDHELD);
 
         // Tools
-        //HYAH!
+        // HYAH!!
 
         // Misc Gear
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
@@ -355,4 +354,5 @@ public class HCModelProvider extends FabricModelProvider {
         rainbowPlankBlockPool.button(HCColouredBlocks.RAINBOW_BUTTON);
 
     }
+
 }

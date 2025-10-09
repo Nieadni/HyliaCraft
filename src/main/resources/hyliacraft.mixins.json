@@ -7,13 +7,9 @@
     "ExampleMixin"
   ],
   "client": [
-    "BoulderBreakerItemRendererMixin",
-    "BoulderBreakerModelLoaderMixin",
-    "DiggingMittItemRendererMixin",
-    "DiggingMittModelLoaderMixin",
     "ItemRendererAccessor",
-    "MogmaMittItemRendererMixin",
-    "MogmaMittModelLoaderMixin"
+    "MixinItemRenderer",
+    "MixinModelBakery"
   ],
   "injectors": {
     "defaultRequire": 1

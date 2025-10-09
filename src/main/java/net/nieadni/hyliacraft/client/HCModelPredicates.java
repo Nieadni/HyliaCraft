@@ -1,14 +1,15 @@
 package net.nieadni.hyliacraft.client;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.item.*;
+import net.minecraft.item.BowItem;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.item.HCItems;
 
 public class HCModelPredicates {
 
     public static void registerHCModelPredicates() {
+        HyliaCraftClient.addCustomGUIModelItems();
         bowPulling(HCItems.IRON_BOW);
         bowPulling(HCItems.FAIRY_BOW);
     }

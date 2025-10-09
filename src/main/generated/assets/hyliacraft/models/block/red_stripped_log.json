@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "hyliacraft:block/red_stripped_log_top",
-    "side": "hyliacraft:block/red_stripped_log"
-  }
-}

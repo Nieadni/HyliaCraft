@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "hyliacraft:block/black_planks",
-    "side": "hyliacraft:block/black_planks",
-    "top": "hyliacraft:block/black_planks"
-  }
-}
