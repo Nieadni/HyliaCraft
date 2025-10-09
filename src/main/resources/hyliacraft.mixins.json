@@ -6,13 +6,14 @@
     "EndermanEntityMixin",
     "ExampleMixin",
     "GoronLavaDamageMixin",
+    "race.WaterBreathingMixin",
+    "race.goron.AttackDamageMixin",
     "race.goron.SwimmingMixin",
     "race.goron.eating.ItemMixin",
     "race.goron.eating.LivingEntityMixin",
     "race.goron.mining.CanHarvestMixin",
     "race.goron.mining.DropsMixin",
-    "race.goron.mining.SpeedMixin",
-    "race.WaterBreathingMixin"
+    "race.goron.mining.SpeedMixin"
   ],
   "client": [
     "DiggingMittItemRendererMixin",
