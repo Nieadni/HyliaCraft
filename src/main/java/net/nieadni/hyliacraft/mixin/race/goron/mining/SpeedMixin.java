@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin;
+package net.nieadni.hyliacraft.mixin.race.goron.mining;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
-public class GoronFistMiningSpeedMixin {
+public class SpeedMixin {
 
     @Inject(method = "getBlockBreakingSpeed(Lnet/minecraft/block/BlockState;)F", at = @At("HEAD"), cancellable = true)
     private void getBlockBreakingSpeed(BlockState state, CallbackInfoReturnable<Float> cir) {

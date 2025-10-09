@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin;
+package net.nieadni.hyliacraft.mixin.race.goron.mining;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(PlayerEntity.class)
-public class GoronFistCanHarvestMixin {
+public class CanHarvestMixin {
 
     @Redirect(method = "canHarvest(Lnet/minecraft/block/BlockState;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;getMainHandStack()Lnet/minecraft/item/ItemStack;"))
     private ItemStack getMainHandStack(PlayerInventory inventory) {

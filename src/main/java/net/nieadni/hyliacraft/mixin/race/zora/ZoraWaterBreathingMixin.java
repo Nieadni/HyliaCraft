@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin;
+package net.nieadni.hyliacraft.mixin.race.zora;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

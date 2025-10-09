@@ -5,13 +5,13 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
-    "GoronEatingMixin1",
-    "GoronEatingMixin2",
-    "GoronFistCanHarvestMixin",
-    "GoronFistMiningDropsMixin",
-    "GoronFistMiningSpeedMixin",
+    "race.goron.eating.ItemMixin",
+    "race.goron.eating.LivingEntityMixin",
+    "race.goron.mining.CanHarvestMixin",
+    "race.goron.mining.DropsMixin",
+    "race.goron.mining.SpeedMixin",
     "GoronLavaDamageMixin",
-    "ZoraWaterBreathingMixin"
+    "race.zora.ZoraWaterBreathingMixin"
   ],
   "client": [
     "DiggingMittItemRendererMixin",
