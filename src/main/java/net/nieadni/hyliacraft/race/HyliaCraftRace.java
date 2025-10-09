@@ -7,6 +7,8 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.attribute.AttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -18,9 +20,11 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
@@ -80,18 +84,22 @@ public enum HyliaCraftRace {
         }
     },
     GORON("goron", 40, 0) {
+        public static final Identifier MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "goron_movement_speed");
+
         @Override
         public void applyRace(PlayerEntity player) {
             super.applyRace(player);
             AttributeContainer attributes = player.getAttributes();
-            attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue(0.05);
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+            instance.addPersistentModifier(new EntityAttributeModifier(MOVEMENT_SPEED_MODIFIER, -0.05, EntityAttributeModifier.Operation.ADD_VALUE));
         }
 
         @Override
         public void removeRace(PlayerEntity player) {
             super.removeRace(player);
             AttributeContainer attributes = player.getAttributes();
-            attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue(0.1);
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+            instance.removeModifier(MOVEMENT_SPEED_MODIFIER);
         }
     },
     MOGMA("mogma", 16, 0),
