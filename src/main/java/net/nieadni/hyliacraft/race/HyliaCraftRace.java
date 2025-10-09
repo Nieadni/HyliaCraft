@@ -79,7 +79,21 @@ public enum HyliaCraftRace {
             }
         }
     },
-    GORON("goron", 40, 0),
+    GORON("goron", 40, 0) {
+        @Override
+        public void applyRace(PlayerEntity player) {
+            super.applyRace(player);
+            AttributeContainer attributes = player.getAttributes();
+            attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue(0.05);
+        }
+
+        @Override
+        public void removeRace(PlayerEntity player) {
+            super.removeRace(player);
+            AttributeContainer attributes = player.getAttributes();
+            attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue(0.1);
+        }
+    },
     MOGMA("mogma", 16, 0),
     SHEIKAH("sheikah", 28, 0),
     RITO("rito", 18, 0),
