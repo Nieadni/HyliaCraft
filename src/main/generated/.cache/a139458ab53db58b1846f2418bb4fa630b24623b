@@ -1,15 +1,15 @@
-// 1.21.1	2025-10-08T21:37:38.4425637	HyliaCraft/Tags for minecraft:block
+// 1.21.1	2025-10-09T21:41:05.1535753	HyliaCraft/Tags for minecraft:block
+8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\mineable\axe.json
+76f8ab8a82a24cfe92f6ae39f1390063a45a1f66 data\minecraft\tags\block\stairs.json
+9b30502a25fc98dc4378c145467a538c7eabfff4 data\minecraft\tags\block\wooden_stairs.json
+4fe6041cca7b02cb6b303abd1aa3f6c125cdf644 data\minecraft\tags\block\wooden_fences.json
+ae995e8d40b60492924404a5442f8445a9c685fb data\minecraft\tags\block\walls.json
+8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\incorrect_for_wooden_tool.json
 c74cbf5e9d2f97fc20203228c904c9c127e0338d data\minecraft\tags\block\wooden_buttons.json
 37d80734f8ff0afd04ec4b7b45a9a6dae9eca606 data\minecraft\tags\block\wooden_slabs.json
 f4153eb0cab655236cfef8d27a0c0e656c645285 data\minecraft\tags\block\pressure_plates.json
 a9a29f28935fd2149c6bbae71f957854e738de9b data\minecraft\tags\block\flower_pots.json
-8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\mineable\axe.json
-76f8ab8a82a24cfe92f6ae39f1390063a45a1f66 data\minecraft\tags\block\stairs.json
 e9f44b0ab8d90122606e3d052a71c8e39439cad9 data\minecraft\tags\block\fence_gates.json
-9b30502a25fc98dc4378c145467a538c7eabfff4 data\minecraft\tags\block\wooden_stairs.json
 f3235cd6325726b9f3cd2e33965f1af3ff91241e data\minecraft\tags\block\logs_that_burn.json
-4fe6041cca7b02cb6b303abd1aa3f6c125cdf644 data\minecraft\tags\block\wooden_fences.json
-ae995e8d40b60492924404a5442f8445a9c685fb data\minecraft\tags\block\walls.json
-8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\incorrect_for_wooden_tool.json
 63e54d08e5d4762a2742eabe4da24a989ecd1d41 data\minecraft\tags\block\small_flowers.json
 a6156c9ea86e54b9dba4d9c046c247d8b51c7ee3 data\minecraft\tags\block\slabs.json

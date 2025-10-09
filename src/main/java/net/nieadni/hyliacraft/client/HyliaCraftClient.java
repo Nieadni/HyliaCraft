@@ -5,14 +5,20 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.item.Item;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
-import net.nieadni.hyliacraft.entity.RockProjectileRenderer;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
+import net.nieadni.hyliacraft.item.HCItems;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HyliaCraftClient implements ClientModInitializer {
+
+    public static List<Item> CUSTOM_GUI_MODEL_ITEMS = new ArrayList<>();
 
     @Override
     public void onInitializeClient() {
@@ -42,5 +48,13 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.GODDESS_WHITE_SWORD_BEAM, GoddessWhiteSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
+
     }
+
+    public static void addCustomGUIModelItems() {
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.DIGGING_MITT);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.MOGMA_MITT);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.BOULDER_BREAKER);
+    }
+
 }

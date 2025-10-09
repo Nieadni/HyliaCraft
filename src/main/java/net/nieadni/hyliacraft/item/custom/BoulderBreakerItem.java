@@ -6,7 +6,6 @@ import net.minecraft.component.type.ToolComponent;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.MaceItem;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.tooltip.TooltipType;
@@ -16,7 +15,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.item.materials.BoulderBreakerMaterial;
-import net.nieadni.hyliacraft.item.materials.MogmaMittMaterial;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -24,7 +22,7 @@ import java.util.List;
 public class BoulderBreakerItem extends MaceItem {
     public static final Identifier TOOL_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "tool_entity_reach");
     public BoulderBreakerItem() {
-        super(new Settings().maxCount(1).rarity(Rarity.RARE).maxDamage(2031).attributeModifiers(MiningToolItem.createAttributeModifiers(BoulderBreakerMaterial.INSTANCE, 11, -3)
+        super(new Settings().maxCount(1).rarity(Rarity.RARE).maxDamage(2031).attributeModifiers(MiningToolItem.createAttributeModifiers(BoulderBreakerMaterial.INSTANCE, 11, -3.5f)
                 .with(EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
                         new EntityAttributeModifier(TOOL_RANGE_MODIFIER_ID, 1, EntityAttributeModifier.Operation.ADD_VALUE),
                         AttributeModifierSlot.MAINHAND

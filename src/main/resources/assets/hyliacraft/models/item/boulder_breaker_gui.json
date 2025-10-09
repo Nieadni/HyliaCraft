@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/handheld",
 	"textures": {
-		"layer0": "hyliacraft:item/boulder_breaker"
+		"layer0": "hyliacraft:item/boulder_breaker_gui"
 	}
 }
