@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft.mixin.race.goron.eating;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -49,9 +51,26 @@ public class ItemMixin {
 
     @Inject(method = "finishUsing(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;)Lnet/minecraft/item/ItemStack;", at = @At("HEAD"), cancellable = true)
     private void getFoodComponent(ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir) {
-        if (user instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.GORON && stack.isIn(HCItemTags.GORON_EDIBLE)) {
-            HyliaCraft.LOGGER.info("Returning a different component");
-            cir.setReturnValue(user.eatFood(world, stack, HyliaCraftRace.GORON_EATING_COMPONENT));
+        if (user instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.GORON) {
+            if (stack.isIn(HCItemTags.GORON_EDIBLE)) {
+                HyliaCraft.LOGGER.info("Returning a different component");
+                cir.setReturnValue(user.eatFood(world, stack, HyliaCraftRace.GORON_EATING_COMPONENT));
+            } else {
+                FoodComponent component = stack.get(DataComponentTypes.FOOD);
+                if (component == null) {
+                    cir.setReturnValue(stack);
+                } else {
+                    FoodComponent reducedComponent = new FoodComponent(
+                            component.nutrition() / 2,
+                            component.saturation() / 2,
+                            component.canAlwaysEat(),
+                            component.eatSeconds(),
+                            component.usingConvertsTo(),
+                            component.effects()
+                    );
+                    cir.setReturnValue(user.eatFood(world, stack, reducedComponent));
+                }
+            }
         }
     }
 }
