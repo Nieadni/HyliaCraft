@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "hyliacraft:block/light_grey_bricks",
-    "side": "hyliacraft:block/light_grey_bricks",
-    "top": "hyliacraft:block/light_grey_bricks"
-  }
-}
