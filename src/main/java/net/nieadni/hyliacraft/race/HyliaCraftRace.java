@@ -114,12 +114,14 @@ public enum HyliaCraftRace {
     public static final PacketCodec<RegistryByteBuf, HyliaCraftRace> PACKET_CODEC = new PacketCodec<>() {
         @Override
         public HyliaCraftRace decode(RegistryByteBuf buf) {
-            return fromOrdinal(buf.readInt());
+            int ordinal = buf.readInt();
+            return ordinal == -1 ? null : fromOrdinal(ordinal);
         }
 
         @Override
         public void encode(RegistryByteBuf buf, HyliaCraftRace value) {
-            buf.writeInt(value.ordinal());
+            int ordinal = value == null ? -1 : value.ordinal();
+            buf.writeInt(ordinal);
         }
     };
 
