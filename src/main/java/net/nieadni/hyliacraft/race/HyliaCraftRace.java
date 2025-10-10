@@ -153,6 +153,7 @@ public enum HyliaCraftRace {
 
     public void applyRace(PlayerEntity player) {
         player.getAttributes().getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
+        player.setHealth(maxHealth);
     }
 
     public void removeRace(PlayerEntity player) {}
