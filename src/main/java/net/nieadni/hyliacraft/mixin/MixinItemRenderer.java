@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(ItemRenderer.class)
 public abstract class MixinItemRenderer {
     @Shadow @Final private ItemModels models;
-    @ModifyVariable(method = "Lnet/minecraft/client/render/item/ItemRenderer;renderItem(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/render/model/json/ModelTransformationMode;ZLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/render/model/BakedModel;)V",
+    @ModifyVariable(method = "renderItem(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/render/model/json/ModelTransformationMode;ZLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/render/model/BakedModel;)V",
             at=@At("HEAD"), argsOnly = true)
     public BakedModel renderItem(BakedModel model, @Local(argsOnly = true) ItemStack itemStack, @Local(argsOnly = true) ModelTransformationMode context) {
         if (context == ModelTransformationMode.GUI || context == ModelTransformationMode.GROUND || context == ModelTransformationMode.FIXED) {

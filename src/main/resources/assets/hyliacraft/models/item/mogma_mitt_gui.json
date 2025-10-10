@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "hyliacraft:item/mogma_mitt_gui"
-	}
+  "parent": "minecraft:item/generated",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "hyliacraft:item/mogma_mitt_gui"
+  }
 }

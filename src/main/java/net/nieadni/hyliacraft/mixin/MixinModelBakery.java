@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ModelLoader.class)
 public abstract class MixinModelBakery {
     @Shadow protected abstract void loadInventoryVariantItemModel(Identifier resourceLocation);
-    @Inject(method = "<init>", at = @At("RETURN"))
+    @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;loadInventoryVariantItemModel(Lnet/minecraft/util/Identifier;)V"))
     private void onInit(CallbackInfo ci) {
         for (Item item : HyliaCraftClient.CUSTOM_GUI_MODEL_ITEMS) {
             Identifier location = Registries.ITEM.getId(item);
