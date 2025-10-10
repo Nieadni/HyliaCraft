@@ -1,0 +1,22 @@
+{
+  "values": [
+    "minecraft:bricks",
+    "hyliacraft:white_bricks",
+    "hyliacraft:light_grey_bricks",
+    "hyliacraft:grey_bricks",
+    "hyliacraft:black_bricks",
+    "hyliacraft:brown_bricks",
+    "hyliacraft:red_bricks",
+    "hyliacraft:orange_bricks",
+    "hyliacraft:yellow_bricks",
+    "hyliacraft:lime_bricks",
+    "hyliacraft:green_bricks",
+    "hyliacraft:cyan_bricks",
+    "hyliacraft:light_blue_bricks",
+    "hyliacraft:blue_bricks",
+    "hyliacraft:purple_bricks",
+    "hyliacraft:magenta_bricks",
+    "hyliacraft:pink_bricks",
+    "hyliacraft:rainbow_bricks"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "hyliacraft:stripped_logs"
+    },
+    "@": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "hyliacraft:grey_stripped_log"
+  }
+}

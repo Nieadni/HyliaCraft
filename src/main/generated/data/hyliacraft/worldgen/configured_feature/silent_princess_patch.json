@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": "hyliacraft:silent_princess",
+    "tries": 32,
+    "xz_spread": 4,
+    "y_spread": 4
+  }
+}

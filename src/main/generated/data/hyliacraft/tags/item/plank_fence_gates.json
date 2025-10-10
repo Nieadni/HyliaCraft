@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:oak_fence_gate",
+    "minecraft:spruce_fence_gate",
+    "minecraft:birch_fence_gate",
+    "minecraft:jungle_fence_gate",
+    "minecraft:acacia_fence_gate",
+    "minecraft:dark_oak_fence_gate",
+    "minecraft:mangrove_fence_gate",
+    "minecraft:cherry_fence_gate",
+    "minecraft:bamboo_fence_gate",
+    "hyliacraft:white_fence_gate",
+    "hyliacraft:light_grey_fence_gate",
+    "hyliacraft:grey_fence_gate",
+    "hyliacraft:black_fence_gate",
+    "hyliacraft:brown_fence_gate",
+    "hyliacraft:red_fence_gate",
+    "hyliacraft:orange_fence_gate",
+    "hyliacraft:yellow_fence_gate",
+    "hyliacraft:lime_fence_gate",
+    "hyliacraft:green_fence_gate",
+    "hyliacraft:cyan_fence_gate",
+    "hyliacraft:light_blue_fence_gate",
+    "hyliacraft:blue_fence_gate",
+    "hyliacraft:purple_fence_gate",
+    "hyliacraft:magenta_fence_gate",
+    "hyliacraft:pink_fence_gate",
+    "hyliacraft:rainbow_fence_gate"
+  ]
+}

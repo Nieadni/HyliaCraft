@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "G": {
+      "item": "minecraft:green_dye"
+    },
+    "H": {
+      "item": "minecraft:leather_helmet"
+    },
+    "W": {
+      "item": "minecraft:green_wool"
+    }
+  },
+  "pattern": [
+    "BWB",
+    "GHG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:phrygian_cap_tp"
+  }
+}

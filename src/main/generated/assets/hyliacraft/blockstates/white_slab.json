@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hyliacraft:block/white_slab"
+    },
+    "type=double": {
+      "model": "hyliacraft:block/white_planks"
+    },
+    "type=top": {
+      "model": "hyliacraft:block/white_slab_top"
+    }
+  }
+}
