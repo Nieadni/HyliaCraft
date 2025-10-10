@@ -7,11 +7,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.item.HCItemTags;
@@ -102,6 +100,16 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('R', Items.REDSTONE)
                 .input('G', Items.GOLD_INGOT)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.BOW))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.DUBIOUS_FOOD, 1)
+                .input(Items.CHICKEN)
+                .input(Items.PUFFERFISH)
+                .input(Items.ROTTEN_FLESH)
+                .input(Items.POISONOUS_POTATO)
+                .input(Items.DRIED_KELP)
+                .input(Items.SPIDER_EYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)

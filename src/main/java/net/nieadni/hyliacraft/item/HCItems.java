@@ -1,10 +1,12 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.*;
-import net.minecraft.registry.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
@@ -54,6 +56,7 @@ public class HCItems extends Items {
 
     // Consumables
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).maxCount(1)), "pumpkin_soup");
+    public static final Item DUBIOUS_FOOD = register(new DubiousFoodItem(new Item.Settings().food(HCFoodComponents.DUBIOUS_FOOD)), "dubious_food");
 
     // Rupees
     public static final Item RUPEE_POUCH = register(new RupeePouchItem(new Item.Settings().maxCount(1)),"rupee_pouch");

@@ -1,12 +1,12 @@
 package net.nieadni.hyliacraft.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-
-import net.minecraft.item.*;
-import net.minecraft.registry.*;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
@@ -310,6 +310,7 @@ public class HCItemGroups {
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
                         entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.DUBIOUS_FOOD);
                         entries.add(HCItems.FARORE_FLAME);
                         entries.add(HCItems.NAYRU_FLAME);
                         entries.add(HCItems.DIN_FLAME);
