@@ -15,6 +15,12 @@ public class FireshieldEarringItem extends Item {
         super(settings);
     }
 
+    /**
+     * Will go into Helmet Slot (possibly future compatibility with Trinkets & Curios)
+     * If player is on fire, extinguish the flames. But only if player is not standing in a fire source (fire, lava, lava cauldron)
+     * Keybind could be called 'Helmet Ability' and the default could be 'V'
+     */
+
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));

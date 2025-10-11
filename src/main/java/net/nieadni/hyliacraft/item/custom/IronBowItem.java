@@ -1,23 +1,44 @@
 package net.nieadni.hyliacraft.item.custom;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
+import net.minecraft.world.World;
 
 import java.util.List;
 
-// TODO: Give this bow a range of 25
 public class IronBowItem extends BowItem {
 
     public IronBowItem(Settings settings) {
         super(settings);
     }
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+    @Override
+    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+        if (user instanceof PlayerEntity playerEntity) {
+            ItemStack itemStack = playerEntity.getProjectileType(stack);
+            if (!itemStack.isEmpty()) {
+                int i = this.getMaxUseTime(stack, user) - remainingUseTicks;
+                float f = getPullProgress(i);
+                if (!((double)f < 0.1)) {
+                    List<ItemStack> list = load(stack, itemStack, playerEntity);
+                    if (world instanceof ServerWorld) {
+                        ServerWorld serverWorld = (ServerWorld)world;
+                        if (!list.isEmpty()) {
+                            this.shootAll(serverWorld, playerEntity, playerEntity.getActiveHand(), stack, list, f * 5.0F, 1.0F, f == 1.0F, (LivingEntity)null);
+                        }
+                    }
+
+                    world.playSound((PlayerEntity)null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
+                }
+            }
+        }
     }
+
 }

@@ -1,28 +1,22 @@
 package net.nieadni.hyliacraft.item.custom;
 
-import net.minecraft.component.ComponentMap;
-import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.*;
-import net.minecraft.datafixer.fix.ItemCustomNameToComponentFix;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.attribute.*;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import net.nieadni.hyliacraft.entity.HCEntities;
-import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessSwordBeamEntity;
 import net.nieadni.hyliacraft.item.HCItems;
 import net.nieadni.hyliacraft.item.materials.GoddessSwordMaterial;
 import org.jetbrains.annotations.NotNull;
@@ -95,6 +89,11 @@ public class GoddessSwordItem extends SwordItem {
      * + Crouch + Right Click = Horizontal Attack
      * + 3/4's Normal Attack Damage
      * + 6 Second Cooldown
+     *
+     * Sword Beam will also need to angle depending on the angle you are looking
+     *
+     * Feel free to remove the code below, kept it incase you want to fix it.
+     * But remove it if you think it'd be better to just start anew
      */
 
     /*

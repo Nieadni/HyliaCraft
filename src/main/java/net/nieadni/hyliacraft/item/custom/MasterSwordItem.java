@@ -1,23 +1,25 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.*;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.attribute.*;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
-import net.minecraft.util.*;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-
-import net.nieadni.hyliacraft.entity.*;
-import net.nieadni.hyliacraft.entity.sword_beam_entities.MasterSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.MasterSwordMaterial;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -67,6 +69,11 @@ public class MasterSwordItem extends SwordItem {
      * + Crouch + Right Click = Horizontal Attack
      * + 3/4's Normal Attack Damage
      * + 6 Second Cooldown
+     *
+     * Sword Beam will also need to angle depending on the angle you are looking
+     *
+     * Feel free to remove the code below, kept it incase you want to fix it.
+     * But remove it if you think it'd be better to just start anew
      */
 
     /*
