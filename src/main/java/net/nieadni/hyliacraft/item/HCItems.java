@@ -25,6 +25,7 @@ public class HCItems extends Items {
     public static final Item PHRYGIAN_CAP_SS = register(new PhrygianCapSSItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_ss");
     public static final Item PHRYGIAN_CAP_TP = register(new PhrygianCapTPItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_tp");
     public static final Item PHRYGIAN_CAP_CLASSIC = register(new PhrygianCapClassicItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_classic");
+    public static final Item BUNNY_HOOD = register(new BunnyHoodItem(HCArmourMaterials.BUNNY_HOOD, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.BUNNY_HOOD_DURABILITY_MULTIPLIER))), "bunny_hood");
     public static final Item FIRESHIELD_EARRING = register(new FireshieldEarringItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"fireshield_earring");
     public static final Item WATER_DRAGON_SCALE = register(new WaterDragonScaleItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"water_dragon_scale");
     public static final Item SHADOW_CRYSTAL = register(new ShadowCrystalItem(new Item.Settings().rarity(Rarity.RARE).maxCount(1)),"shadow_crystal");
@@ -73,6 +74,10 @@ public class HCItems extends Items {
     public static final Item NAYRU_FLAME = register(new Item(new Item.Settings().maxCount(1)),"nayru_flame");
     public static final Item DIN_FLAME = register(new Item(new Item.Settings().maxCount(1)),"din_flame");
     public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
+
+    public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
+    public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
+
 
 
     public static void registerHCItems() {

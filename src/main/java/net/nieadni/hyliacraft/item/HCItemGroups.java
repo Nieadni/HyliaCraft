@@ -22,6 +22,7 @@ public class HCItemGroups {
                         entries.add(HCItems.PHRYGIAN_CAP_SS);
                         entries.add(HCItems.PHRYGIAN_CAP_TP);
                         entries.add(HCItems.PHRYGIAN_CAP_CLASSIC);
+                        entries.add(HCItems.BUNNY_HOOD);
                         entries.add(HCItems.FIRESHIELD_EARRING);
                         entries.add(HCItems.WATER_DRAGON_SCALE);
                         entries.add(HCItems.SHADOW_CRYSTAL);
@@ -314,6 +315,8 @@ public class HCItemGroups {
                         entries.add(HCItems.FARORE_FLAME);
                         entries.add(HCItems.NAYRU_FLAME);
                         entries.add(HCItems.DIN_FLAME);
+                        entries.add(HCItems.GORON_SPICE);
+                        entries.add(HCItems.FAIRY_BOTTLE);
 
                     }).build());
 

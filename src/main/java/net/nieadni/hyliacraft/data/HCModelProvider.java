@@ -27,6 +27,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_SS, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_TP, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_CLASSIC, Models.GENERATED);
+        itemModelGenerator.register(HCItems.BUNNY_HOOD, Models.GENERATED);
         itemModelGenerator.register(HCItems.FIRESHIELD_EARRING, Models.GENERATED);
         itemModelGenerator.register(HCItems.WATER_DRAGON_SCALE, Models.GENERATED);
         itemModelGenerator.register(HCItems.SHADOW_CRYSTAL, Models.GENERATED);
@@ -68,6 +69,10 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.NAYRU_FLAME, Models.GENERATED);
         itemModelGenerator.register(HCItems.DIN_FLAME, Models.GENERATED);
         itemModelGenerator.register(HCItems.FARORE_FLAME, Models.GENERATED);
+
+        itemModelGenerator.register(HCItems.GORON_SPICE, Models.GENERATED);
+        itemModelGenerator.register(HCItems.FAIRY_BOTTLE, Models.GENERATED);
+
 
     }
 

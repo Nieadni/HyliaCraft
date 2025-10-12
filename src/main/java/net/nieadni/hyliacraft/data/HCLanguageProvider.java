@@ -30,6 +30,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_tp", "A Green Phrygian Cap worn by the Hero of Twilight");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_CLASSIC, "Phrygian Cap");
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_classic", "A Green and Yellow Phrygian Cap worn by the Hero of Legend");
+        translationBuilder.add(HCItems.BUNNY_HOOD, "Bunny Hood");
         translationBuilder.add(HCItems.FIRESHIELD_EARRING, "§cFireshield Earring");
         translationBuilder.add(HCItems.WATER_DRAGON_SCALE, "§1Water Dragon's Scale");
         translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
@@ -87,6 +88,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.DIN_FLAME, "§cDin's Flame");
         translationBuilder.add(HCItems.FARORE_FLAME, "§aFarore's Flame");
 
+        translationBuilder.add(HCItems.GORON_SPICE, "Goron Spice");
+        translationBuilder.add(HCItems.FAIRY_BOTTLE, "Fairy in a Bottle");
 
         /** BLOCKS **/
 
