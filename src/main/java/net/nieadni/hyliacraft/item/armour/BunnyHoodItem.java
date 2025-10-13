@@ -1,12 +1,17 @@
 package net.nieadni.hyliacraft.item.armour;
 
 import net.minecraft.client.render.entity.model.BipedEntityModel;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.world.World;
 import net.nieadni.hyliacraft.client.armour.BunnyHoodRenderer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +26,6 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-//TODO: Give player Jump Boost 1 and Speed 1 while wearing
 public class BunnyHoodItem extends ArmorItem implements GeoItem {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -29,6 +33,19 @@ public class BunnyHoodItem extends ArmorItem implements GeoItem {
     public BunnyHoodItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
         super(material, type, settings);
     }
+
+
+    @Override
+    public void inventoryTick(ItemStack stack, @NotNull World world, Entity entity, int slot, boolean selected) {
+        if (!world.isClient() && entity instanceof PlayerEntity player) {
+            if (player.getEquippedStack(EquipmentSlot.HEAD).isOf(this.asItem())) {
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST,20,1, false, false));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,20,1, false, false));
+            }
+        }
+    }
+
+    // Renderer Stuff below
 
     @Override
     public void createGeoRenderer(@NotNull Consumer<GeoRenderProvider> consumer) {
