@@ -8,7 +8,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
-import net.nieadni.hyliacraft.item.HCItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,6 +18,9 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
+        getOrCreateTagBuilder(HCBlockTags.GRASSES).add(Blocks.SHORT_GRASS);
+        getOrCreateTagBuilder(HCBlockTags.GRASSES).add(Blocks.TALL_GRASS);
 
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(HCBlocks.ARMORANTH);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(HCBlocks.ARMORANTH_POT);

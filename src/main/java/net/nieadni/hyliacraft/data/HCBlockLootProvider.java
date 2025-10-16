@@ -3,16 +3,20 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -27,6 +31,22 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+
+        addDrop(Blocks.SHORT_GRASS, (block -> LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
+                                .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
+                                .conditionally(RandomChanceLootCondition.builder(0.01f))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
+        addDrop(Blocks.TALL_GRASS, (block -> LootTable.builder()
+                .pool(LootPool.builder()
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
+                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
+                        .conditionally(RandomChanceLootCondition.builder(0.02f))
+                        .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
+
+        // HC Non-Coloured Blocks
+
         addDrop(HCBlocks.CLAY_POT);
         addDrop(HCBlocks.NATURAL_CLAY_POT, (block) -> applyExplosionDecay(block,
                 LootTable.builder()

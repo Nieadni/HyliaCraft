@@ -8,7 +8,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 
 public class HCBlockTags {
 
-    //public static final TagKey<Block> BRICKS = TagKey.of(RegistryKeys.BLOCK, new Identifier(HyliaCraft.MOD_ID, "bricks"));
+    public static final TagKey<Block> GRASSES = TagKey.of(RegistryKeys.BLOCK, new Identifier(HyliaCraft.MOD_ID, "grasses"));
 
     public static void registerHCBlockTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its Block tags.");

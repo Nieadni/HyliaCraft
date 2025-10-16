@@ -1,8 +1,9 @@
-// 1.21.1	2025-10-12T23:13:39.5094735	HyliaCraft/Tags for minecraft:block
+// 1.21.1	2025-10-16T22:25:49.2158456	HyliaCraft/Tags for minecraft:block
 8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\mineable\axe.json
 76f8ab8a82a24cfe92f6ae39f1390063a45a1f66 data\minecraft\tags\block\stairs.json
 9b30502a25fc98dc4378c145467a538c7eabfff4 data\minecraft\tags\block\wooden_stairs.json
 4fe6041cca7b02cb6b303abd1aa3f6c125cdf644 data\minecraft\tags\block\wooden_fences.json
+06b6e4c22355ffe121a9223815abb12fd83ff008 data\hyliacraft\tags\block\grasses.json
 ae995e8d40b60492924404a5442f8445a9c685fb data\minecraft\tags\block\walls.json
 8c4cf2e20942ef1d23d5c8b0181ccc8a8b84251e data\minecraft\tags\block\incorrect_for_wooden_tool.json
 c74cbf5e9d2f97fc20203228c904c9c127e0338d data\minecraft\tags\block\wooden_buttons.json
