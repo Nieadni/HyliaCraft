@@ -1,5 +1,4 @@
 # HyliaCraft
-[![Crowdin](https://badges.crowdin.net/hyliacraft/localized.svg)](https://crowdin.com/project/hyliacraft)
 
 **License**
 
@@ -15,6 +14,7 @@ Ordered A to Z to avoid bias:
 
 **Coders -**
 
+* Contrabass
 * Nieadni
 
 **Asset Makers -**
@@ -22,7 +22,7 @@ Ordered A to Z to avoid bias:
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, Rupee design, and Phrygian Cap design textures.
 * DataPackGen
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
-* pom_pookie - For the 'Isle of the Goddess' Build, and Digging Mitts textures.
+* pom_pookie - For the 'Isle of the Goddess' Build, Digging Mitts and Slingshot textures.
 * VeganNatureQueen - For the Paraglider Model
 
 **Testers -**
@@ -31,6 +31,7 @@ Ordered A to Z to avoid bias:
 
 **Translators -**
 
+If you want to translate, please join this [discord](https://discord.gg/frqHUnJeVg), pick up the Translator role and begin translating
 * German [de-de] - justabokoblin / Boko-Bro, xD1Fafa
 * Japanese [ja-jp] - renwillt / RE
 * Vietnamese [?-?] - sodapit

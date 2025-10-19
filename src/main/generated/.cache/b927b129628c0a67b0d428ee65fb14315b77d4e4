@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-16T22:25:49.2079878	HyliaCraft/Recipes
+// 1.21.1	2025-10-19T10:27:42.6698661	HyliaCraft/Recipes
 8f7e60b46a835b391eac46978e2a0ad9d8ec403a data\hyliacraft\advancement\recipes\building_blocks\green_bricks.json
 536aa05668bfb3e74b6f2bc42b9ed1784fd9667a data\hyliacraft\recipe\red_bricks.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
@@ -13,7 +13,7 @@ e054245de9016acbe07952372bc96c3acb547735 data\hyliacraft\advancement\recipes\bui
 812173836003643e7a3a0c68595fbbd239763f8d data\hyliacraft\recipe\pink_stairs.json
 a83c64f3f5695ff7145b17db847a0a90879fb5fc data\hyliacraft\recipe\cyan_button.json
 43a8ad6760e841624057d9418df3aebeb8467ec3 data\hyliacraft\advancement\recipes\building_blocks\red_brick_wall.json
-c00a2fbbaf9360da0eec7391d092a2df774905a7 data\hyliacraft\advancement\recipes\misc\magenta_dye.json
+ef48c5a7a4a03454512dcc0490704201888bc705 data\hyliacraft\advancement\recipes\misc\magenta_dye.json
 7f3887f05e973addc26b07b5ce50d476707ed484 data\hyliacraft\advancement\recipes\building_blocks\yellow_fence.json
 c7e7b91131391ef7812c05e10c6bd21fe4cb1187 data\hyliacraft\advancement\recipes\building_blocks\purple_fence.json
 fc006c4d760ab199a34e90cab62920af712c952f data\hyliacraft\advancement\recipes\building_blocks\brown_brick_wall.json
@@ -83,7 +83,7 @@ e539fcf297a36520b0ba86e3f35819977b885120 data\hyliacraft\advancement\recipes\bui
 412159b35ad490cba4e96e38ac967d33539aadd1 data\hyliacraft\recipe\red_stripped_wood.json
 444949a3afa775513386d8ddad83eee59d044b25 data\hyliacraft\advancement\recipes\building_blocks\black_brick_slab.json
 57a6aec996514275b4bb4c7933855c70830ad4d0 data\hyliacraft\advancement\recipes\building_blocks\blue_fence.json
-f2685d017be1a15438becf6b269bce8914bb9152 data\hyliacraft\advancement\recipes\misc\purple_dye.json
+2926992878cdcf33c1a4c5547c1d725573bbb99d data\hyliacraft\advancement\recipes\misc\purple_dye.json
 b26fac8525ce44d0b768034b1133e7afb91c7766 data\hyliacraft\recipe\blue_brick_slab.json
 0ab71315909380d2c1270217d94a6287df244f49 data\hyliacraft\recipe\light_grey_brick_stairs.json
 82b783fdb61c11c8a963bb44b5c2c1a504b958cc data\hyliacraft\advancement\recipes\building_blocks\brown_bricks.json
@@ -330,7 +330,7 @@ a3bb6fce9d581cac4d4414a88221ab6425e19f65 data\hyliacraft\recipe\pink_fence.json
 c88caa8c07782b07ef85a3ed8d107a04cdbcc442 data\hyliacraft\advancement\recipes\building_blocks\brown_pressure_plate.json
 f06ffa4bfb93c98a0cc2bcfb0486c7b812fc0a74 data\hyliacraft\recipe\magenta_brick_wall.json
 12c1dcd29816aff0b15d902bafc2f632664ac6bf data\hyliacraft\recipe\lime_stairs.json
-2190afbc61d34f625c5c7ff01e3aea6ec70e6b93 data\hyliacraft\advancement\recipes\misc\white_dye.json
+50f36dfee27481333ae8e154af92a58b5e8d9fd1 data\hyliacraft\advancement\recipes\misc\white_dye.json
 5decb2611306159bb6264307df725d72a1627a87 data\hyliacraft\advancement\recipes\building_blocks\magenta_stripped_wood.json
 f5297608c60b5bd92ebcc26798c9c09be3bd7fd9 data\hyliacraft\recipe\white_brick_wall.json
 6445f22d007c60c81fc4424cced20b39e8e4e775 data\hyliacraft\recipe\black_brick_slab.json
@@ -400,7 +400,7 @@ db3235bc7d29f60947e5c6ac60fa8febf2ac7b45 data\hyliacraft\recipe\yellow_brick_wal
 26fe5d0af41596c3cf9bced940dc3ce48d7fbff1 data\hyliacraft\recipe\pink_planks.json
 a41b6fe023d59a5913bbf396cc3f89a24af8fe32 data\hyliacraft\recipe\lime_pressure_plate.json
 4ccd7f8f557ea1d4c0ed33a1d7b874de327349cf data\hyliacraft\advancement\recipes\building_blocks\lime_brick_slab.json
-49a0087e271ee1d31a678c9b8c22d526fcded7f6 data\hyliacraft\advancement\recipes\misc\blue_dye.json
+f053cff2106487b0aed16a4f654ce0cf9e373fb6 data\hyliacraft\advancement\recipes\misc\blue_dye.json
 29ca7639a278f453a7ff67af8fe7ebc1049b2982 data\hyliacraft\recipe\brown_fence.json
 7dc6e6ab5d9eaf58215b6228cae894e53e01599b data\hyliacraft\recipe\purple_fence_gate.json
 3d79ad9e097e6a0c001841f3054366771b4f9bf2 data\hyliacraft\advancement\recipes\building_blocks\blue_bricks.json
