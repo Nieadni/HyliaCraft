@@ -15,6 +15,7 @@ public class WaterDragonScaleItem extends Item {
         super(settings);
     }
 
+    //TODO: WaterDragonScaleItem
     /**
      * Will go into Helmet Slot (possibly future compatibility with Trinkets & Curios)
      * This will allow the player to do the spin attack while in water. 3 second cooldown like Zora Race

@@ -33,10 +33,12 @@ public class SlingshotItem extends RangedWeaponItem {
         super(settings);
     }
 
+    //TODO: Slingshot Item
     /**
     * This was my puny attempt at doing the Slingshot.
     * It needs to have a range of 10 before drop-off
-     * And should fire a custom projectile called 'rock_projectile'
+     * And should be able to fire both rocks (cobblestone) or seeds.
+     * Rocks should ideally do around 2 damage per hit, while seeds do 1 damage per hit
      * Feel free to remove anything that isn't needed.
      **/
 

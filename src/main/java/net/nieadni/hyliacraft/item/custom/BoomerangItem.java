@@ -15,6 +15,14 @@ public class BoomerangItem extends Item {
         super(settings);
     }
 
+    //TODO: BoomerangItem
+    /**
+     * The Boomerang should go out 32 blocks then come back to the player.
+     * Should deal around 6hp per hit?
+     * Will pick up items its hitbox intersects and when the player gets it back, it will give them the items.
+     * 484 Durability
+     */
+
     // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));

@@ -15,6 +15,7 @@ public class FireshieldEarringItem extends Item {
         super(settings);
     }
 
+    //TODO: FireshieldEarringItem
     /**
      * Will go into Helmet Slot (possibly future compatibility with Trinkets & Curios)
      * If player is on fire, extinguish the flames. But only if player is not standing in a fire source (fire, lava, lava cauldron)
