@@ -17,6 +17,8 @@ import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
 
+import static net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder.getItemId;
+
 public class HCRecipeProvider extends FabricRecipeProvider {
     public HCRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -517,8 +519,8 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('#', HCItemTags.BRICKS).input('@', Items.PINK_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
-
-
+        
+        //
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_PLANKS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
@@ -1276,5 +1278,490 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.PINK_DYE))
                 .offerTo(exporter);
 
+        //
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_SHINGLES,8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_SHINGLE_STAIRS,8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_SHINGLE_SLAB,8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_SHINGLE_WALL,8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BROWN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BROWN_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BROWN_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BROWN_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.RED_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.RED_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.RED_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.RED_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.ORANGE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.ORANGE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.ORANGE_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.ORANGE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.ORANGE_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.ORANGE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.ORANGE_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.ORANGE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.YELLOW_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.YELLOW_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.YELLOW_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.YELLOW_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIME_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIME_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIME_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIME_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIME_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIME_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIME_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIME_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREEN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREEN_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREEN_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREEN_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.CYAN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.CYAN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.CYAN_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.CYAN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.CYAN_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.CYAN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.CYAN_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.CYAN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_BLUE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLUE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLUE_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLUE_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLUE_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PURPLE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PURPLE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PURPLE_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PURPLE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PURPLE_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PURPLE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PURPLE_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PURPLE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.MAGENTA_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.MAGENTA_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.MAGENTA_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.MAGENTA_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.MAGENTA_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.MAGENTA_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.MAGENTA_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.MAGENTA_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PINK_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PINK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PINK_SHINGLE_STAIRS, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PINK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PINK_SHINGLE_SLAB, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PINK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PINK_SHINGLE_WALL, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', HCItemTags.SHINGLES).input('@', Items.PINK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter);
+        
+        //
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.WHITE_SHINGLES,8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.WHITE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.WHITE_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.LIGHT_GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.LIGHT_GREY_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.GRAY_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.GREY_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.BLACK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.BLACK_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BROWN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.BROWN_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.RED_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.RED_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.ORANGE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.ORANGE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.ORANGE_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.YELLOW_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.YELLOW_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIME_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.LIME_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.LIME_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREEN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.GREEN_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.CYAN_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.CYAN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.CYAN_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_BLUE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.LIGHT_BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.LIGHT_BLUE_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLUE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.BLUE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.BLUE_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PURPLE_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.PURPLE_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.PURPLE_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.MAGENTA_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.MAGENTA_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.MAGENTA_SHINGLES) + "_main");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.PINK_SHINGLES, 8)
+                .pattern("###").pattern("#@#").pattern("###")
+                .input('#', Items.CLAY_BALL).input('@', Items.PINK_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
+                .offerTo(exporter, getItemId(HCColouredBlocks.PINK_SHINGLES) + "_main");
+
     }
+
 }

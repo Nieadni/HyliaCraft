@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "hyliacraft:block/yellow_shingles",
+    "side": "hyliacraft:block/yellow_shingles",
+    "top": "hyliacraft:block/yellow_shingles"
+  }
+}

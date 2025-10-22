@@ -189,6 +189,10 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
         addDrop(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
         slabDrops(HCColouredBlocks.RAINBOW_BRICK_SLAB);
         addDrop(HCColouredBlocks.RAINBOW_BRICK_WALL);
+        
+        //
+        
+        
         addDrop(HCColouredBlocks.WHITE_STRIPPED_LOG);
         addDrop(HCColouredBlocks.WHITE_STRIPPED_WOOD);
         addDrop(HCColouredBlocks.WHITE_PLANKS);
@@ -343,6 +347,76 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
         addDrop(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
         addDrop(HCColouredBlocks.RAINBOW_BUTTON);
 
+        //
+
+        addDrop(HCColouredBlocks.WHITE_SHINGLES);
+        addDrop(HCColouredBlocks.WHITE_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.WHITE_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.WHITE_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.LIGHT_GREY_SHINGLES);
+        addDrop(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.GREY_SHINGLES);
+        addDrop(HCColouredBlocks.GREY_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.GREY_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.GREY_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.BLACK_SHINGLES);
+        addDrop(HCColouredBlocks.BLACK_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.BLACK_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.BLACK_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.BROWN_SHINGLES);
+        addDrop(HCColouredBlocks.BROWN_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.BROWN_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.BROWN_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.RED_SHINGLES);
+        addDrop(HCColouredBlocks.RED_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.RED_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.RED_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.ORANGE_SHINGLES);
+        addDrop(HCColouredBlocks.ORANGE_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.ORANGE_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.ORANGE_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.YELLOW_SHINGLES);
+        addDrop(HCColouredBlocks.YELLOW_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.YELLOW_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.YELLOW_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.LIME_SHINGLES);
+        addDrop(HCColouredBlocks.LIME_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.LIME_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.LIME_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.GREEN_SHINGLES);
+        addDrop(HCColouredBlocks.GREEN_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.GREEN_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.GREEN_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.CYAN_SHINGLES);
+        addDrop(HCColouredBlocks.CYAN_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.CYAN_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.CYAN_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_SHINGLES);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.BLUE_SHINGLES);
+        addDrop(HCColouredBlocks.BLUE_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.BLUE_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.BLUE_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.PURPLE_SHINGLES);
+        addDrop(HCColouredBlocks.PURPLE_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.PURPLE_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.PURPLE_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.MAGENTA_SHINGLES);
+        addDrop(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.MAGENTA_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.MAGENTA_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.PINK_SHINGLES);
+        addDrop(HCColouredBlocks.PINK_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.PINK_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.PINK_SHINGLE_WALL);
+        addDrop(HCColouredBlocks.RAINBOW_SHINGLES);
+        addDrop(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS);
+        slabDrops(HCColouredBlocks.RAINBOW_SHINGLE_SLAB);
+        addDrop(HCColouredBlocks.RAINBOW_SHINGLE_WALL);
     }
 
     @Override

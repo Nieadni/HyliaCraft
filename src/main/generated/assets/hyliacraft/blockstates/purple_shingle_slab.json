@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hyliacraft:block/purple_shingle_slab"
+    },
+    "type=double": {
+      "model": "hyliacraft:block/purple_shingles"
+    },
+    "type=top": {
+      "model": "hyliacraft:block/purple_shingle_slab_top"
+    }
+  }
+}

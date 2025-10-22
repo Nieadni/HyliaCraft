@@ -278,6 +278,93 @@ public class HCColouredBlocks extends Blocks {
     public static final Block RAINBOW_PRESSURE_PLATE = registerBlock("rainbow_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(RAINBOW_PLANKS)));
     public static final Block RAINBOW_BUTTON = registerBlock("rainbow_button", createWoodenButtonBlock(BlockSetType.OAK));
 
+    //
+
+    public static final Block WHITE_SHINGLES = registerBlock("white_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.WHITE)));
+    public static final Block WHITE_SHINGLE_STAIRS = registerBlock("white_shingle_stairs", new StairsBlock(WHITE_SHINGLES.getDefaultState(), Block.Settings.copy(WHITE_SHINGLES)));
+    public static final Block WHITE_SHINGLE_SLAB = registerBlock("white_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(WHITE_SHINGLES)));
+    public static final Block WHITE_SHINGLE_WALL = registerBlock("white_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(WHITE_SHINGLES)));
+
+    public static final Block LIGHT_GREY_SHINGLES = registerBlock("light_grey_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GREY_SHINGLE_STAIRS = registerBlock("light_grey_shingle_stairs", new StairsBlock(LIGHT_GREY_SHINGLES.getDefaultState(), Block.Settings.copy(LIGHT_GREY_SHINGLES)));
+    public static final Block LIGHT_GREY_SHINGLE_SLAB = registerBlock("light_grey_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GREY_SHINGLES)));
+    public static final Block LIGHT_GREY_SHINGLE_WALL = registerBlock("light_grey_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_GREY_SHINGLES)));
+
+    public static final Block GREY_SHINGLES = registerBlock("grey_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.GRAY)));
+    public static final Block GREY_SHINGLE_STAIRS = registerBlock("grey_shingle_stairs", new StairsBlock(GREY_SHINGLES.getDefaultState(), Block.Settings.copy(GREY_SHINGLES)));
+    public static final Block GREY_SHINGLE_SLAB = registerBlock("grey_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(GREY_SHINGLES)));
+    public static final Block GREY_SHINGLE_WALL = registerBlock("grey_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(GREY_SHINGLES)));
+
+    public static final Block BLACK_SHINGLES = registerBlock("black_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.BLACK)));
+    public static final Block BLACK_SHINGLE_STAIRS = registerBlock("black_shingle_stairs", new StairsBlock(BLACK_SHINGLES.getDefaultState(), Block.Settings.copy(BLACK_SHINGLES)));
+    public static final Block BLACK_SHINGLE_SLAB = registerBlock("black_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(BLACK_SHINGLES)));
+    public static final Block BLACK_SHINGLE_WALL = registerBlock("black_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(BLACK_SHINGLES)));
+
+    public static final Block BROWN_SHINGLES = registerBlock("brown_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.BROWN)));
+    public static final Block BROWN_SHINGLE_STAIRS = registerBlock("brown_shingle_stairs", new StairsBlock(BROWN_SHINGLES.getDefaultState(), Block.Settings.copy(BROWN_SHINGLES)));
+    public static final Block BROWN_SHINGLE_SLAB = registerBlock("brown_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(BROWN_SHINGLES)));
+    public static final Block BROWN_SHINGLE_WALL = registerBlock("brown_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(BROWN_SHINGLES)));
+
+    public static final Block RED_SHINGLES = registerBlock("red_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.RED)));
+    public static final Block RED_SHINGLE_STAIRS = registerBlock("red_shingle_stairs", new StairsBlock(RED_SHINGLES.getDefaultState(), Block.Settings.copy(RED_SHINGLES)));
+    public static final Block RED_SHINGLE_SLAB = registerBlock("red_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(RED_SHINGLES)));
+    public static final Block RED_SHINGLE_WALL = registerBlock("red_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(RED_SHINGLES)));
+
+    public static final Block ORANGE_SHINGLES = registerBlock("orange_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.ORANGE)));
+    public static final Block ORANGE_SHINGLE_STAIRS = registerBlock("orange_shingle_stairs", new StairsBlock(ORANGE_SHINGLES.getDefaultState(), Block.Settings.copy(ORANGE_SHINGLES)));
+    public static final Block ORANGE_SHINGLE_SLAB = registerBlock("orange_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(ORANGE_SHINGLES)));
+    public static final Block ORANGE_SHINGLE_WALL = registerBlock("orange_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(ORANGE_SHINGLES)));
+
+    public static final Block YELLOW_SHINGLES = registerBlock("yellow_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.YELLOW)));
+    public static final Block YELLOW_SHINGLE_STAIRS = registerBlock("yellow_shingle_stairs", new StairsBlock(YELLOW_SHINGLES.getDefaultState(), Block.Settings.copy(YELLOW_SHINGLES)));
+    public static final Block YELLOW_SHINGLE_SLAB = registerBlock("yellow_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(YELLOW_SHINGLES)));
+    public static final Block YELLOW_SHINGLE_WALL = registerBlock("yellow_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(YELLOW_SHINGLES)));
+
+    public static final Block LIME_SHINGLES = registerBlock("lime_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.LIME)));
+    public static final Block LIME_SHINGLE_STAIRS = registerBlock("lime_shingle_stairs", new StairsBlock(LIME_SHINGLES.getDefaultState(), Block.Settings.copy(LIME_SHINGLES)));
+    public static final Block LIME_SHINGLE_SLAB = registerBlock("lime_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(LIME_SHINGLES)));
+    public static final Block LIME_SHINGLE_WALL = registerBlock("lime_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(LIME_SHINGLES)));
+
+    public static final Block GREEN_SHINGLES = registerBlock("green_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.GREEN)));
+    public static final Block GREEN_SHINGLE_STAIRS = registerBlock("green_shingle_stairs", new StairsBlock(GREEN_SHINGLES.getDefaultState(), Block.Settings.copy(GREEN_SHINGLES)));
+    public static final Block GREEN_SHINGLE_SLAB = registerBlock("green_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(GREEN_SHINGLES)));
+    public static final Block GREEN_SHINGLE_WALL = registerBlock("green_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(GREEN_SHINGLES)));
+
+    public static final Block CYAN_SHINGLES = registerBlock("cyan_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.CYAN)));
+    public static final Block CYAN_SHINGLE_STAIRS = registerBlock("cyan_shingle_stairs", new StairsBlock(CYAN_SHINGLES.getDefaultState(), Block.Settings.copy(CYAN_SHINGLES)));
+    public static final Block CYAN_SHINGLE_SLAB = registerBlock("cyan_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(CYAN_SHINGLES)));
+    public static final Block CYAN_SHINGLE_WALL = registerBlock("cyan_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(CYAN_SHINGLES)));
+
+    public static final Block LIGHT_BLUE_SHINGLES = registerBlock("light_blue_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIGHT_BLUE_SHINGLE_STAIRS = registerBlock("light_blue_shingle_stairs", new StairsBlock(LIGHT_BLUE_SHINGLES.getDefaultState(), Block.Settings.copy(LIGHT_BLUE_SHINGLES)));
+    public static final Block LIGHT_BLUE_SHINGLE_SLAB = registerBlock("light_blue_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_BLUE_SHINGLES)));
+    public static final Block LIGHT_BLUE_SHINGLE_WALL = registerBlock("light_blue_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_BLUE_SHINGLES)));
+
+    public static final Block BLUE_SHINGLES = registerBlock("blue_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.BLUE)));
+    public static final Block BLUE_SHINGLE_STAIRS = registerBlock("blue_shingle_stairs", new StairsBlock(BLUE_SHINGLES.getDefaultState(), Block.Settings.copy(BLUE_SHINGLES)));
+    public static final Block BLUE_SHINGLE_SLAB = registerBlock("blue_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(BLUE_SHINGLES)));
+    public static final Block BLUE_SHINGLE_WALL = registerBlock("blue_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(BLUE_SHINGLES)));
+
+    public static final Block PURPLE_SHINGLES = registerBlock("purple_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.PURPLE)));
+    public static final Block PURPLE_SHINGLE_STAIRS = registerBlock("purple_shingle_stairs", new StairsBlock(PURPLE_SHINGLES.getDefaultState(), Block.Settings.copy(PURPLE_SHINGLES)));
+    public static final Block PURPLE_SHINGLE_SLAB = registerBlock("purple_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(PURPLE_SHINGLES)));
+    public static final Block PURPLE_SHINGLE_WALL = registerBlock("purple_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(PURPLE_SHINGLES)));
+
+    public static final Block MAGENTA_SHINGLES = registerBlock("magenta_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.MAGENTA)));
+    public static final Block MAGENTA_SHINGLE_STAIRS = registerBlock("magenta_shingle_stairs", new StairsBlock(MAGENTA_SHINGLES.getDefaultState(), Block.Settings.copy(MAGENTA_SHINGLES)));
+    public static final Block MAGENTA_SHINGLE_SLAB = registerBlock("magenta_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(MAGENTA_SHINGLES)));
+    public static final Block MAGENTA_SHINGLE_WALL = registerBlock("magenta_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(MAGENTA_SHINGLES)));
+
+    public static final Block PINK_SHINGLES = registerBlock("pink_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.PINK)));
+    public static final Block PINK_SHINGLE_STAIRS = registerBlock("pink_shingle_stairs", new StairsBlock(PINK_SHINGLES.getDefaultState(), Block.Settings.copy(PINK_SHINGLES)));
+    public static final Block PINK_SHINGLE_SLAB = registerBlock("pink_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(PINK_SHINGLES)));
+    public static final Block PINK_SHINGLE_WALL = registerBlock("pink_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(PINK_SHINGLES)));
+
+    public static final Block RAINBOW_SHINGLES = registerBlock("rainbow_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block RAINBOW_SHINGLE_STAIRS = registerBlock("rainbow_shingle_stairs", new StairsBlock(RAINBOW_SHINGLES.getDefaultState(), Block.Settings.copy(RAINBOW_SHINGLES)));
+    public static final Block RAINBOW_SHINGLE_SLAB = registerBlock("rainbow_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(RAINBOW_SHINGLES)));
+    public static final Block RAINBOW_SHINGLE_WALL = registerBlock("rainbow_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(RAINBOW_SHINGLES)));
+
     public static void registerHCColouredBlocks() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its colourful blocks!");
     }

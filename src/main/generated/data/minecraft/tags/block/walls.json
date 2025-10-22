@@ -16,6 +16,23 @@
     "hyliacraft:purple_brick_wall",
     "hyliacraft:magenta_brick_wall",
     "hyliacraft:pink_brick_wall",
-    "hyliacraft:rainbow_brick_wall"
+    "hyliacraft:rainbow_brick_wall",
+    "hyliacraft:white_shingle_wall",
+    "hyliacraft:light_grey_shingle_wall",
+    "hyliacraft:grey_shingle_wall",
+    "hyliacraft:black_shingle_wall",
+    "hyliacraft:brown_shingle_wall",
+    "hyliacraft:red_shingle_wall",
+    "hyliacraft:orange_shingle_wall",
+    "hyliacraft:yellow_shingle_wall",
+    "hyliacraft:lime_shingle_wall",
+    "hyliacraft:green_shingle_wall",
+    "hyliacraft:cyan_shingle_wall",
+    "hyliacraft:light_blue_shingle_wall",
+    "hyliacraft:blue_shingle_wall",
+    "hyliacraft:purple_shingle_wall",
+    "hyliacraft:magenta_shingle_wall",
+    "hyliacraft:pink_shingle_wall",
+    "hyliacraft:rainbow_shingle_wall"
   ]
 }

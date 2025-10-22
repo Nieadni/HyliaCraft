@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "hyliacraft:block/rainbow_shingles",
+    "side": "hyliacraft:block/rainbow_shingles",
+    "top": "hyliacraft:block/rainbow_shingles"
+  }
+}

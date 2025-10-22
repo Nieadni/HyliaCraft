@@ -190,6 +190,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_STAIRS, "Rainbow Brick Stairs");
         translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_SLAB, "Rainbow Brick Slab");
         translationBuilder.add(HCColouredBlocks.RAINBOW_BRICK_WALL, "Rainbow Brick Wall");
+        
+        //
+        
         translationBuilder.add(HCColouredBlocks.WHITE_STRIPPED_LOG, "White Stripped Log");
         translationBuilder.add(HCColouredBlocks.WHITE_STRIPPED_WOOD, "White Stripped Wood");
         translationBuilder.add(HCColouredBlocks.WHITE_PLANKS, "White Planks");
@@ -344,6 +347,77 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCColouredBlocks.RAINBOW_PRESSURE_PLATE, "Rainbow Pressure Plate");
         translationBuilder.add(HCColouredBlocks.RAINBOW_BUTTON, "Rainbow Button");
 
+        //
+
+        translationBuilder.add(HCColouredBlocks.WHITE_SHINGLES, "White Shingles");
+        translationBuilder.add(HCColouredBlocks.WHITE_SHINGLE_STAIRS, "White Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.WHITE_SHINGLE_SLAB, "White Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.WHITE_SHINGLE_WALL, "White Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.LIGHT_GREY_SHINGLES, "Light Grey Shingles");
+        translationBuilder.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS, "Light Grey Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB, "Light Grey Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL, "Light Grey Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.GREY_SHINGLES, "Grey Shingles");
+        translationBuilder.add(HCColouredBlocks.GREY_SHINGLE_STAIRS, "Grey Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.GREY_SHINGLE_SLAB, "Grey Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.GREY_SHINGLE_WALL, "Grey Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.BLACK_SHINGLES, "Black Shingles");
+        translationBuilder.add(HCColouredBlocks.BLACK_SHINGLE_STAIRS, "Black Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.BLACK_SHINGLE_SLAB, "Black Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.BLACK_SHINGLE_WALL, "Black Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.BROWN_SHINGLES, "Brown Shingles");
+        translationBuilder.add(HCColouredBlocks.BROWN_SHINGLE_STAIRS, "Brown Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.BROWN_SHINGLE_SLAB, "Brown Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.BROWN_SHINGLE_WALL, "Brown Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.RED_SHINGLES, "Red Shingles");
+        translationBuilder.add(HCColouredBlocks.RED_SHINGLE_STAIRS, "Red Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.RED_SHINGLE_SLAB, "Red Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.RED_SHINGLE_WALL, "Red Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.ORANGE_SHINGLES, "Orange Shingles");
+        translationBuilder.add(HCColouredBlocks.ORANGE_SHINGLE_STAIRS, "Orange Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.ORANGE_SHINGLE_SLAB, "Orange Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.ORANGE_SHINGLE_WALL, "Orange Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.YELLOW_SHINGLES, "Yellow Shingles");
+        translationBuilder.add(HCColouredBlocks.YELLOW_SHINGLE_STAIRS, "Yellow Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.YELLOW_SHINGLE_SLAB, "Yellow Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.YELLOW_SHINGLE_WALL, "Yellow Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.LIME_SHINGLES, "Lime Shingles");
+        translationBuilder.add(HCColouredBlocks.LIME_SHINGLE_STAIRS, "Lime Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.LIME_SHINGLE_SLAB, "Lime Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.LIME_SHINGLE_WALL, "Lime Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.GREEN_SHINGLES, "Green Shingles");
+        translationBuilder.add(HCColouredBlocks.GREEN_SHINGLE_STAIRS, "Green Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.GREEN_SHINGLE_SLAB, "Green Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.GREEN_SHINGLE_WALL, "Green Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.CYAN_SHINGLES, "Cyan Shingles");
+        translationBuilder.add(HCColouredBlocks.CYAN_SHINGLE_STAIRS, "Cyan Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.CYAN_SHINGLE_SLAB, "Cyan Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.CYAN_SHINGLE_WALL, "Cyan Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.LIGHT_BLUE_SHINGLES, "Light Blue Shingles");
+        translationBuilder.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS, "Light Blue Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB, "Light Blue Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL, "Light Blue Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.BLUE_SHINGLES, "Blue Shingles");
+        translationBuilder.add(HCColouredBlocks.BLUE_SHINGLE_STAIRS, "Blue Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.BLUE_SHINGLE_SLAB, "Blue Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.BLUE_SHINGLE_WALL, "Blue Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.PURPLE_SHINGLES, "Purple Shingles");
+        translationBuilder.add(HCColouredBlocks.PURPLE_SHINGLE_STAIRS, "Purple Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.PURPLE_SHINGLE_SLAB, "Purple Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.PURPLE_SHINGLE_WALL, "Purple Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.MAGENTA_SHINGLES, "Magenta Shingles");
+        translationBuilder.add(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS, "Magenta Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.MAGENTA_SHINGLE_SLAB, "Magenta Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.MAGENTA_SHINGLE_WALL, "Magenta Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.PINK_SHINGLES, "Pink Shingles");
+        translationBuilder.add(HCColouredBlocks.PINK_SHINGLE_STAIRS, "Pink Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.PINK_SHINGLE_SLAB, "Pink Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.PINK_SHINGLE_WALL, "Pink Shingle Wall");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_SHINGLES, "Rainbow Shingles");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS, "Rainbow Shingle Stairs");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_SHINGLE_SLAB, "Rainbow Shingle Slab");
+        translationBuilder.add(HCColouredBlocks.RAINBOW_SHINGLE_WALL, "Rainbow Shingle Wall");
+        
         /** Banner Stuff **/
 
         translationBuilder.add("block.minecraft.banner.hyliacraft.din.black", "Black Din");

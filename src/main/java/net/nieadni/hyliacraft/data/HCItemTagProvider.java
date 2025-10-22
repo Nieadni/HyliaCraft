@@ -217,6 +217,8 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICK_SLAB));
         getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICK_WALL));
 
+        //
+        
         getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.WHITE_PLANKS));
         getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.WHITE_STRIPPED_LOG));
         getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.WHITE_STRIPPED_WOOD));
@@ -371,5 +373,75 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_PRESSURE_PLATE));
         getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BUTTON));
 
+        //
+
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.WHITE_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.WHITE_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.WHITE_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.WHITE_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.GREY_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREY_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.GREY_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.GREY_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.BLACK_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLACK_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.BLACK_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.BLACK_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.BROWN_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.BROWN_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.BROWN_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.BROWN_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.RED_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.RED_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.RED_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.RED_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.ORANGE_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.ORANGE_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.ORANGE_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.ORANGE_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.YELLOW_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.YELLOW_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.YELLOW_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.YELLOW_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.LIME_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIME_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.LIME_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.LIME_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.GREEN_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREEN_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.GREEN_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.GREEN_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.CYAN_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.CYAN_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.CYAN_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.CYAN_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.BLUE_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLUE_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.BLUE_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.BLUE_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.PURPLE_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.PURPLE_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.PURPLE_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.PURPLE_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.MAGENTA_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.PINK_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.PINK_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.PINK_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.PINK_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_SHINGLE_WALL));
     }
 }

@@ -154,6 +154,9 @@ public class HCModelProvider extends FabricModelProvider {
         rainbowBrickBlockPool.stairs(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
         rainbowBrickBlockPool.slab(HCColouredBlocks.RAINBOW_BRICK_SLAB);
         rainbowBrickBlockPool.wall(HCColouredBlocks.RAINBOW_BRICK_WALL);
+        
+        //
+        
         blockStateModelGenerator.registerLog(HCColouredBlocks.WHITE_STRIPPED_LOG)
                 .log(HCColouredBlocks.WHITE_STRIPPED_LOG)
                 .wood(HCColouredBlocks.WHITE_STRIPPED_WOOD);
@@ -359,6 +362,76 @@ public class HCModelProvider extends FabricModelProvider {
         rainbowPlankBlockPool.pressurePlate(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
         rainbowPlankBlockPool.button(HCColouredBlocks.RAINBOW_BUTTON);
 
+        //
+
+        BlockStateModelGenerator.BlockTexturePool whiteShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.WHITE_SHINGLES);
+        whiteShingleBlockPool.stairs(HCColouredBlocks.WHITE_SHINGLE_STAIRS);
+        whiteShingleBlockPool.slab(HCColouredBlocks.WHITE_SHINGLE_SLAB);
+        whiteShingleBlockPool.wall(HCColouredBlocks.WHITE_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool lightGreyShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_GREY_SHINGLES);
+        lightGreyShingleBlockPool.stairs(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS);
+        lightGreyShingleBlockPool.slab(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB);
+        lightGreyShingleBlockPool.wall(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool greyShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREY_SHINGLES);
+        greyShingleBlockPool.stairs(HCColouredBlocks.GREY_SHINGLE_STAIRS);
+        greyShingleBlockPool.slab(HCColouredBlocks.GREY_SHINGLE_SLAB);
+        greyShingleBlockPool.wall(HCColouredBlocks.GREY_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool blackShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLACK_SHINGLES);
+        blackShingleBlockPool.stairs(HCColouredBlocks.BLACK_SHINGLE_STAIRS);
+        blackShingleBlockPool.slab(HCColouredBlocks.BLACK_SHINGLE_SLAB);
+        blackShingleBlockPool.wall(HCColouredBlocks.BLACK_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool brownShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BROWN_SHINGLES);
+        brownShingleBlockPool.stairs(HCColouredBlocks.BROWN_SHINGLE_STAIRS);
+        brownShingleBlockPool.slab(HCColouredBlocks.BROWN_SHINGLE_SLAB);
+        brownShingleBlockPool.wall(HCColouredBlocks.BROWN_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool redShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RED_SHINGLES);
+        redShingleBlockPool.stairs(HCColouredBlocks.RED_SHINGLE_STAIRS);
+        redShingleBlockPool.slab(HCColouredBlocks.RED_SHINGLE_SLAB);
+        redShingleBlockPool.wall(HCColouredBlocks.RED_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool orangeShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.ORANGE_SHINGLES);
+        orangeShingleBlockPool.stairs(HCColouredBlocks.ORANGE_SHINGLE_STAIRS);
+        orangeShingleBlockPool.slab(HCColouredBlocks.ORANGE_SHINGLE_SLAB);
+        orangeShingleBlockPool.wall(HCColouredBlocks.ORANGE_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool yellowShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.YELLOW_SHINGLES);
+        yellowShingleBlockPool.stairs(HCColouredBlocks.YELLOW_SHINGLE_STAIRS);
+        yellowShingleBlockPool.slab(HCColouredBlocks.YELLOW_SHINGLE_SLAB);
+        yellowShingleBlockPool.wall(HCColouredBlocks.YELLOW_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool limeShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIME_SHINGLES);
+        limeShingleBlockPool.stairs(HCColouredBlocks.LIME_SHINGLE_STAIRS);
+        limeShingleBlockPool.slab(HCColouredBlocks.LIME_SHINGLE_SLAB);
+        limeShingleBlockPool.wall(HCColouredBlocks.LIME_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool greenShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.GREEN_SHINGLES);
+        greenShingleBlockPool.stairs(HCColouredBlocks.GREEN_SHINGLE_STAIRS);
+        greenShingleBlockPool.slab(HCColouredBlocks.GREEN_SHINGLE_SLAB);
+        greenShingleBlockPool.wall(HCColouredBlocks.GREEN_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool cyanShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.CYAN_SHINGLES);
+        cyanShingleBlockPool.stairs(HCColouredBlocks.CYAN_SHINGLE_STAIRS);
+        cyanShingleBlockPool.slab(HCColouredBlocks.CYAN_SHINGLE_SLAB);
+        cyanShingleBlockPool.wall(HCColouredBlocks.CYAN_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool lightBlueShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.LIGHT_BLUE_SHINGLES);
+        lightBlueShingleBlockPool.stairs(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS);
+        lightBlueShingleBlockPool.slab(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB);
+        lightBlueShingleBlockPool.wall(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool blueShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.BLUE_SHINGLES);
+        blueShingleBlockPool.stairs(HCColouredBlocks.BLUE_SHINGLE_STAIRS);
+        blueShingleBlockPool.slab(HCColouredBlocks.BLUE_SHINGLE_SLAB);
+        blueShingleBlockPool.wall(HCColouredBlocks.BLUE_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool purpleShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PURPLE_SHINGLES);
+        purpleShingleBlockPool.stairs(HCColouredBlocks.PURPLE_SHINGLE_STAIRS);
+        purpleShingleBlockPool.slab(HCColouredBlocks.PURPLE_SHINGLE_SLAB);
+        purpleShingleBlockPool.wall(HCColouredBlocks.PURPLE_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool magentaShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.MAGENTA_SHINGLES);
+        magentaShingleBlockPool.stairs(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS);
+        magentaShingleBlockPool.slab(HCColouredBlocks.MAGENTA_SHINGLE_SLAB);
+        magentaShingleBlockPool.wall(HCColouredBlocks.MAGENTA_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool pinkShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.PINK_SHINGLES);
+        pinkShingleBlockPool.stairs(HCColouredBlocks.PINK_SHINGLE_STAIRS);
+        pinkShingleBlockPool.slab(HCColouredBlocks.PINK_SHINGLE_SLAB);
+        pinkShingleBlockPool.wall(HCColouredBlocks.PINK_SHINGLE_WALL);
+        BlockStateModelGenerator.BlockTexturePool rainbowShingleBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(HCColouredBlocks.RAINBOW_SHINGLES);
+        rainbowShingleBlockPool.stairs(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS);
+        rainbowShingleBlockPool.slab(HCColouredBlocks.RAINBOW_SHINGLE_SLAB);
+        rainbowShingleBlockPool.wall(HCColouredBlocks.RAINBOW_SHINGLE_WALL);
     }
 
 }

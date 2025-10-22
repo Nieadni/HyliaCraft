@@ -88,6 +88,7 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.RAINBOW_BRICK_SLAB);
         getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.RAINBOW_BRICK_WALL);
 
+        //
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.WHITE_STRIPPED_LOG);
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(HCColouredBlocks.WHITE_STRIPPED_WOOD);
@@ -242,5 +243,58 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES).add(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
         getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS).add(HCColouredBlocks.RAINBOW_BUTTON);
 
+        //
+
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.WHITE_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.WHITE_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.WHITE_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.GREY_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.GREY_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.GREY_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.BLACK_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.BLACK_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.BLACK_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.BROWN_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.BROWN_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.BROWN_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.RED_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.RED_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.RED_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.ORANGE_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.ORANGE_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.ORANGE_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.YELLOW_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.YELLOW_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.YELLOW_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.LIME_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.LIME_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.LIME_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.GREEN_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.GREEN_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.GREEN_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.CYAN_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.CYAN_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.CYAN_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.BLUE_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.BLUE_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.BLUE_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.PURPLE_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.PURPLE_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.PURPLE_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.MAGENTA_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.MAGENTA_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.PINK_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.PINK_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.PINK_SHINGLE_WALL);
+        getOrCreateTagBuilder(BlockTags.STAIRS).add(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS).add(HCColouredBlocks.RAINBOW_SHINGLE_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(HCColouredBlocks.RAINBOW_SHINGLE_WALL);
     }
 }

@@ -16,6 +16,7 @@ public class HCItemTags {
     public static final TagKey<Item> BRICK_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brick_stairs"));
     public static final TagKey<Item> BRICK_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brick_slabs"));
     public static final TagKey<Item> BRICK_WALLS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brick_walls"));
+
     public static final TagKey<Item> PLANKS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "planks"));
     public static final TagKey<Item> STRIPPED_LOGS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "stripped_logs"));
     public static final TagKey<Item> STRIPPED_WOODS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "stripped_woods"));
@@ -25,6 +26,11 @@ public class HCItemTags {
     public static final TagKey<Item> PLANK_FENCE_GATES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "plank_fence_gates"));
     public static final TagKey<Item> PLANK_PRESSURE_PLATES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "plank_pressure_plates"));
     public static final TagKey<Item> PLANK_BUTTONS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "plank_buttons"));
+
+    public static final TagKey<Item> SHINGLES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "shingles"));
+    public static final TagKey<Item> SHINGLE_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "shingle_stairs"));
+    public static final TagKey<Item> SHINGLE_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "shingle_slabs"));
+    public static final TagKey<Item> SHINGLE_WALLS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "shingle_walls"));
 
     public static void registerHCItemTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its item tags.");

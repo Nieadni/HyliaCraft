@@ -141,6 +141,9 @@ public class HCItemGroups {
                         entries.add(HCColouredBlocks.RAINBOW_BRICK_STAIRS);
                         entries.add(HCColouredBlocks.RAINBOW_BRICK_SLAB);
                         entries.add(HCColouredBlocks.RAINBOW_BRICK_WALL);
+                        
+                        //
+                
                         entries.add(HCColouredBlocks.WHITE_STRIPPED_LOG);
                         entries.add(HCColouredBlocks.WHITE_STRIPPED_WOOD);
                         entries.add(HCColouredBlocks.WHITE_PLANKS);
@@ -294,6 +297,77 @@ public class HCItemGroups {
                         entries.add(HCColouredBlocks.RAINBOW_FENCE_GATE);
                         entries.add(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
                         entries.add(HCColouredBlocks.RAINBOW_BUTTON);
+                        
+                        //
+
+                        entries.add(HCColouredBlocks.WHITE_SHINGLES);
+                        entries.add(HCColouredBlocks.WHITE_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.WHITE_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.WHITE_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.LIGHT_GREY_SHINGLES);
+                        entries.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.GREY_SHINGLES);
+                        entries.add(HCColouredBlocks.GREY_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.GREY_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.GREY_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.BLACK_SHINGLES);
+                        entries.add(HCColouredBlocks.BLACK_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.BLACK_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.BLACK_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.BROWN_SHINGLES);
+                        entries.add(HCColouredBlocks.BROWN_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.BROWN_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.BROWN_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.RED_SHINGLES);
+                        entries.add(HCColouredBlocks.RED_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.RED_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.RED_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.ORANGE_SHINGLES);
+                        entries.add(HCColouredBlocks.ORANGE_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.ORANGE_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.ORANGE_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.YELLOW_SHINGLES);
+                        entries.add(HCColouredBlocks.YELLOW_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.YELLOW_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.YELLOW_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.LIME_SHINGLES);
+                        entries.add(HCColouredBlocks.LIME_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.LIME_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.LIME_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.GREEN_SHINGLES);
+                        entries.add(HCColouredBlocks.GREEN_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.GREEN_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.GREEN_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.CYAN_SHINGLES);
+                        entries.add(HCColouredBlocks.CYAN_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.CYAN_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.CYAN_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.LIGHT_BLUE_SHINGLES);
+                        entries.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.LIGHT_BLUE_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.BLUE_SHINGLES);
+                        entries.add(HCColouredBlocks.BLUE_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.BLUE_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.BLUE_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.PURPLE_SHINGLES);
+                        entries.add(HCColouredBlocks.PURPLE_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.PURPLE_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.PURPLE_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.MAGENTA_SHINGLES);
+                        entries.add(HCColouredBlocks.MAGENTA_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.MAGENTA_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.MAGENTA_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.PINK_SHINGLES);
+                        entries.add(HCColouredBlocks.PINK_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.PINK_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.PINK_SHINGLE_WALL);
+                        entries.add(HCColouredBlocks.RAINBOW_SHINGLES);
+                        entries.add(HCColouredBlocks.RAINBOW_SHINGLE_STAIRS);
+                        entries.add(HCColouredBlocks.RAINBOW_SHINGLE_SLAB);
+                        entries.add(HCColouredBlocks.RAINBOW_SHINGLE_WALL);
 
                     }).build());
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "hyliacraft:block/brown_shingles",
+    "side": "hyliacraft:block/brown_shingles",
+    "top": "hyliacraft:block/brown_shingles"
+  }
+}
