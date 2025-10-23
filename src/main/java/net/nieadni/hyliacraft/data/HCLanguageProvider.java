@@ -24,6 +24,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
+        translationBuilder.add(HCItems.PHRYGIAN_CAP, "Phrygian Cap");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_SS, "Phrygian Cap");
         translationBuilder.add("tooltip.hyliacraft.phrygian_cap_ss", "A Green Phrygian Cap worn by the Hero of the Sky");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_TP, "Phrygian Cap");
@@ -52,7 +53,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.FAIRY_BOW, "Fairy Bow");
         translationBuilder.add(HCItems.SLINGSHOT, "Slingshot");
         translationBuilder.add(HCItems.BOOMERANG, "Boomerang");
-        translationBuilder.add(HCItems.GALE_BOOMERANG, "Gale Boomerang");
+        //translationBuilder.add(HCItems.GALE_BOOMERANG, "Gale Boomerang");
 
         translationBuilder.add(HCItems.DIGGING_MITT, "Digging Mitt");
         translationBuilder.add("tooltip.hyliacraft.digging_mitt", "§6Use these sharp claws to dig through patches of soft earth!");

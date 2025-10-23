@@ -27,10 +27,17 @@ public class HCRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP,1)
+                .pattern("H")
+                .pattern("L")
+                .input('H', Items.LEATHER_HELMET)
+                .input('L', Items.LEATHER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_SS,1)
                 .pattern("FWF")
                 .pattern("LHG")
-                .input('H', Items.LEATHER_HELMET)
+                .input('H', HCItems.PHRYGIAN_CAP)
                 .input('G', Items.GREEN_DYE)
                 .input('L', Items.LIME_DYE)
                 .input('F', Items.FEATHER)
@@ -40,7 +47,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP,1)
                 .pattern("BWB")
                 .pattern("GHG")
-                .input('H', Items.LEATHER_HELMET)
+                .input('H', HCItems.PHRYGIAN_CAP)
                 .input('G', Items.GREEN_DYE)
                 .input('B', Items.BONE)
                 .input('W', Items.GREEN_WOOL)
@@ -49,7 +56,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_CLASSIC,1)
                 .pattern("LHL")
                 .pattern("YWY")
-                .input('H', Items.LEATHER_HELMET)
+                .input('H', HCItems.PHRYGIAN_CAP)
                 .input('L', Items.LIME_DYE)
                 .input('Y', Items.YELLOW_DYE)
                 .input('W', Items.GREEN_WOOL)

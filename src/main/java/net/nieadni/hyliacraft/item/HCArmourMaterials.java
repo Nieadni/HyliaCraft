@@ -86,6 +86,22 @@ public class HCArmourMaterials {
             false
     );
 
+    public static final RegistryEntry<ArmorMaterial> DYEABLE_PHRYGIAN_CAP = registerMaterial("dyeable_phrygian_cap",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 3,
+                    ArmorItem.Type.LEGGINGS, 2,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.ofItems(Items.LEATHER),
+            0F,
+            0F,
+            true
+    );
+
     public static final RegistryEntry<ArmorMaterial> BUNNY_HOOD = registerMaterial("bunny_hood",
             Map.of(
                     ArmorItem.Type.HELMET, 1,

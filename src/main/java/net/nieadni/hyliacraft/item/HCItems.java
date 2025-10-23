@@ -22,6 +22,7 @@ public class HCItems extends Items {
     // Equipment
     public static final Item MAJORAS_MASK = register(new MajorasMaskItem(HCArmourMaterials.MAJORAS_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MAJORAS_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "majoras_mask");
     public static final Item PUMPKIN_MASK = register(new PumpkinMaskItem(HCArmourMaterials.PUMPKIN_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PUMPKIN_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.UNCOMMON)), "pumpkin_mask");
+    public static final Item PHRYGIAN_CAP = register(new PhrygianCapItem(HCArmourMaterials.DYEABLE_PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap");
     public static final Item PHRYGIAN_CAP_SS = register(new PhrygianCapSSItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_ss");
     public static final Item PHRYGIAN_CAP_TP = register(new PhrygianCapTPItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_tp");
     public static final Item PHRYGIAN_CAP_CLASSIC = register(new PhrygianCapClassicItem(HCArmourMaterials.PHRYGIAN_CAP, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PHRYGIAN_CAP_DURABILITY_MULTIPLIER))), "phrygian_cap_classic");
@@ -35,7 +36,7 @@ public class HCItems extends Items {
     public static final Item IRON_BOW = register(new IronBowItem((new Item.Settings().maxDamage(576))),"iron_bow");
     public static final Item FAIRY_BOW = register(new FairyBowItem((new Item.Settings().maxDamage(385))),"fairy_bow");
     public static final Item BOOMERANG = register(new BoomerangItem(new Item.Settings().maxCount(1)),"boomerang");
-    public static final Item GALE_BOOMERANG = register(new BoomerangItem(new Item.Settings().maxCount(1)),"gale_boomerang");
+    //public static final Item GALE_BOOMERANG = register(new BoomerangItem(new Item.Settings().maxCount(1)),"gale_boomerang");
 
     // Melee Weapons
     public static final Item GODDESS_SWORD = register(new GoddessSwordItem(),"goddess_sword");

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-22T20:20:25.0827419	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2025-10-23T19:10:28.1698581	HyliaCraft/Tags for minecraft:item
 e6aeb9930e48332749602ea26f14c63a23001026 data\hyliacraft\tags\item\plank_stairs.json
 d300f0e81e2bd269c6f44f794cde7f1e7cdba8ca data\hyliacraft\tags\item\plank_slabs.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
@@ -6,10 +6,10 @@ a4fb3e286dec7d596ab609a302288e75bc53d00b data\hyliacraft\tags\item\plank_fence_g
 352b76a949a698a29dc6b1556e52755d2af03041 data\minecraft\tags\item\shovels.json
 a0f34e74e2229c1fcd33d2fd11f9db11a57f32f8 data\hyliacraft\tags\item\brick_walls.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\swords.json
-952b815de40d3aacc890068aab97e9403e4c2582 data\minecraft\tags\item\head_armor.json
+b906b8350abcb1a212ca8a9ccb5eb3ec591af0cb data\minecraft\tags\item\head_armor.json
 137b8e121c22ca80f98d79de063275fb0cd24b7f data\hyliacraft\tags\item\endermask.json
 b2f677f79265dd9989f531078a5f18f705f995c4 data\hyliacraft\tags\item\bricks.json
-952b815de40d3aacc890068aab97e9403e4c2582 data\minecraft\tags\item\enchantable\head_armor.json
+b906b8350abcb1a212ca8a9ccb5eb3ec591af0cb data\minecraft\tags\item\enchantable\head_armor.json
 47db1c1c44a682edb57468bcf1cc5008dadef40b data\hyliacraft\tags\item\plank_buttons.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\enchantable\sword.json
 f98f2f3327beff7a4165bbbfb6171104efbfa58d data\hyliacraft\tags\item\brick_stairs.json
@@ -17,6 +17,7 @@ f98f2f3327beff7a4165bbbfb6171104efbfa58d data\hyliacraft\tags\item\brick_stairs.
 15d1c8ef1c7a7bb2f79c7e091703612ad30eb825 data\hyliacraft\tags\item\planks.json
 b5276db436fdc31de8f14de085fff1a41c742d78 data\hyliacraft\tags\item\stripped_logs.json
 fb86421f348ab1db84b0ce54608e986d5c513a0e data\minecraft\tags\item\enchantable\bow.json
+0881f9d254f5a0b57852cfc03ae7fd68f8a5217d data\minecraft\tags\item\dyeable.json
 0f89a944a445910cbb888fbaa627bf49022a7536 data\minecraft\tags\item\enchantable\mining.json
 6ddc41eb86e9fe734495c4ca6d33fda3a44b3870 data\minecraft\tags\item\pickaxes.json
 063f383fd1ae9f8327ee5dc253bc4a080bfc383a data\hyliacraft\tags\item\shingle_slabs.json

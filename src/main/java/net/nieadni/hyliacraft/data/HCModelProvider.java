@@ -35,7 +35,7 @@ public class HCModelProvider extends FabricModelProvider {
         // Ranged Weapons
         itemModelGenerator.register(HCItems.SLINGSHOT, Models.HANDHELD);
         itemModelGenerator.register(HCItems.BOOMERANG, Models.HANDHELD);
-        itemModelGenerator.register(HCItems.GALE_BOOMERANG, Models.HANDHELD);
+        //itemModelGenerator.register(HCItems.GALE_BOOMERANG, Models.HANDHELD);
 
         // Melee Weapons
         itemModelGenerator.register(HCItems.GODDESS_SWORD, Models.HANDHELD);

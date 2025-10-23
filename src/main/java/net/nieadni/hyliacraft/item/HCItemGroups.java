@@ -19,6 +19,7 @@ public class HCItemGroups {
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
                         entries.add(HCItems.MAJORAS_MASK);
                         entries.add(HCItems.PUMPKIN_MASK);
+                        entries.add(HCItems.PHRYGIAN_CAP);
                         entries.add(HCItems.PHRYGIAN_CAP_SS);
                         entries.add(HCItems.PHRYGIAN_CAP_TP);
                         entries.add(HCItems.PHRYGIAN_CAP_CLASSIC);
@@ -31,7 +32,7 @@ public class HCItemGroups {
                         entries.add(HCItems.IRON_BOW);
                         entries.add(HCItems.FAIRY_BOW);
                         entries.add(HCItems.BOOMERANG);
-                        entries.add(HCItems.GALE_BOOMERANG);
+                        //entries.add(HCItems.GALE_BOOMERANG);
 
                         entries.add(HCItems.GODDESS_SWORD);
                         entries.add(HCItems.GODDESS_LONGSWORD);

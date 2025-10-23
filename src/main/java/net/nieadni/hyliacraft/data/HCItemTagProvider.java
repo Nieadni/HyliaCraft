@@ -22,9 +22,11 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK);
+
+        getOrCreateTagBuilder(ItemTags.DYEABLE).add(HCItems.PHRYGIAN_CAP);
 
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
