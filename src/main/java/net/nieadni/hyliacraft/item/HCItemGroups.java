@@ -17,7 +17,9 @@ public class HCItemGroups {
             Identifier.of(HyliaCraft.MOD_ID, "1-gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
+
                         entries.add(HCItems.MAJORAS_MASK);
+                        entries.add(HCItems.MIDNA_HELM);
                         entries.add(HCItems.PUMPKIN_MASK);
                         entries.add(HCItems.PHRYGIAN_CAP);
                         entries.add(HCItems.PHRYGIAN_CAP_SS);

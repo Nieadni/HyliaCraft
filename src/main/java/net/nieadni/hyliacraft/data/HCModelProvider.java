@@ -23,6 +23,7 @@ public class HCModelProvider extends FabricModelProvider {
 
         // Equipment
         itemModelGenerator.register(HCItems.MAJORAS_MASK, Models.GENERATED);
+        itemModelGenerator.register(HCItems.MIDNA_HELM, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_MASK, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_SS, Models.GENERATED);
         itemModelGenerator.register(HCItems.PHRYGIAN_CAP_TP, Models.GENERATED);

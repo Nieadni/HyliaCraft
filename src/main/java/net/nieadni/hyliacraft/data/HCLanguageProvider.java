@@ -23,6 +23,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
+        translationBuilder.add(HCItems.MIDNA_HELM, "Midna's Helm");
+        translationBuilder.add("tooltip.hyliacraft.midna_helm", "A helmet much like the one Midna wore when she fought alongside the Hero of Twilight.");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
         translationBuilder.add(HCItems.PHRYGIAN_CAP, "Phrygian Cap");
         translationBuilder.add(HCItems.PHRYGIAN_CAP_SS, "Phrygian Cap");
