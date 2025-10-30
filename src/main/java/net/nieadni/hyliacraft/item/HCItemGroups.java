@@ -388,6 +388,11 @@ public class HCItemGroups {
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
                         entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.GOAT_MILK_BUCKET);
+                        entries.add(HCItems.GOAT_CHEESE);
+                        entries.add(HCItems.SIMPLE_SOUP);
+                        entries.add(HCItems.GOOD_SOUP);
+                        entries.add(HCItems.SUPERB_SOUP);
                         entries.add(HCItems.DUBIOUS_FOOD);
                         entries.add(HCItems.FARORE_FLAME);
                         entries.add(HCItems.NAYRU_FLAME);

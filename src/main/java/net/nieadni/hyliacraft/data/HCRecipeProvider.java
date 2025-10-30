@@ -63,6 +63,8 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
 
+        //
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT,1)
                 .pattern("CCC")
                 .pattern("C C")
@@ -86,6 +88,8 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(Items.BROWN_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.CLAY_POT))
                 .offerTo(exporter);
+
+        //
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER,1)
                 .pattern("GWY")
@@ -120,6 +124,41 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(Items.SPIDER_EYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
                 .offerTo(exporter);
+
+        //
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.PUMPKIN_SOUP, 1)
+                .input(Items.GLASS_BOTTLE)
+                .input(HCItemTags.MILK_BUCKETS)
+                .input(Blocks.PUMPKIN)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.SIMPLE_SOUP, 1)
+                .input(Items.GLASS_BOTTLE)
+                .input(HCItemTags.MILK_BUCKETS)
+                .input(Items.SALMON)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.SALMON))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.GOOD_SOUP, 1)
+                .input(Items.GLASS_BOTTLE)
+                .input(HCItemTags.MILK_BUCKETS)
+                .input(Items.SALMON)
+                .input(Blocks.PUMPKIN)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.SUPERB_SOUP, 1)
+                .input(Items.GLASS_BOTTLE)
+                .input(HCItemTags.MILK_BUCKETS)
+                .input(Items.SALMON)
+                .input(Blocks.PUMPKIN)
+                .input(HCItems.GOAT_CHEESE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOAT_CHEESE))
+                .offerTo(exporter);
+
+        //
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
                 .input(HCBlocks.ARMORANTH)

@@ -17,6 +17,13 @@ public class HCFoodComponents extends FoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS,600,2,false,false),1f)
             .statusEffect(new StatusEffectInstance(StatusEffects.WITHER,200,0,false,false),1f)
             .alwaysEdible().build();
+    public static final FoodComponent GOAT_CHEESE = (new FoodComponent.Builder()).nutrition(8).saturationModifier(0.2F).build();
+    public static final FoodComponent SIMPLE_SOUP = createSoup(4,0.1F).alwaysEdible().build();
+    public static final FoodComponent GOOD_SOUP = createSoup(8,0.2F).alwaysEdible().build();
+    public static final FoodComponent SUPERB_SOUP = createSoup(12,0.4F).alwaysEdible().build();
+
+
+
 
     private static FoodComponent.Builder createSoup(int nutrition, float saturation) {
         return (new FoodComponent.Builder()).nutrition(nutrition).saturationModifier(saturation).usingConvertsTo(Items.GLASS_BOTTLE);

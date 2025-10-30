@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.item.custom;
+package net.nieadni.hyliacraft.item.custom.consumables;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;

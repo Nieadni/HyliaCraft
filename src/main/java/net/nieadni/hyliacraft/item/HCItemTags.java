@@ -12,6 +12,8 @@ public class HCItemTags {
 
     public static final TagKey<Item> SLINGSHOT_AMMO = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "slingshot_ammo"));
 
+    public static final TagKey<Item> MILK_BUCKETS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "milk_buckets"));
+
     public static final TagKey<Item> BRICKS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "bricks"));
     public static final TagKey<Item> BRICK_STAIRS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brick_stairs"));
     public static final TagKey<Item> BRICK_SLABS = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brick_slabs"));

@@ -10,6 +10,7 @@ import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
+import net.nieadni.hyliacraft.item.custom.consumables.*;
 
 public class HCItems extends Items {
 
@@ -58,7 +59,12 @@ public class HCItems extends Items {
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
     // Consumables
-    public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).maxCount(1)), "pumpkin_soup");
+    public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "pumpkin_soup");
+    public static final Item GOAT_MILK_BUCKET = register(new GoatMilkBucketItem(new Item.Settings().recipeRemainder(BUCKET).maxCount(1)), "goat_milk_bucket");
+    public static final Item GOAT_CHEESE = register(new Item(new Item.Settings().food(HCFoodComponents.GOAT_CHEESE).maxCount(16)), "goat_cheese");
+    public static final Item SIMPLE_SOUP = register(new SimpleSoupItem(new Item.Settings().food(HCFoodComponents.SIMPLE_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "simple_soup");
+    public static final Item GOOD_SOUP = register(new GoodSoupItem(new Item.Settings().food(HCFoodComponents.GOOD_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "good_soup");
+    public static final Item SUPERB_SOUP = register(new SuperbSoupItem(new Item.Settings().food(HCFoodComponents.SUPERB_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "superb_soup");
     public static final Item DUBIOUS_FOOD = register(new DubiousFoodItem(new Item.Settings().food(HCFoodComponents.DUBIOUS_FOOD)), "dubious_food");
 
     // Rupees

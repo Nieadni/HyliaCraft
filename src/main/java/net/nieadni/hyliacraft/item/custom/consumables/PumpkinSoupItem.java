@@ -1,12 +1,14 @@
-package net.nieadni.hyliacraft.item.custom;
+package net.nieadni.hyliacraft.item.custom.consumables;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.sound.*;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.*;
-
+import net.minecraft.util.Formatting;
+import net.minecraft.util.UseAction;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

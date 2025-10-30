@@ -1,9 +1,10 @@
-// 1.21.1	2025-10-24T09:49:14.2477119	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2025-10-25T22:53:35.124395	HyliaCraft/Tags for minecraft:item
 e6aeb9930e48332749602ea26f14c63a23001026 data\hyliacraft\tags\item\plank_stairs.json
 d300f0e81e2bd269c6f44f794cde7f1e7cdba8ca data\hyliacraft\tags\item\plank_slabs.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
 a4fb3e286dec7d596ab609a302288e75bc53d00b data\hyliacraft\tags\item\plank_fence_gates.json
 352b76a949a698a29dc6b1556e52755d2af03041 data\minecraft\tags\item\shovels.json
+6602bc097bcc64c71eaf4e6004fe1799810a13a3 data\hyliacraft\tags\item\milk_buckets.json
 a0f34e74e2229c1fcd33d2fd11f9db11a57f32f8 data\hyliacraft\tags\item\brick_walls.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\swords.json
 137b8e121c22ca80f98d79de063275fb0cd24b7f data\hyliacraft\tags\item\endermask.json

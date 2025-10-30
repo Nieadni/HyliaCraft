@@ -66,6 +66,11 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
+        translationBuilder.add(HCItems.GOAT_MILK_BUCKET, "Goat Milk Bucket");
+        translationBuilder.add(HCItems.GOAT_CHEESE, "Goat Cheese");
+        translationBuilder.add(HCItems.SIMPLE_SOUP, "Simple Soup");
+        translationBuilder.add(HCItems.GOOD_SOUP, "Good Soup");
+        translationBuilder.add(HCItems.SUPERB_SOUP, "Superb Soup");
         translationBuilder.add(HCItems.DUBIOUS_FOOD, "Dubious Food");
         translationBuilder.add("tooltip.hyliacraft.dubious_food", "You.. probably shouldn't eat this..");
 

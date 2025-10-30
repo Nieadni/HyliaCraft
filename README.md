@@ -32,10 +32,8 @@ Ordered A to Z to avoid bias:
 **Translators -**
 
 If you want to translate, please join this [discord](https://discord.gg/frqHUnJeVg), pick up the Translator role and begin translating
-* German [de-de] - justabokoblin / Boko-Bro, xD1Fafa
-* Japanese [ja-jp] - renwillt / RE
-* Vietnamese [?-?] - sodapit
-* French [fr-fr] - MiyaPixai
+- [45] French (fr_fr) - sammmmy1628
+- [69] Korean (ko_kr) - gold_moon
 
 **Ex-Coders**
 
