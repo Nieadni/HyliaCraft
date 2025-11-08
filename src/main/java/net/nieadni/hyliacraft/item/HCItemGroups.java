@@ -398,7 +398,7 @@ public class HCItemGroups {
                         entries.add(HCItems.NAYRU_FLAME);
                         entries.add(HCItems.DIN_FLAME);
                         entries.add(HCItems.GORON_SPICE);
-                        entries.add(HCItems.FAIRY_BOTTLE);
+                        //entries.add(HCItems.FAIRY_BOTTLE);
 
                     }).build());
 

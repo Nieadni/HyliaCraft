@@ -158,6 +158,11 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOAT_CHEESE))
                 .offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.GOAT_CHEESE, 1)
+                .input(HCItems.GOAT_MILK_BUCKET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
+                .offerTo(exporter);
+
         //
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)

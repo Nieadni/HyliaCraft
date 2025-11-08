@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-25T22:53:35.1202289	HyliaCraft/Recipes
+// 1.21.1	2025-11-08T21:20:46.5163091	HyliaCraft/Recipes
 8f7e60b46a835b391eac46978e2a0ad9d8ec403a data\hyliacraft\advancement\recipes\building_blocks\green_bricks.json
 536aa05668bfb3e74b6f2bc42b9ed1784fd9667a data\hyliacraft\recipe\red_bricks.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
@@ -453,6 +453,7 @@ d20a753374480b5803df67461244ade4e9628ad3 data\hyliacraft\advancement\recipes\bui
 a1cdb33463a7d1461140a527638d65af25e801c4 data\hyliacraft\recipe\pink_shingle_stairs.json
 c0a2f11bca6d8e47d41116bac36dd593c94ca82c data\hyliacraft\recipe\red_shingles.json
 74a62620689d6b3f120ae37415a256c75dc4494e data\hyliacraft\recipe\orange_button.json
+7c851b8627dce0cae7bb8b4a6c157b3b6d943797 data\hyliacraft\advancement\recipes\food\goat_cheese.json
 a3bb6fce9d581cac4d4414a88221ab6425e19f65 data\hyliacraft\recipe\pink_fence.json
 6716a9cf721bd5615e019cfb1cec9c13e6803700 data\hyliacraft\recipe\lime_brick_stairs.json
 08e1ceffc5a4bdb16cdbf336fc1422f0a0142a5d data\hyliacraft\recipe\grey_bricks.json
@@ -513,6 +514,7 @@ cc27bd76d30fbfd2f4d2c719e2fa818d997f042d data\hyliacraft\recipe\yellow_shingles.
 b0af82cd1f6a0cc06a3f09032c54d84b1c91e7c3 data\hyliacraft\advancement\recipes\building_blocks\pink_stripped_log.json
 a6b7e327614ed4c00d7ebea1aeb69cf35ee78d8d data\hyliacraft\recipe\blue_shingles.json
 7db93b083eb88ef51abb2fb0aac6bd682b62cc32 data\hyliacraft\recipe\magenta_stripped_wood.json
+90d3b255edf9a399196c3f3d0e2589c6c9bf25dd data\hyliacraft\recipe\goat_cheese.json
 225d3995c3435ed7c89aa8977e791c2b56223845 data\hyliacraft\recipe\brown_pressure_plate.json
 f4672dbe173237ceb767b1cb0bc24ec4b2711ec5 data\hyliacraft\recipe\pink_brick_slab.json
 029a2f01d6c70a1dc66125261482d2cae0c2fcd4 data\hyliacraft\recipe\blue_stripped_log.json

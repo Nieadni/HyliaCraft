@@ -97,7 +97,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.FARORE_FLAME, "§aFarore's Flame");
 
         translationBuilder.add(HCItems.GORON_SPICE, "Goron Spice");
-        translationBuilder.add(HCItems.FAIRY_BOTTLE, "Fairy in a Bottle");
+        //translationBuilder.add(HCItems.FAIRY_BOTTLE, "Fairy in a Bottle");
 
         /** BLOCKS **/
 

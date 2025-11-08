@@ -49,7 +49,6 @@ public class HCItems extends Items {
 
     public static final Item BOULDER_BREAKER = register(new BoulderBreakerItem(),"boulder_breaker");
 
-
     // Tools
     public static final Item DIGGING_MITT = register(new DiggingMittItem(),"digging_mitt");
     public static final Item MOGMA_MITT = register(new MogmaMittItem(),"mogma_mitt");
@@ -84,7 +83,7 @@ public class HCItems extends Items {
     public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
 
     public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
-    public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
+    //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
 
 

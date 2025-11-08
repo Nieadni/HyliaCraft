@@ -77,7 +77,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.FARORE_FLAME, Models.GENERATED);
 
         itemModelGenerator.register(HCItems.GORON_SPICE, Models.GENERATED);
-        itemModelGenerator.register(HCItems.FAIRY_BOTTLE, Models.GENERATED);
+        //itemModelGenerator.register(HCItems.FAIRY_BOTTLE, Models.GENERATED);
 
 
     }
