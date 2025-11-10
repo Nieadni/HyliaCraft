@@ -85,6 +85,7 @@ public class HCItems extends Items {
     public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
+    public static final Item SPRING_WATER_BUCKET = register(new SpingWaterBucketItem(new Item.Settings()),"spring_water_bucket");
 
 
     public static void registerHCItems() {
