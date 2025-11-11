@@ -15,7 +15,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -47,7 +46,11 @@ public abstract class SpringWaterFluid extends FlowableFluid {
         } else if (random.nextInt(10) == 0) {
             world.addParticle(ParticleTypes.UNDERWATER, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + random.nextDouble(), (double)pos.getZ() + random.nextDouble(), (double)0.0F, (double)0.0F, (double)0.0F);
         }
-
+        if (state.isStill() || (!state.isStill())) {
+            if (random.nextInt(32) == 0) {
+                world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + (double) random.nextFloat(), pos.getY() + random.nextFloat(), pos.getZ() + random.nextFloat(), 0.0F, 0.0F, 0.0F);
+            }
+        }
     }
 
     @Nullable
@@ -69,7 +72,7 @@ public abstract class SpringWaterFluid extends FlowableFluid {
     }
 
     public BlockState toBlockState(FluidState state) {
-        return (BlockState) HCBlocks.SPRING_WATER.getDefaultState().with(FluidBlock.LEVEL, getBlockStateLevel(state));
+        return HCBlocks.SPRING_WATER.getDefaultState().with(FluidBlock.LEVEL, getBlockStateLevel(state));
     }
 
     public boolean matchesType(Fluid fluid) {
@@ -109,15 +112,16 @@ public abstract class SpringWaterFluid extends FlowableFluid {
     public static class Flowing extends SpringWaterFluid {
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
-            builder.add(new Property[]{LEVEL});
+            builder.add(LEVEL);
         }
 
         public int getLevel(FluidState state) {
-            return (Integer)state.get(LEVEL);
+            return state.get(LEVEL);
         }
 
         public boolean isStill(FluidState state) {
             return false;
         }
     }
+
 }

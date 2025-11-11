@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
@@ -11,6 +13,7 @@ import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
+import net.nieadni.hyliacraft.fluid.HCFluids;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.ArrayList;
@@ -49,6 +52,11 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
 
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.SPRING_WATER, SimpleFluidRenderHandler.coloredWater(2339583));
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.FLOWING_SPRING_WATER, SimpleFluidRenderHandler.coloredWater(2339583));
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                HCFluids.SPRING_WATER, HCFluids.FLOWING_SPRING_WATER);
     }
 
     public static void addCustomGUIModelItems() {

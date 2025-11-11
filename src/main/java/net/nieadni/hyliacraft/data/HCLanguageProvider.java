@@ -117,6 +117,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.SWIFT_VIOLETS, "Swift Violets");
 
         translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
+        translationBuilder.add(HCBlocks.SPRING_WATER, "Spring Water");
+
 
         /** Components **/
 

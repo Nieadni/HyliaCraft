@@ -7,6 +7,7 @@ import net.nieadni.hyliacraft.block.HCColouredBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.fluid.HCFluidTags;
 import net.nieadni.hyliacraft.fluid.HCFluids;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
@@ -38,5 +39,6 @@ public class HyliaCraft implements ModInitializer {
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
         HCFluids.registerHCFluids();
+        HCFluidTags.registerHCFluidTags();
 	}
 }
