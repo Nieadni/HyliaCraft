@@ -1,6 +1,7 @@
 package net.nieadni.hyliacraft.item;
 
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
@@ -8,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.fluid.HCFluids;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
 import net.nieadni.hyliacraft.item.custom.consumables.*;
@@ -85,7 +87,7 @@ public class HCItems extends Items {
     public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
-    public static final Item SPRING_WATER_BUCKET = register(new SpingWaterBucketItem(new Item.Settings()),"spring_water_bucket");
+    public static final Item SPRING_WATER_BUCKET = register(new BucketItem(HCFluids.SPRING_WATER, (new Item.Settings()).recipeRemainder(BUCKET).maxCount(1)),"spring_water_bucket");
 
 
     public static void registerHCItems() {
