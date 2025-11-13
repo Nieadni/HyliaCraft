@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:spring_water",
-    "minecraft:flowing_spring_water"
+    "hyliacraft:spring_water",
+    "hyliacraft:flowing_spring_water"
   ]
 }
