@@ -47,7 +47,7 @@ public abstract class SpringWaterFluid extends FlowableFluid {
             world.addParticle(ParticleTypes.UNDERWATER, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + random.nextDouble(), (double)pos.getZ() + random.nextDouble(), (double)0.0F, (double)0.0F, (double)0.0F);
         }
         if (state.isStill() || (!state.isStill())) {
-            if (random.nextInt(32) == 0) {
+            if (random.nextInt(24) == 0) {
                 world.addImportantParticle(ParticleTypes.BUBBLE_COLUMN_UP, pos.getX() + (double) random.nextFloat(), pos.getY() + random.nextFloat(), pos.getZ() + random.nextFloat(), 0.0F, 0.0F, 0.0F);
             }
         }
