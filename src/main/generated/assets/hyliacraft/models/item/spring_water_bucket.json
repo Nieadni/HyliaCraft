@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hyliacraft:item/spring_water_bucket"
+  }
+}
