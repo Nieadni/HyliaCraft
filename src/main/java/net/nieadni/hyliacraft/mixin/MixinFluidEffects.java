@@ -18,15 +18,24 @@ public abstract class MixinFluidEffects extends Entity {
 
     @Inject(at = @At("TAIL"), method = "baseTick")
 	private void init(CallbackInfo info) {
-        System.out.println("Mixin is loaded");
         if ((Entity) this instanceof LivingEntity livingEntity) {
-            System.out.println("Living Entity Detected");
             if (livingEntity.getBlockStateAtPos().isOf(HCBlocks.SPRING_WATER) || isSubmergedIn(HCFluidTags.SPRING_WATER)) {
-                System.out.println("Stood in Spring Water");
                 if (!livingEntity.hasStatusEffect(StatusEffects.REGENERATION)) {
-                    System.out.println("Applying Effect");
                     livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 2, false, false));
                 }
+            }
+        }
+        if ((Entity) this instanceof LivingEntity livingEntity) {
+            if (livingEntity.getBlockStateAtPos().isOf(HCBlocks.TOXIC_WATER) || isSubmergedIn(HCFluidTags.TOXIC_WATER)) {
+                if (!livingEntity.hasStatusEffect(StatusEffects.POISON)) {
+                    livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 5, false, false));
+                }
+            }
+        }
+        if ((Entity) this instanceof LivingEntity livingEntity) {
+            if (livingEntity.isSubmergedIn(HCFluidTags.MUDDY_WATER)) {
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 20, 255, false, false));
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20, 255, false, false));
             }
         }
     }

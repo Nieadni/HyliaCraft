@@ -16,7 +16,14 @@ public class HCFluidTagProvider extends FabricTagProvider.FluidTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(FluidTags.WATER).add(HCFluids.SPRING_WATER).add(HCFluids.FLOWING_SPRING_WATER);
+        getOrCreateTagBuilder(FluidTags.WATER)
+                .add(HCFluids.SPRING_WATER).add(HCFluids.FLOWING_SPRING_WATER)
+                .add(HCFluids.TOXIC_WATER).add(HCFluids.FLOWING_TOXIC_WATER)
+                .add(HCFluids.MUDDY_WATER).add(HCFluids.FLOWING_MUDDY_WATER)
+        ;
+        
         getOrCreateTagBuilder(HCFluidTags.SPRING_WATER).add(HCFluids.SPRING_WATER).add(HCFluids.FLOWING_SPRING_WATER);
+        getOrCreateTagBuilder(HCFluidTags.TOXIC_WATER).add(HCFluids.TOXIC_WATER).add(HCFluids.FLOWING_TOXIC_WATER);
+        getOrCreateTagBuilder(HCFluidTags.MUDDY_WATER).add(HCFluids.MUDDY_WATER).add(HCFluids.FLOWING_MUDDY_WATER);
     }
 }

@@ -99,6 +99,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.GORON_SPICE, "Goron Spice");
         //translationBuilder.add(HCItems.FAIRY_BOTTLE, "Fairy in a Bottle");
         translationBuilder.add(HCItems.SPRING_WATER_BUCKET, "Spring Water Bucket");
+        translationBuilder.add(HCItems.TOXIC_WATER_BUCKET, "Toxic Water Bucket");
+        translationBuilder.add(HCItems.MUDDY_WATER_BUCKET, "Muddy Water Bucket");
 
 
         /** BLOCKS **/
@@ -118,6 +120,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
         translationBuilder.add(HCBlocks.SPRING_WATER, "Spring Water");
+        translationBuilder.add(HCBlocks.TOXIC_WATER, "Toxic Water");
+        translationBuilder.add(HCBlocks.MUDDY_WATER, "Muddy Water");
+
 
 
         /** Components **/

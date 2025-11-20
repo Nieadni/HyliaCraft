@@ -88,7 +88,8 @@ public class HCItems extends Items {
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
     public static final Item SPRING_WATER_BUCKET = register(new BucketItem(HCFluids.SPRING_WATER, (new Item.Settings()).recipeRemainder(BUCKET).maxCount(1)),"spring_water_bucket");
-
+    public static final Item TOXIC_WATER_BUCKET = register(new BucketItem(HCFluids.TOXIC_WATER, (new Item.Settings()).recipeRemainder(BUCKET).maxCount(1)),"toxic_water_bucket");
+    public static final Item MUDDY_WATER_BUCKET = register(new BucketItem(HCFluids.MUDDY_WATER, (new Item.Settings()).recipeRemainder(BUCKET).maxCount(1)),"muddy_water_bucket");
 
     public static void registerHCItems() {
         HyliaCraft.LOGGER.info("Registering Mod Items for " + HyliaCraft.MOD_ID);

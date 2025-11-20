@@ -34,6 +34,7 @@ Ordered A to Z to avoid bias:
 If you want to translate, please join this [discord](https://discord.gg/frqHUnJeVg), pick up the Translator role and begin translating
 - [45] French (fr_fr) - sammmmy1628
 - [69] Korean (ko_kr) - gold_moon
+- [109] Swedish (sv_ve) - majestichotdawg
 
 **Ex-Coders**
 

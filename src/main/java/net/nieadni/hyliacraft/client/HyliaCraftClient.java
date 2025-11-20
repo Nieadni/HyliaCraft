@@ -54,6 +54,10 @@ public class HyliaCraftClient implements ClientModInitializer {
 
         FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.SPRING_WATER, SimpleFluidRenderHandler.coloredWater(2339583));
         FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.FLOWING_SPRING_WATER, SimpleFluidRenderHandler.coloredWater(2339583));
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.TOXIC_WATER, SimpleFluidRenderHandler.coloredWater(7287192));
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.FLOWING_TOXIC_WATER, SimpleFluidRenderHandler.coloredWater(7287192));
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.MUDDY_WATER, SimpleFluidRenderHandler.coloredWater(6041114));
+        FluidRenderHandlerRegistry.INSTANCE.register(HCFluids.FLOWING_MUDDY_WATER, SimpleFluidRenderHandler.coloredWater(6041114));
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 HCFluids.SPRING_WATER, HCFluids.FLOWING_SPRING_WATER);

@@ -53,6 +53,8 @@ public class HCBlocks extends Blocks {
         return HCBlockEntityType.IRON_CHEST;}));
 
     public static final Block SPRING_WATER = registerBlock("spring_water", new FluidBlock(HCFluids.SPRING_WATER, AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE_GRAY).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
+    public static final Block TOXIC_WATER = registerBlock("toxic_water", new FluidBlock(HCFluids.TOXIC_WATER, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
+    public static final Block MUDDY_WATER = registerBlock("muddy_water", new FluidBlock(HCFluids.MUDDY_WATER, AbstractBlock.Settings.create().mapColor(MapColor.BROWN).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
 
     @Contract("_ -> new")
     private static @NotNull SuspiciousStewEffectsComponent createStewEffects(SuspiciousStewEffectsComponent.StewEffect... effects) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hyliacraft:item/muddy_water_bucket"
+  }
+}
