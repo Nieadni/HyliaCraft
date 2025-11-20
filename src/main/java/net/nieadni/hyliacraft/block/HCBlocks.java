@@ -4,17 +4,19 @@ import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
-import net.minecraft.registry.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.custom.IronChestBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
-
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
-import org.jetbrains.annotations.*;
+import net.nieadni.hyliacraft.fluid.HCFluids;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -49,6 +51,10 @@ public class HCBlocks extends Blocks {
 
     public static final Block IRON_CHEST = registerBlock("iron_chest", new IronChestBlock(AbstractBlock.Settings.create(), () -> {
         return HCBlockEntityType.IRON_CHEST;}));
+
+    public static final Block SPRING_WATER = registerBlock("spring_water", new FluidBlock(HCFluids.SPRING_WATER, AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE_GRAY).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
+    public static final Block TOXIC_WATER = registerBlock("toxic_water", new FluidBlock(HCFluids.TOXIC_WATER, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
+    public static final Block MUDDY_WATER = registerBlock("muddy_water", new FluidBlock(HCFluids.MUDDY_WATER, AbstractBlock.Settings.create().mapColor(MapColor.BROWN).replaceable().noCollision().strength(100.0F).pistonBehavior(PistonBehavior.DESTROY).dropsNothing().liquid().sounds(BlockSoundGroup.INTENTIONALLY_EMPTY)));
 
     @Contract("_ -> new")
     private static @NotNull SuspiciousStewEffectsComponent createStewEffects(SuspiciousStewEffectsComponent.StewEffect... effects) {

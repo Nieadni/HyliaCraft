@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-08T21:20:46.5213746	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2025-11-14T19:20:48.2593575	HyliaCraft/Tags for minecraft:item
 e6aeb9930e48332749602ea26f14c63a23001026 data\hyliacraft\tags\item\plank_stairs.json
 d300f0e81e2bd269c6f44f794cde7f1e7cdba8ca data\hyliacraft\tags\item\plank_slabs.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
@@ -7,8 +7,8 @@ a4fb3e286dec7d596ab609a302288e75bc53d00b data\hyliacraft\tags\item\plank_fence_g
 6602bc097bcc64c71eaf4e6004fe1799810a13a3 data\hyliacraft\tags\item\milk_buckets.json
 a0f34e74e2229c1fcd33d2fd11f9db11a57f32f8 data\hyliacraft\tags\item\brick_walls.json
 a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\swords.json
-8bcc500395d0a542d4b6d42658c7d952e39ec4c3 data\minecraft\tags\item\head_armor.json
 137b8e121c22ca80f98d79de063275fb0cd24b7f data\hyliacraft\tags\item\endermask.json
+8bcc500395d0a542d4b6d42658c7d952e39ec4c3 data\minecraft\tags\item\head_armor.json
 b2f677f79265dd9989f531078a5f18f705f995c4 data\hyliacraft\tags\item\bricks.json
 8bcc500395d0a542d4b6d42658c7d952e39ec4c3 data\minecraft\tags\item\enchantable\head_armor.json
 47db1c1c44a682edb57468bcf1cc5008dadef40b data\hyliacraft\tags\item\plank_buttons.json

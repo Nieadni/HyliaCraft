@@ -399,6 +399,9 @@ public class HCItemGroups {
                         entries.add(HCItems.DIN_FLAME);
                         entries.add(HCItems.GORON_SPICE);
                         //entries.add(HCItems.FAIRY_BOTTLE);
+                        entries.add(HCItems.SPRING_WATER_BUCKET);
+                        entries.add(HCItems.TOXIC_WATER_BUCKET);
+                        entries.add(HCItems.MUDDY_WATER_BUCKET);
 
                     }).build());
 
