@@ -64,6 +64,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
+        translationBuilder.add(HCItems.BANANA, "Banana");
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
         translationBuilder.add(HCItems.GOAT_MILK_BUCKET, "Goat Milk Bucket");
@@ -123,6 +124,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.gear", "HC Gear");
         translationBuilder.add("itemGroup.hyliacraft.blocks", "HC Blocks");
         translationBuilder.add("itemGroup.hyliacraft.coloured_blocks", "HC Coloured Blocks");
+        translationBuilder.add("itemGroup.hyliacraft.consumables", "HC Consumables");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
 
         translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");

@@ -52,6 +52,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
 
         // Consumables
+        itemModelGenerator.register(HCItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
         itemModelGenerator.register(HCItems.GOAT_MILK_BUCKET, Models.GENERATED);
         itemModelGenerator.register(HCItems.GOAT_CHEESE, Models.GENERATED);

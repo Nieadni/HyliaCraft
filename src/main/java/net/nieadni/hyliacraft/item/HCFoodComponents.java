@@ -9,6 +9,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 
 public class HCFoodComponents extends FoodComponents {
 
+    public static final FoodComponent BANANA = (new FoodComponent.Builder()).nutrition(4).saturationModifier(0.3F).build();
     public static final FoodComponent PUMPKIN_SOUP = createSoup(6,0.3F).statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,400,1,false,false),1f).alwaysEdible().build();
     public static final FoodComponent DUBIOUS_FOOD = (new FoodComponent.Builder()).nutrition(2).saturationModifier(0.1F)
             .statusEffect(new StatusEffectInstance(StatusEffects.POISON,600,2,false,false),1f)
