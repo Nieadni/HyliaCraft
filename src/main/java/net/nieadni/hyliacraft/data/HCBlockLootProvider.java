@@ -36,7 +36,7 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
                                 .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
-                                .conditionally(RandomChanceLootCondition.builder(0.01f))
+                                .conditionally(RandomChanceLootCondition.builder(0.015f))
                                 .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
         addDrop(Blocks.TALL_GRASS, (block -> LootTable.builder()
                 .pool(LootPool.builder()
@@ -44,6 +44,11 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                         .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
                         .conditionally(RandomChanceLootCondition.builder(0.02f))
                         .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
+        addDrop(Blocks.JUNGLE_LEAVES, (block -> LootTable.builder()
+                .pool(LootPool.builder()
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(HCItems.BANANA)))));
 
         // HC Non-Coloured Blocks
 
