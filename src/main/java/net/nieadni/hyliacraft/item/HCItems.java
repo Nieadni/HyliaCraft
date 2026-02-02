@@ -58,6 +58,7 @@ public class HCItems extends Items {
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
     // Consumables
+    public static final Item BANANA = register(new Item(new Item.Settings().food(HCFoodComponents.BANANA).maxCount(64)), "banana");
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "pumpkin_soup");
     public static final Item GOAT_MILK_BUCKET = register(new GoatMilkBucketItem(new Item.Settings().recipeRemainder(BUCKET).maxCount(1)), "goat_milk_bucket");
     public static final Item GOAT_CHEESE = register(new Item(new Item.Settings().food(HCFoodComponents.GOAT_CHEESE).maxCount(16)), "goat_cheese");

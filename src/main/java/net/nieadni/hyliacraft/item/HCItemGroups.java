@@ -14,7 +14,7 @@ import net.nieadni.hyliacraft.block.HCColouredBlocks;
 public class HCItemGroups {
 
     public static final ItemGroup GEAR_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "1-gear"),
+            Identifier.of(HyliaCraft.MOD_ID, "01-gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
 
@@ -52,7 +52,7 @@ public class HCItemGroups {
                     }).build());
 
     public static final ItemGroup BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "2-blocks"),
+            Identifier.of(HyliaCraft.MOD_ID, "02-blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.blocks"))
                     .icon(() -> new ItemStack(HCBlocks.CLAY_POT)).entries((displayContext, entries) -> {
                         entries.add(HCBlocks.CLAY_POT.asItem());
@@ -73,7 +73,7 @@ public class HCItemGroups {
                     }).build());
 
     public static final ItemGroup COLOURED_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HyliaCraft.MOD_ID, "3-coloured_blocks"),
+            Identifier.of(HyliaCraft.MOD_ID, "03-coloured_blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.coloured_blocks"))
                     .icon(() -> new ItemStack(HCColouredBlocks.RAINBOW_BRICKS)).entries((displayContext, entries) -> {
                         entries.add(HCColouredBlocks.WHITE_BRICKS);
@@ -374,6 +374,23 @@ public class HCItemGroups {
 
                     }).build());
 
+
+    public static final ItemGroup CONSUMABLES_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(HyliaCraft.MOD_ID, "04-consumables"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.consumables"))
+                    .icon(() -> new ItemStack(HCItems.BANANA)).entries((displayContext, entries) -> {
+                        entries.add(HCItems.BANANA);
+                        entries.add(HCItems.PUMPKIN_SOUP);
+                        entries.add(HCItems.GOAT_MILK_BUCKET);
+                        entries.add(HCItems.GOAT_CHEESE);
+                        entries.add(HCItems.SIMPLE_SOUP);
+                        entries.add(HCItems.GOOD_SOUP);
+                        entries.add(HCItems.SUPERB_SOUP);
+                        entries.add(HCItems.DUBIOUS_FOOD);
+
+                    }).build());
+
+
     public static final ItemGroup MISC_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HyliaCraft.MOD_ID, "99-misc"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.misc"))
@@ -387,13 +404,6 @@ public class HCItemGroups {
                         entries.add(HCItems.ORANGE_RUPEE);
                         entries.add(HCItems.SILVER_RUPEE);
                         entries.add(HCItems.GOLD_RUPEE);
-                        entries.add(HCItems.PUMPKIN_SOUP);
-                        entries.add(HCItems.GOAT_MILK_BUCKET);
-                        entries.add(HCItems.GOAT_CHEESE);
-                        entries.add(HCItems.SIMPLE_SOUP);
-                        entries.add(HCItems.GOOD_SOUP);
-                        entries.add(HCItems.SUPERB_SOUP);
-                        entries.add(HCItems.DUBIOUS_FOOD);
                         entries.add(HCItems.FARORE_FLAME);
                         entries.add(HCItems.NAYRU_FLAME);
                         entries.add(HCItems.DIN_FLAME);

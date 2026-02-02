@@ -22,6 +22,7 @@ Ordered A to Z to avoid bias:
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, Rupee design, and Phrygian Cap design textures.
 * DataPackGen
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
+* [poeticbagel](https://www.planetminecraft.com/member/poeticbagel/) - For the Banana texture
 * pom_pookie - For the 'Isle of the Goddess' Build, Digging Mitts and Slingshot textures.
 * VeganNatureQueen - For the Paraglider Model
 

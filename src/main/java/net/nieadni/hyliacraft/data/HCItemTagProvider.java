@@ -33,6 +33,9 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.DYEABLE).add(HCItems.PHRYGIAN_CAP);
 
+        getOrCreateTagBuilder(ItemTags.PIG_FOOD).add(HCItems.BANANA);
+
+
         getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS).add(HCItems.GOAT_MILK_BUCKET).add(Items.MILK_BUCKET);
 
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
