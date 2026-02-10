@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-02T23:32:34.4053267	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2026-02-10T19:58:36.9277991	HyliaCraft/Tags for minecraft:item
 e6aeb9930e48332749602ea26f14c63a23001026 data\hyliacraft\tags\item\plank_stairs.json
 d300f0e81e2bd269c6f44f794cde7f1e7cdba8ca data\hyliacraft\tags\item\plank_slabs.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
@@ -12,7 +12,7 @@ a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\swords.json
 b2f677f79265dd9989f531078a5f18f705f995c4 data\hyliacraft\tags\item\bricks.json
 8bcc500395d0a542d4b6d42658c7d952e39ec4c3 data\minecraft\tags\item\enchantable\head_armor.json
 47db1c1c44a682edb57468bcf1cc5008dadef40b data\hyliacraft\tags\item\plank_buttons.json
-a14931536de9aa5f5a3056e497cf0a7b4755401f data\minecraft\tags\item\enchantable\sword.json
+572fd93620512b333c41bbdabf5bf79d189bdede data\minecraft\tags\item\enchantable\sword.json
 f98f2f3327beff7a4165bbbfb6171104efbfa58d data\hyliacraft\tags\item\brick_stairs.json
 631dcceb2573dd79df7e2807a46bde77415976b2 data\hyliacraft\tags\item\shingles.json
 15d1c8ef1c7a7bb2f79c7e091703612ad30eb825 data\hyliacraft\tags\item\planks.json
@@ -21,6 +21,7 @@ fb86421f348ab1db84b0ce54608e986d5c513a0e data\minecraft\tags\item\enchantable\bo
 b52b6e255e9f72a2b788e2c5133ceea9a497f613 data\minecraft\tags\item\pig_food.json
 0881f9d254f5a0b57852cfc03ae7fd68f8a5217d data\minecraft\tags\item\dyeable.json
 0f89a944a445910cbb888fbaa627bf49022a7536 data\minecraft\tags\item\enchantable\mining.json
+054bef187361de9a76c9e27e70e77eef2fec62ff data\hyliacraft\tags\item\sickles.json
 6ddc41eb86e9fe734495c4ca6d33fda3a44b3870 data\minecraft\tags\item\pickaxes.json
 063f383fd1ae9f8327ee5dc253bc4a080bfc383a data\hyliacraft\tags\item\shingle_slabs.json
 05b474ef937ed7dfebe76f24416abc4e8815d2fc data\hyliacraft\tags\item\plank_fences.json
@@ -30,4 +31,5 @@ b52b6e255e9f72a2b788e2c5133ceea9a497f613 data\minecraft\tags\item\pig_food.json
 ee273909f2319e52e60cffb89d2f0f943dd2ee01 data\hyliacraft\tags\item\brick_slabs.json
 352b76a949a698a29dc6b1556e52755d2af03041 data\minecraft\tags\item\hoes.json
 06f98387d7413589f4b989320c61c43a7807c63d data\minecraft\tags\item\enchantable\mace.json
+36a59c5b5c494f02e2cbf08fd4f2bd884160d528 data\minecraft\tags\item\enchantable\durability.json
 446e918bff408acc1b8e6b5162de9f642013634b data\hyliacraft\tags\item\shingle_walls.json

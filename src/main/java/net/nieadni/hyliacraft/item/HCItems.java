@@ -52,6 +52,7 @@ public class HCItems extends Items {
     // Tools
     public static final Item DIGGING_MITT = register(new DiggingMittItem(),"digging_mitt");
     public static final Item MOGMA_MITT = register(new MogmaMittItem(),"mogma_mitt");
+    public static final Item VICIOUS_SICKLE = register(new SickleToolItem(),"vicious_sickle");
 
     // Misc Gear
     public static final Item HORSE_CALL = register(new HorseCallItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)),"horse_call");

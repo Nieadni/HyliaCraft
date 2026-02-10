@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-02T23:32:34.3977932	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-02-10T19:58:36.9191644	HyliaCraft/Block Loot Tables
 9ae8b3559441905179487bf2fa923370b10ec544 data\hyliacraft\loot_table\blocks\lime_bricks.json
 c8bbf91d0803170ac460f69738d3364361ba3303 data\hyliacraft\loot_table\blocks\magenta_stairs.json
 65386eeb84bd57a612e47f9b7be01e1f791177eb data\hyliacraft\loot_table\blocks\orange_fence.json
@@ -29,7 +29,7 @@ a7cbb5201e56a849bb40ccbead06430a30e1cc57 data\hyliacraft\loot_table\blocks\magen
 2058fda6c9be34f6988c3e25cc20d5d8c17b1bd3 data\hyliacraft\loot_table\blocks\light_grey_button.json
 c9f2552f652de80fd719b629105d7f7f4a5408aa data\hyliacraft\loot_table\blocks\blue_fence_gate.json
 7f6e7d2a002f28ab46e9438726d6e411e716a06f data\hyliacraft\loot_table\blocks\pink_shingle_stairs.json
-3e9bc5682378e0c3be722672fd10547b81e7672a data\minecraft\loot_table\blocks\short_grass.json
+24a01637a57cf8bae50b4baf12bceadc3d4b1ca5 data\minecraft\loot_table\blocks\short_grass.json
 9ffac9fcda1e2507dc85f511159b382c5b2affd4 data\hyliacraft\loot_table\blocks\blue_shingle_wall.json
 22b8a60c22c0cb4a2ffd3e7edaf5e06d4132f362 data\hyliacraft\loot_table\blocks\blue_shingles.json
 0aa4e984d5bdd4d7b9e6d763fef7952e10679646 data\hyliacraft\loot_table\blocks\blue_bricks.json
@@ -197,7 +197,7 @@ a90bd3a84afc5173b404114301c58d3b15633ff2 data\hyliacraft\loot_table\blocks\black
 e18e47049350670d490f2dbe2cf951d922cbf263 data\hyliacraft\loot_table\blocks\brown_brick_stairs.json
 4746db510a07f5bf5f8ddba62ef69a3259082e41 data\hyliacraft\loot_table\blocks\green_shingle_stairs.json
 750580c71680717e3567787199c397e577aefcbe data\hyliacraft\loot_table\blocks\rainbow_fence_gate.json
-eb2733a8c8a4d773196de206fe43dd4f36b62812 data\minecraft\loot_table\blocks\tall_grass.json
+7795e4b79233b588579eb1a0bca6b4719ca32811 data\minecraft\loot_table\blocks\tall_grass.json
 522bff11f00999e4673c0822b82a02ff18add7b5 data\hyliacraft\loot_table\blocks\red_fence.json
 f2e9be93b37147295925fa0b6e219ef300e904d0 data\hyliacraft\loot_table\blocks\rainbow_shingle_stairs.json
 3369655251d473664dc2afe23a7a1b466a660e74 data\hyliacraft\loot_table\blocks\magenta_pressure_plate.json
@@ -207,8 +207,8 @@ d7db7e700c845921e06e29ac232fffb35ef1197e data\hyliacraft\loot_table\blocks\pink_
 b259ad81454ff89dab62af0869c15969510a6856 data\hyliacraft\loot_table\blocks\green_stripped_wood.json
 532970e459e2a35facd249f3707222b21492be27 data\hyliacraft\loot_table\blocks\blue_shingle_stairs.json
 1418e60398a9e5baa1231a124d062f7c7a621ff3 data\hyliacraft\loot_table\blocks\rainbow_stripped_wood.json
-da1750445eef278d8267f145a2e63f108ccc1fc4 data\hyliacraft\loot_table\blocks\blue_stripped_log.json
 9ac20d82b9ea87078c839f2578c5f54a49dfc99c data\minecraft\loot_table\blocks\jungle_leaves.json
+da1750445eef278d8267f145a2e63f108ccc1fc4 data\hyliacraft\loot_table\blocks\blue_stripped_log.json
 ba6e27803f3e80fb4b116104533537a46eaa8916 data\hyliacraft\loot_table\blocks\orange_button.json
 d71c940fc09ba9e6f73a3dc8135de3fcfc23cef1 data\hyliacraft\loot_table\blocks\yellow_bricks.json
 c36cbd7b148b86ed2116c62d082ba5b9eb2a4d10 data\hyliacraft\loot_table\blocks\white_stripped_wood.json

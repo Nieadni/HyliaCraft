@@ -46,7 +46,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.TRUE_MASTER_SWORD, Models.HANDHELD);
 
         // Tools
-        // HYAH!!
+        itemModelGenerator.register(HCItems.VICIOUS_SICKLE, Models.HANDHELD);
 
         // Misc Gear
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);

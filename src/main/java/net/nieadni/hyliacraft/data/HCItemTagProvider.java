@@ -40,30 +40,45 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_LONGSWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_LONGSWORD);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_LONGSWORD);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_WHITE_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_WHITE_SWORD);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_WHITE_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.MASTER_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.MASTER_SWORD);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.MASTER_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.TRUE_MASTER_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.TRUE_MASTER_SWORD);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.TRUE_MASTER_SWORD);
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.IRON_BOW);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.IRON_BOW);
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.FAIRY_BOW);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.FAIRY_BOW);
 
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.DIGGING_MITT);
         getOrCreateTagBuilder(ItemTags.HOES).add(HCItems.DIGGING_MITT);
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.DIGGING_MITT);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.DIGGING_MITT);
 
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.MOGMA_MITT);
         getOrCreateTagBuilder(ItemTags.HOES).add(HCItems.MOGMA_MITT);
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.MOGMA_MITT);
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.MOGMA_MITT);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.MOGMA_MITT);
 
         getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
+
+        getOrCreateTagBuilder(HCItemTags.SICKLES).add(HCItems.VICIOUS_SICKLE);
+        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.VICIOUS_SICKLE);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.VICIOUS_SICKLE);
+
 
         // Vanilla
 

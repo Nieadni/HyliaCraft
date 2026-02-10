@@ -19,6 +19,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
+import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -37,13 +38,23 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
                                 .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
                                 .conditionally(RandomChanceLootCondition.builder(0.015f))
-                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
+                                .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(HCItemTags.SICKLES)))
+                                .conditionally(RandomChanceLootCondition.builder(0.1f))
+                                .with(ItemEntry.builder(Items.WHEAT)))));
         addDrop(Blocks.TALL_GRASS, (block -> LootTable.builder()
                 .pool(LootPool.builder()
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
                         .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SWORDS)))
                         .conditionally(RandomChanceLootCondition.builder(0.02f))
-                        .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))));
+                        .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                .pool(LootPool.builder()
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
+                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(HCItemTags.SICKLES)))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(Items.WHEAT)))));
         addDrop(Blocks.JUNGLE_LEAVES, (block -> LootTable.builder()
                 .pool(LootPool.builder()
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))

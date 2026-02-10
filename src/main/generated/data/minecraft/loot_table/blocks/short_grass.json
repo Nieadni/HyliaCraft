@@ -11,7 +11,7 @@
           }
         },
         {
-          "chance": 0.01,
+          "chance": 0.015,
           "condition": "minecraft:random_chance"
         }
       ],
@@ -19,6 +19,39 @@
         {
           "type": "minecraft:item",
           "name": "hyliacraft:green_rupee"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 1.0
+          },
+          "function": "minecraft:set_count"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "#hyliacraft:sickles"
+          }
+        },
+        {
+          "chance": 0.1,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat"
         }
       ],
       "functions": [

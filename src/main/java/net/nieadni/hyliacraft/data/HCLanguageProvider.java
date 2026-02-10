@@ -61,6 +61,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.digging_mitt", "§6Use these sharp claws to dig through patches of soft earth!");
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
         translationBuilder.add("tooltip.hyliacraft.mogma_mitt", "§6Use these sharp claws to dig through patches of stone and earth!");
+        translationBuilder.add(HCItems.VICIOUS_SICKLE, "§cVicious Sickle");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
