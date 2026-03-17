@@ -1,22 +1,31 @@
 package net.nieadni.hyliacraft.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
+import net.minecraft.loot.condition.EntityPropertiesLootCondition;
+import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.entity.EntityEquipmentPredicate;
+import net.minecraft.predicate.entity.EntityPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.item.HCItems;
+
+import static net.minecraft.entity.EquipmentSlot.MAINHAND;
 
 public class VanillaLootTableModifiers {
 
-    /**
     private static final Identifier ELDER_GUARDIAN_ID
             = Identifier.of("minecraft", "entities/elder_guardian");
     private static final Identifier WITHER_ID
             = Identifier.of("minecraft", "entities/wither");
-    */
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
@@ -28,26 +37,22 @@ public class VanillaLootTableModifiers {
                 tableBuilder.pool(poolBuilder);
             }
 
-            //TODO: Need to find a way to get these to work
-            // ^ Elder Guardian should drop 1 Nayru Flame when killed with the Goddess Longsword
-            // ^ Wither should drop 1 Din Flame when killed with the Goddess White Sword
-
-            /**
-            if (source.isBuiltin() && ELDER_GUARDIAN_ID.equals(key.getValue())) {
+            if (ELDER_GUARDIAN_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(HCItems.GODDESS_LONGSWORD)))
+                        .conditionally(attackerHasItem(MAINHAND, HCItems.GODDESS_LONGSWORD))
                         .with(ItemEntry.builder(HCItems.NAYRU_FLAME).weight(1).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1))));
                 tableBuilder.pool(poolBuilder);
             }
-            if (source.isBuiltin() && WITHER_ID.equals(key.getValue())) {
+            if (WITHER_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(HCItems.GODDESS_WHITE_SWORD)))
+                        .conditionally(attackerHasItem(MAINHAND, HCItems.GODDESS_WHITE_SWORD))
                         .with(ItemEntry.builder(HCItems.DIN_FLAME).weight(1).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 1))));
                 tableBuilder.pool(poolBuilder);
             }
-             */
+
+            //
 
             if (source.isBuiltin() && LootTables.ABANDONED_MINESHAFT_CHEST.equals(key)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -377,6 +382,29 @@ public class VanillaLootTableModifiers {
                         .with(ItemEntry.builder(HCItems.YELLOW_RUPEE).weight(12).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 2))));
                 tableBuilder.pool(poolBuilder);
             }
+
         });
+
+    }
+
+    private static LootCondition.Builder attackerHasItem(EquipmentSlot slot, ItemConvertible item) {
+        EntityEquipmentPredicate.Builder entityEquipmentPredicateBuilder = EntityEquipmentPredicate.Builder.create();
+        ItemPredicate.Builder itemPredicate = ItemPredicate.Builder.create().items(item);
+
+        switch (slot) {
+            case MAINHAND -> entityEquipmentPredicateBuilder.mainhand(itemPredicate);
+            case OFFHAND -> entityEquipmentPredicateBuilder.offhand(itemPredicate);
+            case HEAD -> entityEquipmentPredicateBuilder.head(itemPredicate);
+            case CHEST -> entityEquipmentPredicateBuilder.chest(itemPredicate);
+            case LEGS -> entityEquipmentPredicateBuilder.legs(itemPredicate);
+            case FEET -> entityEquipmentPredicateBuilder.feet(itemPredicate);
+        }
+
+        EntityPredicate entityPredicate = EntityPredicate.Builder.create().equipment(entityEquipmentPredicateBuilder.build()).build();
+
+        return EntityPropertiesLootCondition.builder(
+                LootContext.EntityTarget.DIRECT_ATTACKER,
+                entityPredicate
+        );
     }
 }
