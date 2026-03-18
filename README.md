@@ -24,6 +24,7 @@ Ordered A to Z to avoid bias:
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
 * [poeticbagel](https://www.planetminecraft.com/member/poeticbagel/) - For the Banana texture
 * pom_pookie - For the 'Isle of the Goddess' Build, Digging Mitts and Slingshot textures.
+* smashportal - For the Shingle Textures
 * VeganNatureQueen - For the Paraglider Model
 
 **Testers -**

@@ -211,49 +211,49 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_BRICKS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_BRICKS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_BRICK_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_BRICK_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_BRICK_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_BRICK_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_BRICK_WALL, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_BRICK_WALL, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_BRICKS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_BRICKS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_BRICK_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_BRICK_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_BRICK_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_BRICK_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_BRICK_WALL, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_BRICK_WALL, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.BRICKS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.BRICKS))
@@ -627,109 +627,109 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.WHITE_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_PLANKS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_PLANKS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANKS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_STRIPPED_LOG, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.STRIPPED_LOGS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_STRIPPED_WOOD, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_STRIPPED_WOOD, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.STRIPPED_WOODS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_STAIRS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_SLABS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_FENCE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_FENCE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_FENCES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_FENCE_GATE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_FENCE_GATE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_FENCE_GATES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_PRESSURE_PLATE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_PRESSURE_PLATE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_PRESSURE_PLATES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_BUTTON, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_BUTTON, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_BUTTONS).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_PLANKS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_PLANKS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANKS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_STRIPPED_LOG, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_STRIPPED_LOG, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.STRIPPED_LOGS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_STRIPPED_WOOD, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_STRIPPED_WOOD, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.STRIPPED_WOODS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_STAIRS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_SLABS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_FENCE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_FENCE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_FENCES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_FENCE_GATE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_FENCE_GATE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_FENCE_GATES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_PRESSURE_PLATE, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_PRESSURE_PLATE, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_PRESSURE_PLATES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_BUTTON, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_BUTTON, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.PLANK_BUTTONS).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.GRAY_DYE))
@@ -1355,49 +1355,49 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLES, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SHINGLE_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SHINGLE_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLE_WALL, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SHINGLE_WALL, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLES, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_STAIRS, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SHINGLE_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_SLAB, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SHINGLE_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLE_WALL, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SHINGLE_WALL, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
@@ -1723,17 +1723,17 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter, getItemId(HCColouredBlocks.WHITE_SHINGLES) + "_main");
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GREY_SHINGLES, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.LIGHT_GRAY_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', Items.CLAY_BALL).input('@', Items.LIGHT_GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
-                .offerTo(exporter, getItemId(HCColouredBlocks.LIGHT_GREY_SHINGLES) + "_main");
+                .offerTo(exporter, getItemId(HCColouredBlocks.LIGHT_GRAY_SHINGLES) + "_main");
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GREY_SHINGLES, 8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.GRAY_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', Items.CLAY_BALL).input('@', Items.GRAY_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
-                .offerTo(exporter, getItemId(HCColouredBlocks.GREY_SHINGLES) + "_main");
+                .offerTo(exporter, getItemId(HCColouredBlocks.GRAY_SHINGLES) + "_main");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCColouredBlocks.BLACK_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")

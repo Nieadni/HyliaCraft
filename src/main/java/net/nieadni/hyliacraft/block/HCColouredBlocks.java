@@ -26,15 +26,15 @@ public class HCColouredBlocks extends Blocks {
     public static final Block WHITE_BRICK_SLAB = registerBlock("white_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(WHITE_BRICKS)));
     public static final Block WHITE_BRICK_WALL = registerBlock("white_brick_wall", new WallBlock(AbstractBlock.Settings.copy(WHITE_BRICKS)));
 
-    public static final Block LIGHT_GREY_BRICKS = registerBlock("light_grey_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.LIGHT_GRAY)));
-    public static final Block LIGHT_GREY_BRICK_STAIRS = registerBlock("light_grey_brick_stairs", new StairsBlock(LIGHT_GREY_BRICKS.getDefaultState(), Block.Settings.copy(LIGHT_GREY_BRICKS)));
-    public static final Block LIGHT_GREY_BRICK_SLAB = registerBlock("light_grey_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GREY_BRICKS)));
-    public static final Block LIGHT_GREY_BRICK_WALL = registerBlock("light_grey_brick_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_GREY_BRICKS)));
+    public static final Block LIGHT_GRAY_BRICKS = registerBlock("light_gray_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GRAY_BRICK_STAIRS = registerBlock("light_gray_brick_stairs", new StairsBlock(LIGHT_GRAY_BRICKS.getDefaultState(), Block.Settings.copy(LIGHT_GRAY_BRICKS)));
+    public static final Block LIGHT_GRAY_BRICK_SLAB = registerBlock("light_gray_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_BRICKS)));
+    public static final Block LIGHT_GRAY_BRICK_WALL = registerBlock("light_gray_brick_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_BRICKS)));
 
-    public static final Block GREY_BRICKS = registerBlock("grey_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.GRAY)));
-    public static final Block GREY_BRICK_STAIRS = registerBlock("grey_brick_stairs", new StairsBlock(GREY_BRICKS.getDefaultState(), Block.Settings.copy(GREY_BRICKS)));
-    public static final Block GREY_BRICK_SLAB = registerBlock("grey_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(GREY_BRICKS)));
-    public static final Block GREY_BRICK_WALL = registerBlock("grey_brick_wall", new WallBlock(AbstractBlock.Settings.copy(GREY_BRICKS)));
+    public static final Block GRAY_BRICKS = registerBlock("gray_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.GRAY)));
+    public static final Block GRAY_BRICK_STAIRS = registerBlock("gray_brick_stairs", new StairsBlock(GRAY_BRICKS.getDefaultState(), Block.Settings.copy(GRAY_BRICKS)));
+    public static final Block GRAY_BRICK_SLAB = registerBlock("gray_brick_slab", new SlabBlock(AbstractBlock.Settings.copy(GRAY_BRICKS)));
+    public static final Block GRAY_BRICK_WALL = registerBlock("gray_brick_wall", new WallBlock(AbstractBlock.Settings.copy(GRAY_BRICKS)));
 
     public static final Block BLACK_BRICKS = registerBlock("black_bricks", new Block(AbstractBlock.Settings.copy(BRICKS).mapColor(MapColor.BLACK)));
     public static final Block BLACK_BRICK_STAIRS = registerBlock("black_brick_stairs", new StairsBlock(BLACK_BRICKS.getDefaultState(), Block.Settings.copy(BLACK_BRICKS)));
@@ -118,25 +118,25 @@ public class HCColouredBlocks extends Blocks {
     public static final Block WHITE_PRESSURE_PLATE = registerBlock("white_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(WHITE_PLANKS)));
     public static final Block WHITE_BUTTON = registerBlock("white_button", createWoodenButtonBlock(BlockSetType.OAK));
 
-    public static final Block LIGHT_GREY_STRIPPED_LOG = registerBlock("light_grey_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.LIGHT_GRAY)));
-    public static final Block LIGHT_GREY_STRIPPED_WOOD = registerBlock("light_grey_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.LIGHT_GRAY)));
-    public static final Block LIGHT_GREY_PLANKS = registerBlock("light_grey_planks", new Block(AbstractBlock.Settings.copy(OAK_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
-    public static final Block LIGHT_GREY_STAIRS = registerBlock("light_grey_stairs", new StairsBlock(LIGHT_GREY_PLANKS.getDefaultState(), Block.Settings.copy(LIGHT_GREY_PLANKS)));
-    public static final Block LIGHT_GREY_SLAB = registerBlock("light_grey_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GREY_PLANKS)));
-    public static final Block LIGHT_GREY_FENCE = registerBlock("light_grey_fence", new FenceBlock(AbstractBlock.Settings.copy(LIGHT_GREY_PLANKS)));
-    public static final Block LIGHT_GREY_FENCE_GATE = registerBlock("light_grey_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(LIGHT_GREY_PLANKS)));
-    public static final Block LIGHT_GREY_PRESSURE_PLATE = registerBlock("light_grey_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(LIGHT_GREY_PLANKS)));
-    public static final Block LIGHT_GREY_BUTTON = registerBlock("light_grey_button", createWoodenButtonBlock(BlockSetType.OAK));
+    public static final Block LIGHT_GRAY_STRIPPED_LOG = registerBlock("light_gray_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GRAY_STRIPPED_WOOD = registerBlock("light_gray_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GRAY_PLANKS = registerBlock("light_gray_planks", new Block(AbstractBlock.Settings.copy(OAK_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GRAY_STAIRS = registerBlock("light_gray_stairs", new StairsBlock(LIGHT_GRAY_PLANKS.getDefaultState(), Block.Settings.copy(LIGHT_GRAY_PLANKS)));
+    public static final Block LIGHT_GRAY_SLAB = registerBlock("light_gray_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_PLANKS)));
+    public static final Block LIGHT_GRAY_FENCE = registerBlock("light_gray_fence", new FenceBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_PLANKS)));
+    public static final Block LIGHT_GRAY_FENCE_GATE = registerBlock("light_gray_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(LIGHT_GRAY_PLANKS)));
+    public static final Block LIGHT_GRAY_PRESSURE_PLATE = registerBlock("light_gray_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(LIGHT_GRAY_PLANKS)));
+    public static final Block LIGHT_GRAY_BUTTON = registerBlock("light_gray_button", createWoodenButtonBlock(BlockSetType.OAK));
 
-    public static final Block GREY_STRIPPED_LOG = registerBlock("grey_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.GRAY)));
-    public static final Block GREY_STRIPPED_WOOD = registerBlock("grey_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.GRAY)));
-    public static final Block GREY_PLANKS = registerBlock("grey_planks", new Block(AbstractBlock.Settings.copy(OAK_PLANKS).mapColor(MapColor.GRAY)));
-    public static final Block GREY_STAIRS = registerBlock("grey_stairs", new StairsBlock(GREY_PLANKS.getDefaultState(), Block.Settings.copy(GREY_PLANKS)));
-    public static final Block GREY_SLAB = registerBlock("grey_slab", new SlabBlock(AbstractBlock.Settings.copy(GREY_PLANKS)));
-    public static final Block GREY_FENCE = registerBlock("grey_fence", new FenceBlock(AbstractBlock.Settings.copy(GREY_PLANKS)));
-    public static final Block GREY_FENCE_GATE = registerBlock("grey_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(GREY_PLANKS)));
-    public static final Block GREY_PRESSURE_PLATE = registerBlock("grey_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(GREY_PLANKS)));
-    public static final Block GREY_BUTTON = registerBlock("grey_button", createWoodenButtonBlock(BlockSetType.OAK));
+    public static final Block GRAY_STRIPPED_LOG = registerBlock("gray_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.GRAY)));
+    public static final Block GRAY_STRIPPED_WOOD = registerBlock("gray_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.GRAY)));
+    public static final Block GRAY_PLANKS = registerBlock("gray_planks", new Block(AbstractBlock.Settings.copy(OAK_PLANKS).mapColor(MapColor.GRAY)));
+    public static final Block GRAY_STAIRS = registerBlock("gray_stairs", new StairsBlock(GRAY_PLANKS.getDefaultState(), Block.Settings.copy(GRAY_PLANKS)));
+    public static final Block GRAY_SLAB = registerBlock("gray_slab", new SlabBlock(AbstractBlock.Settings.copy(GRAY_PLANKS)));
+    public static final Block GRAY_FENCE = registerBlock("gray_fence", new FenceBlock(AbstractBlock.Settings.copy(GRAY_PLANKS)));
+    public static final Block GRAY_FENCE_GATE = registerBlock("gray_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(GRAY_PLANKS)));
+    public static final Block GRAY_PRESSURE_PLATE = registerBlock("gray_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(GRAY_PLANKS)));
+    public static final Block GRAY_BUTTON = registerBlock("gray_button", createWoodenButtonBlock(BlockSetType.OAK));
 
     public static final Block BLACK_STRIPPED_LOG = registerBlock("black_stripped_log", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_LOG).mapColor(MapColor.BLACK)));
     public static final Block BLACK_STRIPPED_WOOD = registerBlock("black_stripped_wood", new PillarBlock(AbstractBlock.Settings.copy(STRIPPED_OAK_WOOD).mapColor(MapColor.BLACK)));
@@ -285,15 +285,15 @@ public class HCColouredBlocks extends Blocks {
     public static final Block WHITE_SHINGLE_SLAB = registerBlock("white_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(WHITE_SHINGLES)));
     public static final Block WHITE_SHINGLE_WALL = registerBlock("white_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(WHITE_SHINGLES)));
 
-    public static final Block LIGHT_GREY_SHINGLES = registerBlock("light_grey_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.LIGHT_GRAY)));
-    public static final Block LIGHT_GREY_SHINGLE_STAIRS = registerBlock("light_grey_shingle_stairs", new StairsBlock(LIGHT_GREY_SHINGLES.getDefaultState(), Block.Settings.copy(LIGHT_GREY_SHINGLES)));
-    public static final Block LIGHT_GREY_SHINGLE_SLAB = registerBlock("light_grey_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GREY_SHINGLES)));
-    public static final Block LIGHT_GREY_SHINGLE_WALL = registerBlock("light_grey_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_GREY_SHINGLES)));
+    public static final Block LIGHT_GRAY_SHINGLES = registerBlock("light_gray_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block LIGHT_GRAY_SHINGLE_STAIRS = registerBlock("light_gray_shingle_stairs", new StairsBlock(LIGHT_GRAY_SHINGLES.getDefaultState(), Block.Settings.copy(LIGHT_GRAY_SHINGLES)));
+    public static final Block LIGHT_GRAY_SHINGLE_SLAB = registerBlock("light_gray_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_SHINGLES)));
+    public static final Block LIGHT_GRAY_SHINGLE_WALL = registerBlock("light_gray_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_SHINGLES)));
 
-    public static final Block GREY_SHINGLES = registerBlock("grey_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.GRAY)));
-    public static final Block GREY_SHINGLE_STAIRS = registerBlock("grey_shingle_stairs", new StairsBlock(GREY_SHINGLES.getDefaultState(), Block.Settings.copy(GREY_SHINGLES)));
-    public static final Block GREY_SHINGLE_SLAB = registerBlock("grey_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(GREY_SHINGLES)));
-    public static final Block GREY_SHINGLE_WALL = registerBlock("grey_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(GREY_SHINGLES)));
+    public static final Block GRAY_SHINGLES = registerBlock("gray_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.GRAY)));
+    public static final Block GRAY_SHINGLE_STAIRS = registerBlock("gray_shingle_stairs", new StairsBlock(GRAY_SHINGLES.getDefaultState(), Block.Settings.copy(GRAY_SHINGLES)));
+    public static final Block GRAY_SHINGLE_SLAB = registerBlock("gray_shingle_slab", new SlabBlock(AbstractBlock.Settings.copy(GRAY_SHINGLES)));
+    public static final Block GRAY_SHINGLE_WALL = registerBlock("gray_shingle_wall", new WallBlock(AbstractBlock.Settings.copy(GRAY_SHINGLES)));
 
     public static final Block BLACK_SHINGLES = registerBlock("black_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.BLACK)));
     public static final Block BLACK_SHINGLE_STAIRS = registerBlock("black_shingle_stairs", new StairsBlock(BLACK_SHINGLES.getDefaultState(), Block.Settings.copy(BLACK_SHINGLES)));

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hyliacraft:block/gray_shingle_slab"
+    },
+    "type=double": {
+      "model": "hyliacraft:block/gray_shingles"
+    },
+    "type=top": {
+      "model": "hyliacraft:block/gray_shingle_slab_top"
+    }
+  }
+}
