@@ -1,22 +1,5 @@
 {
   "values": [
-    "hyliacraft:white_brick_slab",
-    "hyliacraft:light_gray_brick_slab",
-    "hyliacraft:gray_brick_slab",
-    "hyliacraft:black_brick_slab",
-    "hyliacraft:brown_brick_slab",
-    "hyliacraft:red_brick_slab",
-    "hyliacraft:orange_brick_slab",
-    "hyliacraft:yellow_brick_slab",
-    "hyliacraft:lime_brick_slab",
-    "hyliacraft:green_brick_slab",
-    "hyliacraft:cyan_brick_slab",
-    "hyliacraft:light_blue_brick_slab",
-    "hyliacraft:blue_brick_slab",
-    "hyliacraft:purple_brick_slab",
-    "hyliacraft:magenta_brick_slab",
-    "hyliacraft:pink_brick_slab",
-    "hyliacraft:rainbow_brick_slab",
     "hyliacraft:white_shingle_slab",
     "hyliacraft:light_gray_shingle_slab",
     "hyliacraft:gray_shingle_slab",
@@ -32,7 +15,6 @@
     "hyliacraft:blue_shingle_slab",
     "hyliacraft:purple_shingle_slab",
     "hyliacraft:magenta_shingle_slab",
-    "hyliacraft:pink_shingle_slab",
-    "hyliacraft:rainbow_shingle_slab"
+    "hyliacraft:pink_shingle_slab"
   ]
 }

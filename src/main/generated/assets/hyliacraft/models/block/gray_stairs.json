@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "hyliacraft:block/gray_planks",
-    "side": "hyliacraft:block/gray_planks",
-    "top": "hyliacraft:block/gray_planks"
-  }
-}

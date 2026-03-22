@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "hyliacraft:block/rainbow_planks",
-    "side": "hyliacraft:block/rainbow_planks",
-    "top": "hyliacraft:block/rainbow_planks"
-  }
-}

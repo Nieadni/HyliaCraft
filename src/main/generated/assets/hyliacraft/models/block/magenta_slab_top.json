@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "hyliacraft:block/magenta_planks",
-    "side": "hyliacraft:block/magenta_planks",
-    "top": "hyliacraft:block/magenta_planks"
-  }
-}
