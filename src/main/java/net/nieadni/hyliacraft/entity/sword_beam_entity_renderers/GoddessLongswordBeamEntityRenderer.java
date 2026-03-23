@@ -11,9 +11,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
-import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessLongswordBeamEntity;
-import net.nieadni.hyliacraft.entity.sword_beam_entities.GoddessSwordBeamEntity;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 

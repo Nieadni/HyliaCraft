@@ -1,0 +1,9 @@
+{
+  "values": [
+    "hyliacraft:green_rupee",
+    {
+      "id": "hyrule_terrors:rupee",
+      "required": false
+    }
+  ]
+}

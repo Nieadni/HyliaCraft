@@ -2,7 +2,6 @@ package net.nieadni.hyliacraft.client.armour;
 
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
-import net.nieadni.hyliacraft.item.armour.PhrygianCapSSItem;
 import net.nieadni.hyliacraft.item.armour.PhrygianCapTPItem;
 import software.bernie.geckolib.model.GeoModel;
 

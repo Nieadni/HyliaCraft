@@ -26,14 +26,14 @@ public class HCRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP, 1)
                 .pattern("H")
                 .pattern("L")
                 .input('H', Items.LEATHER_HELMET)
                 .input('L', Items.LEATHER)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_SS,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_SS, 1)
                 .pattern("FWF")
                 .pattern("LHG")
                 .input('H', HCItems.PHRYGIAN_CAP)
@@ -43,7 +43,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('W', Items.GREEN_WOOL)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP, 1)
                 .pattern("BWB")
                 .pattern("GHG")
                 .input('H', HCItems.PHRYGIAN_CAP)
@@ -52,7 +52,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('W', Items.GREEN_WOOL)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_CLASSIC,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_CLASSIC, 1)
                 .pattern("LHL")
                 .pattern("YWY")
                 .input('H', HCItems.PHRYGIAN_CAP)
@@ -64,7 +64,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
         //
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT, 1)
                 .pattern("CCC")
                 .pattern("C C")
                 .pattern("CCC")
@@ -90,7 +90,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
         //
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER, 1)
                 .pattern("GWY")
                 .pattern("IRI")
                 .pattern("ISI")
@@ -103,7 +103,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.FAIRY_BOW,1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.FAIRY_BOW, 1)
                 .pattern("LR")
                 .pattern("GB")
                 .pattern("LR")
@@ -184,29 +184,27 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SWIFT_VIOLETS))
                 .offerTo(exporter);
 
-                                            /** SHINGLES **/
+        /** SHINGLES **/
 
-        //
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLES,8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_STAIRS,8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_STAIRS, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_SLAB,8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_SLAB, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_WALL,8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLE_WALL, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', HCItemTags.SHINGLES).input('@', Items.WHITE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
@@ -571,10 +569,10 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input('#', HCItemTags.SHINGLES).input('@', Items.PINK_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter);
-        
+
         //
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLES,8)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, HCBlocks.WHITE_SHINGLES, 8)
                 .pattern("###").pattern("#@#").pattern("###")
                 .input('#', Items.CLAY_BALL).input('@', Items.WHITE_DYE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
@@ -670,6 +668,42 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CLAY))
                 .offerTo(exporter, getItemId(HCBlocks.PINK_SHINGLES) + "_main");
 
-    }
 
+        /** MOD COMPAT STUFF **/
+        // This is only really needed if people have other zelda mods installed alongside this one. Idk why they would but its just incase.
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.GREEN_RUPEE, 1)
+                .input(HCItemTags.GREEN_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GREEN_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.BLUE_RUPEE, 1)
+                .input(HCItemTags.BLUE_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.BLUE_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.YELLOW_RUPEE, 1)
+                .input(HCItemTags.YELLOW_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.YELLOW_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.RED_RUPEE, 1)
+                .input(HCItemTags.RED_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.RED_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.PURPLE_RUPEE, 1)
+                .input(HCItemTags.PURPLE_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.PURPLE_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.ORANGE_RUPEE, 1)
+                .input(HCItemTags.ORANGE_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.ORANGE_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.SILVER_RUPEE, 1)
+                .input(HCItemTags.SILVER_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.SILVER_RUPEE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, HCItems.GOLD_RUPEE, 1)
+                .input(HCItemTags.GOLD_RUPEES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOLD_RUPEE))
+                .offerTo(exporter);
+
+    }
 }

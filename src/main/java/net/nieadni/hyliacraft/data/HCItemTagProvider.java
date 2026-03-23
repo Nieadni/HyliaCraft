@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -22,135 +23,85 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(HCItems.MAJORAS_MASK).add(HCItems.MIDNA_HELM).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP)
-                .add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.PHRYGIAN_CAP, HCItems.PHRYGIAN_CAP_SS, HCItems.PHRYGIAN_CAP_TP,
+                        HCItems.PHRYGIAN_CAP_CLASSIC);
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
-                .add(HCItems.MAJORAS_MASK).add(HCItems.MIDNA_HELM).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP)
-                .add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.PHRYGIAN_CAP, HCItems.PHRYGIAN_CAP_SS, HCItems.PHRYGIAN_CAP_TP,
+                        HCItems.PHRYGIAN_CAP_CLASSIC);
         getOrCreateTagBuilder(HCItemTags.ENDERMASK)
-                .add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK);
-
-        getOrCreateTagBuilder(ItemTags.DYEABLE).add(HCItems.PHRYGIAN_CAP);
-
-        getOrCreateTagBuilder(ItemTags.PIG_FOOD).add(HCItems.BANANA);
-
-
-        getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS).add(HCItems.GOAT_MILK_BUCKET).add(Items.MILK_BUCKET);
-
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_LONGSWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_LONGSWORD);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_LONGSWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_WHITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_WHITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.GODDESS_WHITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.TRUE_MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.TRUE_MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.TRUE_MASTER_SWORD);
-
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.IRON_BOW);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.IRON_BOW);
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.FAIRY_BOW);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.FAIRY_BOW);
-
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.DIGGING_MITT);
-        getOrCreateTagBuilder(ItemTags.HOES).add(HCItems.DIGGING_MITT);
-        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.DIGGING_MITT);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.DIGGING_MITT);
-
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.MOGMA_MITT);
-        getOrCreateTagBuilder(ItemTags.HOES).add(HCItems.MOGMA_MITT);
-        getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.MOGMA_MITT);
-        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.MOGMA_MITT);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.MOGMA_MITT);
-
-        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
-        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
-        getOrCreateTagBuilder(ItemTags.PICKAXES).add(HCItems.BOULDER_BREAKER);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.BOULDER_BREAKER);
-
-        getOrCreateTagBuilder(HCItemTags.SICKLES).add(HCItems.VICIOUS_SICKLE);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.VICIOUS_SICKLE);
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.VICIOUS_SICKLE);
+                .add(HCItems.MAJORAS_MASK, HCItems.PUMPKIN_MASK);
+        getOrCreateTagBuilder(ItemTags.DYEABLE)
+                .add(HCItems.PHRYGIAN_CAP);
+        getOrCreateTagBuilder(ItemTags.PIG_FOOD)
+                .add(HCItems.BANANA);
+        getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS)
+                .add(HCItems.GOAT_MILK_BUCKET, Items.MILK_BUCKET);
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD);
+        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
+                        HCItems.VICIOUS_SICKLE);
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD,
+                        HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD, HCItems.IRON_BOW, HCItems.FAIRY_BOW, HCItems.DIGGING_MITT, HCItems.MOGMA_MITT,
+                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE);
+        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(HCItems.IRON_BOW, HCItems.FAIRY_BOW);
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
+                .add(HCItems.BOULDER_BREAKER);
+        getOrCreateTagBuilder(HCItemTags.SICKLES)
+                .add(HCItems.VICIOUS_SICKLE);
 
 
         // Vanilla
 
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(Items.CARVED_PUMPKIN);
-
-        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.COBBLESTONE);
-        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.STONE);
+        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.COBBLESTONE).add(Items.STONE);
 
         // Blocks
 
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.WHITE_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.GRAY_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.GRAY_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.GRAY_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.GRAY_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.BLACK_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.BLACK_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.BLACK_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.BLACK_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.BROWN_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.BROWN_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.BROWN_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.BROWN_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.RED_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.RED_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.RED_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.RED_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.ORANGE_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.ORANGE_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.ORANGE_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.ORANGE_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.YELLOW_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.YELLOW_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.YELLOW_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.YELLOW_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.LIME_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.LIME_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.LIME_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.LIME_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.GREEN_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.GREEN_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.GREEN_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.GREEN_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.CYAN_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.CYAN_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.CYAN_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.CYAN_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.BLUE_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.BLUE_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.BLUE_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.BLUE_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.PURPLE_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.PURPLE_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.PURPLE_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.PURPLE_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.MAGENTA_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_WALL));
-        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.PINK_SHINGLES));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.PINK_SHINGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.PINK_SHINGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.PINK_SHINGLE_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.WHITE_SHINGLES), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLES),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLES), Item.fromBlock(HCBlocks.BLACK_SHINGLES), Item.fromBlock(HCBlocks.BROWN_SHINGLES),
+                Item.fromBlock(HCBlocks.RED_SHINGLES), Item.fromBlock(HCBlocks.ORANGE_SHINGLES), Item.fromBlock(HCBlocks.YELLOW_SHINGLES),
+                Item.fromBlock(HCBlocks.LIME_SHINGLES), Item.fromBlock(HCBlocks.GREEN_SHINGLES), Item.fromBlock(HCBlocks.CYAN_SHINGLES),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLES), Item.fromBlock(HCBlocks.BLUE_SHINGLES), Item.fromBlock(HCBlocks.PURPLE_SHINGLES),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLES), Item.fromBlock(HCBlocks.PINK_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BLACK_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BROWN_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.GREEN_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.CYAN_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BLUE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.PINK_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BLACK_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BROWN_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_SLAB), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_SLAB), Item.fromBlock(HCBlocks.GREEN_SHINGLE_SLAB), Item.fromBlock(HCBlocks.CYAN_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BLUE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_SLAB), Item.fromBlock(HCBlocks.PINK_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_WALL), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_WALL), Item.fromBlock(HCBlocks.BLACK_SHINGLE_WALL), Item.fromBlock(HCBlocks.BROWN_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_WALL), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_WALL), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_WALL), Item.fromBlock(HCBlocks.GREEN_SHINGLE_WALL), Item.fromBlock(HCBlocks.CYAN_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_WALL), Item.fromBlock(HCBlocks.BLUE_SHINGLE_WALL), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_WALL), Item.fromBlock(HCBlocks.PINK_SHINGLE_WALL));
+
+        // Compat Stuffs
+
+        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE).addOptional(Identifier.of("hyrule_terrors","rupee"));
+        getOrCreateTagBuilder(HCItemTags.BLUE_RUPEES).add(HCItems.BLUE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.YELLOW_RUPEES).add(HCItems.YELLOW_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.RED_RUPEES).add(HCItems.RED_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.PURPLE_RUPEES).add(HCItems.PURPLE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.ORANGE_RUPEES).add(HCItems.ORANGE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.SILVER_RUPEES).add(HCItems.SILVER_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE);
     }
 }

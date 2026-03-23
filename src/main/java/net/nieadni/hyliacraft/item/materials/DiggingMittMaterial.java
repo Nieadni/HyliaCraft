@@ -5,7 +5,8 @@ import net.minecraft.component.type.ToolComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.*;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 
 public class DiggingMittMaterial implements ToolMaterial {
 
