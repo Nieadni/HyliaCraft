@@ -1,8 +1,8 @@
-// 1.21.1	2026-03-23T21:29:59.2138787	HyliaCraft/Recipes
+// 1.21.1	2026-03-25T19:19:34.7451678	HyliaCraft/Recipes
 f2863d741e589199946b1ecfedbb8a608e9f0538 data\hyliacraft\advancement\recipes\building_blocks\brown_shingles.json
 850ae7d2999a6684bf0d8aeba32c16e5bf057e80 data\hyliacraft\recipe\magenta_dye.json
-d7034d0f56281a870d900eda8c7c2e23f4933f96 data\hyliacraft\recipe\paraglider.json
 2e60b22faf889d1dae83fa8dfadb3ffa1676a6a9 data\hyliacraft\advancement\recipes\tools\paraglider.json
+d7034d0f56281a870d900eda8c7c2e23f4933f96 data\hyliacraft\recipe\paraglider.json
 34d63ea22a19c83e40df6dcf24772e56cc228558 data\hyliacraft\recipe\magenta_shingles.json
 b7e27faa22d57ad8d67855f774de9f590b187b66 data\hyliacraft\advancement\recipes\decorations\hateno_clay_pot.json
 a3eea19c316f9d7c63257346cbbef92af7bb3e5e data\hyliacraft\advancement\recipes\building_blocks\lime_shingle_wall.json

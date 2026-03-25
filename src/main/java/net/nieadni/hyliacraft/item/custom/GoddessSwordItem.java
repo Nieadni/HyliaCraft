@@ -1,5 +1,6 @@
 package net.nieadni.hyliacraft.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
@@ -133,8 +134,14 @@ public class GoddessSwordItem extends SwordItem {
     }
      */
 
-    // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
+    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        if(Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.hyliacraft.shifted_down_info").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_sword_0"));
+        } else {
+            tooltip.add(Text.translatable("tooltip.hyliacraft.shift_down_info"));
+            tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        }
     }
 }

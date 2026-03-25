@@ -56,13 +56,14 @@ public class MajorasMaskItem extends ArmorItem implements GeoItem {
         }
     }
 
+    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        // REMOVE THIS ONCE ITEM HAS BEEN FULLY ADDED
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-        //
         tooltip.add(Text.translatable("tooltip.hyliacraft.majoras_mask1").formatted(Formatting.GRAY));
         tooltip.add(Text.translatable("tooltip.hyliacraft.majoras_mask2").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("tooltip.hyliacraft.majoras_mask3").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal(""));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.rare_item").formatted(Formatting.GRAY));
+
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
     }
 
     @Override

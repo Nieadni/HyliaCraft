@@ -21,7 +21,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
-        translationBuilder.add("tooltip.hyliacraft.majoras_mask3", "It's a rather rare find.");
         translationBuilder.add(HCItems.MIDNA_HELM, "Midna's Helm");
         translationBuilder.add("tooltip.hyliacraft.midna_helm", "A helmet much like the one Midna wore when she fought alongside the Hero of Twilight.");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
@@ -38,16 +37,22 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
 
         translationBuilder.add(HCItems.GODDESS_SWORD, "Goddess Sword");
+        translationBuilder.add("tooltip.hyliacraft.goddess_sword_0", "Seek out the sacred flame of §aFarore§r to purify and upgrade your sword!");
         translationBuilder.add(HCItems.GODDESS_LONGSWORD, "Goddess Longsword");
-        translationBuilder.add("tooltip.hyliacraft.goddess_longsword", "§aThe flames of Farore have improved your sword, making it longer and sharp enough to do twice as much damage!");
+        translationBuilder.add("tooltip.hyliacraft.goddess_longsword_0", "§aThe flames of Farore have improved your sword, making it longer and sharp enough to do twice as much damage!");
+        translationBuilder.add("tooltip.hyliacraft.goddess_longsword_1", "Seek out the sacred flame of §9Nayru§r to purify and upgrade your sword!");
         translationBuilder.add(HCItems.GODDESS_WHITE_SWORD, "Goddess White Sword");
-        translationBuilder.add("tooltip.hyliacraft.goddess_white_sword", "§9The flames of Nayru have transformed your blade!");
+        translationBuilder.add("tooltip.hyliacraft.goddess_white_sword_0", "§9The flames of Nayru have transformed your blade!");
+        translationBuilder.add("tooltip.hyliacraft.goddess_white_sword_1", "Seek out the sacred flame of §cDin§r to purify and upgrade your sword!");
         translationBuilder.add(HCItems.MASTER_SWORD, "Master Sword");
-        translationBuilder.add("tooltip.hyliacraft.master_sword", "§cThe flames of Din have imbued your blade with a sacred white light that demons revile!");
+        translationBuilder.add("tooltip.hyliacraft.master_sword_0", "§cThe flames of Din have imbued your blade with a sacred white light that demons revile!");
         translationBuilder.add(HCItems.TRUE_MASTER_SWORD, "True Master Sword");
-        translationBuilder.add("tooltip.hyliacraft.true_master_sword", "The goddess has blessed your blade, and the Master Sword has at last achieved its ultimate form! The sword is now imbued with the mythical power to drive back demons!");
+        translationBuilder.add("tooltip.hyliacraft.true_master_sword_0", "The goddess has blessed your blade, and the Master Sword has at last achieved its ultimate form! The sword is now imbued with the mythical power to drive back demons!");
         translationBuilder.add(HCItems.BOULDER_BREAKER, "Boulder Breaker");
-        translationBuilder.add("tooltip.hyliacraft.boulder_breaker", "This two-handed weapon was once wielded by the Goron Champion Daruk. Daruk made swinging it around look easy, but a Hylian would need an immense amount of strength");
+        translationBuilder.add("tooltip.hyliacraft.boulder_breaker", "This two-handed weapon was once wielded by a Goron Champion. A Hylian would need an immense amount of strength to wield it!");
+
+        translationBuilder.add("tooltip.hyliacraft.rare_item", "It's a rather rare find.");
+
 
 
         translationBuilder.add(HCItems.IRON_BOW, "Iron Bow");
@@ -129,6 +134,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");
         translationBuilder.add("tooltip.hyliacraft.two_handed_weapon", "§9Only usable with both hands.");
+
+        translationBuilder.add("tooltip.hyliacraft.shift_down_info", "Hold §6SHIFT§r for more information");
+        translationBuilder.add("tooltip.hyliacraft.shifted_down_info", "Hold §8SHIFT§r for more information");
+
 
         /** Coloured Blocks **/
 

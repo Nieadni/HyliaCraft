@@ -51,9 +51,14 @@ public class MidnaHelmItem extends ArmorItem implements GeoItem {
         }
     }
 
+    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.hyliacraft.midna_helm").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("tooltip.hyliacraft.majoras_mask3").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal(""));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.rare_item").formatted(Formatting.GRAY));
+
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+
     }
 
     @Override

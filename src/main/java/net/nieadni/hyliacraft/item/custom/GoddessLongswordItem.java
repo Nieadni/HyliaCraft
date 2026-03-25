@@ -1,5 +1,6 @@
 package net.nieadni.hyliacraft.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.NbtComponent;
@@ -125,10 +126,16 @@ public class GoddessLongswordItem extends MasterSwordItem {
     }
      */
 
-    // REMOVE WIP HAS BEEN FULLY ADDED
+    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-        tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_longsword"));
+        if(Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.hyliacraft.shifted_down_info"));
+            tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_longsword_0"));
+            tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_longsword_1"));
+        } else {
+            tooltip.add(Text.translatable("tooltip.hyliacraft.shift_down_info"));
+            tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
+        }
     }
 
 }

@@ -43,9 +43,9 @@ public class BoulderBreakerItem extends MaceItem {
 
     // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
-        tooltip.add(Text.translatable("tooltip.hyliacraft.boulder_breaker").formatted(Formatting.GRAY));
         tooltip.add(Text.translatable("tooltip.hyliacraft.two_handed_weapon"));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.boulder_breaker").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
     }
 
 }
