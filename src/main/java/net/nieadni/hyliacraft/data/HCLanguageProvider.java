@@ -122,6 +122,29 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
 
+        /** Paintings **/
+
+        translationBuilder.add("painting.hyliacraft.breath_of_the_wild.author", "Hidemaro Fujibayashi & Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.breath_of_the_wild.title", "Breath of the Wild / 2017");
+        translationBuilder.add("painting.hyliacraft.excuse_me_princess.author", "The Legend of Zelda Animated Cartoon 1989");
+        translationBuilder.add("painting.hyliacraft.excuse_me_princess.title", "Well excuuuse me Princess!");
+        translationBuilder.add("painting.hyliacraft.link_between_worlds.author", "Hiromasa Shikata & Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.link_between_worlds.title", "A Link between Worlds / 2013");
+        translationBuilder.add("painting.hyliacraft.majoras_mask.author", "Eiji Aonuma, Yoshiaki Koizumi & Shigeru Miyamoto");
+        translationBuilder.add("painting.hyliacraft.majoras_mask.title", "Majoras Mask / 2000 + 2015");
+        translationBuilder.add("painting.hyliacraft.minish_cap.author", "Hidemaro Fujibayashi & Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.minish_cap.title", "The Minish Cap / 2004");
+        translationBuilder.add("painting.hyliacraft.ocarina_of_time.author", "Shigeru Miyamoto & Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.ocarina_of_time.title", "Ocarina of Time / 1998");
+        translationBuilder.add("painting.hyliacraft.phantom_hourglass.author", "Daiki Iwamoto");
+        translationBuilder.add("painting.hyliacraft.phantom_hourglass.title", "Phantom Hourglass / 2007");
+        translationBuilder.add("painting.hyliacraft.skyward_sword.author", "Hidemaro Fujibayashi & Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.skyward_sword.title", "Skyward Sword / 2011 + 2021");
+        translationBuilder.add("painting.hyliacraft.twilight_princess.author", "Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.twilight_princess.title", "Twilight Princess / 2006 + 2016");
+        translationBuilder.add("painting.hyliacraft.wind_waker.author", "Eiji Aonuma");
+        translationBuilder.add("painting.hyliacraft.wind_waker.title", "The Wind Waker / 2002 + 2013");
+
         /** Components **/
 
         translationBuilder.add("container.hyliacraft.iron_chest", "Iron Chest");

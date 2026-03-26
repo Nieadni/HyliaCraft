@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 public class HyliaCraft implements ModInitializer {
 
 	public static final String MOD_ID = "hyliacraft";
+	//public static final String VERSION = "alpha-1.0.4";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
