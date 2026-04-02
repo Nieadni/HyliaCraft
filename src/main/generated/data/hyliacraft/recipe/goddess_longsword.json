@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hyliacraft:farore_flame"
+  },
+  "base": {
+    "item": "hyliacraft:goddess_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:goddess_longsword"
+  },
+  "template": []
+}

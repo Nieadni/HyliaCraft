@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hyliacraft:din_flame"
+  },
+  "base": {
+    "item": "hyliacraft:goddess_white_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:master_sword"
+  },
+  "template": []
+}

@@ -7,9 +7,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -25,6 +29,28 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.EMPTY,
+                Ingredient.ofItems(HCItems.GODDESS_SWORD),
+                Ingredient.ofItems(HCItems.FARORE_FLAME),
+                RecipeCategory.TOOLS, HCItems.GODDESS_LONGSWORD)
+                .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.GODDESS_LONGSWORD)));
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.EMPTY,
+                        Ingredient.ofItems(HCItems.GODDESS_LONGSWORD),
+                        Ingredient.ofItems(HCItems.NAYRU_FLAME),
+                        RecipeCategory.TOOLS, HCItems.GODDESS_WHITE_SWORD)
+                .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.GODDESS_WHITE_SWORD)));
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.EMPTY,
+                        Ingredient.ofItems(HCItems.GODDESS_WHITE_SWORD),
+                        Ingredient.ofItems(HCItems.DIN_FLAME),
+                        RecipeCategory.TOOLS, HCItems.MASTER_SWORD)
+                .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.MASTER_SWORD)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP, 1)
                 .pattern("H")
