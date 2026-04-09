@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-02T19:23:53.2461711	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-04-09T22:33:42.2587027	HyliaCraft/Block Loot Tables
 d616eeb258676121cb5e568ad8370c6a7048bed2 data\hyliacraft\loot_table\blocks\magenta_shingle_wall.json
 cc1d8f2527e541f7b2816ea9defa3d305e3fb40b data\hyliacraft\loot_table\blocks\clay_pot.json
 386a1dc2bc8a01652469722d7b96ae35e7b7e725 data\hyliacraft\loot_table\blocks\black_shingles.json
@@ -63,5 +63,5 @@ f5b9f1b218ac473a7a62de8ea484b817d934b3bb data\hyliacraft\loot_table\blocks\white
 84dd86f7ee76671859bd4d374199922fc8f974e2 data\hyliacraft\loot_table\blocks\lime_shingle_stairs.json
 a9d8b474bdf1a4bfcaa30874db7d7ceeaab8aabc data\hyliacraft\loot_table\blocks\yellow_shingle_stairs.json
 e0a18e6ea6618a2c725b15ecacc114ff946d417b data\hyliacraft\loot_table\blocks\orange_shingle_wall.json
-2e5383a769b7f0b67258ba88fcbac94115af2612 data\hyliacraft\loot_table\blocks\pink_shingles.json
 c568797376ead5341f0eefc126f9f299d975857f data\hyliacraft\loot_table\blocks\light_gray_shingle_wall.json
+2e5383a769b7f0b67258ba88fcbac94115af2612 data\hyliacraft\loot_table\blocks\pink_shingles.json

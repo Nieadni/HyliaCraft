@@ -20,8 +20,6 @@ import java.util.Arrays;
 @Environment(EnvType.CLIENT)
 public class TrueMasterSwordBeamEntityRenderer extends EntityRenderer<TrueMasterSwordBeamEntity> {
 
-    //TODO: Rotate the beam so its flat with where you are looking. Currently, if you are looking up or down, its just just horizontal and not angled
-
     protected static final Identifier[] TEXTURES = {
             new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_0.png"),
             new Identifier("hyliacraft","textures/entity/master_sword_beam/master_sword_beam_1.png"),
@@ -41,8 +39,18 @@ public class TrueMasterSwordBeamEntityRenderer extends EntityRenderer<TrueMaster
     public void render(@NotNull TrueMasterSwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
-        matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(-90f));
-        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(-beam.getYaw()));
+        if (beam.isVertical()) {
+            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(beam.getPitch()));
+            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(beam.getYaw() + 90));
+            matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(beam.getPitch()));
+        } else {
+            matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(90));
+            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(beam.getPitch()));
+            matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(beam.getYaw()));
+        }
+
+        // TODO: Figure out why Angled Z axis does not rotate correctly + Vertical X axis does not rotate correctly
+
         matrices.scale(2.0f, 2.0f, 2.0f);
 
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(getTexture(beam)));

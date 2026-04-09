@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.HCItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -122,6 +123,14 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
 
+        /** Entities **/
+
+        translationBuilder.add(HCEntities.GODDESS_SWORD_BEAM, "Goddess Sword Beam");
+        translationBuilder.add(HCEntities.GODDESS_LONGSWORD_BEAM, "Goddess Longsword Beam");
+        translationBuilder.add(HCEntities.GODDESS_WHITE_SWORD_BEAM, "Goddess White Sword Beam");
+        translationBuilder.add(HCEntities.MASTER_SWORD_BEAM, "Master Sword Beam");
+        translationBuilder.add(HCEntities.TRUE_MASTER_SWORD_BEAM, "True Master Sword Beam");
+
         /** Paintings **/
 
         translationBuilder.add("painting.hyliacraft.breath_of_the_wild.author", "Hidemaro Fujibayashi & Eiji Aonuma");
@@ -160,6 +169,24 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add("tooltip.hyliacraft.shift_down_info", "Hold §6SHIFT§r for more information");
         translationBuilder.add("tooltip.hyliacraft.shifted_down_info", "Hold §8SHIFT§r for more information");
+
+        translationBuilder.add("tag.item.hyliacraft.endermask", "Endermask");
+        translationBuilder.add("tag.item.hyliacraft.sickles", "Sickles");
+        translationBuilder.add("tag.item.hyliacraft.slingshot_ammo", "Slingshot Ammo");
+        translationBuilder.add("tag.item.hyliacraft.milk_buckets", "Milk Buckets");
+        translationBuilder.add("tag.item.hyliacraft.shingles", "Shingle Blocks");
+        translationBuilder.add("tag.item.hyliacraft.shingle_stairs", "Shingle Stairs");
+        translationBuilder.add("tag.item.hyliacraft.shingle_slabs", "Shingle Slabs");
+        translationBuilder.add("tag.item.hyliacraft.shingle_walls", "Shingle Walls");
+        translationBuilder.add("tag.item.hyliacraft.green_rupees", "Green Rupees");
+        translationBuilder.add("tag.item.hyliacraft.blue_rupees", "Blue Rupees");
+        translationBuilder.add("tag.item.hyliacraft.yellow_rupees", "Yellow Rupees");
+        translationBuilder.add("tag.item.hyliacraft.red_rupees", "Red Rupees");
+        translationBuilder.add("tag.item.hyliacraft.purple_rupees", "Purple Rupees");
+        translationBuilder.add("tag.item.hyliacraft.orange_rupees", "Orange Rupees");
+        translationBuilder.add("tag.item.hyliacraft.silver_rupees", "Silver Rupees");
+        translationBuilder.add("tag.item.hyliacraft.gold_rupees", "Gold Rupees");
+
 
 
         /** Coloured Blocks **/

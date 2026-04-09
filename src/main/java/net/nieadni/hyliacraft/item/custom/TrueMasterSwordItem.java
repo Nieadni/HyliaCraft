@@ -4,17 +4,24 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.entity.sword_beam_entities.TrueMasterSwordBeamEntity;
 import net.nieadni.hyliacraft.item.materials.TrueMasterSwordMaterial;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,59 +57,42 @@ public class TrueMasterSwordItem extends MasterSwordItem {
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
     }
 
-    /**
-     * Sword Beam Attack Needed
-     * + Right Click = Vertical Attack
-     * + Crouch + Right Click = Horizontal Attack
-     * + 3/4's Normal Attack Damage
-     * + 6 Second Cooldown
-     *
-     * Sword Beam will also need to angle depending on the angle you are looking
-     *
-     * Feel free to remove the code below, kept it incase you want to fix it.
-     * But remove it if you think it'd be better to just start anew
-     */
-
-    /*
     @Override
-    public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
+        //Beams
         ItemStack stack = user.getMainHandStack();
         if (user.isSneaking()) {
+            TrueMasterSwordBeamEntity swordBeamEntity = HCEntities.TRUE_MASTER_SWORD_BEAM.create(world); //makes entity
+            swordBeamEntity.setOwner(user); //makes player the owner
+            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ()); //sets its position in the world
+            Vec3d vec3d = user.getRotationVec(1.0f); //sets velocity
+            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 1f, 0.0f);
+            swordBeamEntity.setVertical(true);
+            world.spawnEntity(swordBeamEntity);
 
+            user.swingHand(hand, true);
+            user.playSound(SoundEvents.ITEM_TRIDENT_THROW.value(), 1F, 1);
+
+        } else {
             TrueMasterSwordBeamEntity swordBeamEntity = HCEntities.TRUE_MASTER_SWORD_BEAM.create(world);
             swordBeamEntity.setOwner(user);
             swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
             swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 1f, 0.0f);
-            swordBeamEntity.setYaw(user.getHeadYaw());
             world.spawnEntity(swordBeamEntity);
 
-        }
-
-        else {
-
-            TrueMasterSwordBeamEntity swordBeamEntity = HCEntities.TRUE_MASTER_SWORD_BEAM.create(world);
-            swordBeamEntity.setOwner(user);
-            swordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
-            Vec3d vec3d = user.getRotationVec(1.0f);
-            swordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 1f, 0.0f);
-            swordBeamEntity.setYaw(user.getHeadYaw());
-            world.spawnEntity(swordBeamEntity);
-            // Need to make this else part, a vertical beam
-
+            user.swingHand(hand, true);
+            user.playSound(SoundEvents.ITEM_TRIDENT_THROW.value(), 1F, 1);
         }
 
         user.getItemCooldownManager().set(this, 30);
         stack.damage(20, user, EquipmentSlot.MAINHAND);
 
-        return TypedActionResult.fail(stack);
+        return TypedActionResult.consume(stack);
     }
-     */
 
-    // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.hyliacraft.wip").formatted(Formatting.DARK_PURPLE));
         tooltip.add(Text.translatable("tooltip.hyliacraft.true_master_sword_0"));
     }
 
