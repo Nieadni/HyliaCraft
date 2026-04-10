@@ -37,14 +37,15 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS)
                 .add(HCItems.GOAT_MILK_BUCKET, Items.MILK_BUCKET);
         getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD);
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
+                        HCItems.DOUBLE_HELIX_SWORD);
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
-                        HCItems.VICIOUS_SICKLE);
+                        HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD,
                         HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD, HCItems.IRON_BOW, HCItems.FAIRY_BOW, HCItems.DIGGING_MITT, HCItems.MOGMA_MITT,
-                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE);
+                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(HCItems.IRON_BOW, HCItems.FAIRY_BOW);
         getOrCreateTagBuilder(ItemTags.SHOVELS)

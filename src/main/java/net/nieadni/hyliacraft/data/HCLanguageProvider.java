@@ -51,6 +51,8 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.true_master_sword_0", "The goddess has blessed your blade, and the Master Sword has at last achieved its ultimate form! The sword is now imbued with the mythical power to drive back demons!");
         translationBuilder.add(HCItems.BOULDER_BREAKER, "Boulder Breaker");
         translationBuilder.add("tooltip.hyliacraft.boulder_breaker", "This two-handed weapon was once wielded by a Goron Champion. A Hylian would need an immense amount of strength to wield it!");
+        translationBuilder.add(HCItems.DOUBLE_HELIX_SWORD, "Double Helix Sword");
+        translationBuilder.add("tooltip.hyliacraft.double_helix_sword", "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity.");
 
         translationBuilder.add("tooltip.hyliacraft.rare_item", "It's a rather rare find.");
 

@@ -55,6 +55,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         CUSTOM_GUI_MODEL_ITEMS.add(HCItems.DIGGING_MITT);
         CUSTOM_GUI_MODEL_ITEMS.add(HCItems.MOGMA_MITT);
         CUSTOM_GUI_MODEL_ITEMS.add(HCItems.BOULDER_BREAKER);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.DOUBLE_HELIX_SWORD);
     }
 
 }

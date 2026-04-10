@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:item/handheld",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "hyliacraft:item/double_helix_sword"
+  },  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 15, -1.5 ],
+      "scale": [ 2.0, 2.0, 1.0 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 15, -1.5 ],
+      "scale": [ 2.0, 2.0, 1.0 ]
+    },
+    "ground": {
+      "translation": [0, 6.0, 0],
+      "scale": [1.5, 1.5, 1.0]
+    }
+  }
+}

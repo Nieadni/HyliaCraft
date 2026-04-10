@@ -21,10 +21,11 @@ Ordered A to Z to avoid bias:
 **Asset Makers -**
 
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, Rupee design, and Phrygian Cap design textures.
-* DataPackGen
+* [DataPackGen](https://modrinth.com/user/GenMode) - For many textures and texture support
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
 * [poeticbagel](https://www.planetminecraft.com/member/poeticbagel/) - For the Banana texture
 * pom_pookie - For the 'Isle of the Goddess' Build, Digging Mitts and Slingshot textures.
+* [PurpleGreenCream](https://modrinth.com/user/PurpleGreenCream) - For the Double Helix Sword texture
 * smashportal - For the Shingle Textures
 * VeganNatureQueen - For the Paraglider Model
 

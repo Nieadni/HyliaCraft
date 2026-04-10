@@ -38,8 +38,8 @@ public class BoulderBreakerItem extends MaceItem {
         return 15;
     }
 
-    // Make Boulder Breaker require nothing in off hand
-    // Make Boulder Breaker require non-Goron players to have the Strength Effect to use.
+    //TODO: Make Boulder Breaker require nothing in off hand
+    //TODO: Make Boulder Breaker require non-Goron players to have the Strength Effect to use.
 
     // REMOVE WIP ONCE ITEM HAS BEEN FULLY ADDED
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
