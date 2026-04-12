@@ -1,6 +1,9 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.EnchantmentEvents;
+import net.fabricmc.fabric.api.util.TriState;
+import net.minecraft.enchantment.Enchantments;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
@@ -35,5 +38,15 @@ public class HyliaCraft implements ModInitializer {
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
+
+		EnchantmentEvents.ALLOW_ENCHANTING.register((enchantment, target, context) -> {
+			if (target.isIn(HCItemTags.SHORT_SWORD) && enchantment.matchesKey(Enchantments.SWEEPING_EDGE)) {
+				return TriState.FALSE;
+			}
+			return TriState.DEFAULT;
+		});
+		// Thank you TurtyWurty for the code above
+		// This only works in Survival. If you want to test it, you need to be in Survival Mode lol as Creative overrides this.
+
 	}
 }

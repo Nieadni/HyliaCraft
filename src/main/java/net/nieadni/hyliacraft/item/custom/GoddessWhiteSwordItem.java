@@ -1,6 +1,5 @@
 package net.nieadni.hyliacraft.item.custom;
 
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.component.type.NbtComponent;
@@ -13,7 +12,6 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
@@ -113,13 +111,7 @@ public class GoddessWhiteSwordItem extends MasterSwordItem {
     }
 
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        if(Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.hyliacraft.shifted_down_info").formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_white_sword_0"));
             tooltip.add(Text.translatable("tooltip.hyliacraft.goddess_white_sword_1"));
-        } else {
-            tooltip.add(Text.translatable("tooltip.hyliacraft.shift_down_info"));
-        }
     }
-
 }

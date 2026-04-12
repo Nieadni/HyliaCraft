@@ -439,5 +439,7 @@
   "tag.item.hyliacraft.silver_rupees": "Silver Rupees",
   "tag.item.hyliacraft.slingshot_ammo": "Slingshot Ammo",
   "tag.item.hyliacraft.yellow_rupees": "Yellow Rupees",
-  "tooltip.hyliacraft.shifted_down_info": "Hold §8SHIFT§r for more information"
+  "tooltip.hyliacraft.shifted_down_info": "Hold §8SHIFT§r for more information",
+  "item.hyliacraft.double_helix_sword": "Double Helix Sword",
+  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity."
 }

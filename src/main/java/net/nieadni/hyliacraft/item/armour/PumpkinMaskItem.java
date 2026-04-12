@@ -21,7 +21,6 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-// TODO: Make it so the mask makes Endermen not attack when you look at them
 public class PumpkinMaskItem extends ArmorItem implements GeoItem {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

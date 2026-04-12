@@ -1,6 +1,5 @@
 package net.nieadni.hyliacraft.item.custom;
 
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.NbtComponent;
@@ -17,7 +16,10 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.*;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.entity.HCEntities;
@@ -102,12 +104,7 @@ public class MasterSwordItem extends SwordItem {
     }
 
     public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
-        if(Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.hyliacraft.shifted_down_info").formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("tooltip.hyliacraft.master_sword_0"));
-        } else {
-            tooltip.add(Text.translatable("tooltip.hyliacraft.shift_down_info"));
-        }
     }
 
 }

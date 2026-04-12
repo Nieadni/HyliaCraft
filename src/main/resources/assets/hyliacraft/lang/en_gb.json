@@ -439,5 +439,7 @@
   "tooltip.purple_rupee": "Worth 50 Rupees",
   "tooltip.red_rupee": "Worth 20 Rupees",
   "tooltip.silver_rupee": "Worth 200 Rupees",
-  "tooltip.yellow_rupee": "Worth 10 Rupees"
+  "tooltip.yellow_rupee": "Worth 10 Rupees",
+  "item.hyliacraft.double_helix_sword": "Double Helix Sword",
+  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity."
 }

@@ -60,6 +60,9 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(HCItems.BOULDER_BREAKER);
         getOrCreateTagBuilder(HCItemTags.SICKLES)
                 .add(HCItems.VICIOUS_SICKLE);
+        getOrCreateTagBuilder(HCItemTags.SHORT_SWORD)
+                .add(HCItems.GODDESS_SWORD).add(HCItems.VICIOUS_SICKLE);
+
 
 
         // Vanilla

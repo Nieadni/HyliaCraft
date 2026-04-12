@@ -36,7 +36,10 @@ Ordered A to Z to avoid bias:
 **Translators -**
 
 If you want to translate, please join this [discord](https://discord.gg/frqHUnJeVg), pick up the Translator role and begin translating
-- [45] French (fr_fr) - sammmmy1628
+- [22] British English (en_gb) - nieadni
+- [26] American English (en_us) - THIS IS THE DEFAULT
+- [33] Spanish (es_es) - soulnekoghost
+- [45] French (fr_fr) - 
 - [69] Korean (ko_kr) - gold_moon
 
 **Ex-Coders**

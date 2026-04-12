@@ -11,6 +11,7 @@ public class HCItemTags {
     public static final TagKey<Item> ENDERMASK = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "endermask"));
 
     public static final TagKey<Item> SICKLES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "sickles"));
+    public static final TagKey<Item> SHORT_SWORD = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "short_sword"));
 
     public static final TagKey<Item> SLINGSHOT_AMMO = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "slingshot_ammo"));
 
