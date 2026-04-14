@@ -43,6 +43,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.GODDESS_WHITE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.MASTER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(HCItems.TRUE_MASTER_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.ONE_HIT_OBLITERATOR, Models.HANDHELD);
 
         // Tools
         itemModelGenerator.register(HCItems.VICIOUS_SICKLE, Models.HANDHELD);

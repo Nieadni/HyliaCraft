@@ -441,5 +441,9 @@
   "tooltip.silver_rupee": "Worth 200 Rupees",
   "tooltip.yellow_rupee": "Worth 10 Rupees",
   "item.hyliacraft.double_helix_sword": "Double Helix Sword",
-  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity."
+  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity.",
+  "item.hyliacraft.one_hit_obliterator": "One-Hit Obliterator",
+  "tag.item.hyliacraft.short_weapon": "Short Weapons",
+  "tooltip.hyliacraft.one_hit_obliterator_0": "To undertake this task requires unwavering dedication. That weapon defeats foes with one hit.",
+  "tooltip.hyliacraft.one_hit_obliterator_1": "However, the reverse is also true, as its wielder will also fall to a single strike."
 }

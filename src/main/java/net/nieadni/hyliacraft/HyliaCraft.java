@@ -40,9 +40,8 @@ public class HyliaCraft implements ModInitializer {
         VanillaLootTableModifiers.modifyLootTables();
 
 		EnchantmentEvents.ALLOW_ENCHANTING.register((enchantment, target, context) -> {
-			if (target.isIn(HCItemTags.SHORT_SWORD) && enchantment.matchesKey(Enchantments.SWEEPING_EDGE)) {
-				return TriState.FALSE;
-			}
+			if (target.isIn(HCItemTags.SHORT_WEAPON) && enchantment.matchesKey(Enchantments.SWEEPING_EDGE)) {return TriState.FALSE;}
+			if (target.isOf(HCItems.ONE_HIT_OBLITERATOR) && enchantment.matchesKey(Enchantments.WIND_BURST)) {return TriState.TRUE;}
 			return TriState.DEFAULT;
 		});
 		// Thank you TurtyWurty for the code above

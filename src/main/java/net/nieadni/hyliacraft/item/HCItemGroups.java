@@ -42,6 +42,7 @@ public class HCItemGroups {
                         entries.add(HCItems.TRUE_MASTER_SWORD);
                         entries.add(HCItems.BOULDER_BREAKER);
                         entries.add(HCItems.DOUBLE_HELIX_SWORD);
+                        entries.add(HCItems.ONE_HIT_OBLITERATOR);
 
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);

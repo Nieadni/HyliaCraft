@@ -19,7 +19,7 @@ import java.util.List;
 public class DoubleHelixSwordItem extends SwordItem {
     public static final Identifier SWORD_RANGE_MODIFIER_ID = Identifier.of("hyliacraft", "sword_entity_reach");
     public DoubleHelixSwordItem() {
-        super(DoubleHelixSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(TrueMasterSwordItem.createAttributeModifiers(DoubleHelixSwordMaterial.INSTANCE,1, -3.5F).with(
+        super(DoubleHelixSwordMaterial.INSTANCE, new Item.Settings().fireproof().rarity(Rarity.EPIC).attributeModifiers(DoubleHelixSwordItem.createAttributeModifiers(DoubleHelixSwordMaterial.INSTANCE,1, -3.5F).with(
                 EntityAttributes.PLAYER_ENTITY_INTERACTION_RANGE,
                 new EntityAttributeModifier(SWORD_RANGE_MODIFIER_ID, 3, EntityAttributeModifier.Operation.ADD_VALUE),
                 AttributeModifierSlot.MAINHAND

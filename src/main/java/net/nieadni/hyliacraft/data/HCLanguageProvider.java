@@ -53,6 +53,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.boulder_breaker", "This two-handed weapon was once wielded by a Goron Champion. A Hylian would need an immense amount of strength to wield it!");
         translationBuilder.add(HCItems.DOUBLE_HELIX_SWORD, "Double Helix Sword");
         translationBuilder.add("tooltip.hyliacraft.double_helix_sword", "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity.");
+        translationBuilder.add(HCItems.ONE_HIT_OBLITERATOR, "One-Hit Obliterator");
+        translationBuilder.add("tooltip.hyliacraft.one_hit_obliterator_0", "To undertake this task requires unwavering dedication. That weapon defeats foes with one hit.");
+        translationBuilder.add("tooltip.hyliacraft.one_hit_obliterator_1", "However, the reverse is also true, as its wielder will also fall to a single strike.");
 
         translationBuilder.add("tooltip.hyliacraft.rare_item", "It's a rather rare find.");
 
@@ -174,6 +177,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add("tag.item.hyliacraft.endermask", "Endermask");
         translationBuilder.add("tag.item.hyliacraft.sickles", "Sickles");
+        translationBuilder.add("tag.item.hyliacraft.short_weapon", "Short Weapons");
         translationBuilder.add("tag.item.hyliacraft.slingshot_ammo", "Slingshot Ammo");
         translationBuilder.add("tag.item.hyliacraft.milk_buckets", "Milk Buckets");
         translationBuilder.add("tag.item.hyliacraft.shingles", "Shingle Blocks");

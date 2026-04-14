@@ -49,6 +49,7 @@ public class HCItems extends Items {
 
     public static final Item BOULDER_BREAKER = register(new BoulderBreakerItem(),"boulder_breaker");
     public static final Item DOUBLE_HELIX_SWORD = register(new DoubleHelixSwordItem(),"double_helix_sword");
+    public static final Item ONE_HIT_OBLITERATOR = register(new OneHitObliteratorItem(),"one_hit_obliterator");
 
     // Tools
     public static final Item DIGGING_MITT = register(new DiggingMittItem(),"digging_mitt");

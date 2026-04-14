@@ -46,6 +46,9 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD,
                         HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD, HCItems.IRON_BOW, HCItems.FAIRY_BOW, HCItems.DIGGING_MITT, HCItems.MOGMA_MITT,
                         HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
+        getOrCreateTagBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+                .add(HCItems.ONE_HIT_OBLITERATOR);
+
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(HCItems.IRON_BOW, HCItems.FAIRY_BOW);
         getOrCreateTagBuilder(ItemTags.SHOVELS)
@@ -60,7 +63,7 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(HCItems.BOULDER_BREAKER);
         getOrCreateTagBuilder(HCItemTags.SICKLES)
                 .add(HCItems.VICIOUS_SICKLE);
-        getOrCreateTagBuilder(HCItemTags.SHORT_SWORD)
+        getOrCreateTagBuilder(HCItemTags.SHORT_WEAPON)
                 .add(HCItems.GODDESS_SWORD).add(HCItems.VICIOUS_SICKLE);
 
 
