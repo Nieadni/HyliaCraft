@@ -10,10 +10,11 @@
     "race.fist_mining.DropsMixin",
     "race.fist_mining.SpeedMixin",
     "race.goron.AttackDamageMixin",
-    "race.goron.SwimmingMixin",
     "race.goron.LavaDamageMixin",
+    "race.goron.SwimmingMixin",
     "race.goron.eating.ItemMixin",
     "race.goron.eating.LivingEntityMixin",
+    "race.mogma.ServerFistRightClick",
     "race.sheikah.BarrelBlockEntityMixin",
     "race.sheikah.ChestBlockEntityMixin",
     "race.sheikah.EnderChestBlockEntityMixin",
@@ -27,7 +28,8 @@
     "DiggingMittModelLoaderMixin",
     "ItemRendererAccessor",
     "MogmaMittItemRendererMixin",
-    "MogmaMittModelLoaderMixin"
+    "MogmaMittModelLoaderMixin",
+    "race.mogma.ClientFistRightClick"
   ],
   "injectors": {
     "defaultRequire": 1
