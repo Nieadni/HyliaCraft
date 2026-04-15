@@ -104,7 +104,13 @@ public enum HyliaCraftRace {
     },
     MOGMA("mogma", 16, 0),
     SHEIKAH("sheikah", 28, 0),
-    RITO("rito", 18, 0),
+    RITO("rito", 18, 60) {
+        @Override
+        public void useRaceAbility(PlayerEntity player) {
+            super.useRaceAbility(player);
+            if (player.isFallFlying()) player.addVelocity(0.0, 0.8, 0.0);
+        }
+    },
     KOKIRI("kokiri", 12, 0);
 
     public final String id;
