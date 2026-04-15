@@ -93,12 +93,12 @@ public class HyliaCraftClient implements ClientModInitializer {
 
     private static void useRaceAbility(MinecraftClient client) {
         if (ticksSinceLastRaceAbilityUse >= getAbilityCooldown()) {
-            ticksSinceLastRaceAbilityUse = 0;
-            ClientPlayNetworking.send(RaceAbilityC2SPayload.INSTANCE);
             ClientPlayerEntity player = client.player;
             HyliaCraftRace race = HyliaCraftRace.getRace(player);
-            if (race != null)
-                race.useRaceAbility(player);
+            if (race != null && race.useRaceAbility(player)) {
+                ticksSinceLastRaceAbilityUse = 0;
+                ClientPlayNetworking.send(RaceAbilityC2SPayload.INSTANCE);
+            }
         }
     }
 }

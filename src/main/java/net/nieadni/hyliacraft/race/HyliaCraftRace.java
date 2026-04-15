@@ -55,8 +55,7 @@ public enum HyliaCraftRace {
         }
 
         @Override
-        public void useRaceAbility(PlayerEntity player) {
-            super.useRaceAbility(player);
+        public boolean useRaceAbility(PlayerEntity player) {
             if (player.isTouchingWaterOrRain()) {
                 // Do the spin attack
                 float yaw = player.getYaw();
@@ -80,7 +79,9 @@ public enum HyliaCraftRace {
 
                 World world = player.getWorld();
                 world.playSoundFromEntity(null, player, SoundEvents.ITEM_TRIDENT_RIPTIDE_3.value(), SoundCategory.PLAYERS, 1.0F, 1.0F);
+                return true;
             }
+            return false;
         }
     },
     GORON("goron", 40, 0) {
@@ -106,9 +107,12 @@ public enum HyliaCraftRace {
     SHEIKAH("sheikah", 28, 0),
     RITO("rito", 18, 60) {
         @Override
-        public void useRaceAbility(PlayerEntity player) {
-            super.useRaceAbility(player);
-            if (player.isFallFlying()) player.addVelocity(0.0, 0.8, 0.0);
+        public boolean useRaceAbility(PlayerEntity player) {
+            if (player.isFallFlying()) {
+                player.addVelocity(0.0, 0.8, 0.0);
+                return true;
+            }
+            return false;
         }
     },
     KOKIRI("kokiri", 12, 0);
@@ -165,7 +169,9 @@ public enum HyliaCraftRace {
     public void removeRace(PlayerEntity player) {}
 
     // Called on client and server
-    public void useRaceAbility(PlayerEntity player) {}
+    public boolean useRaceAbility(PlayerEntity player) {
+        return false;
+    }
 
     public static HyliaCraftRace getRace(ServerPlayerEntity player) {
         UUID uuid = player.getUuid();
