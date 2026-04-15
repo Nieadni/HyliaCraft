@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin;
+package net.nieadni.hyliacraft.mixin.race.goron;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(Entity.class)
-public class GoronLavaDamageMixin {
+public class LavaDamageMixin {
 
     @ModifyConstant(method = "setOnFireFromLava()V", constant = @Constant(floatValue = 4.0f))
     private float getLavaDamage(float damage) {

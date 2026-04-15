@@ -5,10 +5,10 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
-    "GoronLavaDamageMixin",
     "race.WaterBreathingMixin",
     "race.goron.AttackDamageMixin",
     "race.goron.SwimmingMixin",
+    "race.goron.LavaDamageMixin",
     "race.goron.eating.ItemMixin",
     "race.goron.eating.LivingEntityMixin",
     "race.goron.mining.CanHarvestMixin",
