@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin.race.goron.mining;
+package net.nieadni.hyliacraft.mixin.race.fist_mining;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,8 +16,13 @@ public class DropsMixin {
     private void modifyTool(Args args) {
         PlayerEntity player = args.get(4);
         ItemStack tool = args.get(5);
-        if (tool.isEmpty() && HyliaCraftRace.getRace(player) == HyliaCraftRace.GORON) {
-            args.set(5, HyliaCraftRace.GORON_FIST_MINING_STACK);
+        if (tool.isEmpty()) {
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race == HyliaCraftRace.GORON) {
+                args.set(5, HyliaCraftRace.GORON_FIST_MINING_STACK);
+            } else if (race == HyliaCraftRace.MOGMA) {
+                args.set(5, HyliaCraftRace.MOGMA_FIST_MINING_STACK);
+            }
         }
     }
 }

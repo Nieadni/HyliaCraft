@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin.race.goron.mining;
+package net.nieadni.hyliacraft.mixin.race.fist_mining;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,8 +15,13 @@ public class SpeedMixin {
     @Inject(method = "getBlockBreakingSpeed(Lnet/minecraft/block/BlockState;)F", at = @At("HEAD"), cancellable = true)
     private void getBlockBreakingSpeed(BlockState state, CallbackInfoReturnable<Float> cir) {
         PlayerEntity player = (PlayerEntity) ((Object) this);
-        if (player.getStackInHand(Hand.MAIN_HAND).isEmpty() && HyliaCraftRace.getRace(player) == HyliaCraftRace.GORON) {
-            cir.setReturnValue(HyliaCraftRace.GORON_FIST_MINING_STACK.getMiningSpeedMultiplier(state));
+        if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race == HyliaCraftRace.GORON) {
+                cir.setReturnValue(HyliaCraftRace.GORON_FIST_MINING_STACK.getMiningSpeedMultiplier(state));
+            } else if (race == HyliaCraftRace.MOGMA) {
+                cir.setReturnValue(HyliaCraftRace.MOGMA_FIST_MINING_STACK.getMiningSpeedMultiplier(state));
+            }
         }
     }
 }

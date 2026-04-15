@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin.race.goron.mining;
+package net.nieadni.hyliacraft.mixin.race.fist_mining;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,8 +15,13 @@ public class CanHarvestMixin {
     private ItemStack getMainHandStack(PlayerInventory inventory) {
         PlayerEntity player = (PlayerEntity) ((Object) this);
         ItemStack mainHandStack = inventory.getMainHandStack();
-        if (HyliaCraftRace.getRace(player) == HyliaCraftRace.GORON && mainHandStack.isEmpty()) {
-            return HyliaCraftRace.GORON_FIST_MINING_STACK;
+        if (mainHandStack.isEmpty()) {
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race == HyliaCraftRace.GORON) {
+                return HyliaCraftRace.GORON_FIST_MINING_STACK;
+            } else if (race == HyliaCraftRace.MOGMA) {
+                return HyliaCraftRace.MOGMA_FIST_MINING_STACK;
+            }
         }
         return mainHandStack;
     }
