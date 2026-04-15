@@ -15,6 +15,8 @@
     "race.goron.eating.ItemMixin",
     "race.goron.eating.LivingEntityMixin",
     "race.mogma.ServerFistRightClick",
+    "race.rito.LivingEntityMixin",
+    "race.rito.PlayerEntityMixin",
     "race.sheikah.BarrelBlockEntityMixin",
     "race.sheikah.ChestBlockEntityMixin",
     "race.sheikah.EnderChestBlockEntityMixin",
@@ -29,7 +31,10 @@
     "ItemRendererAccessor",
     "MogmaMittItemRendererMixin",
     "MogmaMittModelLoaderMixin",
-    "race.mogma.ClientFistRightClick"
+    "race.mogma.ClientFistRightClick",
+    "race.rito.CapeFeatureRendererMixin",
+    "race.rito.ClientPlayerEntityMixin",
+    "race.rito.ElytraFeatureRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
