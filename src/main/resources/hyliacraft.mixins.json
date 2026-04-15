@@ -19,7 +19,8 @@
     "race.sheikah.EnderChestBlockEntityMixin",
     "race.sheikah.PlayerEntityMixin",
     "race.sheikah.PowderSnowFallSoundMixin",
-    "race.sheikah.ViewerCountManagerMixin"
+    "race.sheikah.ViewerCountManagerMixin",
+    "race.zora.DoubleDamageMixin"
   ],
   "client": [
     "DiggingMittItemRendererMixin",

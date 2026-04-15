@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(targets = {"net.minecraft.block.entity.EnderChestBlockEntity$1"})
+@Mixin(targets = "net.minecraft.block.entity.EnderChestBlockEntity$1")
 public class EnderChestBlockEntityMixin {
     
     @Redirect(method = "onContainerOpen", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;DDDLnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V"))
