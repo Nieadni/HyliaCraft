@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft.mixin.race.fist_mining;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,9 +20,9 @@ public class DropsMixin {
         if (tool.isEmpty()) {
             HyliaCraftRace race = HyliaCraftRace.getRace(player);
             if (race == HyliaCraftRace.GORON) {
-                args.set(5, HyliaCraftRace.GORON_FIST_MINING_STACK);
+                args.set(5, new ItemStack(Items.STONE_PICKAXE));
             } else if (race == HyliaCraftRace.MOGMA) {
-                args.set(5, HyliaCraftRace.MOGMA_FIST_MINING_STACK);
+                args.set(5, new ItemStack(Items.STONE_SHOVEL));
             }
         }
     }

@@ -2,6 +2,8 @@ package net.nieadni.hyliacraft.mixin.race.fist_mining;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,9 +20,9 @@ public class SpeedMixin {
         if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
             HyliaCraftRace race = HyliaCraftRace.getRace(player);
             if (race == HyliaCraftRace.GORON) {
-                cir.setReturnValue(HyliaCraftRace.GORON_FIST_MINING_STACK.getMiningSpeedMultiplier(state));
+                cir.setReturnValue(new ItemStack(Items.STONE_PICKAXE).getMiningSpeedMultiplier(state));
             } else if (race == HyliaCraftRace.MOGMA) {
-                cir.setReturnValue(HyliaCraftRace.MOGMA_FIST_MINING_STACK.getMiningSpeedMultiplier(state));
+                cir.setReturnValue(new ItemStack(Items.STONE_SHOVEL).getMiningSpeedMultiplier(state));
             }
         }
     }
