@@ -15,6 +15,7 @@
     "race.goron.eating.ItemMixin",
     "race.goron.eating.LivingEntityMixin",
     "race.mogma.ServerFistRightClick",
+    "race.rito.FireworkRocketItemMixin",
     "race.rito.LivingEntityMixin",
     "race.rito.PlayerEntityMixin",
     "race.sheikah.BarrelBlockEntityMixin",
