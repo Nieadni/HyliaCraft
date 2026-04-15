@@ -108,52 +108,54 @@ public class HyliaCraft implements ModInitializer {
                 ConstantArgumentSerializer.of(RaceArgumentType::new)
         );
 
-        // Command to manage races
+        // Command
         CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
             dispatcher.register(
-                    CommandManager.literal("hc_race").requires(source -> source.hasPermissionLevel(2)).then(
-                            CommandManager.literal("get").then(
-                                    CommandManager.argument("player", EntityArgumentType.player()).executes(
-                                            context -> {
-                                                ServerCommandSource source = context.getSource();
-                                                ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
-                                                HyliaCraftRace race = HyliaCraftRace.getRace(player);
+                    CommandManager.literal("hyliacraft").requires(source -> source.hasPermissionLevel(2)).then(
+							CommandManager.literal("race").then(
+									CommandManager.literal("get").then(
+											CommandManager.argument("player", EntityArgumentType.player()).executes(
+													context -> {
+														ServerCommandSource source = context.getSource();
+														ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
+														HyliaCraftRace race = HyliaCraftRace.getRace(player);
 
-                                                // Send feedback
-                                                Text raceText = race != null
-                                                        ? race.getName()
-                                                        : Text.literal("null");
-                                                source.sendFeedback(() -> Text.translatable(
-                                                        "hyliacraft.race.query",
-                                                        player.getName(),
-                                                        raceText
-                                                ), false);
-                                                return 1;
-                                            }
-                                    )
-                            )
-                    ).then(
-                            CommandManager.literal("set").then(
-                                    CommandManager.argument("player", EntityArgumentType.player()).then(
-                                            CommandManager.argument("race", new RaceArgumentType()).executes(
-                                                    context -> {
-                                                        ServerCommandSource source = context.getSource();
-                                                        ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
-                                                        HyliaCraftRace race = context.getArgument("race", HyliaCraftRace.class);
-                                                        HyliaCraftRace.setRace(player, race, true);
+														// Send feedback
+														Text raceText = race != null
+																? race.getName()
+																: Text.literal("null");
+														source.sendFeedback(() -> Text.translatable(
+																"hyliacraft.race.query",
+																player.getName(),
+																raceText
+														), false);
+														return 1;
+													}
+											)
+									)
+							).then(
+									CommandManager.literal("set").then(
+											CommandManager.argument("player", EntityArgumentType.player()).then(
+													CommandManager.argument("race", new RaceArgumentType()).executes(
+															context -> {
+																ServerCommandSource source = context.getSource();
+																ServerPlayerEntity player = context.getArgument("player", EntitySelector.class).getPlayer(source);
+																HyliaCraftRace race = context.getArgument("race", HyliaCraftRace.class);
+																HyliaCraftRace.setRace(player, race, true);
 
-                                                        // Send feedback
-                                                        source.sendFeedback(() -> Text.translatable(
-                                                                "hyliacraft.race.set",
-                                                                player.getName(),
-                                                                race.getName()
-                                                        ), true);
-                                                        return 1;
-                                                    }
-                                            )
-                                    )
-                            )
-                    )
+																// Send feedback
+																source.sendFeedback(() -> Text.translatable(
+																		"hyliacraft.race.set",
+																		player.getName(),
+																		race.getName()
+																), true);
+																return 1;
+															}
+													)
+											)
+									)
+							)
+					)
             );
         }));
 
