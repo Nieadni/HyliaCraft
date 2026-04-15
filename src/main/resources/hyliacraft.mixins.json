@@ -13,7 +13,13 @@
     "race.goron.eating.LivingEntityMixin",
     "race.goron.mining.CanHarvestMixin",
     "race.goron.mining.DropsMixin",
-    "race.goron.mining.SpeedMixin"
+    "race.goron.mining.SpeedMixin",
+    "race.sheikah.BarrelBlockEntityMixin",
+    "race.sheikah.ChestBlockEntityMixin",
+    "race.sheikah.EnderChestBlockEntityMixin",
+    "race.sheikah.PlayerEntityMixin",
+    "race.sheikah.PowderSnowFallSoundMixin",
+    "race.sheikah.ViewerCountManagerMixin"
   ],
   "client": [
     "DiggingMittItemRendererMixin",

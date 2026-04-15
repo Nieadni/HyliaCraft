@@ -126,8 +126,9 @@ public enum HyliaCraftRace {
     };
 
     public static final ItemStack GORON_FIST_MINING_STACK = new ItemStack(Items.STONE_PICKAXE);
-
     public static final FoodComponent GORON_EATING_COMPONENT = new FoodComponent(2, 0.3f, false, 1.6f, Optional.empty(), List.of());
+    
+    public static final ThreadLocal<Boolean> SHEIKAH_IS_CONTAINER_SILENCED = new ThreadLocal<>();
 
     public static HyliaCraftRace fromOrdinal(int ordinal) {
         return HyliaCraftRace.values()[ordinal];
