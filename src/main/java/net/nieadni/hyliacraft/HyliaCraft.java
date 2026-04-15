@@ -111,7 +111,7 @@ public class HyliaCraft implements ModInitializer {
         // Command to manage races
         CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
             dispatcher.register(
-                    CommandManager.literal("hc_race").then(
+                    CommandManager.literal("hc_race").requires(source -> source.hasPermissionLevel(2)).then(
                             CommandManager.literal("get").then(
                                     CommandManager.argument("player", EntityArgumentType.player()).executes(
                                             context -> {
