@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-15T12:28:45.258164126	HyliaCraft/Model Definitions
+// 1.21.1	2026-04-16T08:09:48.387003205	HyliaCraft/Model Definitions
 0425ed86cd72b428d8361396b217243473b5cf9f assets/hyliacraft/blockstates/lime_stripped_log.json
 c0647ebc81b2aca145ec35f65accfe2540689ec4 assets/hyliacraft/models/block/pink_brick_slab.json
 904ebf41ef95682430a92ba35e0e2df57e066ea0 assets/hyliacraft/blockstates/brown_slab.json
@@ -365,8 +365,8 @@ aa84f9cbc55e64f87c23e515b277602895773c79 assets/hyliacraft/models/block/lime_fen
 4e58e0e8f35b0af34ab77fe7249c5bf21c7f9be1 assets/hyliacraft/models/block/magenta_stripped_log_horizontal.json
 c2aa8c3aac858698f0644210e363cd1ccf61468a assets/hyliacraft/models/block/brown_button.json
 c593e09deb47d6f86a6834d870e8a19d8b99030b assets/hyliacraft/models/block/purple_slab_top.json
-e7f74ba84e938525359d946d7b0d9aac9f1af862 assets/hyliacraft/blockstates/black_stairs.json
 0eb8e58c70b9484e6b7ff7a2442587713f48d55e assets/hyliacraft/blockstates/orange_stairs.json
+e7f74ba84e938525359d946d7b0d9aac9f1af862 assets/hyliacraft/blockstates/black_stairs.json
 5f5e5ff6fba3af7983a1e4ac4671b8a1adcadfa2 assets/hyliacraft/models/block/cyan_brick_wall_side_tall.json
 6b0ee1d5e8cdfc9b044b7baf73417b61e1814de0 assets/hyliacraft/blockstates/black_pressure_plate.json
 5674089e1633def0ba9e458ad22937b4da45542a assets/hyliacraft/models/block/white_brick_stairs.json
@@ -486,8 +486,8 @@ e5b3689f1fa08e3c2a362a2c4a510aec7a040aad assets/hyliacraft/models/item/light_blu
 5780f0751b69a5ae2c6818a2d04654bd532e3178 assets/hyliacraft/models/block/grey_brick_stairs_inner.json
 5677ca30bdbc42114bbe1fbee27c3482be21355a assets/hyliacraft/models/item/brown_pressure_plate.json
 fae4d9b29dc21d3a794b78ab60d2d36e39c0c9cb assets/hyliacraft/blockstates/magenta_fence_gate.json
-1c8c31b38dd37c43cac0d1d233f1603577305373 assets/hyliacraft/blockstates/white_stripped_wood.json
 380c9485202d89f9ce1ce2affc795240aa493e04 assets/hyliacraft/blockstates/lime_slab.json
+1c8c31b38dd37c43cac0d1d233f1603577305373 assets/hyliacraft/blockstates/white_stripped_wood.json
 0666b22c07b1850ace7fe1096d1ff86f28c3c7bf assets/hyliacraft/models/block/cyan_brick_wall_post.json
 7ee3818a1c2672eb02c5902d00cab81bea3d8a57 assets/hyliacraft/models/item/yellow_planks.json
 12de608e20b34c2c5adfcebad8de02ffb7b76aae assets/hyliacraft/models/item/yellow_pressure_plate.json

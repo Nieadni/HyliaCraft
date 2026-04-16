@@ -8,9 +8,14 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.EntityShapeContext;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.entry.ItemEntry;
@@ -22,6 +27,9 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
@@ -38,6 +46,7 @@ import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.UUID;
 
@@ -46,6 +55,22 @@ public class HyliaCraft implements ModInitializer {
 	public static final String MOD_ID = "hyliacraft";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    public static void extracted(BlockState state, BlockPos pos, ShapeContext context, CallbackInfoReturnable<VoxelShape> cir) {
+        if (state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
+            if (context instanceof EntityShapeContext entityShapeContext) {
+                Entity entity = entityShapeContext.getEntity();
+                if (entity instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA) {
+                    boolean isOnTop = context.isAbove(VoxelShapes.fullCube(), pos, true) && !context.isDescending();
+                    if (isOnTop) {
+                        cir.setReturnValue(VoxelShapes.fullCube());
+                    } else {
+                        cir.setReturnValue(VoxelShapes.empty());
+                    }
+                }
+            }
+        }
+    }
 
     @Override
 	public void onInitialize() {
@@ -492,4 +517,5 @@ public class HyliaCraft implements ModInitializer {
 			}
 		});
 	}
+
 }

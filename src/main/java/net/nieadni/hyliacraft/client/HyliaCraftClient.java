@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
@@ -11,8 +12,11 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.model.json.JsonUnbakedModel;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.client.render.CustomDirtModel;
 import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 import net.nieadni.hyliacraft.race.ChooseRaceScreen;
@@ -70,6 +74,18 @@ public class HyliaCraftClient implements ClientModInitializer {
         });
 
         registerRaceAbilityKeybind();
+
+        ModelLoadingPlugin.register(pluginContext -> {
+            pluginContext.modifyModelBeforeBake().register((model, context) -> {
+                if (model instanceof JsonUnbakedModel jsonModel) {
+                    Identifier resourceId = context.resourceId();
+                    if (resourceId != null) {
+                        CustomDirtModel.modifyModel(resourceId, jsonModel);
+                    }
+                }
+                return model;
+            });
+        });
     }
 
     private void registerRaceAbilityKeybind() {
