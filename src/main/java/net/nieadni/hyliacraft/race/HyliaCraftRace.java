@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.render.GameRenderer;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MovementType;
@@ -13,8 +12,6 @@ import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.server.MinecraftServer;
@@ -41,16 +38,16 @@ public enum HyliaCraftRace {
     SKYLOFTIAN("skyloftian", 24, 0),
     ZORA("zora", 20, 60) {
         @Override
-        public void applyRace(PlayerEntity player) {
-            super.applyRace(player);
+        public void applyRaceServer(PlayerEntity player) {
+            super.applyRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(1.0);
             attributes.getCustomInstance(EntityAttributes.PLAYER_SUBMERGED_MINING_SPEED).setBaseValue(1.0);
         }
 
         @Override
-        public void removeRace(PlayerEntity player) {
-            super.removeRace(player);
+        public void removeRaceServer(PlayerEntity player) {
+            super.removeRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(0.0);
             attributes.getCustomInstance(EntityAttributes.PLAYER_SUBMERGED_MINING_SPEED).setBaseValue(0.2);
@@ -90,16 +87,16 @@ public enum HyliaCraftRace {
         public static final Identifier MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "goron_movement_speed");
 
         @Override
-        public void applyRace(PlayerEntity player) {
-            super.applyRace(player);
+        public void applyRaceServer(PlayerEntity player) {
+            super.applyRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
             instance.addPersistentModifier(new EntityAttributeModifier(MOVEMENT_SPEED_MODIFIER, -0.05, EntityAttributeModifier.Operation.ADD_VALUE));
         }
 
         @Override
-        public void removeRace(PlayerEntity player) {
-            super.removeRace(player);
+        public void removeRaceServer(PlayerEntity player) {
+            super.removeRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
             instance.removeModifier(MOVEMENT_SPEED_MODIFIER);
@@ -109,26 +106,22 @@ public enum HyliaCraftRace {
     SHEIKAH("sheikah", 28, 0),
     RITO("rito", 18, 60) {
         @Override
-        public void applyRace(PlayerEntity player) {
-            super.applyRace(player);
-            if (player instanceof ClientPlayerEntity) {
-                MinecraftClient client = MinecraftClient.getInstance();
-                Entity cameraEntity = client.cameraEntity;
-                if (cameraEntity == null || cameraEntity == client.player) {
-                    client.gameRenderer.loadPostProcessor(Identifier.of(HyliaCraft.MOD_ID, "shaders/post/rito.json"));
-                }
+        public void applyRaceClient(PlayerEntity player) {
+            super.applyRaceClient(player);
+            MinecraftClient client = MinecraftClient.getInstance();
+            Entity cameraEntity = client.cameraEntity;
+            if (cameraEntity == null || cameraEntity == client.player) {
+                client.gameRenderer.loadPostProcessor(Identifier.of(HyliaCraft.MOD_ID, "shaders/post/rito.json"));
             }
         }
 
         @Override
-        public void removeRace(PlayerEntity player) {
-            super.removeRace(player);
-            if (player instanceof ClientPlayerEntity) {
-                MinecraftClient client = MinecraftClient.getInstance();
-                Entity cameraEntity = client.cameraEntity;
-                if (cameraEntity == null || cameraEntity == client.player) {
-                    client.gameRenderer.disablePostProcessor();
-                }
+        public void removeRaceClient(PlayerEntity player) {
+            super.removeRaceClient(player);
+            MinecraftClient client = MinecraftClient.getInstance();
+            Entity cameraEntity = client.cameraEntity;
+            if (cameraEntity == null || cameraEntity == client.player) {
+                client.gameRenderer.disablePostProcessor();
             }
         }
 
@@ -187,12 +180,18 @@ public enum HyliaCraftRace {
         return Text.translatable("hyliacraft.race.%s.abilities".formatted(this.id));
     }
 
-    public void applyRace(PlayerEntity player) {
-        player.getAttributes().getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
-        player.setHealth(maxHealth);
+    public void applyRaceServer(PlayerEntity player) {
+        if (player instanceof ServerPlayerEntity) {
+            player.getAttributes().getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
+            player.setHealth(maxHealth);
+        }
     }
+    
+    public void applyRaceClient(PlayerEntity player) {}
 
-    public void removeRace(PlayerEntity player) {}
+    public void removeRaceServer(PlayerEntity player) {}
+    
+    public void removeRaceClient(PlayerEntity player) {}
 
     // Called on client and server
     public boolean useRaceAbility(PlayerEntity player) {
@@ -233,7 +232,7 @@ public enum HyliaCraftRace {
         if (playerData.race != race) {
             // Maybe remove the old race
             if (playerData.race != null) {
-                playerData.race.removeRace(player);
+                playerData.race.removeRaceServer(player);
             }
 
             // Set the race
@@ -241,7 +240,7 @@ public enum HyliaCraftRace {
             state.markDirty();
 
             // Apply the new race
-            race.applyRace(player);
+            race.applyRaceServer(player);
 
             // Notify the client
             if (notifyClient) ServerPlayNetworking.send(player, new RaceS2CPayload(race));

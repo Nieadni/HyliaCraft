@@ -61,8 +61,9 @@ public class ChooseRaceScreen extends Screen {
             // Let the server know
             ClientPlayNetworking.send(new RaceC2SPayload(race));
 
-            // Update the client's saved value
+            // Update the client's saved value and apply the race
             HyliaCraftClient.race = race;
+            race.applyRaceClient(client.player);
         }
         return super.mouseClicked(mouseX, mouseY, button);
     }

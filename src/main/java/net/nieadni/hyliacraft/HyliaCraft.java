@@ -93,13 +93,11 @@ public class HyliaCraft implements ModInitializer {
         // If they haven't, we prompt them to choose one.
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
-
             // Check if the player already has a race
             ServerPlayerEntity player = handler.getPlayer();
             UUID uuid = player.getUuid();
             HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
             ServerPlayNetworking.send(player, new RaceS2CPayload(data.race));
-			if (data.race != null) data.race.applyRace(player);
         });
 
         // Register race argument type

@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
@@ -23,6 +24,8 @@ import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.Objects;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
@@ -66,12 +69,27 @@ public class HyliaCraftClient implements ClientModInitializer {
                 // Show the race selection screen
                 client.setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
             } else {
+                // Maybe remove the old race
+                if (HyliaCraftClient.race != null) {
+                    HyliaCraftClient.race.removeRaceClient(client.player);
+                }
+                // Set and apply the race
                 HyliaCraftClient.race = race;
-                race.applyRace(client.player);
+                ClientPlayerEntity player = Objects.requireNonNull(client.player);
+                race.applyRaceClient(player);
             }
         });
 
         registerRaceAbilityKeybind();
+
+        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            // Maybe remove the old race
+            if (race != null) {
+                ClientPlayerEntity player = Objects.requireNonNull(client.player);
+                race.removeRaceClient(player);
+                race = null;
+            }
+        });
     }
 
     private void registerRaceAbilityKeybind() {

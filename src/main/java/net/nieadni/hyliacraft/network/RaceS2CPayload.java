@@ -6,6 +6,7 @@ import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
+import org.jetbrains.annotations.NotNull;
 
 public record RaceS2CPayload(HyliaCraftRace race) implements CustomPayload {
 
