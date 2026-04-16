@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin.race.rito;
+package net.nieadni.hyliacraft.mixin.race.rito.elytra;
 
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;

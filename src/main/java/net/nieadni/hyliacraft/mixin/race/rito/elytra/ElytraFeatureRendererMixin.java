@@ -1,7 +1,5 @@
-package net.nieadni.hyliacraft.mixin.race.rito;
+package net.nieadni.hyliacraft.mixin.race.rito.elytra;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.render.entity.feature.ElytraFeatureRenderer;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;

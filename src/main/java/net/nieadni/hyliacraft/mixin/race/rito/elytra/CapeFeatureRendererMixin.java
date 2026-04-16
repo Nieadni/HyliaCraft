@@ -1,4 +1,4 @@
-package net.nieadni.hyliacraft.mixin.race.rito;
+package net.nieadni.hyliacraft.mixin.race.rito.elytra;
 
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.feature.CapeFeatureRenderer;
