@@ -61,11 +61,13 @@ public class HyliaCraftClient implements ClientModInitializer {
         // Register packet receiver for the choose race payload
         ClientPlayNetworking.registerGlobalReceiver(RaceS2CPayload.ID, (payload, context) -> {
             HyliaCraftRace race = payload.race();
+            MinecraftClient client = context.client();
             if (race == null) {
                 // Show the race selection screen
-                context.client().setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
+                client.setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
             } else {
                 HyliaCraftClient.race = race;
+                race.applyRace(client.player);
             }
         });
 

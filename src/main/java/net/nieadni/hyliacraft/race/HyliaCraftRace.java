@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.render.GameRenderer;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
@@ -106,6 +108,30 @@ public enum HyliaCraftRace {
     MOGMA("mogma", 16, 0),
     SHEIKAH("sheikah", 28, 0),
     RITO("rito", 18, 60) {
+        @Override
+        public void applyRace(PlayerEntity player) {
+            super.applyRace(player);
+            if (player instanceof ClientPlayerEntity) {
+                MinecraftClient client = MinecraftClient.getInstance();
+                Entity cameraEntity = client.cameraEntity;
+                if (cameraEntity == null || cameraEntity == client.player) {
+                    client.gameRenderer.loadPostProcessor(Identifier.of(HyliaCraft.MOD_ID, "shaders/post/rito.json"));
+                }
+            }
+        }
+
+        @Override
+        public void removeRace(PlayerEntity player) {
+            super.removeRace(player);
+            if (player instanceof ClientPlayerEntity) {
+                MinecraftClient client = MinecraftClient.getInstance();
+                Entity cameraEntity = client.cameraEntity;
+                if (cameraEntity == null || cameraEntity == client.player) {
+                    client.gameRenderer.disablePostProcessor();
+                }
+            }
+        }
+
         @Override
         public boolean useRaceAbility(PlayerEntity player) {
             if (player.isFallFlying()) {

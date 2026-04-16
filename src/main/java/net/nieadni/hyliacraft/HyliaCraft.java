@@ -99,6 +99,7 @@ public class HyliaCraft implements ModInitializer {
             UUID uuid = player.getUuid();
             HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
             ServerPlayNetworking.send(player, new RaceS2CPayload(data.race));
+			if (data.race != null) data.race.applyRace(player);
         });
 
         // Register race argument type
