@@ -29,7 +29,6 @@
   "block.hyliacraft.green_shingle_wall": "Muro de tejas verdes",
   "block.hyliacraft.green_shingles": "Tejas verdes",
   "block.hyliacraft.hateno_clay_pot": "Maceta de arcilla de Hateno",
-  "block.hyliacraft.iron_chest": "Cofre de hierro",
   "block.hyliacraft.light_blue_shingle_slab": "Losa de tejas azul claro",
   "block.hyliacraft.light_blue_shingle_stairs": "Escaleras de tejas azul claro",
   "block.hyliacraft.light_blue_shingle_wall": "Muro de tejas azul claro",
@@ -441,5 +440,9 @@
   "tag.item.hyliacraft.silver_rupees": "Silver Rupees",
   "tag.item.hyliacraft.slingshot_ammo": "Slingshot Ammo",
   "tag.item.hyliacraft.yellow_rupees": "Yellow Rupees",
-  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity."
+  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity.",
+  "item.hyliacraft.one_hit_obliterator": "One-Hit Obliterator",
+  "tag.item.hyliacraft.short_weapon": "Short Weapons",
+  "tooltip.hyliacraft.one_hit_obliterator_0": "To undertake this task requires unwavering dedication. That weapon defeats foes with one hit.",
+  "tooltip.hyliacraft.one_hit_obliterator_1": "However, the reverse is also true, as its wielder will also fall to a single strike."
 }

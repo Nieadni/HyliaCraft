@@ -126,8 +126,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
         translationBuilder.add(HCBlocks.SWIFT_VIOLETS, "Swift Violets");
 
-        translationBuilder.add(HCBlocks.IRON_CHEST, "Iron Chest");
-
         /** Entities **/
 
         translationBuilder.add(HCEntities.GODDESS_SWORD_BEAM, "Goddess Sword Beam");

@@ -29,7 +29,6 @@
   "block.hyliacraft.green_shingle_wall": "초록색 기와 담장",
   "block.hyliacraft.green_shingles": "초록색 기와",
   "block.hyliacraft.hateno_clay_pot": "하테노 항아리",
-  "block.hyliacraft.iron_chest": "철 상자",
   "block.hyliacraft.light_blue_shingle_slab": "하늘색 기와 반 블록",
   "block.hyliacraft.light_blue_shingle_stairs": "하늘색 기와 계단",
   "block.hyliacraft.light_blue_shingle_wall": "하늘색 기와 담장",
@@ -441,5 +440,9 @@
   "tag.item.hyliacraft.yellow_rupees": "Yellow Rupees",
   "tooltip.hyliacraft.shifted_down_info": "Hold §8SHIFT§r for more information",
   "item.hyliacraft.double_helix_sword": "Double Helix Sword",
-  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity."
+  "tooltip.hyliacraft.double_helix_sword": "A peculiar greatsword allegedly used by a hero from a world in which the moon threatened to fall. It slashes wildly in battle as if possessed by a fierce deity.",
+  "item.hyliacraft.one_hit_obliterator": "One-Hit Obliterator",
+  "tag.item.hyliacraft.short_weapon": "Short Weapons",
+  "tooltip.hyliacraft.one_hit_obliterator_0": "To undertake this task requires unwavering dedication. That weapon defeats foes with one hit.",
+  "tooltip.hyliacraft.one_hit_obliterator_1": "However, the reverse is also true, as its wielder will also fall to a single strike."
 }

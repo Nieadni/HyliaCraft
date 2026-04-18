@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.enchantment.Enchantments;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
-import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
@@ -33,7 +32,6 @@ public class HyliaCraft implements ModInitializer {
 		HCArmourMaterials.registerHCArmourMaterials();
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
-		HCBlockEntityType.registerHCBlockEntities();
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();

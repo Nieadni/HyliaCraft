@@ -70,8 +70,6 @@ public class HCItemGroups {
                         entries.add(HCBlocks.SILENT_PRINCESS);
                         entries.add(HCBlocks.SWIFT_VIOLETS);
 
-                        entries.add(HCBlocks.IRON_CHEST);
-
                         entries.add(HCBlocks.WHITE_SHINGLES);
                         entries.add(HCBlocks.WHITE_SHINGLE_STAIRS);
                         entries.add(HCBlocks.WHITE_SHINGLE_SLAB);

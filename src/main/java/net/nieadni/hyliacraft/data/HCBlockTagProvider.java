@@ -24,10 +24,6 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(HCBlocks.ARMORANTH, HCBlocks.BLUE_NIGHTSHADE, HCBlocks.SILENT_PRINCESS, HCBlocks.SWIFT_VIOLETS);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
                 .add(HCBlocks.ARMORANTH_POT, HCBlocks.BLUE_NIGHTSHADE_POT, HCBlocks.SILENT_PRINCESS_POT, HCBlocks.SWIFT_VIOLETS_POT);
-        getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
-                .add(HCBlocks.IRON_CHEST);
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(HCBlocks.IRON_CHEST);
         getOrCreateTagBuilder(BlockTags.STAIRS)
                 .add(HCBlocks.WHITE_SHINGLE_STAIRS, HCBlocks.LIGHT_GRAY_SHINGLE_STAIRS, HCBlocks.GRAY_SHINGLE_STAIRS,
                         HCBlocks.BLACK_SHINGLE_STAIRS, HCBlocks.BROWN_SHINGLE_STAIRS, HCBlocks.RED_SHINGLE_STAIRS, HCBlocks.ORANGE_SHINGLE_STAIRS,
