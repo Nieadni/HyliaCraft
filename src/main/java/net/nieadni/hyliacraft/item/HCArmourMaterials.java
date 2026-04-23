@@ -26,7 +26,8 @@ public class HCArmourMaterials {
     public static final int MAJORAS_MASK_DURABILITY_MULTIPLIER = 37;
     public static final int MIDNA_HELM_DURABILITY_MULTIPLIER = 33;
     public static final int PUMPKIN_MASK_DURABILITY_MULTIPLIER = 5;
-    public static final int PHRYGIAN_CAP_DURABILITY_MULTIPLIER = 10;
+    public static final int HEROES_ClOTHES_DURABILITY_MULTIPLIER = 5;
+    public static final int FIERCE_ARMOR_DURABILITY_MULTIPLIER = 41;
     public static final int BUNNY_HOOD_DURABILITY_MULTIPLIER = 10;
 
     public static @NotNull RegistryEntry<ArmorMaterial> registerMaterial(String id, Map<ArmorItem.Type, Integer> defensePoints, int enchantability, RegistryEntry<SoundEvent> equipSound, Supplier<Ingredient> repairIngredientSupplier, float toughness, float knockbackResistance, boolean dyeable) {
@@ -87,7 +88,7 @@ public class HCArmourMaterials {
             false
     );
 
-    public static final RegistryEntry<ArmorMaterial> PHRYGIAN_CAP = registerMaterial("phrygian_cap",
+    public static final RegistryEntry<ArmorMaterial> HEROES_ClOTHES = registerMaterial("heroes_clothes",
             Map.of(
                     ArmorItem.Type.HELMET, 1,
                     ArmorItem.Type.CHESTPLATE, 3,
@@ -103,20 +104,20 @@ public class HCArmourMaterials {
             false
     );
 
-    public static final RegistryEntry<ArmorMaterial> DYEABLE_PHRYGIAN_CAP = registerMaterial("dyeable_phrygian_cap",
+    public static final RegistryEntry<ArmorMaterial> FIERCE_ARMOR = registerMaterial("fierce_armor",
             Map.of(
-                    ArmorItem.Type.HELMET, 1,
-                    ArmorItem.Type.CHESTPLATE, 3,
-                    ArmorItem.Type.LEGGINGS, 2,
-                    ArmorItem.Type.BOOTS, 1
+                    ArmorItem.Type.HELMET, 4,
+                    ArmorItem.Type.CHESTPLATE, 9,
+                    ArmorItem.Type.LEGGINGS, 7,
+                    ArmorItem.Type.BOOTS, 4
             ),
             // Enchantability //
-            5,
-            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
-            () -> Ingredient.ofItems(Items.LEATHER),
-            0F,
-            0F,
-            true
+            30,
+            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,
+            () -> Ingredient.ofItems(Items.AIR),
+            1F,
+            1F,
+            false
     );
 
     public static final RegistryEntry<ArmorMaterial> BUNNY_HOOD = registerMaterial("bunny_hood",
