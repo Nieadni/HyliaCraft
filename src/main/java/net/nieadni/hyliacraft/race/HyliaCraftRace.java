@@ -134,7 +134,25 @@ public enum HyliaCraftRace {
             return false;
         }
     },
-    KOKIRI("kokiri", 12, 0);
+    KOKIRI("kokiri", 12, 0) {
+        public static final Identifier SCALE_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "kokiri_scale");
+
+        @Override
+        public void applyRaceServer(PlayerEntity player) {
+            super.applyRaceServer(player);
+            AttributeContainer attributes = player.getAttributes();
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
+            instance.addPersistentModifier(new EntityAttributeModifier(SCALE_MODIFIER, -0.34, EntityAttributeModifier.Operation.ADD_VALUE));
+        }
+
+        @Override
+        public void removeRaceServer(PlayerEntity player) {
+            super.removeRaceServer(player);
+            AttributeContainer attributes = player.getAttributes();
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
+            instance.removeModifier(SCALE_MODIFIER);
+        }
+    };
 
     public final String id;
     public final int maxHealth;
