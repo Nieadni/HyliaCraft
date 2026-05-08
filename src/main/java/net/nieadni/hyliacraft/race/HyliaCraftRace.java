@@ -152,7 +152,8 @@ public enum HyliaCraftRace {
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
             instance.removeModifier(SCALE_MODIFIER);
         }
-    };
+    },
+    GERUDO("gerudo", 26, 0);
 
     public final String id;
     public final int maxHealth;
