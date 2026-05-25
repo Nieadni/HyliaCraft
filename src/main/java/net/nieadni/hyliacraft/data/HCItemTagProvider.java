@@ -102,7 +102,7 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         // Compat Stuffs
 
-        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE).addOptional(Identifier.of("hyrule_terrors","rupee"));
+        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE).add(Items.EMERALD).addOptional(Identifier.of("hyrule_terrors","rupee"));
         getOrCreateTagBuilder(HCItemTags.BLUE_RUPEES).add(HCItems.BLUE_RUPEE);
         getOrCreateTagBuilder(HCItemTags.YELLOW_RUPEES).add(HCItems.YELLOW_RUPEE);
         getOrCreateTagBuilder(HCItemTags.RED_RUPEES).add(HCItems.RED_RUPEE);
@@ -111,4 +111,5 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.SILVER_RUPEES).add(HCItems.SILVER_RUPEE);
         getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE);
     }
+
 }
