@@ -21,6 +21,8 @@ public class HyliaCraftClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                HCBlocks.ANCIENT_FLOWER,
+                HCBlocks.ANCIENT_FLOWER_POT,
                 HCBlocks.ARMORANTH,
                 HCBlocks.ARMORANTH_POT,
                 HCBlocks.BLUE_NIGHTSHADE,

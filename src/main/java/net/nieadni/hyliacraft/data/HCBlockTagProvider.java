@@ -21,9 +21,9 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(HCBlockTags.GRASSES)
                 .add(Blocks.SHORT_GRASS, Blocks.TALL_GRASS);
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
-                .add(HCBlocks.ARMORANTH, HCBlocks.BLUE_NIGHTSHADE, HCBlocks.SILENT_PRINCESS, HCBlocks.SWIFT_VIOLETS);
+                .add(HCBlocks.ANCIENT_FLOWER, HCBlocks.ARMORANTH, HCBlocks.BLUE_NIGHTSHADE, HCBlocks.SILENT_PRINCESS, HCBlocks.SWIFT_VIOLETS);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
-                .add(HCBlocks.ARMORANTH_POT, HCBlocks.BLUE_NIGHTSHADE_POT, HCBlocks.SILENT_PRINCESS_POT, HCBlocks.SWIFT_VIOLETS_POT);
+                .add(HCBlocks.ANCIENT_FLOWER_POT, HCBlocks.ARMORANTH_POT, HCBlocks.BLUE_NIGHTSHADE_POT, HCBlocks.SILENT_PRINCESS_POT, HCBlocks.SWIFT_VIOLETS_POT);
         getOrCreateTagBuilder(BlockTags.STAIRS)
                 .add(HCBlocks.WHITE_SHINGLE_STAIRS, HCBlocks.LIGHT_GRAY_SHINGLE_STAIRS, HCBlocks.GRAY_SHINGLE_STAIRS,
                         HCBlocks.BLACK_SHINGLE_STAIRS, HCBlocks.BROWN_SHINGLE_STAIRS, HCBlocks.RED_SHINGLE_STAIRS, HCBlocks.ORANGE_SHINGLE_STAIRS,

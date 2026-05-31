@@ -110,6 +110,26 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.ORANGE_RUPEES).add(HCItems.ORANGE_RUPEE);
         getOrCreateTagBuilder(HCItemTags.SILVER_RUPEES).add(HCItems.SILVER_RUPEE);
         getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE);
+
+        // Dye Stuffs
+
+        getOrCreateTagBuilder(HCItemTags.WHITE_DYES).add(Item.fromBlock(HCBlocks.SILENT_PRINCESS));
+        getOrCreateTagBuilder(HCItemTags.LIGHT_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.BLACK_DYES);
+        getOrCreateTagBuilder(HCItemTags.BROWN_DYES);
+        getOrCreateTagBuilder(HCItemTags.RED_DYES);
+        getOrCreateTagBuilder(HCItemTags.ORANGE_DYES);
+        getOrCreateTagBuilder(HCItemTags.YELLOW_DYES);
+        getOrCreateTagBuilder(HCItemTags.LIME_DYES);
+        getOrCreateTagBuilder(HCItemTags.GREEN_DYES);
+        getOrCreateTagBuilder(HCItemTags.CYAN_DYES);
+        getOrCreateTagBuilder(HCItemTags.LIGHT_BLUE_DYES);
+        getOrCreateTagBuilder(HCItemTags.BLUE_DYES).add(Item.fromBlock(HCBlocks.BLUE_NIGHTSHADE));
+        getOrCreateTagBuilder(HCItemTags.PURPLE_DYES).add(Item.fromBlock(HCBlocks.SWIFT_VIOLETS));
+        getOrCreateTagBuilder(HCItemTags.MAGENTA_DYES).add(Item.fromBlock(HCBlocks.ANCIENT_FLOWER)).add(Item.fromBlock(HCBlocks.ARMORANTH));
+        getOrCreateTagBuilder(HCItemTags.PINK_DYES);
+
     }
 
 }

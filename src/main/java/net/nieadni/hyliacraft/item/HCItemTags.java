@@ -32,6 +32,22 @@ public class HCItemTags {
     public static final TagKey<Item> SILVER_RUPEES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "silver_rupees"));
     public static final TagKey<Item> GOLD_RUPEES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "gold_rupees"));
 
+    public static final TagKey<Item> WHITE_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "white_dyes"));
+    public static final TagKey<Item> LIGHT_GRAY_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "light_gray_dyes"));
+    public static final TagKey<Item> GRAY_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "gray_dyes"));
+    public static final TagKey<Item> BLACK_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "black_dyes"));
+    public static final TagKey<Item> BROWN_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "brown_dyes"));
+    public static final TagKey<Item> RED_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "red_dyes"));
+    public static final TagKey<Item> ORANGE_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "orange_dyes"));
+    public static final TagKey<Item> YELLOW_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "yellow_dyes"));
+    public static final TagKey<Item> LIME_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "lime_dyes"));
+    public static final TagKey<Item> GREEN_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "green_dyes"));
+    public static final TagKey<Item> CYAN_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "cyan_dyes"));
+    public static final TagKey<Item> LIGHT_BLUE_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "light_blue_dyes"));
+    public static final TagKey<Item> BLUE_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "blue_dyes"));
+    public static final TagKey<Item> PURPLE_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "purple_dyes"));
+    public static final TagKey<Item> MAGENTA_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "magenta_dyes"));
+    public static final TagKey<Item> PINK_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "pink_dyes"));
 
     public static void registerHCItemTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its item tags.");

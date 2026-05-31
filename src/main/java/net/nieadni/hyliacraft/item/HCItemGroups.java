@@ -65,6 +65,7 @@ public class HCItemGroups {
                         entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
                         entries.add(HCBlocks.HATENO_CLAY_POT);
 
+                        entries.add(HCBlocks.ANCIENT_FLOWER);
                         entries.add(HCBlocks.ARMORANTH);
                         entries.add(HCBlocks.BLUE_NIGHTSHADE);
                         entries.add(HCBlocks.SILENT_PRINCESS);
