@@ -3,12 +3,11 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
 import net.nieadni.hyliacraft.item.HCItems;
 
 public class HCModelProvider extends FabricModelProvider {
@@ -52,6 +51,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
 
         // Consumables
+        itemModelGenerator.register(HCItems.ANCIENT_FLOWER_SEED, Models.GENERATED);
         itemModelGenerator.register(HCItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
         itemModelGenerator.register(HCItems.GOAT_MILK_BUCKET, Models.GENERATED);
@@ -80,11 +80,26 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.GORON_SPICE, Models.GENERATED);
         //itemModelGenerator.register(HCItems.FAIRY_BOTTLE, Models.GENERATED);
 
-
     }
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+        blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ANCIENT_FLOWER, HCBlocks.ANCIENT_FLOWER_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        Identifier stage0 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage0"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage0")), blockStateModelGenerator.modelCollector);
+        Identifier stage1 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage1"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage1")), blockStateModelGenerator.modelCollector);
+        Identifier stage2 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage2"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage2")), blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(HCBlocks.ANCIENT_FLOWER_CROP)
+                        .coordinate(BlockStateVariantMap.create(AncientFlowerCropBlock.AGE)
+                                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, stage0))
+                                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, stage1))
+                                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, stage2)))
+        );
 
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ARMORANTH, HCBlocks.ARMORANTH_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.BLUE_NIGHTSHADE, HCBlocks.BLUE_NIGHTSHADE_POT, BlockStateModelGenerator.TintType.NOT_TINTED);

@@ -1,6 +1,7 @@
 {
   "values": [
     "hyliacraft:green_rupee",
+    "minecraft:emerald",
     {
       "id": "hyrule_terrors:rupee",
       "required": false

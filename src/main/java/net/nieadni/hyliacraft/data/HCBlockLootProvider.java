@@ -31,7 +31,6 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
         addDrop(Blocks.SHORT_GRASS, (block -> LootTable.builder()
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))
@@ -125,6 +124,8 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .with(ItemEntry.builder(Items.ARROW)))));
         addDrop(HCBlocks.HATENO_CLAY_POT);
 
+        addDrop(HCBlocks.ANCIENT_FLOWER);
+        addPottedPlantDrops(HCBlocks.ANCIENT_FLOWER_POT);
         addDrop(HCBlocks.ARMORANTH);
         addPottedPlantDrops(HCBlocks.ARMORANTH_POT);
         addDrop(HCBlocks.BLUE_NIGHTSHADE);

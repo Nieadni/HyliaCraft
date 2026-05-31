@@ -65,6 +65,7 @@ public class HCItemGroups {
                         entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
                         entries.add(HCBlocks.HATENO_CLAY_POT);
 
+                        entries.add(HCBlocks.ANCIENT_FLOWER);
                         entries.add(HCBlocks.ARMORANTH);
                         entries.add(HCBlocks.BLUE_NIGHTSHADE);
                         entries.add(HCBlocks.SILENT_PRINCESS);
@@ -141,6 +142,7 @@ public class HCItemGroups {
             Identifier.of(HyliaCraft.MOD_ID, "03-consumables"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.consumables"))
                     .icon(() -> new ItemStack(HCItems.BANANA)).entries((displayContext, entries) -> {
+                        entries.add(HCItems.ANCIENT_FLOWER_SEED);
                         entries.add(HCItems.BANANA);
                         entries.add(HCItems.PUMPKIN_SOUP);
                         entries.add(HCItems.GOAT_MILK_BUCKET);

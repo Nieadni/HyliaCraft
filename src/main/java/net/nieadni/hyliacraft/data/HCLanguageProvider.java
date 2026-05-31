@@ -75,6 +75,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
+        translationBuilder.add(HCItems.ANCIENT_FLOWER_SEED, "Ancient Flower Seed");
         translationBuilder.add(HCItems.BANANA, "Banana");
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");
@@ -121,6 +122,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.NATURAL_BLUE_CLAY_POT, "Natural Blue Clay Pot");
         translationBuilder.add(HCBlocks.HATENO_CLAY_POT, "Hateno Clay Pot");
 
+        translationBuilder.add(HCBlocks.ANCIENT_FLOWER, "Ancient Flower");
         translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");
         translationBuilder.add(HCBlocks.BLUE_NIGHTSHADE, "Blue Nightshade");
         translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
@@ -172,26 +174,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add("tooltip.hyliacraft.shift_down_info", "Hold §6SHIFT§r for more information");
         translationBuilder.add("tooltip.hyliacraft.shifted_down_info", "Hold §8SHIFT§r for more information");
-
-        translationBuilder.add("tag.item.hyliacraft.endermask", "Endermask");
-        translationBuilder.add("tag.item.hyliacraft.sickles", "Sickles");
-        translationBuilder.add("tag.item.hyliacraft.short_weapon", "Short Weapons");
-        translationBuilder.add("tag.item.hyliacraft.slingshot_ammo", "Slingshot Ammo");
-        translationBuilder.add("tag.item.hyliacraft.milk_buckets", "Milk Buckets");
-        translationBuilder.add("tag.item.hyliacraft.shingles", "Shingle Blocks");
-        translationBuilder.add("tag.item.hyliacraft.shingle_stairs", "Shingle Stairs");
-        translationBuilder.add("tag.item.hyliacraft.shingle_slabs", "Shingle Slabs");
-        translationBuilder.add("tag.item.hyliacraft.shingle_walls", "Shingle Walls");
-        translationBuilder.add("tag.item.hyliacraft.green_rupees", "Green Rupees");
-        translationBuilder.add("tag.item.hyliacraft.blue_rupees", "Blue Rupees");
-        translationBuilder.add("tag.item.hyliacraft.yellow_rupees", "Yellow Rupees");
-        translationBuilder.add("tag.item.hyliacraft.red_rupees", "Red Rupees");
-        translationBuilder.add("tag.item.hyliacraft.purple_rupees", "Purple Rupees");
-        translationBuilder.add("tag.item.hyliacraft.orange_rupees", "Orange Rupees");
-        translationBuilder.add("tag.item.hyliacraft.silver_rupees", "Silver Rupees");
-        translationBuilder.add("tag.item.hyliacraft.gold_rupees", "Gold Rupees");
-
-
 
         /** Coloured Blocks **/
 

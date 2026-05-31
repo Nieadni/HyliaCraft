@@ -147,7 +147,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(Items.POISONOUS_POTATO)
                 .input(Items.DRIED_KELP)
                 .input(Items.SPIDER_EYE)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.CHICKEN))
                 .offerTo(exporter);
 
         //
@@ -191,22 +191,22 @@ public class HCRecipeProvider extends FabricRecipeProvider {
         //
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
-                .input(HCBlocks.ARMORANTH)
+                .input(HCItemTags.MAGENTA_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.BLUE_DYE, 1)
-                .input(HCBlocks.BLUE_NIGHTSHADE)
+                .input(HCItemTags.BLUE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.BLUE_NIGHTSHADE))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 1)
-                .input(HCBlocks.SILENT_PRINCESS)
+                .input(HCItemTags.WHITE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SILENT_PRINCESS))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.PURPLE_DYE, 1)
-                .input(HCBlocks.SWIFT_VIOLETS)
+                .input(HCItemTags.PURPLE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SWIFT_VIOLETS))
                 .offerTo(exporter);
 
