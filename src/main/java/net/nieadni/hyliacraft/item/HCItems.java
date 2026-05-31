@@ -1,6 +1,7 @@
 package net.nieadni.hyliacraft.item;
 
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
@@ -8,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
 import net.nieadni.hyliacraft.item.custom.consumables.*;
@@ -61,6 +63,7 @@ public class HCItems extends Items {
     public static final Item PARAGLIDER = register(new ParagliderItem(new Item.Settings().maxCount(1).maxDamage(0)),"paraglider");
 
     // Consumables
+    public static final Item ANCIENT_FLOWER_SEED = register(new BlockItem(HCBlocks.ANCIENT_FLOWER_CROP, new Item.Settings()), "ancient_flower_seed");
     public static final Item BANANA = register(new Item(new Item.Settings().food(HCFoodComponents.BANANA).maxCount(64)), "banana");
     public static final Item PUMPKIN_SOUP = register(new PumpkinSoupItem(new Item.Settings().food(HCFoodComponents.PUMPKIN_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "pumpkin_soup");
     public static final Item GOAT_MILK_BUCKET = register(new GoatMilkBucketItem(new Item.Settings().recipeRemainder(BUCKET).maxCount(1)), "goat_milk_bucket");

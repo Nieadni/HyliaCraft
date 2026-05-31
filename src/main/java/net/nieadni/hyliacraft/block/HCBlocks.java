@@ -11,11 +11,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.function.Function;
 
 public class HCBlocks extends Blocks {
 
@@ -29,6 +31,10 @@ public class HCBlocks extends Blocks {
                 new BlockItem(block, new Item.Settings().maxCount(64)));
     }
 
+    private static Block registerBlockWithoutBlockItem(String name, Function<AbstractBlock.Settings, Block> function) {
+        return Registry.register(Registries.BLOCK, Identifier.of(HyliaCraft.MOD_ID, name), function.apply(AbstractBlock.Settings.create()));
+    }
+
     public static final Block CLAY_POT = registerBlock("clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
     public static final Block NATURAL_CLAY_POT = registerBlock("natural_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
     public static final Block CLAY_POT_WRITING = registerBlock("clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
@@ -39,6 +45,9 @@ public class HCBlocks extends Blocks {
 
     public static final Block ANCIENT_FLOWER = registerBlock("ancient_flower", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.REGENERATION, 400)), AbstractBlock.Settings.create().mapColor(MapColor.MAGENTA).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ANCIENT_FLOWER_POT = registerBlock("ancient_flower_pot", Blocks.createFlowerPotBlock(ANCIENT_FLOWER));
+    public static final Block ANCIENT_FLOWER_CROP = registerBlockWithoutBlockItem("ancient_flower_crop",
+            properties -> new AncientFlowerCropBlock(AbstractBlock.Settings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY)));
+
     public static final Block ARMORANTH = registerBlock("armoranth", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.RESISTANCE, 400)), AbstractBlock.Settings.create().mapColor(MapColor.MAGENTA).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ARMORANTH_POT = registerBlock("armoranth_pot", Blocks.createFlowerPotBlock(ARMORANTH));
     public static final Block BLUE_NIGHTSHADE = registerBlock( "blue_nightshade", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.INVISIBILITY, 400)), AbstractBlock.Settings.create().mapColor(MapColor.BLUE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));

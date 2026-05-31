@@ -23,6 +23,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                 HCBlocks.ANCIENT_FLOWER,
                 HCBlocks.ANCIENT_FLOWER_POT,
+                HCBlocks.ANCIENT_FLOWER_CROP,
                 HCBlocks.ARMORANTH,
                 HCBlocks.ARMORANTH_POT,
                 HCBlocks.BLUE_NIGHTSHADE,
@@ -38,6 +39,7 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.CLAY_POT_WRITING,
                 HCBlocks.CLAY_POT,
                 HCBlocks.HATENO_CLAY_POT
+
         );
         HCModelPredicates.registerHCModelPredicates();
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);

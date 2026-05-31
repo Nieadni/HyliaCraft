@@ -9,6 +9,7 @@ import net.minecraft.data.client.Models;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
 import net.nieadni.hyliacraft.item.HCItems;
 
 public class HCModelProvider extends FabricModelProvider {
@@ -52,6 +53,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
 
         // Consumables
+        //itemModelGenerator.register(HCItems.ANCIENT_FLOWER_SEED, Models.GENERATED);
         itemModelGenerator.register(HCItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_SOUP, Models.GENERATED);
         itemModelGenerator.register(HCItems.GOAT_MILK_BUCKET, Models.GENERATED);
@@ -87,6 +89,8 @@ public class HCModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ANCIENT_FLOWER, HCBlocks.ANCIENT_FLOWER_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerCrop(HCBlocks.ANCIENT_FLOWER_CROP, AncientFlowerCropBlock.AGE, 0, 1, 2);
+
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ARMORANTH, HCBlocks.ARMORANTH_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.BLUE_NIGHTSHADE, HCBlocks.BLUE_NIGHTSHADE_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SILENT_PRINCESS, HCBlocks.SILENT_PRINCESS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);

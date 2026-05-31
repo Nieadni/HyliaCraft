@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-31T11:20:46.8312295	HyliaCraft/Recipes
+// 1.21.1	2026-05-31T13:05:02.4809579	HyliaCraft/Recipes
 f2863d741e589199946b1ecfedbb8a608e9f0538 data\hyliacraft\advancement\recipes\building_blocks\brown_shingles.json
 2583666bb8763b207dfccec5a55b613ef82fa54f data\hyliacraft\recipe\magenta_dye.json
 d7034d0f56281a870d900eda8c7c2e23f4933f96 data\hyliacraft\recipe\paraglider.json
@@ -160,8 +160,8 @@ b1d14b8e2a0a072c3952afbe405ffd6cddb5e249 data\hyliacraft\advancement\recipes\bui
 8061910bf5f4f698fe6c8ab63eb3b6e17ba850ae data\hyliacraft\advancement\recipes\building_blocks\lime_shingles_main.json
 3569ceb5741f2d62c6df57440e3d28ab8c54c9f9 data\hyliacraft\recipe\gray_shingles.json
 9ee9865690ef0848080b62f7d944c7ec1e4d3a98 data\hyliacraft\recipe\cyan_shingle_wall.json
-8e2d023ce58a80bec8f431001bece7f640e3bdd3 data\hyliacraft\advancement\recipes\building_blocks\red_shingles_main.json
 6a4a276a3a6c29a4dd4dde5624b95aff53efbae1 data\hyliacraft\recipe\orange_shingles_main.json
+8e2d023ce58a80bec8f431001bece7f640e3bdd3 data\hyliacraft\advancement\recipes\building_blocks\red_shingles_main.json
 cc27bd76d30fbfd2f4d2c719e2fa818d997f042d data\hyliacraft\recipe\yellow_shingles.json
 283f82d90533e159e5c7beed321f8a6e052cfe31 data\hyliacraft\advancement\recipes\building_blocks\green_shingle_wall.json
 bb1d9b1f11cefe9dd7004dc8ba418d240bb5cbc6 data\hyliacraft\advancement\recipes\misc\blue_rupee.json
@@ -211,8 +211,8 @@ f053cff2106487b0aed16a4f654ce0cf9e373fb6 data\hyliacraft\advancement\recipes\mis
 8f2b67fd00dd234e8a40f6029184432fef4915bf data\hyliacraft\advancement\recipes\building_blocks\blue_shingle_wall.json
 ec363f603d596303112a6f3f497dd335e34c3cd1 data\hyliacraft\recipe\phrygian_cap_ss.json
 945987468014ac49dcbd7442300a618e21303b0e data\hyliacraft\recipe\orange_shingle_slab.json
-83480547102039fba2589a0e9cc6d823ef575baa data\hyliacraft\recipe\yellow_rupee.json
 a1d9efc41a2ed326bf7c63b418e6c3c0d94fa744 data\hyliacraft\advancement\recipes\misc\red_rupee.json
+83480547102039fba2589a0e9cc6d823ef575baa data\hyliacraft\recipe\yellow_rupee.json
 fe19acd823c8e15c2836efe7975148efe1758547 data\hyliacraft\recipe\yellow_shingle_slab.json
 151e8e27a5e935290bd04bd17cdf1232c231c5b6 data\hyliacraft\recipe\hateno_clay_pot.json
 41d2edeb31aa64c79bf1b9b198b6b5449f8593b4 data\hyliacraft\advancement\recipes\building_blocks\orange_shingle_slab.json

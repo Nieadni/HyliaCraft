@@ -75,6 +75,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
+        translationBuilder.add(HCItems.ANCIENT_FLOWER_SEED, "Ancient Flower Seed");
         translationBuilder.add(HCItems.BANANA, "Banana");
         translationBuilder.add(HCItems.PUMPKIN_SOUP, "Pumpkin Soup");
         translationBuilder.add("tooltip.hyliacraft.pumpkin_soup","Popular in Skyloft for its nutrient content and revitalising properties");

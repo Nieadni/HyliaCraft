@@ -142,6 +142,7 @@ public class HCItemGroups {
             Identifier.of(HyliaCraft.MOD_ID, "03-consumables"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.consumables"))
                     .icon(() -> new ItemStack(HCItems.BANANA)).entries((displayContext, entries) -> {
+                        entries.add(HCItems.ANCIENT_FLOWER_SEED);
                         entries.add(HCItems.BANANA);
                         entries.add(HCItems.PUMPKIN_SOUP);
                         entries.add(HCItems.GOAT_MILK_BUCKET);
