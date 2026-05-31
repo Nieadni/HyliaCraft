@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "hyliacraft:block/ancient_flower_crop_stage1"
+    "cross": "hyliacraft:block/ancient_flower_crop_stage1"
   }
 }

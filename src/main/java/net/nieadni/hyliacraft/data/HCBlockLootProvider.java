@@ -31,11 +31,6 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
-        //BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CAULIFLOWER_CROP)
-        //        .properties(StatePredicate.Builder.create().exactMatch(CauliflowerCropBlock.AGE, CauliflowerCropBlock.MAX_AGE));
-        //this.addDrop(HCBlocks.ANCIENT_FLOWER_CROP, this.cropDrops(HCBlocks.ANCIENT_FLOWER_CROP, HCBlocks.CAULIFLOWER, ModItems.CAULIFLOWER_SEEDS, builder2));
-
         addDrop(Blocks.SHORT_GRASS, (block -> LootTable.builder()
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1,1)))

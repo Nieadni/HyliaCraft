@@ -7,6 +7,7 @@ import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.EntityPropertiesLootCondition;
 import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
@@ -15,6 +16,8 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.entity.EntityEquipmentPredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.item.HCItems;
 
@@ -28,6 +31,17 @@ public class VanillaLootTableModifiers {
             = Identifier.of("minecraft", "entities/wither");
 
     public static void modifyLootTables() {
+
+        LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
+            if (source.isBuiltin() && RegistryKey.of(RegistryKeys.LOOT_TABLE,
+                    new Identifier("minecraft", "gameplay/sniffer_digging")).equals(key)) {
+                tableBuilder.pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(HCItems.ANCIENT_FLOWER_SEED)));
+            }
+        });
+
         LootTableEvents.MODIFY.register((key, tableBuilder, source, idfk) -> {
 
             if (source.isBuiltin() && LootTables.TRIAL_CHAMBER_ITEMS_TO_DROP_WHEN_OMINOUS_SPAWNER.equals(key)) {
