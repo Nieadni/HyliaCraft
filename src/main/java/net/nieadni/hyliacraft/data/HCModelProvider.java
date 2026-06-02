@@ -50,7 +50,7 @@ public class HCModelProvider extends FabricModelProvider {
 
         // Misc Gear
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
-        itemModelGenerator.register(HCItems.BOMB_FLOWER, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.BOMB_FLOWER, Models.HANDHELD_ROD);
 
         // Consumables
         itemModelGenerator.register(HCItems.ANCIENT_FLOWER_SEED, Models.GENERATED);

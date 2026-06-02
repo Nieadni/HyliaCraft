@@ -3,7 +3,7 @@
   "config": {
     "feature": "hyliacraft:armoranth",
     "tries": 48,
-    "xz_spread": 10,
+    "xz_spread": 12,
     "y_spread": 4
   }
 }
