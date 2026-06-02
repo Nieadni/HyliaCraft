@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
+import net.nieadni.hyliacraft.block.custom.BombFlowerBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -56,6 +57,8 @@ public class HCBlocks extends Blocks {
     public static final Block SILENT_PRINCESS_POT = registerBlock("silent_princess_pot", Blocks.createFlowerPotBlock(SILENT_PRINCESS));
     public static final Block SWIFT_VIOLETS = registerBlock("swift_violets", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.SPEED, 400)), AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SWIFT_VIOLETS_POT = registerBlock("swift_violets_pot", Blocks.createFlowerPotBlock(SWIFT_VIOLETS));
+
+    public static final Block BOMB_FLOWER = registerBlock("bomb_flower", new BombFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block WHITE_SHINGLES = registerBlock("white_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.WHITE)));
     public static final Block WHITE_SHINGLE_STAIRS = registerBlock("white_shingle_stairs", new StairsBlock(WHITE_SHINGLES.getDefaultState(), Block.Settings.copy(WHITE_SHINGLES)));

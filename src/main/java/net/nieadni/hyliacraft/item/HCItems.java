@@ -34,6 +34,7 @@ public class HCItems extends Items {
     public static final Item FIRESHIELD_EARRING = register(new FireshieldEarringItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"fireshield_earring");
     public static final Item WATER_DRAGON_SCALE = register(new WaterDragonScaleItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"water_dragon_scale");
     public static final Item SHADOW_CRYSTAL = register(new ShadowCrystalItem(new Item.Settings().rarity(Rarity.RARE).maxCount(1)),"shadow_crystal");
+    public static final Item BOMB_FLOWER = register(new BombFlowerItem(HCBlocks.BOMB_FLOWER, new Item.Settings().maxCount(16)),"bomb_flower");
 
     // Ranged Weapons
     public static final Item SLINGSHOT = register(new SlingshotItem(new Item.Settings().maxCount(1)),"slingshot");
@@ -72,6 +73,8 @@ public class HCItems extends Items {
     public static final Item GOOD_SOUP = register(new GoodSoupItem(new Item.Settings().food(HCFoodComponents.GOOD_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "good_soup");
     public static final Item SUPERB_SOUP = register(new SuperbSoupItem(new Item.Settings().food(HCFoodComponents.SUPERB_SOUP).recipeRemainder(GLASS_BOTTLE).maxCount(1)), "superb_soup");
     public static final Item DUBIOUS_FOOD = register(new DubiousFoodItem(new Item.Settings().food(HCFoodComponents.DUBIOUS_FOOD)), "dubious_food");
+    public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
+
 
     // Rupees
     public static final Item RUPEE_POUCH = register(new RupeePouchItem(new Item.Settings().maxCount(1)),"rupee_pouch");
@@ -89,7 +92,6 @@ public class HCItems extends Items {
     public static final Item DIN_FLAME = register(new Item(new Item.Settings().maxCount(1)),"din_flame");
     public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
 
-    public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
 

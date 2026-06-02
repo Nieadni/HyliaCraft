@@ -38,9 +38,11 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.BLUE_CLAY_POT,
                 HCBlocks.CLAY_POT_WRITING,
                 HCBlocks.CLAY_POT,
-                HCBlocks.HATENO_CLAY_POT
+                HCBlocks.HATENO_CLAY_POT,
 
-        );
+                HCBlocks.BOMB_FLOWER
+                );
+
         HCModelPredicates.registerHCModelPredicates();
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_SWORD_BEAM, GoddessSwordBeamEntityRenderer::new);

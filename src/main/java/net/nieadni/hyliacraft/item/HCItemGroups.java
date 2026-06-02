@@ -48,6 +48,7 @@ public class HCItemGroups {
                         entries.add(HCItems.MOGMA_MITT);
                         entries.add(HCItems.VICIOUS_SICKLE);
 
+                        entries.add(HCItems.BOMB_FLOWER);
                         entries.add(HCItems.HORSE_CALL);
                         entries.add(HCItems.PARAGLIDER);
 
@@ -151,6 +152,7 @@ public class HCItemGroups {
                         entries.add(HCItems.GOOD_SOUP);
                         entries.add(HCItems.SUPERB_SOUP);
                         entries.add(HCItems.DUBIOUS_FOOD);
+                        entries.add(HCItems.GORON_SPICE);
 
                     }).build());
 
@@ -171,7 +173,6 @@ public class HCItemGroups {
                         entries.add(HCItems.FARORE_FLAME);
                         entries.add(HCItems.NAYRU_FLAME);
                         entries.add(HCItems.DIN_FLAME);
-                        entries.add(HCItems.GORON_SPICE);
                         //entries.add(HCItems.FAIRY_BOTTLE);
 
                     }).build());

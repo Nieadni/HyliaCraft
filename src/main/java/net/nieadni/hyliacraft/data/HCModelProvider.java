@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
+import net.nieadni.hyliacraft.block.custom.BombFlowerBlock;
 import net.nieadni.hyliacraft.item.HCItems;
 
 public class HCModelProvider extends FabricModelProvider {
@@ -49,6 +50,7 @@ public class HCModelProvider extends FabricModelProvider {
 
         // Misc Gear
         itemModelGenerator.register(HCItems.HORSE_CALL, Models.HANDHELD);
+        itemModelGenerator.register(HCItems.BOMB_FLOWER, Models.HANDHELD);
 
         // Consumables
         itemModelGenerator.register(HCItems.ANCIENT_FLOWER_SEED, Models.GENERATED);
@@ -87,20 +89,38 @@ public class HCModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ANCIENT_FLOWER, HCBlocks.ANCIENT_FLOWER_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        Identifier stage0 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage0"),
+        Identifier ancientFlowerCropStage0 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage0"),
                 TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage0")), blockStateModelGenerator.modelCollector);
-        Identifier stage1 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage1"),
+        Identifier ancientFlowerCropStage1 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage1"),
                 TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage1")), blockStateModelGenerator.modelCollector);
-        Identifier stage2 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage2"),
+        Identifier ancientFlowerCropStage2 = Models.CROSS.upload(new Identifier("hyliacraft", "block/ancient_flower_crop_stage2"),
                 TextureMap.cross(new Identifier("hyliacraft", "block/ancient_flower_crop_stage2")), blockStateModelGenerator.modelCollector);
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(HCBlocks.ANCIENT_FLOWER_CROP)
                         .coordinate(BlockStateVariantMap.create(AncientFlowerCropBlock.AGE)
-                                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, stage0))
-                                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, stage1))
-                                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, stage2)))
+                                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, ancientFlowerCropStage0))
+                                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, ancientFlowerCropStage1))
+                                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, ancientFlowerCropStage2)))
         );
 
+        Identifier bombFlowerStage0 = Models.CROSS.upload(new Identifier("hyliacraft", "block/bomb_flower_stage0"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/bomb_flower_stage0")), blockStateModelGenerator.modelCollector);
+        Identifier bombFlowerStage1 = Models.CROSS.upload(new Identifier("hyliacraft", "block/bomb_flower_stage1"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/bomb_flower_stage1")), blockStateModelGenerator.modelCollector);
+        Identifier bombFlowerStage2 = Models.CROSS.upload(new Identifier("hyliacraft", "block/bomb_flower_stage2"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/bomb_flower_stage2")), blockStateModelGenerator.modelCollector);
+        Identifier bombFlowerStage3 = Models.CROSS.upload(new Identifier("hyliacraft", "block/bomb_flower_stage3"),
+                TextureMap.cross(new Identifier("hyliacraft", "block/bomb_flower_stage3")), blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(HCBlocks.BOMB_FLOWER)
+                        .coordinate(BlockStateVariantMap.create(BombFlowerBlock.AGE)
+                                .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, bombFlowerStage0))
+                                .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, bombFlowerStage1))
+                                .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, bombFlowerStage2))
+                                .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, bombFlowerStage3)))
+
+        );
+        
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ARMORANTH, HCBlocks.ARMORANTH_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.BLUE_NIGHTSHADE, HCBlocks.BLUE_NIGHTSHADE_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SILENT_PRINCESS, HCBlocks.SILENT_PRINCESS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);

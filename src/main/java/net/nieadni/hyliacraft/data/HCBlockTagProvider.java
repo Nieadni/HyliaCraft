@@ -41,5 +41,13 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         HCBlocks.BROWN_SHINGLE_WALL, HCBlocks.RED_SHINGLE_WALL, HCBlocks.ORANGE_SHINGLE_WALL, HCBlocks.YELLOW_SHINGLE_WALL,
                         HCBlocks.LIME_SHINGLE_WALL, HCBlocks.GREEN_SHINGLE_WALL, HCBlocks.CYAN_SHINGLE_WALL, HCBlocks.LIGHT_BLUE_SHINGLE_WALL,
                         HCBlocks.BLUE_SHINGLE_WALL, HCBlocks.PURPLE_SHINGLE_WALL, HCBlocks.MAGENTA_SHINGLE_WALL, HCBlocks.PINK_SHINGLE_WALL);
+
+
+
+        getOrCreateTagBuilder(HCBlockTags.PLANTABLE_PLUS)
+                .add(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.TUFF,
+                        Blocks.DEEPSLATE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.PODZOL, Blocks.COARSE_DIRT,
+                        Blocks.MYCELIUM, Blocks.ROOTED_DIRT, Blocks.MOSS_BLOCK, Blocks.MUD, Blocks.MUDDY_MANGROVE_ROOTS);
+
     }
 }
