@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hyliacraft:simple_soup"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "hyliacraft:goat_cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:superb_soup"
+  }
+}

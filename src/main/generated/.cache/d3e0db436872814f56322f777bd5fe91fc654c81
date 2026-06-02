@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-31T15:28:02.7758524	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-06-02T10:27:29.515681	HyliaCraft/Block Loot Tables
 d616eeb258676121cb5e568ad8370c6a7048bed2 data\hyliacraft\loot_table\blocks\magenta_shingle_wall.json
 cc1d8f2527e541f7b2816ea9defa3d305e3fb40b data\hyliacraft\loot_table\blocks\clay_pot.json
 386a1dc2bc8a01652469722d7b96ae35e7b7e725 data\hyliacraft\loot_table\blocks\black_shingles.json
@@ -48,6 +48,7 @@ f83d6a53c49283fc07b4b48f2f74b02124d6de87 data\hyliacraft\loot_table\blocks\haten
 bd7dd3f9f61f9268666f5ee269df79f65f3eb8cc data\hyliacraft\loot_table\blocks\gray_shingle_wall.json
 6ab6bd8aff41ae2bbe2f5a4ba4ce4b7e2936bbe1 data\hyliacraft\loot_table\blocks\cyan_shingle_wall.json
 2754d6e20ada1aca5423c52694761b82a14527c2 data\hyliacraft\loot_table\blocks\black_shingle_wall.json
+1210127e305558cec04974f37e2c57869d39db2d data\hyliacraft\loot_table\blocks\ancient_flower_crop.json
 4a81870dcdaa42fadc5b56785cc0ffdf4a96e9c7 data\hyliacraft\loot_table\blocks\gray_shingles.json
 01e78985634453f3fc4f80cae39f63f20cf41db6 data\hyliacraft\loot_table\blocks\purple_shingles.json
 f2bc8094e9639e31c8ebfc7bf164df7d597fbf7c data\hyliacraft\loot_table\blocks\white_shingles.json
@@ -55,8 +56,8 @@ f2bc8094e9639e31c8ebfc7bf164df7d597fbf7c data\hyliacraft\loot_table\blocks\white
 dfa340782b2155c155e86d0217bf12ca6ae6ad80 data\hyliacraft\loot_table\blocks\gray_shingle_stairs.json
 adc773bde3241dcb6f5cd85a9873c5444f29b2d2 data\hyliacraft\loot_table\blocks\blue_clay_pot.json
 f064cd8419213f19930d166a81b8ff180e48eab4 data\hyliacraft\loot_table\blocks\silent_princess.json
-0eefcaeb0ef6710c050357d92f0b701d5621c523 data\hyliacraft\loot_table\blocks\armoranth_pot.json
 60ac68e8923a9bab18be1e9cb9846acd07d30282 data\hyliacraft\loot_table\blocks\red_shingles.json
+0eefcaeb0ef6710c050357d92f0b701d5621c523 data\hyliacraft\loot_table\blocks\armoranth_pot.json
 f5b9f1b218ac473a7a62de8ea484b817d934b3bb data\hyliacraft\loot_table\blocks\white_shingle_wall.json
 734932cbf0dec0375d128eac37288cf6d8ddf391 data\hyliacraft\loot_table\blocks\white_shingle_stairs.json
 5f3480ce587ce4b2224ea2c3c4fe0907ed04ca1c data\hyliacraft\loot_table\blocks\magenta_shingles.json

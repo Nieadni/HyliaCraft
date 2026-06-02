@@ -172,7 +172,13 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(Items.SALMON)
                 .input(Blocks.PUMPKIN)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
-                .offerTo(exporter);
+                .offerTo(exporter, getItemId(HCItems.GOOD_SOUP) + "_main");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.GOOD_SOUP, 1)
+                .input(HCItems.SIMPLE_SOUP)
+                .input(Blocks.PUMPKIN)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
+                .offerTo(exporter, getItemId(HCItems.GOOD_SOUP) + "_from_simple_soup");
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.SUPERB_SOUP, 1)
                 .input(Items.GLASS_BOTTLE)
@@ -181,7 +187,20 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .input(Blocks.PUMPKIN)
                 .input(HCItems.GOAT_CHEESE)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOAT_CHEESE))
-                .offerTo(exporter);
+                .offerTo(exporter, getItemId(HCItems.SUPERB_SOUP) + "_main");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.SUPERB_SOUP, 1)
+                .input(HCItems.GOOD_SOUP)
+                .input(HCItems.GOAT_CHEESE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOAT_CHEESE))
+                .offerTo(exporter, getItemId(HCItems.SUPERB_SOUP) + "_from_good_soup");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.SUPERB_SOUP, 1)
+                .input(HCItems.SIMPLE_SOUP)
+                .input(Blocks.PUMPKIN)
+                .input(HCItems.GOAT_CHEESE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.GOAT_CHEESE))
+                .offerTo(exporter, getItemId(HCItems.SUPERB_SOUP) + "_from_simple_soup");
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.GOAT_CHEESE, 1)
                 .input(HCItems.GOAT_MILK_BUCKET)
