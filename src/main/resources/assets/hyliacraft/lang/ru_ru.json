@@ -429,5 +429,7 @@
   "tooltip.hyliacraft.one_hit_obliterator_0": "Для выполнения этой задачи потребуется непоколебимый настрой. Это оружие уничтожает врагов за один удар.",
   "tooltip.hyliacraft.one_hit_obliterator_1": "Но, применимо и обратное, так как владелец оружия так же падет за один удар.",
   "block.hyliacraft.ancient_flower": "Древний Цветок",
-  "block.hyliacraft.ancient_flower_crop": "Семя Древнего Цветка"
+  "block.hyliacraft.ancient_flower_crop": "Семя Древнего Цветка",
+  "block.hyliacraft.bomb_flower": "Бомбовый Цветок",
+  "item.hyliacraft.bomb_flower": "Бомбовый Цветок"
   }

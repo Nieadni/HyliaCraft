@@ -9,7 +9,8 @@
   "client": [
     "ItemRendererAccessor",
     "MixinItemRenderer",
-    "MixinModelBakery"
+    "MixinModelBakery",
+    "MixinPlayerEntityModel"
   ],
   "injectors": {
     "defaultRequire": 1
