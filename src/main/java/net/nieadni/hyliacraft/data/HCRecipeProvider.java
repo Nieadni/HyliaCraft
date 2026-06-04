@@ -209,25 +209,43 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
         //
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
-                .input(HCItemTags.MAGENTA_DYES)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
-                .offerTo(exporter);
-
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.BLUE_DYE, 1)
-                .input(HCItemTags.BLUE_DYES)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.BLUE_NIGHTSHADE))
-                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.GUNPOWDER, 2)
+                .input(HCItems.BOMB_FLOWER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.BOMB_FLOWER))
+                .offerTo(exporter, getItemId(Items.GUNPOWDER) + "_from_bomb_flower");
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 1)
                 .input(HCItemTags.WHITE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SILENT_PRINCESS))
-                .offerTo(exporter);
+                .offerTo(exporter, getItemId(Items.WHITE_DYE) + "_single");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 2)
+                .input(HCItemTags.DOUBLE_WHITE_DYES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.TOWN_FLOWER))
+                .offerTo(exporter, getItemId(Items.WHITE_DYE) + "_double");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT_BLUE_DYE, 2)
+                .input(HCItemTags.DOUBLE_LIGHT_BLUE_DYES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SEA_FLOWER))
+                .offerTo(exporter, getItemId(Items.LIGHT_BLUE_DYE) + "_double");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.BLUE_DYE, 1)
+                .input(HCItemTags.BLUE_DYES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.BLUE_NIGHTSHADE))
+                .offerTo(exporter, getItemId(Items.BLUE_DYE) + "_single");
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.PURPLE_DYE, 1)
                 .input(HCItemTags.PURPLE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SWIFT_VIOLETS))
-                .offerTo(exporter);
+                .offerTo(exporter, getItemId(Items.PURPLE_DYE) + "_single");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 1)
+                .input(HCItemTags.MAGENTA_DYES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.ARMORANTH))
+                .offerTo(exporter, getItemId(Items.MAGENTA_DYE) + "_single");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.MAGENTA_DYE, 2)
+                .input(HCItemTags.DOUBLE_MAGENTA_DYES)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.EXOTIC_FLOWER))
+                .offerTo(exporter, getItemId(Items.MAGENTA_DYE) + "_double");
 
         /** SHINGLES **/
 

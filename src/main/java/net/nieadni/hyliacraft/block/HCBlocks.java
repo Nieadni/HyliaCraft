@@ -48,17 +48,18 @@ public class HCBlocks extends Blocks {
     public static final Block ANCIENT_FLOWER_POT = registerBlock("ancient_flower_pot", Blocks.createFlowerPotBlock(ANCIENT_FLOWER));
     public static final Block ANCIENT_FLOWER_CROP = registerBlockWithoutBlockItem("ancient_flower_crop",
             properties -> new AncientFlowerCropBlock(AbstractBlock.Settings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY)));
-
     public static final Block ARMORANTH = registerBlock("armoranth", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.RESISTANCE, 400)), AbstractBlock.Settings.create().mapColor(MapColor.MAGENTA).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ARMORANTH_POT = registerBlock("armoranth_pot", Blocks.createFlowerPotBlock(ARMORANTH));
     public static final Block BLUE_NIGHTSHADE = registerBlock( "blue_nightshade", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.INVISIBILITY, 400)), AbstractBlock.Settings.create().mapColor(MapColor.BLUE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block BLUE_NIGHTSHADE_POT = registerBlock("blue_nightshade_pot", Blocks.createFlowerPotBlock(BLUE_NIGHTSHADE));
+    public static final Block BOMB_FLOWER = registerBlock("bomb_flower", new BombFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block EXOTIC_FLOWER = registerBlock("exotic_flower", new TallFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).burnable().pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block SEA_FLOWER = registerBlock("sea_flower", new TallFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).burnable().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SILENT_PRINCESS = registerBlock("silent_princess", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.INVISIBILITY, 400)), AbstractBlock.Settings.create().mapColor(MapColor.WHITE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SILENT_PRINCESS_POT = registerBlock("silent_princess_pot", Blocks.createFlowerPotBlock(SILENT_PRINCESS));
     public static final Block SWIFT_VIOLETS = registerBlock("swift_violets", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.SPEED, 400)), AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SWIFT_VIOLETS_POT = registerBlock("swift_violets_pot", Blocks.createFlowerPotBlock(SWIFT_VIOLETS));
-
-    public static final Block BOMB_FLOWER = registerBlock("bomb_flower", new BombFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block TOWN_FLOWER = registerBlock("town_flower", new TallFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block WHITE_SHINGLES = registerBlock("white_shingles", new Block(AbstractBlock.Settings.copy(TERRACOTTA).mapColor(MapColor.WHITE)));
     public static final Block WHITE_SHINGLE_STAIRS = registerBlock("white_shingle_stairs", new StairsBlock(WHITE_SHINGLES.getDefaultState(), Block.Settings.copy(WHITE_SHINGLES)));

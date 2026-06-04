@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "hyliacraft:block/town_flower_bottom"
+    },
+    "half=upper": {
+      "model": "hyliacraft:block/town_flower_top"
+    }
+  }
+}

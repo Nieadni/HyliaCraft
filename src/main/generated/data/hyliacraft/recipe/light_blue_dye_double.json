@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "hyliacraft:double_light_blue_dyes"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:light_blue_dye"
+  }
+}

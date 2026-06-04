@@ -69,8 +69,11 @@ public class HCItemGroups {
                         entries.add(HCBlocks.ANCIENT_FLOWER);
                         entries.add(HCBlocks.ARMORANTH);
                         entries.add(HCBlocks.BLUE_NIGHTSHADE);
+                        entries.add(HCBlocks.EXOTIC_FLOWER);
+                        entries.add(HCBlocks.SEA_FLOWER);
                         entries.add(HCBlocks.SILENT_PRINCESS);
                         entries.add(HCBlocks.SWIFT_VIOLETS);
+                        entries.add(HCBlocks.TOWN_FLOWER);
 
                         entries.add(HCBlocks.WHITE_SHINGLES);
                         entries.add(HCBlocks.WHITE_SHINGLE_STAIRS);

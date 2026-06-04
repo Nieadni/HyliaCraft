@@ -130,6 +130,22 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.MAGENTA_DYES).add(Item.fromBlock(HCBlocks.ANCIENT_FLOWER)).add(Item.fromBlock(HCBlocks.ARMORANTH));
         getOrCreateTagBuilder(HCItemTags.PINK_DYES);
 
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_WHITE_DYES).add(Item.fromBlock(HCBlocks.TOWN_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIGHT_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BLACK_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BROWN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_RED_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_ORANGE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_YELLOW_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIME_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_GREEN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_CYAN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIGHT_BLUE_DYES).add(Item.fromBlock(HCBlocks.SEA_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BLUE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_PURPLE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_MAGENTA_DYES).add(Item.fromBlock(HCBlocks.EXOTIC_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_PINK_DYES);
     }
 
 }

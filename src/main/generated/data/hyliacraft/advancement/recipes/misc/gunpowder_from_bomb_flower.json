@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "hyliacraft:armoranth"
+            "items": "hyliacraft:bomb_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hyliacraft:magenta_dye"
+        "recipe": "hyliacraft:gunpowder_from_bomb_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hyliacraft:magenta_dye"
+      "hyliacraft:gunpowder_from_bomb_flower"
     ]
   }
 }

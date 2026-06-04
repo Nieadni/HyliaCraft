@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "hyliacraft:silent_princess"
+            "items": "hyliacraft:exotic_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "hyliacraft:white_dye"
+        "recipe": "hyliacraft:magenta_dye_double"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "hyliacraft:white_dye"
+      "hyliacraft:magenta_dye_double"
     ]
   }
 }

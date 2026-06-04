@@ -126,10 +126,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.ANCIENT_FLOWER, "Ancient Flower");
         translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");
         translationBuilder.add(HCBlocks.BLUE_NIGHTSHADE, "Blue Nightshade");
+        translationBuilder.add(HCBlocks.BOMB_FLOWER, "Bomb Flower");
+        translationBuilder.add(HCBlocks.EXOTIC_FLOWER, "Exotic Flower");
+        translationBuilder.add(HCBlocks.SEA_FLOWER, "Sea Flower");
         translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
         translationBuilder.add(HCBlocks.SWIFT_VIOLETS, "Swift Violets");
-        translationBuilder.add(HCBlocks.BOMB_FLOWER, "Bomb Flower");
-
+        translationBuilder.add(HCBlocks.TOWN_FLOWER, "Town Flower");
 
         /** Entities **/
 

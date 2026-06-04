@@ -2,10 +2,8 @@ package net.nieadni.hyliacraft.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
-import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
 import net.nieadni.hyliacraft.block.custom.BombFlowerBlock;
@@ -126,7 +124,11 @@ public class HCModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SILENT_PRINCESS, HCBlocks.SILENT_PRINCESS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SWIFT_VIOLETS, HCBlocks.SWIFT_VIOLETS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerBuiltin(Identifier.of(HyliaCraft.MOD_ID, "block/iron_chest"), Blocks.OAK_PLANKS).includeWithoutItem(Blocks.CHEST);
+        //TODO: Need to fix the item form of these. It uses the top of the block. Idk how to make it smth else though and its not game breaking.
+        // Check the item folder for things like 'exotic_flower_item'
+        blockStateModelGenerator.registerDoubleBlock(HCBlocks.EXOTIC_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(HCBlocks.SEA_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerDoubleBlock(HCBlocks.TOWN_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //
 
