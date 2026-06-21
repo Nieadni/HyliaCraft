@@ -7,14 +7,18 @@ import net.minecraft.world.PersistentState;
 import net.minecraft.world.PersistentStateManager;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class HyliaCraftPersistentState extends PersistentState {
 
-    public HashMap<UUID, PlayerData> playerData = new HashMap<>();
+    private static final String RACES_KEY = "race";
+    private static final String NUM_TARGETERS_KEY = "numTargeters";
+
+    public Map<UUID, HyliaCraftRace> races = new HashMap<>();
+    public Map<UUID, Integer> numTargeters = new HashMap<>();
 
     private static final Type<HyliaCraftPersistentState> type = new Type<>(
             HyliaCraftPersistentState::new,
@@ -22,11 +26,20 @@ public class HyliaCraftPersistentState extends PersistentState {
             null
     );
 
-    public PlayerData getOrCreatePlayerData(UUID uuid) {
-        PlayerData value = playerData.get(uuid);
+    public HyliaCraftRace getOrCreateRace(UUID uuid) {
+        HyliaCraftRace value = races.get(uuid);
         if (value == null) {
-            value = new PlayerData();
-            playerData.put(uuid, value);
+            races.put(uuid, null);
+            markDirty();
+        }
+        return value;
+    }
+    
+    public int getOrCreateNumTargeters(UUID uuid) {
+        Integer value = numTargeters.get(uuid);
+        if (value == null) {
+            value = 0;
+            numTargeters.put(uuid, 0);
             markDirty();
         }
         return value;
@@ -34,30 +47,44 @@ public class HyliaCraftPersistentState extends PersistentState {
 
     @Override
     public NbtCompound writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        // Inner NbtCompound for the player data
-        NbtCompound playerDataNbt = new NbtCompound();
-
-        // Add each player's data to the compound
-        playerData.forEach((uuid, data) -> {
+        // Races
+        NbtCompound racesNbt = new NbtCompound();
+        races.forEach((uuid, race) -> {
             String key = uuid.toString();
-            NbtCompound value = new NbtCompound();
-            data.writeNbt(value);
-            playerDataNbt.put(key, value);
+            int value = race != null ? race.ordinal() : -1;
+            racesNbt.putInt(key, value);
         });
-
-        nbt.put("playerData", playerDataNbt);
+        nbt.put(RACES_KEY, racesNbt);
+        
+        // Targeters
+        NbtCompound numTargetersNbt = new NbtCompound();
+        numTargeters.forEach((uuid, value) -> {
+            String key = uuid.toString();
+            numTargetersNbt.putInt(key, value);
+        });
+        nbt.put(NUM_TARGETERS_KEY, numTargetersNbt);
+        
         return nbt;
     }
 
     public static HyliaCraftPersistentState readFromNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         HyliaCraftPersistentState state = new HyliaCraftPersistentState();
 
-        NbtCompound playerDataNbt = nbt.getCompound("playerData");
-        for (String key : playerDataNbt.getKeys()) {
+        // Races
+        NbtCompound racesNbt = nbt.getCompound(RACES_KEY);
+        for (String key : racesNbt.getKeys()) {
             UUID uuid = UUID.fromString(key);
-            NbtCompound value = playerDataNbt.getCompound(key);
-            PlayerData data = PlayerData.readFromNbt(value);
-            state.playerData.put(uuid, data);
+            int value = racesNbt.getInt(key);
+            HyliaCraftRace race = value == -1 ? null : HyliaCraftRace.fromOrdinal(value);
+            state.races.put(uuid, race);
+        }
+        
+        // Targeters
+        NbtCompound numTargetersNbt = nbt.getCompound(NUM_TARGETERS_KEY);
+        for (String key : numTargetersNbt.getKeys()) {
+            UUID uuid = UUID.fromString(key);
+            int numTargeters = numTargetersNbt.getInt(key);
+            state.numTargeters.put(uuid, numTargeters);
         }
 
         return state;
@@ -66,29 +93,5 @@ public class HyliaCraftPersistentState extends PersistentState {
     public static HyliaCraftPersistentState getServerState(MinecraftServer server) {
         PersistentStateManager stateManager = server.getWorld(World.OVERWORLD).getPersistentStateManager();
         return stateManager.getOrCreate(type, HyliaCraft.MOD_ID);
-    }
-
-    public static class PlayerData {
-
-        public HyliaCraftRace race;
-
-        public PlayerData(HyliaCraftRace race) {
-            this.race = race;
-        }
-
-        public PlayerData() {
-            this.race = null;
-        }
-
-        public void writeNbt(NbtCompound nbt) {
-            int encoding = race != null ? race.ordinal() : -1;
-            nbt.putInt("race", encoding);
-        }
-
-        public static PlayerData readFromNbt(NbtCompound nbt) {
-            int encoding = nbt.getInt("race");
-            HyliaCraftRace race = encoding == -1 ? null : HyliaCraftRace.fromOrdinal(encoding);
-            return new PlayerData(race);
-        }
     }
 }

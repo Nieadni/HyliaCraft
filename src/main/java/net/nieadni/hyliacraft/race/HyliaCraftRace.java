@@ -11,6 +11,7 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -26,11 +27,11 @@ import net.minecraft.world.World;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.client.HyliaCraftClient;
+import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
+import net.nieadni.hyliacraft.network.NetworkUtils;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public enum HyliaCraftRace {
     HUMAN("human", 20, 0),
@@ -140,17 +141,26 @@ public enum HyliaCraftRace {
         @Override
         public void applyRaceServer(PlayerEntity player) {
             super.applyRaceServer(player);
+            // Scale modifier
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
             instance.addPersistentModifier(new EntityAttributeModifier(SCALE_MODIFIER, -0.34, EntityAttributeModifier.Operation.ADD_VALUE));
+            // Invisibility
+            MinecraftServer server = player.getServer();
+            if (!HyliaCraftPersistentState.getServerState(server).numTargeters.containsKey(player.getUuid())) {
+                NetworkUtils.broadcast(server, new InvisibleS2CPayload(player.getId(), true));
+            }
         }
 
         @Override
         public void removeRaceServer(PlayerEntity player) {
             super.removeRaceServer(player);
+            // Scale modifier
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
             instance.removeModifier(SCALE_MODIFIER);
+            // Invisibility
+            NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), false));
         }
     },
     GERUDO("gerudo", 26, 0);
@@ -220,8 +230,7 @@ public enum HyliaCraftRace {
     public static HyliaCraftRace getRace(ServerPlayerEntity player) {
         UUID uuid = player.getUuid();
         HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(player.getServer());
-        HyliaCraftPersistentState.PlayerData playerData = state.playerData.get(uuid);
-        return playerData != null ? playerData.race : null;
+        return state.races.get(uuid);
     }
 
     public static HyliaCraftRace getRace(PlayerEntity player) {
@@ -245,17 +254,17 @@ public enum HyliaCraftRace {
         MinecraftServer server = player.getServer();
         HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
         UUID uuid = player.getUuid();
-        HyliaCraftPersistentState.PlayerData playerData = state.getOrCreatePlayerData(uuid);
+        HyliaCraftRace oldRace = state.getOrCreateRace(uuid);
 
         // Check that we even need to change the race
-        if (playerData.race != race) {
+        if (oldRace != race) {
             // Maybe remove the old race
-            if (playerData.race != null) {
-                playerData.race.removeRaceServer(player);
+            if (oldRace != null) {
+                oldRace.removeRaceServer(player);
             }
 
             // Set the race
-            playerData.race = race;
+            state.races.put(uuid, race);
             state.markDirty();
 
             // Apply the new race

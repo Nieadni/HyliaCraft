@@ -31,14 +31,14 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.item.HCItemTags;
 
-import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
-import net.nieadni.hyliacraft.network.RaceC2SPayload;
-import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class HyliaCraft implements ModInitializer {
@@ -68,6 +68,7 @@ public class HyliaCraft implements ModInitializer {
         PayloadTypeRegistry.playS2C().register(RaceS2CPayload.ID, RaceS2CPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(RaceC2SPayload.ID, RaceC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(RaceAbilityC2SPayload.ID, RaceAbilityC2SPayload.CODEC);
+		PayloadTypeRegistry.playS2C().register(InvisibleS2CPayload.ID, InvisibleS2CPayload.CODEC);
 
         // Register packet receiver for the choose race payload
         ServerPlayNetworking.registerGlobalReceiver(RaceC2SPayload.ID, (payload, context) -> {
@@ -88,16 +89,24 @@ public class HyliaCraft implements ModInitializer {
                 race.useRaceAbility(player);
             }
         });
-
-        // When a player joins the server, we check whether they've already chosen a race.
-        // If they haven't, we prompt them to choose one.
+		
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-            HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
-            // Check if the player already has a race
-            ServerPlayerEntity player = handler.getPlayer();
-            UUID uuid = player.getUuid();
-            HyliaCraftPersistentState.PlayerData data = state.getOrCreatePlayerData(uuid);
-            ServerPlayNetworking.send(player, new RaceS2CPayload(data.race));
+			HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
+			ServerPlayerEntity joiner = handler.getPlayer();
+			UUID uuid = joiner.getUuid();
+			// Send the player's current race (null if they haven't chosen one yet)
+            HyliaCraftRace race = state.getOrCreateRace(uuid);
+            ServerPlayNetworking.send(joiner, new RaceS2CPayload(race));
+			// Send the invisibility overrides to this player
+            Map<Integer, Boolean> isInvisible = new HashMap<>();
+			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+				isInvisible.put(player.getId(), !state.numTargeters.containsKey(player.getUuid()) && HyliaCraftRace.getRace(player) == HyliaCraftRace.KOKIRI);
+			}
+			boolean isJoinerInvisible = !state.numTargeters.containsKey(uuid) && HyliaCraftRace.getRace(joiner) == HyliaCraftRace.KOKIRI;
+	        isInvisible.put(joiner.getId(), isJoinerInvisible);
+			ServerPlayNetworking.send(joiner, new InvisibleS2CPayload(isInvisible));
+			// Send this player's invisibility status to other players
+			NetworkUtils.broadcast(server, new InvisibleS2CPayload(joiner.getId(), isJoinerInvisible));
         });
 
         // Register race argument type

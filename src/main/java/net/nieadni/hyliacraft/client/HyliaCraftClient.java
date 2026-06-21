@@ -13,9 +13,14 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
 import net.nieadni.hyliacraft.race.ChooseRaceScreen;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.block.HCBlocks;
@@ -25,12 +30,16 @@ import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
     public static HyliaCraftRace race = null;
     private static int ticksSinceLastRaceAbilityUse = 0;
+    public static Map<Integer, Boolean> invisibilityOverride = new HashMap<>();
 
     @Override
     public void onInitializeClient() {
@@ -79,6 +88,11 @@ public class HyliaCraftClient implements ClientModInitializer {
                 race.applyRaceClient(player);
             }
         });
+        
+        // Register packet receiver for invisibility override
+        ClientPlayNetworking.registerGlobalReceiver(InvisibleS2CPayload.ID, (payload, context) -> 
+                invisibilityOverride.putAll(payload.updates())
+        );
 
         registerRaceAbilityKeybind();
 
