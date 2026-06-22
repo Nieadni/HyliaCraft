@@ -10,6 +10,7 @@ import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.HyliaCraftPersistentState;
 import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
 import net.nieadni.hyliacraft.network.NetworkUtils;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,7 +32,7 @@ public class MobEntityMixin {
             MinecraftServer server = world.getServer();
             HyliaCraftPersistentState state = HyliaCraftPersistentState.getServerState(server);
             // Current target is no longer being targeted
-            if (current instanceof ServerPlayerEntity) {
+            if (current instanceof ServerPlayerEntity player) {
                 System.out.println("Removed targeter " + me.getDisplayName());
                 UUID uuid = current.getUuid();
                 Integer numTargeters = state.numTargeters.get(uuid);
@@ -40,7 +41,9 @@ public class MobEntityMixin {
                 } else {
                     if (numTargeters == 1) {
                         state.numTargeters.remove(uuid);
-                        NetworkUtils.broadcast(server, new InvisibleS2CPayload(current.getId(), true));
+                        if (HyliaCraftRace.checkKokiriInvisible(false, true, true, true, player)) {
+                            NetworkUtils.broadcast(server, new InvisibleS2CPayload(current.getId(), true));
+                        }
                     } else {
                         state.numTargeters.put(uuid, numTargeters - 1);
                     }

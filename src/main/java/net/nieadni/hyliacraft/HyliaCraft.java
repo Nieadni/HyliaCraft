@@ -4,6 +4,8 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -17,11 +19,13 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
@@ -35,6 +39,7 @@ import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
+import net.nieadni.hyliacraft.worldgen.HCBiomeTags;
 import org.slf4j.*;
 
 import java.util.HashMap;
@@ -107,6 +112,22 @@ public class HyliaCraft implements ModInitializer {
 			ServerPlayNetworking.send(joiner, new InvisibleS2CPayload(isInvisible));
 			// Send this player's invisibility status to other players
 			NetworkUtils.broadcast(server, new InvisibleS2CPayload(joiner.getId(), isJoinerInvisible));
+        });
+		
+		ServerTickEvents.END_SERVER_TICK.register(server -> {
+            // Check which biomes everyone's in
+			Map<Integer, Boolean> updates = new HashMap<>();
+			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+				int id = player.getId();
+				boolean isInBiome = player.getWorld().getBiome(player.getBlockPos()).isIn(HCBiomeTags.KOKIRI_INVISIBLE);
+				if (isInBiome != HyliaCraftRace.WAS_IN_INVISIBLE_BIOME.getOrDefault(id, false)) {
+					updates.put(id, isInBiome && HyliaCraftRace.checkKokiriInvisible(true, false, true, true, player));
+				}
+				HyliaCraftRace.WAS_IN_INVISIBLE_BIOME.put(id, isInBiome);
+			}
+			if (!updates.isEmpty()) {
+				NetworkUtils.broadcast(server, new InvisibleS2CPayload(updates));
+			}
         });
 
         // Register race argument type

@@ -11,7 +11,6 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -30,6 +29,7 @@ import net.nieadni.hyliacraft.client.HyliaCraftClient;
 import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
 import net.nieadni.hyliacraft.network.NetworkUtils;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.worldgen.HCBiomeTags;
 
 import java.util.*;
 
@@ -39,7 +39,7 @@ public enum HyliaCraftRace {
     SKYLOFTIAN("skyloftian", 24, 0),
     ZORA("zora", 20, 60) {
         @Override
-        public void applyRaceServer(PlayerEntity player) {
+        public void applyRaceServer(ServerPlayerEntity player) {
             super.applyRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(1.0);
@@ -47,7 +47,7 @@ public enum HyliaCraftRace {
         }
 
         @Override
-        public void removeRaceServer(PlayerEntity player) {
+        public void removeRaceServer(ServerPlayerEntity player) {
             super.removeRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             attributes.getCustomInstance(EntityAttributes.GENERIC_WATER_MOVEMENT_EFFICIENCY).setBaseValue(0.0);
@@ -88,7 +88,7 @@ public enum HyliaCraftRace {
         public static final Identifier MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "goron_movement_speed");
 
         @Override
-        public void applyRaceServer(PlayerEntity player) {
+        public void applyRaceServer(ServerPlayerEntity player) {
             super.applyRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
@@ -96,7 +96,7 @@ public enum HyliaCraftRace {
         }
 
         @Override
-        public void removeRaceServer(PlayerEntity player) {
+        public void removeRaceServer(ServerPlayerEntity player) {
             super.removeRaceServer(player);
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
@@ -139,28 +139,29 @@ public enum HyliaCraftRace {
         public static final Identifier SCALE_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "kokiri_scale");
 
         @Override
-        public void applyRaceServer(PlayerEntity player) {
+        public void applyRaceServer(ServerPlayerEntity player) {
             super.applyRaceServer(player);
             // Scale modifier
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
             instance.addPersistentModifier(new EntityAttributeModifier(SCALE_MODIFIER, -0.34, EntityAttributeModifier.Operation.ADD_VALUE));
             // Invisibility
-            MinecraftServer server = player.getServer();
-            if (!HyliaCraftPersistentState.getServerState(server).numTargeters.containsKey(player.getUuid())) {
-                NetworkUtils.broadcast(server, new InvisibleS2CPayload(player.getId(), true));
+            if (checkKokiriInvisible(true, true, true, false, player)) {
+                NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), true));
             }
         }
 
         @Override
-        public void removeRaceServer(PlayerEntity player) {
+        public void removeRaceServer(ServerPlayerEntity player) {
             super.removeRaceServer(player);
             // Scale modifier
             AttributeContainer attributes = player.getAttributes();
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
             instance.removeModifier(SCALE_MODIFIER);
             // Invisibility
-            NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), false));
+            if (checkKokiriInvisible(true, true, true, false, player)) {
+                NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), false));
+            }
         }
     },
     GERUDO("gerudo", 26, 0);
@@ -186,6 +187,16 @@ public enum HyliaCraftRace {
     public static final FoodComponent GORON_EATING_COMPONENT = new FoodComponent(2, 0.3f, false, 1.6f, Optional.empty(), List.of());
     
     public static final ThreadLocal<Boolean> SHEIKAH_IS_CONTAINER_SILENCED = new ThreadLocal<>();
+    
+    public static final Map<Integer, Boolean> WAS_IN_INVISIBLE_BIOME = new HashMap<>();
+    
+    public static boolean checkKokiriInvisible(boolean targeted, boolean biome, boolean sneaking, boolean race, ServerPlayerEntity player) {
+        if (sneaking && !player.isSneaking()) return false;
+        if (targeted && HyliaCraftPersistentState.getServerState(player.getServer()).numTargeters.containsKey(player.getUuid())) return false;
+        if (race && HyliaCraftRace.getRace(player) != HyliaCraftRace.KOKIRI) return false;
+        if (biome && !player.getWorld().getBiome(player.getBlockPos()).isIn(HCBiomeTags.KOKIRI_INVISIBLE)) return false;
+        return true;
+    }
 
     public static HyliaCraftRace fromOrdinal(int ordinal) {
         return HyliaCraftRace.values()[ordinal];
@@ -209,7 +220,7 @@ public enum HyliaCraftRace {
         return Text.translatable("hyliacraft.race.%s.abilities".formatted(this.id));
     }
 
-    public void applyRaceServer(PlayerEntity player) {
+    public void applyRaceServer(ServerPlayerEntity player) {
         if (player instanceof ServerPlayerEntity) {
             player.getAttributes().getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(maxHealth);
             player.setHealth(maxHealth);
@@ -218,7 +229,7 @@ public enum HyliaCraftRace {
     
     public void applyRaceClient(PlayerEntity player) {}
 
-    public void removeRaceServer(PlayerEntity player) {}
+    public void removeRaceServer(ServerPlayerEntity player) {}
     
     public void removeRaceClient(PlayerEntity player) {}
 
