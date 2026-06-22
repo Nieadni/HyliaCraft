@@ -23,46 +23,83 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.PHRYGIAN_CAP, HCItems.PHRYGIAN_CAP_SS, HCItems.PHRYGIAN_CAP_TP,
-                        HCItems.PHRYGIAN_CAP_CLASSIC);
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP, 
+                        HCItems.SKY_CAP, HCItems.TIME_CAP, HCItems.TWILIGHT_CAP, HCItems.WILD_CAP, HCItems.WIND_CAP);
+
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
-                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.PHRYGIAN_CAP, HCItems.PHRYGIAN_CAP_SS, HCItems.PHRYGIAN_CAP_TP,
-                        HCItems.PHRYGIAN_CAP_CLASSIC);
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP,
+                        HCItems.SKY_CAP, HCItems.TIME_CAP, HCItems.TWILIGHT_CAP, HCItems.WILD_CAP, HCItems.WIND_CAP);
+
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(HCItems.FIERCE_TUNIC, HCItems.HERO_TUNIC, HCItems.SKY_TUNIC, HCItems.TIME_TUNIC, HCItems.TWILIGHT_TUNIC, 
+                        HCItems.WILD_TUNIC, HCItems.WIND_TUNIC);
+
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_TUNIC, HCItems.HERO_TUNIC, HCItems.SKY_TUNIC, HCItems.TIME_TUNIC, HCItems.TWILIGHT_TUNIC, 
+                        HCItems.WILD_TUNIC, HCItems.WIND_TUNIC);
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(HCItems.FIERCE_TROUSERS, HCItems.HERO_TROUSERS, HCItems.SKY_TROUSERS, HCItems.TIME_TROUSERS, HCItems.TWILIGHT_TROUSERS, 
+                        HCItems.WILD_TROUSERS, HCItems.WIND_TROUSERS);
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_TROUSERS, HCItems.HERO_TROUSERS, HCItems.SKY_TROUSERS, HCItems.TIME_TROUSERS, HCItems.TWILIGHT_TROUSERS, 
+                        HCItems.WILD_TROUSERS, HCItems.WIND_TROUSERS);
+
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(HCItems.FIERCE_BOOTS, HCItems.HERO_BOOTS, HCItems.SKY_BOOTS, HCItems.TIME_BOOTS, HCItems.TWILIGHT_BOOTS, 
+                        HCItems.WILD_BOOTS, HCItems.WIND_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_BOOTS, HCItems.HERO_BOOTS, HCItems.SKY_BOOTS, HCItems.TIME_BOOTS, HCItems.TWILIGHT_BOOTS,
+                        HCItems.WILD_BOOTS, HCItems.WIND_BOOTS);
+
         getOrCreateTagBuilder(HCItemTags.ENDERMASK)
                 .add(HCItems.MAJORAS_MASK, HCItems.PUMPKIN_MASK);
-        getOrCreateTagBuilder(ItemTags.DYEABLE)
-                .add(HCItems.PHRYGIAN_CAP);
+
         getOrCreateTagBuilder(ItemTags.PIG_FOOD)
                 .add(HCItems.BANANA);
+
         getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS)
                 .add(HCItems.GOAT_MILK_BUCKET, Items.MILK_BUCKET);
+
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
                         HCItems.DOUBLE_HELIX_SWORD);
+
         getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
                         HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
+
         getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD,
                         HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD, HCItems.IRON_BOW, HCItems.FAIRY_BOW, HCItems.DIGGING_MITT, HCItems.MOGMA_MITT,
-                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
+                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD, HCItems.TWILIGHT_CAP);
+
         getOrCreateTagBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(HCItems.ONE_HIT_OBLITERATOR);
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(HCItems.IRON_BOW, HCItems.FAIRY_BOW);
+
         getOrCreateTagBuilder(ItemTags.SHOVELS)
                 .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+
         getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE)
                 .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+
         getOrCreateTagBuilder(ItemTags.PICKAXES)
                 .add(HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+
         getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
                 .add(HCItems.BOULDER_BREAKER);
+
         getOrCreateTagBuilder(HCItemTags.SICKLES)
                 .add(HCItems.VICIOUS_SICKLE);
+
         getOrCreateTagBuilder(HCItemTags.SHORT_WEAPON)
                 .add(HCItems.GODDESS_SWORD).add(HCItems.VICIOUS_SICKLE);
 

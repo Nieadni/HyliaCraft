@@ -30,11 +30,37 @@ public class HCRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
 
+        /** ARMOUR & TOOLS **/
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER, 1)
+                .pattern("GWY")
+                .pattern("IRI")
+                .pattern("ISI")
+                .input('I', Items.STICK)
+                .input('S', Items.STRING)
+                .input('R', Items.RED_WOOL)
+                .input('W', Items.WHITE_DYE)
+                .input('G', Items.GREEN_DYE)
+                .input('Y', Items.YELLOW_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.FAIRY_BOW, 1)
+                .pattern("LR")
+                .pattern("GB")
+                .pattern("LR")
+                .input('B', Items.BOW)
+                .input('L', Items.LAPIS_LAZULI)
+                .input('R', Items.REDSTONE)
+                .input('G', Items.GOLD_INGOT)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.BOW))
+                .offerTo(exporter);
+
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.EMPTY,
-                Ingredient.ofItems(HCItems.GODDESS_SWORD),
-                Ingredient.ofItems(HCItems.FARORE_FLAME),
-                RecipeCategory.TOOLS, HCItems.GODDESS_LONGSWORD)
+                        Ingredient.EMPTY,
+                        Ingredient.ofItems(HCItems.GODDESS_SWORD),
+                        Ingredient.ofItems(HCItems.FARORE_FLAME),
+                        RecipeCategory.TOOLS, HCItems.GODDESS_LONGSWORD)
                 .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
                 .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.GODDESS_LONGSWORD)));
         SmithingTransformRecipeJsonBuilder.create(
@@ -52,43 +78,153 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
                 .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.MASTER_SWORD)));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP, 1)
-                .pattern("H")
-                .pattern("L")
-                .input('H', Items.LEATHER_HELMET)
-                .input('L', Items.LEATHER)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.YELLOW_DYE).input(Items.LIME_DYE).input(Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_SS, 1)
-                .pattern("FWF")
-                .pattern("LHG")
-                .input('H', HCItems.PHRYGIAN_CAP)
-                .input('G', Items.GREEN_DYE)
-                .input('L', Items.LIME_DYE)
-                .input('F', Items.FEATHER)
-                .input('W', Items.GREEN_WOOL)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.LIME_DYE).input(Items.GREEN_DYE).input(Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_TP, 1)
-                .pattern("BWB")
-                .pattern("GHG")
-                .input('H', HCItems.PHRYGIAN_CAP)
-                .input('G', Items.GREEN_DYE)
-                .input('B', Items.BONE)
-                .input('W', Items.GREEN_WOOL)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+                ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.LIME_DYE).input(Items.GREEN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.PHRYGIAN_CAP_CLASSIC, 1)
-                .pattern("LHL")
-                .pattern("YWY")
-                .input('H', HCItems.PHRYGIAN_CAP)
-                .input('L', Items.LIME_DYE)
-                .input('Y', Items.YELLOW_DYE)
-                .input('W', Items.GREEN_WOOL)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
                 .offerTo(exporter);
 
-        //
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.SKY_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.LIME_DYE)
+                .input(Items.FEATHER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.SKY_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.LIME_DYE).input(Items.WHITE_DYE).input(Items.BLACK_DYE)
+                .input(Items.FEATHER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.SKY_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.LIME_DYE)
+                .input(Items.FEATHER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.SKY_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .input(Items.FEATHER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TIME_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.GREEN_DYE)
+                .input(Items.CLOCK)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TIME_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.GREEN_DYE).input(Items.BROWN_DYE).input(Items.WHITE_DYE).input(Items.MAGENTA_DYE)
+                .input(Items.CLOCK)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TIME_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.GREEN_DYE).input(Items.WHITE_DYE)
+                .input(Items.CLOCK)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TIME_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE).input(Items.MAGENTA_DYE).input(Items.ORANGE_DYE)
+                .input(Items.CLOCK)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TWILIGHT_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.GREEN_DYE)
+                .input(Items.BONE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TWILIGHT_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.GREEN_DYE).input(Items.BROWN_DYE).input(Items.BLUE_DYE).input(Items.WHITE_DYE)
+                .input(Items.BONE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TWILIGHT_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.GREEN_DYE).input(Items.WHITE_DYE).input(Items.BROWN_DYE)
+                .input(Items.BONE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TWILIGHT_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .input(Items.BONE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WILD_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.LIME_DYE)
+                .input(Items.OAK_SAPLING).input(Items.HONEY_BOTTLE).input(HCBlocks.SILENT_PRINCESS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WILD_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.LIME_DYE).input(Items.WHITE_DYE).input(Items.BROWN_DYE)
+                .input(Items.OAK_SAPLING).input(Items.HONEY_BOTTLE).input(HCBlocks.SILENT_PRINCESS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WILD_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.LIME_DYE).input(Items.BROWN_DYE)
+                .input(Items.OAK_SAPLING).input(Items.HONEY_BOTTLE).input(HCBlocks.SILENT_PRINCESS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WILD_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .input(Items.OAK_SAPLING).input(Items.HONEY_BOTTLE).input(HCBlocks.SILENT_PRINCESS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WIND_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.LIME_DYE)
+                .input(Items.WIND_CHARGE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WIND_TUNIC, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.LIME_DYE)
+                .input(Items.WIND_CHARGE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WIND_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.LIME_DYE).input(Items.WHITE_DYE)
+                .input(Items.WIND_CHARGE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.WIND_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .input(Items.WIND_CHARGE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
+                .offerTo(exporter);
+
+        /// /// ///
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, HCBlocks.CLAY_POT, 1)
                 .pattern("CCC")
@@ -115,30 +251,6 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         //
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER, 1)
-                .pattern("GWY")
-                .pattern("IRI")
-                .pattern("ISI")
-                .input('I', Items.STICK)
-                .input('S', Items.STRING)
-                .input('R', Items.RED_WOOL)
-                .input('W', Items.WHITE_DYE)
-                .input('G', Items.GREEN_DYE)
-                .input('Y', Items.YELLOW_DYE)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.RED_WOOL))
-                .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.FAIRY_BOW, 1)
-                .pattern("LR")
-                .pattern("GB")
-                .pattern("LR")
-                .input('B', Items.BOW)
-                .input('L', Items.LAPIS_LAZULI)
-                .input('R', Items.REDSTONE)
-                .input('G', Items.GOLD_INGOT)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.BOW))
-                .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, HCItems.DUBIOUS_FOOD, 1)
                 .input(Items.CHICKEN)
