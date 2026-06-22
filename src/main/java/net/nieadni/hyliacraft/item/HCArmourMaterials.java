@@ -59,9 +59,9 @@ public class HCArmourMaterials {
     public static final RegistryEntry<ArmorMaterial> MIDNA_HELM = registerMaterial("midna_helm",
             Map.of(
                     ArmorItem.Type.HELMET, 3,
-                    ArmorItem.Type.CHESTPLATE, 8,
-                    ArmorItem.Type.LEGGINGS, 6,
-                    ArmorItem.Type.BOOTS, 3
+                    ArmorItem.Type.CHESTPLATE, 1,
+                    ArmorItem.Type.LEGGINGS, 1,
+                    ArmorItem.Type.BOOTS, 1
             ),
             // Enchantability //
             9,
@@ -90,10 +90,10 @@ public class HCArmourMaterials {
 
     public static final RegistryEntry<ArmorMaterial> HEROES_ClOTHES = registerMaterial("heroes_clothes",
             Map.of(
-                    ArmorItem.Type.HELMET, 1,
-                    ArmorItem.Type.CHESTPLATE, 3,
-                    ArmorItem.Type.LEGGINGS, 2,
-                    ArmorItem.Type.BOOTS, 1
+                    ArmorItem.Type.HELMET, 2,
+                    ArmorItem.Type.CHESTPLATE, 5,
+                    ArmorItem.Type.LEGGINGS, 6,
+                    ArmorItem.Type.BOOTS, 2
             ),
             // Enchantability //
             5,
