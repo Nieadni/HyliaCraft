@@ -13,8 +13,6 @@ public class HCBlockTags {
 
     public static final TagKey<Block> MOGMA_CAN_WALK_THROUGH = TagKey.of(RegistryKeys.BLOCK, Identifier.of(HyliaCraft.MOD_ID, "mogma_can_walk_through"));
 
-    public static final TagKey<Block> MOGMA_CAN_WALK_THROUGH = TagKey.of(RegistryKeys.BLOCK, Identifier.of(HyliaCraft.MOD_ID, "mogma_can_walk_through"));
-
     public static void registerHCBlockTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its Block tags.");
     }
