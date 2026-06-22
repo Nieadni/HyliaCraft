@@ -9,6 +9,7 @@
     "race.fist_mining.CanHarvestMixin",
     "race.fist_mining.DropsMixin",
     "race.fist_mining.SpeedMixin",
+    "race.gerudo.MovementSpeedMixin",
     "race.goron.AttackDamageMixin",
     "race.goron.LavaDamageMixin",
     "race.goron.SwimmingMixin",

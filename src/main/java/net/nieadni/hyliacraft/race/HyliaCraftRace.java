@@ -189,6 +189,8 @@ public enum HyliaCraftRace {
     public static final ThreadLocal<Boolean> SHEIKAH_IS_CONTAINER_SILENCED = new ThreadLocal<>();
     
     public static final Map<Integer, Boolean> WAS_IN_INVISIBLE_BIOME = new HashMap<>();
+
+    public static final Identifier GERUDO_MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "gerudo");
     
     public static boolean checkKokiriInvisible(boolean targeted, boolean biome, boolean sneaking, boolean race, ServerPlayerEntity player) {
         if (sneaking && !player.isSneaking()) return false;
