@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_helmet"
+    },
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:sky_cap"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_chestplate"
+    },
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "item": "minecraft:oak_sapling"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "hyliacraft:silent_princess"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:wild_tunic"
+  }
+}
