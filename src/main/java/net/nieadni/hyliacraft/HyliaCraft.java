@@ -89,7 +89,6 @@ public class HyliaCraft implements ModInitializer {
             ServerPlayerEntity player = context.player();
             HyliaCraftRace race = HyliaCraftRace.getRace(player);
             if (race != null) {
-				System.out.println("Using race ability on " + FabricLoader.getInstance().getEnvironmentType());
                 race.useRaceAbility(player);
             }
         });

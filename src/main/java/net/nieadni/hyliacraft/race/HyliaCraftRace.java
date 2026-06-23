@@ -120,16 +120,13 @@ public enum HyliaCraftRace {
         @Override
         public boolean useRaceAbility(PlayerEntity player) {
             super.useRaceAbility(player);
-            switch (FabricLoader.getInstance().getEnvironmentType()) {
-                case CLIENT -> {
-                    HyliaCraftClient.mogmaDirtWalkingEnabled = !HyliaCraftClient.mogmaDirtWalkingEnabled;
-                    Text message = HyliaCraftClient.mogmaDirtWalkingEnabled ? Text.translatable("hyliacraft.race.mogma.ability_on").formatted(Formatting.GREEN) : Text.translatable("hyliacraft.race.mogma.ability_off").formatted(Formatting.RED);
-                    player.sendMessage(message, true);
-                }
-                case SERVER -> {
-                    UUID uuid = player.getUuid();
-                    MOGMA_DIRT_WALKING_ENABLED.put(uuid, !MOGMA_DIRT_WALKING_ENABLED.getOrDefault(uuid, false));
-                }
+            if (player instanceof ServerPlayerEntity) {
+                UUID uuid = player.getUuid();
+                MOGMA_DIRT_WALKING_ENABLED.put(uuid, !MOGMA_DIRT_WALKING_ENABLED.getOrDefault(uuid, false));
+            } else {
+                HyliaCraftClient.mogmaDirtWalkingEnabled = !HyliaCraftClient.mogmaDirtWalkingEnabled;
+                Text message = HyliaCraftClient.mogmaDirtWalkingEnabled ? Text.translatable("hyliacraft.race.mogma.ability_on").formatted(Formatting.GREEN) : Text.translatable("hyliacraft.race.mogma.ability_off").formatted(Formatting.RED);
+                player.sendMessage(message, true);
             }
             return true;
         }
