@@ -20,6 +20,7 @@
     "race.kokiri.invisibility.MobEntityMixin",
     "race.mogma.ServerFistRightClick",
     "race.mogma.dirt_walking.AbstractBlockMixin",
+    "race.mogma.dirt_walking.BlocksMixin",
     "race.mogma.dirt_walking.CameraSubmersionTypeMixin",
     "race.mogma.dirt_walking.EntityMixin",
     "race.mogma.dirt_walking.LivingEntityMixin",
