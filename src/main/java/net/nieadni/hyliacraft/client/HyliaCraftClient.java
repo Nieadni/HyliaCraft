@@ -132,7 +132,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         ));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             ticksSinceLastRaceAbilityUse = Math.min(ticksSinceLastRaceAbilityUse + 1, getAbilityCooldown());
-            if (keyBinding.wasPressed()) {
+            while (keyBinding.wasPressed()) {
                 useRaceAbility(client);
             }
         });

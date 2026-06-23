@@ -104,7 +104,7 @@ public enum HyliaCraftRace {
             instance.removeModifier(MOVEMENT_SPEED_MODIFIER);
         }
     },
-    MOGMA("mogma", 16, 0) {
+    MOGMA("mogma", 16, 10) {
         @Override
         public void applyRaceServer(ServerPlayerEntity player) {
             super.applyRaceServer(player);
