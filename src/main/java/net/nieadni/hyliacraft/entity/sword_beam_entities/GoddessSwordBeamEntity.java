@@ -3,9 +3,12 @@ package net.nieadni.hyliacraft.entity.sword_beam_entities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -17,10 +20,27 @@ public class GoddessSwordBeamEntity extends ProjectileEntity {
     //TODO: Make Beam destroy grass + flowers
 
     private final float damage;
+    private static final TrackedData<Boolean> VERTICAL = DataTracker.registerData(GoddessSwordBeamEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    public boolean isVertical() { return this.dataTracker.get(VERTICAL); }
+    public void setVertical(boolean i) { this.dataTracker.set(VERTICAL, i); }
+
+    protected void initDataTracker(DataTracker.Builder builder) {
+        builder.add(VERTICAL, false);
+    }
+
+    protected void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("Vertical", this.isVertical());
+    }
+
+    protected void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.setVertical(nbt.getBoolean("Vertical"));
+    }
 
     public GoddessSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
-        damage = 2.5f;
+        damage = 2f;
     }
 
     private GoddessSwordBeamEntity(World world, float damage) {
@@ -31,9 +51,6 @@ public class GoddessSwordBeamEntity extends ProjectileEntity {
     public static GoddessSwordBeamEntity create(World world, float damage) {
         return new GoddessSwordBeamEntity(world, damage);
     }
-
-    @Override
-    protected void initDataTracker(DataTracker.Builder builder) {}
 
     @Override
     public void tick() {
@@ -55,6 +72,8 @@ public class GoddessSwordBeamEntity extends ProjectileEntity {
         if (this.age > (20 * 15)) {
             this.discard();
         }
+
+        this.updateRotation();
     }
 
     @Override

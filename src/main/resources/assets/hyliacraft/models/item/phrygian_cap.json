@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hyliacraft:item/phrygian_cap",
+    "layer1": "hyliacraft:item/phrygian_cap_overlay"
+  }
+}

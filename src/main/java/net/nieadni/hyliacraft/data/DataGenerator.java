@@ -12,13 +12,13 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-		pack.addProvider(HCBlockLootProvider::new);
-		pack.addProvider(HCItemTagProvider::new);
-		pack.addProvider(HCLanguageProvider::new);
-		pack.addProvider(HCModelProvider::new);
-		pack.addProvider(HCRecipeProvider::new);
-		pack.addProvider(HCBlockTagProvider::new);
-		pack.addProvider(HCWorldGenerator::new);
+        pack.addProvider(HCBlockLootProvider::new);
+        pack.addProvider(HCBlockTagProvider::new);
+        pack.addProvider(HCItemTagProvider::new);
+        pack.addProvider(HCLanguageProvider::new);
+        pack.addProvider(HCModelProvider::new);
+        pack.addProvider(HCRecipeProvider::new);
+        pack.addProvider(HCWorldGenerator::new);
 	}
 
 	@Override

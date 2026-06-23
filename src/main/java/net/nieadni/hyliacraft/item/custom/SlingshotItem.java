@@ -2,9 +2,10 @@ package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.RangedWeaponItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -28,10 +29,18 @@ public class SlingshotItem extends RangedWeaponItem {
     public static final int RANGE = 10;
     public static final Predicate<ItemStack> SLINGSHOT_PROJECTILES = stack -> stack.isIn(HCItemTags.SLINGSHOT_AMMO);
 
-
     public SlingshotItem(Item.Settings settings) {
         super(settings);
     }
+
+    //TODO: Slingshot Item
+    /**
+    * This was my puny attempt at doing the Slingshot.
+    * It needs to have a range of 10 before drop-off
+     * And should be able to fire both rocks (cobblestone) or seeds.
+     * Rocks should ideally do around 2 damage per hit, while seeds do 1 damage per hit
+     * Feel free to remove anything that isn't needed.
+     **/
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "hyliacraft:silver_rupees"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:silver_rupee"
+  }
+}

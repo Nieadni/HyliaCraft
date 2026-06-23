@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "hyliacraft:milk_buckets"
+    },
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "hyliacraft:goat_cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:superb_soup"
+  }
+}

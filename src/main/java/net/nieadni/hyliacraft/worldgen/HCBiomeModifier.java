@@ -28,7 +28,11 @@ public class HCBiomeModifier {
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 HCPlacedFeatures.SWIFT_VIOLETS_PATCH_KEY
         );
-
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(HCBiomeTags.BOMB_FLOWER),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                HCPlacedFeatures.BOMB_FLOWER_PATCH_KEY
+        );
     }
 
 

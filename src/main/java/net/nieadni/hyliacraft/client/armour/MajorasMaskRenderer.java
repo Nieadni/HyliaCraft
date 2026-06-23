@@ -1,7 +1,6 @@
 package net.nieadni.hyliacraft.client.armour;
 
 import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
-
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 

@@ -36,11 +36,10 @@
     "race.zora.DoubleDamageMixin"
   ],
   "client": [
-    "DiggingMittItemRendererMixin",
-    "DiggingMittModelLoaderMixin",
     "ItemRendererAccessor",
-    "MogmaMittItemRendererMixin",
-    "MogmaMittModelLoaderMixin",
+    "MixinItemRenderer",
+    "MixinModelBakery",
+    "MixinPlayerEntityModel",
     "race.kokiri.invisibility.ClientEntityMixin",
     "race.mogma.ClientFistRightClick",
     "race.mogma.dirt_walking.BackgroundRendererMixin",

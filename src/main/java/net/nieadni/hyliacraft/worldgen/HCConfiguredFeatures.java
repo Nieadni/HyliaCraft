@@ -1,14 +1,18 @@
 package net.nieadni.hyliacraft.worldgen;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DataPool;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.block.custom.BombFlowerBlock;
 
 public class HCConfiguredFeatures {
 
@@ -20,6 +24,8 @@ public class HCConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> SILENT_PRINCESS_PATCH_KEY = registerKey("silent_princess_patch");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SWIFT_VIOLETS_KEY = registerKey("swift_violets");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SWIFT_VIOLETS_PATCH_KEY = registerKey("swift_violets_patch");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BOMB_FLOWER_KEY = registerKey("bomb_flower");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BOMB_FLOWER_PATCH_KEY = registerKey("bomb_flower_patch");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 
@@ -33,17 +39,27 @@ public class HCConfiguredFeatures {
                 BlockStateProvider.of(HCBlocks.SILENT_PRINCESS)));
         register(context, SWIFT_VIOLETS_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 BlockStateProvider.of(HCBlocks.SWIFT_VIOLETS)));
+        register(context, BOMB_FLOWER_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+                new WeightedBlockStateProvider(
+                        DataPool.<BlockState>builder()
+                                .add(HCBlocks.BOMB_FLOWER.getDefaultState().with(BombFlowerBlock.AGE, 0), 1)
+                                .add(HCBlocks.BOMB_FLOWER.getDefaultState().with(BombFlowerBlock.AGE, 1), 2)
+                                .add(HCBlocks.BOMB_FLOWER.getDefaultState().with(BombFlowerBlock.AGE, 2), 3)
+                                .add(HCBlocks.BOMB_FLOWER.getDefaultState().with(BombFlowerBlock.AGE, 3), 4)
+                                .build()
+                )
+        ));
 
         register(context, ARMORANTH_PATCH_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(
                         48,  // Number of tries
-                        10,    // X and Z Spread
+                        12,    // X and Z Spread
                         4,     // Y Spread
                         registryLookup.getOrThrow(HCPlacedFeatures.ARMORANTH_KEY)));
         register(context, BLUE_NIGHTSHADE_PATCH_KEY, Feature.FLOWER,
                 new RandomPatchFeatureConfig(
                         48,  // Number of tries
-                        10,    // X and Z Spread
+                        12,    // X and Z Spread
                         4,     // Y Spread
                         registryLookup.getOrThrow(HCPlacedFeatures.BLUE_NIGHTSHADE_KEY)));
         register(context, SILENT_PRINCESS_PATCH_KEY, Feature.FLOWER,
@@ -58,6 +74,12 @@ public class HCConfiguredFeatures {
                         8,    // X and Z Spread
                         4,     // Y Spread
                         registryLookup.getOrThrow(HCPlacedFeatures.SWIFT_VIOLETS_KEY)));
+        register(context, BOMB_FLOWER_PATCH_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchFeatureConfig(
+                        64,  // Number of tries
+                        16,    // X and Z Spread
+                        16,     // Y Spread
+                        registryLookup.getOrThrow(HCPlacedFeatures.BOMB_FLOWER_KEY)));
     }
 
     private static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

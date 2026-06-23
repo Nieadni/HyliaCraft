@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "hyliacraft:item/double_helix_sword_gui"
+  }
+}

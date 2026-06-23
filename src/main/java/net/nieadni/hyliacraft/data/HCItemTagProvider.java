@@ -2,12 +2,12 @@ package net.nieadni.hyliacraft.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
-import net.nieadni.hyliacraft.block.HCColouredBlocks;
+import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.item.HCItems;
 
@@ -22,346 +22,166 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK).add(HCItems.PHRYGIAN_CAP_SS).add(HCItems.PHRYGIAN_CAP_TP).add(HCItems.PHRYGIAN_CAP_CLASSIC);
-        getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(HCItems.MAJORAS_MASK).add(HCItems.PUMPKIN_MASK);
+        getOrCreateTagBuilder(ItemTags.FREEZE_IMMUNE_WEARABLES)
+                .add(HCItems.ZANT_HELM);
 
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_LONGSWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_LONGSWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.GODDESS_WHITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.GODDESS_WHITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(HCItems.TRUE_MASTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE).add(HCItems.TRUE_MASTER_SWORD);
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR);
 
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.IRON_BOW);
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE).add(HCItems.FAIRY_BOW);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.ZANT_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP,
+                        HCItems.SKY_CAP, HCItems.TIME_CAP, HCItems.TWILIGHT_CAP, HCItems.WILD_CAP, HCItems.WIND_CAP);
 
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(HCItems.DIGGING_MITT);
-        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE).add(HCItems.DIGGING_MITT);
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR);
 
-        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE).add(HCItems.HYLIAN_SHIELD);
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_TUNIC, HCItems.HERO_TUNIC, HCItems.SKY_TUNIC, HCItems.TIME_TUNIC, HCItems.TWILIGHT_TUNIC, 
+                        HCItems.WILD_TUNIC, HCItems.WIND_TUNIC);
+
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR);
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_TROUSERS, HCItems.HERO_TROUSERS, HCItems.SKY_TROUSERS, HCItems.TIME_TROUSERS, HCItems.TWILIGHT_TROUSERS, 
+                        HCItems.WILD_TROUSERS, HCItems.WIND_TROUSERS);
+
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR);
+
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+                .add(HCItems.FIERCE_BOOTS, HCItems.HERO_BOOTS, HCItems.SKY_BOOTS, HCItems.TIME_BOOTS, HCItems.TWILIGHT_BOOTS,
+                        HCItems.WILD_BOOTS, HCItems.WIND_BOOTS);
+
+        getOrCreateTagBuilder(HCItemTags.ENDERMASK)
+                .add(HCItems.MAJORAS_MASK, HCItems.PUMPKIN_MASK, HCItems.ZANT_HELM);
+
+        getOrCreateTagBuilder(ItemTags.PIG_FOOD)
+                .add(HCItems.BANANA);
+
+        getOrCreateTagBuilder(HCItemTags.MILK_BUCKETS)
+                .add(HCItems.GOAT_MILK_BUCKET, Items.MILK_BUCKET);
+
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
+                        HCItems.DOUBLE_HELIX_SWORD);
+
+        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD, HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD,
+                        HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD);
+
+        getOrCreateTagBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(HCItems.GODDESS_SWORD, HCItems.GODDESS_LONGSWORD, HCItems.GODDESS_WHITE_SWORD,
+                        HCItems.MASTER_SWORD, HCItems.TRUE_MASTER_SWORD, HCItems.IRON_BOW, HCItems.FAIRY_BOW, HCItems.DIGGING_MITT, HCItems.MOGMA_MITT,
+                        HCItems.BOULDER_BREAKER, HCItems.VICIOUS_SICKLE, HCItems.DOUBLE_HELIX_SWORD, HCItems.TWILIGHT_CAP);
+
+        getOrCreateTagBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+                .add(HCItems.ONE_HIT_OBLITERATOR);
+
+        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(HCItems.IRON_BOW, HCItems.FAIRY_BOW);
+
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT);
+
+        getOrCreateTagBuilder(ItemTags.MINING_ENCHANTABLE)
+                .add(HCItems.DIGGING_MITT, HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(HCItems.MOGMA_MITT, HCItems.BOULDER_BREAKER);
+
+        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
+                .add(HCItems.BOULDER_BREAKER);
+
+        getOrCreateTagBuilder(HCItemTags.SICKLES)
+                .add(HCItems.VICIOUS_SICKLE);
+
+        getOrCreateTagBuilder(HCItemTags.SHORT_WEAPON)
+                .add(HCItems.GODDESS_SWORD).add(HCItems.VICIOUS_SICKLE);
+
+
 
         // Vanilla
 
         getOrCreateTagBuilder(HCItemTags.ENDERMASK).add(Items.CARVED_PUMPKIN);
-
-        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.COBBLESTONE);
-        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.STONE);
-
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(Blocks.BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(Blocks.BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(Blocks.BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(Blocks.BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.OAK_PLANKS));
-
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_OAK_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_OAK_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.OAK_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.OAK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.OAK_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.OAK_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.OAK_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.OAK_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.SPRUCE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_SPRUCE_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_SPRUCE_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.SPRUCE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.SPRUCE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.SPRUCE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.SPRUCE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.SPRUCE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.SPRUCE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.BIRCH_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_BIRCH_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_BIRCH_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.BIRCH_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.BIRCH_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.BIRCH_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.BIRCH_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.BIRCH_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.BIRCH_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.JUNGLE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_JUNGLE_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_JUNGLE_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.JUNGLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.JUNGLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.JUNGLE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.JUNGLE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.JUNGLE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.JUNGLE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.ACACIA_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_ACACIA_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_ACACIA_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.ACACIA_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.ACACIA_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.ACACIA_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.ACACIA_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.ACACIA_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.ACACIA_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.DARK_OAK_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_DARK_OAK_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_DARK_OAK_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.DARK_OAK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.DARK_OAK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.DARK_OAK_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.DARK_OAK_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.DARK_OAK_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.DARK_OAK_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.MANGROVE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_MANGROVE_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_MANGROVE_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.MANGROVE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.MANGROVE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.MANGROVE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.MANGROVE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.MANGROVE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.MANGROVE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.CHERRY_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_CHERRY_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(Blocks.STRIPPED_CHERRY_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.CHERRY_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.CHERRY_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.CHERRY_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.CHERRY_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.CHERRY_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.CHERRY_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(Blocks.BAMBOO_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(Blocks.STRIPPED_BAMBOO_BLOCK));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(Blocks.BAMBOO_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(Blocks.BAMBOO_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(Blocks.BAMBOO_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(Blocks.BAMBOO_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(Blocks.BAMBOO_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(Blocks.BAMBOO_BUTTON));
+        getOrCreateTagBuilder(HCItemTags.SLINGSHOT_AMMO).add(Items.COBBLESTONE).add(Items.STONE);
 
         // Blocks
 
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.WHITE_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.WHITE_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.WHITE_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.WHITE_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.GREY_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREY_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.GREY_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.GREY_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.BLACK_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLACK_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.BLACK_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.BLACK_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.BROWN_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BROWN_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.BROWN_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.BROWN_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.RED_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.RED_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.RED_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.RED_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.ORANGE_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.ORANGE_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.ORANGE_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.ORANGE_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.YELLOW_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.YELLOW_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.YELLOW_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.YELLOW_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.LIME_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIME_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIME_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.LIME_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.GREEN_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREEN_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.GREEN_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.GREEN_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.CYAN_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.CYAN_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.CYAN_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.CYAN_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.BLUE_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLUE_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.BLUE_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.BLUE_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.PURPLE_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.PURPLE_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.PURPLE_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.PURPLE_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.PINK_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.PINK_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.PINK_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.PINK_BRICK_WALL));
-        getOrCreateTagBuilder(HCItemTags.BRICKS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICKS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_STAIRS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.BRICK_SLABS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.BRICK_WALLS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BRICK_WALL));
+        getOrCreateTagBuilder(HCItemTags.SHINGLES).add(Item.fromBlock(HCBlocks.WHITE_SHINGLES), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLES),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLES), Item.fromBlock(HCBlocks.BLACK_SHINGLES), Item.fromBlock(HCBlocks.BROWN_SHINGLES),
+                Item.fromBlock(HCBlocks.RED_SHINGLES), Item.fromBlock(HCBlocks.ORANGE_SHINGLES), Item.fromBlock(HCBlocks.YELLOW_SHINGLES),
+                Item.fromBlock(HCBlocks.LIME_SHINGLES), Item.fromBlock(HCBlocks.GREEN_SHINGLES), Item.fromBlock(HCBlocks.CYAN_SHINGLES),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLES), Item.fromBlock(HCBlocks.BLUE_SHINGLES), Item.fromBlock(HCBlocks.PURPLE_SHINGLES),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLES), Item.fromBlock(HCBlocks.PINK_SHINGLES));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_STAIRS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BLACK_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BROWN_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.GREEN_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.CYAN_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.BLUE_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_STAIRS),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_STAIRS), Item.fromBlock(HCBlocks.PINK_SHINGLE_STAIRS));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_SLABS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BLACK_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BROWN_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_SLAB), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_SLAB), Item.fromBlock(HCBlocks.GREEN_SHINGLE_SLAB), Item.fromBlock(HCBlocks.CYAN_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.BLUE_SHINGLE_SLAB), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_SLAB),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_SLAB), Item.fromBlock(HCBlocks.PINK_SHINGLE_SLAB));
+        getOrCreateTagBuilder(HCItemTags.SHINGLE_WALLS).add(Item.fromBlock(HCBlocks.WHITE_SHINGLE_WALL), Item.fromBlock(HCBlocks.LIGHT_GRAY_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.GRAY_SHINGLE_WALL), Item.fromBlock(HCBlocks.BLACK_SHINGLE_WALL), Item.fromBlock(HCBlocks.BROWN_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.RED_SHINGLE_WALL), Item.fromBlock(HCBlocks.ORANGE_SHINGLE_WALL), Item.fromBlock(HCBlocks.YELLOW_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.LIME_SHINGLE_WALL), Item.fromBlock(HCBlocks.GREEN_SHINGLE_WALL), Item.fromBlock(HCBlocks.CYAN_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.LIGHT_BLUE_SHINGLE_WALL), Item.fromBlock(HCBlocks.BLUE_SHINGLE_WALL), Item.fromBlock(HCBlocks.PURPLE_SHINGLE_WALL),
+                Item.fromBlock(HCBlocks.MAGENTA_SHINGLE_WALL), Item.fromBlock(HCBlocks.PINK_SHINGLE_WALL));
 
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.WHITE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.WHITE_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.WHITE_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.WHITE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.WHITE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.WHITE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.WHITE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.WHITE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.WHITE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.LIGHT_GREY_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.GREY_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.GREY_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.GREY_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREY_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.GREY_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.GREY_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.GREY_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.GREY_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.GREY_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.BLACK_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.BLACK_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.BLACK_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLACK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.BLACK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.BLACK_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.BLACK_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.BLACK_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.BLACK_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.BROWN_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.BROWN_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.BROWN_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BROWN_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.BROWN_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.BROWN_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.BROWN_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.BROWN_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.BROWN_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.RED_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.RED_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.RED_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.RED_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.RED_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.RED_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.RED_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.RED_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.RED_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.ORANGE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.ORANGE_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.ORANGE_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.ORANGE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.ORANGE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.ORANGE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.ORANGE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.ORANGE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.ORANGE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.YELLOW_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.YELLOW_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.YELLOW_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.YELLOW_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.YELLOW_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.YELLOW_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.YELLOW_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.YELLOW_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.YELLOW_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.LIME_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.LIME_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.LIME_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIME_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIME_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.LIME_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.LIME_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.LIME_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.LIME_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.GREEN_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.GREEN_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.GREEN_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.GREEN_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.GREEN_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.GREEN_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.GREEN_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.GREEN_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.GREEN_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.CYAN_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.CYAN_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.CYAN_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.CYAN_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.CYAN_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.CYAN_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.CYAN_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.CYAN_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.CYAN_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.LIGHT_BLUE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.BLUE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.BLUE_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.BLUE_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.BLUE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.BLUE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.BLUE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.BLUE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.BLUE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.BLUE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.PURPLE_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.PURPLE_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.PURPLE_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.PURPLE_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.PURPLE_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.PURPLE_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.PURPLE_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.PURPLE_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.PURPLE_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.MAGENTA_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.MAGENTA_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.MAGENTA_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.MAGENTA_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.PINK_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.PINK_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.PINK_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.PINK_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.PINK_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.PINK_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.PINK_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.PINK_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.PINK_BUTTON));
-        getOrCreateTagBuilder(HCItemTags.PLANKS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_PLANKS));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_LOGS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_STRIPPED_LOG));
-        getOrCreateTagBuilder(HCItemTags.STRIPPED_WOODS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_STRIPPED_WOOD));
-        getOrCreateTagBuilder(HCItemTags.PLANK_STAIRS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_STAIRS));
-        getOrCreateTagBuilder(HCItemTags.PLANK_SLABS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_SLAB));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_FENCE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_FENCE_GATES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_FENCE_GATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_PRESSURE_PLATES).add(Item.fromBlock(HCColouredBlocks.RAINBOW_PRESSURE_PLATE));
-        getOrCreateTagBuilder(HCItemTags.PLANK_BUTTONS).add(Item.fromBlock(HCColouredBlocks.RAINBOW_BUTTON));
+        // Compat Stuffs
+
+        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE).add(Items.EMERALD).addOptional(Identifier.of("hyrule_terrors","rupee"));
+        getOrCreateTagBuilder(HCItemTags.BLUE_RUPEES).add(HCItems.BLUE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.YELLOW_RUPEES).add(HCItems.YELLOW_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.RED_RUPEES).add(HCItems.RED_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.PURPLE_RUPEES).add(HCItems.PURPLE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.ORANGE_RUPEES).add(HCItems.ORANGE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.SILVER_RUPEES).add(HCItems.SILVER_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE);
+
+        // Dye Stuffs
+
+        getOrCreateTagBuilder(HCItemTags.WHITE_DYES).add(Item.fromBlock(HCBlocks.SILENT_PRINCESS));
+        getOrCreateTagBuilder(HCItemTags.LIGHT_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.BLACK_DYES);
+        getOrCreateTagBuilder(HCItemTags.BROWN_DYES);
+        getOrCreateTagBuilder(HCItemTags.RED_DYES);
+        getOrCreateTagBuilder(HCItemTags.ORANGE_DYES);
+        getOrCreateTagBuilder(HCItemTags.YELLOW_DYES);
+        getOrCreateTagBuilder(HCItemTags.LIME_DYES);
+        getOrCreateTagBuilder(HCItemTags.GREEN_DYES);
+        getOrCreateTagBuilder(HCItemTags.CYAN_DYES);
+        getOrCreateTagBuilder(HCItemTags.LIGHT_BLUE_DYES);
+        getOrCreateTagBuilder(HCItemTags.BLUE_DYES).add(Item.fromBlock(HCBlocks.BLUE_NIGHTSHADE));
+        getOrCreateTagBuilder(HCItemTags.PURPLE_DYES).add(Item.fromBlock(HCBlocks.SWIFT_VIOLETS));
+        getOrCreateTagBuilder(HCItemTags.MAGENTA_DYES).add(Item.fromBlock(HCBlocks.ANCIENT_FLOWER)).add(Item.fromBlock(HCBlocks.ARMORANTH));
+        getOrCreateTagBuilder(HCItemTags.PINK_DYES);
+
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_WHITE_DYES).add(Item.fromBlock(HCBlocks.TOWN_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIGHT_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_GRAY_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BLACK_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BROWN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_RED_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_ORANGE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_YELLOW_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIME_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_GREEN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_CYAN_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_LIGHT_BLUE_DYES).add(Item.fromBlock(HCBlocks.SEA_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_BLUE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_PURPLE_DYES);
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_MAGENTA_DYES).add(Item.fromBlock(HCBlocks.EXOTIC_FLOWER));
+        getOrCreateTagBuilder(HCItemTags.DOUBLE_PINK_DYES);
 
         getOrCreateTagBuilder(HCItemTags.GORON_EDIBLE).add(
                 Items.STONE,
@@ -370,4 +190,5 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 Items.DIORITE
         );
     }
+
 }

@@ -19,6 +19,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.client.render.CustomDirtModel;
 import net.nieadni.hyliacraft.HyliaCraft;
@@ -28,19 +29,22 @@ import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
 import net.nieadni.hyliacraft.race.ChooseRaceScreen;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.block.HCBlocks;
-import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
-import net.nieadni.hyliacraft.block.entity.IronChestBlockEntityRenderer;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
+import net.nieadni.hyliacraft.item.HCItems;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
+    public static List<Item> CUSTOM_GUI_MODEL_ITEMS = new ArrayList<>();
+    
     public static HyliaCraftRace race = null;
     private static int ticksSinceLastRaceAbilityUse = 0;
     public static Map<Integer, Boolean> invisibilityOverride = new HashMap<>();
@@ -50,14 +54,22 @@ public class HyliaCraftClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                HCBlocks.ANCIENT_FLOWER,
+                HCBlocks.ANCIENT_FLOWER_POT,
+                HCBlocks.ANCIENT_FLOWER_CROP,
                 HCBlocks.ARMORANTH,
                 HCBlocks.ARMORANTH_POT,
                 HCBlocks.BLUE_NIGHTSHADE,
                 HCBlocks.BLUE_NIGHTSHADE_POT,
+                HCBlocks.BOMB_FLOWER,
+                HCBlocks.EXOTIC_FLOWER,
+                HCBlocks.SEA_FLOWER,
                 HCBlocks.SILENT_PRINCESS,
                 HCBlocks.SILENT_PRINCESS_POT,
                 HCBlocks.SWIFT_VIOLETS,
                 HCBlocks.SWIFT_VIOLETS_POT,
+                HCBlocks.TOWN_FLOWER,
+
                 HCBlocks.NATURAL_BLUE_CLAY_POT,
                 HCBlocks.NATURAL_CLAY_POT_WRITING,
                 HCBlocks.NATURAL_CLAY_POT,
@@ -66,8 +78,8 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.CLAY_POT,
                 HCBlocks.HATENO_CLAY_POT
         );
+
         HCModelPredicates.registerHCModelPredicates();
-        BlockEntityRendererFactories.register(HCBlockEntityType.IRON_CHEST, IronChestBlockEntityRenderer::new);
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_SWORD_BEAM, GoddessSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_LONGSWORD_BEAM, GoddessLongswordBeamEntityRenderer::new);
@@ -152,4 +164,12 @@ public class HyliaCraftClient implements ClientModInitializer {
             }
         }
     }
+
+    public static void addCustomGUIModelItems() {
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.DIGGING_MITT);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.MOGMA_MITT);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.BOULDER_BREAKER);
+        CUSTOM_GUI_MODEL_ITEMS.add(HCItems.DOUBLE_HELIX_SWORD);
+    }
+
 }

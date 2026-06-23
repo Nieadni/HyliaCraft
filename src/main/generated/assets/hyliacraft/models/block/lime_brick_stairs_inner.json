@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "hyliacraft:block/lime_bricks",
-    "side": "hyliacraft:block/lime_bricks",
-    "top": "hyliacraft:block/lime_bricks"
-  }
-}

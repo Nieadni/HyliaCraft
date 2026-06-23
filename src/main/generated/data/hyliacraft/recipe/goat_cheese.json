@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hyliacraft:goat_milk_bucket"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:goat_cheese"
+  }
+}

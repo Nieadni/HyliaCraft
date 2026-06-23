@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": "hyliacraft:bomb_flower",
+    "tries": 64,
+    "xz_spread": 16,
+    "y_spread": 16
+  }
+}

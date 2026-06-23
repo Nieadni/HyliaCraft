@@ -1,10 +1,8 @@
 package net.nieadni.hyliacraft.client.armour;
 
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
-
 import software.bernie.geckolib.model.GeoModel;
 
 public class MajorasMaskModel extends GeoModel<MajorasMaskItem> {

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hyliacraft:nayru_flame"
+  },
+  "base": {
+    "item": "hyliacraft:goddess_longsword"
+  },
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:goddess_white_sword"
+  },
+  "template": []
+}

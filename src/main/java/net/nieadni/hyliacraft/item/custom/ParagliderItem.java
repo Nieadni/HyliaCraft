@@ -1,11 +1,12 @@
 package net.nieadni.hyliacraft.item.custom;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.effect.*;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
 import org.jetbrains.annotations.NotNull;
 
 public class ParagliderItem extends Item {

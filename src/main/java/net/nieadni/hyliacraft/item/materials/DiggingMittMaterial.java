@@ -2,15 +2,17 @@ package net.nieadni.hyliacraft.item.materials;
 
 import net.minecraft.block.Block;
 import net.minecraft.component.type.ToolComponent;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.*;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 
 public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
-        return 1561;
+        return 250;
     }
 
     @Override
@@ -25,17 +27,17 @@ public class DiggingMittMaterial implements ToolMaterial {
 
     @Override
     public TagKey<Block> getInverseTag() {
-        return BlockTags.INCORRECT_FOR_DIAMOND_TOOL;
+        return BlockTags.INCORRECT_FOR_IRON_TOOL;
     }
 
     @Override
     public int getEnchantability() {
-        return 22;
+        return 14;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.empty();
+        return Ingredient.ofItems(Items.LEATHER);
     }
 
     @Override

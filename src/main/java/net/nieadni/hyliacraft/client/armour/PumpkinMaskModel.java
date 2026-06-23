@@ -1,10 +1,8 @@
 package net.nieadni.hyliacraft.client.armour;
 
 import net.minecraft.util.Identifier;
-
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.item.armour.PumpkinMaskItem;
-
 import software.bernie.geckolib.model.GeoModel;
 
 public class PumpkinMaskModel extends GeoModel<PumpkinMaskItem> {

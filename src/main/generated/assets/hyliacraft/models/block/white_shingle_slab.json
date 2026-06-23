@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "hyliacraft:block/white_shingles",
+    "side": "hyliacraft:block/white_shingles",
+    "top": "hyliacraft:block/white_shingles"
+  }
+}
