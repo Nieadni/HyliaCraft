@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
@@ -88,6 +89,7 @@ public class HyliaCraft implements ModInitializer {
             ServerPlayerEntity player = context.player();
             HyliaCraftRace race = HyliaCraftRace.getRace(player);
             if (race != null) {
+				System.out.println("Using race ability on " + FabricLoader.getInstance().getEnvironmentType());
                 race.useRaceAbility(player);
             }
         });
@@ -99,6 +101,7 @@ public class HyliaCraft implements ModInitializer {
 			// Send the player's current race (null if they haven't chosen one yet)
             HyliaCraftRace race = state.getOrCreateRace(uuid);
             ServerPlayNetworking.send(joiner, new RaceS2CPayload(race));
+			if (race == HyliaCraftRace.MOGMA) HyliaCraftRace.MOGMA_DIRT_WALKING_ENABLED.put(uuid, false);
 			// Send the invisibility overrides to this player
             Map<Integer, Boolean> isInvisible = new HashMap<>();
 			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {

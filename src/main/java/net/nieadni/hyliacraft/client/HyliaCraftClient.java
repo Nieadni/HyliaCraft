@@ -44,6 +44,7 @@ public class HyliaCraftClient implements ClientModInitializer {
     public static HyliaCraftRace race = null;
     private static int ticksSinceLastRaceAbilityUse = 0;
     public static Map<Integer, Boolean> invisibilityOverride = new HashMap<>();
+    public static boolean mogmaDirtWalkingEnabled = false;
 
     @Override
     public void onInitializeClient() {

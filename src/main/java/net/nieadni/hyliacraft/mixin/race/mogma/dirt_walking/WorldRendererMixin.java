@@ -19,7 +19,7 @@ public class WorldRendererMixin {
 
     @Redirect(method = "render(Lnet/minecraft/client/render/RenderTickCounter;ZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;Lorg/joml/Matrix4f;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isSpectator()Z"))
     private boolean modifyIsSpectator(ClientPlayerEntity player) {
-        return player.isSpectator() || HyliaCraftClient.race == HyliaCraftRace.MOGMA && player.getBlockStateAtPos().isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH);
+        return player.isSpectator() || HyliaCraftRace.shouldDirtWalk(player) && player.getBlockStateAtPos().isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH);
     }
 
     @Definition(id = "cameraSubmersionType", local = @Local(type = CameraSubmersionType.class))

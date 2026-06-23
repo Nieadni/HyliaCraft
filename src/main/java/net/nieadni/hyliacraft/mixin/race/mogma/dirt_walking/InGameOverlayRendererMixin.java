@@ -14,7 +14,7 @@ public class InGameOverlayRendererMixin {
 
     @ModifyExpressionValue(method = "renderOverlays(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/util/math/MatrixStack;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameOverlayRenderer;getInWallBlockState(Lnet/minecraft/entity/player/PlayerEntity;)Lnet/minecraft/block/BlockState;"))
     private static BlockState modifyWallBlockState(BlockState original) {
-        if (original != null && HyliaCraftClient.race == HyliaCraftRace.MOGMA && original.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
+        if (original != null && HyliaCraftClient.race == HyliaCraftRace.MOGMA && HyliaCraftClient.mogmaDirtWalkingEnabled && original.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
             return null;
         }
         return original;

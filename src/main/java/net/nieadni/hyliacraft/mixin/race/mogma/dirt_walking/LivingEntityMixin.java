@@ -27,7 +27,7 @@ public class LivingEntityMixin {
         if (original) return true;
         LivingEntity livingEntity = (LivingEntity) ((Object) this);
         return livingEntity instanceof PlayerEntity player 
-                && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA 
+                && HyliaCraftRace.shouldDirtWalk(player) 
                 && state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH);
     }
 
@@ -35,7 +35,7 @@ public class LivingEntityMixin {
     private boolean modifyIsOf(BlockState instance, Block block) {
         if (block == Blocks.SCAFFOLDING) {
             LivingEntity livingEntity = (LivingEntity) ((Object) this);
-            if (livingEntity instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA && instance.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
+            if (livingEntity instanceof PlayerEntity player && HyliaCraftRace.shouldDirtWalk(player) && instance.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
                 return true;
             }
         }

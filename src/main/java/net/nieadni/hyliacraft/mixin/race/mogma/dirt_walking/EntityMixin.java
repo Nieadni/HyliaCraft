@@ -25,7 +25,7 @@ public class EntityMixin {
     @Inject(method = "canClimb(Lnet/minecraft/block/BlockState;)Z", at = @At("HEAD"), cancellable = true)
     private void canClimb(BlockState state, CallbackInfoReturnable<Boolean> cir) {
         Entity entity = (Entity) ((Object) this);
-        if (entity instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA && state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
+        if (entity instanceof PlayerEntity player && state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH) && HyliaCraftRace.shouldDirtWalk(player)) {
             cir.setReturnValue(true);
         }
     }
@@ -33,7 +33,7 @@ public class EntityMixin {
     @Inject(method = "isInsideWall()Z", at = @At(value = "HEAD"), cancellable = true)
     private void shouldSuffocate(CallbackInfoReturnable<Boolean> cir) {
         Entity entity = (Entity) ((Object) this);
-        if (entity instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA && !player.noClip) {
+        if (entity instanceof PlayerEntity player && HyliaCraftRace.shouldDirtWalk(player) && !player.noClip) {
             float f = this.dimensions.width() * 0.8F;
             Box box = Box.of(player.getEyePos(), f, 1.0E-6, f);
             cir.setReturnValue(BlockPos.stream(box).anyMatch(pos -> {

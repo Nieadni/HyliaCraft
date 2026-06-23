@@ -23,7 +23,7 @@ public class AbstractBlockMixin {
         if (state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
             if (context instanceof EntityShapeContext entityShapeContext) {
                 Entity entity = entityShapeContext.getEntity();
-                if (entity instanceof PlayerEntity player && HyliaCraftRace.getRace(player) == HyliaCraftRace.MOGMA) {
+                if (entity instanceof PlayerEntity player && HyliaCraftRace.shouldDirtWalk(player)) {
                     boolean isOnTop = context.isAbove(VoxelShapes.fullCube(), pos, true) && !context.isDescending();
                     if (isOnTop) {
                         cir.setReturnValue(VoxelShapes.fullCube());

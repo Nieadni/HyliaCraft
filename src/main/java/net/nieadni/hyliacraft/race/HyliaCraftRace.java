@@ -19,6 +19,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -103,7 +104,36 @@ public enum HyliaCraftRace {
             instance.removeModifier(MOVEMENT_SPEED_MODIFIER);
         }
     },
-    MOGMA("mogma", 16, 0),
+    MOGMA("mogma", 16, 0) {
+        @Override
+        public void applyRaceServer(ServerPlayerEntity player) {
+            super.applyRaceServer(player);
+            MOGMA_DIRT_WALKING_ENABLED.put(player.getUuid(), false);
+        }
+
+        @Override
+        public void applyRaceClient(PlayerEntity player) {
+            super.applyRaceClient(player);
+            HyliaCraftClient.mogmaDirtWalkingEnabled = false;
+        }
+
+        @Override
+        public boolean useRaceAbility(PlayerEntity player) {
+            super.useRaceAbility(player);
+            switch (FabricLoader.getInstance().getEnvironmentType()) {
+                case CLIENT -> {
+                    HyliaCraftClient.mogmaDirtWalkingEnabled = !HyliaCraftClient.mogmaDirtWalkingEnabled;
+                    Text message = HyliaCraftClient.mogmaDirtWalkingEnabled ? Text.translatable("hyliacraft.race.mogma.ability_on").formatted(Formatting.GREEN) : Text.translatable("hyliacraft.race.mogma.ability_off").formatted(Formatting.RED);
+                    player.sendMessage(message, true);
+                }
+                case SERVER -> {
+                    UUID uuid = player.getUuid();
+                    MOGMA_DIRT_WALKING_ENABLED.put(uuid, !MOGMA_DIRT_WALKING_ENABLED.getOrDefault(uuid, false));
+                }
+            }
+            return true;
+        }
+    },
     SHEIKAH("sheikah", 28, 0),
     RITO("rito", 18, 60) {
         @Override
@@ -192,6 +222,8 @@ public enum HyliaCraftRace {
 
     public static final Identifier GERUDO_MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "gerudo");
     
+    public static final Map<UUID, Boolean> MOGMA_DIRT_WALKING_ENABLED = new HashMap<>();
+    
     public static boolean checkKokiriInvisible(boolean targeted, boolean biome, boolean sneaking, boolean race, ServerPlayerEntity player) {
         if (sneaking && !player.isSneaking()) return false;
         if (targeted && HyliaCraftPersistentState.getServerState(player.getServer()).numTargeters.containsKey(player.getUuid())) return false;
@@ -261,6 +293,14 @@ public enum HyliaCraftRace {
             }
         }
         return null;
+    }
+    
+    public static boolean shouldDirtWalk(PlayerEntity player) {
+        if (getRace(player) != MOGMA) return false;
+        return switch (FabricLoader.getInstance().getEnvironmentType()) {
+            case SERVER -> MOGMA_DIRT_WALKING_ENABLED.getOrDefault(player.getUuid(), false);
+            case CLIENT -> HyliaCraftClient.mogmaDirtWalkingEnabled;
+        };
     }
 
     public static void setRace(ServerPlayerEntity player, HyliaCraftRace race, boolean notifyClient) {
