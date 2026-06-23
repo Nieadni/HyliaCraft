@@ -4,12 +4,12 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
@@ -19,13 +19,11 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
@@ -52,7 +50,7 @@ public class HyliaCraft implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    @Override
+	@Override
 	public void onInitialize() {
 
 		HyliaCraft.LOGGER.info("HyliaCraft has been initialized!");
@@ -102,6 +100,7 @@ public class HyliaCraft implements ModInitializer {
 			// Send the player's current race (null if they haven't chosen one yet)
             HyliaCraftRace race = state.getOrCreateRace(uuid);
             ServerPlayNetworking.send(joiner, new RaceS2CPayload(race));
+			if (race == HyliaCraftRace.MOGMA) HyliaCraftRace.MOGMA_DIRT_WALKING_ENABLED.put(uuid, false);
 			// Send the invisibility overrides to this player
             Map<Integer, Boolean> isInvisible = new HashMap<>();
 			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {

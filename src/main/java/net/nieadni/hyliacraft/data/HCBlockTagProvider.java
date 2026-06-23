@@ -8,7 +8,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.HCColouredBlocks;
-import net.nieadni.hyliacraft.item.HCItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -240,5 +239,10 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES).add(HCColouredBlocks.RAINBOW_PRESSURE_PLATE);
         getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS).add(HCColouredBlocks.RAINBOW_BUTTON);
 
+        getOrCreateTagBuilder(HCBlockTags.MOGMA_CAN_WALK_THROUGH).add(
+                Blocks.DIRT,
+                Blocks.GRASS_BLOCK,
+                Blocks.MYCELIUM
+        );
     }
 }

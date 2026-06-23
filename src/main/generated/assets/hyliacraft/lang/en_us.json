@@ -490,6 +490,8 @@
   "hyliacraft.race.kokiri.description": "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.",
   "hyliacraft.race.kokiri.name": "Kokiri",
   "hyliacraft.race.mogma.abilities": "Hands become like a shovel and a hoe in one, and can slowly move through dirt",
+  "hyliacraft.race.mogma.ability_on": "Dirt Walking enabled",
+  "hyliacraft.race.mogma.ability_off": "Dirt Walking disabled",
   "hyliacraft.race.mogma.description": "A race of mole people who live in the mountains. They are natural born diggers and thrive underground.",
   "hyliacraft.race.mogma.name": "Mogma",
   "hyliacraft.race.on_select": "You selected the %s race!",
