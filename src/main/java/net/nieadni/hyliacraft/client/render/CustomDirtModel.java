@@ -108,6 +108,92 @@ public enum CustomDirtModel {
                 }
             }
         }
+    },
+
+    GRASS_BLOCK_SNOW(Identifier.ofVanilla("block/grass_block_snow")) {
+        @Override
+        public void modifyElements(List<ModelElement> elements) {
+            elements.clear();
+            
+            ModelElementTexture textureData = new ModelElementTexture(new float[]{0, 0, 16, 16}, 0);
+
+            // Add two thin cuboids on each face of the block (texture and overlay)
+            for (Direction direction : Direction.values()) {
+                // This element will be on the {direction} face
+                // Get bounds of the element
+                Vector3f from = new Vector3f(0, 0, 0);
+                Vector3f to = new Vector3f(16, 16, 16);
+                int axis = direction.getAxis().ordinal();
+                if (direction.getDirection() == Direction.AxisDirection.POSITIVE) {
+                    from.setComponent(axis, 15.998f);
+                } else {
+                    to.setComponent(axis, 0.002f);
+                }
+
+                // Make the texture element
+                // We trust that the textures will already be provided - other mods are free to change them
+                String texture = switch (direction) {
+                    case UP -> "#top";
+                    case DOWN -> "#bottom";
+                    default -> "#side";
+                };
+                ModelElementFace face = new ModelElementFace(
+                        direction,
+                        -1,
+                        texture,
+                        textureData
+                );
+                Map<Direction, ModelElementFace> faces = Map.of(
+                        direction, face,
+                        direction.getOpposite(), face
+                );
+                ModelElement textureElement = new ModelElement(from, to, faces, null, true);
+                elements.add(textureElement);
+            }
+        }
+    },
+
+    MYCELIUM(Identifier.ofVanilla("block/mycelium")) {
+        @Override
+        public void modifyElements(List<ModelElement> elements) {
+            elements.clear();
+
+            ModelElementTexture textureData = new ModelElementTexture(new float[]{0, 0, 16, 16}, 0);
+
+            // Add two thin cuboids on each face of the block (texture and overlay)
+            for (Direction direction : Direction.values()) {
+                // This element will be on the {direction} face
+                // Get bounds of the element
+                Vector3f from = new Vector3f(0, 0, 0);
+                Vector3f to = new Vector3f(16, 16, 16);
+                int axis = direction.getAxis().ordinal();
+                if (direction.getDirection() == Direction.AxisDirection.POSITIVE) {
+                    from.setComponent(axis, 15.998f);
+                } else {
+                    to.setComponent(axis, 0.002f);
+                }
+
+                // Make the texture element
+                // We trust that the textures will already be provided - other mods are free to change them
+                String texture = switch (direction) {
+                    case UP -> "#top";
+                    case DOWN -> "#bottom";
+                    default -> "#side";
+                };
+                ModelElementFace face = new ModelElementFace(
+                        direction,
+                        -1,
+                        texture,
+                        textureData
+                );
+                Map<Direction, ModelElementFace> faces = Map.of(
+                        direction, face,
+                        direction.getOpposite(), face
+                );
+                ModelElement textureElement = new ModelElement(from, to, faces, null, true);
+                elements.add(textureElement);
+            }
+        }
     };
 
     public final Identifier id;

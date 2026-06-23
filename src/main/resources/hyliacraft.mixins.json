@@ -20,7 +20,7 @@
     "race.kokiri.invisibility.MobEntityMixin",
     "race.mogma.ServerFistRightClick",
     "race.mogma.dirt_walking.AbstractBlockMixin",
-    "race.mogma.dirt_walking.AbstractBlockStateMixin",
+    "race.mogma.dirt_walking.CameraSubmersionTypeMixin",
     "race.mogma.dirt_walking.EntityMixin",
     "race.mogma.dirt_walking.LivingEntityMixin",
     "race.rito.FireworkRocketItemMixin",
@@ -42,8 +42,11 @@
     "MogmaMittModelLoaderMixin",
     "race.kokiri.invisibility.ClientEntityMixin",
     "race.mogma.ClientFistRightClick",
-    "race.mogma.dirt_walking.WorldRendererMixin",
+    "race.mogma.dirt_walking.BackgroundRendererMixin",
+    "race.mogma.dirt_walking.CameraMixin",
+    "race.mogma.dirt_walking.FluidRendererMixin",
     "race.mogma.dirt_walking.InGameOverlayRendererMixin",
+    "race.mogma.dirt_walking.WorldRendererMixin",
     "race.rito.elytra.CapeFeatureRendererMixin",
     "race.rito.elytra.ClientPlayerEntityMixin",
     "race.rito.elytra.ElytraFeatureRendererMixin",
@@ -52,5 +55,8 @@
   ],
   "injectors": {
     "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.4"
   }
 }
