@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_helmet"
+    },
+    "O": {
+      "item": "minecraft:orange_wool"
+    },
+    "S": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "Y": {
+      "item": "minecraft:yellow_wool"
+    }
+  },
+  "pattern": [
+    "SNS",
+    "SOS",
+    " Y "
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:midna_helm"
+  }
+}

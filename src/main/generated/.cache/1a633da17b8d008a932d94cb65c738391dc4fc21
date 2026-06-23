@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-22T21:43:48.46955	HyliaCraft/World Generator
+// 1.21.1	2026-06-23T17:11:02.8163675	HyliaCraft/World Generator
 a55153226a008491117d40d059cbff1c0b60cb04 data\hyliacraft\worldgen\placed_feature\blue_nightshade.json
 be752c71a5dd6ea154e7b9240f6d723b33ec9020 data\hyliacraft\worldgen\configured_feature\bomb_flower.json
 cd2e2886b9259d31aebac5b88e604087d16c748d data\hyliacraft\worldgen\configured_feature\armoranth_patch.json
@@ -14,8 +14,8 @@ c74fa3049b9be51466bedfc011deb535cb591c91 data\hyliacraft\worldgen\configured_fea
 39d5efebf7a6d5a50ce79cf7a5b656ffa1c440c1 data\hyliacraft\worldgen\configured_feature\armoranth.json
 0586556ab66fb89ac475f1cd791c81e74a0c59bd data\hyliacraft\worldgen\configured_feature\blue_nightshade_patch.json
 366415b5fba4adb85a3dfd993825e23001f5fffc data\hyliacraft\worldgen\configured_feature\swift_violets_patch.json
-9d2e27a4e002138351b457661dc0b64c384f5cc3 data\hyliacraft\worldgen\placed_feature\swift_violets_patch.json
 9a3ab4a1cf948aeb83ca8c15e338a834c14045e7 data\hyliacraft\worldgen\placed_feature\swift_violets.json
+9d2e27a4e002138351b457661dc0b64c384f5cc3 data\hyliacraft\worldgen\placed_feature\swift_violets_patch.json
 e0e95b1ba144abc1711e90f667cf8bd5fee5e1eb data\hyliacraft\worldgen\placed_feature\bomb_flower_patch.json
-96005676b59384b3614f2e6b7c7a956e400dbf2d data\hyliacraft\worldgen\configured_feature\blue_nightshade.json
 972edc5045e69df9bfa4da5bd439de73d701d9d7 data\hyliacraft\worldgen\configured_feature\bomb_flower_patch.json
+96005676b59384b3614f2e6b7c7a956e400dbf2d data\hyliacraft\worldgen\configured_feature\blue_nightshade.json

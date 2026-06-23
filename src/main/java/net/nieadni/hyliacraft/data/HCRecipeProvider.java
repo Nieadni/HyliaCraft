@@ -56,6 +56,41 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.BOW))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.BOULDER_BREAKER, 1)
+                .pattern("FFF")
+                .pattern(" N ")
+                .pattern("FDF")
+                .input('F', Items.FLINT)
+                .input('N', Items.NETHERITE_PICKAXE)
+                .input('D', Items.DIAMOND)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.NETHERITE_PICKAXE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.DIGGING_MITT, 1)
+                .pattern("NIN")
+                .pattern("LWL")
+                .pattern("LRL")
+                .input('L', Items.LEATHER)
+                .input('N', Items.IRON_NUGGET)
+                .input('I', Items.IRON_INGOT)
+                .input('W', Items.WHITE_DYE)
+                .input('R', Items.RED_DYE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.MOGMA_MITT, 1)
+                .pattern("III")
+                .pattern("GDR")
+                .pattern("LWL")
+                .input('L', Items.LEATHER)
+                .input('I', Items.IRON_INGOT)
+                .input('W', Items.WHITE_DYE)
+                .input('R', Items.RED_DYE)
+                .input('G', Items.GREEN_DYE)
+                .input('D', HCItems.DIGGING_MITT)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+                .offerTo(exporter);
+
         SmithingTransformRecipeJsonBuilder.create(
                         Ingredient.EMPTY,
                         Ingredient.ofItems(HCItems.GODDESS_SWORD),
@@ -77,6 +112,28 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                         RecipeCategory.TOOLS, HCItems.MASTER_SWORD)
                 .criterion("has_upgrade_template", conditionsFromItem(Items.AIR))
                 .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID, getRecipeName(HCItems.MASTER_SWORD)));
+
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.MIDNA_HELM, 1)
+                .pattern("SNS")
+                .pattern("SOS")
+                .pattern(" Y ")
+                .input('N', Items.NETHERITE_HELMET)
+                .input('S', Items.NETHERITE_SCRAP)
+                .input('O', Items.ORANGE_WOOL)
+                .input('Y', Items.YELLOW_WOOL)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.ZANT_HELM, 1)
+                .pattern("BSB")
+                .pattern("SNS")
+                .input('N', Items.NETHERITE_HELMET)
+                .input('S', Items.NETHERITE_SCRAP)
+                .input('B', Items.BLUE_ICE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+                .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_CAP, 1)
                 .input(Items.LEATHER_HELMET)

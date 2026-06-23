@@ -25,6 +25,7 @@ public class HCItems extends Items {
     // Equipment
     public static final Item MAJORAS_MASK = register(new MajorasMaskItem(HCArmourMaterials.MAJORAS_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MAJORAS_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "majoras_mask");
     public static final Item MIDNA_HELM = register(new MidnaHelmItem(HCArmourMaterials.MIDNA_HELM, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.MIDNA_HELM_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "midna_helm");
+    public static final Item ZANT_HELM = register(new ZantHelmItem(HCArmourMaterials.ZANT_HELM, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.ZANT_HELM_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.EPIC)), "zant_helm");
     public static final Item PUMPKIN_MASK = register(new PumpkinMaskItem(HCArmourMaterials.PUMPKIN_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.PUMPKIN_MASK_DURABILITY_MULTIPLIER)).fireproof().rarity(Rarity.UNCOMMON)), "pumpkin_mask");
     public static final Item BUNNY_HOOD = register(new BunnyHoodItem(HCArmourMaterials.BUNNY_HOOD, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(HCArmourMaterials.BUNNY_HOOD_DURABILITY_MULTIPLIER))), "bunny_hood");
 

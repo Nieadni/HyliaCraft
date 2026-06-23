@@ -25,6 +25,7 @@ public class HCArmourMaterials {
 
     public static final int MAJORAS_MASK_DURABILITY_MULTIPLIER = 37;
     public static final int MIDNA_HELM_DURABILITY_MULTIPLIER = 33;
+    public static final int ZANT_HELM_DURABILITY_MULTIPLIER = 33;
     public static final int PUMPKIN_MASK_DURABILITY_MULTIPLIER = 5;
     public static final int HEROES_ClOTHES_DURABILITY_MULTIPLIER = 5;
     public static final int FIERCE_ARMOR_DURABILITY_MULTIPLIER = 41;
@@ -57,6 +58,22 @@ public class HCArmourMaterials {
     );
 
     public static final RegistryEntry<ArmorMaterial> MIDNA_HELM = registerMaterial("midna_helm",
+            Map.of(
+                    ArmorItem.Type.HELMET, 3,
+                    ArmorItem.Type.CHESTPLATE, 1,
+                    ArmorItem.Type.LEGGINGS, 1,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            9,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.ofItems(Items.AIR),
+            2.0F,
+            0.0F,
+            false
+    );
+
+    public static final RegistryEntry<ArmorMaterial> ZANT_HELM = registerMaterial("zant_helm",
             Map.of(
                     ArmorItem.Type.HELMET, 3,
                     ArmorItem.Type.CHESTPLATE, 1,

@@ -21,6 +21,7 @@ public class HCModelProvider extends FabricModelProvider {
         // Equipment
         itemModelGenerator.register(HCItems.MAJORAS_MASK, Models.GENERATED);
         itemModelGenerator.register(HCItems.MIDNA_HELM, Models.GENERATED);
+        itemModelGenerator.register(HCItems.ZANT_HELM, Models.GENERATED);
         itemModelGenerator.register(HCItems.PUMPKIN_MASK, Models.GENERATED);
         itemModelGenerator.register(HCItems.FIERCE_CAP, Models.GENERATED);
         itemModelGenerator.register(HCItems.FIERCE_TUNIC, Models.GENERATED);
@@ -148,12 +149,6 @@ public class HCModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.BLUE_NIGHTSHADE, HCBlocks.BLUE_NIGHTSHADE_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SILENT_PRINCESS, HCBlocks.SILENT_PRINCESS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.SWIFT_VIOLETS, HCBlocks.SWIFT_VIOLETS_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
-
-        //TODO: Need to fix the item form of these. It uses the top of the block. Idk how to make it smth else though and its not game breaking.
-        // Check the item folder for things like 'exotic_flower_item'
-        blockStateModelGenerator.registerDoubleBlock(HCBlocks.EXOTIC_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerDoubleBlock(HCBlocks.SEA_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerDoubleBlock(HCBlocks.TOWN_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //
 

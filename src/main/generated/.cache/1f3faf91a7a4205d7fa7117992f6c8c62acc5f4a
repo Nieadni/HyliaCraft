@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-22T21:43:48.4685279	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2026-06-23T17:11:02.814864	HyliaCraft/Tags for minecraft:item
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\cyan_dyes.json
 94d274d56250212628ff6e1746328b104ceb6690 data\hyliacraft\tags\item\double_white_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\light_blue_dyes.json
@@ -9,12 +9,12 @@
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\brown_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_pink_dyes.json
 8cd99355fc17386a54f7687af577f04086d83d9b data\minecraft\tags\item\swords.json
-d71aec38d01486977e4c8d0ee49a6ee33d44f937 data\minecraft\tags\item\head_armor.json
-137b8e121c22ca80f98d79de063275fb0cd24b7f data\hyliacraft\tags\item\endermask.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\item\head_armor.json
+66eee2b7024a2f23ecb0f5714b0135183c02f053 data\hyliacraft\tags\item\endermask.json
 2b00a0305d8b0dd3547f0efccb1bd8e9325a0335 data\hyliacraft\tags\item\short_weapon.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_orange_dyes.json
-d71aec38d01486977e4c8d0ee49a6ee33d44f937 data\minecraft\tags\item\enchantable\head_armor.json
-e4cf1f7619fbc01cc4a24365a264a0b62c9f5ea9 data\minecraft\tags\item\foot_armor.json
+0f782d90f118149678884f506c043cc5c36dcb3a data\minecraft\tags\item\enchantable\head_armor.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\item\foot_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_brown_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\light_gray_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\black_dyes.json
@@ -44,7 +44,7 @@ a457c84e6162a044b19b93148422da4985c212cb data\hyliacraft\tags\item\silver_rupees
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\orange_dyes.json
 e3527d3a2fb200abf8e2360fff9519b4b03f931b data\hyliacraft\tags\item\slingshot_ammo.json
 1706d542cc44cb3120b7978e058390d8edde610c data\hyliacraft\tags\item\blue_rupees.json
-7d8f85972504887e0502c5e46e5ee40f46e43871 data\minecraft\tags\item\leg_armor.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\item\leg_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_cyan_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\yellow_dyes.json
 6c298e953c6abd3bf0e5b6c0809535510fc09f74 data\minecraft\tags\item\enchantable\sword.json
@@ -56,8 +56,9 @@ fb86421f348ab1db84b0ce54608e986d5c513a0e data\minecraft\tags\item\enchantable\bo
 e4cf1f7619fbc01cc4a24365a264a0b62c9f5ea9 data\minecraft\tags\item\enchantable\foot_armor.json
 7d8f85972504887e0502c5e46e5ee40f46e43871 data\minecraft\tags\item\enchantable\leg_armor.json
 5b5b618f1b44afd4df0439c43df456fdcd6b2527 data\hyliacraft\tags\item\shingle_slabs.json
-f849dd282e4fa2ffcd38059bd3adb26b33660863 data\minecraft\tags\item\chest_armor.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\item\chest_armor.json
 eabfac7e89d3f7048747090ee2ecd28cc7025e7d data\hyliacraft\tags\item\orange_rupees.json
+e36698ecde3b385a803ca2c190850c38df7be91e data\minecraft\tags\item\freeze_immune_wearables.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_lime_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\green_dyes.json
 f131346cb0a1be669c7156b92c68986381906bbd data\hyliacraft\tags\item\yellow_rupees.json

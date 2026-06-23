@@ -22,40 +22,39 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP, 
-                        HCItems.SKY_CAP, HCItems.TIME_CAP, HCItems.TWILIGHT_CAP, HCItems.WILD_CAP, HCItems.WIND_CAP);
+        getOrCreateTagBuilder(ItemTags.FREEZE_IMMUNE_WEARABLES)
+                .add(HCItems.ZANT_HELM);
+
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR);
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
-                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP,
+                .add(HCItems.MAJORAS_MASK, HCItems.MIDNA_HELM, HCItems.ZANT_HELM, HCItems.PUMPKIN_MASK, HCItems.FIERCE_CAP, HCItems.HERO_CAP,
                         HCItems.SKY_CAP, HCItems.TIME_CAP, HCItems.TWILIGHT_CAP, HCItems.WILD_CAP, HCItems.WIND_CAP);
 
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
-                .add(HCItems.FIERCE_TUNIC, HCItems.HERO_TUNIC, HCItems.SKY_TUNIC, HCItems.TIME_TUNIC, HCItems.TWILIGHT_TUNIC, 
-                        HCItems.WILD_TUNIC, HCItems.WIND_TUNIC);
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR);
 
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
                 .add(HCItems.FIERCE_TUNIC, HCItems.HERO_TUNIC, HCItems.SKY_TUNIC, HCItems.TIME_TUNIC, HCItems.TWILIGHT_TUNIC, 
                         HCItems.WILD_TUNIC, HCItems.WIND_TUNIC);
 
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(HCItems.FIERCE_TROUSERS, HCItems.HERO_TROUSERS, HCItems.SKY_TROUSERS, HCItems.TIME_TROUSERS, HCItems.TWILIGHT_TROUSERS, 
-                        HCItems.WILD_TROUSERS, HCItems.WIND_TROUSERS);
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR);
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
                 .add(HCItems.FIERCE_TROUSERS, HCItems.HERO_TROUSERS, HCItems.SKY_TROUSERS, HCItems.TIME_TROUSERS, HCItems.TWILIGHT_TROUSERS, 
                         HCItems.WILD_TROUSERS, HCItems.WIND_TROUSERS);
 
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(HCItems.FIERCE_BOOTS, HCItems.HERO_BOOTS, HCItems.SKY_BOOTS, HCItems.TIME_BOOTS, HCItems.TWILIGHT_BOOTS, 
-                        HCItems.WILD_BOOTS, HCItems.WIND_BOOTS);
+        //THIS TAG MAKES THESE TRIMMABLE
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR);
 
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
                 .add(HCItems.FIERCE_BOOTS, HCItems.HERO_BOOTS, HCItems.SKY_BOOTS, HCItems.TIME_BOOTS, HCItems.TWILIGHT_BOOTS,
                         HCItems.WILD_BOOTS, HCItems.WIND_BOOTS);
 
         getOrCreateTagBuilder(HCItemTags.ENDERMASK)
-                .add(HCItems.MAJORAS_MASK, HCItems.PUMPKIN_MASK);
+                .add(HCItems.MAJORAS_MASK, HCItems.PUMPKIN_MASK, HCItems.ZANT_HELM);
 
         getOrCreateTagBuilder(ItemTags.PIG_FOOD)
                 .add(HCItems.BANANA);

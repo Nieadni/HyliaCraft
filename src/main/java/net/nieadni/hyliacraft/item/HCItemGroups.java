@@ -19,6 +19,7 @@ public class HCItemGroups {
 
                         entries.add(HCItems.MAJORAS_MASK);
                         entries.add(HCItems.MIDNA_HELM);
+                        entries.add(HCItems.ZANT_HELM);
                         entries.add(HCItems.PUMPKIN_MASK);
 
                         entries.add(HCItems.FIERCE_CAP);
