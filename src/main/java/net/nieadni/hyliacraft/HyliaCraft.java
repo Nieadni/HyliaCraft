@@ -1,28 +1,18 @@
 package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.item.v1.EnchantmentEvents;
 import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.enchantment.Enchantments;
-
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTables;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -30,14 +20,11 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
-import net.nieadni.hyliacraft.block.HCColouredBlocks;
-import net.nieadni.hyliacraft.block.entity.HCBlockEntityType;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
 import net.nieadni.hyliacraft.item.HCItemTags;
-
 import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;

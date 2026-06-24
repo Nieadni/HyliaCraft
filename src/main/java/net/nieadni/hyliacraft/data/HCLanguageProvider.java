@@ -569,5 +569,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("category.hyliacraft.main", "HyliaCraft");
 
         translationBuilder.add("key.hyliacraft.race_ability", "Use Race Ability");
+        translationBuilder.add("hyliacraft.race.mogma.ability_on", "Dirt Walking enabled");
+        translationBuilder.add("hyliacraft.race.mogma.ability_off", "Dirt Walking disabled");
     }
 }
