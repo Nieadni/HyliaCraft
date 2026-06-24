@@ -30,8 +30,6 @@ public class HCPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SILENT_PRINCESS_PATCH_KEY = registerKey("silent_princess_patch");
     public static final RegistryKey<PlacedFeature> SWIFT_VIOLETS_KEY = registerKey("swift_violets");
     public static final RegistryKey<PlacedFeature> SWIFT_VIOLETS_PATCH_KEY = registerKey("swift_violets_patch");
-    public static final RegistryKey<PlacedFeature> BOMB_FLOWER_KEY = registerKey("bomb_flower");
-    public static final RegistryKey<PlacedFeature> BOMB_FLOWER_PATCH_KEY = registerKey("bomb_flower_patch");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -44,12 +42,6 @@ public class HCPlacedFeatures {
                 List.of(BlockFilterPlacementModifier.of(BlockPredicate.IS_AIR)));
         register(context, SWIFT_VIOLETS_KEY, registryLookup.getOrThrow(HCConfiguredFeatures.SWIFT_VIOLETS_KEY),
                 List.of(BlockFilterPlacementModifier.of(BlockPredicate.IS_AIR)));
-        register(context, BOMB_FLOWER_KEY, registryLookup.getOrThrow(HCConfiguredFeatures.BOMB_FLOWER_KEY),
-                List.of(
-                        BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(HCBlocks.BOMB_FLOWER.getDefaultState(), BlockPos.ORIGIN)),
-                        EnvironmentScanPlacementModifier.of(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.IS_AIR, 12),
-                        RandomOffsetPlacementModifier.of(ConstantIntProvider.create(0), ConstantIntProvider.create(1))
-                ));
 
 
         register(context, ARMORANTH_PATCH_KEY, registryLookup.getOrThrow(HCConfiguredFeatures.ARMORANTH_PATCH_KEY),
@@ -72,13 +64,6 @@ public class HCPlacedFeatures {
                         SquarePlacementModifier.of(),
                         PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                         BiomePlacementModifier.of()));
-        register(context, BOMB_FLOWER_PATCH_KEY, registryLookup.getOrThrow(HCConfiguredFeatures.BOMB_FLOWER_PATCH_KEY),
-                List.of(
-                        CountPlacementModifier.of(1),
-                        SquarePlacementModifier.of(),
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(48)),
-                        BiomePlacementModifier.of()
-                ));
     }
 
     private static RegistryKey<PlacedFeature> registerKey(String name) {

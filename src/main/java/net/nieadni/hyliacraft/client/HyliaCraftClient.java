@@ -28,7 +28,6 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.ARMORANTH_POT,
                 HCBlocks.BLUE_NIGHTSHADE,
                 HCBlocks.BLUE_NIGHTSHADE_POT,
-                HCBlocks.BOMB_FLOWER,
                 HCBlocks.EXOTIC_FLOWER,
                 HCBlocks.SEA_FLOWER,
                 HCBlocks.SILENT_PRINCESS,

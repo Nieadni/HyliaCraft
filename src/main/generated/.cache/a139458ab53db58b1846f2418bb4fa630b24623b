@@ -1,8 +1,8 @@
-// 1.21.1	2026-06-23T17:11:02.814864	HyliaCraft/Tags for minecraft:block
-efff98d19a4c6f6e200c005a4435b04194e24c47 data\minecraft\tags\block\flower_pots.json
-38810ced6edb7568f2ec2aa469be0397a9d84b34 data\minecraft\tags\block\stairs.json
-22ab54b8ed723aa4bf695168d12454108c8ba56b data\hyliacraft\tags\block\plantable_plus.json
-06b6e4c22355ffe121a9223815abb12fd83ff008 data\hyliacraft\tags\block\grasses.json
-3094c5bca39eb8e74a91a2dd6e5c0d9324e8e5f4 data\minecraft\tags\block\walls.json
-b385470a549e10dc9341ebcd4427de780338e345 data\minecraft\tags\block\small_flowers.json
-5b5b618f1b44afd4df0439c43df456fdcd6b2527 data\minecraft\tags\block\slabs.json
+// 1.21.1	2026-06-24T11:00:28.405283843	HyliaCraft/Tags for minecraft:block
+efff98d19a4c6f6e200c005a4435b04194e24c47 data/minecraft/tags/block/flower_pots.json
+b385470a549e10dc9341ebcd4427de780338e345 data/minecraft/tags/block/small_flowers.json
+06b6e4c22355ffe121a9223815abb12fd83ff008 data/hyliacraft/tags/block/grasses.json
+38810ced6edb7568f2ec2aa469be0397a9d84b34 data/minecraft/tags/block/stairs.json
+22ab54b8ed723aa4bf695168d12454108c8ba56b data/hyliacraft/tags/block/plantable_plus.json
+5b5b618f1b44afd4df0439c43df456fdcd6b2527 data/minecraft/tags/block/slabs.json
+3094c5bca39eb8e74a91a2dd6e5c0d9324e8e5f4 data/minecraft/tags/block/walls.json
