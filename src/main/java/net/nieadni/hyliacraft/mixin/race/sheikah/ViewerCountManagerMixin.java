@@ -36,7 +36,7 @@ public class ViewerCountManagerMixin {
     }
     
     @Inject(method = "updateViewerCount(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V", at = @At("TAIL"))
-    private void uvcUpdateViewers(World world, BlockPos pos, BlockState state, CallbackInfo ci, @Local(name = "list") List<PlayerEntity> list) {
+    private void uvcUpdateViewers(World world, BlockPos pos, BlockState state, CallbackInfo ci, @Local(ordinal = 0) List<PlayerEntity> list) {
         viewingPlayers = list;
     }
 
@@ -55,7 +55,7 @@ public class ViewerCountManagerMixin {
     }
     
     @Inject(method = "updateViewerCount(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/ViewerCountManager;onContainerOpen(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V"))
-    private void uvcOpenSoundCheck(World world, BlockPos pos, BlockState state, CallbackInfo ci, @Local(name = "list") List<PlayerEntity> list) {
+    private void uvcOpenSoundCheck(World world, BlockPos pos, BlockState state, CallbackInfo ci, @Local(ordinal = 0) List<PlayerEntity> list) {
         // If all the new viewers are Sheikahs, we shouldn't play a sound
         boolean allSheikah = true;
         for (PlayerEntity player : list) {
