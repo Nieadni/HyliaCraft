@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-24T11:00:28.405376198	HyliaCraft/World Generator
+// 1.21.1	2026-06-24T11:15:44.816284013	HyliaCraft/World Generator
 5893e4642b53a4f863ae85bac6e25f3cc3b0ae24 data/hyliacraft/worldgen/placed_feature/silent_princess_patch.json
 c74fa3049b9be51466bedfc011deb535cb591c91 data/hyliacraft/worldgen/configured_feature/silent_princess.json
 4be3dcf653d6e839527119d8b109d31d97132d82 data/hyliacraft/worldgen/placed_feature/armoranth_patch.json
@@ -11,7 +11,7 @@ a55153226a008491117d40d059cbff1c0b60cb04 data/hyliacraft/worldgen/placed_feature
 0586556ab66fb89ac475f1cd791c81e74a0c59bd data/hyliacraft/worldgen/configured_feature/blue_nightshade_patch.json
 9d2e27a4e002138351b457661dc0b64c384f5cc3 data/hyliacraft/worldgen/placed_feature/swift_violets_patch.json
 6faa671b64e97a00395e76c4fe739c1cd4855189 data/hyliacraft/worldgen/configured_feature/swift_violets.json
-96005676b59384b3614f2e6b7c7a956e400dbf2d data/hyliacraft/worldgen/configured_feature/blue_nightshade.json
 39d5efebf7a6d5a50ce79cf7a5b656ffa1c440c1 data/hyliacraft/worldgen/configured_feature/armoranth.json
+96005676b59384b3614f2e6b7c7a956e400dbf2d data/hyliacraft/worldgen/configured_feature/blue_nightshade.json
 cd2e2886b9259d31aebac5b88e604087d16c748d data/hyliacraft/worldgen/configured_feature/armoranth_patch.json
 77d1416d51df08dfab37fd6947ad69780daeaa73 data/hyliacraft/worldgen/placed_feature/armoranth.json
