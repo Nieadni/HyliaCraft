@@ -74,8 +74,7 @@ public class HCItemGroups {
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);
                         entries.add(HCItems.VICIOUS_SICKLE);
-
-                        entries.add(HCItems.BOMB_FLOWER);
+                        
                         entries.add(HCItems.HORSE_CALL);
                         entries.add(HCItems.PARAGLIDER);
 

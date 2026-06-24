@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-24T08:12:01.175853154	HyliaCraft/Recipes
+// 1.21.1	2026-06-24T11:09:46.639506364	HyliaCraft/Recipes
 304b41ef1345562aeac857709484e304165e8296 data/hyliacraft/recipe/pumpkin_soup.json
 797d0f3238ba3b162e17aaa93f5131e2529c8f92 data/hyliacraft/advancement/recipes/building_blocks/red_shingle_slab.json
 3509bbc75eae0e9dcba5fc4bd4282103ee4c405c data/hyliacraft/advancement/recipes/building_blocks/magenta_shingle_stairs.json
@@ -25,7 +25,6 @@ e2debf588d9e704da5c4ddc9b8f896bcbff067d3 data/hyliacraft/advancement/recipes/bui
 44925d4b1fc43e6cfa88521f1ac0f66439176318 data/hyliacraft/recipe/sky_cap.json
 004aa0e22e8e16d7b090d092facc3b9a5d9b1d32 data/hyliacraft/advancement/recipes/building_blocks/magenta_shingles_main.json
 791c75d9317130bffc5a0074744a62bb3b94b881 data/hyliacraft/advancement/recipes/building_blocks/green_shingle_slab.json
-087e2fda4c1d1649871b520836c1d20718b10987 data/hyliacraft/advancement/recipes/misc/gunpowder_from_bomb_flower.json
 9cc7071d4cd78e9a4572cd1bc42172f37409b29f data/hyliacraft/advancement/recipes/building_blocks/black_shingle_wall.json
 9ee9865690ef0848080b62f7d944c7ec1e4d3a98 data/hyliacraft/recipe/cyan_shingle_wall.json
 44d14969d5447331e0bc92a6055433213377bd36 data/hyliacraft/advancement/recipes/building_blocks/green_shingle_stairs.json
@@ -112,7 +111,6 @@ a0d0176d6056aabd08a742634ccf259bd75b435a data/hyliacraft/recipe/light_blue_shing
 fa9f84ad6406a8fa202c7544b8da57f3cb45c7b0 data/hyliacraft/recipe/pink_shingle_wall.json
 806020313ed0559468201d8bf334ee42f7385ea2 data/hyliacraft/advancement/recipes/building_blocks/blue_shingle_stairs.json
 16c5455d330467de558cd026127d78ce35740c26 data/hyliacraft/recipe/cyan_shingles_main.json
-2f5fd91b5601aceb2722b59790a6ffac7089f636 data/hyliacraft/recipe/gunpowder_from_bomb_flower.json
 75cd39d97e055563b83655a7af04c58001668074 data/hyliacraft/advancement/recipes/building_blocks/red_shingle_stairs.json
 537666449eda91f031df33bc8a54af35aa156508 data/hyliacraft/recipe/mogma_mitt.json
 b66e9b4b5b56d531f9cbe2faafbf5c9edbb5a61c data/hyliacraft/recipe/fairy_bow.json
