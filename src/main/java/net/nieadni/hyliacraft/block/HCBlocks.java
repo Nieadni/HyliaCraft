@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
+import net.nieadni.hyliacraft.block.custom.BombFlowerBlock;
 import net.nieadni.hyliacraft.block.custom.PotBlock;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -51,6 +52,7 @@ public class HCBlocks extends Blocks {
     public static final Block ARMORANTH_POT = registerBlock("armoranth_pot", Blocks.createFlowerPotBlock(ARMORANTH));
     public static final Block BLUE_NIGHTSHADE = registerBlock( "blue_nightshade", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.INVISIBILITY, 400)), AbstractBlock.Settings.create().mapColor(MapColor.BLUE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block BLUE_NIGHTSHADE_POT = registerBlock("blue_nightshade_pot", Blocks.createFlowerPotBlock(BLUE_NIGHTSHADE));
+    public static final Block BOMB_FLOWER = registerBlock("bomb_flower", new BombFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).ticksRandomly().noCollision().sounds(BlockSoundGroup.SWEET_BERRY_BUSH).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block EXOTIC_FLOWER = registerBlock("exotic_flower", new TallFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).burnable().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SEA_FLOWER = registerBlock("sea_flower", new TallFlowerBlock(AbstractBlock.Settings.create().mapColor(MapColor.OFF_WHITE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).burnable().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block SILENT_PRINCESS = registerBlock("silent_princess", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.INVISIBILITY, 400)), AbstractBlock.Settings.create().mapColor(MapColor.WHITE).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));

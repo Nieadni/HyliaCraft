@@ -12,6 +12,7 @@ public class HCBiomeTags {
     public static final TagKey<Biome> BLUE_NIGHTSHADE = TagKey.of(RegistryKeys.BIOME, Identifier.of((HyliaCraft.MOD_ID), "blue_nightshade"));
     public static final TagKey<Biome> SILENT_PRINCESS = TagKey.of(RegistryKeys.BIOME, Identifier.of((HyliaCraft.MOD_ID), "silent_princess"));
     public static final TagKey<Biome> SWIFT_VIOLETS = TagKey.of(RegistryKeys.BIOME, Identifier.of((HyliaCraft.MOD_ID), "swift_violets"));
+    public static final TagKey<Biome> BOMB_FLOWER = TagKey.of(RegistryKeys.BIOME, Identifier.of((HyliaCraft.MOD_ID), "bomb_flower"));
 
 
 }

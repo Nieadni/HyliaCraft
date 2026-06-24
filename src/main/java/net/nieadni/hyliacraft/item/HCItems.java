@@ -62,6 +62,7 @@ public class HCItems extends Items {
     public static final Item FIRESHIELD_EARRING = register(new FireshieldEarringItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"fireshield_earring");
     public static final Item WATER_DRAGON_SCALE = register(new WaterDragonScaleItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),"water_dragon_scale");
     public static final Item SHADOW_CRYSTAL = register(new ShadowCrystalItem(new Item.Settings().rarity(Rarity.RARE).maxCount(1)),"shadow_crystal");
+    public static final Item BOMB_FLOWER = register(new BombFlowerItem(HCBlocks.BOMB_FLOWER, new Item.Settings().maxCount(16)),"bomb_flower");
 
     // Ranged Weapons
     public static final Item SLINGSHOT = register(new SlingshotItem(new Item.Settings().maxCount(1)),"slingshot");

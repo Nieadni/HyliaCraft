@@ -376,6 +376,13 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(Blocks.PUMPKIN))
                 .offerTo(exporter);
 
+        //
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.GUNPOWDER, 2)
+                .input(HCItems.BOMB_FLOWER)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.BOMB_FLOWER))
+                .offerTo(exporter, getItemId(Items.GUNPOWDER) + "_from_bomb_flower");
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 1)
                 .input(HCItemTags.WHITE_DYES)
                 .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCBlocks.SILENT_PRINCESS))

@@ -110,6 +110,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.MOGMA_MITT, "Mogma Mitt");
         translationBuilder.add("tooltip.hyliacraft.mogma_mitt", "§6Use these sharp claws to dig through patches of stone and earth!");
         translationBuilder.add(HCItems.VICIOUS_SICKLE, "§cVicious Sickle");
+        translationBuilder.add(HCItems.BOMB_FLOWER, "Bomb Flower");
         translationBuilder.add(HCItems.PARAGLIDER, "Paraglider");
         translationBuilder.add(HCItems.HORSE_CALL, "Horse Call");
 
@@ -163,6 +164,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCBlocks.ANCIENT_FLOWER, "Ancient Flower");
         translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");
         translationBuilder.add(HCBlocks.BLUE_NIGHTSHADE, "Blue Nightshade");
+        translationBuilder.add(HCBlocks.BOMB_FLOWER, "Bomb Flower");
         translationBuilder.add(HCBlocks.EXOTIC_FLOWER, "Exotic Flower");
         translationBuilder.add(HCBlocks.SEA_FLOWER, "Sea Flower");
         translationBuilder.add(HCBlocks.SILENT_PRINCESS, "Silent Princess");
