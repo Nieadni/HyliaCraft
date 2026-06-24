@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
+	id 'fabric-loom' version '1.17-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,7 +11,7 @@ base {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/hyliacraft.accesswidener")
+	accessWidenerPath = file("src/main/resources/hyliacraft.classtweaker")
 }
 
 repositories {

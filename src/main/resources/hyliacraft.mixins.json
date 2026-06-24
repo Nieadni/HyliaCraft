@@ -4,15 +4,59 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "EndermanEntityMixin",
-    "ExampleMixin"
+    "ExampleMixin",
+    "race.WaterBreathingMixin",
+    "race.fist_mining.CanHarvestMixin",
+    "race.fist_mining.DropsMixin",
+    "race.fist_mining.SpeedMixin",
+    "race.gerudo.MovementSpeedMixin",
+    "race.goron.AttackDamageMixin",
+    "race.goron.LavaDamageMixin",
+    "race.goron.SwimmingMixin",
+    "race.goron.eating.ItemMixin",
+    "race.goron.eating.LivingEntityMixin",
+    "race.kokiri.HealingMixin",
+    "race.kokiri.invisibility.EntityMixin",
+    "race.kokiri.invisibility.MobEntityMixin",
+    "race.mogma.ServerFistRightClick",
+    "race.mogma.dirt_walking.AbstractBlockMixin",
+    "race.mogma.dirt_walking.BlocksMixin",
+    "race.mogma.dirt_walking.CameraSubmersionTypeMixin",
+    "race.mogma.dirt_walking.EntityMixin",
+    "race.mogma.dirt_walking.LivingEntityMixin",
+    "race.rito.FireworkRocketItemMixin",
+    "race.rito.elytra.LivingEntityMixin",
+    "race.rito.elytra.PlayerEntityMixin",
+    "race.sheikah.BarrelBlockEntityMixin",
+    "race.sheikah.ChestBlockEntityMixin",
+    "race.sheikah.EnderChestBlockEntityMixin",
+    "race.sheikah.PlayerEntityMixin",
+    "race.sheikah.PowderSnowFallSoundMixin",
+    "race.sheikah.ViewerCountManagerMixin",
+    "race.zora.DoubleDamageMixin"
   ],
   "client": [
     "ItemRendererAccessor",
     "MixinItemRenderer",
     "MixinModelBakery",
-    "MixinPlayerEntityModel"
+    "MixinPlayerEntityModel",
+    "race.kokiri.invisibility.ClientEntityMixin",
+    "race.mogma.ClientFistRightClick",
+    "race.mogma.dirt_walking.BackgroundRendererMixin",
+    "race.mogma.dirt_walking.CameraMixin",
+    "race.mogma.dirt_walking.FluidRendererMixin",
+    "race.mogma.dirt_walking.InGameOverlayRendererMixin",
+    "race.mogma.dirt_walking.WorldRendererMixin",
+    "race.rito.elytra.CapeFeatureRendererMixin",
+    "race.rito.elytra.ClientPlayerEntityMixin",
+    "race.rito.elytra.ElytraFeatureRendererMixin",
+    "race.rito.shader.GameRendererMixin",
+    "race.rito.shader.KeyboardMixin"
   ],
   "injectors": {
     "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.4"
   }
 }

@@ -2,20 +2,53 @@ package net.nieadni.hyliacraft.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.model.json.JsonUnbakedModel;
+import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.client.render.CustomDirtModel;
+import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
+import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
+import net.nieadni.hyliacraft.race.ChooseRaceScreen;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 import net.nieadni.hyliacraft.item.HCItems;
+import org.lwjgl.glfw.GLFW;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
     public static List<Item> CUSTOM_GUI_MODEL_ITEMS = new ArrayList<>();
+    
+    public static HyliaCraftRace race = null;
+    private static int ticksSinceLastRaceAbilityUse = 0;
+    public static Map<Integer, Boolean> invisibilityOverride = new HashMap<>();
+    public static boolean mogmaDirtWalkingEnabled = false;
 
     @Override
     public void onInitializeClient() {
@@ -43,7 +76,7 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.CLAY_POT_WRITING,
                 HCBlocks.CLAY_POT,
                 HCBlocks.HATENO_CLAY_POT
-                );
+        );
 
         HCModelPredicates.registerHCModelPredicates();
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
@@ -53,6 +86,82 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
 
+        // Register packet receiver for the choose race payload
+        ClientPlayNetworking.registerGlobalReceiver(RaceS2CPayload.ID, (payload, context) -> {
+            HyliaCraftRace race = payload.race();
+            MinecraftClient client = context.client();
+            if (race == null) {
+                // Show the race selection screen
+                client.setScreen(new ChooseRaceScreen(Text.translatable("hyliacraft.race.selector.title")));
+            } else {
+                // Maybe remove the old race
+                if (HyliaCraftClient.race != null) {
+                    HyliaCraftClient.race.removeRaceClient(client.player);
+                }
+                // Set and apply the race
+                HyliaCraftClient.race = race;
+                ClientPlayerEntity player = Objects.requireNonNull(client.player);
+                race.applyRaceClient(player);
+            }
+        });
+        
+        // Register packet receiver for invisibility override
+        ClientPlayNetworking.registerGlobalReceiver(InvisibleS2CPayload.ID, (payload, context) -> 
+                invisibilityOverride.putAll(payload.updates())
+        );
+
+        registerRaceAbilityKeybind();
+
+        ModelLoadingPlugin.register(pluginContext -> {
+            pluginContext.modifyModelBeforeBake().register((model, context) -> {
+                if (model instanceof JsonUnbakedModel jsonModel) {
+                    Identifier resourceId = context.resourceId();
+                    if (resourceId != null) {
+                        CustomDirtModel.modifyModel(resourceId, jsonModel);
+                    }
+                }
+                return model;
+            });
+        });
+
+        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            // Maybe remove the old race
+            if (race != null) {
+                ClientPlayerEntity player = Objects.requireNonNull(client.player);
+                race.removeRaceClient(player);
+                race = null;
+            }
+        });
+    }
+
+    private void registerRaceAbilityKeybind() {
+        KeyBinding keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.hyliacraft.race_ability",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_C,
+                "category.hyliacraft.main"
+        ));
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            ticksSinceLastRaceAbilityUse = Math.min(ticksSinceLastRaceAbilityUse + 1, getAbilityCooldown());
+            while (keyBinding.wasPressed()) {
+                useRaceAbility(client);
+            }
+        });
+    }
+
+    private static int getAbilityCooldown() {
+        return race == null ? 0 : race.abilityCooldown;
+    }
+
+    private static void useRaceAbility(MinecraftClient client) {
+        if (ticksSinceLastRaceAbilityUse >= getAbilityCooldown()) {
+            ClientPlayerEntity player = client.player;
+            HyliaCraftRace race = HyliaCraftRace.getRace(player);
+            if (race != null && race.useRaceAbility(player)) {
+                ticksSinceLastRaceAbilityUse = 0;
+                ClientPlayNetworking.send(RaceAbilityC2SPayload.INSTANCE);
+            }
+        }
     }
 
     public static void addCustomGUIModelItems() {

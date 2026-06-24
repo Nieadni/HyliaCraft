@@ -182,6 +182,13 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(HCItemTags.DOUBLE_PURPLE_DYES);
         getOrCreateTagBuilder(HCItemTags.DOUBLE_MAGENTA_DYES).add(Item.fromBlock(HCBlocks.EXOTIC_FLOWER));
         getOrCreateTagBuilder(HCItemTags.DOUBLE_PINK_DYES);
+
+        getOrCreateTagBuilder(HCItemTags.GORON_EDIBLE).add(
+                Items.STONE,
+                Items.COBBLESTONE,
+                Items.GRANITE,
+                Items.DIORITE
+        );
     }
 
 }

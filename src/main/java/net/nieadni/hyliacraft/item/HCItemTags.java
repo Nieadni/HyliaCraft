@@ -67,6 +67,8 @@ public class HCItemTags {
     public static final TagKey<Item> DOUBLE_MAGENTA_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "double_magenta_dyes"));
     public static final TagKey<Item> DOUBLE_PINK_DYES = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "double_pink_dyes"));
 
+    public static final TagKey<Item> GORON_EDIBLE = TagKey.of(RegistryKeys.ITEM, new Identifier(HyliaCraft.MOD_ID, "goron_edible"));
+
     public static void registerHCItemTags() {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its item tags.");
     }

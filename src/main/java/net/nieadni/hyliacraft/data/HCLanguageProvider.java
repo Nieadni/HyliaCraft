@@ -15,6 +15,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         super(dataOutput, registryLookup);
     }
 
+    private void generateRaceTranslations(TranslationBuilder translationBuilder, String raceId, String name, String description, String abilities) {
+        translationBuilder.add("hyliacraft.race.%s.name".formatted(raceId), name);
+        translationBuilder.add("hyliacraft.race.%s.description".formatted(raceId), description);
+        translationBuilder.add("hyliacraft.race.%s.abilities".formatted(raceId), abilities);
+    }
+
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
 
@@ -540,5 +546,28 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.white", "White Zora");
         translationBuilder.add("block.minecraft.banner.hyliacraft.zora.yellow", "Yellow Zora");
 
+        // Race names, descriptions, abilities
+        translationBuilder.add("hyliacraft.race.selector.title", "Select race");
+        translationBuilder.add("hyliacraft.race.selector.confirm", "Confirm");
+        translationBuilder.add("hyliacraft.race.on_select", "You selected the %s race!");
+        translationBuilder.add("hyliacraft.race.query", "%s currently has the %s race");
+        translationBuilder.add("hyliacraft.race.set", "%s now has the %s race");
+
+        generateRaceTranslations(translationBuilder, "human", "Human", "A completely normal person. Not recommended.", "Unremarkable");
+        generateRaceTranslations(translationBuilder, "hylian", "Hylian", "Descended from the people who lived among the goddess Hylia.", "No significant abilities");
+        generateRaceTranslations(translationBuilder, "skyloftian", "Skyloftian", "Hylians who were sent to the sky by the goddess Hylia. They are paired with a Loftwing when they reach a certain age.", "Paired with a Loftwing");
+        generateRaceTranslations(translationBuilder, "zora", "Zora", "The Zora are an aquatic folk who thrive underwater.", "Unrestricted by water, and can do a special spinning attack when in water.");
+        generateRaceTranslations(translationBuilder, "goron", "Goron", "A race of rock people who typically live in mountains. They are natural born miners with significant strength!", "Take less damage in lava, can eat stone, can mine basic stones with bare hands, cannot swim but cannot drown, physically stronger than other races but slow movement capabilities");
+        generateRaceTranslations(translationBuilder, "mogma", "Mogma", "A race of mole people who live in the mountains. They are natural born diggers and thrive underground.", "Hands become like a shovel and a hoe in one, and can slowly move through dirt");
+        generateRaceTranslations(translationBuilder, "sheikah", "Sheikah", "A mysterious and secretive tribe with pointed ears. They are the chosen guardians of the goddess Hylia and her mortal incarnations.", "Fairly unremarkable but very stealthy. A lot of actions do not produce sounds");
+        generateRaceTranslations(translationBuilder, "rito", "Rito", "Once Zora, they took to the skies and mastered flight.", "Can take flight and soar through the skies");
+        generateRaceTranslations(translationBuilder, "kokiri", "Kokiri", "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.", "Small enough to fit into small gaps, can easily hide in forest biomes, and heal double the rate of other races");
+
+        // Keybinds
+        translationBuilder.add("category.hyliacraft.main", "HyliaCraft");
+
+        translationBuilder.add("key.hyliacraft.race_ability", "Use Race Ability");
+        translationBuilder.add("hyliacraft.race.mogma.ability_on", "Dirt Walking enabled");
+        translationBuilder.add("hyliacraft.race.mogma.ability_off", "Dirt Walking disabled");
     }
 }

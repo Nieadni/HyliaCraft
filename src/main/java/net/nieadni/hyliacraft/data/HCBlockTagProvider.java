@@ -50,5 +50,10 @@ public class HCBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         Blocks.MYCELIUM, Blocks.ROOTED_DIRT, Blocks.MOSS_BLOCK, Blocks.MUD, Blocks.MUDDY_MANGROVE_ROOTS,
                         Blocks.DRIPSTONE_BLOCK);
 
+        getOrCreateTagBuilder(HCBlockTags.MOGMA_CAN_WALK_THROUGH).add(
+                Blocks.DIRT,
+                Blocks.GRASS_BLOCK,
+                Blocks.MYCELIUM
+        );
     }
 }
