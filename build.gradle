@@ -29,6 +29,21 @@ fabricApi {
 	configureDataGeneration()
 }
 
+repositories {
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		// forRepositories(fg.repository) // Uncomment when using ForgeGradle
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -41,14 +56,18 @@ dependencies {
 	// Geckolib is needed for some models
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 
-	// Nie's Higher Build Limit is needed for some structure generation
-	//modImplementation "maven.modrinth:${nies-higher-build-limit_project}:${nies-higher-build-limit_version}"
+	// Nie's Higher Build Limit // Needed for some structure generation
+	modImplementation "maven.modrinth:${nies_higher_build_limit_project}:${nies_higher_build_limit_version}"
+
+	// Huge Structure Blocks // Needed for Goddess Isle
+	modImplementation "maven.modrinth:${huge_structure_blocks_project}:${huge_structure_blocks_version}"
 
 	// Worldedit for easier Building
 	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
 
 	// JEI
 	modRuntimeOnly "maven.modrinth:${jei_project}:${jei_version}"
+
 }
 
 processResources {

@@ -6,7 +6,7 @@
 	"description": "A Mod which brings content from the various Legend of Zelda games into Minecraft.",
 	"authors": [
 		"Nieadni",
-		"EpicVon2468"
+		"Contrabass26"
 	],
 	"contact": {
 		"homepage": "https://github.com/Nieadni/HyliaCraft",
@@ -36,6 +36,8 @@
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*",
-		"geckolib": "*"
+		"geckolib": "*",
+		"mr_nies_higherbuildlimit512": "*",
+		"hugestructureblocks": "*"
 	}
 }
