@@ -102,9 +102,9 @@ public class HyliaCraft implements ModInitializer {
 			// Send the invisibility overrides to this player
             Map<Integer, Boolean> isInvisible = new HashMap<>();
 			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
-				isInvisible.put(player.getId(), !state.numTargeters.containsKey(player.getUuid()) && HyliaCraftRace.getRace(player) == HyliaCraftRace.KOKIRI);
+				isInvisible.put(player.getId(), HyliaCraftRace.checkKokiriInvisible(true, true, true, true, player));
 			}
-			boolean isJoinerInvisible = !state.numTargeters.containsKey(uuid) && HyliaCraftRace.getRace(joiner) == HyliaCraftRace.KOKIRI;
+			boolean isJoinerInvisible = HyliaCraftRace.checkKokiriInvisible(true, true, true, true, joiner);
 	        isInvisible.put(joiner.getId(), isJoinerInvisible);
 			ServerPlayNetworking.send(joiner, new InvisibleS2CPayload(isInvisible));
 			// Send this player's invisibility status to other players
