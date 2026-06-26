@@ -22,6 +22,7 @@ import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
+import net.nieadni.hyliacraft.instrument.HCInstrumentTags;
 import net.nieadni.hyliacraft.item.*;
 import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
 import net.nieadni.hyliacraft.item.HCItemTags;
@@ -32,7 +33,6 @@ import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.nieadni.hyliacraft.worldgen.HCBiomeTags;
-import org.slf4j.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,6 +56,7 @@ public class HyliaCraft implements ModInitializer {
 		HCArmourMaterials.registerHCArmourMaterials();
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
+		HCInstrumentTags.registerHCInstrumentTags();
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();

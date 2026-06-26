@@ -1,11 +1,13 @@
 package net.nieadni.hyliacraft.entity;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.entity.bokoblin.BokoblinEntity;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
 
 public class HCEntities {
@@ -20,6 +22,13 @@ public class HCEntities {
     );
      **/
 
+    public static final EntityType<BokoblinEntity> BOKOBLIN = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "bokoblin"),
+            EntityType.Builder.create(BokoblinEntity::new, SpawnGroup.MISC)
+                    .dimensions(1f, 0.1f)
+                    .build()
+    );
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier(HyliaCraft.MOD_ID, "goddess_sword_beam"),
@@ -57,6 +66,9 @@ public class HCEntities {
     );
 
     public static void registerHyliaCraftEntities() {
+        // Register default entity attributes
+        FabricDefaultAttributeRegistry.register(HCEntities.BOKOBLIN, BokoblinEntity.createBokoblinAttributes());
+
         HyliaCraft.LOGGER.info(HyliaCraft.MOD_ID + " has registered its entities.");
     }
 }

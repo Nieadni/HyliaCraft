@@ -23,6 +23,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.client.render.CustomDirtModel;
 import net.nieadni.hyliacraft.HyliaCraft;
+import net.nieadni.hyliacraft.client.render.entity.BokoblinEntityRenderer;
 import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
 import net.nieadni.hyliacraft.network.RaceS2CPayload;
 import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
@@ -85,6 +86,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         EntityRendererRegistry.register(HCEntities.GODDESS_WHITE_SWORD_BEAM, GoddessWhiteSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.TRUE_MASTER_SWORD_BEAM, TrueMasterSwordBeamEntityRenderer::new);
+        EntityRendererRegistry.register(HCEntities.BOKOBLIN, BokoblinEntityRenderer::new);
 
         // Register packet receiver for the choose race payload
         ClientPlayNetworking.registerGlobalReceiver(RaceS2CPayload.ID, (payload, context) -> {
