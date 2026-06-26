@@ -1,8 +1,12 @@
 package net.nieadni.hyliacraft;
 
+import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.EnchantmentEvents;
 import net.fabricmc.fabric.api.util.TriState;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.enchantment.Enchantments;
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -189,5 +193,18 @@ public class HyliaCraft implements ModInitializer {
 		// Thank you TurtyWurty for the code above
 		// This only works in Survival. If you want to test it, you need to be in Survival Mode lol as Creative overrides this.
 
+	}
+
+	public static boolean isClientPlayerSpectator() {
+		if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+			MinecraftClient client = MinecraftClient.getInstance();
+			if (client != null) {
+				ClientPlayerEntity player = client.player;
+				if (player != null && player.isSpectator()) {
+                    return true;
+                }
+			}
+		}
+		return false;
 	}
 }

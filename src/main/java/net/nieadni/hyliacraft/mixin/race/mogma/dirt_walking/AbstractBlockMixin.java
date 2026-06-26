@@ -1,6 +1,10 @@
 package net.nieadni.hyliacraft.mixin.race.mogma.dirt_walking;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
@@ -8,6 +12,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlockTags;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.spongepowered.asm.mixin.Mixin;
@@ -37,6 +42,7 @@ public class AbstractBlockMixin {
 
     @Inject(method = "getCullingShape(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/shape/VoxelShape;", at = @At("HEAD"), cancellable = true)
     private void getCullingShape(BlockState state, BlockView world, BlockPos pos, CallbackInfoReturnable<VoxelShape> cir) {
+        if (HyliaCraft.isClientPlayerSpectator()) return;
         if (state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
             cir.setReturnValue(VoxelShapes.empty());
         }
@@ -51,6 +57,7 @@ public class AbstractBlockMixin {
 
     @Inject(method = "isSideInvisible(Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/Direction;)Z", at = @At("HEAD"), cancellable = true)
     private void isSideInvisible(BlockState state, BlockState stateFrom, Direction direction, CallbackInfoReturnable<Boolean> cir) {
+        if (HyliaCraft.isClientPlayerSpectator()) return;
         if (state.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH) && stateFrom.isIn(HCBlockTags.MOGMA_CAN_WALK_THROUGH)) {
             cir.setReturnValue(true);
         }
