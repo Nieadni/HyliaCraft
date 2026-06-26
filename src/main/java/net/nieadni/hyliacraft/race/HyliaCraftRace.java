@@ -89,17 +89,17 @@ public enum HyliaCraftRace {
         public static final Identifier MOVEMENT_SPEED_MODIFIER = Identifier.of(HyliaCraft.MOD_ID, "goron_movement_speed");
 
         @Override
-        public void applyRaceServer(ServerPlayerEntity player) {
-            super.applyRaceServer(player);
-            AttributeContainer attributes = player.getAttributes();
+        public void addAttributes(AttributeContainer attributes) {
+            super.addAttributes(attributes);
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
-            instance.addPersistentModifier(new EntityAttributeModifier(MOVEMENT_SPEED_MODIFIER, -0.05, EntityAttributeModifier.Operation.ADD_VALUE));
+            if (!instance.hasModifier(MOVEMENT_SPEED_MODIFIER)) {
+                instance.addPersistentModifier(new EntityAttributeModifier(MOVEMENT_SPEED_MODIFIER, -0.05, EntityAttributeModifier.Operation.ADD_VALUE));
+            }
         }
 
         @Override
-        public void removeRaceServer(ServerPlayerEntity player) {
-            super.removeRaceServer(player);
-            AttributeContainer attributes = player.getAttributes();
+        public void removeAttributes(AttributeContainer attributes) {
+            super.removeAttributes(attributes);
             EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
             instance.removeModifier(MOVEMENT_SPEED_MODIFIER);
         }
@@ -168,11 +168,6 @@ public enum HyliaCraftRace {
         @Override
         public void applyRaceServer(ServerPlayerEntity player) {
             super.applyRaceServer(player);
-            // Scale modifier
-            AttributeContainer attributes = player.getAttributes();
-            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
-            instance.addPersistentModifier(new EntityAttributeModifier(SCALE_MODIFIER, -0.34, EntityAttributeModifier.Operation.ADD_VALUE));
-            // Invisibility
             if (checkKokiriInvisible(true, true, true, false, player)) {
                 NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), true));
             }
@@ -181,14 +176,25 @@ public enum HyliaCraftRace {
         @Override
         public void removeRaceServer(ServerPlayerEntity player) {
             super.removeRaceServer(player);
-            // Scale modifier
-            AttributeContainer attributes = player.getAttributes();
-            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
-            instance.removeModifier(SCALE_MODIFIER);
-            // Invisibility
             if (checkKokiriInvisible(true, true, true, false, player)) {
                 NetworkUtils.broadcast(player.getServer(), new InvisibleS2CPayload(player.getId(), false));
             }
+        }
+
+        @Override
+        public void addAttributes(AttributeContainer attributes) {
+            super.addAttributes(attributes);
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
+            if (!instance.hasModifier(SCALE_MODIFIER)) {
+                instance.addPersistentModifier(new EntityAttributeModifier(SCALE_MODIFIER, -0.34, EntityAttributeModifier.Operation.ADD_VALUE));
+            }
+        }
+
+        @Override
+        public void removeAttributes(AttributeContainer attributes) {
+            super.removeAttributes(attributes);
+            EntityAttributeInstance instance = attributes.getCustomInstance(EntityAttributes.GENERIC_SCALE);
+            instance.removeModifier(SCALE_MODIFIER);
         }
     },
     GERUDO("gerudo", 26, 0);
@@ -264,6 +270,11 @@ public enum HyliaCraftRace {
     
     public void removeRaceClient(PlayerEntity player) {}
 
+    // We have methods specifically for attributes because they need to be re-applied after death
+    public void addAttributes(AttributeContainer attributes) {}
+
+    public void removeAttributes(AttributeContainer attributes) {}
+
     // Called on client and server
     public boolean useRaceAbility(PlayerEntity player) {
         return false;
@@ -311,6 +322,7 @@ public enum HyliaCraftRace {
             // Maybe remove the old race
             if (oldRace != null) {
                 oldRace.removeRaceServer(player);
+                oldRace.removeAttributes(player.getAttributes());
             }
 
             // Set the race
@@ -319,6 +331,7 @@ public enum HyliaCraftRace {
 
             // Apply the new race
             race.applyRaceServer(player);
+            race.addAttributes(player.getAttributes());
 
             // Notify the client
             if (notifyClient) ServerPlayNetworking.send(player, new RaceS2CPayload(race));
