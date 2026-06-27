@@ -116,8 +116,8 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.MIDNA_HELM, 1)
-                .pattern("SNS")
-                .pattern("SOS")
+                .pattern("S S")
+                .pattern("ONO")
                 .pattern(" Y ")
                 .input('N', Items.NETHERITE_HELMET)
                 .input('S', Items.NETHERITE_SCRAP)
@@ -127,6 +127,7 @@ public class HCRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.ZANT_HELM, 1)
+                .pattern(" S ")
                 .pattern("BSB")
                 .pattern("SNS")
                 .input('N', Items.NETHERITE_HELMET)

@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-23T17:11:02.814864	HyliaCraft/Tags for minecraft:item
+// 1.21.1	2026-06-27T18:13:38.2131711	HyliaCraft/Tags for minecraft:item
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\cyan_dyes.json
 94d274d56250212628ff6e1746328b104ceb6690 data\hyliacraft\tags\item\double_white_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\light_blue_dyes.json
@@ -14,6 +14,7 @@
 2b00a0305d8b0dd3547f0efccb1bd8e9325a0335 data\hyliacraft\tags\item\short_weapon.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_orange_dyes.json
 0f782d90f118149678884f506c043cc5c36dcb3a data\minecraft\tags\item\enchantable\head_armor.json
+ab9d6d9dbcda0e47a62dd8ba445e939b32af0849 data\hyliacraft\tags\item\goron_edible.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\minecraft\tags\item\foot_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\double_brown_dyes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\hyliacraft\tags\item\light_gray_dyes.json
