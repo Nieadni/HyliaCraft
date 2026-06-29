@@ -3,7 +3,9 @@ package net.nieadni.hyliacraft.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.block.custom.AncientFlowerCropBlock;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -104,10 +106,54 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.GORON_SPICE, Models.GENERATED);
         //itemModelGenerator.register(HCItems.FAIRY_BOTTLE, Models.GENERATED);
 
+
+
     }
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+        // Theres probably some cleaner way to do this but idk
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.BLUE_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.BLUE_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.BROWN_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.BROWN_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.CLAY_POT_WRITING,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.CLAY_POT_WRITING).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.GERUDO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.GERUDO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.GORON_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.GORON_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.HATENO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.HATENO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.KOKIRI_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.KOKIRI_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.RITO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.RITO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.ZORA_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.ZORA_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_BLUE_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_BLUE_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_BROWN_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_BROWN_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_CLAY_POT_WRITING,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_CLAY_POT_WRITING).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_GERUDO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_GERUDO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_GORON_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_GORON_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_HATENO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_HATENO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_KOKIRI_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_KOKIRI_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_RITO_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_RITO_CLAY_POT).getPath()));
+        blockStateModelGenerator.registerParentedItemModel(HCBlocks.NATURAL_ZORA_CLAY_POT,
+                new Identifier(HyliaCraft.MOD_ID, "block/" + Registries.BLOCK.getId(HCBlocks.NATURAL_ZORA_CLAY_POT).getPath()));
 
         blockStateModelGenerator.registerFlowerPotPlant(HCBlocks.ANCIENT_FLOWER, HCBlocks.ANCIENT_FLOWER_POT, BlockStateModelGenerator.TintType.NOT_TINTED);
 

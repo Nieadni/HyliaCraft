@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hyliacraft:clay_pot"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    },
+    {
+      "item": "minecraft:light_blue_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:zora_clay_pot"
+  }
+}

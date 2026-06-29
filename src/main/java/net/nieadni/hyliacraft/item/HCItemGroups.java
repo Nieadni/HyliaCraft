@@ -84,13 +84,26 @@ public class HCItemGroups {
             Identifier.of(HyliaCraft.MOD_ID, "02-blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.blocks"))
                     .icon(() -> new ItemStack(HCBlocks.CLAY_POT)).entries((displayContext, entries) -> {
-                        entries.add(HCBlocks.CLAY_POT.asItem());
+                        entries.add(HCBlocks.CLAY_POT);
                         entries.add(HCBlocks.NATURAL_CLAY_POT);
-                        entries.add(HCBlocks.CLAY_POT_WRITING);
-                        entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING);
                         entries.add(HCBlocks.BLUE_CLAY_POT);
                         entries.add(HCBlocks.NATURAL_BLUE_CLAY_POT);
+                        entries.add(HCBlocks.BROWN_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_BROWN_CLAY_POT);
+                        entries.add(HCBlocks.CLAY_POT_WRITING);
+                        entries.add(HCBlocks.NATURAL_CLAY_POT_WRITING);
+                        entries.add(HCBlocks.GERUDO_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_GERUDO_CLAY_POT);
+                        entries.add(HCBlocks.GORON_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_GORON_CLAY_POT);
                         entries.add(HCBlocks.HATENO_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_HATENO_CLAY_POT);
+                        entries.add(HCBlocks.KOKIRI_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_KOKIRI_CLAY_POT);
+                        entries.add(HCBlocks.RITO_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_RITO_CLAY_POT);
+                        entries.add(HCBlocks.ZORA_CLAY_POT);
+                        entries.add(HCBlocks.NATURAL_ZORA_CLAY_POT);
 
                         entries.add(HCBlocks.ANCIENT_FLOWER);
                         entries.add(HCBlocks.ARMORANTH);

@@ -64,12 +64,22 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
         // HC Non-Coloured Blocks
 
         addDrop(HCBlocks.CLAY_POT);
+        addDrop(HCBlocks.BLUE_CLAY_POT);
+        addDrop(HCBlocks.BROWN_CLAY_POT);
+        addDrop(HCBlocks.CLAY_POT_WRITING);
+        addDrop(HCBlocks.GERUDO_CLAY_POT);
+        addDrop(HCBlocks.GORON_CLAY_POT);
+        addDrop(HCBlocks.HATENO_CLAY_POT);
+        addDrop(HCBlocks.KOKIRI_CLAY_POT);
+        addDrop(HCBlocks.RITO_CLAY_POT);
+        addDrop(HCBlocks.ZORA_CLAY_POT);
+
         addDrop(HCBlocks.NATURAL_CLAY_POT, (block) -> applyExplosionDecay(block,
                 LootTable.builder()
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
                                 .with(ItemEntry.builder(HCBlocks.CLAY_POT)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
                         .pool(LootPool.builder()
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
                                 .conditionally(RandomChanceLootCondition.builder(50))
@@ -82,26 +92,7 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
                                 .conditionally(RandomChanceLootCondition.builder(25))
                                 .with(ItemEntry.builder(Items.STICK)))));
-        addDrop(HCBlocks.CLAY_POT_WRITING);
-        addDrop(HCBlocks.NATURAL_CLAY_POT_WRITING, (block) -> applyExplosionDecay(block,
-                LootTable.builder()
-                        .pool(LootPool.builder()
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
-                                .with(ItemEntry.builder(HCBlocks.CLAY_POT_WRITING)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
-                        .pool(LootPool.builder()
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
-                                .conditionally(RandomChanceLootCondition.builder(50))
-                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
-                        .pool(LootPool.builder()
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
-                                .conditionally(RandomChanceLootCondition.builder(25))
-                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
-                        .pool(LootPool.builder()
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
-                                .conditionally(RandomChanceLootCondition.builder(25))
-                                .with(ItemEntry.builder(Items.STICK)))));
-        addDrop(HCBlocks.BLUE_CLAY_POT);
+
         addDrop(HCBlocks.NATURAL_BLUE_CLAY_POT, (block) -> applyExplosionDecay(block,
                 LootTable.builder()
                         .pool(LootPool.builder()
@@ -124,7 +115,177 @@ public class HCBlockLootProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
                                 .conditionally(RandomChanceLootCondition.builder(25))
                                 .with(ItemEntry.builder(Items.ARROW)))));
-        addDrop(HCBlocks.HATENO_CLAY_POT);
+
+        addDrop(HCBlocks.NATURAL_BROWN_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.BROWN_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.STICK)))));
+
+        addDrop(HCBlocks.NATURAL_CLAY_POT_WRITING, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.CLAY_POT_WRITING)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.STICK)))));
+
+        addDrop(HCBlocks.NATURAL_GERUDO_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.GERUDO_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.CACTUS)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Blocks.MELON)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.SAND)))));
+
+
+        addDrop(HCBlocks.NATURAL_GORON_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.GORON_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.IRON_ORE)))));
+
+        addDrop(HCBlocks.NATURAL_HATENO_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.HATENO_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,3)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.STICK)))));
+
+        addDrop(HCBlocks.NATURAL_KOKIRI_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.KOKIRI_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.APPLE)))));
+
+        addDrop(HCBlocks.NATURAL_RITO_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.RITO_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.COOKED_COD)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.COOKED_SALMON)))));
+
+
+        addDrop(HCBlocks.NATURAL_ZORA_CLAY_POT, (block) -> applyExplosionDecay(block,
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))
+                                .with(ItemEntry.builder(HCBlocks.ZORA_CLAY_POT)
+                                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,1)))))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(50))
+                                .with(ItemEntry.builder(HCItems.GREEN_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,2)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(HCItems.BLUE_RUPEE)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.COOKED_COD)))
+                        .pool(LootPool.builder()
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0,4)))
+                                .conditionally(RandomChanceLootCondition.builder(25))
+                                .with(ItemEntry.builder(Items.COOKED_SALMON)))));
+
 
         addDrop(HCBlocks.ANCIENT_FLOWER);
         addPottedPlantDrops(HCBlocks.ANCIENT_FLOWER_POT);

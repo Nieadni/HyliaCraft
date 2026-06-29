@@ -159,12 +159,26 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         /** BLOCKS **/
 
         translationBuilder.add(HCBlocks.CLAY_POT, "Clay Pot");
-        translationBuilder.add(HCBlocks.NATURAL_CLAY_POT, "Natural Clay Pot");
-        translationBuilder.add(HCBlocks.CLAY_POT_WRITING, "Clay Pot with Writing");
-        translationBuilder.add(HCBlocks.NATURAL_CLAY_POT_WRITING, "Natural Clay Pot with Writing");
         translationBuilder.add(HCBlocks.BLUE_CLAY_POT, "Blue Clay Pot");
-        translationBuilder.add(HCBlocks.NATURAL_BLUE_CLAY_POT, "Natural Blue Clay Pot");
+        translationBuilder.add(HCBlocks.BROWN_CLAY_POT, "Brown Clay Pot");
+        translationBuilder.add(HCBlocks.CLAY_POT_WRITING, "Clay Pot with Writing");
+        translationBuilder.add(HCBlocks.GERUDO_CLAY_POT, "Gerudo Clay Pot");
+        translationBuilder.add(HCBlocks.GORON_CLAY_POT, "Goron Clay Pot");
         translationBuilder.add(HCBlocks.HATENO_CLAY_POT, "Hateno Clay Pot");
+        translationBuilder.add(HCBlocks.KOKIRI_CLAY_POT, "Kokiri Clay Pot");
+        translationBuilder.add(HCBlocks.RITO_CLAY_POT, "Rito Clay Pot");
+        translationBuilder.add(HCBlocks.ZORA_CLAY_POT, "Zora Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_CLAY_POT, "Natural Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_BLUE_CLAY_POT, "Natural Blue Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_BROWN_CLAY_POT, "Natural Brown Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_CLAY_POT_WRITING, "Natural Clay Pot with Writing");
+        translationBuilder.add(HCBlocks.NATURAL_GERUDO_CLAY_POT, "Natural Gerudo Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_GORON_CLAY_POT, "Natural Goron Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_HATENO_CLAY_POT, "Natural Hateno Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_KOKIRI_CLAY_POT, "Natural Kokiri Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_RITO_CLAY_POT, "Natural Rito Clay Pot");
+        translationBuilder.add(HCBlocks.NATURAL_ZORA_CLAY_POT, "Natural Zora Clay Pot");
+
 
         translationBuilder.add(HCBlocks.ANCIENT_FLOWER, "Ancient Flower");
         translationBuilder.add(HCBlocks.ARMORANTH, "Armoranth");

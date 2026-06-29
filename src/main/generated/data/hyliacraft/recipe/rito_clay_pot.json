@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hyliacraft:clay_pot"
+    },
+    {
+      "item": "minecraft:green_dye"
+    },
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "minecraft:gray_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:rito_clay_pot"
+  }
+}

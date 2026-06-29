@@ -23,6 +23,7 @@ Ordered A to Z to avoid bias:
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, and the Rupee design textures.
 * [DataPackGen](https://modrinth.com/user/GenMode) - For many textures and texture support
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
+* M1H4U - For many pot textures
 * [mentalhydnellum](https://www.planetminecraft.com/member/mentalhydnellum/) - For the Outfits of the Heroes. 
 * [poeticbagel](https://www.planetminecraft.com/member/poeticbagel/) - For the Banana texture
 * pom_pookie - For the 'Isle of the Goddess' Build, Digging Mitts and Slingshot textures.
@@ -32,7 +33,7 @@ Ordered A to Z to avoid bias:
 
 **Testers -**
 
-* insert name here
+* .kapustka
 
 **Translators -**
 
@@ -42,6 +43,7 @@ If you want to translate, please join this [discord](https://discord.gg/frqHUnJe
 - [33] Spanish (es_es) - soulnekoghost
 - [45] French (fr_fr) - 
 - [69] Korean (ko_kr) - gold_moon
+- [109] Russian (ru_ru) - .kapustka
 
 **Ex-Coders**
 

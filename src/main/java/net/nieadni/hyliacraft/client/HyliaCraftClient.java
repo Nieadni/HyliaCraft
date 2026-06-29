@@ -12,34 +12,24 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.model.json.JsonUnbakedModel;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.item.Item;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.nieadni.hyliacraft.client.render.CustomDirtModel;
-import net.nieadni.hyliacraft.HyliaCraft;
-import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
-import net.nieadni.hyliacraft.network.RaceS2CPayload;
-import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
-import net.nieadni.hyliacraft.race.ChooseRaceScreen;
-import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.client.render.CustomDirtModel;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 import net.nieadni.hyliacraft.item.HCItems;
+import net.nieadni.hyliacraft.network.InvisibleS2CPayload;
+import net.nieadni.hyliacraft.network.RaceAbilityC2SPayload;
+import net.nieadni.hyliacraft.network.RaceS2CPayload;
+import net.nieadni.hyliacraft.race.ChooseRaceScreen;
+import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import org.lwjgl.glfw.GLFW;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class HyliaCraftClient implements ClientModInitializer {
 
@@ -69,14 +59,27 @@ public class HyliaCraftClient implements ClientModInitializer {
                 HCBlocks.SWIFT_VIOLETS_POT,
                 HCBlocks.TOWN_FLOWER,
 
-                HCBlocks.NATURAL_BLUE_CLAY_POT,
-                HCBlocks.NATURAL_CLAY_POT_WRITING,
-                HCBlocks.NATURAL_CLAY_POT,
-                HCBlocks.BLUE_CLAY_POT,
-                HCBlocks.CLAY_POT_WRITING,
                 HCBlocks.CLAY_POT,
-                HCBlocks.HATENO_CLAY_POT
-        );
+                HCBlocks.BLUE_CLAY_POT,
+                HCBlocks.BROWN_CLAY_POT,
+                HCBlocks.CLAY_POT_WRITING,
+                HCBlocks.GERUDO_CLAY_POT,
+                HCBlocks.GORON_CLAY_POT,
+                HCBlocks.HATENO_CLAY_POT,
+                HCBlocks.KOKIRI_CLAY_POT,
+                HCBlocks.RITO_CLAY_POT,
+                HCBlocks.ZORA_CLAY_POT,
+                HCBlocks.NATURAL_CLAY_POT,
+                HCBlocks.NATURAL_BLUE_CLAY_POT,
+                HCBlocks.NATURAL_BROWN_CLAY_POT,
+                HCBlocks.NATURAL_CLAY_POT_WRITING,
+                HCBlocks.NATURAL_GERUDO_CLAY_POT,
+                HCBlocks.NATURAL_GORON_CLAY_POT,
+                HCBlocks.NATURAL_HATENO_CLAY_POT,
+                HCBlocks.NATURAL_KOKIRI_CLAY_POT,
+                HCBlocks.NATURAL_RITO_CLAY_POT,
+                HCBlocks.NATURAL_ZORA_CLAY_POT
+                );
 
         HCModelPredicates.registerHCModelPredicates();
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hyliacraft:clay_pot"
+    },
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:kokiri_clay_pot"
+  }
+}

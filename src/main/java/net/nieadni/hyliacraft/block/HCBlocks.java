@@ -35,13 +35,27 @@ public class HCBlocks extends Blocks {
         return Registry.register(Registries.BLOCK, Identifier.of(HyliaCraft.MOD_ID, name), function.apply(AbstractBlock.Settings.create()));
     }
 
+    // Natural Pots have drops. I found it easier just to make a separate block
     public static final Block CLAY_POT = registerBlock("clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
-    public static final Block NATURAL_CLAY_POT = registerBlock("natural_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
-    public static final Block CLAY_POT_WRITING = registerBlock("clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
-    public static final Block NATURAL_CLAY_POT_WRITING = registerBlock("natural_clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
     public static final Block BLUE_CLAY_POT = registerBlock("blue_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
-    public static final Block NATURAL_BLUE_CLAY_POT = registerBlock("natural_blue_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block BROWN_CLAY_POT = registerBlock("brown_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
+    public static final Block CLAY_POT_WRITING = registerBlock("clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
+    public static final Block GERUDO_CLAY_POT = registerBlock("gerudo_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN)));
+    public static final Block GORON_CLAY_POT = registerBlock("goron_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_LIGHT_BLUE)));
     public static final Block HATENO_CLAY_POT = registerBlock("hateno_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block KOKIRI_CLAY_POT = registerBlock("kokiri_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW)));
+    public static final Block RITO_CLAY_POT = registerBlock("rito_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.GRAY)));
+    public static final Block ZORA_CLAY_POT = registerBlock("zora_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block NATURAL_CLAY_POT = registerBlock("natural_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
+    public static final Block NATURAL_BLUE_CLAY_POT = registerBlock("natural_blue_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block NATURAL_BROWN_CLAY_POT = registerBlock("natural_brown_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
+    public static final Block NATURAL_CLAY_POT_WRITING = registerBlock("natural_clay_pot_writing", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN)));
+    public static final Block NATURAL_GERUDO_CLAY_POT = registerBlock("natural_gerudo_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN)));
+    public static final Block NATURAL_GORON_CLAY_POT = registerBlock("natural_goron_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_LIGHT_BLUE)));
+    public static final Block NATURAL_HATENO_CLAY_POT = registerBlock("natural_hateno_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block NATURAL_KOKIRI_CLAY_POT = registerBlock("natural_kokiri_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW)));
+    public static final Block NATURAL_RITO_CLAY_POT = registerBlock("natural_rito_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.GRAY)));
+    public static final Block NATURAL_ZORA_CLAY_POT = registerBlock("natural_zora_clay_pot", new PotBlock(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE)));
 
     public static final Block ANCIENT_FLOWER = registerBlock("ancient_flower", new FlowerBlock(createStewEffects(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.REGENERATION, 400)), AbstractBlock.Settings.create().mapColor(MapColor.MAGENTA).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XZ).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ANCIENT_FLOWER_POT = registerBlock("ancient_flower_pot", Blocks.createFlowerPotBlock(ANCIENT_FLOWER));
