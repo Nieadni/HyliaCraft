@@ -22,6 +22,7 @@ Ordered A to Z to avoid bias:
 
 * [altshift](https://www.planetminecraft.com/texture-pack/alt-s-zelda-pack/) - For the Iron Bow, Bokoblin, and the Rupee design textures.
 * [DataPackGen](https://modrinth.com/user/GenMode) - For many textures and texture support
+* deadlydiamond98 - For the code for the item in pots feature
 * [EyelessTenshi](https://www.planetminecraft.com/member/eyelesstenshi/) - For the Flower and Fairy Bow textures.
 * M1H4U - For many pot textures
 * [mentalhydnellum](https://www.planetminecraft.com/member/mentalhydnellum/) - For the Outfits of the Heroes. 

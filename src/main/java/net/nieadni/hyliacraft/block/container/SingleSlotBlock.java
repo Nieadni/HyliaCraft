@@ -1,0 +1,93 @@
+package net.nieadni.hyliacraft.block.container;
+
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public abstract class SingleSlotBlock extends BlockWithEntity {
+    public SingleSlotBlock(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (world.getBlockEntity(pos) instanceof SingleSlotBlockEntity blockEntity) {
+            blockEntity.checkLootInteraction(player);
+            ItemScatterer.spawn(world, pos, blockEntity.getInvStackList());
+        }
+        super.onBreak(world, pos, state, player);
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        ItemStack stack = player.getStackInHand(hand);
+        if (!world.isClient && world.getBlockEntity(pos) instanceof SingleSlotBlockEntity blockEntity) {
+            blockEntity.checkLootInteraction(player);
+            if (canRemoveItem(state, world, pos, player, hand, stack, blockEntity)) {
+                ItemStack removedStack = blockEntity.getStack(0);
+                player.setStackInHand(hand, removedStack);
+                blockEntity.clear();
+                if (getRemoveSound(removedStack) != null) {
+                    world.playSound(null, pos, getRemoveSound(removedStack), SoundCategory.BLOCKS, 1, 1);
+                }
+                blockEntity.markDirty();
+                return ActionResult.SUCCESS;
+            } else if (canInsertItem(state, world, pos, player, hand, stack, blockEntity)) {
+                if (getInsertSound(stack) != null) {
+                    world.playSound(null, pos, getInsertSound(stack), SoundCategory.BLOCKS, 1, 1);
+                }
+                blockEntity.markDirty();
+                return ActionResult.SUCCESS;
+            }
+        }
+        return ActionResult.CONSUME;
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    // COMPARATOR //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Override
+    public boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
+    }
+
+    // SOUNDS & OTHER HELPER METHODS ///////////////////////////////////////////////////////////////////////////////////
+
+    public boolean canInsertItem(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, SingleSlotBlockEntity blockEntity) {
+        if (player.isCreative()) {
+            stack = stack.copy();
+        }
+        return isValid(stack) && blockEntity.insertStack(stack);
+    }
+
+    public boolean canRemoveItem(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, SingleSlotBlockEntity blockEntity) {
+        return !blockEntity.isEmpty() && player.getStackInHand(hand).isEmpty();
+    }
+
+    protected abstract SoundEvent getInsertSound(ItemStack stack);
+    protected abstract SoundEvent getRemoveSound(ItemStack stack);
+
+    public boolean isValid(ItemStack stack) {
+        return true;
+    }
+}
