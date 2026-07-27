@@ -1,5 +1,9 @@
 {
   "values": [
-    "hyliacraft:orange_rupee"
+    "hyliacraft:orange_rupee",
+    {
+      "id": "superslegend:silver_rupee",
+      "required": false
+    }
   ]
 }

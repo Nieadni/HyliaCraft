@@ -1,5 +1,10 @@
 {
   "values": [
-    "hyliacraft:yellow_rupee"
+    "hyliacraft:yellow_rupee",
+    "minecraft:emerald",
+    {
+      "id": "superslegend:yellow_rupee",
+      "required": false
+    }
   ]
 }

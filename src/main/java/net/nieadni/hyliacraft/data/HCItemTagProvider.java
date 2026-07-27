@@ -138,14 +138,23 @@ public class HCItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         // Compat Stuffs
 
-        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE).add(Items.EMERALD).addOptional(Identifier.of("hyrule_terrors","rupee"));
-        getOrCreateTagBuilder(HCItemTags.BLUE_RUPEES).add(HCItems.BLUE_RUPEE);
-        getOrCreateTagBuilder(HCItemTags.YELLOW_RUPEES).add(HCItems.YELLOW_RUPEE);
-        getOrCreateTagBuilder(HCItemTags.RED_RUPEES).add(HCItems.RED_RUPEE);
-        getOrCreateTagBuilder(HCItemTags.PURPLE_RUPEES).add(HCItems.PURPLE_RUPEE);
-        getOrCreateTagBuilder(HCItemTags.ORANGE_RUPEES).add(HCItems.ORANGE_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.GREEN_RUPEES).add(HCItems.GREEN_RUPEE)
+                .addOptional(Identifier.of("hyrule_terrors","rupee"))
+                .addOptional(Identifier.of("superslegend","rupee"));
+        getOrCreateTagBuilder(HCItemTags.BLUE_RUPEES).add(HCItems.BLUE_RUPEE)
+                .addOptional(Identifier.of("superslegend","blue_rupee"));
+        getOrCreateTagBuilder(HCItemTags.YELLOW_RUPEES).add(HCItems.YELLOW_RUPEE).add(Items.EMERALD)
+                .addOptional(Identifier.of("superslegend","yellow_rupee"));
+        getOrCreateTagBuilder(HCItemTags.RED_RUPEES).add(HCItems.RED_RUPEE)
+                .addOptional(Identifier.of("superslegend","red_rupee"));
+        getOrCreateTagBuilder(HCItemTags.PURPLE_RUPEES).add(HCItems.PURPLE_RUPEE)
+                .addOptional(Identifier.of("superslegend","purple_rupee"));
+        getOrCreateTagBuilder(HCItemTags.ORANGE_RUPEES).add(HCItems.ORANGE_RUPEE)
+                        .addOptional(Identifier.of("superslegend","silver_rupee"));
         getOrCreateTagBuilder(HCItemTags.SILVER_RUPEES).add(HCItems.SILVER_RUPEE);
-        getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE);
+        getOrCreateTagBuilder(HCItemTags.GOLD_RUPEES).add(HCItems.GOLD_RUPEE)
+                .addOptional(Identifier.of("superslegend","gold_rupee"));
+
 
         // Dye Stuffs
 
