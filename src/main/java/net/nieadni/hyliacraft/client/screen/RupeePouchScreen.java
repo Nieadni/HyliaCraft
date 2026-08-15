@@ -28,7 +28,15 @@ public class RupeePouchScreen extends HandledScreen<RupeePouchScreenHandler> {
     private static final int BUTTON_SIZE = 16;
 
     /** Laid over a denomination the balance cannot reach. */
-    private static final int UNAFFORDABLE_TINT = 0xB0202020;
+    private static final int UNAFFORDABLE_TINT = 0xA0181818;
+
+    /**
+     * Depth for the unaffordable overlay.
+     *
+     * <p>{@code drawItem} renders at z 150, so an overlay drawn at the default depth of zero ends up
+     * behind the icon and does nothing at all. It has to be pushed in front of the item to be seen.
+     */
+    private static final int OVERLAY_Z = 200;
 
     public RupeePouchScreen(RupeePouchScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -79,7 +87,7 @@ public class RupeePouchScreen extends HandledScreen<RupeePouchScreenHandler> {
 
             context.drawItem(new ItemStack(denomination.item()), x, y);
             if (balance < denomination.value()) {
-                context.fill(x, y, x + BUTTON_SIZE, y + BUTTON_SIZE, UNAFFORDABLE_TINT);
+                context.fill(x, y, x + BUTTON_SIZE, y + BUTTON_SIZE, OVERLAY_Z, UNAFFORDABLE_TINT);
             }
         }
     }
