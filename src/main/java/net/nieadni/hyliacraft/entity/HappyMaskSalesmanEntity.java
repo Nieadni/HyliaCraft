@@ -13,22 +13,13 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOfferList;
-import net.minecraft.village.TradedItem;
 import net.minecraft.world.World;
-import net.nieadni.hyliacraft.shop.RupeeChange;
-import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Optional;
 
 /**
  * A merchant who sells masks for rupees.
@@ -92,53 +83,20 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         return ActionResult.success(this.getWorld().isClient);
     }
 
+    /**
+     * Deliberately empty while the pouch-based payment system is built.
+     *
+     * <p>He used to build vanilla {@link TradeOffer}s, paying in loose coins. That capped what he could
+     * ever sell: a trade holds two input stacks, so any price needing three denominations, 6666 among them,
+     * was unsellable no matter how rich the player was. Paying from a Rupee Pouch balance removes the cap
+     * entirely, so the coin-based offers were removed rather than kept alongside.
+     *
+     * <p>His stock still comes from {@code rupee_costs} datapack files through {@link RupeeCostLoader};
+     * only the way a player hands over the money is being replaced.
+     */
     @Override
     protected void fillRecipes() {
-        TradeOfferList offers = this.getOffers();
-
-        for (RupeeCost entry : RupeeCostLoader.getSorted()) {
-            // An extra input item claims one of the two slots, leaving one for rupees.
-            int rupeeSlots = entry.accepts().isEmpty() ? 2 : 1;
-            Optional<List<ItemStack>> payment = RupeeChange.solve(entry.cost(), rupeeSlots);
-
-            if (payment.isEmpty()) {
-                // The price cannot be made from the rupees that fit. Majora's Mask at 6666 lands here, so
-                // he simply does not offer it. That is the intended state until the Rupee Pouch exists.
-                continue;
-            }
-
-            List<ItemStack> rupees = payment.get();
-
-            if (entry.accepts().isEmpty()) {
-                if (rupees.isEmpty()) {
-                    // Free, with nothing at all to hand over. There is no trade to make.
-                    continue;
-                }
-                TradedItem first = tradedItem(rupees.get(0));
-                Optional<TradedItem> second = rupees.size() > 1
-                        ? Optional.of(tradedItem(rupees.get(1)))
-                        : Optional.<TradedItem>empty();
-                offers.add(buildOffer(first, second, entry));
-            } else {
-                // One offer per accepted item: a trade input takes a single item, not a tag, so "a pumpkin
-                // or a carved pumpkin" cannot be expressed as one offer.
-                for (Item accepted : entry.accepts()) {
-                    Optional<TradedItem> second = rupees.isEmpty()
-                            ? Optional.<TradedItem>empty()
-                            : Optional.of(tradedItem(rupees.get(0)));
-                    offers.add(buildOffer(new TradedItem(accepted, 1), second, entry));
-                }
-            }
-        }
-    }
-
-    private static TradedItem tradedItem(ItemStack stack) {
-        return new TradedItem(stack.getItem(), stack.getCount());
-    }
-
-    private TradeOffer buildOffer(TradedItem first, Optional<TradedItem> second, RupeeCost entry) {
-        // No merchant experience and no price multiplier: prices are set by datapack and should stay put.
-        return new TradeOffer(first, second, new ItemStack(entry.item()), entry.maxUses(), 0, 1.0F);
+        // No offers until pouch payment lands.
     }
 
     @Override

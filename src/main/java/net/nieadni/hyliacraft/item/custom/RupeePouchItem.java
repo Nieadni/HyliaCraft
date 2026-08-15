@@ -5,12 +5,17 @@ import net.minecraft.inventory.StackReference;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ClickType;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.HCDataComponents;
+import net.nieadni.hyliacraft.screen.RupeePouchScreenHandler;
 import net.nieadni.hyliacraft.shop.RupeeChange;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,6 +82,18 @@ public class RupeePouchItem extends Item {
         }
         setBalance(pouch, getBalance(pouch) - amount);
         return true;
+    }
+
+    /** Right-clicking a held pouch opens it. */
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack pouch = user.getStackInHand(hand);
+        if (!world.isClient) {
+            user.openHandledScreen(new SimpleNamedScreenHandlerFactory(
+                    (syncId, inventory, player) -> new RupeePouchScreenHandler(syncId, inventory),
+                    pouch.getName()));
+        }
+        return TypedActionResult.success(pouch, world.isClient());
     }
 
     /**

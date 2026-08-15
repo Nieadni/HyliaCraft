@@ -34,6 +34,7 @@ import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
+import net.nieadni.hyliacraft.screen.HCScreenHandlers;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.Logger;
@@ -64,6 +65,7 @@ public class HyliaCraft implements ModInitializer {
 		HCArmourMaterials.registerHCArmourMaterials();
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
+		HCScreenHandlers.registerHCScreenHandlers();
 		HCEntities.registerHyliaCraftEntities();
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
