@@ -214,9 +214,13 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
 
         boolean affordable = this.handler.canAfford(this.selectedIndex);
 
+        // Coin only, no number. The row already states the price, and a four figure total written over a
+        // 16 pixel icon is unreadable. Hovering the coin gives the exact figure.
         context.drawItem(coinFor(entry.cost()), originX + TRADE_COST_X, y);
-        context.drawText(this.textRenderer, Text.literal(String.valueOf(entry.cost())),
-                originX + TRADE_COST_X, y + 12, affordable ? 0xFFFFFF : 0xFF5555, true);
+        if (!affordable) {
+            context.fill(originX + TRADE_COST_X, y, originX + TRADE_COST_X + SLOT_SIZE, y + SLOT_SIZE,
+                    OVERLAY_Z, UNAFFORDABLE_TINT);
+        }
 
         if (entry.hasAccepted()) {
             context.drawItem(new ItemStack(entry.accepted()), originX + TRADE_INPUT_X, y);
@@ -243,6 +247,16 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
         drawTradingArea(context, mouseX, mouseY);
         this.drawMouseoverTooltip(context, mouseX, mouseY);
         drawShopTooltip(context, mouseX, mouseY);
+    }
+
+    /** Your money, top right. Knowing what you can afford is the point of standing here. */
+    @Override
+    protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
+        super.drawForeground(context, mouseX, mouseY);
+
+        Text balance = Text.translatable("tooltip.hyliacraft.rupee_pouch.balance", this.handler.getBalance());
+        context.drawText(this.textRenderer, balance,
+                this.backgroundWidth - this.textRenderer.getWidth(balance) - 8, 6, 0x404040, false);
     }
 
     private static boolean isOver(int x, int y, double mouseX, double mouseY) {
