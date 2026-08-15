@@ -13,13 +13,20 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A merchant who sells masks for rupees.
@@ -29,8 +36,76 @@ import org.jetbrains.annotations.Nullable;
  */
 public class HappyMaskSalesmanEntity extends MerchantEntity {
 
+    /** How often restockable entries come back. One Minecraft day. */
+    private static final int RESTOCK_INTERVAL = 24000;
+
+    /**
+     * Purchases already made from this salesman, keyed by the item sold.
+     *
+     * <p>Stock belongs to the individual, not to the price list, so finding a second salesman means
+     * finding more stock. Keyed by item id rather than by the entry object because the price list is
+     * reloadable and the entries themselves are replaced wholesale on {@code /reload}.
+     */
+    private final Map<Identifier, Integer> usesSpent = new HashMap<>();
+
+    private int ticksUntilRestock = RESTOCK_INTERVAL;
+
     public HappyMaskSalesmanEntity(EntityType<? extends HappyMaskSalesmanEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    private static Identifier keyOf(RupeeCost entry) {
+        return Registries.ITEM.getId(entry.item());
+    }
+
+    /** Whether this salesman will still sell that entry. */
+    public boolean isInStock(RupeeCost entry) {
+        return this.usesSpent.getOrDefault(keyOf(entry), 0) < entry.maxUses();
+    }
+
+    public void recordPurchase(RupeeCost entry) {
+        this.usesSpent.merge(keyOf(entry), 1, Integer::sum);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.getWorld().isClient()) {
+            return;
+        }
+        if (--this.ticksUntilRestock <= 0) {
+            // Only entries that opted into restocking come back. The rest stay spent for good, which is
+            // what makes a one-off worth travelling for.
+            for (RupeeCost entry : RupeeCostLoader.getSorted()) {
+                if (entry.restocks()) {
+                    this.usesSpent.remove(keyOf(entry));
+                }
+            }
+            this.ticksUntilRestock = RESTOCK_INTERVAL;
+        }
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        NbtCompound uses = new NbtCompound();
+        this.usesSpent.forEach((id, spent) -> uses.putInt(id.toString(), spent));
+        nbt.put("ShopUses", uses);
+        nbt.putInt("RestockIn", this.ticksUntilRestock);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.usesSpent.clear();
+        NbtCompound uses = nbt.getCompound("ShopUses");
+        for (String key : uses.getKeys()) {
+            Identifier id = Identifier.tryParse(key);
+            if (id != null) {
+                this.usesSpent.put(id, uses.getInt(key));
+            }
+        }
+        this.ticksUntilRestock = nbt.contains("RestockIn") ? nbt.getInt("RestockIn") : RESTOCK_INTERVAL;
     }
 
     public static DefaultAttributeContainer.Builder createHappyMaskSalesmanAttributes() {

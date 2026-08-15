@@ -12,7 +12,9 @@ import java.util.List;
  * @param accepts extra non-rupee items that may be handed over alongside the rupees. Each entry becomes its
  *                own trade offer, because a trade input accepts a single item and not a tag, so "a pumpkin
  *                or a carved pumpkin" cannot be one offer. Empty means the item is bought with rupees alone.
- * @param maxUses trades allowed before the offer locks until the merchant restocks
+ * @param maxUses purchases allowed from one salesman before the entry shows as out of stock
+ * @param restocks whether a spent entry comes back. False makes it a one-off for that salesman's
+ *                 lifetime, which is how a pack author gates something rare
  */
-public record RupeeCost(Item item, int cost, List<Item> accepts, int maxUses) {
+public record RupeeCost(Item item, int cost, List<Item> accepts, int maxUses, boolean restocks) {
 }

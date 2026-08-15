@@ -97,6 +97,8 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
             throw new IllegalArgumentException("max_uses must be positive, was " + maxUses);
         }
 
+        boolean restocks = JsonHelper.getBoolean(json, "restocks", true);
+
         List<Item> accepts = new ArrayList<>();
         JsonArray array = JsonHelper.getArray(json, "accepts", null);
         if (array != null) {
@@ -105,7 +107,7 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
             }
         }
 
-        return new RupeeCost(item, cost, List.copyOf(accepts), maxUses);
+        return new RupeeCost(item, cost, List.copyOf(accepts), maxUses, restocks);
     }
 
     private static Item resolveItem(String raw) {
