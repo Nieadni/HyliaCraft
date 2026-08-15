@@ -7,6 +7,7 @@
     "ExampleMixin",
     "majoras_mask.LivingEntityMixin",
     "majoras_mask.TargetPredicateMixin",
+    "majoras_mask.TrackTargetGoalMixin",
     "race.ServerPlayerEntityMixin",
     "race.WaterBreathingMixin",
     "race.fist_mining.CanHarvestMixin",

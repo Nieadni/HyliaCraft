@@ -2,7 +2,9 @@ package net.nieadni.hyliacraft.mixin.majoras_mask;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.mob.Monster;
+import net.minecraft.entity.player.PlayerEntity;
 import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,10 +26,17 @@ public class LivingEntityMixin {
     private void hyliacraft$provokeMaskWearer(DamageSource source, float amount,
                                               CallbackInfoReturnable<Boolean> cir) {
         LivingEntity victim = (LivingEntity) (Object) this;
-        if (victim.getWorld().isClient() || !(victim instanceof HostileEntity)) {
+        if (victim.getWorld().isClient() || !(victim instanceof Monster)) {
             return;
         }
-        if (source.getAttacker() instanceof LivingEntity attacker && MajorasMaskItem.isWorn(attacker)) {
+
+        // Thorns names the wearer as the attacker even though the mob started it, so a masked player in
+        // thorns armour would provoke a whole species simply by being hit. Only a blow they chose counts.
+        if (source.isOf(DamageTypes.THORNS)) {
+            return;
+        }
+
+        if (source.getAttacker() instanceof PlayerEntity attacker && MajorasMaskItem.isWorn(attacker)) {
             // Only this kind of mob bears the grudge. Hitting a zombie should not interest the skeletons.
             MajorasMaskItem.provoke(attacker, victim.getType());
         }

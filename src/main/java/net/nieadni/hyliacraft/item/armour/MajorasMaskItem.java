@@ -89,9 +89,15 @@ public class MajorasMaskItem extends ArmorItem implements GeoItem {
         tooltip.add(Text.translatable("tooltip.hyliacraft.rare_item").formatted(Formatting.GRAY));
     }
 
-    /** Whether this entity is wearing the mask on its head. Carrying one in a bag does nothing. */
+    /**
+     * Whether this player is wearing the mask on their head. Carrying one in a bag does nothing.
+     *
+     * <p>Players only. A mob can pick armour up off the ground, and a zombie that found a mask should not
+     * become invisible to its own kind.
+     */
     public static boolean isWorn(LivingEntity entity) {
-        return entity.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof MajorasMaskItem;
+        return entity instanceof PlayerEntity
+                && entity.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof MajorasMaskItem;
     }
 
     /**
@@ -108,6 +114,11 @@ public class MajorasMaskItem extends ArmorItem implements GeoItem {
         PROVOKED_UNTIL
                 .computeIfAbsent(wearer.getUuid(), key -> new ConcurrentHashMap<>())
                 .put(mobType, wearer.getWorld().getTime() + PROVOKED_TIME.get(wearer.getRandom()));
+    }
+
+    /** Drops a player's grudges when they leave, since entries otherwise expire only when read. */
+    public static void forget(UUID player) {
+        PROVOKED_UNTIL.remove(player);
     }
 
     private static boolean isProvokedBy(LivingEntity wearer, EntityType<?> mobType) {

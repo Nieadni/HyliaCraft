@@ -27,6 +27,7 @@ import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
+import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
 import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.network.*;
@@ -61,6 +62,11 @@ public class HyliaCraft implements ModInitializer {
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
 		HCEntities.registerHyliaCraftEntities();
+
+		// Majora's Mask grudges live only in memory and expire when read, so a player who leaves mid
+		// grudge would otherwise keep an entry for good.
+		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
+				MajorasMaskItem.forget(handler.getPlayer().getUuid()));
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
