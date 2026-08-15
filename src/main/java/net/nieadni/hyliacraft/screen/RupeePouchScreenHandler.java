@@ -3,6 +3,7 @@ package net.nieadni.hyliacraft.screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.Property;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -27,9 +28,28 @@ public class RupeePouchScreenHandler extends ScreenHandler {
 
     private final PlayerInventory playerInventory;
 
+    /** The balance as last told to us by the server. Only meaningful on the client. */
+    private int syncedBalance;
+
     public RupeePouchScreenHandler(int syncId, PlayerInventory playerInventory) {
         super(HCScreenHandlers.RUPEE_POUCH, syncId);
         this.playerInventory = playerInventory;
+
+        // The balance is synced explicitly rather than read off the stack on the client. A screen only
+        // syncs the slots it owns, and the pouch may be held in the off hand, which no slot here tracks.
+        // Reading the client's copy of the stack would then show a number frozen at whatever it was when
+        // the screen opened, with withdrawals appearing to do nothing.
+        this.addProperty(new Property() {
+            @Override
+            public int get() {
+                return RupeePouchItem.getBalance(getPouch());
+            }
+
+            @Override
+            public void set(int value) {
+                syncedBalance = value;
+            }
+        });
 
         // Player inventory, three rows, at the positions measured from the GUI texture.
         for (int row = 0; row < 3; row++) {
@@ -57,8 +77,11 @@ public class RupeePouchScreenHandler extends ScreenHandler {
         return ItemStack.EMPTY;
     }
 
+    /** Rupees in the open pouch. Safe to call on either side. */
     public int getBalance() {
-        return RupeePouchItem.getBalance(getPouch());
+        return this.playerInventory.player.getWorld().isClient()
+                ? this.syncedBalance
+                : RupeePouchItem.getBalance(getPouch());
     }
 
     @Override
