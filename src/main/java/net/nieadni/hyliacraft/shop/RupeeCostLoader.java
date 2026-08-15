@@ -80,7 +80,7 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
                 RupeeCost cost = parse(file.getValue());
 
                 List<Identifier> unknown = cost.merchants().stream()
-                        .filter(merchant -> !TraderLoader.isDefined(merchant))
+                        .filter(merchant -> !TraderLoader.isTrader(merchant))
                         .toList();
                 if (!unknown.isEmpty()) {
                     // Loud, because the alternative is an item that silently nobody sells.

@@ -73,9 +73,16 @@ public class TraderLoader extends JsonDataLoader implements IdentifiableResource
         TRADER_TYPES.add(entityType);
     }
 
-    /** Whether a trader by this id has been defined by some datapack. */
-    public static boolean isDefined(Identifier trader) {
-        return definitions.containsKey(trader);
+    /**
+     * Whether this id names something that can actually trade.
+     *
+     * <p>Deliberately asks the code, not the datapack. A config file only sets a trader's options and is
+     * optional, exactly as {@link #restockAt} treats it. Answering from the files instead would mean
+     * deleting or overriding one JSON silently emptied every shop, and a file naming a mob that does not
+     * exist would validate entries nobody can ever sell.
+     */
+    public static boolean isTrader(Identifier trader) {
+        return TRADER_TYPES.contains(trader);
     }
 
     /** When this trader restocks, falling back to the default for a trader with no file. */
@@ -89,16 +96,15 @@ public class TraderLoader extends JsonDataLoader implements IdentifiableResource
         Map<Identifier, TraderDefinition> loaded = new HashMap<>();
 
         for (Map.Entry<Identifier, JsonElement> file : prepared.entrySet()) {
+            if (!TRADER_TYPES.contains(file.getKey())) {
+                HyliaCraft.LOGGER.warn(
+                        "Skipping trader '{}': it does not name an entity that can trade", file.getKey());
+                continue;
+            }
             try {
                 loaded.put(file.getKey(), parse(file.getValue()));
             } catch (RuntimeException e) {
                 HyliaCraft.LOGGER.warn("Skipping trader '{}': {}", file.getKey(), e.getMessage());
-                continue;
-            }
-            if (!TRADER_TYPES.contains(file.getKey())) {
-                HyliaCraft.LOGGER.warn(
-                        "Trader '{}' does not name an entity that can trade, so these settings do nothing",
-                        file.getKey());
             }
         }
 

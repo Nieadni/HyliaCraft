@@ -187,6 +187,10 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
             if (rows.isEmpty()) {
                 return ActionResult.CONSUME;
             }
+            // Marking him busy is what makes LookAtCustomerGoal and StopFollowingCustomerGoal able to
+            // start at all: both return false immediately when there is no customer. Without it he keeps
+            // wandering while someone has his shop open, and walking past 8 blocks closes it on them.
+            this.setCustomer(player);
             player.openHandledScreen(new ShopScreenFactory(this, rows));
         }
 

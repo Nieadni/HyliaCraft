@@ -35,7 +35,8 @@ public class ShopScreenHandler extends ScreenHandler {
     @Nullable
     private final HappyMaskSalesmanEntity salesman;
 
-    private int syncedBalance;
+    private int syncedBalanceLow;
+    private int syncedBalanceHigh;
     private final int[] syncedStock;
 
     /** Server-side construction, where the salesman and the authoritative rows are known. */
@@ -69,15 +70,30 @@ public class ShopScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, column, 108 + column * 18, 142));
         }
 
+        // Sent as two halves. A screen property travels as a signed 16-bit short, and a total across
+        // several pouches passes 32767 with only four of them, at which point it wraps negative on the
+        // client and every row reads as unaffordable. Masking to 16 bits survives the sign extension on
+        // the way back, because writeShort keeps the low bits either way.
         this.addProperty(new Property() {
             @Override
             public int get() {
-                return RupeePouches.totalBalance(playerInventory);
+                return RupeePouches.totalBalance(playerInventory) & 0xFFFF;
             }
 
             @Override
             public void set(int value) {
-                syncedBalance = value;
+                syncedBalanceLow = value & 0xFFFF;
+            }
+        });
+        this.addProperty(new Property() {
+            @Override
+            public int get() {
+                return (RupeePouches.totalBalance(playerInventory) >>> 16) & 0xFFFF;
+            }
+
+            @Override
+            public void set(int value) {
+                syncedBalanceHigh = value & 0xFFFF;
             }
         });
 
@@ -108,7 +124,9 @@ public class ShopScreenHandler extends ScreenHandler {
 
     /** Rupees the shopper has across every pouch they carry. */
     public int getBalance() {
-        return isClient() ? this.syncedBalance : RupeePouches.totalBalance(this.playerInventory);
+        return isClient()
+                ? (this.syncedBalanceHigh << 16) | this.syncedBalanceLow
+                : RupeePouches.totalBalance(this.playerInventory);
     }
 
     public boolean canAfford(int index) {
@@ -185,15 +203,31 @@ public class ShopScreenHandler extends ScreenHandler {
         return true;
     }
 
-    /** Index of the first inventory slot holding this row's required item, or -1. */
+    /**
+     * Index of the first main-inventory slot holding this row's required item, or -1.
+     *
+     * <p>Bounded to {@link PlayerInventory#MAIN_SIZE} on purpose. {@code inventory.size()} is 41 and spans
+     * armour and the off hand, and taking from it bypasses {@link Slot} entirely, so a player wearing a
+     * carved pumpkin would have it silently stripped off their head to pay for the Pumpkin Mask, curse of
+     * binding included.
+     */
     private static int findAccepted(PlayerEntity player, ShopRow row) {
         PlayerInventory inventory = player.getInventory();
-        for (int slot = 0; slot < inventory.size(); slot++) {
+        for (int slot = 0; slot < PlayerInventory.MAIN_SIZE; slot++) {
             if (inventory.getStack(slot).isOf(row.accepted())) {
                 return slot;
             }
         }
         return -1;
+    }
+
+    /** Releases the salesman, so he stops standing still and can serve someone else. */
+    @Override
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        if (this.salesman != null) {
+            this.salesman.setCustomer(null);
+        }
     }
 
     /** Shift-clicking has nowhere to move things to, since the shop owns no slots of its own. */
