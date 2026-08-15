@@ -21,11 +21,14 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.world.World;
+import net.nieadni.hyliacraft.screen.ShopScreenFactory;
 import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
+import net.nieadni.hyliacraft.shop.ShopEntry;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -148,11 +151,11 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         }
 
         if (!this.getWorld().isClient) {
-            if (this.getOffers().isEmpty()) {
+            List<ShopEntry> rows = RupeeCostLoader.getSorted().stream().map(ShopEntry::of).toList();
+            if (rows.isEmpty()) {
                 return ActionResult.CONSUME;
             }
-            this.setCustomer(player);
-            this.sendOffers(player, this.getDisplayName(), 1);
+            player.openHandledScreen(new ShopScreenFactory(this, rows));
         }
 
         return ActionResult.success(this.getWorld().isClient);
