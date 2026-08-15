@@ -49,6 +49,22 @@ public final class RupeeChange {
     }
 
     /**
+     * What one of these coins is worth, or 0 if it is not a rupee.
+     *
+     * <p>This table is the single source of truth for rupee values in code. The tooltips players read are
+     * separate lang strings that nothing parses, so the two can drift; if a tooltip and this disagree, the
+     * tooltip is the one that is wrong to a player and this is the one that is wrong to the game.
+     */
+    public static int valueOf(Item item) {
+        for (Denomination denomination : DENOMINATIONS) {
+            if (denomination.item() == item) {
+                return denomination.value();
+            }
+        }
+        return 0;
+    }
+
+    /**
      * Finds the cheapest-to-carry way to pay {@code cost} using at most {@code slots} denominations.
      *
      * @param cost  the price in rupees; 0 yields an empty list, meaning "free"

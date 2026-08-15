@@ -41,6 +41,15 @@ public final class RupeePouches {
         return found;
     }
 
+    /** Room left across every pouch carried. */
+    public static int totalSpace(PlayerInventory inventory) {
+        int space = 0;
+        for (ItemStack pouch : pouchesIn(inventory)) {
+            space += RupeePouchItem.spaceLeft(pouch);
+        }
+        return space;
+    }
+
     /** Total rupees across every pouch carried. */
     public static int totalBalance(PlayerInventory inventory) {
         int total = 0;

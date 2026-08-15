@@ -1,11 +1,17 @@
 package net.nieadni.hyliacraft.item.custom;
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.StackReference;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.ClickType;
 import net.minecraft.util.Formatting;
 import net.nieadni.hyliacraft.item.HCDataComponents;
+import net.nieadni.hyliacraft.shop.RupeeChange;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -70,6 +76,60 @@ public class RupeePouchItem extends Item {
             return false;
         }
         setBalance(pouch, getBalance(pouch) - amount);
+        return true;
+    }
+
+    /**
+     * How many of these coins the pouch can swallow.
+     *
+     * <p>Whole coins only. A pouch with 7 rupees of room cannot take part of a red rupee, so the coin
+     * stays in the world rather than being cashed in at a discount.
+     */
+    private static int coinsThatFit(ItemStack pouch, ItemStack coins) {
+        int value = RupeeChange.valueOf(coins.getItem());
+        if (value <= 0) {
+            return 0;
+        }
+        return Math.min(coins.getCount(), spaceLeft(pouch) / value);
+    }
+
+    /**
+     * Rupees held on the cursor, right-clicked onto a pouch sitting in a slot.
+     */
+    @Override
+    public boolean onClicked(ItemStack pouch, ItemStack cursorStack, Slot slot, ClickType clickType,
+                             PlayerEntity player, StackReference cursorStackReference) {
+        if (clickType != ClickType.RIGHT || cursorStack.isEmpty()) {
+            return false;
+        }
+        int taking = coinsThatFit(pouch, cursorStack);
+        if (taking <= 0) {
+            return false;
+        }
+        deposit(pouch, taking * RupeeChange.valueOf(cursorStack.getItem()));
+        cursorStack.decrement(taking);
+        player.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F);
+        return true;
+    }
+
+    /**
+     * The pouch held on the cursor, right-clicked onto rupees sitting in a slot.
+     *
+     * <p>The other half of the same gesture, so it works whichever way round the player picks things up.
+     */
+    @Override
+    public boolean onStackClicked(ItemStack pouch, Slot slot, ClickType clickType, PlayerEntity player) {
+        if (clickType != ClickType.RIGHT || !slot.canTakePartial(player)) {
+            return false;
+        }
+        ItemStack coins = slot.getStack();
+        int taking = coinsThatFit(pouch, coins);
+        if (taking <= 0) {
+            return false;
+        }
+        deposit(pouch, taking * RupeeChange.valueOf(coins.getItem()));
+        slot.takeStackRange(taking, taking, player);
+        player.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F);
         return true;
     }
 
