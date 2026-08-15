@@ -27,7 +27,7 @@ public class TargetPredicateMixin {
     @Inject(method = "test", at = @At("HEAD"), cancellable = true)
     private void hyliacraft$overlookMaskWearer(LivingEntity tester, LivingEntity target,
                                                CallbackInfoReturnable<Boolean> cir) {
-        if (tester instanceof HostileEntity && MajorasMaskItem.hidesFrom(target)) {
+        if (tester instanceof HostileEntity && MajorasMaskItem.hidesFrom(target, tester.getType())) {
             cir.setReturnValue(false);
         }
     }

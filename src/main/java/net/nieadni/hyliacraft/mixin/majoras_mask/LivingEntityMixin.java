@@ -12,9 +12,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /**
  * Strips the mask's protection from anyone who attacks a hostile mob.
  *
- * <p>The wearer is not hidden from that mob alone: the mask simply stops working for a while, so every
- * hostile that can see them takes notice. Pushing anger outward instead would not stick, because a
- * targeting goal re-checks the predicate each tick and would drop a wearer straight away.
+ * <p>The grudge belongs to that kind of mob, not to everything alive: strike a zombie and zombies come
+ * for you while the skeletons carry on ignoring you, the way angering one zombified piglin brings other
+ * piglins and nothing else. Pushing anger outward onto individual mobs instead would not stick, because
+ * a targeting goal re-checks the predicate each tick and would drop the wearer straight away.
  */
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
@@ -27,7 +28,8 @@ public class LivingEntityMixin {
             return;
         }
         if (source.getAttacker() instanceof LivingEntity attacker && MajorasMaskItem.isWorn(attacker)) {
-            MajorasMaskItem.provoke(attacker);
+            // Only this kind of mob bears the grudge. Hitting a zombie should not interest the skeletons.
+            MajorasMaskItem.provoke(attacker, victim.getType());
         }
     }
 }

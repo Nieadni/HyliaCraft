@@ -2,6 +2,7 @@ package net.nieadni.hyliacraft.item.armour;
 
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
@@ -45,12 +46,16 @@ public class MajorasMaskItem extends ArmorItem implements GeoItem {
     private static final UniformIntProvider PROVOKED_TIME = TimeHelper.betweenSeconds(20, 39);
 
     /**
-     * Wearers who have attacked recently, and the world time their reprieve ends.
+     * Per wearer, the world time at which each kind of mob forgives them.
+     *
+     * <p>Keyed by entity type, not just by player, because anger is a grudge held by a species rather
+     * than by everything alive. Hitting a zombie should bring zombies down on you and leave the skeletons
+     * across the field indifferent, which is how a zombified piglin angers other piglins and nothing else.
      *
      * <p>Deliberately not persisted. Half a minute of anger is not worth surviving a restart, and a
      * player who logs out mid-fight has arguably escaped.
      */
-    private static final Map<UUID, Long> PROVOKED_UNTIL = new ConcurrentHashMap<>();
+    private static final Map<UUID, Map<EntityType<?>, Long>> PROVOKED_UNTIL = new ConcurrentHashMap<>();
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
@@ -90,27 +95,35 @@ public class MajorasMaskItem extends ArmorItem implements GeoItem {
     }
 
     /**
-     * Whether hostile mobs should overlook this entity.
+     * Whether this kind of mob should overlook the wearer.
      *
-     * <p>True while the mask is worn and its wearer has not recently attacked one of them.
+     * <p>True while the mask is worn and its wearer has not recently attacked a mob of that same kind.
      */
-    public static boolean hidesFrom(LivingEntity entity) {
-        return isWorn(entity) && !isProvoked(entity);
+    public static boolean hidesFrom(LivingEntity wearer, EntityType<?> mobType) {
+        return isWorn(wearer) && !isProvokedBy(wearer, mobType);
     }
 
-    /** Called when a wearer strikes a hostile mob. Each hit restarts the reprieve. */
-    public static void provoke(LivingEntity wearer) {
-        PROVOKED_UNTIL.put(wearer.getUuid(),
-                wearer.getWorld().getTime() + PROVOKED_TIME.get(wearer.getRandom()));
+    /** Called when a wearer strikes a hostile mob. Angers that kind of mob only, and each hit restarts it. */
+    public static void provoke(LivingEntity wearer, EntityType<?> mobType) {
+        PROVOKED_UNTIL
+                .computeIfAbsent(wearer.getUuid(), key -> new ConcurrentHashMap<>())
+                .put(mobType, wearer.getWorld().getTime() + PROVOKED_TIME.get(wearer.getRandom()));
     }
 
-    private static boolean isProvoked(LivingEntity entity) {
-        Long until = PROVOKED_UNTIL.get(entity.getUuid());
+    private static boolean isProvokedBy(LivingEntity wearer, EntityType<?> mobType) {
+        Map<EntityType<?>, Long> grudges = PROVOKED_UNTIL.get(wearer.getUuid());
+        if (grudges == null) {
+            return false;
+        }
+        Long until = grudges.get(mobType);
         if (until == null) {
             return false;
         }
-        if (entity.getWorld().getTime() >= until) {
-            PROVOKED_UNTIL.remove(entity.getUuid());
+        if (wearer.getWorld().getTime() >= until) {
+            grudges.remove(mobType);
+            if (grudges.isEmpty()) {
+                PROVOKED_UNTIL.remove(wearer.getUuid());
+            }
             return false;
         }
         return true;
