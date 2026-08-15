@@ -14,9 +14,11 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -32,6 +34,7 @@ import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
+import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,6 +67,9 @@ public class HyliaCraft implements ModInitializer {
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
+
+        // What the Happy Mask Salesman sells is datapack driven, so this reloads with /reload.
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new RupeeCostLoader());
 
         // Register custom payloads
         PayloadTypeRegistry.playS2C().register(RaceS2CPayload.ID, RaceS2CPayload.CODEC);

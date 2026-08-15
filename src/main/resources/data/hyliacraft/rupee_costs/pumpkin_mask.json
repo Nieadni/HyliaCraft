@@ -1,0 +1,6 @@
+{
+  "item": "hyliacraft:pumpkin_mask",
+  "cost": 10,
+  "accepts": ["minecraft:pumpkin", "minecraft:carved_pumpkin"],
+  "max_uses": 12
+}
