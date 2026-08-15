@@ -28,6 +28,8 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
     private static final Identifier TEXTURE = Identifier.ofVanilla("textures/gui/container/villager.png");
     private static final Identifier OUT_OF_STOCK = Identifier.ofVanilla("container/villager/out_of_stock");
     private static final Identifier TRADE_ARROW = Identifier.ofVanilla("container/villager/trade_arrow");
+    private static final Identifier TRADE_ARROW_OUT_OF_STOCK =
+            Identifier.ofVanilla("container/villager/trade_arrow_out_of_stock");
     private static final Identifier SCROLLER = Identifier.ofVanilla("container/villager/scroller");
     private static final Identifier SCROLLER_DISABLED = Identifier.ofVanilla("container/villager/scroller_disabled");
 
@@ -55,6 +57,16 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
     private static final int TRADE_RESULT_X = 220;
     private static final int TRADE_Y = 37;
     private static final int SLOT_SIZE = 16;
+
+    // Vanilla's barrier is 28x21 and sits over the arrow between the inputs and the result, not over the
+    // result itself. Drawing it at slot size squashes it into something unrecognisable.
+    private static final int OUT_OF_STOCK_X = 182;
+    private static final int OUT_OF_STOCK_Y = 35;
+    private static final int OUT_OF_STOCK_WIDTH = 28;
+    private static final int OUT_OF_STOCK_HEIGHT = 21;
+
+    private static final int ARROW_WIDTH = 10;
+    private static final int ARROW_HEIGHT = 9;
 
     private static final int SCROLLBAR_X = 94;
     private static final int SCROLLBAR_Y = 18;
@@ -193,12 +205,10 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
             if (entry.hasAccepted()) {
                 context.drawItem(new ItemStack(entry.accepted()), x + ACCEPTED_X, y + 2);
             }
-            context.drawGuiTexture(TRADE_ARROW, x + ARROW_X, y + 5, 10, 9);
+            // A spent row is marked by crossing out its arrow, which is how vanilla shows a locked trade.
+            context.drawGuiTexture(inStock ? TRADE_ARROW : TRADE_ARROW_OUT_OF_STOCK,
+                    x + ARROW_X, y + 5, ARROW_WIDTH, ARROW_HEIGHT);
             context.drawItem(new ItemStack(entry.item()), x + RESULT_X, y + 2);
-
-            if (!inStock) {
-                context.drawGuiTexture(OUT_OF_STOCK, x + RESULT_X, y + 2, 16, 16);
-            }
         }
     }
 
@@ -228,7 +238,8 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
 
         context.drawItem(new ItemStack(entry.item()), originX + TRADE_RESULT_X, y);
         if (!this.handler.isInStock(this.selectedIndex)) {
-            context.drawGuiTexture(OUT_OF_STOCK, originX + TRADE_RESULT_X, y, SLOT_SIZE, SLOT_SIZE);
+            context.drawGuiTexture(OUT_OF_STOCK, originX + OUT_OF_STOCK_X, originY + OUT_OF_STOCK_Y,
+                    OUT_OF_STOCK_WIDTH, OUT_OF_STOCK_HEIGHT);
         } else if (!affordable) {
             context.fill(originX + TRADE_RESULT_X, y, originX + TRADE_RESULT_X + SLOT_SIZE, y + SLOT_SIZE,
                     OVERLAY_Z, UNAFFORDABLE_TINT);
