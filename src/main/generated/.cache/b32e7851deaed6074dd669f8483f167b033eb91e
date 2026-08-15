@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-28T00:10:52.9042925	HyliaCraft/Model Definitions
+// 1.21.1	2026-08-12T19:23:18.9415018	HyliaCraft/Model Definitions
 a642ff8059ebb9805bb97854eb7ad83f611e0d72 assets\hyliacraft\blockstates\purple_shingle_slab.json
 b1656779aea069e681d922118e4c32be9dbfd766 assets\hyliacraft\models\block\black_shingle_wall_side.json
 e4c27bea0bfb9fb8e0fdaa9a0bd8f1a2e90c31b9 assets\hyliacraft\models\block\blue_shingle_slab_top.json
@@ -81,8 +81,8 @@ d162c43aae25a7ab299586abfbeffe956225ea18 assets\hyliacraft\models\block\pink_shi
 0ba10cdd8e926a8cf58ac031c19f36c699387b83 assets\hyliacraft\models\block\orange_shingles.json
 18973e47cf8f63bdf4f222dca8a840dd648b859f assets\hyliacraft\models\block\light_gray_shingle_slab_top.json
 b640c1bb323f01d48398d93d02e6efc953f2d3f4 assets\hyliacraft\models\item\yellow_rupee.json
-a46594013165e036d0b7105333ad2cedff45856b assets\hyliacraft\models\block\black_shingle_wall_inventory.json
 bf05b551ee76894f57376b3738ff8d8b4d88663e assets\hyliacraft\models\block\gray_shingle_wall_post.json
+a46594013165e036d0b7105333ad2cedff45856b assets\hyliacraft\models\block\black_shingle_wall_inventory.json
 b17c27c17e1103060abd34cd9e5c0ea5b6c679f0 assets\hyliacraft\blockstates\cyan_shingle_stairs.json
 906a86e93cd168454bd243da2c251035bc49a4a1 assets\hyliacraft\models\item\black_shingle_slab.json
 89f2ab3d86ac7081dadb6c10bc6d3d49fcda67c4 assets\hyliacraft\models\item\light_gray_shingle_wall.json
@@ -407,5 +407,5 @@ e625727a3819f827f523ca628f9e86886230f63f assets\hyliacraft\models\block\yellow_s
 7b6893f3834005da4eb7b799eeac3422c2dec14c assets\hyliacraft\models\block\blue_shingle_stairs_outer.json
 e203cad0c94de2a2ca3e32efff819fb96b34158e assets\hyliacraft\models\item\purple_shingle_stairs.json
 94c07dbb3300b1859ee1763cda9118982c20d8cb assets\hyliacraft\models\item\wind_cap.json
-8ea5f52ebfdfbf3fcc2e0a7a15eb394a0ad20f09 assets\hyliacraft\models\item\lime_shingles.json
 c8a53764ae4fe42b4e4bfcbda553648327e90e0c assets\hyliacraft\models\item\nayru_flame.json
+8ea5f52ebfdfbf3fcc2e0a7a15eb394a0ad20f09 assets\hyliacraft\models\item\lime_shingles.json

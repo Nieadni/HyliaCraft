@@ -23,13 +23,18 @@ public class HCArmourMaterials {
         HyliaCraft.LOGGER.info("HyliaCraft has registered its Armour Materials!");
     }
 
+    public static final int BOKOBLIN_MASK_DURABILITY_MULTIPLIER = 10;
+    public static final int BUNNY_HOOD_DURABILITY_MULTIPLIER = 10;
+    public static final int ENGINEERS_ClOTHES_DURABILITY_MULTIPLIER = 5;
+    public static final int FIERCE_ARMOR_DURABILITY_MULTIPLIER = 41;
+    public static final int HEROES_ClOTHES_DURABILITY_MULTIPLIER = 5;
     public static final int MAJORAS_MASK_DURABILITY_MULTIPLIER = 37;
     public static final int MIDNA_HELM_DURABILITY_MULTIPLIER = 33;
-    public static final int ZANT_HELM_DURABILITY_MULTIPLIER = 33;
+    public static final int PHANTOM_ARMOR_DURABILITY_MULTIPLIER = 41;
     public static final int PUMPKIN_MASK_DURABILITY_MULTIPLIER = 5;
-    public static final int HEROES_ClOTHES_DURABILITY_MULTIPLIER = 5;
-    public static final int FIERCE_ARMOR_DURABILITY_MULTIPLIER = 41;
-    public static final int BUNNY_HOOD_DURABILITY_MULTIPLIER = 10;
+    public static final int RAVIO_HOOD_DURABILITY_MULTIPLIER = 10;
+    public static final int TINGLES_ClOTHES_DURABILITY_MULTIPLIER = 5;
+    public static final int ZANT_HELM_DURABILITY_MULTIPLIER = 33;
 
     public static @NotNull RegistryEntry<ArmorMaterial> registerMaterial(String id, Map<ArmorItem.Type, Integer> defensePoints, int enchantability, RegistryEntry<SoundEvent> equipSound, Supplier<Ingredient> repairIngredientSupplier, float toughness, float knockbackResistance, boolean dyeable) {
         List<ArmorMaterial.Layer> layers = List.of(
@@ -40,6 +45,54 @@ public class HCArmourMaterials {
         material = Registry.register(Registries.ARMOR_MATERIAL, Identifier.of(HyliaCraft.MOD_ID, id), material);
         return RegistryEntry.of(material);
     }
+
+    public static final RegistryEntry<ArmorMaterial> PHANTOM_ARMOR = registerMaterial("phantom_armor",
+            Map.of(
+                    ArmorItem.Type.HELMET, 3,
+                    ArmorItem.Type.CHESTPLATE, 8,
+                    ArmorItem.Type.LEGGINGS, 6,
+                    ArmorItem.Type.BOOTS, 3
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.ofItems(Items.NETHERITE_INGOT),
+            2F,
+            0.1F,
+            false
+    );
+
+    public static final RegistryEntry<ArmorMaterial> RAVIO_HOOD = registerMaterial("ravio_hood",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 1,
+                    ArmorItem.Type.LEGGINGS, 1,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.ofItems(Items.LEATHER),
+            0F,
+            0F,
+            false
+    );
+
+    public static final RegistryEntry<ArmorMaterial> BOKOBLIN_MASK = registerMaterial("bokoblin_mask",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 1,
+                    ArmorItem.Type.LEGGINGS, 1,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+            () -> Ingredient.ofItems(Items.AIR),
+            0F,
+            0F,
+            false
+    );
 
     public static final RegistryEntry<ArmorMaterial> MAJORAS_MASK = registerMaterial("majoras_mask",
             Map.of(
@@ -121,6 +174,38 @@ public class HCArmourMaterials {
             false
     );
 
+    public static final RegistryEntry<ArmorMaterial> ENGINEERS_ClOTHES = registerMaterial("engineers_clothes",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 3,
+                    ArmorItem.Type.LEGGINGS, 2,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.ofItems(Items.LEATHER),
+            0F,
+            0F,
+            false
+    );
+
+    public static final RegistryEntry<ArmorMaterial> TINGLES_ClOTHES = registerMaterial("tingles_clothes",
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 3,
+                    ArmorItem.Type.LEGGINGS, 2,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            // Enchantability //
+            5,
+            SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.ofItems(Items.LEATHER),
+            0F,
+            0F,
+            false
+    );
+
     public static final RegistryEntry<ArmorMaterial> FIERCE_ARMOR = registerMaterial("fierce_armor",
             Map.of(
                     ArmorItem.Type.HELMET, 4,
@@ -140,8 +225,8 @@ public class HCArmourMaterials {
     public static final RegistryEntry<ArmorMaterial> BUNNY_HOOD = registerMaterial("bunny_hood",
             Map.of(
                     ArmorItem.Type.HELMET, 1,
-                    ArmorItem.Type.CHESTPLATE, 3,
-                    ArmorItem.Type.LEGGINGS, 2,
+                    ArmorItem.Type.CHESTPLATE, 1,
+                    ArmorItem.Type.LEGGINGS, 1,
                     ArmorItem.Type.BOOTS, 1
             ),
             // Enchantability //
