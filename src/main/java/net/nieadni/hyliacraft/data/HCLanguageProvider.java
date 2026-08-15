@@ -577,6 +577,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         generateRaceTranslations(translationBuilder, "rito", "Rito", "Once Zora, they took to the skies and mastered flight.", "Can take flight and soar through the skies");
         generateRaceTranslations(translationBuilder, "kokiri", "Kokiri", "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.", "Small enough to fit into small gaps, can easily hide in forest biomes, and heal double the rate of other races");
 
+        // Entities
+        translationBuilder.add(HCEntities.HAPPY_MASK_SALESMAN, "Happy Mask Salesman");
+        translationBuilder.add(HCItems.HAPPY_MASK_SALESMAN_SPAWN_EGG, "Happy Mask Salesman Spawn Egg");
+
         // Keybinds
         translationBuilder.add("category.hyliacraft.main", "HyliaCraft");
 
