@@ -1,5 +1,6 @@
 package net.nieadni.hyliacraft.entity;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -19,6 +20,15 @@ public class HCEntities {
                     .build()
     );
      **/
+
+    // 0.6 x 1.8 is the player hitbox, which is what he is rendered on.
+    public static final EntityType<HappyMaskSalesmanEntity> HAPPY_MASK_SALESMAN = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "happy_mask_salesman"),
+            EntityType.Builder.create(HappyMaskSalesmanEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.6f, 1.8f)
+                    .build()
+    );
 
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
@@ -57,6 +67,8 @@ public class HCEntities {
     );
 
     public static void registerHyliaCraftEntities() {
+        FabricDefaultAttributeRegistry.register(HAPPY_MASK_SALESMAN,
+                HappyMaskSalesmanEntity.createHappyMaskSalesmanAttributes());
         HyliaCraft.LOGGER.info(HyliaCraft.MOD_ID + " has registered its entities.");
     }
 }
