@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 import net.nieadni.hyliacraft.screen.ShopScreenFactory;
 import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
-import net.nieadni.hyliacraft.shop.ShopEntry;
+import net.nieadni.hyliacraft.shop.ShopRow;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -151,7 +151,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         }
 
         if (!this.getWorld().isClient) {
-            List<ShopEntry> rows = RupeeCostLoader.getSorted().stream().map(ShopEntry::of).toList();
+            List<ShopRow> rows = ShopRow.expand(RupeeCostLoader.getSorted());
             if (rows.isEmpty()) {
                 return ActionResult.CONSUME;
             }

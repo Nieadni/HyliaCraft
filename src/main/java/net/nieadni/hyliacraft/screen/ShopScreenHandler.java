@@ -2,15 +2,14 @@ package net.nieadni.hyliacraft.screen;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.Property;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
 import net.nieadni.hyliacraft.entity.HappyMaskSalesmanEntity;
 import net.nieadni.hyliacraft.item.RupeePouches;
-import net.nieadni.hyliacraft.shop.RupeeCost;
-import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import net.nieadni.hyliacraft.shop.ShopEntry;
+import net.nieadni.hyliacraft.shop.ShopRow;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -18,31 +17,58 @@ import java.util.List;
 /**
  * The Happy Mask Salesman's shop.
  *
- * <p>There are no slots at all. Everything a player can buy is paid for from their Rupee Pouches, so
- * nothing is ever placed in the window; clicking a row is the whole transaction. The row list arrives with
- * the screen because prices live in server-side datapacks the client never receives, while the two things
- * that change during a visit, the player's money and what is left in stock, sync as properties.
+ * <p>Nothing is bought by placing items: payment comes from the player's Rupee Pouches, so clicking a row
+ * is the whole transaction. The player's own inventory is still shown, at vanilla's villager positions,
+ * because a shop you cannot see your belongings in is disorienting and the background draws the slots
+ * whether or not anything backs them.
+ *
+ * <p>The row list arrives with the screen, since prices live in server-side datapacks the client never
+ * receives. Money and remaining stock sync as properties, both changing during a visit.
  */
 public class ShopScreenHandler extends ScreenHandler {
 
     private final PlayerInventory playerInventory;
     private final List<ShopEntry> entries;
 
-    /** Present only on the server. The client identifies rows by index. */
+    /** Server side only. The client identifies rows by index into {@link #entries}. */
+    @Nullable
+    private final List<ShopRow> rows;
     @Nullable
     private final HappyMaskSalesmanEntity salesman;
 
     private int syncedBalance;
     private final int[] syncedStock;
 
-    /** Server-side construction, where the salesman is known. */
+    /** Server-side construction, where the salesman and the authoritative rows are known. */
     public ShopScreenHandler(int syncId, PlayerInventory playerInventory,
-                             @Nullable HappyMaskSalesmanEntity salesman, List<ShopEntry> entries) {
+                             @Nullable HappyMaskSalesmanEntity salesman, List<ShopRow> rows) {
+        this(syncId, playerInventory, salesman, rows, rows.stream().map(ShopRow::toEntry).toList());
+    }
+
+    /** Client-side construction from the data sent when the screen opened. */
+    public ShopScreenHandler(int syncId, PlayerInventory playerInventory, List<ShopEntry> entries) {
+        this(syncId, playerInventory, null, null, entries);
+    }
+
+    private ShopScreenHandler(int syncId, PlayerInventory playerInventory,
+                              @Nullable HappyMaskSalesmanEntity salesman,
+                              @Nullable List<ShopRow> rows, List<ShopEntry> entries) {
         super(HCScreenHandlers.SHOP, syncId);
         this.playerInventory = playerInventory;
         this.salesman = salesman;
+        this.rows = rows;
         this.entries = entries;
         this.syncedStock = new int[entries.size()];
+
+        // Vanilla's villager layout puts the player inventory to the right of the trade list.
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 9; column++) {
+                this.addSlot(new Slot(playerInventory, column + row * 9 + 9, 108 + column * 18, 84 + row * 18));
+            }
+        }
+        for (int column = 0; column < 9; column++) {
+            this.addSlot(new Slot(playerInventory, column, 108 + column * 18, 142));
+        }
 
         this.addProperty(new Property() {
             @Override
@@ -56,8 +82,7 @@ public class ShopScreenHandler extends ScreenHandler {
             }
         });
 
-        // One flag per row. Properties are fixed in number, which is fine here because both sides build
-        // the handler from the same entry list, so the counts always agree.
+        // One flag per row. Both sides build from the same list, so the property counts always agree.
         for (int row = 0; row < entries.size(); row++) {
             int index = row;
             this.addProperty(new Property() {
@@ -72,11 +97,6 @@ public class ShopScreenHandler extends ScreenHandler {
                 }
             });
         }
-    }
-
-    /** Client-side construction from the data sent when the screen opened. */
-    public ShopScreenHandler(int syncId, PlayerInventory playerInventory, List<ShopEntry> entries) {
-        this(syncId, playerInventory, null, entries);
     }
 
     public List<ShopEntry> getEntries() {
@@ -104,28 +124,10 @@ public class ShopScreenHandler extends ScreenHandler {
     }
 
     private boolean isInStockOnServer(int index) {
-        RupeeCost cost = serverCost(index);
-        return cost != null && this.salesman != null && this.salesman.isInStock(cost);
-    }
-
-    /**
-     * The authoritative price entry for a row.
-     *
-     * <p>Looked up by item rather than trusting the index, because the price list can be reloaded while a
-     * player has the shop open and the row order would shift underneath them.
-     */
-    @Nullable
-    private RupeeCost serverCost(int index) {
-        if (index < 0 || index >= this.entries.size()) {
-            return null;
+        if (this.rows == null || this.salesman == null || index < 0 || index >= this.rows.size()) {
+            return false;
         }
-        Item wanted = this.entries.get(index).item();
-        for (RupeeCost candidate : RupeeCostLoader.getSorted()) {
-            if (candidate.item() == wanted) {
-                return candidate;
-            }
-        }
-        return null;
+        return this.salesman.isInStock(this.rows.get(index).cost());
     }
 
     @Override
@@ -133,22 +135,30 @@ public class ShopScreenHandler extends ScreenHandler {
         return this.salesman == null || (this.salesman.isAlive() && this.salesman.isInRange(player, 8.0));
     }
 
-    /** Buying. The button id is the row index. */
+    /**
+     * Buying. The button id is the row index.
+     *
+     * <p>Rows are a snapshot taken when the screen opened, so a datapack reload mid-visit cannot shift what
+     * a click resolves to.
+     */
     @Override
     public boolean onButtonClick(PlayerEntity player, int id) {
-        RupeeCost cost = serverCost(id);
-        if (cost == null || this.salesman == null || !this.salesman.isInStock(cost)) {
+        if (this.rows == null || this.salesman == null || id < 0 || id >= this.rows.size()) {
+            return false;
+        }
+        ShopRow row = this.rows.get(id);
+        if (!this.salesman.isInStock(row.cost())) {
             return false;
         }
 
-        // An accepted item, if the entry wants one, must be found before any money moves.
-        int inputSlot = cost.accepts().isEmpty() ? -1 : findAccepted(player, cost);
-        if (!cost.accepts().isEmpty() && inputSlot < 0) {
+        // Find the required item before any money moves.
+        int inputSlot = row.hasAccepted() ? findAccepted(player, row) : -1;
+        if (row.hasAccepted() && inputSlot < 0) {
             return false;
         }
 
-        // Debit last, and all-or-nothing, so a failed purchase never leaves a player out of pocket.
-        if (!RupeePouches.debit(player.getInventory(), cost.cost())) {
+        // Debit last, and all or nothing, so a failed purchase never leaves a player out of pocket.
+        if (!RupeePouches.debit(player.getInventory(), row.cost().cost())) {
             return false;
         }
 
@@ -156,28 +166,27 @@ public class ShopScreenHandler extends ScreenHandler {
             player.getInventory().removeStack(inputSlot, 1);
         }
 
-        this.salesman.recordPurchase(cost);
+        this.salesman.recordPurchase(row.cost());
 
-        ItemStack bought = new ItemStack(cost.item());
+        ItemStack bought = new ItemStack(row.cost().item());
         if (!player.getInventory().insertStack(bought)) {
             player.dropItem(bought, false);
         }
         return true;
     }
 
-    /** Index of the first inventory slot holding something this entry accepts, or -1. */
-    private static int findAccepted(PlayerEntity player, RupeeCost cost) {
+    /** Index of the first inventory slot holding this row's required item, or -1. */
+    private static int findAccepted(PlayerEntity player, ShopRow row) {
         PlayerInventory inventory = player.getInventory();
         for (int slot = 0; slot < inventory.size(); slot++) {
-            ItemStack stack = inventory.getStack(slot);
-            if (!stack.isEmpty() && cost.accepts().contains(stack.getItem())) {
+            if (inventory.getStack(slot).isOf(row.accepted())) {
                 return slot;
             }
         }
         return -1;
     }
 
-    /** No slots, so there is nothing to shift-click between. */
+    /** Shift-clicking has nowhere to move things to, since the shop owns no slots of its own. */
     @Override
     public ItemStack quickMove(PlayerEntity player, int slotIndex) {
         return ItemStack.EMPTY;

@@ -8,6 +8,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.nieadni.hyliacraft.entity.HappyMaskSalesmanEntity;
 import net.nieadni.hyliacraft.shop.ShopEntry;
+import net.nieadni.hyliacraft.shop.ShopRow;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -18,12 +19,12 @@ import java.util.List;
  * <p>The rows are captured once, when the screen opens, rather than read live. A player browsing a shop
  * whose contents reshuffled underneath them mid-click would buy something they had not chosen.
  */
-public record ShopScreenFactory(HappyMaskSalesmanEntity salesman, List<ShopEntry> rows)
+public record ShopScreenFactory(HappyMaskSalesmanEntity salesman, List<ShopRow> rows)
         implements ExtendedScreenHandlerFactory<List<ShopEntry>> {
 
     @Override
     public List<ShopEntry> getScreenOpeningData(ServerPlayerEntity player) {
-        return this.rows;
+        return this.rows.stream().map(ShopRow::toEntry).toList();
     }
 
     @Override
