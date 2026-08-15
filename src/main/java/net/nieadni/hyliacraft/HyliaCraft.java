@@ -57,6 +57,7 @@ public class HyliaCraft implements ModInitializer {
 
 		HyliaCraft.LOGGER.info("HyliaCraft has been initialised!");
 		HCFoodComponents.registerHCFoodComponents();
+		HCDataComponents.registerHCDataComponents();
 		HCItemGroups.registerHCItemGroups();
 		HCItems.registerHCItems();
 		HCBlocks.registerHCBlocks();

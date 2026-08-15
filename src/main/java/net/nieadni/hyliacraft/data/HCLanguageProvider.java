@@ -230,6 +230,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.consumables", "HC Consumables");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
 
+        translationBuilder.add("tooltip.hyliacraft.rupee_pouch.balance", "%s Rupees");
         translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");
         translationBuilder.add("tooltip.hyliacraft.two_handed_weapon", "§9Only usable with both hands.");
 
