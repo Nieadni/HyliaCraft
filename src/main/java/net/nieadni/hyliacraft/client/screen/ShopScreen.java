@@ -47,14 +47,30 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
     private static final int ARROW_X = 58;
     private static final int RESULT_X = 70;
 
+    // The trading area, at vanilla's own slot positions. None of these are real slots: rupees are paid
+    // from the pouch rather than handed over, and the required item is taken from the inventory the way
+    // vanilla auto-fills its ingredient slots. They show what a purchase will cost before it is made.
+    private static final int TRADE_COST_X = 136;
+    private static final int TRADE_INPUT_X = 162;
+    private static final int TRADE_RESULT_X = 220;
+    private static final int TRADE_Y = 37;
+    private static final int SLOT_SIZE = 16;
+
     private static final int SCROLLBAR_X = 94;
     private static final int SCROLLBAR_Y = 18;
     private static final int SCROLLBAR_AREA_HEIGHT = 139;
     private static final int SCROLLER_WIDTH = 6;
     private static final int SCROLLER_HEIGHT = 27;
 
+    /** Item icons render at z 150, so anything laid over one has to be pushed in front of it. */
+    private static final int OVERLAY_Z = 200;
+    private static final int UNAFFORDABLE_TINT = 0xA0181818;
+
     private final ButtonWidget[] rowButtons = new ButtonWidget[VISIBLE_ROWS];
     private int scrollOffset;
+
+    /** The row laid out in the trading area. Selecting costs nothing; only the result click buys. */
+    private int selectedIndex;
 
     public ShopScreen(ShopScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -83,7 +99,7 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
             // The index is read at press time rather than captured, because scrolling moves which entry a
             // button stands for without moving the button.
             this.rowButtons[slot] = this.addDrawableChild(
-                    ButtonWidget.builder(Text.empty(), button -> buy(row + this.scrollOffset))
+                    ButtonWidget.builder(Text.empty(), button -> this.selectedIndex = row + this.scrollOffset)
                             .dimensions(originX + ROW_X, originY + ROW_Y + slot * ROW_HEIGHT, ROW_WIDTH, ROW_HEIGHT)
                             .build());
         }
@@ -96,7 +112,13 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
         }
     }
 
-    /** Hides buttons past the end of the list and disables what cannot be bought. */
+    /**
+     * Hides buttons past the end of the list.
+     *
+     * <p>Every existing row stays selectable even when it cannot be bought. Disabling them would stop a
+     * player inspecting what something costs, which is most of the reason to look at a shop you cannot
+     * yet afford. Affordability is enforced at the result instead.
+     */
     private void refreshButtons() {
         for (int slot = 0; slot < VISIBLE_ROWS; slot++) {
             ButtonWidget button = this.rowButtons[slot];
@@ -106,8 +128,20 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
             int index = slot + this.scrollOffset;
             boolean exists = index < rowCount();
             button.visible = exists;
-            button.active = exists && this.handler.isInStock(index) && this.handler.canAfford(index);
+            button.active = exists;
         }
+    }
+
+    /** Whether the selected row can actually be bought right now. */
+    private boolean canBuySelected() {
+        return this.selectedIndex >= 0 && this.selectedIndex < rowCount()
+                && this.handler.isInStock(this.selectedIndex) && this.handler.canAfford(this.selectedIndex);
+    }
+
+    private boolean isOverResult(double mouseX, double mouseY) {
+        int x = (this.width - this.backgroundWidth) / 2 + TRADE_RESULT_X;
+        int y = (this.height - this.backgroundHeight) / 2 + TRADE_Y;
+        return mouseX >= x && mouseX < x + SLOT_SIZE && mouseY >= y && mouseY < y + SLOT_SIZE;
     }
 
     /** The largest coin the price reaches, as a hint at how dear something is. */
@@ -168,6 +202,39 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
         }
     }
 
+    /** Lays the selected purchase out in vanilla's trading area, so it can be read before it is bought. */
+    private void drawTradingArea(DrawContext context, int mouseX, int mouseY) {
+        if (this.selectedIndex < 0 || this.selectedIndex >= rowCount()) {
+            return;
+        }
+        ShopEntry entry = this.handler.getEntries().get(this.selectedIndex);
+        int originX = (this.width - this.backgroundWidth) / 2;
+        int originY = (this.height - this.backgroundHeight) / 2;
+        int y = originY + TRADE_Y;
+
+        boolean affordable = this.handler.canAfford(this.selectedIndex);
+
+        context.drawItem(coinFor(entry.cost()), originX + TRADE_COST_X, y);
+        context.drawText(this.textRenderer, Text.literal(String.valueOf(entry.cost())),
+                originX + TRADE_COST_X, y + 12, affordable ? 0xFFFFFF : 0xFF5555, true);
+
+        if (entry.hasAccepted()) {
+            context.drawItem(new ItemStack(entry.accepted()), originX + TRADE_INPUT_X, y);
+        }
+
+        context.drawItem(new ItemStack(entry.item()), originX + TRADE_RESULT_X, y);
+        if (!this.handler.isInStock(this.selectedIndex)) {
+            context.drawGuiTexture(OUT_OF_STOCK, originX + TRADE_RESULT_X, y, SLOT_SIZE, SLOT_SIZE);
+        } else if (!affordable) {
+            context.fill(originX + TRADE_RESULT_X, y, originX + TRADE_RESULT_X + SLOT_SIZE, y + SLOT_SIZE,
+                    OVERLAY_Z, UNAFFORDABLE_TINT);
+        } else if (isOverResult(mouseX, mouseY)) {
+            // The slot highlight vanilla gives a hovered slot, so the one clickable thing looks clickable.
+            context.fill(originX + TRADE_RESULT_X, y, originX + TRADE_RESULT_X + SLOT_SIZE, y + SLOT_SIZE,
+                    OVERLAY_Z, 0x80FFFFFF);
+        }
+    }
+
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         super.drawForeground(context, mouseX, mouseY);
@@ -182,7 +249,14 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
         refreshButtons();
         super.render(context, mouseX, mouseY, delta);
         drawRows(context);
+        drawTradingArea(context, mouseX, mouseY);
         this.drawMouseoverTooltip(context, mouseX, mouseY);
+
+        if (isOverResult(mouseX, mouseY) && this.selectedIndex >= 0 && this.selectedIndex < rowCount()) {
+            context.drawItemTooltip(this.textRenderer,
+                    new ItemStack(this.handler.getEntries().get(this.selectedIndex).item()), mouseX, mouseY);
+            return;
+        }
 
         // Tooltip for whichever row the cursor is over.
         for (int slot = 0; slot < VISIBLE_ROWS; slot++) {
@@ -196,6 +270,18 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
                 break;
             }
         }
+    }
+
+    /** Buying happens here and nowhere else: clicking the result is the confirmation step. */
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
+        if (mouseButton == 0 && isOverResult(mouseX, mouseY)) {
+            if (canBuySelected()) {
+                buy(this.selectedIndex);
+            }
+            return true;
+        }
+        return super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
     @Override
