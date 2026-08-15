@@ -25,6 +25,7 @@ import net.nieadni.hyliacraft.screen.ShopScreenFactory;
 import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
 import net.nieadni.hyliacraft.shop.ShopRow;
+import net.nieadni.hyliacraft.shop.TraderLoader;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -39,8 +40,7 @@ import java.util.Map;
  */
 public class HappyMaskSalesmanEntity extends MerchantEntity {
 
-    /** How often restockable entries come back. One Minecraft day. */
-    private static final int RESTOCK_INTERVAL = 24000;
+    private static final int TICKS_PER_DAY = 24000;
 
     /**
      * Purchases already made from this salesman, so a second salesman is a second supply.
@@ -50,7 +50,8 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
      */
     private final Map<Identifier, Integer> usesSpent = new HashMap<>();
 
-    private int ticksUntilRestock = RESTOCK_INTERVAL;
+    /** Which daily cycle this trader last restocked in. See {@link #tick()}. */
+    private long lastRestockCycle = Long.MIN_VALUE;
 
     public HappyMaskSalesmanEntity(EntityType<? extends HappyMaskSalesmanEntity> entityType, World world) {
         super(entityType, world);
@@ -58,6 +59,17 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
 
     private static Identifier keyOf(RupeeCost entry) {
         return Registries.ITEM.getId(entry.item());
+    }
+
+    /** This trader's id, which is its entity type id. */
+    public Identifier traderId() {
+        return Registries.ENTITY_TYPE.getId(this.getType());
+    }
+
+    /** The price entries this trader stocks, cheapest first. */
+    public List<RupeeCost> stock() {
+        Identifier trader = traderId();
+        return RupeeCostLoader.getSorted().stream().filter(entry -> entry.soldBy(trader)).toList();
     }
 
     /** Whether this salesman will still sell that entry. */
@@ -69,21 +81,39 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         this.usesSpent.merge(keyOf(entry), 1, Integer::sum);
     }
 
+    /**
+     * Restocks at a time of day rather than on a private countdown.
+     *
+     * <p>Every trader in the world therefore refreshes together, at a moment a player can learn, and one
+     * sitting in an unloaded chunk is not quietly frozen: the cycle number will have moved on by the time
+     * it loads, so it catches up with a single restock rather than one per missed day.
+     *
+     * <p>{@code floorDiv}, not {@code /}: the expression is negative before the world's first restock
+     * point, and integer division truncates toward zero, which would make cycle 0 last twice as long as
+     * every other.
+     */
     @Override
     public void tick() {
         super.tick();
         if (this.getWorld().isClient()) {
             return;
         }
-        if (--this.ticksUntilRestock <= 0) {
+
+        long cycle = Math.floorDiv(this.getWorld().getTimeOfDay() - TraderLoader.restockAt(traderId()),
+                TICKS_PER_DAY);
+        if (this.lastRestockCycle == Long.MIN_VALUE) {
+            this.lastRestockCycle = cycle;
+            return;
+        }
+        if (cycle > this.lastRestockCycle) {
             // Only entries that opted into restocking come back. The rest stay spent for good, which is
             // what makes a one-off worth travelling for.
-            for (RupeeCost entry : RupeeCostLoader.getSorted()) {
+            for (RupeeCost entry : stock()) {
                 if (entry.restocks()) {
                     this.usesSpent.remove(keyOf(entry));
                 }
             }
-            this.ticksUntilRestock = RESTOCK_INTERVAL;
+            this.lastRestockCycle = cycle;
         }
     }
 
@@ -93,7 +123,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         NbtCompound uses = new NbtCompound();
         this.usesSpent.forEach((id, spent) -> uses.putInt(id.toString(), spent));
         nbt.put("ShopUses", uses);
-        nbt.putInt("RestockIn", this.ticksUntilRestock);
+        nbt.putLong("LastRestockCycle", this.lastRestockCycle);
     }
 
     @Override
@@ -107,7 +137,10 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
                 this.usesSpent.put(id, uses.getInt(key));
             }
         }
-        this.ticksUntilRestock = nbt.contains("RestockIn") ? nbt.getInt("RestockIn") : RESTOCK_INTERVAL;
+        // An entity saved before restocking moved to a time of day has neither field. Long.MIN_VALUE makes
+        // tick() adopt the current cycle rather than treat the gap as many missed days.
+        this.lastRestockCycle = nbt.contains("LastRestockCycle") ? nbt.getLong("LastRestockCycle")
+                : Long.MIN_VALUE;
     }
 
     public static DefaultAttributeContainer.Builder createHappyMaskSalesmanAttributes() {
@@ -150,7 +183,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         }
 
         if (!this.getWorld().isClient) {
-            List<ShopRow> rows = ShopRow.expand(RupeeCostLoader.getSorted());
+            List<ShopRow> rows = ShopRow.expand(stock());
             if (rows.isEmpty()) {
                 return ActionResult.CONSUME;
             }

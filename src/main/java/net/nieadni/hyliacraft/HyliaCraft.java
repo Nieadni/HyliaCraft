@@ -36,6 +36,7 @@ import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
 import net.nieadni.hyliacraft.screen.HCScreenHandlers;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
+import net.nieadni.hyliacraft.shop.TraderLoader;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +72,9 @@ public class HyliaCraft implements ModInitializer {
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
 
-        // What the Happy Mask Salesman sells is datapack driven, so this reloads with /reload.
+        // Shops are datapack driven, so these reload with /reload. Traders are registered first because
+        // the price list declares a dependency on them.
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new TraderLoader());
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new RupeeCostLoader());
 
         // Register custom payloads

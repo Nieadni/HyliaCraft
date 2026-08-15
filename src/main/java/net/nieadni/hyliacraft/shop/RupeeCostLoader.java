@@ -15,6 +15,7 @@ import net.minecraft.util.profiler.Profiler;
 import net.nieadni.hyliacraft.HyliaCraft;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,9 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
     /** Trades an offer allows before it locks until restock, when a file does not say. */
     public static final int DEFAULT_MAX_USES = 12;
 
+    /** Who sells an entry that does not name a trader, so existing packs keep working untouched. */
+    public static final Identifier DEFAULT_MERCHANT = Identifier.of(HyliaCraft.MOD_ID, "happy_mask_salesman");
+
     /**
      * The current price list, cheapest first.
      *
@@ -56,6 +60,12 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
         return ID;
     }
 
+    /** Traders load first, so an entry naming an unknown one can be reported rather than guessed at. */
+    @Override
+    public Collection<Identifier> getFabricDependencies() {
+        return List.of(TraderLoader.ID);
+    }
+
     /** The loaded price list, sorted by cost ascending then item id. Never null; empty before the first load. */
     public static List<RupeeCost> getSorted() {
         return entries;
@@ -67,7 +77,19 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
 
         for (Map.Entry<Identifier, JsonElement> file : prepared.entrySet()) {
             try {
-                loaded.add(parse(file.getValue()));
+                RupeeCost cost = parse(file.getValue());
+
+                List<Identifier> unknown = cost.merchants().stream()
+                        .filter(merchant -> !TraderLoader.isDefined(merchant))
+                        .toList();
+                if (!unknown.isEmpty()) {
+                    // Loud, because the alternative is an item that silently nobody sells.
+                    HyliaCraft.LOGGER.warn("Skipping rupee cost '{}': no trader defined for {}",
+                            file.getKey(), unknown);
+                    continue;
+                }
+
+                loaded.add(cost);
             } catch (RuntimeException e) {
                 // One malformed file must not cost us the rest of the price list, so log and carry on.
                 HyliaCraft.LOGGER.warn("Skipping rupee cost '{}': {}", file.getKey(), e.getMessage());
@@ -108,7 +130,33 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
             }
         }
 
-        return new RupeeCost(item, cost, List.copyOf(accepts), maxUses, restocks);
+        return new RupeeCost(item, cost, List.copyOf(accepts), maxUses, restocks, parseMerchants(json));
+    }
+
+    /** Accepts a single trader id or a list of them, so one item can be stocked by several. */
+    private static List<Identifier> parseMerchants(JsonObject json) {
+        if (!json.has("merchant")) {
+            return List.of(DEFAULT_MERCHANT);
+        }
+        if (JsonHelper.hasArray(json, "merchant")) {
+            List<Identifier> merchants = new ArrayList<>();
+            for (JsonElement merchant : JsonHelper.getArray(json, "merchant")) {
+                merchants.add(resolveIdentifier(merchant.getAsString()));
+            }
+            if (merchants.isEmpty()) {
+                throw new IllegalArgumentException("merchant list must not be empty");
+            }
+            return List.copyOf(merchants);
+        }
+        return List.of(resolveIdentifier(JsonHelper.getString(json, "merchant")));
+    }
+
+    private static Identifier resolveIdentifier(String raw) {
+        Identifier id = Identifier.tryParse(raw);
+        if (id == null) {
+            throw new IllegalArgumentException("'" + raw + "' is not a valid id");
+        }
+        return id;
     }
 
     private static Item resolveItem(String raw) {

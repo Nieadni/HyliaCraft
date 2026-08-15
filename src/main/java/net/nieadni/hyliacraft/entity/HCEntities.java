@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
+import net.nieadni.hyliacraft.shop.TraderLoader;
 
 public class HCEntities {
 
@@ -69,6 +70,10 @@ public class HCEntities {
     public static void registerHyliaCraftEntities() {
         FabricDefaultAttributeRegistry.register(HAPPY_MASK_SALESMAN,
                 HappyMaskSalesmanEntity.createHappyMaskSalesmanAttributes());
+
+        // Declares which entities have shop code, so a rupee_traders file naming anything else can be
+        // reported as doing nothing rather than looking as though it worked.
+        TraderLoader.registerTraderType(Registries.ENTITY_TYPE.getId(HAPPY_MASK_SALESMAN));
         HyliaCraft.LOGGER.info(HyliaCraft.MOD_ID + " has registered its entities.");
     }
 }
