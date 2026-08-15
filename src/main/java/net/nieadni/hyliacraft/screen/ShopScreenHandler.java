@@ -157,6 +157,16 @@ public class ShopScreenHandler extends ScreenHandler {
             return false;
         }
 
+        // The goods land on the cursor, the way taking from any slot behaves. Check there is room for them
+        // before charging, or a full cursor would take the player's money and give nothing back.
+        ItemStack bought = new ItemStack(row.cost().item());
+        ItemStack cursor = this.getCursorStack();
+        boolean ontoEmptyCursor = cursor.isEmpty();
+        if (!ontoEmptyCursor && !(ItemStack.areItemsAndComponentsEqual(cursor, bought)
+                && cursor.getCount() + bought.getCount() <= cursor.getMaxCount())) {
+            return false;
+        }
+
         // Debit last, and all or nothing, so a failed purchase never leaves a player out of pocket.
         if (!RupeePouches.debit(player.getInventory(), row.cost().cost())) {
             return false;
@@ -168,9 +178,10 @@ public class ShopScreenHandler extends ScreenHandler {
 
         this.salesman.recordPurchase(row.cost());
 
-        ItemStack bought = new ItemStack(row.cost().item());
-        if (!player.getInventory().insertStack(bought)) {
-            player.dropItem(bought, false);
+        if (ontoEmptyCursor) {
+            this.setCursorStack(bought);
+        } else {
+            cursor.increment(bought.getCount());
         }
         return true;
     }

@@ -236,40 +236,73 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
     }
 
     @Override
-    protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
-        super.drawForeground(context, mouseX, mouseY);
-
-        Text balance = Text.translatable("tooltip.hyliacraft.rupee_pouch.balance", this.handler.getBalance());
-        context.drawText(this.textRenderer, balance,
-                this.backgroundWidth - this.textRenderer.getWidth(balance) - 8, 6, 0x404040, false);
-    }
-
-    @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         refreshButtons();
         super.render(context, mouseX, mouseY, delta);
         drawRows(context);
         drawTradingArea(context, mouseX, mouseY);
         this.drawMouseoverTooltip(context, mouseX, mouseY);
+        drawShopTooltip(context, mouseX, mouseY);
+    }
 
-        if (isOverResult(mouseX, mouseY) && this.selectedIndex >= 0 && this.selectedIndex < rowCount()) {
-            context.drawItemTooltip(this.textRenderer,
-                    new ItemStack(this.handler.getEntries().get(this.selectedIndex).item()), mouseX, mouseY);
-            return;
-        }
+    private static boolean isOver(int x, int y, double mouseX, double mouseY) {
+        return mouseX >= x && mouseX < x + SLOT_SIZE && mouseY >= y && mouseY < y + SLOT_SIZE;
+    }
 
-        // Tooltip for whichever row the cursor is over.
-        for (int slot = 0; slot < VISIBLE_ROWS; slot++) {
-            ButtonWidget button = this.rowButtons[slot];
-            if (button != null && button.visible && button.isMouseOver(mouseX, mouseY)) {
-                int index = slot + this.scrollOffset;
-                if (index < rowCount()) {
-                    context.drawItemTooltip(this.textRenderer,
-                            new ItemStack(this.handler.getEntries().get(index).item()), mouseX, mouseY);
-                }
-                break;
+    /**
+     * Tooltips for the shop's own icons.
+     *
+     * <p>These are drawn rather than being slots, so nothing gives them tooltips for free. Each icon is
+     * hit-tested individually: hovering a row should name the thing under the cursor, not whatever the row
+     * happens to sell.
+     *
+     * <p>The price icon gets the real total rather than the coin's own tooltip. A 6666 rupee price is drawn
+     * with a gold rupee, and "Worth 300 Rupees" would be an actively misleading thing to read there.
+     */
+    private void drawShopTooltip(DrawContext context, int mouseX, int mouseY) {
+        int originX = (this.width - this.backgroundWidth) / 2;
+        int originY = (this.height - this.backgroundHeight) / 2;
+
+        // The trading area first: it sits on top.
+        if (this.selectedIndex >= 0 && this.selectedIndex < rowCount()) {
+            ShopEntry selected = this.handler.getEntries().get(this.selectedIndex);
+            int y = originY + TRADE_Y;
+            if (isOver(originX + TRADE_COST_X, y, mouseX, mouseY)) {
+                context.drawTooltip(this.textRenderer, priceText(selected.cost()), mouseX, mouseY);
+                return;
+            }
+            if (selected.hasAccepted() && isOver(originX + TRADE_INPUT_X, y, mouseX, mouseY)) {
+                context.drawItemTooltip(this.textRenderer, new ItemStack(selected.accepted()), mouseX, mouseY);
+                return;
+            }
+            if (isOver(originX + TRADE_RESULT_X, y, mouseX, mouseY)) {
+                context.drawItemTooltip(this.textRenderer, new ItemStack(selected.item()), mouseX, mouseY);
+                return;
             }
         }
+
+        for (int slot = 0; slot < Math.min(VISIBLE_ROWS, rowCount() - this.scrollOffset); slot++) {
+            ShopEntry entry = this.handler.getEntries().get(slot + this.scrollOffset);
+            int x = originX + ROW_X;
+            int y = originY + ROW_Y + slot * ROW_HEIGHT + 2;
+
+            if (isOver(x + COIN_X, y, mouseX, mouseY)) {
+                context.drawTooltip(this.textRenderer, priceText(entry.cost()), mouseX, mouseY);
+                return;
+            }
+            if (entry.hasAccepted() && isOver(x + ACCEPTED_X, y, mouseX, mouseY)) {
+                context.drawItemTooltip(this.textRenderer, new ItemStack(entry.accepted()), mouseX, mouseY);
+                return;
+            }
+            if (isOver(x + RESULT_X, y, mouseX, mouseY)) {
+                context.drawItemTooltip(this.textRenderer, new ItemStack(entry.item()), mouseX, mouseY);
+                return;
+            }
+        }
+    }
+
+    private Text priceText(int cost) {
+        return Text.translatable("tooltip.hyliacraft.rupee_pouch.balance", cost);
     }
 
     /** Buying happens here and nowhere else: clicking the result is the confirmation step. */
