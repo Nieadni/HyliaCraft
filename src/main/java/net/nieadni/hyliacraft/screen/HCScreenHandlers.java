@@ -17,12 +17,7 @@ public class HCScreenHandlers {
             Identifier.of(HyliaCraft.MOD_ID, "rupee_pouch"),
             new ScreenHandlerType<>(RupeePouchScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
 
-    /**
-     * The salesman's shop.
-     *
-     * <p>Extended rather than plain because the row list has to be sent when the screen opens: prices come
-     * from server-side datapacks, which clients never receive.
-     */
+    /** Extended so the row list can be sent when the screen opens; see {@link ShopEntry}. */
     public static final ScreenHandlerType<ShopScreenHandler> SHOP = Registry.register(
             Registries.SCREEN_HANDLER,
             Identifier.of(HyliaCraft.MOD_ID, "shop"),

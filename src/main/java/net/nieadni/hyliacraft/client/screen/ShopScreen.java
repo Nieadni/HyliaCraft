@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.screen.ShopScreenHandler;
-import net.nieadni.hyliacraft.shop.RupeeChange;
+import net.nieadni.hyliacraft.shop.Rupees;
 import net.nieadni.hyliacraft.shop.ShopEntry;
 
 /**
@@ -146,12 +146,12 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
 
     /** The largest coin the price reaches, as a hint at how dear something is. */
     private static ItemStack coinFor(int cost) {
-        for (RupeeChange.Denomination denomination : RupeeChange.DENOMINATIONS) {
+        for (Rupees.Denomination denomination : Rupees.DENOMINATIONS) {
             if (cost >= denomination.value()) {
                 return new ItemStack(denomination.item());
             }
         }
-        return new ItemStack(RupeeChange.DENOMINATIONS.get(RupeeChange.DENOMINATIONS.size() - 1).item());
+        return new ItemStack(Rupees.DENOMINATIONS.get(Rupees.DENOMINATIONS.size() - 1).item());
     }
 
     @Override
@@ -249,7 +249,6 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
         drawShopTooltip(context, mouseX, mouseY);
     }
 
-    /** Your money, top right. Knowing what you can afford is the point of standing here. */
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         super.drawForeground(context, mouseX, mouseY);

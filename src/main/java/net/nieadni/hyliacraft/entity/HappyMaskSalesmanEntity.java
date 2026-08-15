@@ -43,11 +43,10 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
     private static final int RESTOCK_INTERVAL = 24000;
 
     /**
-     * Purchases already made from this salesman, keyed by the item sold.
+     * Purchases already made from this salesman, so a second salesman is a second supply.
      *
-     * <p>Stock belongs to the individual, not to the price list, so finding a second salesman means
-     * finding more stock. Keyed by item id rather than by the entry object because the price list is
-     * reloadable and the entries themselves are replaced wholesale on {@code /reload}.
+     * <p>Keyed by item id rather than by the entry object: the price list is reloadable and every entry
+     * instance is replaced on {@code /reload}, which would otherwise reset everyone's stock.
      */
     private final Map<Identifier, Integer> usesSpent = new HashMap<>();
 
@@ -162,19 +161,17 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
     }
 
     /**
-     * Deliberately empty while the pouch-based payment system is built.
+     * Permanently empty, by design.
      *
-     * <p>He used to build vanilla {@link TradeOffer}s, paying in loose coins. That capped what he could
-     * ever sell: a trade holds two input stacks, so any price needing three denominations, 6666 among them,
-     * was unsellable no matter how rich the player was. Paying from a Rupee Pouch balance removes the cap
-     * entirely, so the coin-based offers were removed rather than kept alongside.
+     * <p>He sells through his own shop screen, paid from a Rupee Pouch, so nothing goes through vanilla's
+     * offer list. Filling it would cap what he can sell: a vanilla trade holds two input stacks, which
+     * makes any price needing three denominations, 6666 among them, unbuyable however rich the player is.
      *
-     * <p>His stock still comes from {@code rupee_costs} datapack files through {@link RupeeCostLoader};
-     * only the way a player hands over the money is being replaced.
+     * <p>{@link MerchantEntity} is still the base class because its goals are wanted; only the trading is
+     * replaced. Stock comes from {@code rupee_costs} datapack files through {@link RupeeCostLoader}.
      */
     @Override
     protected void fillRecipes() {
-        // No offers until pouch payment lands.
     }
 
     @Override

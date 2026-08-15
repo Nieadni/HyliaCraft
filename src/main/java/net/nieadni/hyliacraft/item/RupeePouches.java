@@ -8,24 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Inventory-wide rupee pouch operations.
- *
- * <p>{@link RupeePouchItem} handles one pouch. This handles a player's whole collection of them, which is
- * the level merchants and pickup care about: a player may carry several pouches and each holds its own
- * balance, so spending or collecting has to cascade across them.
+ * Inventory-wide pouch operations. {@link RupeePouchItem} handles one pouch; a player may carry several,
+ * each with its own balance, so spending and collecting cascade across them.
  */
 public final class RupeePouches {
 
     private RupeePouches() {
     }
 
-    /**
-     * Every pouch a player is carrying, in the order they are used.
-     *
-     * <p>Hotbar first, then the rest of the main inventory, then the off hand. That falls out of
-     * {@code inventory.main} being laid out with the hotbar at indices 0 to 8, and it means the pouch a
-     * player can see is the one that fills and pays first.
-     */
+    /** Pouches in the order they are used: hotbar, rest of the inventory, then off hand. */
     public static List<ItemStack> pouchesIn(PlayerInventory inventory) {
         List<ItemStack> found = new ArrayList<>();
         for (ItemStack stack : inventory.main) {
@@ -77,10 +68,8 @@ public final class RupeePouches {
     }
 
     /**
-     * Spends rupees across every pouch carried, all or nothing.
-     *
-     * <p>This is what a merchant calls. It checks the total first so a purchase can never half-succeed and
-     * leave a player short with nothing to show for it.
+     * Spends rupees across every pouch carried, all or nothing. The total is checked before any pouch is
+     * touched, so a purchase can never half-succeed and leave a player short with nothing to show for it.
      *
      * @return true if the player could afford it and the balances were reduced
      */

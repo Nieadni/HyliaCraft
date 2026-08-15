@@ -22,8 +22,7 @@ import java.util.List;
  * because a shop you cannot see your belongings in is disorienting and the background draws the slots
  * whether or not anything backs them.
  *
- * <p>The row list arrives with the screen, since prices live in server-side datapacks the client never
- * receives. Money and remaining stock sync as properties, both changing during a visit.
+ * <p>Money and remaining stock sync as properties, since both change during a visit.
  */
 public class ShopScreenHandler extends ScreenHandler {
 

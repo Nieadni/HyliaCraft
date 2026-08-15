@@ -9,9 +9,6 @@ import java.util.List;
 /**
  * One concrete thing a player can buy: a price entry paired with the specific extra item this offer wants.
  *
- * <p>A {@link RupeeCost} that accepts several items is not one offer but several. A trade takes a single
- * item, not a tag, so collapsing them would leave a player unable to see that a carved pumpkin works too.
- *
  * @param accepted the required extra item, or {@link Items#AIR} when the price is rupees alone
  */
 public record ShopRow(RupeeCost cost, Item accepted) {

@@ -4,7 +4,7 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.nieadni.hyliacraft.item.RupeePouches;
-import net.nieadni.hyliacraft.shop.RupeeChange;
+import net.nieadni.hyliacraft.shop.Rupees;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -32,7 +32,7 @@ public abstract class RupeePickupMixin {
             )
     )
     private boolean hyliacraft$collectIntoPouch(PlayerInventory inventory, ItemStack stack) {
-        int value = RupeeChange.valueOf(stack.getItem());
+        int value = Rupees.valueOf(stack.getItem());
 
         if (value > 0) {
             // Whole coins only. Value may be spread across several pouches, but a single coin is never

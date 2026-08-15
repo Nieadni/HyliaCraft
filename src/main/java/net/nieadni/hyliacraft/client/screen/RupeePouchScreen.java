@@ -8,7 +8,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.screen.RupeePouchScreenHandler;
-import net.nieadni.hyliacraft.shop.RupeeChange;
+import net.nieadni.hyliacraft.shop.Rupees;
 
 /**
  * The Rupee Pouch interface.
@@ -48,22 +48,22 @@ public class RupeePouchScreen extends HandledScreen<RupeePouchScreenHandler> {
     /**
      * Which denomination sits at a given button, left to right.
      *
-     * <p>{@link RupeeChange#DENOMINATIONS} runs high to low because that suits the change solver, but the
+     * <p>{@link Rupees#DENOMINATIONS} runs high to low because that suits the change solver, but the
      * row reads naturally cheapest first, so the display order is reversed.
      */
-    private static RupeeChange.Denomination denominationAt(int button) {
-        return RupeeChange.DENOMINATIONS.get(RupeeChange.DENOMINATIONS.size() - 1 - button);
+    private static Rupees.Denomination denominationAt(int button) {
+        return Rupees.DENOMINATIONS.get(Rupees.DENOMINATIONS.size() - 1 - button);
     }
 
     private static int buttonId(int button, boolean bulk) {
-        int index = RupeeChange.DENOMINATIONS.size() - 1 - button;
+        int index = Rupees.DENOMINATIONS.size() - 1 - button;
         return index * 2 + (bulk ? 1 : 0);
     }
 
     private int buttonAt(double mouseX, double mouseY) {
         int originX = (this.width - this.backgroundWidth) / 2;
         int originY = (this.height - this.backgroundHeight) / 2;
-        for (int button = 0; button < RupeeChange.DENOMINATIONS.size(); button++) {
+        for (int button = 0; button < Rupees.DENOMINATIONS.size(); button++) {
             int x = originX + BUTTON_X + button * BUTTON_PITCH;
             int y = originY + BUTTON_Y;
             if (mouseX >= x && mouseX < x + BUTTON_SIZE && mouseY >= y && mouseY < y + BUTTON_SIZE) {
@@ -80,8 +80,8 @@ public class RupeePouchScreen extends HandledScreen<RupeePouchScreenHandler> {
         context.drawTexture(TEXTURE, originX, originY, 0, 0, this.backgroundWidth, this.backgroundHeight);
 
         int balance = this.handler.getBalance();
-        for (int button = 0; button < RupeeChange.DENOMINATIONS.size(); button++) {
-            RupeeChange.Denomination denomination = denominationAt(button);
+        for (int button = 0; button < Rupees.DENOMINATIONS.size(); button++) {
+            Rupees.Denomination denomination = denominationAt(button);
             int x = originX + BUTTON_X + button * BUTTON_PITCH;
             int y = originY + BUTTON_Y;
 

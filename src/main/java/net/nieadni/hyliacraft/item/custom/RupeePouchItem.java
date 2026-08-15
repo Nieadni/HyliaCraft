@@ -16,50 +16,33 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.item.HCDataComponents;
 import net.nieadni.hyliacraft.screen.RupeePouchScreenHandler;
-import net.nieadni.hyliacraft.shop.RupeeChange;
+import net.nieadni.hyliacraft.shop.Rupees;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-/**
- * A purse that holds rupees as a single number rather than as coins.
- *
- * <p>The balance lives in a data component on the stack, so it belongs to the pouch and not to the player.
- * Carrying three pouches means three separate balances.
- *
- * <p>Storing a total rather than per-denomination stacks is what makes the pouch worth having: paying 6666
- * rupees is impossible with coins, because a trade holds two stacks and 6666 needs 66 green rupees, but it
- * is trivial against a balance.
- */
+/** A purse holding rupees as a single number rather than as coins. Each pouch carries its own balance. */
 public class RupeePouchItem extends Item {
 
-    /** The most a single pouch can hold, per the original design note. */
     public static final int MAX_BALANCE = 9999;
 
     public RupeePouchItem(Settings settings) {
         super(settings);
     }
 
-    /** Rupees currently in this pouch. Zero for a pouch that has never held anything. */
     public static int getBalance(ItemStack pouch) {
         return pouch.getOrDefault(HCDataComponents.RUPEES, 0);
     }
 
-    /** Sets the balance, clamped into range. */
     public static void setBalance(ItemStack pouch, int value) {
         pouch.set(HCDataComponents.RUPEES, Math.clamp(value, 0, MAX_BALANCE));
     }
 
-    /** Room left before this pouch is full. */
     public static int spaceLeft(ItemStack pouch) {
         return MAX_BALANCE - getBalance(pouch);
     }
 
-    /**
-     * Adds what fits and reports what did not.
-     *
-     * @return the rupees that would not fit, which the caller must not destroy
-     */
+    /** @return the rupees that would not fit, which the caller must not destroy */
     public static int deposit(ItemStack pouch, int amount) {
         if (amount <= 0) {
             return 0;
@@ -84,7 +67,6 @@ public class RupeePouchItem extends Item {
         return true;
     }
 
-    /** Right-clicking a held pouch opens it. */
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack pouch = user.getStackInHand(hand);
@@ -103,7 +85,7 @@ public class RupeePouchItem extends Item {
      * stays in the world rather than being cashed in at a discount.
      */
     private static int coinsThatFit(ItemStack pouch, ItemStack coins) {
-        int value = RupeeChange.valueOf(coins.getItem());
+        int value = Rupees.valueOf(coins.getItem());
         if (value <= 0) {
             return 0;
         }
@@ -123,7 +105,7 @@ public class RupeePouchItem extends Item {
         if (taking <= 0) {
             return false;
         }
-        deposit(pouch, taking * RupeeChange.valueOf(cursorStack.getItem()));
+        deposit(pouch, taking * Rupees.valueOf(cursorStack.getItem()));
         cursorStack.decrement(taking);
         player.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F);
         return true;
@@ -144,7 +126,7 @@ public class RupeePouchItem extends Item {
         if (taking <= 0) {
             return false;
         }
-        deposit(pouch, taking * RupeeChange.valueOf(coins.getItem()));
+        deposit(pouch, taking * Rupees.valueOf(coins.getItem()));
         slot.takeStackRange(taking, taking, player);
         player.playSound(SoundEvents.ITEM_BUNDLE_INSERT, 0.8F, 0.8F);
         return true;

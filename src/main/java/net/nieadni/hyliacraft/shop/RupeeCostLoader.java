@@ -41,8 +41,9 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
     /**
      * The current price list, cheapest first.
      *
-     * <p>Volatile because reloads happen off the server thread while {@code fillRecipes} reads this from it.
-     * Replaced wholesale rather than mutated, so a reader always sees a complete list.
+     * <p>Volatile because reloads happen off the server thread while the salesman reads this from it, both
+     * when restocking each tick and when opening his shop. Replaced wholesale rather than mutated, so a
+     * reader always sees a complete list.
      */
     private static volatile List<RupeeCost> entries = List.of();
 

@@ -8,7 +8,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.nieadni.hyliacraft.item.HCItems;
 import net.nieadni.hyliacraft.item.custom.RupeePouchItem;
-import net.nieadni.hyliacraft.shop.RupeeChange;
+import net.nieadni.hyliacraft.shop.Rupees;
 
 /**
  * The Rupee Pouch screen.
@@ -51,13 +51,12 @@ public class RupeePouchScreenHandler extends ScreenHandler {
             }
         });
 
-        // Player inventory, three rows, at the positions measured from the GUI texture.
+        // Positions measured from the GUI texture.
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 9; column++) {
                 this.addSlot(new Slot(playerInventory, column + row * 9 + 9, 8 + column * 18, 48 + row * 18));
             }
         }
-        // Hotbar.
         for (int column = 0; column < 9; column++) {
             this.addSlot(new Slot(playerInventory, column, 8 + column * 18, 106));
         }
@@ -100,7 +99,7 @@ public class RupeePouchScreenHandler extends ScreenHandler {
         int index = id >> 1;
         boolean bulk = (id & 1) == 1;
 
-        if (index < 0 || index >= RupeeChange.DENOMINATIONS.size()) {
+        if (index < 0 || index >= Rupees.DENOMINATIONS.size()) {
             return false;
         }
         ItemStack pouch = getPouch();
@@ -108,7 +107,7 @@ public class RupeePouchScreenHandler extends ScreenHandler {
             return false;
         }
 
-        RupeeChange.Denomination denomination = RupeeChange.DENOMINATIONS.get(index);
+        Rupees.Denomination denomination = Rupees.DENOMINATIONS.get(index);
         int affordable = RupeePouchItem.getBalance(pouch) / denomination.value();
         if (affordable <= 0) {
             return false;
@@ -121,9 +120,13 @@ public class RupeePouchScreenHandler extends ScreenHandler {
         }
 
         ItemStack coins = new ItemStack(denomination.item(), count);
-        if (!player.getInventory().insertStack(coins)) {
-            // No room. Dropping is safe: the pickup hook only fires for items walked over, so these do not
-            // vanish straight back into the pouch.
+        player.getInventory().insertStack(coins);
+
+        // Test the stack, not the return value. insertStack reports whether it placed *any* items, and it
+        // empties what it took out of the stack it was given, so a partial insert returns true while
+        // leaving coins behind. Trusting the boolean would destroy that remainder, and the balance has
+        // already been debited by this point.
+        if (!coins.isEmpty()) {
             player.dropItem(coins, false);
         }
         return true;
@@ -143,7 +146,7 @@ public class RupeePouchScreenHandler extends ScreenHandler {
         }
 
         ItemStack stack = slot.getStack();
-        int value = RupeeChange.valueOf(stack.getItem());
+        int value = Rupees.valueOf(stack.getItem());
         ItemStack pouch = getPouch();
         if (value <= 0 || pouch.isEmpty()) {
             return ItemStack.EMPTY;
