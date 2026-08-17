@@ -1,6 +1,8 @@
 package net.nieadni.hyliacraft.entity;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.FleeEntityGoal;
 import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
 import net.minecraft.entity.ai.goal.StopAndLookAtEntityGoal;
@@ -9,12 +11,19 @@ import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.EvokerEntity;
+import net.minecraft.entity.mob.IllusionerEntity;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PillagerEntity;
+import net.minecraft.entity.mob.VexEntity;
+import net.minecraft.entity.mob.VindicatorEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -24,7 +33,6 @@ import net.minecraft.world.World;
 import net.nieadni.hyliacraft.screen.ShopScreenFactory;
 import net.nieadni.hyliacraft.shop.RupeeCost;
 import net.nieadni.hyliacraft.shop.RupeeCostLoader;
-import net.nieadni.hyliacraft.shop.ShopRow;
 import net.nieadni.hyliacraft.shop.TraderLoader;
 import org.jetbrains.annotations.Nullable;
 
@@ -149,10 +157,43 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5);
     }
 
+    /**
+     * Flees anything in the undead entity type tag.
+     *
+     * <p>Vanilla's own traders name the classes they run from one at a time, which quietly misses husks,
+     * drowned and strays unless each is listed separately. The tag already holds every undead mob, the
+     * zoglin among them, and being a tag it picks up whatever a datapack or another mod adds later
+     * without a change here.
+     *
+     * <p>{@link MobEntity} rather than {@code HostileEntity} as the class to scan for: the phantom is a
+     * {@code FlyingEntity} and is not hostile by class, so scanning hostiles would miss the one undead
+     * most likely to find him standing in the open.
+     */
+    private FleeEntityGoal<MobEntity> fleeUndeadGoal(float distance) {
+        return new FleeEntityGoal<>(this, MobEntity.class,
+                entity -> entity.getType().isIn(EntityTypeTags.UNDEAD), distance, 0.5, 0.5,
+                EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR::test);
+    }
+
+    /**
+     * <p>Fleeing sits at priority 1, which is where vanilla's traders put it: above wandering, but level
+     * with serving a customer rather than above it, so a zombie wandering past does not abandon someone
+     * mid-purchase and close the shop screen on them.
+     *
+     * <p>{@link EscapeDangerGoal} is what makes him react to being hit at all. Nothing else here responds
+     * to damage, so without it he stands and takes a beating from anything the flee goals do not name.
+     */
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new StopFollowingCustomerGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 0.5));
+        this.goalSelector.add(1, fleeUndeadGoal(8.0F));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, EvokerEntity.class, 12.0F, 0.5, 0.5));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, VindicatorEntity.class, 8.0F, 0.5, 0.5));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, VexEntity.class, 8.0F, 0.5, 0.5));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, PillagerEntity.class, 15.0F, 0.5, 0.5));
+        this.goalSelector.add(1, new FleeEntityGoal<>(this, IllusionerEntity.class, 12.0F, 0.5, 0.5));
         this.goalSelector.add(1, new LookAtCustomerGoal(this));
         this.goalSelector.add(8, new WanderAroundFarGoal(this, 0.35));
         this.goalSelector.add(9, new StopAndLookAtEntityGoal(this, PlayerEntity.class, 3.0F, 1.0F));
@@ -183,15 +224,15 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         }
 
         if (!this.getWorld().isClient) {
-            List<ShopRow> rows = ShopRow.expand(stock());
-            if (rows.isEmpty()) {
+            List<RupeeCost> stock = stock();
+            if (stock.isEmpty()) {
                 return ActionResult.CONSUME;
             }
             // Marking him busy is what makes LookAtCustomerGoal and StopFollowingCustomerGoal able to
             // start at all: both return false immediately when there is no customer. Without it he keeps
             // wandering while someone has his shop open, and walking past 8 blocks closes it on them.
             this.setCustomer(player);
-            player.openHandledScreen(new ShopScreenFactory(this, rows));
+            player.openHandledScreen(new ShopScreenFactory(this, stock));
         }
 
         return ActionResult.success(this.getWorld().isClient);
@@ -202,7 +243,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
      *
      * <p>He sells through his own shop screen, paid from a Rupee Pouch, so nothing goes through vanilla's
      * offer list. Filling it would cap what he can sell: a vanilla trade holds two input stacks, which
-     * makes any price needing three denominations, 6666 among them, unbuyable however rich the player is.
+     * makes any price needing three denominations, 666 among them, unbuyable however rich the player is.
      *
      * <p>{@link MerchantEntity} is still the base class because its goals are wanted; only the trading is
      * replaced. Stock comes from {@code rupee_costs} datapack files through {@link RupeeCostLoader}.

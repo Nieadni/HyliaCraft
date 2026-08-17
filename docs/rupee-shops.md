@@ -64,24 +64,29 @@ Every field:
 |---|---|---|---|---|
 | `item` | item id | yes | | what the player receives |
 | `cost` | integer, 0 or more | yes | | price in rupees |
-| `accepts` | list of item ids | no | none | an extra item required alongside the rupees |
+| `accepts` | list of item ids | no | none | extra items the offer will take alongside the rupees, any one of which will do |
 | `merchant` | trader id, or a list | no | `hyliacraft:happy_mask_salesman` | who stocks it |
 | `max_uses` | integer above 0 | no | `12` | purchases from one trader before it locks |
 | `restocks` | boolean | no | `true` | whether a spent entry comes back |
 
 ### `accepts` lists alternatives, not requirements
 
-The example above produces **two** offers: one taking a gold ingot, one taking a gold block. It does not
-require both.
+The example above produces **one** offer, whose trade-in slot will take a gold ingot or a gold block. It
+does not require both, and it does not appear twice in the list.
 
-That is because a trade row takes a single item rather than an item tag, so offering a choice means
-offering several rows. HyliaCraft's own Pumpkin Mask entry uses this to accept either a pumpkin or a
-carved pumpkin.
+A row offering a choice cycles through the alternatives in its icon, a second each, so you can see what
+else it would take. HyliaCraft's own Pumpkin Mask entry uses this to accept either a pumpkin or a carved
+pumpkin.
 
 ### Prices are paid from the Rupee Pouch
 
-The player does not hand over coins. The price is deducted from the balance across every Rupee Pouch they
-carry, which is why prices are not limited to what would fit in a trade slot. A cost of 6666 is fine.
+The player hands over a Rupee Pouch, not a pile of coins. The price is taken from the pouch put in the
+shop's payment slot, topped up from any other pouches carried if that one cannot cover it, which is why
+prices are not limited to what would fit in a trade slot. A cost of 2500 is fine even though a single
+pouch holds 999.
+
+Loose rupees are accepted in the same slot for players who have no pouch yet. Coins are consumed to reach
+the price and any overpayment comes back as change.
 
 ## Configuring a trader
 
