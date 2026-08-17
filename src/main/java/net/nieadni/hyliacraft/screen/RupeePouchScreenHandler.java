@@ -23,9 +23,6 @@ import net.nieadni.hyliacraft.shop.Rupees;
  */
 public class RupeePouchScreenHandler extends ScreenHandler {
 
-    /** Withdrawals of more than one coin are capped at a stack. */
-    private static final int BULK_LIMIT = 64;
-
     private final PlayerInventory playerInventory;
 
     /** The balance as last told to us by the server. Only meaningful on the client. */
@@ -89,10 +86,15 @@ public class RupeePouchScreenHandler extends ScreenHandler {
     }
 
     /**
-     * Withdraws coins.
+     * Withdraws coins onto the cursor.
      *
      * <p>The button id packs the denomination and whether shift was held, because the vanilla button
      * channel carries a single integer: {@code index * 2 + (bulk ? 1 : 0)}.
+     *
+     * <p>Coins are picked up rather than posted into the inventory, so taking money out of a pouch feels
+     * like taking anything out of any other slot. The cursor's remaining room is therefore the real limit
+     * on a withdrawal, and it is measured before the balance is touched: money must never leave the pouch
+     * without somewhere to land.
      */
     @Override
     public boolean onButtonClick(PlayerEntity player, int id) {
@@ -113,21 +115,31 @@ public class RupeePouchScreenHandler extends ScreenHandler {
             return false;
         }
 
-        // Shift takes a stack, or everything affordable if that is less.
-        int count = bulk ? Math.min(affordable, BULK_LIMIT) : 1;
+        ItemStack cursor = this.getCursorStack();
+        boolean ontoEmptyCursor = cursor.isEmpty();
+        int room;
+        if (ontoEmptyCursor) {
+            room = denomination.item().getMaxCount();
+        } else if (cursor.isOf(denomination.item())) {
+            room = cursor.getMaxCount() - cursor.getCount();
+        } else {
+            // Holding something else entirely. Refuse rather than shuffle it aside.
+            return false;
+        }
+        if (room <= 0) {
+            return false;
+        }
+
+        // Shift takes as many as the balance allows; either way the cursor caps it at a stack.
+        int count = Math.min(bulk ? affordable : 1, room);
         if (!RupeePouchItem.withdraw(pouch, count * denomination.value())) {
             return false;
         }
 
-        ItemStack coins = new ItemStack(denomination.item(), count);
-        player.getInventory().insertStack(coins);
-
-        // Test the stack, not the return value. insertStack reports whether it placed *any* items, and it
-        // empties what it took out of the stack it was given, so a partial insert returns true while
-        // leaving coins behind. Trusting the boolean would destroy that remainder, and the balance has
-        // already been debited by this point.
-        if (!coins.isEmpty()) {
-            player.dropItem(coins, false);
+        if (ontoEmptyCursor) {
+            this.setCursorStack(new ItemStack(denomination.item(), count));
+        } else {
+            cursor.increment(count);
         }
         return true;
     }
