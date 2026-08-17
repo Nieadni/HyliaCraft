@@ -1,7 +1,10 @@
 package net.nieadni.hyliacraft.item;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
 import net.nieadni.hyliacraft.item.custom.RupeePouchItem;
 
 import java.util.ArrayList;
@@ -41,13 +44,50 @@ public final class RupeePouches {
         return space;
     }
 
-    /** Total rupees across every pouch carried. */
+    /**
+     * Total rupees across every pouch in the inventory proper.
+     *
+     * <p>This is the figure to spend from, because it counts exactly the pouches
+     * {@link #debit(PlayerInventory, int)} can reach. For a figure to *show* a player, use
+     * {@link #totalBalance(PlayerEntity)} instead.
+     */
     public static int totalBalance(PlayerInventory inventory) {
         int total = 0;
         for (ItemStack pouch : pouchesIn(inventory)) {
             total += RupeePouchItem.getBalance(pouch);
         }
         return total;
+    }
+
+    /**
+     * Total rupees the player currently has hold of, wherever a screen has put them.
+     *
+     * <p>The inventory alone is not what a player thinks they own. A pouch dragged onto the cursor, or
+     * placed in a shop's payment slot, is outside {@link PlayerInventory} entirely, so a display reading
+     * only the inventory drops to zero at the exact moment someone goes to spend. That looks like the
+     * money vanished.
+     *
+     * <p>Slots backed by the player's own inventory are skipped in the sweep, since the first term
+     * already counted them; everything else an open screen holds belongs to the player and comes back
+     * when it closes.
+     */
+    public static int totalBalance(PlayerEntity player) {
+        int total = totalBalance(player.getInventory());
+        ScreenHandler handler = player.currentScreenHandler;
+        if (handler == null) {
+            return total;
+        }
+        total += balanceOf(handler.getCursorStack());
+        for (Slot slot : handler.slots) {
+            if (!(slot.inventory instanceof PlayerInventory)) {
+                total += balanceOf(slot.getStack());
+            }
+        }
+        return total;
+    }
+
+    private static int balanceOf(ItemStack stack) {
+        return stack.isOf(HCItems.RUPEE_POUCH) ? RupeePouchItem.getBalance(stack) : 0;
     }
 
     /**

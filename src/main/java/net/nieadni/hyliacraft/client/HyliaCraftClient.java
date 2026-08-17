@@ -23,6 +23,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlocks;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.nieadni.hyliacraft.client.hud.RupeeHud;
 import net.nieadni.hyliacraft.client.render.CustomDirtModel;
 import net.nieadni.hyliacraft.client.render.HappyMaskSalesmanRenderer;
 import net.nieadni.hyliacraft.client.screen.RupeePouchScreen;
@@ -94,6 +95,7 @@ public class HyliaCraftClient implements ClientModInitializer {
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
         HandledScreens.register(HCScreenHandlers.RUPEE_POUCH, RupeePouchScreen::new);
         HandledScreens.register(HCScreenHandlers.SHOP, ShopScreen::new);
+        RupeeHud.register();
 
         // The salesman uses the vanilla player model, built slim so the Alex skin sits correctly.
         EntityModelLayerRegistry.registerModelLayer(HappyMaskSalesmanRenderer.MODEL_LAYER,
