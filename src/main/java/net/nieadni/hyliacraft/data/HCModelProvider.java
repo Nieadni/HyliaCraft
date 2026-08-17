@@ -53,6 +53,22 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.WIND_TROUSERS, Models.GENERATED);
         itemModelGenerator.register(HCItems.WIND_BOOTS, Models.GENERATED);
         itemModelGenerator.register(HCItems.BUNNY_HOOD, Models.GENERATED);
+        itemModelGenerator.register(HCItems.BOKOBLIN_MASK, Models.GENERATED);
+        itemModelGenerator.register(HCItems.ENGINEER_CAP, Models.GENERATED);
+        itemModelGenerator.register(HCItems.ENGINEER_SHIRT, Models.GENERATED);
+        itemModelGenerator.register(HCItems.ENGINEER_TROUSERS, Models.GENERATED);
+        itemModelGenerator.register(HCItems.ENGINEER_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHANTOM_HELMET, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHANTOM_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHANTOM_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHANTOM_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(HCItems.RAVIO_HOOD, Models.GENERATED);
+        itemModelGenerator.register(HCItems.TINGLE_HOOD, Models.GENERATED);
+        itemModelGenerator.register(HCItems.TINGLE_SHIRT, Models.GENERATED);
+        itemModelGenerator.register(HCItems.TINGLE_TIGHTS, Models.GENERATED);
+        itemModelGenerator.register(HCItems.TINGLE_BOOTS, Models.GENERATED);
+
+
         itemModelGenerator.register(HCItems.FIRESHIELD_EARRING, Models.GENERATED);
         itemModelGenerator.register(HCItems.WATER_DRAGON_SCALE, Models.GENERATED);
         itemModelGenerator.register(HCItems.SHADOW_CRYSTAL, Models.GENERATED);

@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-12T19:23:18.9615869	HyliaCraft/Recipes
+// 1.21.1	2026-08-15T21:44:49.4931474	HyliaCraft/Recipes
 0ee4a879227ddb61ad989480d062723989c3feed data\hyliacraft\advancement\recipes\misc\magenta_dye_single.json
 f2863d741e589199946b1ecfedbb8a608e9f0538 data\hyliacraft\advancement\recipes\building_blocks\brown_shingles.json
 d7034d0f56281a870d900eda8c7c2e23f4933f96 data\hyliacraft\recipe\paraglider.json
@@ -103,8 +103,8 @@ bb495762909b726faed84b16271463c1d29f7f6a data\hyliacraft\recipe\white_shingles.j
 6e72f4405d2d6ffcbc00c389b40df800c3f3de7a data\hyliacraft\recipe\orange_shingle_stairs.json
 d6fa33e3eeaed2c09362708b4e0e2fced936eda7 data\hyliacraft\recipe\gray_shingle_slab.json
 4636b68d2f1bd86b58ba9ba9ef5faa56f5d70f08 data\hyliacraft\advancement\recipes\building_blocks\magenta_shingles.json
-9dec7d05427f6fe4e37a41287f67989ebca8f2fc data\hyliacraft\advancement\recipes\combat\wind_cap.json
 96d9f6dcff6e9c46264833ffe1899d46239439ec data\hyliacraft\advancement\recipes\combat\sky_cap.json
+9dec7d05427f6fe4e37a41287f67989ebca8f2fc data\hyliacraft\advancement\recipes\combat\wind_cap.json
 5c8876a093d723ca244d832083d8f6363d023aa1 data\hyliacraft\advancement\recipes\building_blocks\light_gray_shingles.json
 dd6df99489c2c0881cb3da48ad8e0f309545c2a7 data\hyliacraft\recipe\pink_shingle_slab.json
 eaa14b4a692da749538c4839ac28711e1fb7866e data\hyliacraft\recipe\light_gray_shingle_slab.json

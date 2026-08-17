@@ -1,9 +1,9 @@
-// 1.21.1	2026-08-12T19:23:18.9535468	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-08-15T21:44:49.4910517	HyliaCraft/Block Loot Tables
 d616eeb258676121cb5e568ad8370c6a7048bed2 data\hyliacraft\loot_table\blocks\magenta_shingle_wall.json
 cc1d8f2527e541f7b2816ea9defa3d305e3fb40b data\hyliacraft\loot_table\blocks\clay_pot.json
 ac42ae25d8cf6367d9747f5942a4ca5279e4696f data\hyliacraft\loot_table\blocks\kokiri_clay_pot.json
-386a1dc2bc8a01652469722d7b96ae35e7b7e725 data\hyliacraft\loot_table\blocks\black_shingles.json
 0579fb9aa3d5ed07c72038cee93f93f815a0a438 data\hyliacraft\loot_table\blocks\natural_goron_clay_pot.json
+386a1dc2bc8a01652469722d7b96ae35e7b7e725 data\hyliacraft\loot_table\blocks\black_shingles.json
 fd36c3b982557468f77c48dda4098722868e3719 data\hyliacraft\loot_table\blocks\silent_princess_pot.json
 6f825da33fa1e4b1239179777dcd8b1d73fec79e data\hyliacraft\loot_table\blocks\light_blue_shingle_wall.json
 926d84f74a0a20de453783534113b017f657490b data\hyliacraft\loot_table\blocks\blue_nightshade_pot.json
