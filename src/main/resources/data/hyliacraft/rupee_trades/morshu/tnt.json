@@ -1,0 +1,7 @@
+{
+  "item": "minecraft:tnt",
+  "merchant": "hyliacraft:morshu",
+  "cost": 6,
+  "max_uses": 16,
+  "restocks": true
+}
