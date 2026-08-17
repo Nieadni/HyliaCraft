@@ -24,7 +24,7 @@ import java.util.List;
 /** A purse holding rupees as a single number rather than as coins. Each pouch carries its own balance. */
 public class RupeePouchItem extends Item {
 
-    public static final int MAX_BALANCE = 9999;
+    public static final int MAX_BALANCE = 999;
 
     public RupeePouchItem(Settings settings) {
         super(settings);
