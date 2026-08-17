@@ -105,6 +105,16 @@ the price and any overpayment comes back as change.
 **The file name is the entity id.** A file called `happy_mask_salesman.json` in the `hyliacraft`
 namespace configures `hyliacraft:happy_mask_salesman`. There is no `entity` field.
 
+### The trader roster, today
+
+| Trader id | Added by |
+|---|---|
+| `hyliacraft:happy_mask_salesman` | HyliaCraft |
+
+That is the whole list, so `merchant` currently has exactly one useful value and leaving it out gives you
+the same thing. The roster is code, not data: an entity joins it by calling
+`TraderLoader.registerTraderType` at startup, which is why the next section holds.
+
 ### Restock times
 
 `restock_at` is a point in the daily cycle, in ticks, not a duration. Every trader refreshes when world
