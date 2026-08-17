@@ -4,11 +4,11 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.screen.ShopScreenHandler;
+import net.nieadni.hyliacraft.shop.Accepted;
 import net.nieadni.hyliacraft.shop.Rupees;
 import net.nieadni.hyliacraft.shop.ShopEntry;
 
@@ -75,6 +75,9 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
 
     /** How long each alternative trade-in item is shown for, when a row offers a choice of them. */
     private static final int CYCLE_TICKS = 20;
+
+    /** Vanilla's own key, so the heading is translated everywhere without a lang entry of ours. */
+    private static final Text TRADES_TEXT = Text.translatable("merchant.trades");
 
     private final ButtonWidget[] rowButtons = new ButtonWidget[VISIBLE_ROWS];
     private int scrollOffset;
@@ -163,12 +166,24 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
      * <p>Cycling rather than listing them: a row is 20 pixels tall and has space for one icon, and the
      * slot accepts any of them regardless of which is on screen at the moment.
      */
-    private Item cyclingAccepted(ShopEntry entry) {
-        List<Item> accepts = entry.accepts();
+    private Accepted cyclingAccepted(ShopEntry entry) {
+        List<Accepted> accepts = entry.accepts();
         if (accepts.size() == 1 || this.client == null || this.client.world == null) {
             return accepts.get(0);
         }
         return accepts.get((int) (this.client.world.getTime() / CYCLE_TICKS % accepts.size()));
+    }
+
+    /**
+     * An item with its stack count written on it.
+     *
+     * <p>{@code drawItem} alone renders no count, so a trade wanting two of something would look exactly
+     * like one wanting one. {@code drawItemInSlot} is what paints the number, and it has to follow the
+     * icon rather than replace it.
+     */
+    private void drawCounted(DrawContext context, ItemStack stack, int x, int y) {
+        context.drawItem(stack, x, y);
+        context.drawItemInSlot(this.textRenderer, stack, x, y);
     }
 
     @Override
@@ -216,12 +231,12 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
                     x + COST_TEXT_X, y + 6, affordable ? 0xFFFFFF : 0xFF5555, true);
 
             if (entry.hasAccepted()) {
-                context.drawItem(new ItemStack(cyclingAccepted(entry)), x + ACCEPTED_X, y + 2);
+                drawCounted(context, cyclingAccepted(entry).toStack(), x + ACCEPTED_X, y + 2);
             }
             // A spent row is marked by crossing out its arrow, which is how vanilla shows a locked trade.
             context.drawGuiTexture(inStock ? TRADE_ARROW : TRADE_ARROW_OUT_OF_STOCK,
                     x + ARROW_X, y + 5, ARROW_WIDTH, ARROW_HEIGHT);
-            context.drawItem(new ItemStack(entry.item()), x + RESULT_X, y + 2);
+            drawCounted(context, entry.toStack(), x + RESULT_X, y + 2);
         }
     }
 
@@ -235,19 +250,26 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
     }
 
     /**
-     * The balance.
+     * The two headings, laid out the way vanilla's merchant screen lays out its own.
      *
-     * <p>The selected row's price is deliberately not repeated here. The trading area is made of real
-     * slots now, so a number written under one sits below an empty frame with nothing to attach it to and
-     * reads as a stack count. The offer list already states the price beside every row, selected or not.
+     * <p>{@code super} is deliberately not called: {@link HandledScreen} draws the title at {@code titleX},
+     * hard against the left edge, which is where "Trades" belongs.
+     *
+     * <p>{@code merchant.trades} is vanilla's own translation key, so the heading is already translated
+     * into every language the game ships. Coining a HyliaCraft key would put an English-only string into
+     * five otherwise translated lang files.
+     *
+     * <p>The balance is gone from here. The HUD counter shows the same number without a screen open, and
+     * two copies of it on screen at once invite the two to disagree.
      */
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
-        super.drawForeground(context, mouseX, mouseY);
-
-        Text balance = Text.translatable("tooltip.hyliacraft.rupee_pouch.balance", this.handler.getBalance());
-        context.drawText(this.textRenderer, balance,
-                this.backgroundWidth - this.textRenderer.getWidth(balance) - 8, 6, 0x404040, false);
+        context.drawText(this.textRenderer, TRADES_TEXT,
+                5 - this.textRenderer.getWidth(TRADES_TEXT) / 2 + 48, 6, 0x404040, false);
+        context.drawText(this.textRenderer, this.title,
+                49 + this.backgroundWidth / 2 - this.textRenderer.getWidth(this.title) / 2, 6, 0x404040, false);
+        context.drawText(this.textRenderer, this.playerInventoryTitle,
+                this.playerInventoryTitleX, this.playerInventoryTitleY, 0x404040, false);
     }
 
     private static boolean isOver(int x, int y, double mouseX, double mouseY) {
@@ -279,12 +301,11 @@ public class ShopScreen extends HandledScreen<ShopScreenHandler> {
                 return;
             }
             if (entry.hasAccepted() && isOver(x + ACCEPTED_X, y, mouseX, mouseY)) {
-                context.drawItemTooltip(this.textRenderer,
-                        new ItemStack(cyclingAccepted(entry)), mouseX, mouseY);
+                context.drawItemTooltip(this.textRenderer, cyclingAccepted(entry).toStack(), mouseX, mouseY);
                 return;
             }
             if (isOver(x + RESULT_X, y, mouseX, mouseY)) {
-                context.drawItemTooltip(this.textRenderer, new ItemStack(entry.item()), mouseX, mouseY);
+                context.drawItemTooltip(this.textRenderer, entry.toStack(), mouseX, mouseY);
                 return;
             }
         }

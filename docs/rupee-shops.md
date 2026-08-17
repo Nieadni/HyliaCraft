@@ -3,7 +3,7 @@
 ## TL;DR
 
 Any datapack can add items to a HyliaCraft shopkeeper without writing code. Drop a JSON file in
-`rupee_costs/` naming an item and a price, and it appears in that trader's shop, sorted cheapest first.
+`rupee_trades/` naming an item and a price, and it appears in that trader's shop, sorted cheapest first.
 A second directory, `rupee_traders/`, sets per trader options such as when stock refreshes. Only `item`
 and `cost` are required; everything else has a sensible default, and `/reload` picks up changes.
 
@@ -16,7 +16,7 @@ my_shop_pack/
 ├── pack.mcmeta
 └── data/
     └── my_shop_pack/          <- your namespace, anything you like
-        ├── rupee_costs/
+        ├── rupee_trades/
         │   ├── golden_apple.json
         │   └── magic_ring.json
         └── rupee_traders/
@@ -38,7 +38,7 @@ my_shop_pack/
 
 The smallest useful file. Everything not given takes its default.
 
-`data/my_shop_pack/rupee_costs/golden_apple.json`
+`data/my_shop_pack/rupee_trades/golden_apple.json`
 
 ```json
 {
@@ -52,8 +52,12 @@ Every field:
 ```json
 {
   "item": "somemod:magic_ring",
+  "count": 1,
   "cost": 250,
-  "accepts": ["minecraft:gold_ingot", "minecraft:gold_block"],
+  "accepts": [
+    { "item": "minecraft:gold_ingot", "count": 2 },
+    "minecraft:gold_block"
+  ],
   "merchant": "hyliacraft:happy_mask_salesman",
   "max_uses": 3,
   "restocks": false
@@ -63,20 +67,57 @@ Every field:
 | Field | Type | Required | Default | Meaning |
 |---|---|---|---|---|
 | `item` | item id | yes | | what the player receives |
+| `count` | integer above 0 | no | `1` | how many of it per purchase |
 | `cost` | integer, 0 or more | yes | | price in rupees |
-| `accepts` | list of item ids | no | none | extra items the offer will take alongside the rupees, any one of which will do |
+| `accepts` | list, see below | no | none | extra items the offer will take alongside the rupees, any one of which will do |
 | `merchant` | trader id, or a list | no | `hyliacraft:happy_mask_salesman` | who stocks it |
 | `max_uses` | integer above 0 | no | `12` | purchases from one trader before it locks |
 | `restocks` | boolean | no | `true` | whether a spent entry comes back |
 
+Any `count`, on the reward or on a trade-in, must fit the item's own stack size. Asking for 32 of
+something that stacks to 16 is rejected at load with a warning naming the file, rather than becoming an
+offer nobody can ever complete.
+
 ### `accepts` lists alternatives, not requirements
 
-The example above produces **one** offer, whose trade-in slot will take a gold ingot or a gold block. It
-does not require both, and it does not appear twice in the list.
+**`accepts` is always a list**, even with one entry. Writing it as a bare object is the easiest mistake to
+make here, and the file is skipped with a warning rather than loading half of it:
+
+```json
+"accepts": { "item": "minecraft:rabbit_foot", "count": 2 }     WRONG, skipped at load
+"accepts": [ { "item": "minecraft:rabbit_foot", "count": 2 } ] right
+```
+
+The example above produces **one** offer, whose trade-in slot takes *either* two gold ingots *or* one gold
+block. It does not require both, and it does not appear twice in the list.
+
+Each entry is written one of two ways:
+
+| Form | Means |
+|---|---|
+| `"minecraft:gold_block"` | one of that item |
+| `{ "item": "minecraft:gold_ingot", "count": 2 }` | two of that item |
+
+Use the short form for anything you want one of, and the object form only when you need a count. They may
+be mixed in the same list; a bare id has always meant one, so packs written before counts existed keep
+working untouched.
+
+Counts sit **per alternative** for a reason: the case that needs them is usually items of unequal worth,
+where a block is worth what nine ingots are. A single count for the whole offer would force those into
+separate entries and list the same reward twice.
 
 A row offering a choice cycles through the alternatives in its icon, a second each, so you can see what
 else it would take. HyliaCraft's own Pumpkin Mask entry uses this to accept either a pumpkin or a carved
 pumpkin.
+
+### Items only, not tags
+
+`item` and `accepts` take concrete item ids. An item **tag** is not accepted, and `#` syntax will not
+resolve, so `#minecraft:rabbit_food` fails to load with an "unknown item" warning naming the file.
+
+This catches people out because several natural-sounding ids are tags rather than items:
+`minecraft:rabbit_food` is a tag holding carrots and dandelions, while the item you probably want is
+`minecraft:rabbit_foot`. List the alternatives out instead, which is what `accepts` is for.
 
 ### Prices are paid from the Rupee Pouch
 
@@ -148,7 +189,7 @@ trade is skipped, and the log names the file so a typo is easy to find.
 HyliaCraft loads its prices by exactly the same route as your pack, with no special casing. Reusing one
 of its file ids replaces that entry.
 
-A file at `data/hyliacraft/rupee_costs/pumpkin_mask.json` in your pack reprices or removes the built in
+A file at `data/hyliacraft/rupee_trades/pumpkin_mask.json` in your pack reprices or removes the built in
 Pumpkin Mask offer, and the same works for `rupee_traders/`. Normal datapack ordering decides which pack
 wins.
 

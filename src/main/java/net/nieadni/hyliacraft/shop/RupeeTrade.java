@@ -9,19 +9,30 @@ import java.util.List;
  * One thing the Happy Mask Salesman sells, as loaded from a {@code rupee_trades} datapack file.
  *
  * @param item    what the player receives
+ * @param count   how many of it per purchase
  * @param cost    the price in rupees
  * @param accepts extra items accepted alongside the rupees, any one of which will do rather than all of
- *                them being required together. They share a single shop row, so "a pumpkin or a carved
- *                pumpkin" is one offer whose trade-in slot takes either
+ *                them being required together, each with its own count. They share a single shop row, so
+ *                "a pumpkin or a carved pumpkin" is one offer whose trade-in slot takes either
  * @param maxUses purchases from one trader before the entry shows as out of stock
  * @param restocks whether a spent entry comes back; false makes it a one-off for that trader
  * @param merchants which traders stock this. Filters an existing trader's list; it cannot make a mob
  *                  into one
  */
-public record RupeeTrade(Item item, int cost, List<Item> accepts, int maxUses, boolean restocks,
-                         List<Identifier> merchants) {
+public record RupeeTrade(Item item, int count, int cost, List<Accepted> accepts, int maxUses,
+                         boolean restocks, List<Identifier> merchants) {
 
     public boolean soldBy(Identifier trader) {
         return this.merchants.contains(trader);
+    }
+
+    /** How many of this item the offer wants in trade, or 0 if it will not take it at all. */
+    public int requiredCount(Item item) {
+        for (Accepted accepted : this.accepts) {
+            if (accepted.item() == item) {
+                return accepted.count();
+            }
+        }
+        return 0;
     }
 }

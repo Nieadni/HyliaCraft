@@ -276,9 +276,9 @@ public class ShopScreenHandler extends ScreenHandler {
         if (entry == null || !isInStock(this.selectedIndex)) {
             return false;
         }
-        // An empty trade-in slot reports AIR, which no entry ever lists, so this covers "nothing handed
-        // over" as well as "the wrong thing handed over".
-        if (entry.hasAccepted() && !entry.accepts(this.inputs.getStack(TRADE_IN_SLOT).getItem())) {
+        // satisfiedBy covers "nothing handed over", "the wrong thing" and "not enough of the right thing"
+        // in one question, since an empty stack reports AIR and no entry ever lists it.
+        if (entry.hasAccepted() && !entry.satisfiedBy(this.inputs.getStack(TRADE_IN_SLOT))) {
             return false;
         }
         return availableFunds() >= entry.cost();
@@ -294,8 +294,9 @@ public class ShopScreenHandler extends ScreenHandler {
         if (this.stock == null) {
             return;
         }
-        RupeeTrade cost = selectedCost();
-        this.result.setStack(0, cost != null && payable() ? new ItemStack(cost.item()) : ItemStack.EMPTY);
+        RupeeTrade trade = selectedCost();
+        this.result.setStack(0,
+                trade != null && payable() ? new ItemStack(trade.item(), trade.count()) : ItemStack.EMPTY);
     }
 
     @Override
@@ -362,8 +363,11 @@ public class ShopScreenHandler extends ScreenHandler {
         }
 
         charge(player, cost.cost());
-        if (!cost.accepts().isEmpty()) {
-            this.inputs.removeStack(TRADE_IN_SLOT, 1);
+        // Read the count off the item actually handed over, not off the first alternative: a row taking
+        // two ingots or one block must consume the right number of whichever the player chose.
+        int handedOver = cost.requiredCount(this.inputs.getStack(TRADE_IN_SLOT).getItem());
+        if (handedOver > 0) {
+            this.inputs.removeStack(TRADE_IN_SLOT, handedOver);
         }
         this.salesman.recordPurchase(cost);
         updateResult();
@@ -408,7 +412,7 @@ public class ShopScreenHandler extends ScreenHandler {
             takeFromInventory(player, stack -> stack.isOf(HCItems.RUPEE_POUCH), PAYMENT_SLOT);
         }
         if (entry.hasAccepted() && this.inputs.getStack(TRADE_IN_SLOT).isEmpty()) {
-            takeFromInventory(player, stack -> entry.accepts(stack.getItem()), TRADE_IN_SLOT);
+            takeFromInventory(player, stack -> entry.requiredCount(stack.getItem()) > 0, TRADE_IN_SLOT);
         }
     }
 
@@ -443,7 +447,7 @@ public class ShopScreenHandler extends ScreenHandler {
     private void returnUnacceptedTradeIn(PlayerEntity player) {
         ItemStack tradeIn = this.inputs.getStack(TRADE_IN_SLOT);
         ShopEntry entry = selectedEntry();
-        if (tradeIn.isEmpty() || (entry != null && entry.accepts(tradeIn.getItem()))) {
+        if (tradeIn.isEmpty() || (entry != null && entry.requiredCount(tradeIn.getItem()) > 0)) {
             return;
         }
         this.inputs.setStack(TRADE_IN_SLOT, ItemStack.EMPTY);
@@ -544,7 +548,7 @@ public class ShopScreenHandler extends ScreenHandler {
         @Override
         public boolean canInsert(ItemStack stack) {
             ShopEntry entry = selectedEntry();
-            return entry != null && entry.accepts(stack.getItem());
+            return entry != null && entry.requiredCount(stack.getItem()) > 0;
         }
     }
 

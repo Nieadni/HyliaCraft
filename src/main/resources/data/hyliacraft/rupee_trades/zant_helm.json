@@ -2,7 +2,9 @@
   "item": "hyliacraft:zant_helm",
   "merchant": "hyliacraft:happy_mask_salesman",
   "cost": 400,
-  "accepts": "minecraft:blue_ice",
+  "accepts": [
+    "minecraft:blue_ice"
+  ],
   "max_uses": 12,
   "restocks": true
 }

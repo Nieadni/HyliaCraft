@@ -111,6 +111,8 @@ public class RupeeTradeLoader extends JsonDataLoader implements IdentifiableReso
             throw new IllegalArgumentException("cost must not be negative, was " + cost);
         }
 
+        int count = readCount(json, "count", item);
+
         int maxUses = JsonHelper.getInt(json, "max_uses", DEFAULT_MAX_USES);
         if (maxUses <= 0) {
             throw new IllegalArgumentException("max_uses must be positive, was " + maxUses);
@@ -118,15 +120,49 @@ public class RupeeTradeLoader extends JsonDataLoader implements IdentifiableReso
 
         boolean restocks = JsonHelper.getBoolean(json, "restocks", true);
 
-        List<Item> accepts = new ArrayList<>();
+        List<Accepted> accepts = new ArrayList<>();
         JsonArray array = JsonHelper.getArray(json, "accepts", null);
         if (array != null) {
             for (JsonElement accepted : array) {
-                accepts.add(resolveItem(accepted.getAsString()));
+                accepts.add(parseAccepted(accepted));
             }
         }
 
-        return new RupeeTrade(item, cost, List.copyOf(accepts), maxUses, restocks, parseMerchants(json));
+        return new RupeeTrade(item, count, cost, List.copyOf(accepts), maxUses, restocks, parseMerchants(json));
+    }
+
+    /**
+     * One entry of {@code accepts}: either a bare item id, or an object carrying a count with it.
+     *
+     * <p>Both forms are read so that every pack written before counts existed keeps working untouched. A
+     * bare id means one, which is what those packs already meant.
+     */
+    private static Accepted parseAccepted(JsonElement element) {
+        if (element.isJsonObject()) {
+            JsonObject object = element.getAsJsonObject();
+            Item item = resolveItem(JsonHelper.getString(object, "item"));
+            return new Accepted(item, readCount(object, "count", item));
+        }
+        return new Accepted(resolveItem(element.getAsString()), 1);
+    }
+
+    /**
+     * A stack count that the item can actually hold.
+     *
+     * <p>Capped at the item's own maximum rather than 64, because a slot cannot hold more than that and a
+     * trade asking for 32 of something that stacks to 16 would be permanently unbuyable, with nothing on
+     * screen to say why. Failing here names the file instead.
+     */
+    private static int readCount(JsonObject json, String key, Item item) {
+        int count = JsonHelper.getInt(json, key, 1);
+        if (count <= 0) {
+            throw new IllegalArgumentException(key + " must be positive, was " + count);
+        }
+        if (count > item.getMaxCount()) {
+            throw new IllegalArgumentException(key + " of " + count + " exceeds the "
+                    + item.getMaxCount() + " that " + Registries.ITEM.getId(item) + " stacks to");
+        }
+        return count;
     }
 
     /** Accepts a single trader id or a list of them, so one item can be stocked by several. */
