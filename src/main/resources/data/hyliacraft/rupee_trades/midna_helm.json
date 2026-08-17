@@ -1,0 +1,8 @@
+{
+  "item": "hyliacraft:midna_helm",
+  "merchant": "hyliacraft:happy_mask_salesman",
+  "cost": 400,
+  "accepts": {"item": "minecraft:netherite_scrap", "count": 2},
+  "max_uses": 12,
+  "restocks": true
+}

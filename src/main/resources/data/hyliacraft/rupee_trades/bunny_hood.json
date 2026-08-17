@@ -1,0 +1,8 @@
+{
+  "item": "hyliacraft:bunny_hood",
+  "merchant": "hyliacraft:happy_mask_salesman",
+  "cost": 400,
+  "accepts": {"item": "minecraft:rabbits_food", "count": 2},
+  "max_uses": 12,
+  "restocks": true
+}

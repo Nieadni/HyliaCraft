@@ -13,7 +13,7 @@ import net.nieadni.hyliacraft.entity.HappyMaskSalesmanEntity;
 import net.nieadni.hyliacraft.item.HCItems;
 import net.nieadni.hyliacraft.item.RupeePouches;
 import net.nieadni.hyliacraft.item.custom.RupeePouchItem;
-import net.nieadni.hyliacraft.shop.RupeeCost;
+import net.nieadni.hyliacraft.shop.RupeeTrade;
 import net.nieadni.hyliacraft.shop.Rupees;
 import net.nieadni.hyliacraft.shop.ShopEntry;
 import org.jetbrains.annotations.Nullable;
@@ -53,7 +53,7 @@ public class ShopScreenHandler extends ScreenHandler {
 
     /** Server side only. The client identifies rows by index into {@link #entries}. */
     @Nullable
-    private final List<RupeeCost> stock;
+    private final List<RupeeTrade> stock;
     @Nullable
     private final HappyMaskSalesmanEntity salesman;
 
@@ -78,7 +78,7 @@ public class ShopScreenHandler extends ScreenHandler {
 
     /** Server-side construction, where the salesman and the authoritative stock are known. */
     public ShopScreenHandler(int syncId, PlayerInventory playerInventory,
-                             @Nullable HappyMaskSalesmanEntity salesman, List<RupeeCost> stock) {
+                             @Nullable HappyMaskSalesmanEntity salesman, List<RupeeTrade> stock) {
         this(syncId, playerInventory, salesman, stock, stock.stream().map(ShopEntry::of).toList());
     }
 
@@ -89,7 +89,7 @@ public class ShopScreenHandler extends ScreenHandler {
 
     private ShopScreenHandler(int syncId, PlayerInventory playerInventory,
                               @Nullable HappyMaskSalesmanEntity salesman,
-                              @Nullable List<RupeeCost> stock, List<ShopEntry> entries) {
+                              @Nullable List<RupeeTrade> stock, List<ShopEntry> entries) {
         super(HCScreenHandlers.SHOP, syncId);
         this.playerInventory = playerInventory;
         this.salesman = salesman;
@@ -230,7 +230,7 @@ public class ShopScreenHandler extends ScreenHandler {
     }
 
     @Nullable
-    private RupeeCost selectedCost() {
+    private RupeeTrade selectedCost() {
         return this.stock != null && this.selectedIndex >= 0 && this.selectedIndex < this.stock.size()
                 ? this.stock.get(this.selectedIndex)
                 : null;
@@ -294,7 +294,7 @@ public class ShopScreenHandler extends ScreenHandler {
         if (this.stock == null) {
             return;
         }
-        RupeeCost cost = selectedCost();
+        RupeeTrade cost = selectedCost();
         this.result.setStack(0, cost != null && payable() ? new ItemStack(cost.item()) : ItemStack.EMPTY);
     }
 
@@ -356,7 +356,7 @@ public class ShopScreenHandler extends ScreenHandler {
      * invariant is ever broken, this is where items start being given away.
      */
     private void completePurchase(PlayerEntity player) {
-        RupeeCost cost = selectedCost();
+        RupeeTrade cost = selectedCost();
         if (cost == null || this.salesman == null) {
             return;
         }

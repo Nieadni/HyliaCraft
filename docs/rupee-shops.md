@@ -52,7 +52,7 @@ Every field:
 ```json
 {
   "item": "somemod:magic_ring",
-  "cost": 2500,
+  "cost": 250,
   "accepts": ["minecraft:gold_ingot", "minecraft:gold_block"],
   "merchant": "hyliacraft:happy_mask_salesman",
   "max_uses": 3,

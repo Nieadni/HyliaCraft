@@ -14,25 +14,21 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.profiler.Profiler;
 import net.nieadni.hyliacraft.HyliaCraft;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
- * Loads what the Happy Mask Salesman sells from {@code data/<namespace>/rupee_costs/*.json}.
+ * Loads what the Happy Mask Salesman sells from {@code data/<namespace>/rupee_trades/*.json}.
  *
  * <p>Every loaded datapack is scanned, so other mods ship prices in their own jar and modpacks override
  * them by reusing a file id. HyliaCraft's own prices arrive by the same route and get no special treatment.
  * Because this listens on server data, {@code /reload} picks up changes.
  */
-public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResourceReloadListener {
+public class RupeeTradeLoader extends JsonDataLoader implements IdentifiableResourceReloadListener {
 
-    public static final Identifier ID = Identifier.of(HyliaCraft.MOD_ID, "rupee_costs");
+    public static final Identifier ID = Identifier.of(HyliaCraft.MOD_ID, "rupee_trades");
 
-    /** Matches {@code data/<namespace>/rupee_costs/}. */
-    private static final String DIRECTORY = "rupee_costs";
+    /** Matches {@code data/<namespace>/rupee_trades/}. */
+    private static final String DIRECTORY = "rupee_trades";
 
     private static final Gson GSON = new Gson();
 
@@ -49,9 +45,9 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
      * when restocking each tick and when opening his shop. Replaced wholesale rather than mutated, so a
      * reader always sees a complete list.
      */
-    private static volatile List<RupeeCost> entries = List.of();
+    private static volatile List<RupeeTrade> entries = List.of();
 
-    public RupeeCostLoader() {
+    public RupeeTradeLoader() {
         super(GSON, DIRECTORY);
     }
 
@@ -67,17 +63,17 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
     }
 
     /** The loaded price list, sorted by cost ascending then item id. Never null; empty before the first load. */
-    public static List<RupeeCost> getSorted() {
+    public static List<RupeeTrade> getSorted() {
         return entries;
     }
 
     @Override
     protected void apply(Map<Identifier, JsonElement> prepared, ResourceManager manager, Profiler profiler) {
-        List<RupeeCost> loaded = new ArrayList<>();
+        List<RupeeTrade> loaded = new ArrayList<>();
 
         for (Map.Entry<Identifier, JsonElement> file : prepared.entrySet()) {
             try {
-                RupeeCost cost = parse(file.getValue());
+                RupeeTrade cost = parse(file.getValue());
 
                 List<Identifier> unknown = cost.merchants().stream()
                         .filter(merchant -> !TraderLoader.isTrader(merchant))
@@ -98,14 +94,14 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
 
         // Cheapest first, as the salesman's trade list is meant to read. Item id breaks ties so that two
         // equally priced masks do not swap places between reloads.
-        Comparator<RupeeCost> byCost = Comparator.comparingInt(RupeeCost::cost);
+        Comparator<RupeeTrade> byCost = Comparator.comparingInt(RupeeTrade::cost);
         loaded.sort(byCost.thenComparing(entry -> Registries.ITEM.getId(entry.item()).toString()));
 
         entries = List.copyOf(loaded);
         HyliaCraft.LOGGER.info("Loaded {} rupee cost entries", entries.size());
     }
 
-    private static RupeeCost parse(JsonElement element) {
+    private static RupeeTrade parse(JsonElement element) {
         JsonObject json = JsonHelper.asObject(element, "rupee cost");
 
         Item item = resolveItem(JsonHelper.getString(json, "item"));
@@ -130,7 +126,7 @@ public class RupeeCostLoader extends JsonDataLoader implements IdentifiableResou
             }
         }
 
-        return new RupeeCost(item, cost, List.copyOf(accepts), maxUses, restocks, parseMerchants(json));
+        return new RupeeTrade(item, cost, List.copyOf(accepts), maxUses, restocks, parseMerchants(json));
     }
 
     /** Accepts a single trader id or a list of them, so one item can be stocked by several. */

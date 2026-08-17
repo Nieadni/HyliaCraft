@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 /**
- * One thing the Happy Mask Salesman sells, as loaded from a {@code rupee_costs} datapack file.
+ * One thing the Happy Mask Salesman sells, as loaded from a {@code rupee_trades} datapack file.
  *
  * @param item    what the player receives
  * @param cost    the price in rupees
@@ -18,8 +18,8 @@ import java.util.List;
  * @param merchants which traders stock this. Filters an existing trader's list; it cannot make a mob
  *                  into one
  */
-public record RupeeCost(Item item, int cost, List<Item> accepts, int maxUses, boolean restocks,
-                        List<Identifier> merchants) {
+public record RupeeTrade(Item item, int cost, List<Item> accepts, int maxUses, boolean restocks,
+                         List<Identifier> merchants) {
 
     public boolean soldBy(Identifier trader) {
         return this.merchants.contains(trader);

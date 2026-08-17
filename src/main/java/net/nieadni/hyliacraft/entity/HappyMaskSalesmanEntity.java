@@ -1,22 +1,10 @@
 package net.nieadni.hyliacraft.entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.FleeEntityGoal;
-import net.minecraft.entity.ai.goal.LookAtCustomerGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.StopAndLookAtEntityGoal;
-import net.minecraft.entity.ai.goal.StopFollowingCustomerGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.mob.EvokerEntity;
-import net.minecraft.entity.mob.IllusionerEntity;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.PillagerEntity;
-import net.minecraft.entity.mob.VexEntity;
-import net.minecraft.entity.mob.VindicatorEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,8 +19,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.world.World;
 import net.nieadni.hyliacraft.screen.ShopScreenFactory;
-import net.nieadni.hyliacraft.shop.RupeeCost;
-import net.nieadni.hyliacraft.shop.RupeeCostLoader;
+import net.nieadni.hyliacraft.shop.RupeeTrade;
+import net.nieadni.hyliacraft.shop.RupeeTradeLoader;
 import net.nieadni.hyliacraft.shop.TraderLoader;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,8 +31,8 @@ import java.util.Map;
 /**
  * A merchant who sells masks for rupees.
  *
- * <p>His stock is not written here. It comes from {@code rupee_costs} datapack files via
- * {@link RupeeCostLoader}, so adding an item to sell needs no code.
+ * <p>His stock is not written here. It comes from {@code rupee_trades} datapack files via
+ * {@link RupeeTradeLoader}, so adding an item to sell needs no code.
  */
 public class HappyMaskSalesmanEntity extends MerchantEntity {
 
@@ -65,7 +53,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         super(entityType, world);
     }
 
-    private static Identifier keyOf(RupeeCost entry) {
+    private static Identifier keyOf(RupeeTrade entry) {
         return Registries.ITEM.getId(entry.item());
     }
 
@@ -75,17 +63,17 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
     }
 
     /** The price entries this trader stocks, cheapest first. */
-    public List<RupeeCost> stock() {
+    public List<RupeeTrade> stock() {
         Identifier trader = traderId();
-        return RupeeCostLoader.getSorted().stream().filter(entry -> entry.soldBy(trader)).toList();
+        return RupeeTradeLoader.getSorted().stream().filter(entry -> entry.soldBy(trader)).toList();
     }
 
     /** Whether this salesman will still sell that entry. */
-    public boolean isInStock(RupeeCost entry) {
+    public boolean isInStock(RupeeTrade entry) {
         return this.usesSpent.getOrDefault(keyOf(entry), 0) < entry.maxUses();
     }
 
-    public void recordPurchase(RupeeCost entry) {
+    public void recordPurchase(RupeeTrade entry) {
         this.usesSpent.merge(keyOf(entry), 1, Integer::sum);
     }
 
@@ -116,7 +104,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         if (cycle > this.lastRestockCycle) {
             // Only entries that opted into restocking come back. The rest stay spent for good, which is
             // what makes a one-off worth travelling for.
-            for (RupeeCost entry : stock()) {
+            for (RupeeTrade entry : stock()) {
                 if (entry.restocks()) {
                     this.usesSpent.remove(keyOf(entry));
                 }
@@ -224,7 +212,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
         }
 
         if (!this.getWorld().isClient) {
-            List<RupeeCost> stock = stock();
+            List<RupeeTrade> stock = stock();
             if (stock.isEmpty()) {
                 return ActionResult.CONSUME;
             }
@@ -246,7 +234,7 @@ public class HappyMaskSalesmanEntity extends MerchantEntity {
      * makes any price needing three denominations, 666 among them, unbuyable however rich the player is.
      *
      * <p>{@link MerchantEntity} is still the base class because its goals are wanted; only the trading is
-     * replaced. Stock comes from {@code rupee_costs} datapack files through {@link RupeeCostLoader}.
+     * replaced. Stock comes from {@code rupee_trades} datapack files through {@link RupeeTradeLoader}.
      */
     @Override
     protected void fillRecipes() {

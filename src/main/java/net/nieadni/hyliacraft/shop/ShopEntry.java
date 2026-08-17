@@ -35,7 +35,7 @@ public record ShopEntry(Item item, int cost, List<Item> accepts) {
             PACKET_CODEC.collect(PacketCodecs.toList());
 
     /** The client-facing view of a price entry. */
-    public static ShopEntry of(RupeeCost cost) {
+    public static ShopEntry of(RupeeTrade cost) {
         return new ShopEntry(cost.item(), cost.cost(), cost.accepts());
     }
 

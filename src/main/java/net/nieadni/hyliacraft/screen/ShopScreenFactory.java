@@ -7,7 +7,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.nieadni.hyliacraft.entity.HappyMaskSalesmanEntity;
-import net.nieadni.hyliacraft.shop.RupeeCost;
+import net.nieadni.hyliacraft.shop.RupeeTrade;
 import net.nieadni.hyliacraft.shop.ShopEntry;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,7 +19,7 @@ import java.util.List;
  * <p>The stock is captured once, when the screen opens, rather than read live. A player browsing a shop
  * whose contents reshuffled underneath them mid-click would buy something they had not chosen.
  */
-public record ShopScreenFactory(HappyMaskSalesmanEntity salesman, List<RupeeCost> stock)
+public record ShopScreenFactory(HappyMaskSalesmanEntity salesman, List<RupeeTrade> stock)
         implements ExtendedScreenHandlerFactory<List<ShopEntry>> {
 
     @Override
