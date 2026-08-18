@@ -18,9 +18,26 @@ my_shop_pack/
     └── my_shop_pack/          <- your namespace, anything you like
         ├── rupee_trades/
         │   ├── golden_apple.json
-        │   └── magic_ring.json
+        │   └── happy_mask_salesman/    <- subfolders allowed, see below
+        │       └── magic_ring.json
         └── rupee_traders/
             └── happy_mask_salesman.json
+```
+
+### Subfolders are allowed, and they are part of the id
+
+Files may sit directly in `rupee_trades/` or in any subfolder. HyliaCraft's own entries are grouped by
+shopkeeper, purely so a glance at the tree says who sells what.
+
+**A subfolder does not assign the trade to that trader.** Only the `merchant` field does. A file in
+`morshu/` naming the Happy Mask Salesman is sold by the Happy Mask Salesman; the folder is a label for
+humans, nothing more.
+
+The folder **is** part of the entry's id, which matters when overriding one:
+
+```
+rupee_trades/magic_ring.json                      ->  my_shop_pack:magic_ring
+rupee_trades/happy_mask_salesman/magic_ring.json  ->  my_shop_pack:happy_mask_salesman/magic_ring
 ```
 
 `pack.mcmeta` for Minecraft 1.21.1:
@@ -189,9 +206,13 @@ trade is skipped, and the log names the file so a typo is easy to find.
 HyliaCraft loads its prices by exactly the same route as your pack, with no special casing. Reusing one
 of its file ids replaces that entry.
 
-A file at `data/hyliacraft/rupee_trades/pumpkin_mask.json` in your pack reprices or removes the built in
-Pumpkin Mask offer, and the same works for `rupee_traders/`. Normal datapack ordering decides which pack
-wins.
+**Match the full path, subfolder included.** HyliaCraft groups its entries by shopkeeper, so the Pumpkin
+Mask is overridden by a file at `data/hyliacraft/rupee_trades/happy_mask_salesman/pumpkin_mask.json`, not
+at `rupee_trades/pumpkin_mask.json`. The latter is a valid new entry of its own and will not replace
+anything, which looks exactly like an override that silently did nothing.
+
+The same applies to `rupee_traders/`, whose files are not grouped. Normal datapack ordering decides which
+pack wins.
 
 ## Notes
 
