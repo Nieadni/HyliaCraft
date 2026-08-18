@@ -5,6 +5,7 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
+    "RupeePickupMixin",
     "race.ServerPlayerEntityMixin",
     "race.WaterBreathingMixin",
     "race.fist_mining.CanHarvestMixin",

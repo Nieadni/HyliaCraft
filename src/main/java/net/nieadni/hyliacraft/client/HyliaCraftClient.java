@@ -7,8 +7,12 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.model.Dilation;
+import net.minecraft.client.model.TexturedModelData;
+import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
@@ -18,7 +22,13 @@ import net.minecraft.item.Item;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.nieadni.hyliacraft.client.hud.RupeeHud;
 import net.nieadni.hyliacraft.client.render.CustomDirtModel;
+import net.nieadni.hyliacraft.client.render.HappyMaskSalesmanRenderer;
+import net.nieadni.hyliacraft.client.screen.RupeePouchScreen;
+import net.nieadni.hyliacraft.client.screen.ShopScreen;
+import net.nieadni.hyliacraft.screen.HCScreenHandlers;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.entity.sword_beam_entity_renderers.*;
 import net.nieadni.hyliacraft.item.HCItems;
@@ -83,6 +93,15 @@ public class HyliaCraftClient implements ClientModInitializer {
 
         HCModelPredicates.registerHCModelPredicates();
         //EntityRendererRegistry.register(HCEntities.ROCK_PROJECTILE, RockProjectileRenderer::new);
+        HandledScreens.register(HCScreenHandlers.RUPEE_POUCH, RupeePouchScreen::new);
+        HandledScreens.register(HCScreenHandlers.SHOP, ShopScreen::new);
+        RupeeHud.register();
+
+        // The salesman uses the vanilla player model, built slim so the Alex skin sits correctly.
+        EntityModelLayerRegistry.registerModelLayer(HappyMaskSalesmanRenderer.MODEL_LAYER,
+                () -> TexturedModelData.of(PlayerEntityModel.getTexturedModelData(Dilation.NONE, true), 64, 64));
+        EntityRendererRegistry.register(HCEntities.HAPPY_MASK_SALESMAN, HappyMaskSalesmanRenderer::new);
+
         EntityRendererRegistry.register(HCEntities.GODDESS_SWORD_BEAM, GoddessSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_LONGSWORD_BEAM, GoddessLongswordBeamEntityRenderer::new);
         EntityRendererRegistry.register(HCEntities.GODDESS_WHITE_SWORD_BEAM, GoddessWhiteSwordBeamEntityRenderer::new);
