@@ -1,0 +1,7 @@
+{
+  "item": "hyliacraft:ravio_hood",
+  "merchant": "hyliacraft:happy_mask_salesman",
+  "cost": 100,
+  "max_uses": 12,
+  "restocks": true
+}

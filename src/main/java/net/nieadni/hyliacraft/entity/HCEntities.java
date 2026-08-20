@@ -1,5 +1,6 @@
 package net.nieadni.hyliacraft.entity;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -7,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.entity.sword_beam_entities.*;
+import net.nieadni.hyliacraft.shop.TraderLoader;
 
 public class HCEntities {
 
@@ -19,6 +21,15 @@ public class HCEntities {
                     .build()
     );
      **/
+
+    // 0.6 x 1.8 is the player hitbox, which is what he is rendered on.
+    public static final EntityType<HappyMaskSalesmanEntity> HAPPY_MASK_SALESMAN = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(HyliaCraft.MOD_ID, "happy_mask_salesman"),
+            EntityType.Builder.create(HappyMaskSalesmanEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.6f, 1.8f)
+                    .build()
+    );
 
     public static final EntityType<GoddessSwordBeamEntity> GODDESS_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
@@ -57,6 +68,12 @@ public class HCEntities {
     );
 
     public static void registerHyliaCraftEntities() {
+        FabricDefaultAttributeRegistry.register(HAPPY_MASK_SALESMAN,
+                HappyMaskSalesmanEntity.createHappyMaskSalesmanAttributes());
+
+        // Declares which entities have shop code, so a rupee_traders file naming anything else can be
+        // reported as doing nothing rather than looking as though it worked.
+        TraderLoader.registerTraderType(Registries.ENTITY_TYPE.getId(HAPPY_MASK_SALESMAN));
         HyliaCraft.LOGGER.info(HyliaCraft.MOD_ID + " has registered its entities.");
     }
 }

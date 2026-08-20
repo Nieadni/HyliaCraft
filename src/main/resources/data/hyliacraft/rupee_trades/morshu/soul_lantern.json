@@ -1,0 +1,7 @@
+{
+  "item": "minecraft:soul_lantern",
+  "merchant": "hyliacraft:morshu",
+  "cost": 4,
+  "max_uses": 64,
+  "restocks": true
+}

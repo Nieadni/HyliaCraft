@@ -230,6 +230,7 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.hyliacraft.consumables", "HC Consumables");
         translationBuilder.add("itemGroup.hyliacraft.misc", "HC Misc");
 
+        translationBuilder.add("tooltip.hyliacraft.rupee_pouch.balance", "%s Rupees");
         translationBuilder.add("tooltip.hyliacraft.wip", "This feature has not been fully implemented so therefore it may not work fully or as intended");
         translationBuilder.add("tooltip.hyliacraft.two_handed_weapon", "§9Only usable with both hands.");
 
@@ -576,6 +577,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         generateRaceTranslations(translationBuilder, "sheikah", "Sheikah", "A mysterious and secretive tribe with pointed ears. They are the chosen guardians of the goddess Hylia and her mortal incarnations.", "Fairly unremarkable but very stealthy. A lot of actions do not produce sounds");
         generateRaceTranslations(translationBuilder, "rito", "Rito", "Once Zora, they took to the skies and mastered flight.", "Can take flight and soar through the skies");
         generateRaceTranslations(translationBuilder, "kokiri", "Kokiri", "Once Hylians, the Kokiri find cover in nature, being able to navigate even the most tight and confusing areas in the woods.", "Small enough to fit into small gaps, can easily hide in forest biomes, and heal double the rate of other races");
+
+        // Entities
+        translationBuilder.add(HCEntities.HAPPY_MASK_SALESMAN, "Happy Mask Salesman");
+        translationBuilder.add(HCItems.HAPPY_MASK_SALESMAN_SPAWN_EGG, "Happy Mask Salesman Spawn Egg");
 
         // Keybinds
         translationBuilder.add("category.hyliacraft.main", "HyliaCraft");
