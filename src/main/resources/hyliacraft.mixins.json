@@ -5,6 +5,9 @@
   "mixins": [
     "EndermanEntityMixin",
     "ExampleMixin",
+    "majoras_mask.LivingEntityMixin",
+    "majoras_mask.TargetPredicateMixin",
+    "majoras_mask.TrackTargetGoalMixin",
     "RupeePickupMixin",
     "race.ServerPlayerEntityMixin",
     "race.WaterBreathingMixin",
