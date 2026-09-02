@@ -18,7 +18,7 @@
 				{
 					"name": "armorHead",
 					"parent": "bipedHead",
-					"pivot": [8, 35, -8]
+					"pivot": [0, 24, 0]
 				},
 				{
 					"name": "bipedBody",
