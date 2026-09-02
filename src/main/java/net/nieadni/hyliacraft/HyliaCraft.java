@@ -2,21 +2,23 @@ package net.nieadni.hyliacraft;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.item.v1.EnchantmentEvents;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.util.TriState;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.enchantment.Enchantments;
-import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -27,16 +29,20 @@ import net.nieadni.hyliacraft.block.HCBlocks;
 import net.nieadni.hyliacraft.data.HCLootTables;
 import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.*;
+import net.nieadni.hyliacraft.item.armour.MajorasMaskItem;
 import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
 import net.nieadni.hyliacraft.item.HCItemTags;
 import net.nieadni.hyliacraft.network.*;
 import net.nieadni.hyliacraft.race.HyliaCraftRace;
 import net.nieadni.hyliacraft.race.RaceArgumentType;
+import net.nieadni.hyliacraft.screen.HCScreenHandlers;
+import net.nieadni.hyliacraft.shop.RupeeTradeLoader;
+import net.nieadni.hyliacraft.shop.TraderLoader;
+import net.nieadni.hyliacraft.util.VanillaLootTableModifiers;
 import net.nieadni.hyliacraft.worldgen.HCBiomeModifier;
+import net.nieadni.hyliacraft.worldgen.HCBiomeTags;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.nieadni.hyliacraft.worldgen.HCBiomeTags;
-import org.slf4j.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,16 +60,28 @@ public class HyliaCraft implements ModInitializer {
 
 		HyliaCraft.LOGGER.info("HyliaCraft has been initialised!");
 		HCFoodComponents.registerHCFoodComponents();
+		HCDataComponents.registerHCDataComponents();
 		HCItemGroups.registerHCItemGroups();
 		HCItems.registerHCItems();
 		HCBlocks.registerHCBlocks();
 		HCArmourMaterials.registerHCArmourMaterials();
 		HCItemTags.registerHCItemTags();
 		HCBlockTags.registerHCBlockTags();
+		HCScreenHandlers.registerHCScreenHandlers();
 		HCEntities.registerHyliaCraftEntities();
+
+		// Majora's Mask grudges live only in memory and expire when read, so a player who leaves mid
+		// grudge would otherwise keep an entry for good.
+		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
+				MajorasMaskItem.forget(handler.getPlayer().getUuid()));
 		HCLootTables.registerHyliaCraftLootTables();
 		HCBiomeModifier.load();
         VanillaLootTableModifiers.modifyLootTables();
+
+        // Shops are datapack driven, so these reload with /reload. Traders are registered first because
+        // the price list declares a dependency on them.
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new TraderLoader());
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new RupeeTradeLoader());
 
         // Register custom payloads
         PayloadTypeRegistry.playS2C().register(RaceS2CPayload.ID, RaceS2CPayload.CODEC);

@@ -4,12 +4,14 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nieadni.hyliacraft.HyliaCraft;
 import net.nieadni.hyliacraft.block.HCBlocks;
+import net.nieadni.hyliacraft.entity.HCEntities;
 import net.nieadni.hyliacraft.item.armour.*;
 import net.nieadni.hyliacraft.item.custom.*;
 import net.nieadni.hyliacraft.item.custom.consumables.*;
@@ -135,6 +137,13 @@ public class HCItems extends Items {
     public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
 
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
+
+    // Spawn Eggs
+    // Blue and purple, after the rupees of those colours. Vanilla's two tone egg is used because the mod
+    // has no custom spawn egg art yet.
+    public static final Item HAPPY_MASK_SALESMAN_SPAWN_EGG = register(
+            new SpawnEggItem(HCEntities.HAPPY_MASK_SALESMAN, 0x2E5AAC, 0x7A2E9E, new Item.Settings()),
+            "happy_mask_salesman_spawn_egg");
 
 
 

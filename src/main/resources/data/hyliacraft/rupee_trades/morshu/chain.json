@@ -1,0 +1,7 @@
+{
+  "item": "minecraft:chain",
+  "merchant": "hyliacraft:morshu",
+  "cost": 2,
+  "max_uses": 128,
+  "restocks": true
+}

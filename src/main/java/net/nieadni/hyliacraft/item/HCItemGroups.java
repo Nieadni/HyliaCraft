@@ -1,7 +1,9 @@
 package net.nieadni.hyliacraft.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -246,6 +248,11 @@ public class HCItemGroups {
                     }).build());
 
     public static void registerHCItemGroups() {
+        // Spawn eggs go in vanilla's spawn egg tab, where players look for them, rather than in a
+        // HyliaCraft tab.
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS)
+                .register(entries -> entries.add(HCItems.HAPPY_MASK_SALESMAN_SPAWN_EGG));
+
         HyliaCraft.LOGGER.info("Registering Item Groups for " + HyliaCraft.MOD_ID);
     }
 }
