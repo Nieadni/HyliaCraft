@@ -115,25 +115,54 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
 
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.MIDNA_HELM, 1)
-                .pattern("S S")
-                .pattern("ONO")
-                .pattern(" Y ")
-                .input('N', Items.NETHERITE_HELMET)
-                .input('S', Items.NETHERITE_SCRAP)
-                .input('O', Items.ORANGE_WOOL)
-                .input('Y', Items.YELLOW_WOOL)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.ENGINEER_CAP, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.RED_DYE).input(Items.BLACK_DYE)
+                .input(Items.IRON_NUGGET).input(Items.IRON_NUGGET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.ENGINEER_SHIRT, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.BLUE_DYE).input(Items.LIGHT_BLUE_DYE).input(Items.BLACK_DYE).input(Items.WHITE_DYE).input(Items.BROWN_DYE)
+                .input(Items.IRON_NUGGET).input(Items.IRON_NUGGET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.ENGINEER_TROUSERS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.BLUE_DYE)
+                .input(Items.IRON_NUGGET).input(Items.IRON_NUGGET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.ENGINEER_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.RED_DYE)
+                .input(Items.IRON_NUGGET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.ZANT_HELM, 1)
-                .pattern(" S ")
-                .pattern("BSB")
-                .pattern("SNS")
-                .input('N', Items.NETHERITE_HELMET)
-                .input('S', Items.NETHERITE_SCRAP)
-                .input('B', Items.BLUE_ICE)
-                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.IRON_INGOT))
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TINGLE_HOOD, 1)
+                .input(Items.LEATHER_HELMET)
+                .input(Items.GREEN_DYE).input(Items.LIME_DYE)
+                .input(HCItems.GREEN_RUPEE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_HELMET))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TINGLE_SHIRT, 1)
+                .input(Items.LEATHER_CHESTPLATE)
+                .input(Items.GREEN_DYE).input(Items.LIME_DYE).input(Items.CLOCK).input(Items.YELLOW_DYE)
+                .input(HCItems.GREEN_RUPEE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_CHESTPLATE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TINGLE_TIGHTS, 1)
+                .input(Items.LEATHER_LEGGINGS)
+                .input(Items.GREEN_DYE).input(Items.LIME_DYE).input(Items.RED_DYE)
+                .input(HCItems.GREEN_RUPEE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_LEGGINGS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.TINGLE_BOOTS, 1)
+                .input(Items.LEATHER_BOOTS)
+                .input(Items.BROWN_DYE)
+                .input(HCItems.GREEN_RUPEE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(Items.LEATHER_BOOTS))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, HCItems.HERO_CAP, 1)

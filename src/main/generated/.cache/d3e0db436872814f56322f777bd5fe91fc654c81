@@ -1,9 +1,9 @@
-// 1.21.1	2026-09-02T12:09:46.6959054	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-09-02T18:31:07.6745523	HyliaCraft/Block Loot Tables
 d616eeb258676121cb5e568ad8370c6a7048bed2 data\hyliacraft\loot_table\blocks\magenta_shingle_wall.json
 cc1d8f2527e541f7b2816ea9defa3d305e3fb40b data\hyliacraft\loot_table\blocks\clay_pot.json
 ac42ae25d8cf6367d9747f5942a4ca5279e4696f data\hyliacraft\loot_table\blocks\kokiri_clay_pot.json
-0579fb9aa3d5ed07c72038cee93f93f815a0a438 data\hyliacraft\loot_table\blocks\natural_goron_clay_pot.json
 386a1dc2bc8a01652469722d7b96ae35e7b7e725 data\hyliacraft\loot_table\blocks\black_shingles.json
+0579fb9aa3d5ed07c72038cee93f93f815a0a438 data\hyliacraft\loot_table\blocks\natural_goron_clay_pot.json
 fd36c3b982557468f77c48dda4098722868e3719 data\hyliacraft\loot_table\blocks\silent_princess_pot.json
 6f825da33fa1e4b1239179777dcd8b1d73fec79e data\hyliacraft\loot_table\blocks\light_blue_shingle_wall.json
 926d84f74a0a20de453783534113b017f657490b data\hyliacraft\loot_table\blocks\blue_nightshade_pot.json
@@ -67,8 +67,8 @@ b8007542cd936e3f0aa807431a5c81cb0009a39d data\hyliacraft\loot_table\blocks\natur
 adc773bde3241dcb6f5cd85a9873c5444f29b2d2 data\hyliacraft\loot_table\blocks\blue_clay_pot.json
 f064cd8419213f19930d166a81b8ff180e48eab4 data\hyliacraft\loot_table\blocks\silent_princess.json
 c7c3a2477fb10f98098b7e2218fc883fae51744b data\hyliacraft\loot_table\blocks\goron_clay_pot.json
-0eefcaeb0ef6710c050357d92f0b701d5621c523 data\hyliacraft\loot_table\blocks\armoranth_pot.json
 60ac68e8923a9bab18be1e9cb9846acd07d30282 data\hyliacraft\loot_table\blocks\red_shingles.json
+0eefcaeb0ef6710c050357d92f0b701d5621c523 data\hyliacraft\loot_table\blocks\armoranth_pot.json
 f5b9f1b218ac473a7a62de8ea484b817d934b3bb data\hyliacraft\loot_table\blocks\white_shingle_wall.json
 734932cbf0dec0375d128eac37288cf6d8ddf391 data\hyliacraft\loot_table\blocks\white_shingle_stairs.json
 5f3480ce587ce4b2224ea2c3c4fe0907ed04ca1c data\hyliacraft\loot_table\blocks\magenta_shingles.json

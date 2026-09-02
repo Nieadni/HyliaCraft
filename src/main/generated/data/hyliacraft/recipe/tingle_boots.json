@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:leather_boots"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "item": "hyliacraft:green_rupee"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:tingle_boots"
+  }
+}

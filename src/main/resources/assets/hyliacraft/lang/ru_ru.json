@@ -539,5 +539,8 @@
   "tooltip.hyliacraft.phantom_armor": "Миф о бронированных фантомах, что терроризировали храбрых героев. Эта часть выглядит в точности как та, что они предположительно носили.",
   "tooltip.hyliacraft.ravio_hood": "Капюшон путешествующего торговца, у которого был браслет, способный превратить носителя в картину.",
   "tooltip.hyliacraft.tingle_clothing_0": "Однажды был мужчина, что провозгласил себя перерожденной Феей.",
-  "tooltip.hyliacraft.tingle_clothing_1": "Он ценил эту рубашку, так и ты будешь. Всё же, редкая находка. Кулу-Лимпа!"
+  "tooltip.hyliacraft.tingle_clothing_1": "Он ценил эту рубашку, так и ты будешь. Всё же, редкая находка. Кулу-Лимпа!",
+  "entity.hyliacraft.happy_mask_salesman": "Счастливый Продавец Масок",
+  "item.hyliacraft.happy_mask_salesman_spawn_egg": "Яйцо Призыва Счастливого Продавца Масок",
+  "tooltip.hyliacraft.rupee_pouch.balance": "%s Рупий"
   }
