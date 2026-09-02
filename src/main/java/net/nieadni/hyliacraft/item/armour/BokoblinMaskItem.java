@@ -10,7 +10,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.nieadni.hyliacraft.client.armour.sets.WindClothingRenderer;
+import net.nieadni.hyliacraft.client.armour.BokoblinMaskRenderer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -42,7 +42,7 @@ public class BokoblinMaskItem extends ArmorItem implements GeoItem {
             public @Nullable <T extends LivingEntity> BipedEntityModel<?> getGeoArmorRenderer(@Nullable T livingEntity, ItemStack itemStack, @Nullable EquipmentSlot equipmentSlot, @Nullable BipedEntityModel<T> original) {
 
                 if (this.renderer == null)
-                    this.renderer = new WindClothingRenderer();
+                    this.renderer = new BokoblinMaskRenderer();
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
 
                 return this.renderer;

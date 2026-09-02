@@ -10,7 +10,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.nieadni.hyliacraft.client.armour.sets.TingleClothingRenderer;
+import net.nieadni.hyliacraft.client.armour.sets.TingleHoodRenderer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -25,11 +25,11 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class TingleClothingItem extends ArmorItem implements GeoItem {
+public class TingleHoodItem extends ArmorItem implements GeoItem {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public TingleClothingItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
+    public TingleHoodItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
         super(material, type, settings);
     }
 
@@ -42,7 +42,7 @@ public class TingleClothingItem extends ArmorItem implements GeoItem {
             public @Nullable <T extends LivingEntity> BipedEntityModel<?> getGeoArmorRenderer(@Nullable T livingEntity, ItemStack itemStack, @Nullable EquipmentSlot equipmentSlot, @Nullable BipedEntityModel<T> original) {
 
                 if (this.renderer == null)
-                    this.renderer = new TingleClothingRenderer();
+                    this.renderer = new TingleHoodRenderer();
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
 
                 return this.renderer;
