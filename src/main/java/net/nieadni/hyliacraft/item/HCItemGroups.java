@@ -19,51 +19,6 @@ public class HCItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.hyliacraft.gear"))
                     .icon(() -> new ItemStack(HCItems.GODDESS_SWORD)).entries((displayContext, entries) -> {
 
-                        entries.add(HCItems.MAJORAS_MASK);
-                        entries.add(HCItems.MIDNA_HELM);
-                        entries.add(HCItems.ZANT_HELM);
-                        entries.add(HCItems.PUMPKIN_MASK);
-
-                        entries.add(HCItems.FIERCE_CAP);
-                        entries.add(HCItems.FIERCE_TUNIC);
-                        entries.add(HCItems.FIERCE_TROUSERS);
-                        entries.add(HCItems.FIERCE_BOOTS);
-                        entries.add(HCItems.HERO_CAP);
-                        entries.add(HCItems.HERO_TUNIC);
-                        entries.add(HCItems.HERO_TROUSERS);
-                        entries.add(HCItems.HERO_BOOTS);
-                        entries.add(HCItems.SKY_CAP);
-                        entries.add(HCItems.SKY_TUNIC);
-                        entries.add(HCItems.SKY_TROUSERS);
-                        entries.add(HCItems.SKY_BOOTS);
-                        entries.add(HCItems.TIME_CAP);
-                        entries.add(HCItems.TIME_TUNIC);
-                        entries.add(HCItems.TIME_TROUSERS);
-                        entries.add(HCItems.TIME_BOOTS);
-                        entries.add(HCItems.TWILIGHT_CAP);
-                        entries.add(HCItems.TWILIGHT_TUNIC);
-                        entries.add(HCItems.TWILIGHT_TROUSERS);
-                        entries.add(HCItems.TWILIGHT_BOOTS);
-                        entries.add(HCItems.WILD_CAP);
-                        entries.add(HCItems.WILD_TUNIC);
-                        entries.add(HCItems.WILD_TROUSERS);
-                        entries.add(HCItems.WILD_BOOTS);
-                        entries.add(HCItems.WIND_CAP);
-                        entries.add(HCItems.WIND_TUNIC);
-                        entries.add(HCItems.WIND_TROUSERS);
-                        entries.add(HCItems.WIND_BOOTS);
-
-                        entries.add(HCItems.BUNNY_HOOD);
-                        entries.add(HCItems.FIRESHIELD_EARRING);
-                        entries.add(HCItems.WATER_DRAGON_SCALE);
-                        entries.add(HCItems.SHADOW_CRYSTAL);
-
-                        entries.add(HCItems.SLINGSHOT);
-                        entries.add(HCItems.IRON_BOW);
-                        entries.add(HCItems.FAIRY_BOW);
-                        entries.add(HCItems.BOOMERANG);
-                        //entries.add(HCItems.GALE_BOOMERANG);
-
                         entries.add(HCItems.GODDESS_SWORD);
                         entries.add(HCItems.GODDESS_LONGSWORD);
                         entries.add(HCItems.GODDESS_WHITE_SWORD);
@@ -73,12 +28,83 @@ public class HCItemGroups {
                         entries.add(HCItems.DOUBLE_HELIX_SWORD);
                         entries.add(HCItems.ONE_HIT_OBLITERATOR);
 
+                        entries.add(HCItems.SLINGSHOT);
+                        entries.add(HCItems.IRON_BOW);
+                        entries.add(HCItems.FAIRY_BOW);
+                        entries.add(HCItems.BOOMERANG);
+                        //entries.add(HCItems.GALE_BOOMERANG);
+
                         entries.add(HCItems.DIGGING_MITT);
                         entries.add(HCItems.MOGMA_MITT);
                         entries.add(HCItems.VICIOUS_SICKLE);
                         
                         entries.add(HCItems.HORSE_CALL);
                         entries.add(HCItems.PARAGLIDER);
+
+                        entries.add(HCItems.BOKOBLIN_MASK);
+                        entries.add(HCItems.BUNNY_HOOD);
+
+                        entries.add(HCItems.ENGINEER_CAP);
+                        entries.add(HCItems.ENGINEER_SHIRT);
+                        entries.add(HCItems.ENGINEER_TROUSERS);
+                        entries.add(HCItems.ENGINEER_BOOTS);
+
+                        entries.add(HCItems.FIERCE_CAP);
+                        entries.add(HCItems.FIERCE_TUNIC);
+                        entries.add(HCItems.FIERCE_TROUSERS);
+                        entries.add(HCItems.FIERCE_BOOTS);
+
+                        entries.add(HCItems.HERO_CAP);
+                        entries.add(HCItems.HERO_TUNIC);
+                        entries.add(HCItems.HERO_TROUSERS);
+                        entries.add(HCItems.HERO_BOOTS);
+
+                        entries.add(HCItems.MAJORAS_MASK);
+                        entries.add(HCItems.MIDNA_HELM);
+
+                        entries.add(HCItems.PHANTOM_HELMET);
+                        entries.add(HCItems.PHANTOM_CHESTPLATE);
+                        entries.add(HCItems.PHANTOM_LEGGINGS);
+                        entries.add(HCItems.PHANTOM_BOOTS);
+
+                        entries.add(HCItems.PUMPKIN_MASK);
+                        entries.add(HCItems.RAVIO_HOOD);
+
+                        entries.add(HCItems.SKY_CAP);
+                        entries.add(HCItems.SKY_TUNIC);
+                        entries.add(HCItems.SKY_TROUSERS);
+                        entries.add(HCItems.SKY_BOOTS);
+
+                        entries.add(HCItems.TIME_CAP);
+                        entries.add(HCItems.TIME_TUNIC);
+                        entries.add(HCItems.TIME_TROUSERS);
+                        entries.add(HCItems.TIME_BOOTS);
+
+                        entries.add(HCItems.TWILIGHT_CAP);
+                        entries.add(HCItems.TWILIGHT_TUNIC);
+                        entries.add(HCItems.TWILIGHT_TROUSERS);
+                        entries.add(HCItems.TWILIGHT_BOOTS);
+
+                        entries.add(HCItems.TINGLE_HOOD);
+                        entries.add(HCItems.TINGLE_SHIRT);
+                        entries.add(HCItems.TINGLE_TIGHTS);
+                        entries.add(HCItems.TINGLE_BOOTS);
+
+                        entries.add(HCItems.WILD_CAP);
+                        entries.add(HCItems.WILD_TUNIC);
+                        entries.add(HCItems.WILD_TROUSERS);
+                        entries.add(HCItems.WILD_BOOTS);
+
+                        entries.add(HCItems.WIND_CAP);
+                        entries.add(HCItems.WIND_TUNIC);
+                        entries.add(HCItems.WIND_TROUSERS);
+                        entries.add(HCItems.WIND_BOOTS);
+
+                        entries.add(HCItems.ZANT_HELM);
+
+                        entries.add(HCItems.FIRESHIELD_EARRING);
+                        entries.add(HCItems.WATER_DRAGON_SCALE);
+                        entries.add(HCItems.SHADOW_CRYSTAL);
 
                     }).build());
 

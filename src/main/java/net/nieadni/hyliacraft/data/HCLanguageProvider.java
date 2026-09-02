@@ -25,6 +25,10 @@ public class HCLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
 
         /** ITEMS **/
+
+        translationBuilder.add(HCItems.BOKOBLIN_MASK, "Bokoblin Mask");
+        translationBuilder.add("tooltip.hyliacraft.bokoblin_mask", "A handmade Bokoblin headgear. It's almost charming in a cute, monstrous kind of way... Equip it to blend in with Bokoblins.");
+        translationBuilder.add(HCItems.BUNNY_HOOD, "Bunny Hood");
         translationBuilder.add(HCItems.MAJORAS_MASK, "Majoras Mask");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask1", "An eerie mask passed down from ancient times.");
         translationBuilder.add("tooltip.hyliacraft.majoras_mask2", "Wearing it makes it harder for certain enemies to spot you.");
@@ -33,6 +37,27 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.ZANT_HELM, "Zant's Helm");
         translationBuilder.add("tooltip.hyliacraft.zant_helm", "The ruthless Usurper King of the Twilight Realm wore a helmet much like this one.");
         translationBuilder.add(HCItems.PUMPKIN_MASK, "Pumpkin Mask");
+        translationBuilder.add(HCItems.RAVIO_HOOD, "Ravio's Hood");
+        translationBuilder.add("tooltip.hyliacraft.ravio_hood", "The hood of a traveling merchant who had a bracelet that could turn the wearer into a painting.");
+
+        translationBuilder.add(HCItems.PHANTOM_HELMET, "Phantom Helmet");
+        translationBuilder.add(HCItems.PHANTOM_CHESTPLATE, "Phantom Chestplate");
+        translationBuilder.add(HCItems.PHANTOM_LEGGINGS, "Phantom Leggings");
+        translationBuilder.add(HCItems.PHANTOM_BOOTS, "Phantom Boots");
+        translationBuilder.add("tooltip.hyliacraft.phantom_armor", "Myths abound about armored phantoms that terrorized brave heroes. This piece looks just like the armor they supposedly wore.");
+
+        translationBuilder.add(HCItems.ENGINEER_CAP, "Engineer's Cap");
+        translationBuilder.add(HCItems.ENGINEER_SHIRT, "Engineer's Shirt");
+        translationBuilder.add(HCItems.ENGINEER_TROUSERS, "Engineer's Trousers");
+        translationBuilder.add(HCItems.ENGINEER_BOOTS, "Engineer's Boots");
+        translationBuilder.add("tooltip.hyliacraft.engineer_clothing", "Worn by the Royal Engineers of New Hyrule and the Hero of the Winds.");
+
+        translationBuilder.add(HCItems.TINGLE_HOOD, "Tingle's Hood");
+        translationBuilder.add(HCItems.TINGLE_SHIRT, "Tingle's Shirt");
+        translationBuilder.add(HCItems.TINGLE_TIGHTS, "Tingle's Tights");
+        translationBuilder.add(HCItems.TINGLE_BOOTS, "Tingle's Boots");
+        translationBuilder.add("tooltip.hyliacraft.tingle_clothing_0", "There was once a man who claimed to be the very reincarnation of a fairy.");
+        translationBuilder.add("tooltip.hyliacraft.tingle_clothing_1", "He treasured this shirt, and so will you. After all, it's a rather rare find. Kooloo-Limpah!");
 
         translationBuilder.add(HCItems.FIERCE_CAP, "Fierce Deity Mask");
         translationBuilder.add(HCItems.FIERCE_TUNIC, "Fierce Deity Tunic");
@@ -76,7 +101,6 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.hyliacraft.wind_clothing_0", "According to legend, this cap was treasured by a hero who traveled the Great Sea.");
         translationBuilder.add("tooltip.hyliacraft.wind_clothing_1", "It flaps quite serenely in a soft sea breeze.");
 
-        translationBuilder.add(HCItems.BUNNY_HOOD, "Bunny Hood");
         translationBuilder.add(HCItems.FIRESHIELD_EARRING, "§cFireshield Earring");
         translationBuilder.add(HCItems.WATER_DRAGON_SCALE, "§1Water Dragon's Scale");
         translationBuilder.add(HCItems.SHADOW_CRYSTAL, "§5Shadow Crystal");
