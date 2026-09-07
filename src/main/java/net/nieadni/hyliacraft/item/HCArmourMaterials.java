@@ -54,11 +54,11 @@ public class HCArmourMaterials {
                     ArmorItem.Type.BOOTS, 3
             ),
             // Enchantability //
-            5,
+            20,
             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.ofItems(Items.NETHERITE_INGOT),
-            2F,
-            0.1F,
+            4F,
+            0.2F,
             false
     );
 

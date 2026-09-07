@@ -545,5 +545,11 @@
   "tooltip.purple_rupee": "Стоит 50 Рупий",
   "tooltip.red_rupee": "Стоит 20 Рупий",
   "tooltip.silver_rupee": "Стоит 200 Рупий",
-  "tooltip.yellow_rupee": "Стоит 10 Рупий"
+  "tooltip.yellow_rupee": "Стоит 10 Рупий",
+  "item.hyliacraft.phantom_upgrade_smithing_template": "Phantom Upgrade Smithing Template",
+  "item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description": "Add Phantom Membrane",
+  "item.hyliacraft.smithing_template.phantom_upgrade.applies_to": "Netherite Equipment",
+  "item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description": "Add Netherite Armor",
+  "item.hyliacraft.smithing_template.phantom_upgrade.ingredients": "Phantom Membrane",
+  "upgrade.hyliacraft.phantom_upgrade": "Phantom Upgrade"
 }

@@ -543,5 +543,11 @@
   "tooltip.purple_rupee": "Worth 50 Rupees",
   "tooltip.red_rupee": "Worth 20 Rupees",
   "tooltip.silver_rupee": "Worth 200 Rupees",
-  "tooltip.yellow_rupee": "Worth 10 Rupees"
+  "tooltip.yellow_rupee": "Worth 10 Rupees",
+  "item.hyliacraft.phantom_upgrade_smithing_template": "Phantom Upgrade Smithing Template",
+  "item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description": "Add Phantom Membrane",
+  "item.hyliacraft.smithing_template.phantom_upgrade.applies_to": "Netherite Equipment",
+  "item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description": "Add Netherite Armour",
+  "item.hyliacraft.smithing_template.phantom_upgrade.ingredients": "Phantom Membrane",
+  "upgrade.hyliacraft.phantom_upgrade": "Phantom Upgrade"
 }

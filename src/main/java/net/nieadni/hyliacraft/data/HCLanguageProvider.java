@@ -176,6 +176,12 @@ public class HCLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(HCItems.NAYRU_FLAME, "§9Nayru's Flame");
         translationBuilder.add(HCItems.DIN_FLAME, "§cDin's Flame");
         translationBuilder.add(HCItems.FARORE_FLAME, "§aFarore's Flame");
+        translationBuilder.add(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE, "Phantom Upgrade Smithing Template");
+        translationBuilder.add("upgrade.hyliacraft.phantom_upgrade", "Phantom Upgrade");
+        translationBuilder.add("item.hyliacraft.smithing_template.phantom_upgrade.applies_to", "Netherite Equipment");
+        translationBuilder.add("item.hyliacraft.smithing_template.phantom_upgrade.ingredients", "Phantom Membrane");
+        translationBuilder.add("item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description", "Add Netherite Armor");
+        translationBuilder.add("item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description", "Add Phantom Membrane");
 
         translationBuilder.add(HCItems.GORON_SPICE, "Goron Spice");
         //translationBuilder.add(HCItems.FAIRY_BOTTLE, "Fairy in a Bottle");

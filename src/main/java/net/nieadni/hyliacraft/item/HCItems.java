@@ -1,10 +1,6 @@
 package net.nieadni.hyliacraft.item;
 
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -119,7 +115,6 @@ public class HCItems extends Items {
     public static final Item DUBIOUS_FOOD = register(new DubiousFoodItem(new Item.Settings().food(HCFoodComponents.DUBIOUS_FOOD)), "dubious_food");
     public static final Item GORON_SPICE = register(new Item(new Item.Settings().maxCount(16)),"goron_spice");
 
-
     // Rupees
     public static final Item RUPEE_POUCH = register(new RupeePouchItem(new Item.Settings().maxCount(1)),"rupee_pouch");
     public static final Item GREEN_RUPEE = register(new RupeeItem("tooltip.green_rupee"), "green_rupee");
@@ -135,12 +130,11 @@ public class HCItems extends Items {
     public static final Item NAYRU_FLAME = register(new Item(new Item.Settings().maxCount(1)),"nayru_flame");
     public static final Item DIN_FLAME = register(new Item(new Item.Settings().maxCount(1)),"din_flame");
     public static final Item FARORE_FLAME = register(new Item(new Item.Settings().maxCount(1)),"farore_flame");
+    public static final Item PHANTOM_UPGRADE_SMITHING_TEMPLATE = register(PhantomSmithingTemplateItem.createPhantomUpgrade(), "phantom_upgrade_smithing_template");
 
     //public static final Item FAIRY_BOTTLE = register(new FairyBottleItem(new Item.Settings().maxCount(1)),"fairy_bottle");
 
     // Spawn Eggs
-    // Blue and purple, after the rupees of those colours. Vanilla's two tone egg is used because the mod
-    // has no custom spawn egg art yet.
     public static final Item HAPPY_MASK_SALESMAN_SPAWN_EGG = register(
             new SpawnEggItem(HCEntities.HAPPY_MASK_SALESMAN, 0x2E5AAC, 0x7A2E9E, new Item.Settings()),
             "happy_mask_salesman_spawn_egg");

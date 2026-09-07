@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:phantom_membrane"
+  },
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "hyliacraft:phantom_chestplate"
+  },
+  "template": {
+    "item": "hyliacraft:phantom_upgrade_smithing_template"
+  }
+}

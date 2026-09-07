@@ -68,6 +68,13 @@ public class VanillaLootTableModifiers {
 
             //
 
+            if (source.isBuiltin() && LootTables.ANCIENT_CITY_CHEST.equals(key)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .with(ItemEntry.builder(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE).weight(2).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0, 1))));
+                tableBuilder.pool(poolBuilder);
+            }
+
             if (source.isBuiltin() && LootTables.ABANDONED_MINESHAFT_CHEST.equals(key)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(3))

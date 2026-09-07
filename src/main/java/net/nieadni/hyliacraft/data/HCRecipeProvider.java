@@ -32,6 +32,38 @@ public class HCRecipeProvider extends FabricRecipeProvider {
 
         /** ARMOUR & TOOLS **/
 
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.NETHERITE_HELMET),
+                        Ingredient.ofItems(Items.PHANTOM_MEMBRANE),
+                        RecipeCategory.COMBAT, HCItems.PHANTOM_HELMET)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID,getItemPath(HCItems.PHANTOM_HELMET)));
+
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.NETHERITE_CHESTPLATE),
+                        Ingredient.ofItems(Items.PHANTOM_MEMBRANE),
+                        RecipeCategory.COMBAT, HCItems.PHANTOM_CHESTPLATE)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID,getItemPath(HCItems.PHANTOM_CHESTPLATE)));
+
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.NETHERITE_LEGGINGS),
+                        Ingredient.ofItems(Items.PHANTOM_MEMBRANE),
+                        RecipeCategory.COMBAT, HCItems.PHANTOM_LEGGINGS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID,getItemPath(HCItems.PHANTOM_LEGGINGS)));
+
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.ofItems(Items.NETHERITE_BOOTS),
+                        Ingredient.ofItems(Items.PHANTOM_MEMBRANE),
+                        RecipeCategory.COMBAT, HCItems.PHANTOM_BOOTS)
+                .criterion("get_item", InventoryChangedCriterion.Conditions.items(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE))
+                .offerTo(exporter, new Identifier(HyliaCraft.MOD_ID,getItemPath(HCItems.PHANTOM_BOOTS)));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, HCItems.PARAGLIDER, 1)
                 .pattern("GWY")
                 .pattern("IRI")

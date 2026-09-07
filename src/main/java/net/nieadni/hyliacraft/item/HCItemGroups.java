@@ -105,6 +105,7 @@ public class HCItemGroups {
                         entries.add(HCItems.FIRESHIELD_EARRING);
                         entries.add(HCItems.WATER_DRAGON_SCALE);
                         entries.add(HCItems.SHADOW_CRYSTAL);
+                        entries.add(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE);
 
                     }).build());
 

@@ -72,6 +72,7 @@ public class HCModelProvider extends FabricModelProvider {
         itemModelGenerator.register(HCItems.FIRESHIELD_EARRING, Models.GENERATED);
         itemModelGenerator.register(HCItems.WATER_DRAGON_SCALE, Models.GENERATED);
         itemModelGenerator.register(HCItems.SHADOW_CRYSTAL, Models.GENERATED);
+        itemModelGenerator.register(HCItems.PHANTOM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
 
         // Ranged Weapons
         itemModelGenerator.register(HCItems.SLINGSHOT, Models.HANDHELD);
