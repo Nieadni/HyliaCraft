@@ -537,5 +537,17 @@
   "tooltip.hyliacraft.phantom_armor": "Myths abound about armored phantoms that terrorized brave heroes. This piece looks just like the armor they supposedly wore.",
   "tooltip.hyliacraft.ravio_hood": "The hood of a traveling merchant who had a bracelet that could turn the wearer into a painting.",
   "tooltip.hyliacraft.tingle_clothing_0": "There was once a man who claimed to be the very reincarnation of a fairy.",
-  "tooltip.hyliacraft.tingle_clothing_1": "He treasured this shirt, and so will you. After all, it's a rather rare find. Kooloo-Limpah!"
+  "tooltip.hyliacraft.tingle_clothing_1": "He treasured this shirt, and so will you. After all, it's a rather rare find. Kooloo-Limpah!",
+  "entity.hyliacraft.happy_mask_salesman": "Happy Mask Salesman",
+  "hyliacraft.race.gerudo.abilities": "Slightly faster when walking on sand.",
+  "hyliacraft.race.gerudo.description": "A semi reclusive race of folk who are generally found living in deserts.",
+  "hyliacraft.race.gerudo.name": "Gerudo",
+  "item.hyliacraft.happy_mask_salesman_spawn_egg": "Happy Mask Salesman Spawn Egg",
+  "item.hyliacraft.phantom_upgrade_smithing_template": "Phantom Upgrade Smithing Template",
+  "item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description": "Add Phantom Membrane",
+  "item.hyliacraft.smithing_template.phantom_upgrade.applies_to": "Netherite Equipment",
+  "item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description": "Add Netherite Armor",
+  "item.hyliacraft.smithing_template.phantom_upgrade.ingredients": "Phantom Membrane",
+  "tooltip.hyliacraft.rupee_pouch.balance": "%s Rupees",
+  "upgrade.hyliacraft.phantom_upgrade": "Phantom Upgrade"
 }

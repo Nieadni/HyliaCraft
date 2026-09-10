@@ -428,6 +428,7 @@
   "item.hyliacraft.phantom_chestplate": "Нагрудник Фантома",
   "item.hyliacraft.phantom_helmet": "Шлем Фантома",
   "item.hyliacraft.phantom_leggings": "Поножи Фантома",
+  "item.hyliacraft.phantom_upgrade_smithing_template": "Кузнечный шаблон Фантомного улучшения",
   "item.hyliacraft.pumpkin_mask": "Тыквенная Маска",
   "item.hyliacraft.pumpkin_soup": "Тыквенный Суп",
   "item.hyliacraft.purple_rupee": "Фиолетовая Рупия",
@@ -442,6 +443,10 @@
   "item.hyliacraft.sky_trousers": "Штаны Неба",
   "item.hyliacraft.sky_tunic": "Туника Неба",
   "item.hyliacraft.slingshot": "Рогатка",
+  "item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description": "Добавьте Мембрану Фантома",
+  "item.hyliacraft.smithing_template.phantom_upgrade.applies_to": "Незеритовая Экипировка",
+  "item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description": "Добавьте Незеритовую Броню",
+  "item.hyliacraft.smithing_template.phantom_upgrade.ingredients": "Мембрана Фантома",
   "item.hyliacraft.superb_soup": "Великолепный Суп",
   "item.hyliacraft.time_boots": "Сапоги Времени",
   "item.hyliacraft.time_cap": "Колпак Времени",
@@ -546,10 +551,5 @@
   "tooltip.red_rupee": "Стоит 20 Рупий",
   "tooltip.silver_rupee": "Стоит 200 Рупий",
   "tooltip.yellow_rupee": "Стоит 10 Рупий",
-  "item.hyliacraft.phantom_upgrade_smithing_template": "Phantom Upgrade Smithing Template",
-  "item.hyliacraft.smithing_template.phantom_upgrade.additions_slot_description": "Add Phantom Membrane",
-  "item.hyliacraft.smithing_template.phantom_upgrade.applies_to": "Netherite Equipment",
-  "item.hyliacraft.smithing_template.phantom_upgrade.base_slot_description": "Add Netherite Armor",
-  "item.hyliacraft.smithing_template.phantom_upgrade.ingredients": "Phantom Membrane",
-  "upgrade.hyliacraft.phantom_upgrade": "Phantom Upgrade"
+  "upgrade.hyliacraft.phantom_upgrade": "Фантомное Улучшение"
 }
