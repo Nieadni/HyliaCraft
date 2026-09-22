@@ -24,6 +24,9 @@ public class HCLanguageProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
 
+        translationBuilder.add("#credit(s)", "Nieadni");
+
+
         /** ITEMS **/
 
         translationBuilder.add(HCItems.BOKOBLIN_MASK, "Bokoblin Mask");

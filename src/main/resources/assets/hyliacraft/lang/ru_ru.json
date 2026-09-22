@@ -1,4 +1,5 @@
 {
+  "#credit(s)": "kapustka",
   "block.hyliacraft.ancient_flower": "Древний Цветок",
   "block.hyliacraft.ancient_flower_crop": "Семя Древнего Цветка",
   "block.hyliacraft.armoranth": "Броморант",
@@ -12,7 +13,6 @@
   "block.hyliacraft.blue_shingle_stairs": "Синие Черепичные Ступеньки",
   "block.hyliacraft.blue_shingle_wall": "Синяя Черепичная Ограда",
   "block.hyliacraft.blue_shingles": "Синяя Черепица",
-  "block.hyliacraft.bomb_flower": "Бомбовый Цветок",
   "block.hyliacraft.brown_clay_pot": "Коричневый Глиняный Горшок",
   "block.hyliacraft.brown_shingle_slab": "Коричневая Черепичная Плита",
   "block.hyliacraft.brown_shingle_stairs": "Коричневые Черепичные Ступеньки",
@@ -381,7 +381,6 @@
   "item.hyliacraft.banana": "Банан",
   "item.hyliacraft.blue_rupee": "Синяя Рупия",
   "item.hyliacraft.bokoblin_mask": "Маска Бокоблина",
-  "item.hyliacraft.bomb_flower": "Бомбовый Цветок",
   "item.hyliacraft.boomerang": "Бумеранг",
   "item.hyliacraft.boulder_breaker": "Валунолом",
   "item.hyliacraft.bunny_hood": "Заячий Капюшон",
@@ -551,5 +550,7 @@
   "tooltip.red_rupee": "Стоит 20 Рупий",
   "tooltip.silver_rupee": "Стоит 200 Рупий",
   "tooltip.yellow_rupee": "Стоит 10 Рупий",
-  "upgrade.hyliacraft.phantom_upgrade": "Фантомное Улучшение"
+  "upgrade.hyliacraft.phantom_upgrade": "Фантомное Улучшение",
+  "block.hyliacraft.bomb_flower": "Бомбовый Цветок",
+  "item.hyliacraft.bomb_flower": "Бомбовый Цветок"
 }
