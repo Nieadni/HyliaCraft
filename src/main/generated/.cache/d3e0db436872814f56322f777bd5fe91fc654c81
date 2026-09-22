@@ -1,4 +1,4 @@
-// 1.21.1	2026-09-22T12:45:20.594314569	HyliaCraft/Block Loot Tables
+// 1.21.1	2026-09-22T15:35:34.764401256	HyliaCraft/Block Loot Tables
 c7c3a2477fb10f98098b7e2218fc883fae51744b data/hyliacraft/loot_table/blocks/goron_clay_pot.json
 9b279734f111f3e650815ab62cef1d322f3113b3 data/hyliacraft/loot_table/blocks/swift_violets.json
 945404fcbaf93f179b0c2946c45f708ef3ff9025 data/hyliacraft/loot_table/blocks/natural_blue_clay_pot.json
@@ -33,8 +33,8 @@ d616eeb258676121cb5e568ad8370c6a7048bed2 data/hyliacraft/loot_table/blocks/magen
 4a81870dcdaa42fadc5b56785cc0ffdf4a96e9c7 data/hyliacraft/loot_table/blocks/gray_shingles.json
 8a65a6b9a908403dc876440923931323e7b9aabd data/hyliacraft/loot_table/blocks/natural_clay_pot_writing.json
 1210127e305558cec04974f37e2c57869d39db2d data/hyliacraft/loot_table/blocks/ancient_flower_crop.json
-b69af290fc1832bd6691d1ea0df4fbca6caa9e09 data/hyliacraft/loot_table/blocks/natural_rito_clay_pot.json
 0579fb9aa3d5ed07c72038cee93f93f815a0a438 data/hyliacraft/loot_table/blocks/natural_goron_clay_pot.json
+b69af290fc1832bd6691d1ea0df4fbca6caa9e09 data/hyliacraft/loot_table/blocks/natural_rito_clay_pot.json
 779ff63818ba09131e66faa46dcf440ff86a5111 data/hyliacraft/loot_table/blocks/lime_shingles.json
 7b66def5e03136a6b4184f1736a07cb407db30e1 data/hyliacraft/loot_table/blocks/clay_pot_writing.json
 50c67272e7b81982a0de84cbe9f4f7c03ce068a7 data/hyliacraft/loot_table/blocks/red_shingle_stairs.json
@@ -53,8 +53,8 @@ f2bc8094e9639e31c8ebfc7bf164df7d597fbf7c data/hyliacraft/loot_table/blocks/white
 c568797376ead5341f0eefc126f9f299d975857f data/hyliacraft/loot_table/blocks/light_gray_shingle_wall.json
 84dd86f7ee76671859bd4d374199922fc8f974e2 data/hyliacraft/loot_table/blocks/lime_shingle_stairs.json
 7f6e7d2a002f28ab46e9438726d6e411e716a06f data/hyliacraft/loot_table/blocks/pink_shingle_stairs.json
-0a81ddbbb8c4394f3325aaa5685bbfc55266083a data/hyliacraft/loot_table/blocks/natural_hateno_clay_pot.json
 60ac68e8923a9bab18be1e9cb9846acd07d30282 data/hyliacraft/loot_table/blocks/red_shingles.json
+0a81ddbbb8c4394f3325aaa5685bbfc55266083a data/hyliacraft/loot_table/blocks/natural_hateno_clay_pot.json
 f5b9f1b218ac473a7a62de8ea484b817d934b3bb data/hyliacraft/loot_table/blocks/white_shingle_wall.json
 22b8a60c22c0cb4a2ffd3e7edaf5e06d4132f362 data/hyliacraft/loot_table/blocks/blue_shingles.json
 3f9d4efe9419fda56704fffa7a64a28e11e9bfed data/hyliacraft/loot_table/blocks/lime_shingle_wall.json
