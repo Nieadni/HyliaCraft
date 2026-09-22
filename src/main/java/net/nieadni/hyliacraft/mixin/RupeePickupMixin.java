@@ -41,9 +41,9 @@ public abstract class RupeePickupMixin {
     private void hyliacraft$collectIntoPouch(
             PlayerEntity player,
             CallbackInfo ci,
-            @Local(name = "itemStack") ItemStack stack,
-            @Local(name = "i") int i,
-            @Local(name = "item") Item item
+            @Local ItemStack stack,
+            @Local int i,
+            @Local Item item
     ) {
         int value = Rupees.valueOf(item);
 
