@@ -1,88 +1,296 @@
 plugins {
-	id 'fabric-loom' version '1.17-SNAPSHOT'
-	id 'maven-publish'
+	id 'dev.architectury.loom' version '1.7-SNAPSHOT' apply false
+	id 'architectury-plugin' version '3.4-SNAPSHOT'
+	id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+	id "io.freefair.lombok" version "8.10" apply false
+	id "com.github.gmazzo.buildconfig" version "5.4.0" apply false
+	id "idea"
+	id 'org.jreleaser' version '1.13.1' apply false
 }
 
-version = project.mod_version
-group = project.maven_group
-
-base {
-	archivesName = project.archives_base_name
+architectury {
+	minecraft = project.minecraft_version
 }
 
-loom {
-	accessWidenerPath = file("src/main/resources/hyliacraft.classtweaker")
+allprojects {
+	group = rootProject.maven_group
+	version = rootProject.mod_version
 }
 
-repositories {
-	maven {
-		name = 'GeckoLib'
-		url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-		content {
-			includeGroup("software.bernie.geckolib")
+subprojects {
+	apply plugin: 'dev.architectury.loom'
+	apply plugin: 'architectury-plugin'
+	apply plugin: 'maven-publish'
+
+	apply plugin: 'org.jreleaser'
+	apply plugin: 'maven-publish'
+
+	idea {
+		module {
+			downloadJavadoc = true
 		}
 	}
-	maven { url = "https://api.modrinth.com/maven" }
-}
 
-fabricApi {
-	configureDataGeneration()
-}
+	if (!project.name.endsWith("common")) {
+		apply plugin: 'com.github.johnrengelman.shadow'
+	} else {
+		apply plugin: 'com.github.gmazzo.buildconfig'
+	}
 
-repositories {
-	exclusiveContent {
-		forRepository {
-			maven {
-				name = "Modrinth"
-				url = "https://api.modrinth.com/maven"
+	architectury {
+		if (!project.name.endsWith("common")) {
+			platformSetupLoomIde()
+		} else {
+			common rootProject.enabled_platforms.split(',')
+		}
+
+		if (project.name.endsWith("fabric")) {
+			fabric()
+		}
+
+		if (project.name.endsWith("neoforge")) {
+			neoForge()
+		}
+	}
+
+	loom {
+		enableTransitiveAccessWideners = true
+
+		runConfigs.each {
+			it.setIdeConfigGenerated(false)
+		}
+
+		mixin {
+			useLegacyMixinAp = false
+		}
+
+		interfaceInjection {
+			enableDependencyInterfaceInjection = true
+		}
+	}
+
+	if (!project.name.endsWith("common")) {
+		configurations {
+			common {
+				canBeResolved = true
+				canBeConsumed = false
+			}
+			compileClasspath.extendsFrom common
+			runtimeClasspath.extendsFrom common
+
+			if (project.name.endsWith("fabric")) {
+				developmentFabric.extendsFrom common
+			}
+
+			if (project.name.endsWith("neoforge")) {
+				developmentNeoForge.extendsFrom common
+			}
+
+			shadowBundle {
+				canBeResolved = true
+				canBeConsumed = false
 			}
 		}
-		// forRepositories(fg.repository) // Uncomment when using ForgeGradle
-		filter {
-			includeGroup "maven.modrinth"
+	}
+
+	repositories {
+		if (project.name.endsWith("neoforge")) {
+			maven {
+				name = 'NeoForged'
+				url = 'https://maven.neoforged.net/releases'
+			}
+		}
+
+		maven {
+			name = "Jared's maven"
+			url = "https://maven.blamejared.com/"
+		}
+
+		maven {
+			name = "ModMaven"
+			url = "https://modmaven.dev"
+		}
+
+		maven {
+			name = 'GeckoLib'
+			url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+		}
+
+		exclusiveContent {
+			forRepository {
+				maven {
+					name = "Modrinth"
+					url = "https://api.modrinth.com/maven"
+				}
+			}
+			//forRepositories(fg.repository)
+			filter {
+				includeGroup "maven.modrinth"
+			}
 		}
 	}
-}
 
-dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	dependencies {
+		minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+		mappings loom.officialMojangMappings()
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+		if (project.name.endsWith("common")) {
+			modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+			modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+			modImplementation "software.bernie.geckolib:geckolib-common-$rootProject.minecraft_version:$rootProject.geckolib_version"
 
-	// Geckolib is needed for some models
-	modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
+			modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+			modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common:${jei_version}")
+		}
 
-	// Nie's Higher Build Limit // Needed for some structure generation
-	modImplementation "maven.modrinth:${nies_higher_build_limit_project}:${nies_higher_build_limit_version}"
+		if (project.name.endsWith("fabric")) {
+			modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+			modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
+			modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
+			modImplementation "software.bernie.geckolib:geckolib-fabric-$rootProject.minecraft_version:$rootProject.geckolib_version"
 
-	// Huge Structure Blocks // Needed for Goddess Isle
-	modImplementation "maven.modrinth:${huge_structure_blocks_project}:${huge_structure_blocks_version}"
+			common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+			shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+		}
 
-	// Worldedit for easier Building
-	modRuntimeOnly "maven.modrinth:${worldedit_project}:${worldedit_version}"
+		if (project.name.endsWith("neoforge")) {
+			neoForge "net.neoforged:neoforge:$rootProject.neoforge_version"
+			modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
+			implementation "software.bernie.geckolib:geckolib-neoforge-$rootProject.minecraft_version:$rootProject.geckolib_version"
 
-	// JEI
-	modRuntimeOnly "maven.modrinth:${jei_project}:${jei_version}"
-
-}
-
-processResources {
-	inputs.property "version", project.version
-
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+			common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+			shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
+		}
 	}
-}
 
-tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
-}
+	java {
+		withSourcesJar()
+		withJavadocJar()
 
-java {
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+		sourceCompatibility = JavaVersion.VERSION_21
+		targetCompatibility = JavaVersion.VERSION_21
+	}
+	javadoc.options.addStringOption('Xdoclint:none', '-quiet')
+
+	tasks.withType(JavaCompile).configureEach {
+		it.options.release = 21
+	}
+
+	jreleaser {
+		gitRootSearch = true
+
+		signing {
+			active = 'ALWAYS'
+			armored = true
+		}
+
+		deploy {
+			maven {
+				mavenCentral {
+					sonatype {
+						active = 'ALWAYS'
+						url = 'https://central.sonatype.com/api/v1/publisher'
+						stagingRepository('build/staging-deploy')
+					}
+				}
+			}
+		}
+	}
+
+	publishing {
+		publications {
+			mavenJava(MavenPublication) {
+				artifactId = base.archivesName.get()
+				from components.java
+
+				pom {
+					name = "$mod_display_name"
+					description = "A Minecraft Mod about the Legend of Zelda"
+					url = "https://github.com/Nieadni/HyliaCraft"
+
+					licenses {
+						license {
+							name = "GNU General Public License 3"
+							url = "https://www.gnu.org/licenses/gpl-3.0.html"
+						}
+					}
+
+					developers {
+						developer {
+							id = 'Nie'
+							name = 'Nieadni'
+						}
+					}
+				}
+			}
+		}
+
+		repositories {
+			maven {
+				url layout.buildDirectory.dir('staging-deploy')
+			}
+		}
+	}
+
+	tasks.publish.doFirst {
+		def dir = file(layout.buildDirectory.dir("jreleaser"))
+		dir.mkdirs()
+	}
+
+	if (!project.name.endsWith("common")) {
+		processResources {
+			def placeholders = [
+					version              : project.version,
+					mod_id               : "$archives_name",
+					mod_name             : "$mod_display_name",
+					architectury_version : architectury_api_version,
+					minecraft_version    : minecraft_version,
+					fabric_loader_version: fabric_loader_version,
+					license              : "GPLv3"
+			]
+
+			placeholders.forEach { key, value ->
+				inputs.property key, value
+			}
+
+			if (project.name.endsWith("neoforge")) {
+				filesMatching('META-INF/neoforge.mods.toml') {
+					expand placeholders
+				}
+			} else if (project.name.endsWith("fabric")) {
+				filesMatching('fabric.mod.json') {
+					expand placeholders
+
+					if (true) {
+						filter { String line ->
+							if (line.contains('"mixins":')) {
+								var modifiedLine = "  \"accessWidener\": \"${project.archives_name}.accesswidener\",\n" + line
+
+								return modifiedLine
+							}
+							return line
+						}
+					}
+				}
+			}
+		}
+
+		shadowJar {
+			configurations = [project.configurations.shadowBundle]
+			archiveClassifier = 'dev-shadow'
+		}
+
+		remapJar {
+			input.set shadowJar.archiveFile
+		}
+	}
+
+	if (!project.name.endsWith("common")) {
+		task copyJar(type: Copy) {
+			from remapJar
+			into "${rootProject.projectDir}/build/"
+			rename("${project.name}", "${project.archives_name}-${project.name}")
+		}
+		build.dependsOn copyJar
+	}
 }
